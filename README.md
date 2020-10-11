@@ -19,7 +19,7 @@
 | ------ | ------ |
 |  git pull | 拉下檔案至本地 |
 | git push | 推上檔案至遠端 |
-| git add <file> | 推至暫存區 |
+| git add \<file> | 推至暫存區 |
 | git add . | 全部推至暫存區 |
 | git commit --m "內容" | 推進本地端 |  
 
