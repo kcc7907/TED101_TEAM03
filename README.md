@@ -42,4 +42,4 @@
 |  cd .. | cd .. | 切換至上一層目錄 |
 |  cat file/more | type file | 顯示檔案內容 |
 |  clear | cls | 清除螢幕 |
-
+|git bash| q| 離開|
