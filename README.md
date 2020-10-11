@@ -1,5 +1,5 @@
 # TED101_TEAM03
-## member
+## Member
 ```
  1.
  
@@ -13,9 +13,6 @@
  
  6. 20  kcc7907  kcc7907@gmail.com
 ```
-
-
-<td style="border:1px solid black">
- <tr>1</tr>
-  <tr>2</tr>
-</td>
+## git command
+| git 命令| 說明|
+| 
