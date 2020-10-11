@@ -26,6 +26,7 @@
 | git merge \<branch> | 合併分支 |
 | git status | 顯示修改檔案清單 |
 | git log | 顯示提交記錄 |
+| git clone \<url>| 複製整份至本地端 |
 
 更多教學 => <https://backlog.com/git-tutorial/tw/>
 
