@@ -29,9 +29,16 @@
 
 更多教學 => <https://backlog.com/git-tutorial/tw/>
 
+## shell command
 
+|   Linux 命令  |  Windows 命令  | 說明 |
+| ------ | ------ | ------- |
+|  pwd | cd | 顯示幕前目錄 |
+|  ls -al | dir |  顯示目前目錄下的檔案與子目錄列表 |
+|  mkdir \<file> | md \<file> | 建立子目錄 \<file> |
+|  rm -r \<file> | rd \<file> | 刪除子目錄 \<file> |
+|  cd \<file> | cd \<file> | 切換至子目錄 \<file> |
+|  cd .. | cd .. | 切換至上一層目錄 |
+|  cat file/more | type file | 顯示檔案內容 |
+|  clear | cls | 清除螢幕 |
 
-|  表头   | 表头  |
-|  ----  | ----  |
-| 单元格  | 单元格 |
-| 单元格  | 单元格 |
