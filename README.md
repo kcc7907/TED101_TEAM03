@@ -13,7 +13,7 @@
  
  6. 20  kcc7907  kcc7907@gmail.com
 ```
-## git command
+## Git command
 
 |  git 命令  |  說明  |
 | ------ | ------ |
@@ -29,7 +29,7 @@
 
 更多教學 => <https://backlog.com/git-tutorial/tw/>
 
-## shell command
+## Shell command
 
 |   Linux 命令  |  Windows 命令  | 說明 |
 | ------ | ------ | ------- |
