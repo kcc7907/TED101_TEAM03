@@ -14,5 +14,5 @@
  6. 20  kcc7907  kcc7907@gmail.com
 ```
 ## git command
-| git 命令| 說明|
-| 
+|  git 命令  |  說明  |
+ 
