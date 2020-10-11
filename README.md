@@ -16,7 +16,7 @@
 ## git command
 
 |  git 命令  |  說明  |
-| ------ | ------ |
+| ------ | --- |
 |  git pull | 拉下檔案至本地 |
 | git push | 推上檔案至遠端 |
 | git add \<file> | 推至暫存區 |
