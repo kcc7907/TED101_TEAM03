@@ -27,8 +27,11 @@
 | git status | 顯示修改檔案清單 |
 | git log | 顯示提交記錄 |
 | git clone \<url>| 複製整份至本地端 |
+| q| 離開|
+
 
 更多教學 => <https://backlog.com/git-tutorial/tw/>
+
 
 ## Shell command
 
@@ -42,4 +45,4 @@
 |  cd .. | cd .. | 切換至上一層目錄 |
 |  cat file/more | type file | 顯示檔案內容 |
 |  clear | cls | 清除螢幕 |
-|git bash| q| 離開|
+
