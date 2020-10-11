@@ -33,7 +33,7 @@
 
 |   Linux 命令  |  Windows 命令  | 說明 |
 | ------ | ------ | ------- |
-|  pwd | cd | 顯示幕前目錄 |
+|  pwd | cd | 顯示當前目錄 |
 |  ls -al | dir |  顯示目前目錄下的檔案與子目錄列表 |
 |  mkdir \<file> | md \<file> | 建立子目錄 \<file> |
 |  rm -r \<file> | rd \<file> | 刪除子目錄 \<file> |
