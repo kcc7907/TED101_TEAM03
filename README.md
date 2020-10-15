@@ -1,7 +1,7 @@
 # TED101_TEAM03
 ## Member
 ```
- 1.
+ 1. 08 jk890213 jk890213@gmail.com 
 
  2.
 
