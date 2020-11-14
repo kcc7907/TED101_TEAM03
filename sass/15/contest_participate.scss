@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid blue;
+    font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+    color: #865454;
+    
+}
+body{
+    &::-webkit-scrollbar              {
+        width: 10px;
+        background-color: #FFFAF4;
+         /* 1 */ }
+    &::-webkit-scrollbar-track        {
+        background-color: #FFFAF4;
+         /* 3 */ }
+    &::-webkit-scrollbar-thumb        {
+        background-color: #F1EADE;
+         /* 5 */ }
+    background-color: #FFFAF4 !important;
+}
+
+
+
+div#JH{
+    header{
+        width: 100%;
+        height: 100px;
+        background-color: black;
+        position: fixed;
+        top: 0;
+    }
+    nav.topNav{
+        margin-top: 120px;
+        margin-bottom: 30px;
+    }
+    div.step{
+        width: 600px;
+        margin: auto;
+        ol{
+            padding: 0 0 15px;
+            font-size: 0;
+            text-align: center;
+            li{
+                display: inline-block;
+                text-align: center;
+                line-height: 100px;
+                font-size: 16px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: #F1EADE;
+                margin: 0 20px;
+                &:first-child{
+                    color: #F1EADE;
+                    background-color: #865454;
+                }
+            }
+        }
+        form.formStep1{
+            div.rule{
+                height: 30vh;
+                overflow-y: auto;
+                &::-webkit-scrollbar              {
+                    width: 10px;
+                     /* 1 */ }
+                // &::-webkit-scrollbar-button       {
+                //      /* 2 */ }
+                &::-webkit-scrollbar-track        {
+                    -webkit-box-shadow: inset 0 0 6px rgba(134,84,84,0.3); 
+                    border-radius: 10px;
+                     /* 3 */ }
+                // &::-webkit-scrollbar-track-piece  {
+                //      /* 4 */ }
+                &::-webkit-scrollbar-thumb        {
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(134,84,84,1);
+                    background-color: rgba(134,84,84, .5); 
+                     /* 5 */ }
+                // &::-webkit-scrollbar-corner       {
+                //      /* 6 */ }
+                // &::-webkit-resizer{
+                //      /* 7 */ }
+                p{
+                    text-align: left;
+                    padding: 0 30px;
+                }
+            }
+            margin: 20px 0 70px;
+            text-align: center;
+            vertical-align: middle;
+            input{
+                margin-right: 10px;
+                display: none;
+                &:checked + label span{
+                    background-color:#865454;
+                }
+            }
+            label{
+                vertical-align: middle;
+                span{
+                    margin: 0 10px;
+                    margin-bottom: 2px;
+                    display: inline-block;
+                    width: 19px;
+                    height: 19px;
+                    border: 1px solid #865454;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    cursor:pointer;
+                }
+            }
+            button{
+                margin-left: 50px;
+                border: none;
+                outline: none;
+                background: none;
+                border: 1px solid;
+                padding: 5px 20px;
+                border-radius: 30px;
+            }
+        }
+        form.formStep2{
+            padding:  0 30px;
+            > div{
+                label:nth-child(2){
+                    display: inline-block;
+                    padding: 5px 20px;
+                    border: 1px solid #865454;
+                    border-radius: 30px;
+                    font-size: 12px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    margin-top: 20px;
+                }
+                input{
+                    display: none;
+                }
+                > span{
+                    display: inline-block;
+                    margin: 10px 0;
+                }
+                > div{
+                    width:162px;
+                    position: relative;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    > span{
+                        display: inline-block;
+                        width:100%;
+                        padding: 10px 0;
+                        background-color: rgba(0, 0, 0, .3);
+                        font-size: 14px;
+                        text-align: center;
+                        color: white;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
