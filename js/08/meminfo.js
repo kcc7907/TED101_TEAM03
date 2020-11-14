@@ -56,36 +56,47 @@ $(document).ready(function(){
         let send_data = true;
 
         let email = document.getElementById("email");
-        if(email.value == ""){
-            send_data = false;
-            email.classList.add("-error");
-        }else{
-            email.classList.remove("-error");
-        }
+        // //信箱未填
+        // if(email.value == ""){
+        //     send_data = false;
+        //     email.addClass("-error");
+        // }else{
+        //     email.removeClass("-error");
+        // }
+
+        //信箱格式
+        // if(is.email(email.value)){
+        //     account.removeClass("-error");
+        // }else{
+        //     send_data = false;
+        //     account.addClass("-error");
+        // }
         
-        let email = document.getElementById("email");
-        if(is.email(email.value)){
-            account.classList.remove("-error");
-        }else{
+        //手機未填
+        let phone = document.getElementById("phone");
+        if(phone.value == ""){
             send_data = false;
-            account.classList.add("-error");
+            phone.addClass("-error");
+        }else{
+            phone.removeClass("-error");
         }
 
-        let cards_el = document.getElementsByClassName("card");
-        let card_str = "";
-        for(let i = 0; i < cards_el.length; i++){
-            card_str += cards_el[i].value;
-        }
-        console.log(card_str);
-        if( is.creditCard(card_str)){
-            for(let i = 0; i < cards_el.length; i++){
-                cards_el[i].classList.remove("-error");
-            }
-        }else{
+        //姓名未填
+        let name = document.getElementById("name");
+        if(name.value == ""){
             send_data = false;
-            for(let i = 0; i < cards_el.length; i++){
-                cards_el[i].classList.add("-error");
-            }
+            name.addClass("-error");
+        }else{
+            name.removeClass("-error");
+        }
+
+        //地址未填
+        let address = document.getElementById("address");
+        if(address.value == ""){
+            send_data = false;
+            address.addClass("-error");
+        }else{
+            address.removeClass("-error");
         }
 
         if(!send_data){
