@@ -34,8 +34,6 @@ $(document).ready(function(){
     });
 
     
-<<<<<<< HEAD
-=======
     //限制手機僅能輸入數字
     $('#phone').keydown(function(e){
         if((e.which >= 48 && e.which <= 57)|| e.which == 8 || e.which == 46 || e.which == 37 || e.which == 39 || e.which == 13){
@@ -94,7 +92,6 @@ $(document).ready(function(){
             e.preventDefault();
         }
     })
->>>>>>> develop
 
 
 
@@ -103,9 +100,6 @@ $(document).ready(function(){
 
 })
 
-<<<<<<< HEAD
-=======
 //哪些項目為必填欄位不可為空?
 //長度是否有最少及最多限制?
 
->>>>>>> develop
