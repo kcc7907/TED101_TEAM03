@@ -1,23 +1,38 @@
+@mixin  scrollBar($a, $b, $c, $d, $e, $f){
+    &::-webkit-scrollbar              {
+        width: $a + px;
+        background-color: $b;
+         /* 1 */ }
+    // &::-webkit-scrollbar-button       {
+    //      /* 2 */ }
+    &::-webkit-scrollbar-track        {
+        background-color: $c;
+        border-radius: $d + px;
+         /* 3 */ }
+    // &::-webkit-scrollbar-track-piece  {
+    //      /* 4 */ }
+    &::-webkit-scrollbar-thumb        {
+        border-radius: $e + px;
+        background-color: $f; 
+         /* 5 */ }
+    // &::-webkit-scrollbar-corner       {
+    //      /* 6 */ }
+    // &::-webkit-resizer{
+    //      /* 7 */ }
+    @content;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid blue;
+    // border: 1px solid blue !important;
     font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
     color: #865454;
-    
 }
+
 body{
-    &::-webkit-scrollbar              {
-        width: 10px;
-        background-color: #FFFAF4;
-         /* 1 */ }
-    &::-webkit-scrollbar-track        {
-        background-color: #FFFAF4;
-         /* 3 */ }
-    &::-webkit-scrollbar-thumb        {
-        background-color: #F1EADE;
-         /* 5 */ }
+    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0,#F1EADE);
     background-color: #FFFAF4 !important;
 }
 
@@ -30,6 +45,7 @@ div#JH{
         background-color: black;
         position: fixed;
         top: 0;
+        z-index: 3;
     }
     nav.topNav{
         margin-top: 120px;
@@ -39,7 +55,6 @@ div#JH{
         width: 600px;
         margin: auto;
         ol{
-            padding: 0 0 15px;
             font-size: 0;
             text-align: center;
             li{
@@ -58,38 +73,63 @@ div#JH{
                 }
             }
         }
-        form.formStep1{
+        form{
+            margin: 20px 0 70px;
+            padding: 0 30px;
+            label.fileUpload{
+                display: inline-block;
+                padding: 10px 15px;
+                border: 1px solid #865454;
+                border-radius: 30px;
+                font-size: 12px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            input.fileUpload{
+                display: none;
+            }
+            span{
+                display: inline-block;
+            }
+            button{
+                border: none;
+                outline: none;
+                background: none;
+                border: 1px solid;
+                padding: 5px 20px;
+                border-radius: 30px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            div.btn{
+                display: flex;
+                justify-content: space-around;
+                border-top: 1px solid ;
+            }
+        }
+        form#formStep1{
+            text-align: center;
+            vertical-align: middle;
             div.rule{
                 height: 30vh;
                 overflow-y: auto;
-                &::-webkit-scrollbar              {
-                    width: 10px;
-                     /* 1 */ }
-                // &::-webkit-scrollbar-button       {
-                //      /* 2 */ }
-                &::-webkit-scrollbar-track        {
-                    -webkit-box-shadow: inset 0 0 6px rgba(134,84,84,0.3); 
-                    border-radius: 10px;
-                     /* 3 */ }
-                // &::-webkit-scrollbar-track-piece  {
-                //      /* 4 */ }
-                &::-webkit-scrollbar-thumb        {
-                    border-radius: 10px;
-                    -webkit-box-shadow: inset 0 0 6px rgba(134,84,84,1);
-                    background-color: rgba(134,84,84, .5); 
-                     /* 5 */ }
-                // &::-webkit-scrollbar-corner       {
-                //      /* 6 */ }
-                // &::-webkit-resizer{
-                //      /* 7 */ }
+                margin-bottom: 15px;
+                border-bottom: 1px solid;
+                padding-bottom: 15px;
+                @include scrollBar(10, none, none, 10, 10, rgba(134,84,84, .5)){
+                    &::-webkit-scrollbar-track {
+                        -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3); 
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 1);
+                    }
+                }
                 p{
                     text-align: left;
-                    padding: 0 30px;
                 }
             }
-            margin: 20px 0 70px;
-            text-align: center;
-            vertical-align: middle;
             input{
                 margin-right: 10px;
                 display: none;
@@ -98,6 +138,7 @@ div#JH{
                 }
             }
             label{
+                margin-right: 50px;
                 vertical-align: middle;
                 span{
                     margin: 0 10px;
@@ -111,45 +152,24 @@ div#JH{
                     cursor:pointer;
                 }
             }
-            button{
-                margin-left: 50px;
-                border: none;
-                outline: none;
-                background: none;
-                border: 1px solid;
-                padding: 5px 20px;
-                border-radius: 30px;
+        }
+        form#formStep2, form#formStep3{
+            > div{
+                padding-top: 20px;
             }
         }
-        form.formStep2{
-            padding:  0 30px;
+        form#formStep2{
             > div{
-                label:nth-child(2){
-                    display: inline-block;
-                    padding: 5px 20px;
-                    border: 1px solid #865454;
-                    border-radius: 30px;
-                    font-size: 12px;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    margin-top: 20px;
-                }
-                input{
-                    display: none;
-                }
                 > span{
-                    display: inline-block;
                     margin: 10px 0;
                 }
                 > div{
-                    width:162px;
+                    width:324px;
                     position: relative;
                     &:hover{
                         cursor: pointer;
                     }
                     > span{
-                        display: inline-block;
                         width:100%;
                         padding: 10px 0;
                         background-color: rgba(0, 0, 0, .3);
@@ -163,5 +183,52 @@ div#JH{
                 }
             }
         }
+        form#formStep3{
+            > div{
+                label{
+                    display: inline-block;
+                    margin: 10px 0;
+                }
+                label.fConcept , textarea#fConcept{
+                    vertical-align: top;
+                }
+                textarea#fConcept{
+                    resize: none;
+                    margin-bottom: 10px;
+                }
+                > div{
+                    display: flex;
+                    justify-content: space-between;
+                    div{
+                        width: 250px;
+                        span{
+                            margin: 10px 0;
+                        }
+                        div{
+                            position: relative;
+                            &:hover{
+                            cursor: pointer;
+                            }
+                            > span{
+                                width:100%;
+                                padding: 10px 0;
+                                margin: 0;
+                                background-color: rgba(0, 0, 0, .3);
+                                font-size: 14px;
+                                text-align: center;
+                                color: white;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
     }
 }
+
+
+
+
