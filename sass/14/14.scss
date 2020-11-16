@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    margin: 0;
+    font-family: "微軟正黑體";
+    background-color: #f1ece8;
+}
+
+
+//巢狀寫法
+div{
+    border: 2px solid red;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 160px;
+    font-size: 24px;
+
+    h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .photo{
+        background-image: url(../../img/interiordesign/home/example/chang/C1569228155745.jpg);
+        width: 100%;
+        height: 600px;
+        background-attachment: fixed;
+        background-position: center center;
+        display: inline-block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .intro_detail{
+        border: 2px solid blue;
+        width: 40%;
+        margin-left: 5%;
+    }
+
+    .introduce_detail{
+     border: 3px solid darkgoldenrod;   
+     display: inline-flex;
+    }
+
+    .pic_intro{
+        border: 2px solid orangered;
+        
+    }
+
+    .designer{
+        border: 2px solid purple;
+        width: auto;
+    }
+
+    .first{
+        border: 2px solid palevioletred;
+        width: auto;
+    }
+
+    .designer_say{
+        border: 5px solid navy;
+        display: inline-flex;
+    }
+
+    .second{
+        border: 5px solid darkcyan;
+        width: 60%;
+        margin-left: 5%;
+    }
+}
+
+img{
+    border: 2px solid darkgreen;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+//jquery輪播圖
+.image{
+	/* border: 1px solid #ccc; */
+	width: 100%;
+	height: 450px;
+}
+
+#sliderBoard{  /*div*/
+	border: 1px solid #ccc;
+	width: 60%;
+	height: 500px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+#content{		/*ul*/
+	position: relative;
+}
+
+#content li{	/*li*/
+	float: left;
+}
+
+/* button */
+#contentButton{
+	/* border: 1px solid red; */
+	text-align: center;
+	width: 100%;
+	height: 50px;
+}
+
+#contentButton li{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ccc;
+
+	display: inline-block;
+	margin: 5px;
+}
+
+#contentButton li.clickMe{
+	background: #888;
+}
+
+
+
