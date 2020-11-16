@@ -132,7 +132,8 @@ body{
                             border-radius: 1px;                   
                             border-bottom: 1px solid #465D4C;
                             font-size: $fzp;
-                            background-color: #FFFAF4;
+                            background-color: rgba(0,0,0,0);
+                            
                         }
                         #changePassword{
                             display: none;
