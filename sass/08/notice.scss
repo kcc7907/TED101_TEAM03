@@ -1,0 +1,148 @@
+//排版設定
+@import 'var';
+
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FFFAF4;    
+    
+    header{
+        width: $containerWidth + px;
+        height: 180px;
+        background-color: #FFFAF4;
+    }
+    .jk_wrapper{
+        background-color: #FFFAF4;  
+        .container{
+            display: flex;
+            width: 100%;
+            max-width: $containerWidth + px;
+            margin: 0 auto;
+            padding-top: $containerPaddingTop + px;
+
+            .sideMenu{
+                width: $sideMenuWidth + px;
+                height: $sideMenuHeight + px;
+                border: 1px solid #465D4C;
+                margin-left: 10px;
+                font-size: $fzp;
+                
+                z-index: 1;
+
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #BDA79C;
+
+                    transform: translate(-20px, -20px);
+                    opacity: .3;
+                    z-index: -1;
+                }
+                ul{
+                    padding-top: $sideMenuPaddingTop + px;
+                    li{
+                        width: 120px;
+                        margin: 0 auto 30px;
+                        font-size: $fzh2;
+                        line-height: 2;                        
+                        
+                        &:hover{
+                            font-weight: bold;
+                            transition: .1s;
+                        }
+                        >a{
+                            text-decoration: none;
+                            color: #465D4C;
+                        }
+                    }
+                    li.-on{
+                        position: relative;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            left: 0;
+                            bottom: 0;
+                            border-bottom: 1px solid #465D4C;
+
+                        }
+                    }
+                }
+            }
+
+            main{
+                // font-family: 'Noto Sans TC';
+                margin: 0 auto;
+                padding-top: $mainPaddingTop + px;
+                width: 75%;
+                max-width: $containerWidth - $sideMenuWidth + px; 
+                font-size: $fzp;
+                font-weight: lighter;
+
+                >ol{
+                    width: $noticeWidth + px;
+                    margin: 0 auto 50px;
+                    border: 1px solid #465D4C;
+                    color: #465D4C;
+                    >li{
+                        display: flex;
+                        flex-direction: column;                        
+                        padding: 20px;
+                        
+                        >p{
+                            width: 77%;
+                            line-height: 1.6;
+                        }
+                        >span{
+                            align-self: flex-end;
+                            width: 14%;
+                        }
+                    }
+                    >li + li{
+                        border-top: 1px solid #465D4C;
+                    }
+                }
+
+                #page{
+                    width: 100%;
+
+
+                    ol{
+                        width: 200px;
+                        margin: 20px auto;
+                        display: flex;
+                        justify-content: space-between;
+
+                        li{
+                            width: 30px;
+                            height: 30px;
+                            border: 1px solid #465D4C;
+                            line-height: 30px;
+                            text-align: center;
+                            color: #54383B;
+                            font-size: $fzSmall;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }          
+            
+        }
+    }
+
+    footer{
+        width: $containerWidth + px;
+        height: 180px;
+        background-color: #FFFAF4;
+    }
+}
