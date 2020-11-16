@@ -4,7 +4,7 @@ div#JH{
     nav.topNav{
         ul{
             margin: auto;
-            border: 1px solid red;
+            // border: 1px solid red;
             font-size: 0;
             position: relative;
             width: 80%;
@@ -24,7 +24,7 @@ div#JH{
                 display: inline-block;
                 margin: 0 20px;
                 padding: 0 0 10px;
-                font-size: 40px;
+                font-size: 30px;
                 color: #BDA79C;
                 position: relative;
                 &::before{

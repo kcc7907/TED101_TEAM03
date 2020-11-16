@@ -1,3 +1,11 @@
+$titleFont : 30;
+$contentFont: 24;
+$detailFont: 16;
+$lineHeight: 40;
+
+
+// TODO:修改select跟輸入的文字大小
+
 @mixin  scrollBar($a, $b, $c, $d, $e, $f){
     &::-webkit-scrollbar              {
         width: $a + px;
@@ -51,7 +59,7 @@ div#JH{
         margin-top: 120px;
         margin-bottom: 30px;
     }
-    div.step{
+    .container div.step{
         width: 600px;
         margin: auto;
         ol{
@@ -61,7 +69,7 @@ div#JH{
                 display: inline-block;
                 text-align: center;
                 line-height: 100px;
-                font-size: 16px;
+                font-size: $detailFont + px;
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
@@ -76,6 +84,7 @@ div#JH{
         form{
             margin: 20px 0 70px;
             padding: 0 30px;
+            font-size: $contentFont + px;
             label.fileUpload{
                 display: inline-block;
                 padding: 10px 15px;
@@ -89,6 +98,9 @@ div#JH{
             input.fileUpload{
                 display: none;
             }
+            label.fileUpload{
+                font-size: $detailFont + px;
+            }
             span{
                 display: inline-block;
             }
@@ -99,6 +111,7 @@ div#JH{
                 border: 1px solid;
                 padding: 5px 20px;
                 border-radius: 30px;
+                font-size: $detailFont + px;
                 &:hover{
                     cursor: pointer;
                 }
@@ -128,6 +141,8 @@ div#JH{
                 }
                 p{
                     text-align: left;
+                    font-size: $detailFont + px;
+                    line-height: $lineHeight +px;
                 }
             }
             input{
@@ -188,6 +203,7 @@ div#JH{
                 label{
                     display: inline-block;
                     margin: 10px 0;
+                    
                 }
                 label.fConcept , textarea#fConcept{
                     vertical-align: top;
@@ -195,6 +211,10 @@ div#JH{
                 textarea#fConcept{
                     resize: none;
                     margin-bottom: 10px;
+                    font-size: $contentFont + px;
+                }
+                #fTYPE, #fName{
+                    font-size: $detailFont + px;
                 }
                 > div{
                     display: flex;
