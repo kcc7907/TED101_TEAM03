@@ -1,3 +1,4 @@
+//jQuery輪播圖
 $(document).ready(function () {
 
     let divWidth = $('#sliderBoard').width(); //60%
