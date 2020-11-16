@@ -1,7 +1,6 @@
 //排版設定
 @import 'var';
-
-
+@import 'mixin';
 
 
 *{
@@ -12,7 +11,7 @@ body{
     background-color: #FFFAF4;    
     
     header{
-        width: $containerWidth + px;
+        // width: $containerWidth + px;
         height: 180px;
         background-color: #FFFAF4;
     }
@@ -35,6 +34,21 @@ body{
                 z-index: 1;
 
                 position: relative;
+
+                @include r1200{
+                    width: 250px;
+                }
+                @include r768{
+                    width: 100%;
+                    height: 70px;
+                    border: none;
+                    margin: 0;
+                    background-color: #465D4C;
+
+                    position: fixed;
+                    bottom: 0;
+                }
+
                 &::after{
                     content: '';
                     position: absolute;
@@ -47,19 +61,55 @@ body{
                     transform: translate(-20px, -20px);
                     opacity: .3;
                     z-index: -1;
+
+                    @include r768{
+                        display: none;
+                    }
                 }
                 ul{
-                    padding-top: $sideMenuPaddingTop + px;
+                    padding-top: $sideMenuPaddingTop + px;                    
+
+                    @include r768{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        padding: 0;
+                        height: 100%;
+                    }
+
                     li{
-                        width: 120px;
+                        width: 130px;
                         margin: 0 auto 30px;
                         font-size: $fzh2;
-                        line-height: 2;                        
+                        line-height: 2;
+                        text-align: center;
+
+                        @include r1200{
+                            width: 100px;
+                            font-size: 24px;
+                        }
+
+                        @include r768{
+                            width: 40px;
+                            height: 40px;
+                            margin: 0;                            
+                            
+                            background-color: #fff;
+                        }                    
                         
                         &:hover{
+                            font-size: 31px;
                             font-weight: bold;
                             transition: .1s;
+                            
+                            @include r1200{
+                                font-size: 25px;
+                            }
+                            @include r768{
+                                font-size: 12px;
+                            }
                         }
+
                         >a{
                             text-decoration: none;
                             color: #465D4C;
@@ -73,7 +123,7 @@ body{
                             right: 0;
                             left: 0;
                             bottom: 0;
-                            border-bottom: 1px solid #465D4C;
+                            border-bottom: 1px solid #465D4C;                          
 
                         }
                     }
@@ -89,23 +139,42 @@ body{
                 font-size: $fzp;
                 font-weight: lighter;
 
+                @include r768{
+                    width: 95%;
+                }
+
                 >ol{
-                    width: $noticeWidth + px;
+                    // width: $noticeWidth + px;
+                    width: 80%;
                     margin: 0 auto 50px;
                     border: 1px solid #465D4C;
                     color: #465D4C;
+
+                    // @include r1440{
+                    //     width: 720px;
+                    // }
+                    // @include r1200{
+                    //     width: 640px;
+                    // }
+                    // @include r992{
+                    //     width: 460px;
+                    // }
+                    @include r768{
+                        width: 95%;
+                    }
+
                     >li{
                         display: flex;
                         flex-direction: column;                        
-                        padding: 20px;
+                        padding: 10px;
                         
                         >p{
-                            width: 77%;
+                            padding: 10px;
                             line-height: 1.6;
                         }
                         >span{
                             align-self: flex-end;
-                            width: 14%;
+                            padding: 10px;
                         }
                     }
                     >li + li{
@@ -141,7 +210,7 @@ body{
     }
 
     footer{
-        width: $containerWidth + px;
+        // width: $containerWidth + px;
         height: 180px;
         background-color: #FFFAF4;
     }
