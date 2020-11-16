@@ -58,7 +58,7 @@ body{
                         
                         &:hover{
                             font-weight: bold;
-                            transition: .1s;
+                            transition: .1s;                            
                         }
 
                         >a{
@@ -74,7 +74,7 @@ body{
                             right: 0;
                             left: 0;
                             bottom: 0;
-                            border-bottom: 1px solid #465D4C;
+                            border-bottom: 1px solid #465D4C;                            
 
                         }
                     }
@@ -93,7 +93,12 @@ body{
                 form{
                     width: $formWidth + px;
                     margin: 0 auto;
-                    
+
+                    input.-error{
+                        outline: 1px solid red;
+                        
+                    }
+
                     >div{
                         width: 100%;
                         padding: 20px;
