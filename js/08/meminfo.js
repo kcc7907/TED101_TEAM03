@@ -4,19 +4,20 @@ $(document).ready(function(){
     $('form>div>div>span').click(function(e){
 
         //隱藏修改按鈕
-        $(this).css({display:'none'});
+        $(this).hide();
 
         let myself = e.target.className;
         if(myself === "btn_pwd"){   //修改密碼
             $('#changePassword input').attr({value:''}); //初值為空字串
             $('#changePassword').css({display:'flex'}).slideDown(); //顯示修改密碼欄位
 
-            $('#password').css({display:'none'});            
+            $('#password').hide();            
 
         }else{                      //修改一般資料
             let inputChange = $(`input#${myself}`);
             $(inputChange).attr({
                 disabled: false,
+                className: 'able',
             }).focus();
         }
         //顯示送出按鈕
@@ -196,15 +197,31 @@ $(document).ready(function(){
         if(!send_data){
             e.preventDefault();
         }
+    });
+
+    let memberInfo = document.getElementById('memberInfo');
+    memberInfo.addEventListener('reset', function(){
+
+        $('form>div>div>span:hidden').show();                   //顯示修改按鈕
+        $('#changePassword input').attr({value:'********'});    //密碼初值不為空字串
+        $('#changePassword').hide();                            //隱藏密碼更新欄位
+        $('#btn').hide();                                       //隱藏表單送出按鈕
+        $('#password').show();                                  //顯示密碼欄位
+        $('input[className="able"]').attr({                     //資料顯示欄位不可更新
+            disabled: true,
+            className: '',
+        });    
+
+        
+
+
+
+
     })
-
-    
-
-
-
 
 })
 
 //哪些項目為必填欄位不可為空?
 //長度是否有最少及最多限制?
+//空白字元會傳值?
 
