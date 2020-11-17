@@ -7,7 +7,7 @@ $(document).ready(function(){
         $(this).hide();
 
         let myself = e.target.className;
-        if(myself === "btn_pwd"){   //修改密碼
+        if(myself == "btn_pwd"){   //修改密碼
             $('#changePassword input').attr({value:''}); //初值為空字串
             $('#changePassword').css({display:'flex'}).slideDown(); //顯示修改密碼欄位
 
@@ -54,7 +54,7 @@ $(document).ready(function(){
 
     //資料送出判定==========================================================
     $('#memberInfo').submit(function(e){
-        // e.preventDefault();
+        
         let send_data = true;
 
         let email = document.getElementById("email");
@@ -202,6 +202,8 @@ $(document).ready(function(){
     let memberInfo = document.getElementById('memberInfo');
     memberInfo.addEventListener('reset', function(){
 
+        $('form>div>div>span:visible').remove();                //移除警示鈕
+        $('form input.-error').removeClass('-error');           //移除.-error
         $('form>div>div>span:hidden').show();                   //顯示修改按鈕
         $('#changePassword input').attr({value:'********'});    //密碼初值不為空字串
         $('#changePassword').hide();                            //隱藏密碼更新欄位
@@ -221,9 +223,11 @@ $(document).ready(function(){
 
 })
 
-//哪些項目為必填欄位不可為空?
-//長度是否有最少及最多限制?
-//空白字元會傳值?
-//rwd的按鈕及字體大小
-//統一icon風格?
+
+//按鈕字體位置
+//哪些項目為必填欄位不可為空?   全部必填
+//長度是否有最少及最多限制?     密碼8-12 
+//空白字元會傳值?               全部trim
+//rwd的按鈕及字體大小           
+//統一icon風格?                 自找
 

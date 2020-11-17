@@ -151,7 +151,8 @@ body{
                         width: 500px;
                     }
                     @include r768{
-                        width: 345px;
+                        width: 315px;
+                        font-size: 20px;
                     }
 
                     input.-error{
@@ -175,7 +176,10 @@ body{
                                 font-size: $fzSmall;
                                 align-self: flex-end;
                                 color: #aaa;
-                                cursor: pointer;
+                            }
+                            span.email, span.phone, span.name, span.address, span.btn_pwd{
+                                
+                                cursor: pointer;                        
 
                                 &:hover{
                                     font-weight: bold;
@@ -203,7 +207,6 @@ body{
 
                             >input{
                                 width: 97%;
-                                padding: $inputPadding;
                                 margin: 10px 0;
 
                                 &::placeholder{
@@ -216,15 +219,22 @@ body{
                     >#btn{
                         display: none;
                         // display: flex;
-                        justify-content: space-around;                        
+                        justify-content: space-around;                      
 
                         >input[type="submit"], >input[type="reset"]{
                             @extend %button;
+                            padding: 0;
 
                             &:hover{
                                 font-weight: bold;
                                 color: #fff;
                                 background-color: #465D4C;
+                            }
+
+                            @include r768{
+                                width: 100px;
+                                height: 40px;
+                                line-height: 40px;
                             }
                         }
 
