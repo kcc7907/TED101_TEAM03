@@ -1,151 +1,184 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
+@import '../../lib/header/header.scss';
 
 body{
     border: 3px solid hotpink;
     margin: 0;
     font-family: "微軟正黑體";
     background-color: #f1ece8;
-    margin-top: 160px;
-    
+    // margin-top: 160px;
 }
 
 
 //巢狀寫法
-div{
-    border: 2px solid red;
-    width: 1200px;
-    margin: 0 auto;
-    font-size: 24px;
-
-    h1{
-        font-size: 60px;
-        text-align: center;
-        margin-top: 3%;
-        font-weight: bold;
-    }
-
-    .photo{
-        background-image: url(../../img/interiordesign/home/example/chang/C1569228155745.jpg);
-        width: 100%;
-        height: 600px;
-        background-attachment: fixed;
-        background-position: center center;
-        display: inline-block;
-        background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .intro_detail{
-        border: 2px solid blue;
-        width: 40%;
-        margin-left: 5%;
-        margin-top: 100px;
-        line-height: 60px;
+div#JN{
+    div{
+        border: 2px solid red;
+        width: 1200px;
+        margin: 0 auto;
         font-size: 24px;
-    }
 
-    .introduce_detail{
-     border: 3px solid darkgoldenrod;   
-     display: inline-flex;
-     margin-top: 5%;
-    }
+        h1{
+            font-size: 60px;
+            text-align: center;
+            margin-top: 3%;
+            font-weight: bold;
+        }
 
-    .pic_intro{
-        border: 2px solid orangered;
-        
-    }
+        .photo{
+            background-image: url(../../img/interiordesign/home/example/chang/C1569228155745.jpg);
+            width: 100%;
+            height: 600px;
+            background-attachment: fixed;
+            background-position: center center;
+            display: inline-block;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    .designer{
-        border: 2px solid purple;
-        width: auto;
-    }
+        .intro_detail{
+            border: 2px solid blue;
+            width: 40%;
+            margin-left: 5%;
+            margin-top: 100px;
+            line-height: 60px;
+            font-size: 24px;
+        }
 
-    .first{
-        border: 2px solid palevioletred;
-        width: auto;
-    }
-
-    .designer_say{
-        border: 5px solid navy;
+        .introduce_detail{
+        border: 3px solid darkgoldenrod;   
         display: inline-flex;
-        margin-top: 15%;
-    }
+        margin-top: 5%;
+        }
 
-    .second{
-        border: 5px solid darkcyan;
-        width: 60%;
-        margin-left: 5%;
-        line-height: 60px;
-        margin-top: 10%;
-        height: fit-content;
-    }
+        .pic_intro{
+            border: 2px solid orangered;
+            
+        }
 
-    img{
-        border: 2px solid darkgreen;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+        .designer{
+            border: 2px solid purple;
+            width: auto;
+        }
 
-    
-    }
+        .first{
+            border: 2px solid palevioletred;
+            width: auto;
+        }
 
-    .title{
-        border: 3px solid purple;
-        display: inline-flex;
-    }
-    
-    // section
-    section{
-        .award{
-            border: 3px solid orange;
+        .designer_say{
+            border: 5px solid navy;
+            display: inline-flex;
             margin-top: 15%;
         }
 
-        div.div_block{
-            background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
+        .second{
+            border: 5px solid darkcyan;
+            width: 60%;
+            margin-left: 5%;
+            line-height: 60px;
+            margin-top: 10%;
+            height: fit-content;
+        }
+
+        img{
+            border: 1px solid darkgreen;
             width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .title{
+            border: 3px solid purple;
+            display: inline-flex;
+            text-align: center;
+            width: 50%;
+        }
+
+        .style{
+            border: 1px solid blue;
+            padding: 10px;
+        }
+
+
+        .style_one{
+            border: 2px solid magenta;
+            // width: 100%;  
+        }
+
+        .style_one_one, .style_one_two,.style_one_three,.style_one_four{
+            border: 5px solid yellow;
+            width: 100%;
+            display: inline-flex;
+        }
+
+        .home_flex_one, .home_flex_two, .home_flex_three, .home_flex_four{
+            border: 2px solid violet;
+            width: 300px;
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        img.homepic{
+            border: 2px solid green;
+            width: 100%;
+            // height: 100%;
+        }
+
+
+        
+        // section
+        section{
+            .award{
+                border: 3px solid orange;
+                margin-top: 15%;
+            }
+
+            div.div_block{
+                background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
+                width: 100%;
+                height: 750px;
+                border: 1px solid red;
+            }
+            
+            div.other_text{
+            /*   background-color: yellow; */
+                background-color: hsla(0, 0%, 0%, 0.5);
+                color: white;
+                width: 23%;
+                height: 73%;
+                margin-left: 720px;
+                display: inline-block;
+                padding: 100px; 
+            /*   opacity: 1; */
+            }
+
+            
+            p.other_text_award{
+                font-size: 50px;
+            }
+
+            p.other_text{
+                line-height: 50px;
+            }
+            
+    
+        }
+
+        .image{
+            border: 3px solid fuchsia;
+            width: 70%;
+            margin: auto;
+            margin-top: 15%;
             height: 750px;
-            border: 1px solid red;
-          }
-          
-          div.other_text{
-          /*   background-color: yellow; */
-            background-color: hsla(0, 0%, 0%, 0.5);
-            color: white;
-            width: 40%;
-            height: 100%;
-            margin-left: 720px;
-            display: inline-block;
-            padding: 100px; 
-          /*   opacity: 1; */
-          }
+        }
 
-          p.other_text{
-              line-height: 50px;
-          }
-         
-   
-    }
-
-    .image{
-        border: 3px solid fuchsia;
-        width: 70%;
-        margin: auto;
-        margin-top: 15%;
-        height: 750px;
-    }
-
-    #sliderBoard{
-        border: 3px solid indianred;
-        width: 50%;
+        #sliderBoard{
+            border: 3px solid indianred;
+            width: 50%;
+        }
     }
 }
 
