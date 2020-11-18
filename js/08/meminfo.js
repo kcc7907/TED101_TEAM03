@@ -1,5 +1,6 @@
 $(document).ready(function(){
     
+    
     //點擊修改會員資料================================================
     $('form>div>div>span').click(function(e){
 
@@ -11,7 +12,7 @@ $(document).ready(function(){
             $('#changePassword input').attr({value:''}); //初值為空字串
             $('#changePassword').css({display:'flex'}).slideDown(); //顯示修改密碼欄位
 
-            $('#password').hide();            
+            $('#password').hide();         
 
         }else{                      //修改一般資料
             let inputChange = $(`input#${myself}`);
@@ -202,7 +203,7 @@ $(document).ready(function(){
     let memberInfo = document.getElementById('memberInfo');
     memberInfo.addEventListener('reset', function(){
 
-        $('form>div>div>span:visible').remove();                //移除警示鈕
+        $('form>div>div>span.warn').remove();                //移除警示鈕
         $('form input.-error').removeClass('-error');           //移除.-error
         $('form>div>div>span:hidden').show();                   //顯示修改按鈕
         $('#changePassword input').attr({value:'********'});    //密碼初值不為空字串
@@ -212,9 +213,7 @@ $(document).ready(function(){
         $('input[className="able"]').attr({                     //資料顯示欄位不可更新
             disabled: true,
             className: '',
-        });    
-
-        
+        });   
 
 
 
@@ -224,8 +223,6 @@ $(document).ready(function(){
 })
 
 
-//按鈕字體位置
-//哪些項目為必填欄位不可為空?   全部必填
 //長度是否有最少及最多限制?     密碼8-12 
 //空白字元會傳值?               全部trim
 //rwd的按鈕及字體大小           

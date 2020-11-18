@@ -5,25 +5,20 @@
 
 
 
-*{
-    box-sizing: border-box;
-    // outline: 1px solid red;
-}
-
 body{
-    background-color: #FFFAF4;    
+    background-color: #FFFAF4;
     
-    header{
-        // width: $containerWidth + px;
-        height: 180px;
-        background-color: #FFFAF4;
-    }
     .jk_wrapper{
-        background-color: #FFFAF4;  
+        background-color: #FFFAF4;
+        margin-bottom: 100px;
+        *{
+            box-sizing: border-box;
+        }
         .container{
             display: flex;
             width: 100%;
             max-width: $containerWidth + px;
+            min-width: 319px;
             margin: 0 auto;
             padding-top: $containerPaddingTop + px;
             
@@ -46,10 +41,13 @@ body{
                     height: 70px;
                     border: none;
                     margin: 0;
-                    background-color: #465D4C;
+                    background-color: rgb(120, 143, 126);
 
                     position: fixed;
                     bottom: 0;
+                }
+                @include r576{
+                    height: 60px;
                 }
 
                 &::after{
@@ -76,7 +74,7 @@ body{
                         display: flex;
                         justify-content: space-around;
                         align-items: center;
-                        padding: 0;
+                        padding: 3px 0 0;
                         height: 100%;
                     }
 
@@ -93,12 +91,17 @@ body{
                         }
 
                         @include r768{
-                            width: 40px;
-                            height: 40px;
-                            margin: 0;                            
+                            width: 60px;
+                            height: 60px;
+                            margin: 0;
+                            font-size: 12px;                          
                             
-                            background-color: #fff;
-                        }                    
+                            // background-color: #fff;
+                        }
+                        @include r576{
+                            width: 45px;
+                            height: 45px;
+                        }                 
                         
                         &:hover{
                             font-size: 31px;
@@ -110,12 +113,49 @@ body{
                             }
                             @include r768{
                                 font-size: 12px;
+                                font-weight: normal;
                             }
                         }
 
                         >a{
                             text-decoration: none;
                             color: #465D4C;
+                            
+                            @include r768{
+                                display: flex;
+                                flex-direction: column;
+                                
+                                color: #fff;
+                            }
+                            >span.computer{
+                                @include r768{
+                                    display: none;
+                                }
+                            }
+                            >span.rwd{
+                                display: none;
+                                font-size: 14px;
+                                font-weight: bold;
+                                @include r768{
+                                    display: block;
+                                }
+                            }
+
+                            >i{
+                                display: none;
+                                margin: 5px;
+                                font-size: 24px;
+
+                                @include r768{
+                                    display: block;
+                                    margin: 5px;
+                                }
+                                @include r576{
+                                    display: block;
+                                    margin: 0px;
+                                }
+                                
+                            }
                         }
                     }
                     li.-on{
@@ -126,8 +166,20 @@ body{
                             right: 0;
                             left: 0;
                             bottom: 0;
-                            border-bottom: 1px solid #465D4C;                          
+                            border-bottom: 1px solid #465D4C;
+                            
+                            @include r768{
+                                display: none;
+                                
+                            }
+                            
 
+                        }
+                        >a{
+                            @include r768{
+                                color: #465D4C;
+                                
+                            }
                         }
                     }
                 }
@@ -144,15 +196,19 @@ body{
                 
 
                 form{
-                    width: $formWidth + px;
+                    width: 100%;
+                    max-width: $formWidth + px;
                     margin: 0 auto;
 
                     @include r1200{
-                        width: 500px;
+                        max-width: 500px;
                     }
                     @include r768{
-                        width: 315px;
+                        max-width: 360px;
                         font-size: 20px;
+                    }
+                    @include r576{
+                        max-width: 315px;
                     }
 
                     input.-error{
@@ -171,15 +227,24 @@ body{
                             label{
                                 font-size: $fzp;
                                 color: #465D4C;
+
+                                @include r576{
+                                    font-size: 20px;
+                                }
                             }
                             span{
                                 font-size: $fzSmall;
                                 align-self: flex-end;
                                 color: #aaa;
+
+                                @include r576{
+                                    font-size: 12px;
+                                } 
+                                
                             }
                             span.email, span.phone, span.name, span.address, span.btn_pwd{
                                 
-                                cursor: pointer;                        
+                                cursor: pointer;
 
                                 &:hover{
                                     font-weight: bold;
@@ -197,6 +262,10 @@ body{
                             border-bottom: 1px solid #465D4C;
                             font-size: $fzp;
                             background-color: rgba(0,0,0,0);
+
+                            @include r576{
+                                font-size: 20px;
+                            }
                             
                         }
                         #changePassword{
@@ -235,7 +304,20 @@ body{
                                 width: 100px;
                                 height: 40px;
                                 line-height: 40px;
+                                font-size: 20px;
                             }
+
+                            @include r576{
+                                
+                                font-size: 18px;
+                            }
+
+                            @include r360{
+                                width: 75px;
+                                height: 30px;
+                                line-height: 30px;
+                                font-size: 16px;
+                            } 
                         }
 
                         
@@ -245,10 +327,5 @@ body{
             
         }
     }
-
-    footer{
-        // width: $containerWidth + px;
-        height: 180px;
-        background-color: #FFFAF4;
-    }
+    
 }
