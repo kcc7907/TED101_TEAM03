@@ -1,50 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
 @import './_variable.scss';
-
-$c_background : #FFFAF4;
-$c_strong_blue :#5f9ea0;
-$c_strong_green : #465d4c;
-$c_secondary_blue : #577c8a;
-$c_secondary_red : #865454;
-$c_font_strong : #54383b;
-$c_font_middle : #787878;
-$c_font_light : #bda79e;
-$c_footer :#CAC3BB;
 
 header.common {
     * {
         box-sizing: border-box;
-        font-size: $p;
+        font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;;
     }
-    box-sizing: border-box;
     position: relative;
-    height: 80px;
+    height: 60px;
     padding: 10px 0;
+    img{
+        max-height: 100%;
+    }
     a {
         text-decoration: none;
-        // pointer-events: none;
-    }
-    img {
-        max-height: 100%;
     }
     .logo {
         height: 60px;
     }
     nav {
         position: fixed;
-        right: 0;
-        text-align: right;
+        right: 3%;
+        text-align: center;
         display: none;
         a {
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 15px;
             color: $c_font_strong;
-            font-size: $h2;
+            font-size: 20px;
         }
     }
     .icon {
         position: absolute;
-        right: 2%;
+        right: 3%;
         top: 50%;
         transform: translateY(-50%);
         display: flex;
@@ -93,14 +80,14 @@ header.common {
 @include rwd(360){
     header.common{
         nav a{
-            font-size: 2*$fs;
+            font-size: 20px;
         }
     }
 }
 @include rwd(576){
     header.common{
         nav a{
-            font-size: 3*$fs;
+            font-size: 21px;
         }
     }
 }
@@ -108,23 +95,23 @@ header.common {
     header.common{
         display: flex;
         justify-content: center;
-        height: 100px;
+        height: 85px;
         .logo{
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            height: 100px;
+            height: 85px;
         }
         nav {
-            // display: block !important;
             position: static;
             display: flex !important;
             width: 100vw;
             text-align: center;
             align-items: center;
             a{
-                font-size: 3*$fs;
+                font-size: 21px;
                 display: inline-block;
+                margin-bottom: 0px;
             }
             .nav2{
                 text-align: left;
@@ -134,6 +121,9 @@ header.common {
                 a:nth-child(2){
                     margin-left: 15px;
                 }
+                a:nth-child(1){
+                    margin-left: 5vw;
+                }
                 &:before{
                     content: '';
                     display: block;
@@ -141,7 +131,7 @@ header.common {
                     height: 2px;
                     background: #CAC3BB;
                     position: absolute;
-                    top: -10px;
+                    top: -15px;
                     left: 10%;
                 }
                 &::after{
@@ -151,7 +141,7 @@ header.common {
                     height: 2px;
                     background: #CAC3BB;
                     position: absolute;
-                    bottom: -10px;
+                    bottom: -15px;
                     right: 10%;
                 }
             }
@@ -163,6 +153,7 @@ header.common {
                 box-sizing: border-box;
                 a:nth-child(2){
                     margin-left: 15px;
+                    margin-right: 5vw;
                 }
                 &:before{
                     content: '';
@@ -171,7 +162,7 @@ header.common {
                     height: 2px;
                     background: #CAC3BB;
                     position: absolute;
-                    top: -10px;
+                    top: -15px;
                     left: 10%;
                 }
                 &::after{
@@ -181,12 +172,13 @@ header.common {
                     height: 2px;
                     background: #CAC3BB;
                     position: absolute;
-                    bottom: -10px;
+                    bottom: -15px;
                     right: 10%;
                 }
             }
         }
         .icon{
+            right: 5%;
             .ham{
                 display: none;
             }
@@ -195,19 +187,64 @@ header.common {
 }
 @include rwd(992){
     header.common{
-        nav a{
-            font-size: 4*$fs;
+        height: 115px;
+        .logo{
+        height: 115px;
+        }
+        nav {
+            a{
+            font-size: 23px;
+            }
+            .nav2{
+                padding-left:12vw;
+            }
+            .nav1{
+                padding-right:12vw;
+            }
         }
     }
 }
 @include rwd(1200){
     header.common{
-        height: 160px;
-        nav a{
-            font-size: 4*$fs;
+    height: 140px;
+        .logo{
+        height: 140px;
         }
+        nav a{
+            font-size: 23px;
+        }
+    }
+}
+@include rwd(1500){
+    header.common{
+        nav a{
+            font-size: 25px;
+        }
+        .icon{
+            right: 8%;
+            a img{
+                max-height: none;
+                height: 25px;
+            }
+        }
+    }
+}
+@include rwd(1700){
+    header.common{
+    height: 160px;
         .logo{
         height: 160px;
-    }
+        }
+        nav a{
+            font-size:25px;
+        }
+        nav {
+            .nav2{
+                padding-left:15vw;
+            }
+            .nav1{
+                padding-right:15vw;
+            }
+        }
     }
 }
