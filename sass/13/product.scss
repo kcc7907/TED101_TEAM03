@@ -1,0 +1,122 @@
+body{
+    background-color: #fffaf4;
+}
+div.sam{
+    div.banner{
+        width:73%;
+        margin:0 auto;
+        border:1px solid pink;
+        font-size:0;
+        position: relative;
+
+        img.bannerImg{
+            width:100%;
+        }
+        h2.bannerWord01{
+            font-size:30px;
+            position: absolute;
+            left:30%;
+            top:40%;
+            font-weight: 300;
+        }
+        h2.bannerWord02{
+            font-size:30px;
+            position: absolute;
+            left:55%;
+            bottom:30%;
+            font-weight: 300;
+        }
+    }
+    div.selectBar{
+        // border:1px solid maroon;
+        width:84%;
+        margin:0 auto;
+        font-size: 0;
+        &::after{
+            content:'';
+            display:block;
+            width:100%;
+            margin:0 auto;
+            border:1px solid #BDA79E;
+        }
+
+        button.iconButton{
+            width: 200px;
+            height: 75px;
+            background-color:#fffaf4 ;
+            border:1px solid #54383b;
+            border-radius: 15px;
+            margin-top:80px;
+            margin-bottom:80px;
+            margin-left:26px;
+            position: relative;
+
+            img.icon1{
+                width:50px;
+                height:40px;
+                border:1px solid red;
+                vertical-align: bottom;
+            }
+            p.iconWord{
+                font-size:30px;
+                display:inline-block;
+                margin-left:10px;
+                border:1px solid red;
+            }
+            img.icon2{
+                width:70px;
+                height:40px;
+                border:1px solid red;
+                vertical-align: bottom;
+            }
+            img.icon3{
+                width:70px;
+                height:40px;
+                border:1px solid red;
+                vertical-align: bottom;
+            }
+            img.icon4{
+                width:70px;
+                height:40px;
+                border:1px solid red;
+                vertical-align: bottom;
+            }
+            img.icon5{
+                width:70px;
+                height:40px;
+                border:1px solid red;
+                vertical-align: bottom;
+            }
+            img.icon6{
+                width:70px;
+                height:40px;
+                border:1px solid red;
+                vertical-align: bottom;
+            }
+        }
+    }
+    div.productBox{
+        div.product{
+            border:1px solid blue;
+            width: 500px;
+            p.productWord01{
+                font-size: 30px;
+                display:inline-block;
+            }
+            p.productWord02{
+                font-size: 30px;
+                display:inline-block;
+                text-align: right;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+}
