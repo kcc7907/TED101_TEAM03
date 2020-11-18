@@ -10,7 +10,8 @@ $(document).ready(function(){
         let myself = e.target.className;
         if(myself == "btn_pwd"){   //修改密碼
             $('#changePassword input').attr({value:''}); //初值為空字串
-            $('#changePassword').css({display:'flex'}).slideDown(); //顯示修改密碼欄位
+            $('#changePassword').css({display:'flex'}); //顯示修改密碼欄位
+            // $('#changePassword').slideDown(300).css({display:'flex'}); //顯示修改密碼欄位
 
             $('#password').hide();         
 
@@ -133,7 +134,7 @@ $(document).ready(function(){
                 if(!(password[i].classList.contains('-error'))){        
                     
                     if(!(changePassword.classList.contains('-er'))){    //內外層皆無錯誤樣式
-                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
+                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>');
                         $('#changePassword').addClass('-er');
                     }
                     password[i].classList.add("-error");
@@ -141,7 +142,7 @@ $(document).ready(function(){
                 }else{                                                  
 
                     if(!(changePassword.classList.contains('-er'))){    //外層無錯誤樣式
-                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
+                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>');
                         $('#changePassword').addClass('-er');
                     }
                     
@@ -203,7 +204,8 @@ $(document).ready(function(){
     let memberInfo = document.getElementById('memberInfo');
     memberInfo.addEventListener('reset', function(){
 
-        $('form>div>div>span.warn').remove();                //移除警示鈕
+        $('form>div>div>span.warn').remove();                   //移除警示字串
+        $('#changePassword').removeClass('-er');                //移除.-er
         $('form input.-error').removeClass('-error');           //移除.-error
         $('form>div>div>span:hidden').show();                   //顯示修改按鈕
         $('#changePassword input').attr({value:'********'});    //密碼初值不為空字串
