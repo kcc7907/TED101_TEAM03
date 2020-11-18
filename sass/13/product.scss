@@ -5,6 +5,9 @@ div.sam{
     *{
         box-sizing: border-box;
     }
+    img{
+        width: 100%;
+    }
     div.banner{
         width:73%;
         margin:0 auto;
@@ -41,10 +44,10 @@ div.sam{
             width:100%;
             margin:0 auto;
             border:1px solid #BDA79E;
+            margin-bottom:80px;
         }
-
         button.iconButton{
-            width: 200px;
+            width: 12%;
             height: 75px;
             background-color:#fffaf4 ;
             border:1px solid #54383b;
@@ -53,7 +56,7 @@ div.sam{
             margin-bottom:80px;
             margin-left:26px;
             position: relative;
-
+            cursor: pointer;
             img.icon1{
                 width:50px;
                 height:40px;
@@ -85,13 +88,13 @@ div.sam{
                 vertical-align: bottom;
             }
             img.icon5{
-                width:70px;
+                width:50px;
                 height:40px;
                 border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon6{
-                width:70px;
+                width:50px;
                 height:40px;
                 border:1px solid red;
                 vertical-align: bottom;
@@ -105,15 +108,17 @@ div.sam{
         flex-wrap: wrap;
         justify-content: space-between;
         div.product{
+            overflow: hidden;
             border:1px solid blue;
-            width: 500px;
+            width: 31%;
             position: relative;
             margin-bottom:60px;
             p.productWord01{
-                font-size: 30px;
+                font-size: 40px;
                 display:inline-block;
                 margin-left:35px;
-                width:30%;
+                width:35%;
+                margin-top: 15px;
             }
             p.productWord02{
                 font-size: 30px;
@@ -121,7 +126,7 @@ div.sam{
                 border:1px solid red;
                 position: absolute;
                 right:0;
-                
+                margin-top: 15px;
             }
             p.productWord03{
                 font-size: 24px;
@@ -138,6 +143,30 @@ div.sam{
     }
     h1.orderTitle{
         font-size:40px;
+        margin:40px 0px 40px 150px;
+    }
+    div.orderBox{
+        width: 84%;
+        margin:0 auto;
+        display:flex;
+        justify-content: space-between;
+        div.orderCase{
+            overflow: hidden;
+            border:1px solid purple;
+            width: 31%;
+            position: relative;
+            margin-bottom:60px;
+            p.orderTitle{
+                font-size: 30px;
+                margin-top: 15px;
+            }
+        }
+    }
+    img#qqq{
+        width: 1500px;
+        height: 1200px;
+        margin: 0 auto;
+        border:1px solid red;
     }
 
 
@@ -148,4 +177,12 @@ div.sam{
 
 
 
+
+
+
+
+
+
 }
+
+
