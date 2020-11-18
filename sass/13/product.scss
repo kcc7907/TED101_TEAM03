@@ -2,6 +2,9 @@ body{
     background-color: #fffaf4;
 }
 div.sam{
+    *{
+        box-sizing: border-box;
+    }
     div.banner{
         width:73%;
         margin:0 auto;
@@ -96,19 +99,45 @@ div.sam{
         }
     }
     div.productBox{
+        width: 84%;
+        margin:0 auto;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         div.product{
             border:1px solid blue;
             width: 500px;
+            position: relative;
+            margin-bottom:60px;
             p.productWord01{
                 font-size: 30px;
                 display:inline-block;
+                margin-left:35px;
+                width:30%;
             }
             p.productWord02{
                 font-size: 30px;
                 display:inline-block;
-                text-align: right;
+                border:1px solid red;
+                position: absolute;
+                right:0;
+                
+            }
+            p.productWord03{
+                font-size: 24px;
+                margin-top:15px;
+                margin-left:35px;
             }
         }
+    }
+    span.line{
+        width:84%;
+        margin:0 auto;
+        display:block;
+        border:1px solid #BDA79E;
+    }
+    h1.orderTitle{
+        font-size:40px;
     }
 
 
