@@ -195,86 +195,303 @@ body{
                 font-size: $fzp;
                 font-weight: lighter;
 
-                table#order{
+                //每筆訂單
+                >.table{
                     width: 1000px;
                     margin: 0 auto;
-                    border: 1px solid #465D4C;
+                    // border: 1px solid #465D4C;
                     color: #465D4C;
 
                     @include r1440{
                         width: 800px;
+                        font-size: 22px;
                     }
                     @include r1200{
                         width: 650px;
-                        font-size: 20px;
+                        font-size: 18px;
+                    }
+                    
+                    @include r992{
+                        display: flex;
+                        width: 470px;
+                        margin-bottom: 50px;
                     }
 
-                    tr{
-                        border: 1px solid #465D4C;
+                    @include r576{                        
+                        width: 315px;
+                    }
 
-                        >th{
-                            border: 1px solid #465D4C;
-                            height: 40px;
-                            padding: 40px 20px;
+                    &:nth-child(n + 2){
+
+                        >ul.title{
+                            display: none;
+
+                            @include r992{
+                                display: flex;
+                            }
+                            
+                        }
+                    }
+                    
+                    //訂單標頭
+                    >ul.title{
+                        display: flex;
+                        justify-content: space-around;
+                        height: 80px;
+                        background-color: #465D4C;
+
+                        @include r992{
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 30%;
+                            height: auto;
+                        }
+
+                        >li{
+                            width: 25%;
+                            line-height: 80px;
+                            text-align: center;
+                            vertical-align: middle;
                             font-weight: bold;
                             color: #fff;
-                            background-color: #465D4C;
 
-                            @include r1200{
-                                height: 30px;
-                                padding: 30px 20px;
-                            }
-
-                            &:nth-child(3){
-                                width: 150px;
-
-                                @include r1200{
-                                    width: 100px;
-                                }
+                            @include r992{
+                                width: 100%;
+                                // flex-grow: 1;
+                                // line-height: 106.36px;    //之後用js改變行高置中
                             }
                         }
-                        >th + th{
-                            border-left: 2px solid #fff;
+                        
+                        //標頭格線
+                        >li.name, >li.count, >li.price{
+                            border-right: 1px solid #FFFAF4;
+                            border-left: 1px solid #FFFAF4;
+
+                            @include r992{
+                                border-right: none;
+                                border-left: none;
+                                border-top: 1px solid #FFFAF4;
+                                border-bottom: 1px solid #FFFAF4;
+
+                            }
                         }
-                        >td{
-                            border: 1px solid #465D4C;
+                                                
+                        >li.primary{
+                            border-right: 1px solid #FFFAF4;
+                            
+                            @include r992{
+                                border-right: none;
+                                border-bottom: 1px solid #FFFAF4;
+                                line-height: 121px;
+                            }
+                        }
+
+                        >.name{
+                            
+                            @include r992{
+
+                                height: 97.5px;  //js抓高度
+                                line-height: 97.5px;
+                                
+                            }
+                        }
+
+                        >.count{
+                            @include r992{
+                                display: none;
+                                
+                            }
+                        }
+                        
+                        >li.status{
+                            border-left: 1px solid #FFFAF4;
+
+                            @include r992{
+                                border-left: none;
+                                border-top: 1px solid #FFFAF4;
+                            }
+                        }
+                        
+                    }
+                    
+                    //訂單實際內容
+                    >ul.item{
+                        border-right: 1px solid #465D4C;
+                        display: flex;
+                        justify-content: space-around;
+
+                        @include r992{
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            
+                            width: 70%;
+                        }
+
+                        >li{
+                            border-top: 0;                               
+                            border-right: 0;
+                            border-bottom: 1px solid #465D4C;
+                            border-left: 1px solid #465D4C;
+                            width: 20%;
+                            padding: 10px;
                             text-align: center;
-                            padding-top: 10px;
+                            
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            vertical-align: middle;
+                            
+
+                            @include r992{
+                                
+                                width: 100%;
+                            }
+
+                            >p{
+                                margin: 15px auto;
+                            }
 
                             >button{
-                                margin: 15px auto;
+                                margin:0 auto 15px;
                                 padding: 6px;
+                                width: 110px;
                                 font-size: 24px;
                                 background-color: rgba(0, 0, 0, 0);
                                 outline: none;
                                 border: 1px solid #465D4C;
                                 color: #465D4C;
                                 cursor: pointer;
-
+                                
                                 @include r1200{
-                                    font-size: 20px;
+                                    width: 90px;
+                                    font-size: 18px;
                                 }
 
                                 &:hover{
                                     background-color: #465D4C;
                                     color: #fff;
                                 }
+                                
                             }
                             >ol{
                                 
                                 >li{
-                                    line-height: 1.6;
                                     padding: 10px;
                                 }
-
                             }
                         }
-                        .primary, .price, .status{
-                            vertical-align: middle;
+
+                        >li.primary{
+                            
+                            @include r992{
+                                border-top: 1px solid #465D4C;
+                            }
                         }
 
+                        >li.count{
+                            @include r992{
+                                display: none;
+                            }                            
+                        }
+
+                        >.price{
+                            @include r992{
+                                height: 82px;
+                                
+                            }
+                        }
+
+                        >.status{
+                            @include r992{
+                                height: 81px;
+                                
+                            }
+                        }
                     }
+
+                    
                 }
+                // table#order{
+                //     width: 1000px;
+                //     margin: 0 auto;
+                //     border: 1px solid #465D4C;
+                //     color: #465D4C;
+
+                //     @include r1440{
+                //         width: 800px;
+                //     }
+                //     @include r1200{
+                //         width: 650px;
+                //         font-size: 20px;
+                //     }
+                    
+
+                //     tr{
+                //         border: 1px solid #465D4C;
+
+                //         >th{
+                //             border: 1px solid #465D4C;
+                //             height: 40px;
+                //             padding: 40px 20px;
+                //             font-weight: bold;
+                //             color: #fff;
+                //             background-color: #465D4C;
+
+                //             @include r1200{
+                //                 height: 30px;
+                //                 padding: 30px 20px;
+                //             }
+
+                //             &:nth-child(3){
+                //                 width: 150px;
+
+                //                 @include r1200{
+                //                     width: 100px;
+                //                 }
+                //             }
+                //         }
+                //         >th + th{
+                //             border-left: 2px solid #fff;
+                //         }
+                //         >td{
+                //             border: 1px solid #465D4C;
+                //             text-align: center;
+                //             padding-top: 10px;
+
+                //             >button{
+                //                 margin: 15px auto;
+                //                 padding: 6px;
+                //                 font-size: 24px;
+                //                 background-color: rgba(0, 0, 0, 0);
+                //                 outline: none;
+                //                 border: 1px solid #465D4C;
+                //                 color: #465D4C;
+                //                 cursor: pointer;
+
+                //                 @include r1200{
+                //                     font-size: 20px;
+                //                 }
+
+                //                 &:hover{
+                //                     background-color: #465D4C;
+                //                     color: #fff;
+                //                 }
+                //             }
+                //             >ol{
+                                
+                //                 >li{
+                //                     line-height: 1.6;
+                //                     padding: 10px;
+                //                 }
+
+                //             }
+                //         }
+                //         .primary, .price, .status{
+                //             vertical-align: middle;
+                //         }
+
+                //     }
+                // }
                 #page{
                     width: 100%;
 
