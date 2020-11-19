@@ -1,8 +1,15 @@
 @import url("../../font/font.css");
 
+$titleFont1 : 30px;
+$titleFont2 : 15px;
+$titleFont3 : 14px;
+$contentFont: 24px;
+$detailFont: 16px;
+$lineHeight: 40px;
+
 div.JH{
     nav.topNav{
-        ul{
+        div{
             margin: auto;
             // border: 1px solid red;
             font-size: 0;
@@ -19,12 +26,13 @@ div.JH{
                 bottom: 0;
                 left: 0;
             }
-            li{
+            > a {
+                h1{
                 font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
                 display: inline-block;
                 margin: 0 20px;
                 padding: 0 0 10px;
-                font-size: 30px;
+                font-size: $titleFont;
                 color: #BDA79C;
                 position: relative;
                 &::before{
@@ -45,13 +53,14 @@ div.JH{
                         animation: navHover .5s both;
                     }
                 }
-                &:last-child{
-                    color: #865454;
-                }
-                &:last-child::before{
-                    width: 100%;
-                }
             }
+            &:last-child h1{
+                color: #865454;
+            }
+            &:last-child h1::before{
+                width: 100%;
+            }
+        }
         }
     }
     footer{

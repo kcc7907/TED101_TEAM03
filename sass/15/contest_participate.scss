@@ -1,10 +1,7 @@
 @import '../../lib/header/header.scss';
 @import './contest_nav_footer';
 
-$titleFont : 30;
-$contentFont: 24;
-$detailFont: 16;
-$lineHeight: 40;
+
 
 
 // TODO:修改select跟輸入的文字大小
@@ -61,7 +58,7 @@ div.JH{
                 display: inline-block;
                 text-align: center;
                 line-height: 100px;
-                font-size: $detailFont + px;
+                font-size: $detailFont;
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
@@ -76,7 +73,7 @@ div.JH{
         form{
             margin: 20px 0 70px;
             padding: 0 30px;
-            font-size: $contentFont + px;
+            font-size: $contentFont;
             label.fileUpload{
                 display: inline-block;
                 padding: 10px 15px;
@@ -91,7 +88,7 @@ div.JH{
                 display: none;
             }
             label.fileUpload{
-                font-size: $detailFont + px;
+                font-size: $detailFont;
             }
             span{
                 display: inline-block;
@@ -103,7 +100,7 @@ div.JH{
                 border: 1px solid;
                 padding: 5px 20px;
                 border-radius: 30px;
-                font-size: $detailFont + px;
+                font-size: $detailFont;
                 &:hover{
                     cursor: pointer;
                 }
@@ -133,8 +130,8 @@ div.JH{
                 }
                 p{
                     text-align: left;
-                    font-size: $detailFont + px;
-                    line-height: $lineHeight +px;
+                    font-size: $detailFont;
+                    line-height: $lineHeight;
                 }
             }
             input{
@@ -203,10 +200,10 @@ div.JH{
                 textarea#fConcept{
                     resize: none;
                     margin-bottom: 10px;
-                    font-size: $contentFont + px;
+                    font-size: $contentFont;
                 }
                 #fTYPE, #fName{
-                    font-size: $detailFont + px;
+                    font-size: $detailFont;
                 }
                 > div{
                     display: flex;
