@@ -7,21 +7,21 @@ div.sam_pi{
         width: 90%;
         margin:0 auto;
         height: 1500px;
-        // border:1px solid red;
+        border:1px solid red;
         display:flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         div.product{
             width:49%;
-            // max-height: 70%;
-            // border:1px solid rgb(72, 177, 107);
+            max-height: 70%;
+            border:1px solid rgb(72, 177, 107);
             overflow: hidden;
         }
         div.smallimg{
             width:49%;
-            // max-height: 30%;
-            // border:1px solid rgb(207, 205, 55);
+            max-height: 30%;
+            border:1px solid rgb(207, 205, 55);
             overflow: hidden;
         }
         div.title{
