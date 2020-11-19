@@ -1,0 +1,65 @@
+div.sam_pi{
+    img{
+        width:100%;
+        box-sizing: border-box;
+    }
+    div.productInnerBox{
+        width: 90%;
+        margin:0 auto;
+        height: 1500px;
+        // border:1px solid red;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        div.product{
+            width:49%;
+            // max-height: 70%;
+            // border:1px solid rgb(72, 177, 107);
+            overflow: hidden;
+        }
+        div.smallimg{
+            width:49%;
+            // max-height: 30%;
+            // border:1px solid rgb(207, 205, 55);
+            overflow: hidden;
+        }
+        div.title{
+            width: 49%;
+            // max-height: 30%;
+            // border:1px solid rgb(95, 112, 184);
+        }
+        div.material{
+            width: 49%;
+            // max-height: 30%;
+            // border:1px solid rgb(211, 140, 140);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
