@@ -1,0 +1,158 @@
+.km{
+
+/* 大背景 */
+.bigbox{
+    width: 100%;
+    background-color:#FFFAF4;
+
+}
+
+/* 內文 */
+.contain{
+    width: 1200px;
+}
+
+/* 大標題 */
+p.title{
+    font-size: 40px;
+    color: #865454;
+    text-align: center;
+}
+
+/* 篩選鈕 */
+.list{
+    width: auto;
+    background-color: #FFF8F5;
+
+}
+
+  ul.nav_list > li{
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  ul.nav_list > li > a{
+    text-decoration: none;
+    border: 1px solid #BDA79E;
+    padding: 5px 10px;
+    margin: 0 10px;
+    color: #BDA79E;
+    font-size: 24px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 0px  #BDA79E;
+  }
+  ul.nav_list > li > a:hover{
+    background-color:#BDA79E;
+    color: white;
+  }
+
+  /* 大標題 */
+  .title2{
+    margin-top: 30px;
+    width: 1200px;
+    background-color: #865454;
+    color: white;
+    font-size: 30px;
+    padding: 1px 30px;
+  }
+
+  /* 第二標題 */
+.title3{
+    font-size: 30px;
+    color: #865454;
+    padding: 0 30px;
+}
+
+/* 線 */
+.line{
+    /* display: inline-block; */
+    width: 100%;
+    border-top: solid #BDA79E 1px;
+}
+
+  /* 第三標題 */
+  .title4{
+    font-size: 24px;
+    color: #865454;
+    padding: 0px 90px;
+}
+
+  /* 第四標題 */
+  .title5{
+    font-size: 24px;
+    color: #BDA79E;
+    padding: 0px 120px;
+}
+
+/* 小線 */
+.line2{
+    /* display: inline-block; */
+    width: 100%;
+    border-top: solid #BDA79E 1px;
+}
+
+/* 問題表單 */
+.paper1{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #865454;
+}
+
+.paper2{
+    width: 600px;
+    background-color: #BDA79C;
+    padding: 50px 60px;
+    /* opacity: .1; */
+}
+
+
+
+/* 輸入 */
+label{
+    display: inline-block;
+    border-bottom: solid#BDA79E 1px;
+  }
+  input {
+    display: block;
+    font-size: 30px;
+    outline: none;
+  }
+
+  /* 附件 */
+.load{
+    margin-top: 30px;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.push{
+    color: #865454;
+    font-size: 30px;
+}
+
+
+/* 送出鈕 */
+.button{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.push{
+    color: #865454;
+    font-size: 30px;
+}
+
+/* 框 */
+/* .outside{
+    border: solid#865454 1px;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+} */
+
+}
