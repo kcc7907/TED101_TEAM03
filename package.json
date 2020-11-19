@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "tophp": "gulp tophp",
+    "phpServer": "php -S localhost:8787",
+    "clear": "gulp clear",
     "browserSync": "gulp default",
     "toCss": "gulp toCss",
     "toFtp": "gulp toFtp"

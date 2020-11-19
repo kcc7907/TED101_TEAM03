@@ -79,7 +79,16 @@ exports.toFtp = cb => {
         // '../TED101_TEAM03/img/**',
     ];
     src(globs, { base: '.', buffer: false })
-    .pipe(conn.newer('/05.專題程式/TED101_G3/'))
-    .pipe(conn.dest('/05.專題程式/TED101_G3/'))
+        .pipe(conn.newer('/05.專題程式/TED101_G3/'))
+        .pipe(conn.dest('/05.專題程式/TED101_G3/'))
     cb();
 };
+
+//轉成php
+exports.tophp = cb => {
+    src(['frontend/**', 'backend/**'])
+        .pipe(rename({
+            extname: '.php'
+        })).pipe(dest('dist/'));
+    cb()
+}
