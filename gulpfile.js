@@ -9,6 +9,7 @@ const reload = browserSync.reload;
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const clean = require('gulp-clean');
+const ftp = require('vinyl-ftp');
 
 //增加前綴
 exports.prefix = cb => {
@@ -57,3 +58,28 @@ exports.clear = cb => {
         .pipe(clean());
     cb()
 }
+
+//upload to ftp
+exports.toFtp = cb => {
+    var conn = ftp.create({
+        host: '140.115.236.71',
+        user: '!ted101@#',
+        password: '@123???#',
+        parallel: 10,
+    });
+    var globs = [
+        '../TED101_TEAM03/backend/**',
+        '../TED101_TEAM03/css/**',
+        '../TED101_TEAM03/font/**',
+        '../TED101_TEAM03/frontend/**',
+        '../TED101_TEAM03/index.html',
+        '../TED101_TEAM03/js/**',
+        '../TED101_TEAM03/lib/**',
+        '../TED101_TEAM03/php/**',
+        // '../TED101_TEAM03/img/**',
+    ];
+    src(globs, { base: '.', buffer: false })
+    .pipe(conn.newer('/05.專題程式/TED101_G3/'))
+    .pipe(conn.dest('/05.專題程式/TED101_G3/'))
+    cb();
+};

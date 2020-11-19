@@ -1,3 +1,6 @@
+//字體引入
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap');
+
 //color
 $c_background : #FFFAF4;
 $c_strong_blue :#5f9ea0;
@@ -29,29 +32,34 @@ $p:12px;
 $pu:8px;
 $lh:30px;
 
-
-@mixin marginAuto($bgc , $fontColor:red){
-    margin: 0 auto;
-    background-color: $bgc;
-    padding: 10px;
-    color: $fontColor;
-};
-
-
- //按鈕
-
-@mixin btns($w , $bgc , $borderColor , $bdr:null){
-    padding:10px $w;
-    background-color: $bgc;
-    cursor: pointer;
-    border: 1px solid $borderColor;
-    text-align: center;
-    border-radius: $bdr;
-    &:hover {
-        background-color: darken($bgc ,5);
-    }
+//scrollBar by miss ho aka national lady god
+@mixin  scrollBar($a, $b, $c, $d, $e, $f){
+    &::-webkit-scrollbar              {
+        width: $a + px;
+        background-color: $b;
+         /* 1 */ }
+    // &::-webkit-scrollbar-button       {
+    //      /* 2 */ }
+    &::-webkit-scrollbar-track        {
+        background-color: $c;
+        border-radius: $d + px;
+         /* 3 */ }
+    // &::-webkit-scrollbar-track-piece  {
+    //      /* 4 */ }
+    &::-webkit-scrollbar-thumb        {
+        border-radius: $e + px;
+        background-color: $f; 
+         /* 5 */ }
+    // &::-webkit-scrollbar-corner       {
+    //      /* 6 */ }
+    // &::-webkit-resizer{
+    //      /* 7 */ }
+    @content;
 }
 
+//<===    rwd 從小至大    ===>
+
+//rwd區間函式
 @mixin rwd($screenSize) {
     @if $screenSize==360 {
         @media (min-width: 361px) {
@@ -78,72 +86,237 @@ $lh:30px;
             @content;
         }
     }
+    @else if $screenSize==1500 {
+        @media (min-width: 1500px) {
+            @content;
+        }
+    }
+    @else if $screenSize==1700 {
+        @media (min-width: 1700px) {
+            @content;
+        }
+    }
 }
 
-@mixin rwdFontS($screenSize) {
-    @if $screenSize==360 {
-        @media (min-width: 360px) {
-            h1{
-                font-size: 2*$fs;
-            }
-            h2{
-                font-size: 1.5*$fs;
-            }
-            h3{
-                font-size: 1.4*$fs;
-            }
+//標題覆蓋用
+@mixin title() {
+        h1{
+            font-size: 20px !important;
+        }
+        h2{
+            font-size: 16px !important;
+        }
+        h3{
+            font-size: 11px !important;
+        }
+    @media (min-width: 361px) {
+        h1{
+            font-size: 26px !important;
+        }
+        h2{
+            font-size: 18px !important;
+        }
+        h3{
+            font-size: 13px !important;
         }
     }
-    @else if $screenSize==576 {
-        @media (min-width: 576px) {
-            h1{
-                font-size: 3*$fs;
-            }
-            h2{
-                font-size: 2.2*$fs;
-            }
-            h3{
-                font-size: 2*$fs;
-            }
+    @media (min-width: 576px) {
+        h1{
+            font-size: 30px !important;
+        }
+        h2{
+            font-size: 20px !important;
+        }
+        h3{
+            font-size: 15px !important;
         }
     }
-    @else if $screenSize==768 {
-        @media (min-width: 768px) {
-            h1{
-                font-size: 3*$fs;
-            }
-            h2{
-                font-size: 2.2*$fs;
-            }
-            h3{
-                font-size: 2*$fs;
-            }
+    @media (min-width: 768px) {
+        h1{
+            font-size: 32px !important;
+        }
+        h2{
+            font-size: 22px !important;
+        }
+        h3{
+            font-size: 17px !important;
         }
     }
-    @else if $screenSize==992 {
-        @media (min-width: 992px) {
-            h1{
-                font-size: 4*$fs;
-            }
-            h2{
-                font-size: 3*$fs;
-            }
-            h3{
-                font-size: 2.5*$fs;
-            }
+    @media (min-width: 992px) {
+        h1{
+            font-size: 34px !important;
+        }
+        h2{
+            font-size: 24px !important;
+        }
+        h3{
+            font-size: 19px !important;
+        }
+    }
+    @media (min-width: 1200px) {
+        h1{
+            font-size: 36px !important;
+        }
+        h2{
+            font-size: 26px !important;
+        }
+        h3{
+            font-size: 21px !important;
+        }
+    }
+    @media (min-width: 1500px) {
+        h1{
+            font-size: 38px !important;
+        }
+        h2{
+            font-size: 28px !important;
+        }
+        h3{
+            font-size: 23px !important;
+        }
+    }
+    @media (min-width: 1700px) {
+        h1{
+            font-size: 40px !important;
+        }
+        h2{
+            font-size: 30px !important;
+        }
+        h3{
+            font-size: 25px !important;
+        }
+    }
+}
+
+
+// <===    rwd 從大至小    ===>
+
+//rwd區間函式
+@mixin rwdm($screenSize) {
+    @if $screenSize==1700 {
+        @media (max-width: 1700px) {
+            @content;
+        }
+    }
+    @else if $screenSize==1500 {
+        @media (max-width: 1500px) {
+            @content;
         }
     }
     @else if $screenSize==1200 {
-        @media (min-width: 1200px) {
-            h1{
-                font-size: 4*$fs;
-            }
-            h2{
-                font-size: 3*$fs;
-            }
-            h3{
-                font-size: 2.5*$fs;
-            }
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $screenSize==992 {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+    @else if $screenSize==768 {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+    @else if $screenSize==576 {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+    @else if $screenSize==360 {
+        @media (max-width: 360px) {
+            @content;
         }
     }
 }
+
+//標題覆蓋用
+@mixin titlem() {
+        h1{
+            font-size: 40px !important;
+        }
+        h2{
+            font-size: 30px !important;
+        }
+        h3{
+            font-size: 25px !important;
+        }
+    @media (max-width: 1700px) {
+        h1{
+            font-size: 38px !important;
+        }
+        h2{
+            font-size: 28px !important;
+        }
+        h3{
+            font-size: 23px !important;
+        }
+    }
+    @media (max-width: 1500px) {
+        h1{
+            font-size: 36px !important;
+        }
+        h2{
+            font-size: 26px !important;
+        }
+        h3{
+            font-size: 21px !important;
+        }
+    }
+    @media (max-width: 1200px) {
+        h1{
+            font-size: 34px !important;
+        }
+        h2{
+            font-size: 24px !important;
+        }
+        h3{
+            font-size: 19px !important;
+        }
+    }
+    @media (max-width: 992px) {
+        h1{
+            font-size: 32px !important;
+        }
+        h2{
+            font-size: 22px !important;
+        }
+        h3{
+            font-size: 17px !important;
+        }
+    }
+    @media (max-width: 768px) {
+        h1{
+            font-size: 30px !important;
+        }
+        h2{
+            font-size: 20px !important;
+        }
+        h3{
+            font-size: 15px !important;
+        }
+    }
+    @media (max-width: 576px) {
+        h1{
+            font-size: 26px !important;
+        }
+        h2{
+            font-size: 18px !important;
+        }
+        h3{
+            font-size: 13px !important;
+        }
+    }
+    @media (max-width: 360px) {
+        h1{
+            font-size: 20px !important;
+        }
+        h2{
+            font-size: 16px !important;
+        }
+        h3{
+            font-size: 11px !important;
+        }
+    }
+}
+
