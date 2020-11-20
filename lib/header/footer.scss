@@ -1,0 +1,298 @@
+@import './_variable.scss';
+
+$cbg : #FFFAF4;
+$csb :#5f9ea0;
+$csg : #465d4c;
+$csdb : #577c8a;
+$csdr : #865454;
+$cfs : #54383b;
+$cfm : #787878;
+$cfl : #bda79e;
+$cf :#CAC3BB;
+
+footer.libft {
+    *{
+        box-sizing: border-box;
+        // outline: 1px red solid;
+    }
+    width: 100%;
+    height:400px;
+    background-color: $cf;
+    display: flex;
+    flex-wrap: wrap;
+    img{
+        max-width: 100%;
+    }
+    a{
+        text-decoration: none;
+    }
+    .herf{
+        display: flex;
+        width: 50%;
+        height: 300px;
+        .logo{
+            padding: 40px 0 0 150px;
+            width: 50%;
+            img{
+                max-width: none;
+                height: 200px;
+            }
+        }
+        .page{
+            width: 50%;
+            font-family: 'Noto Sans TC Thin', '微軟正黑體', sans-serif;
+            padding:50px;
+            a{
+                display: block;
+                color: $cfm;
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .link{
+        display: flex;
+        width: 50%;
+        height: 300px;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 150px;
+        justify-content: flex-end;
+        .scb{
+            width: 420px;
+            display: flex;
+            flex-direction: column;
+            label{
+                font-size: 30px;
+                font-family: 'Noto Sans TC Thin', '微軟正黑體', sans-serif;
+                color: $cfm;
+            }
+            input{
+                height: 50px;
+                border: none;
+                outline: none;
+                background: none;
+                border-bottom: 1px solid $cfm;
+                padding: 30px 0 0 10px;
+                &::placeholder{
+                    font-family: 'Noto Sans TC Thin', '微軟正黑體', sans-serif;
+                    color: $cbg;
+                    font-size: 15px;
+                }
+            }
+        }
+        .company{
+            width: 420px;
+            display: flex;
+            height: 130px;
+            align-items: center;
+            img{
+                width: 140px;
+                height: 50px;
+            }
+        }
+    }
+    .copy{
+        display: block;
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        text-align: right;
+        padding: 0 150px;
+        p{
+            font-size: 20px;
+            font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+            color: $cfm;
+            border-top: 1px solid $cfm;
+        }
+    }
+
+    //  <===    rwd    ===>
+
+    @include rwdm(1500){
+        .herf .logo img{
+            height: 180px;
+        }
+    }
+
+    @include rwdm(1200){
+        height: 300px;
+        .herf{
+            height: 225px;
+            .logo{
+                padding: 20px 0 0 90px;
+                img{
+                height: 150px;
+                }
+            }
+            .page{
+                padding: 30px;
+                a{
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .link{
+            height: 225px;
+            padding-right: 90px;
+            .scb{
+                width: 360px;
+                label{
+                    font-size: 24px;
+                }
+                input{
+                    height: 40px;
+                    padding: 25px 0 0 9px;
+                    &::placeholder{
+                        font-size: 12px;
+                    }
+                }
+            }
+            .company{
+                width: 360px;
+                height: 90px;
+                img{
+                    width: 120px;
+                    height: 35px;
+                }
+            }
+        }
+        .copy{
+            height: 75px;
+            line-height: 75px;
+            padding: 0 90px;
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+
+    @include rwdm(992){
+        .herf .logo img{
+            height: 120px;
+        }
+    }
+
+    @include rwdm(768){
+        height: 250px;
+        .herf{
+            width: 100%;
+            height: 110px;
+            .logo{
+                padding: 10px 0 0 50px;
+            }
+            .logo img{
+                height: 100px;
+            }
+            .page {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                padding: 10px;
+                a{
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .link{
+            width: 100%;
+            flex-direction: row;
+            height: 110px;
+            padding-right: 0;
+            align-items: center;
+            .scb{
+                width: 50%;
+                padding-left: 70px;
+                label{
+                    font-size: 18px;
+                }
+                input{
+                    height: 30px;
+                    width: 85%;
+                    padding: 8px 0 0 8px;
+                    &::placeholder{
+                        font-size: 12px;
+                    }
+                }
+            }
+            .company{
+                width: 50%;
+                flex-direction: column;
+                justify-content: center;
+                height: 110px;
+                img{
+                    width: 80px;
+                    height: 25px;
+                    margin: 3px;
+                }
+            }
+        }
+        .copy{
+            height: 20px;
+            line-height: 20px;
+            padding: 0 40px;
+            p{
+                font-size: 12px;
+            }
+        }
+    }
+
+    @include rwdm(576){
+        .copy p {
+            font-size: 8px;
+        }
+    }
+
+    @include rwdm(360){
+        height: 200px;
+        .herf{
+            height: 90px;
+            .logo{
+                padding: 10px 0 0 25px;
+            }
+            .logo img{
+                height: 80px;
+            }
+            .page {
+                a{
+                    font-size: 10px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        .link{
+            height: 90px;
+            .scb{
+                padding-left: 40px;
+                label{
+                    font-size: 12px;
+                    margin-bottom: 8px;
+                }
+                input{
+                    height: 15px;
+                    width: 95%;
+                    padding: 4px 0 2px 4px;
+                    &::placeholder{
+                        font-size: 7px;
+                    }
+                }
+            }
+            .company{
+                height: 90px;
+                img{
+                    width: 60px;
+                    height: 20px;
+                }
+            }
+        }
+        .copy{
+            padding: 0 25px;
+            p{
+                font-size: 8px;
+            }
+        }
+    }
+}
