@@ -6,9 +6,99 @@
     margin-right: $mgr;
     border: 1px solid $bc;
     @content;
+    
 }
 
 $f_close: 24px;
+
+@mixin titlem() {
+        h1{
+            font-size: 40px !important;
+        }
+        h2{
+            font-size: 30px !important;
+        }
+        h3{
+            font-size: 25px !important;
+        }
+    @media (max-width: 1700px) {
+        h1{
+            font-size: 38px !important;
+        }
+        h2{
+            font-size: 28px !important;
+        }
+        h3{
+            font-size: 23px !important;
+        }
+    }
+    @media (max-width: 1500px) {
+        h1{
+            font-size: 36px !important;
+        }
+        h2{
+            font-size: 26px !important;
+        }
+        h3{
+            font-size: 21px !important;
+        }
+    }
+    @media (max-width: 1200px) {
+        h1{
+            font-size: 34px !important;
+        }
+        h2{
+            font-size: 24px !important;
+        }
+        h3{
+            font-size: 19px !important;
+        }
+    }
+    @media (max-width: 992px) {
+        h1{
+            font-size: 32px !important;
+        }
+        h2{
+            font-size: 22px !important;
+        }
+        h3{
+            font-size: 17px !important;
+        }
+    }
+    @media (max-width: 768px) {
+        h1{
+            font-size: 30px !important;
+        }
+        h2{
+            font-size: 20px !important;
+        }
+        h3{
+            font-size: 15px !important;
+        }
+    }
+    @media (max-width: 576px) {
+        h1{
+            font-size: 26px !important;
+        }
+        h2{
+            font-size: 18px !important;
+        }
+        h3{
+            font-size: 13px !important;
+        }
+    }
+    @media (max-width: 360px) {
+        h1{
+            font-size: 20px !important;
+        }
+        h2{
+            font-size: 16px !important;
+        }
+        h3{
+            font-size: 11px !important;
+        }
+    }
+}
 
 div#login {
     * {
@@ -17,7 +107,6 @@ div#login {
     }
     margin-top: 50px;
     div.login {
-        @include titlem();
         margin: auto;
         border: 1px solid rgba(0,0,0,0%);
         text-align: center;
@@ -137,4 +226,19 @@ div#login {
 
 }
 
+@include rwdm(576){
+    div#login{
+        div.login{
+            border: 1px solid rgba(0,0,0,0%);
+            width: 300px;
+            height: 300px;
+        }
+        svg{
+            width: 300px;
+            height: 300px;
+        }
+    }
+    
+}
 
+@include titlem();
