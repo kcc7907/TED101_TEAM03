@@ -1,0 +1,58 @@
+@import '../../lib/header/variable';
+
+
+div#login {
+    * {
+        // border: 1px solid blue;
+        color: $csdr;
+    }
+    margin-top: 50px;
+    // div.login {
+    //     position: relative;
+    // }
+    div.login {
+        margin: auto;
+        border: 1px solid red;
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        position: relative;
+        form.login{
+            // border: 1px solid green;
+            margin: auto;
+            margin-top: 150px;
+            width: 250px;
+            text-align: left;
+            label{
+                font-size: $h1;
+                display: block;
+            }
+            input{
+                display: inline-block;
+                width: 100%;
+                font-size: $h1;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid $cfl;
+                margin-bottom: 30px;
+            }
+            label.alive{
+                border: 1px solid red;
+                display: inline-block;
+            } 
+            input.alive{
+                display: none;
+                text-align: left;
+            }
+        }
+        svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    }
+
+}
+
+
