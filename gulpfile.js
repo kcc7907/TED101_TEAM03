@@ -39,7 +39,7 @@ exports.default = function browser() {
         },
         port: 5566
     });
-    watch('./sass/*.scss', exports.toCss).on('change', reload)
+    // watch('./sass/*.scss', exports.toCss).on('change', reload)
 }
 
 //壓縮js
