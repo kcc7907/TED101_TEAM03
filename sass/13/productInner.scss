@@ -1,41 +1,76 @@
+@import "../../lib/header/variable";
+
+body{
+    background-color: #fffaf4;
+}
 div.sam_pi{
     img{
         width:100%;
+    }
+    *{
         box-sizing: border-box;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
     }
-    div.productInnerBox{
-        width: 90%;
+    div.deskTopBox{
+        width:90%;
         margin:0 auto;
-        height: 1500px;
-        border:1px solid red;
         display:flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        div.product{
-            width:49%;
-            max-height: 70%;
-            border:1px solid rgb(72, 177, 107);
-            overflow: hidden;
+        border:1px solid black;
+        div.leftWrap{
+            border:1px solid pink;
+            width:50%;
+            div.lightBox{
+                font-size: 0;
+                border:1px solid brown;
+                img{
+                    width:200px;
+                    height: 200px;
+                }
+            }
         }
-        div.smallimg{
-            width:49%;
-            max-height: 30%;
-            border:1px solid rgb(207, 205, 55);
-            overflow: hidden;
-        }
-        div.title{
-            width: 49%;
-            // max-height: 30%;
-            // border:1px solid rgb(95, 112, 184);
-        }
-        div.material{
-            width: 49%;
-            // max-height: 30%;
-            // border:1px solid rgb(211, 140, 140);
-        }
+        div.rightWrap{
+            border:1px solid blue;
+            width:50%;
+            margin-left:20px;
+            div.material{
+                p{
 
+                }
+                button.wood{
+                    width:100px;
+                    height: 80px;
+                    cursor: pointer;
+                    border:0;
+                    border-radius: 15px;
+                    position: relative;
+                    span.tip{
+                        // visibility: hidden;
+                        position: absolute;
+                        right:-20%;
+                        font-size: 14px;
+                        width:80px;
+                        height: 20px;
+                        background-color: #54383b;
+                        color:rgb(233, 233, 233);
+                        font-family:'Noto Sans TC Light';
+                    }
+                }
+                button.wood1{
+                    background-image: url(../../img/product/material/wood01-10080.jpg);
+                }
+                button.wood2{
+                    background-image: url(../../img/product/material/wood02-10080.jpg);
+                }
+                button.wood3{
+                    background-image: url(../../img/product/material/wood03-10080.jpg);
+                }
+                button.wood4{
+                    background-image: url(../../img/product/material/wood04-10080.jpg);
+                }
+            }
+        }
     }
+
 
 
 
