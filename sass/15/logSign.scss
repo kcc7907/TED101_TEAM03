@@ -1,48 +1,102 @@
 @import '../../lib/header/variable';
 
+@mixin checkbox ($w, $h, $mgr, $bc){
+    width: $w;
+    height: $h;
+    margin-right: $mgr;
+    border: 1px solid $bc;
+    @content;
+}
+
+$f_close: 24px;
 
 div#login {
     * {
-        // border: 1px solid blue;
         color: $csdr;
+        box-sizing: border-box;
     }
     margin-top: 50px;
-    // div.login {
-    //     position: relative;
-    // }
     div.login {
+        @include titlem();
         margin: auto;
-        border: 1px solid red;
+        border: 1px solid rgba(0,0,0,0%);
         text-align: center;
         width: 500px;
         height: 500px;
         position: relative;
+        > h1{
+            margin-top: 100px;
+        }
         form.login{
-            // border: 1px solid green;
             margin: auto;
-            margin-top: 150px;
             width: 250px;
             text-align: left;
-            label{
-                font-size: $h1;
-                display: block;
+            div:first-child{
+                label{
+                    font-size: $h1;
+                    display: block;
+                }
+                input{
+                    display: inline-block;
+                    width: 100%;
+                    font-size: $h1;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid $cfl;
+                    margin-bottom: 30px;
+                }
+                input.alive{
+                    display: none;
+                    text-align: left;
+                    &:checked + label{
+                        background-color: $c_secondary_red;
+                    }
+                    
+                }
+                label.alive{
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: $pu;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                } 
+                label#alivebox{
+                    font-size: $pu;
+                    @include checkbox(12px,12px,12px,$c_secondary_red);
+                }
             }
-            input{
-                display: inline-block;
+            div:last-child{
                 width: 100%;
-                font-size: $h1;
-                border: none;
-                outline: none;
-                border-bottom: 1px solid $cfl;
-                margin-bottom: 30px;
-            }
-            label.alive{
-                border: 1px solid red;
-                display: inline-block;
-            } 
-            input.alive{
-                display: none;
-                text-align: left;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                a,h2,p{
+                    display: inline-block;
+                    border: 1px solid rgba(0,0,0,0%);
+
+                }
+                a{  
+                    border-bottom: 1px solid $csdr;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                p{
+                    margin-bottom: 10px;
+                    text-align: center;
+                    width: 100px;
+                }
+                h2.login{
+                    padding: 40px 15px;
+                    margin: 0 20px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
             }
         }
         svg{
@@ -50,6 +104,34 @@ div#login {
             top: 0;
             left: 0;
             z-index: -1;
+        }
+        div.closebtn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            span{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                font-size: $f_close;
+                text-align: center;
+                line-height: 20px;
+                border: 1px solid ;
+                border-radius: 50%;
+                position: relative;
+                &:hover{
+                    cursor: pointer;
+                    &::after{
+                        content: "取消登入";
+                        display: inline-block;
+                        width: 100px;
+                        font-size: 16px;
+                        position: absolute;
+                        top: 0;
+                        left: 10px;
+                    }
+                }
+            }
         }
     }
 

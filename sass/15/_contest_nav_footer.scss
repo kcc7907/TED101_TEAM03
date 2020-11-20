@@ -7,6 +7,7 @@ $contentFont: 24px;
 $detailFont: 16px;
 $lineHeight: 40px;
 
+
 div.JH{
     nav.topNav{
         div{
@@ -32,7 +33,7 @@ div.JH{
                 display: inline-block;
                 margin: 0 20px;
                 padding: 0 0 10px;
-                font-size: $titleFont;
+                font-size: $titleFont1;
                 color: #BDA79C;
                 position: relative;
                 &::before{
