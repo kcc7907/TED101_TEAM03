@@ -1,3 +1,11 @@
+//通用
+@import '../../lib/header/variable';
+
+//排版設定
+@import 'var';
+@import 'mixin';
+
+
 body{
     background-color: #FFFAF4;
 
@@ -11,6 +19,7 @@ body{
         >.container{
             width: 1200px;
             margin: 0 auto;
+            font-size: 16px;
 
             >.search{
                 display: flex;
@@ -144,7 +153,7 @@ body{
                                 background-color: rgba(189, 167, 156, .9);
                                 color: #F1EADE;
                                 text-align: center;
-                                font-size: 16px;
+                                // font-size: 16px;
                                 
                                 position: absolute;
                                 bottom: 0;
@@ -157,7 +166,7 @@ body{
                             display: flex;
                             flex-direction: column;
                             padding: 5px;
-                            color: #BDA79C;
+                            color: #865454;
 
                             >span{
                                 margin: 5px;
