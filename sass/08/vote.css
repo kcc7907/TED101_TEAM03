@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background-color: #FFFAF4;
+
+}
+
+.jk_wrapper{
+    background-color: #FFFAF4;
+
+}
+
+.jk_wrapper *{
+    box-sizing: border-box;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.search{
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 0;
+}
+
+.search button{
+    border: 1px solid #BDA79C;
+    border-radius: 20px;
+    outline: none;
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+    color: #BDA79C;
+    background-color: rgba(0,0,0,0);
+}
+
+
+.search_input{
+    /* display: flex; */
+    border-bottom: 3px solid #BDA79C;
+    margin-right: 15px;
+    color: #BDA79C;
+}
+
+.search_input input{
+    outline: none;
+    border: none;
+    width: 150px;
+    padding: 5px;
+    background-color: rgba(0,0,0,0);
+    font-size: 16px;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+.main .side{
+    width: 220px;
+}
+
+main{
+    display: flex;
+    flex-flow: wrap;
+    width: 915px;
+}
+
+.votes{
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 90px;
+
+    background-color: #BDA79C;
+    color: #F1EADE;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.votes::after{
+    content: '';
+    border: 1px solid #54383B;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    transform: translate(5px, 5px);
+}
+
+#page{
+    height: 200px;
+}
+
+.visitor{
+    text-align: center;
+    color: #BDA79C;
+
+    position: relative;
+}
+
+.visitor::before{
+    content: '';
+
+    width: 120px;
+    border-bottom: 1px solid #BDA79C;
+
+    position: absolute;
+
+    transform: translate(-65px, -25px) rotate(-50deg);
+}
+
+.visitor::after{
+    content: '';
+
+    width: 100px;
+    border-bottom: 1px solid #BDA79C;
+
+    position: absolute;
+
+    transform: translate(0px, 20px) rotate(-50deg);
+}
+
+main .work{
+    width: 210px;
+    margin: 0 25px 30px 0;
+
+}
+
+main .work:nth-child(4n){
+    margin-right: 0;   
+}
+
+.img{
+    position: relative;
+
+    cursor: pointer;
+}
+
+.get_num{
+    padding: 8px;
+    background-color: rgba(189, 167, 156, .9);
+    color: #F1EADE;
+    text-align: center;
+    font-size: 16px;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+main .work img{
+    width: 100%;
+    vertical-align: top;
+}
+
+main .work p{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    color: #BDA79C;
+}
+
+main .work p span{
+    margin: 5px;
+}
