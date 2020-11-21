@@ -8,6 +8,7 @@ $cfs : #54383b;
 $cfm : #787878;
 $cfl : #bda79e;
 $cf :#CAC3BB;
+
 @mixin para() {
         p{
             font-size: 12px !important;
@@ -73,6 +74,10 @@ $cf :#CAC3BB;
     }
 }
 
+body{
+    background: $cbg;
+}
+
 .kcc_shoppingcat{
     *{
         box-sizing: border-box;
@@ -111,30 +116,90 @@ $cf :#CAC3BB;
     }
     main{
         .left{
+            width: 100%;
             height: 800px;
+            justify-content: center;
+            display: flex;
             .product{
+                width: 80%;
             }
         }
         .list{
-                height: 180px;
-            .flexbox{
+            width: 100%;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            .pick{
+                height: 100%;
+                display: none;
+            }
+            .picbox{
+                height: 70%;
+                width: 100px;
+                position: relative;
+                img{
+                    height: 100px;
+                }
+                .tag{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
+            .discount{
+                height: 30%;
+                display: flex;
+                width: 100px;
+                justify-content: center;
+                align-items: center;
+            }
+            .info{
+                width: 120px;
                 display: flex;
                 flex-direction: column;
-                flex-wrap: wrap;
-                height: 180px;
-                .pick{
-                    height: 100%;
+                justify-content: flex-end;
+                height: 50%;
+                text-align: center;
+                .pricebox{
+                    display: none;
                 }
-                .picbox{
-                    height: 100px;
-                    width: 100px;
-                    position: relative;
-                    .tag{
-                        position: absolute;
-                        right: 0;
-                        top: 0;
+            }
+            .count{
+                height: 50%;
+                width: 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                .totalbox{
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 40px;
+                }
+                .numbox{
+                    width: 120px;
+                    display: flex;
+                    height: 20px;
+                    justify-content: center;
+                    .arrowl{
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .arrowr{
+                        width: 20px;
+                        height: 20px;
+                    }
+                    .num{
+                        width: 20px;
+                    }
+                    img{
+                        width: 20px;
+                        height: 20px;
                     }
                 }
+                
             }
         }
 

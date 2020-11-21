@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="../css/shoppingCart.css">
     <script src="../lib/js/jquery.js"></script>
 </head>
+
 <body>
     <?php include("../lib/header/header_Include.html"); ?>
     <div class="kcc_shoppingcat">
@@ -30,40 +32,53 @@
         </div>
         <div class="all">
             <input class="checkAll" type="checkbox">
-            <button class="delAll"><p>刪除勾選商品</p></button>
+            <button class="delAll">
+                <p>刪除勾選商品</p>
+            </button>
         </div>
         <main>
             <div class="left">
                 <ul class="product">
                     <li class="list">
-                        <div class="flexbox">
-                            <input type="checkbox" class="pick">
-                            <div class="picbox">
-                                <img src="../img/product/bookcase01/bk01-01.jpg" class="pic">
-                                <div class="tag"><p>A</p></div>
-                            </div>
-                            <div class="discout">
-                                <div class="tag"><p>A</p></div>
-                                <p>沙發優惠組</p>
-                            </div>
-                            <div class="info">
-                                <div class="procduct_name">
-                                    <p>商品名商品名商品名</p>
-                                </div>
-                                <div class="material"><p>黑色</p></div>
-                                <div class="pricebox"><p class="dollar">$</p><p class="price">1000</p></div>
-                            </div>
-                            <div class="count">
-                                <div class="totalbox"><p class="dollar">$</p><p class="price_total">1000</p></div>
-                                <div class="numbox">
-                                    <div class="arrowl"><img src="../img/shoppincart/left-G.svg" alt=""></div>
-                                    <input type="number" class="num" value="1">
-                                    <div class="arrowr"><img src="../img/shoppincart/right-G.svg" alt=""></div>
-                                </div>
-                                <img src="../img/shoppincart/trash.svg" alt="" class="trash">
+                        <input type="checkbox" class="pick">
+                        <div class="picbox">
+                            <img src="../img/product/bookcase01/bk01-01.jpg" class="pic">
+                            <div class="tag">
+                                <p>A</p>
                             </div>
                         </div>
+                        <div class="discount">
+                            <div class="tag">
+                                <p>A</p>
+                            </div>
+                            <p>沙發優惠組</p>
+                        </div>
+                        <div class="info">
+                            <div class="procduct_name">
+                                <p>商品名商品名商品名</p>
+                            </div>
+                            <div class="material">
+                                <p>黑色</p>
+                            </div>
+                            <div class="pricebox">
+                                <p class="dollar">$</p>
+                                <p class="price">1000</p>
+                            </div>
+                        </div>
+                        <div class="count">
+                            <div class="totalbox">
+                                <p class="dollar">$</p>
+                                <p class="price_total">1000</p>
+                            </div>
+                            <div class="numbox">
+                                <div class="arrowl"><img src="../img/shoppincart/left-G.svg" alt=""></div>
+                                <input type="number" class="num" value="1">
+                                <div class="arrowr"><img src="../img/shoppincart/right-G.svg" alt=""></div>
+                            </div>
+                        </div>
+                        <img src="../img/shoppincart/trash.svg" alt="" class="trash">
                     </li>
+
                 </ul>
             </div>
             <div class="right">
@@ -73,4 +88,5 @@
     <?php include("../lib/header/footerInclude.html"); ?>
     <script src="../lib/header/header.js"></script>
 </body>
+
 </html>
