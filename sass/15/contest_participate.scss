@@ -190,6 +190,8 @@ div.JH{
                     vertical-align: top;
                 }
                 textarea#fConcept{
+                    width: 80%;
+                    height: 150px;
                     resize: none;
                     margin-bottom: 10px;
                 }
@@ -223,6 +225,30 @@ div.JH{
                 }
             }
         }
+        > div{
+            width: 100%;
+            height: 150px;
+            position: relative;
+            p,h1,a{
+                width: 100%;
+            }
+            a{
+                display: block;
+                text-align: center;
+                position: absolute;
+                top: 45%;
+                left: 0;
+                h2{
+                    display: inline-block;
+                    width: 230px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -242,22 +268,19 @@ div.JH{
         }
     }
 };
-@include rwdmF(1200){
-    div.JH{
-        .container div.step{
-            form#formStep1{
-                div.rule{
-                    p{
-                    line-height: 50px;
-                    }
-                }
-            }
-        }
-    }
-};
+@include rwdmF(1200);
 @include rwdmF(992){
     div.JH{
+        nav.topNav{
+            > div{
+                width: 28%;
+        }}
         .container div.step{
+            ol li{
+                line-height: 90px;
+                width: 90px;
+                height: 90px;
+            }
             form#formStep1{
                 div.rule{
                     p{
@@ -270,11 +293,17 @@ div.JH{
 };
 @include rwdmF(768){
     div.JH{
+        nav.topNav{
+            > div{
+                width: 35%;
+        }}
         .container div.step{
-            form#formStep1{
-                div.rule{
-                    p{
-                    line-height: 40px;
+            width: 500px;
+            form#formStep3{
+                > div{
+                    > div{
+                        width: 100%;
+                        display: block;
                     }
                 }
             }
@@ -283,7 +312,29 @@ div.JH{
 };
 @include rwdmF(576){
     div.JH{
+        nav.topNav{
+            > div{
+                width: 45%;
+                &::before{
+                    height: 12px;
+                }
+                > a{
+                    h1{
+                        padding: 0 0 6px;
+                    }
+                }
+        }}
         .container div.step{
+            width: 360px;
+            ol li{
+                line-height: 80px;
+                width: 80px;
+                height: 80px;
+                margin: 0 10px;
+            }
+            form{
+                padding: 0 15px;
+            }
             form#formStep1{
                 div.rule{
                     p{
@@ -296,15 +347,10 @@ div.JH{
 };
 @include rwdmF(360){
     div.JH{
-        .container div.step{
-            form#formStep1{
-                div.rule{
-                    p{
-                    line-height: 30px; 
-                    }
-                }
-            }
-        }
+        nav.topNav{
+            > div{
+                width: 80%;
+        }}
     }
 };
 

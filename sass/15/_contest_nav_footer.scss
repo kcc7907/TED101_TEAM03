@@ -193,21 +193,26 @@ div.JH{
         display: flex;
         justify-content: center;
         > div{
-            border: 1px solid red;
             font-size: 0;
-            position: relative;
+            display: flex;
+            justify-content: space-around;
             width: 25%;
-            &:first-child{
-                text-align: right; 
-            }
+            position: relative;
             &:last-child{
-                text-align: left; 
+                a{
+                    &:last-child h1{
+                        color: #865454;
+                    }
+                    &:last-child h1::before{
+                        width: 100%;
+                    }
+                }
             }
             &::before{
                 content:"";
                 display: inline-block;
                 width: 100%;
-                height: 20px;
+                height: 18px;
                 background-color: rgba(134, 84, 84, .1);
                 position: absolute;
                 bottom: 0;
@@ -215,9 +220,9 @@ div.JH{
             }
             > a {
                 h1{
+                // border: 1px solid red;
                 font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
                 display: inline-block;
-                margin: 0 20px;
                 padding: 0 0 10px;
                 color: #BDA79C;
                 position: relative;
@@ -225,7 +230,7 @@ div.JH{
                     content:"";
                     display: inline-block;
                     width: 0%;
-                    height: 5px;
+                    height: 2px;
                     position: absolute;
                     bottom: 0;
                     left: 0;
@@ -240,12 +245,7 @@ div.JH{
                     }
                 }
             }
-            &:last-child h1{
-                color: #865454;
-            }
-            &:last-child h1::before{
-                width: 100%;
-            }
+
         }
         }
     }
