@@ -3,7 +3,6 @@
 
 
 // TODO:修改select跟輸入的文字大小
-
 @mixin  scrollBar($a, $b, $c, $d, $e, $f){
     &::-webkit-scrollbar              {
         width: $a + px;
@@ -19,7 +18,7 @@
     //      /* 4 */ }
     &::-webkit-scrollbar-thumb        {
         border-radius: $e + px;
-        background-color: $f; 
+        background-color: $f;
          /* 5 */ }
     // &::-webkit-scrollbar-corner       {
     //      /* 6 */ }
@@ -28,13 +27,10 @@
     @content;
 }
 
-
 body{
     @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0,#F1EADE);
     background-color: #FFFAF4 !important;
-    // border: 1px solid #865454;
 }
-
 
 div.JH{
     *{
@@ -43,10 +39,6 @@ div.JH{
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         color: #865454;
     }
-    // nav.topNav{
-    //     margin-top: 30px;
-    //     margin-bottom: 30px;
-    // }
     .container div.step{
         width: 600px;
         margin: auto;
@@ -57,7 +49,6 @@ div.JH{
                 display: inline-block;
                 text-align: center;
                 line-height: 100px;
-                // font-size: $detailFont;
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
@@ -70,7 +61,7 @@ div.JH{
             }
         }
         form{
-            margin: 20px 0 70px;
+            margin: 20px 0 48px;
             padding: 0 30px;
             label.fileUpload{
                 display: inline-block;
@@ -115,7 +106,7 @@ div.JH{
                 padding-bottom: 15px;
                 @include scrollBar(10, none, none, 10, 10, rgba(134,84,84, .5)){
                     &::-webkit-scrollbar-track {
-                        -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3); 
+                        -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3);
                     }
                     &::-webkit-scrollbar-thumb {
                         -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 1);
@@ -184,7 +175,7 @@ div.JH{
                 label{
                     display: inline-block;
                     margin: 10px 0;
-                    
+
                 }
                 label.fConcept , textarea#fConcept{
                     vertical-align: top;
@@ -221,13 +212,14 @@ div.JH{
                                 left: 0;
                             }
                         }
-                    } 
+                    }
                 }
             }
         }
         > div{
             width: 100%;
             height: 150px;
+            padding: 0 30px;
             position: relative;
             p,h1,a{
                 width: 100%;
@@ -252,7 +244,6 @@ div.JH{
     }
 }
 
-
 @include rwdmF(1920);
 @include rwdmF(1700);
 @include rwdmF(1500){
@@ -271,10 +262,6 @@ div.JH{
 @include rwdmF(1200);
 @include rwdmF(992){
     div.JH{
-        nav.topNav{
-            > div{
-                width: 28%;
-        }}
         .container div.step{
             ol li{
                 line-height: 90px;
@@ -293,10 +280,6 @@ div.JH{
 };
 @include rwdmF(768){
     div.JH{
-        nav.topNav{
-            > div{
-                width: 35%;
-        }}
         .container div.step{
             width: 500px;
             form#formStep3{
@@ -312,18 +295,6 @@ div.JH{
 };
 @include rwdmF(576){
     div.JH{
-        nav.topNav{
-            > div{
-                width: 45%;
-                &::before{
-                    height: 12px;
-                }
-                > a{
-                    h1{
-                        padding: 0 0 6px;
-                    }
-                }
-        }}
         .container div.step{
             width: 360px;
             ol li{
@@ -342,15 +313,11 @@ div.JH{
                     }
                 }
             }
+            > div {
+                padding: 0 15px;
+            }
         }
     }
 };
-@include rwdmF(360){
-    div.JH{
-        nav.topNav{
-            > div{
-                width: 80%;
-        }}
-    }
-};
+@include rwdmF(360);
 

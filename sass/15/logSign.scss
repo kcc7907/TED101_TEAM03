@@ -1,103 +1,10 @@
 @import '../../lib/header/variable';
-
-@mixin checkbox ($w, $h, $mgr, $bc){
-    width: $w;
-    height: $h;
-    margin-right: $mgr;
-    border: 1px solid $bc;
-    @content;
-    
-}
+@import './variableJH';
 
 $f_close: 24px;
 
-@mixin titlem() {
-        h1{
-            font-size: 40px !important;
-        }
-        h2{
-            font-size: 30px !important;
-        }
-        h3{
-            font-size: 25px !important;
-        }
-    @media (max-width: 1700px) {
-        h1{
-            font-size: 38px !important;
-        }
-        h2{
-            font-size: 28px !important;
-        }
-        h3{
-            font-size: 23px !important;
-        }
-    }
-    @media (max-width: 1500px) {
-        h1{
-            font-size: 36px !important;
-        }
-        h2{
-            font-size: 26px !important;
-        }
-        h3{
-            font-size: 21px !important;
-        }
-    }
-    @media (max-width: 1200px) {
-        h1{
-            font-size: 34px !important;
-        }
-        h2{
-            font-size: 24px !important;
-        }
-        h3{
-            font-size: 19px !important;
-        }
-    }
-    @media (max-width: 992px) {
-        h1{
-            font-size: 32px !important;
-        }
-        h2{
-            font-size: 22px !important;
-        }
-        h3{
-            font-size: 17px !important;
-        }
-    }
-    @media (max-width: 768px) {
-        h1{
-            font-size: 30px !important;
-        }
-        h2{
-            font-size: 20px !important;
-        }
-        h3{
-            font-size: 15px !important;
-        }
-    }
-    @media (max-width: 576px) {
-        h1{
-            font-size: 26px !important;
-        }
-        h2{
-            font-size: 18px !important;
-        }
-        h3{
-            font-size: 13px !important;
-        }
-    }
-    @media (max-width: 360px) {
-        h1{
-            font-size: 20px !important;
-        }
-        h2{
-            font-size: 16px !important;
-        }
-        h3{
-            font-size: 11px !important;
-        }
-    }
+body{
+    background-color: #FFFAF4;
 }
 
 div#login {
@@ -122,17 +29,17 @@ div#login {
             text-align: left;
             div:first-child{
                 label{
-                    font-size: $h1;
                     display: block;
+                    background-color: #FFFAF4;
                 }
                 input{
                     display: inline-block;
                     width: 100%;
-                    font-size: $h1;
                     border: none;
                     outline: none;
                     border-bottom: 1px solid $cfl;
                     margin-bottom: 30px;
+                    background-color: #FFFAF4;
                 }
                 input.alive{
                     display: none;
@@ -145,13 +52,11 @@ div#login {
                 label.alive{
                     display: inline-block;
                     vertical-align: middle;
-                    font-size: $pu;
                     &:hover{
                         cursor: pointer;
                     }
                 } 
                 label#alivebox{
-                    font-size: $pu;
                     @include checkbox(12px,12px,12px,$c_secondary_red);
                 }
             }
@@ -226,19 +131,59 @@ div#login {
 
 }
 
-@include rwdm(576){
+@include rwdmF(1920);
+@include rwdmF(1700);
+@include rwdmF(1500);
+@include rwdmF(1200);
+@include rwdmF(992);
+@include rwdmF(768);
+@include rwdmF(576){
     div#login{
         div.login{
             border: 1px solid rgba(0,0,0,0%);
-            width: 300px;
-            height: 300px;
-        }
-        svg{
-            width: 300px;
-            height: 300px;
+            width: 350px;
+            height: 350px;
+            > h1{
+                margin-top: 70px;
+            }
+            form.login{
+                width: 200px;
+                div:first-child{
+                    input{
+                        margin-bottom: 10px;
+                    }
+                }
+                div:last-child{
+                    h2.login{
+                        margin: 0 8px;
+                    }
+                }
+            }
+            svg{
+                width: 350px;
+                height: 350px;
+            }
+            div.closebtn{
+                span{
+                    width: 15px;
+                    height: 15px;
+                    font-size: 15px;
+                    line-height: 15px;
+                    &:hover{
+                        &::after{
+                            content: "取消登入";
+                            width: 80px;
+                            font-size: 12px;
+                            position: absolute;
+                            top: 0;
+                            left: -70px;
+                        }
+                    }
+                }
+            }
         }
     }
-    
 }
+@include rwdmF(360);
 
-@include titlem();
+
