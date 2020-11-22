@@ -1,0 +1,196 @@
+@import '../../lib/header/footer.scss';
+@mixin rwdmF($screenSize) {
+    @if $screenSize==1920{
+        @media (max-width: 1920px) {
+            .titleFont1{
+                font-size: 40px !important;
+            } // h1
+            .titleFont2{
+                font-size: 30px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 25px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 24px !important;
+            } // p
+            .detailFont{ 
+                font-size: 16px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 60px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==1700 {
+        @media (max-width: 1700px) {
+            .titleFont1{
+                font-size: 38px !important;
+            } // h1
+            .titleFont2{
+                font-size: 28px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 23px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 24px !important;
+            } // p
+            .detailFont{ 
+                font-size: 16px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 60px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==1500 {
+        @media (max-width: 1500px) {
+            .titleFont1{
+                font-size: 36px !important;
+            } // h1
+            .titleFont2{
+                font-size: 26px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 21px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 20px !important;
+            } // p
+            .detailFont{ 
+                font-size: 14px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 50px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==1200 {
+        @media (max-width: 1200px) {
+            .titleFont1{
+                font-size: 34px !important;
+            } // h1
+            .titleFont2{
+                font-size: 24px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 19px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 20px !important;
+            } // p
+            .detailFont{ 
+                font-size: 14px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 50px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==992 {
+        @media (max-width: 992px) {
+            .titleFont1{
+                font-size: 32px !important;
+            } // h1
+            .titleFont2{
+                font-size: 22px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 17px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 16px !important;
+            } // p
+            .detailFont{ 
+                font-size: 12px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 40px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==768 {
+        @media (max-width: 768px) {
+            .titleFont1{
+                font-size: 30px !important;
+            } // h1
+            .titleFont2{
+                font-size: 20px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 15px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 16px !important;
+            } // p
+            .detailFont{ 
+                font-size: 12px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 40px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==576 {
+        @media (max-width: 576px) {
+            .titleFont1{
+                font-size: 26px !important;
+            } // h1
+            .titleFont2{
+                font-size: 18px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 13px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 12px !important;
+            } // p
+            .detailFont{ 
+                font-size: 10px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 30px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==360 {
+        @media (max-width: 360px) {
+            .titleFont1{
+                font-size: 20px !important;
+            } // h1
+            .titleFont2{
+                font-size: 16px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 11px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 12px !important;
+            } // p
+            .detailFont{ 
+                font-size: 8px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 30px !important;
+            }
+            @content;
+        }
+    }
+}
+
+
+@mixin checkbox ($w, $h, $mgr, $bc){
+    width: $w;
+    height: $h;
+    margin-right: $mgr;
+    border: 1px solid $bc;
+    @content;
+}

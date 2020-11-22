@@ -1,3 +1,8 @@
+@import '../../lib/header/header.scss';
+@import './contest_nav_footer';
+
+
+// TODO:修改select跟輸入的文字大小
 @mixin  scrollBar($a, $b, $c, $d, $e, $f){
     &::-webkit-scrollbar              {
         width: $a + px;
@@ -13,7 +18,7 @@
     //      /* 4 */ }
     &::-webkit-scrollbar-thumb        {
         border-radius: $e + px;
-        background-color: $f; 
+        background-color: $f;
          /* 5 */ }
     // &::-webkit-scrollbar-corner       {
     //      /* 6 */ }
@@ -22,36 +27,19 @@
     @content;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    // border: 1px solid blue !important;
-    font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
-    color: #865454;
-}
-
 body{
     @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0,#F1EADE);
     background-color: #FFFAF4 !important;
 }
 
-
-
-div#JH{
-    header{
-        width: 100%;
-        height: 100px;
-        background-color: black;
-        position: fixed;
-        top: 0;
-        z-index: 3;
+div.JH{
+    *{
+        box-sizing: border-box;
+        // border: 1px solid blue !important;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+        color: #865454;
     }
-    nav.topNav{
-        margin-top: 120px;
-        margin-bottom: 30px;
-    }
-    div.step{
+    .container div.step{
         width: 600px;
         margin: auto;
         ol{
@@ -61,7 +49,6 @@ div#JH{
                 display: inline-block;
                 text-align: center;
                 line-height: 100px;
-                font-size: 16px;
                 width: 100px;
                 height: 100px;
                 border-radius: 50%;
@@ -74,14 +61,13 @@ div#JH{
             }
         }
         form{
-            margin: 20px 0 70px;
+            margin: 20px 0 48px;
             padding: 0 30px;
             label.fileUpload{
                 display: inline-block;
                 padding: 10px 15px;
                 border: 1px solid #865454;
                 border-radius: 30px;
-                font-size: 12px;
                 &:hover{
                     cursor: pointer;
                 }
@@ -120,7 +106,7 @@ div#JH{
                 padding-bottom: 15px;
                 @include scrollBar(10, none, none, 10, 10, rgba(134,84,84, .5)){
                     &::-webkit-scrollbar-track {
-                        -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3); 
+                        -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3);
                     }
                     &::-webkit-scrollbar-thumb {
                         -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 1);
@@ -128,6 +114,7 @@ div#JH{
                 }
                 p{
                     text-align: left;
+                    line-height: 60px;
                 }
             }
             input{
@@ -188,11 +175,14 @@ div#JH{
                 label{
                     display: inline-block;
                     margin: 10px 0;
+
                 }
                 label.fConcept , textarea#fConcept{
                     vertical-align: top;
                 }
                 textarea#fConcept{
+                    width: 80%;
+                    height: 150px;
                     resize: none;
                     margin-bottom: 10px;
                 }
@@ -222,13 +212,112 @@ div#JH{
                                 left: 0;
                             }
                         }
-                    } 
+                    }
+                }
+            }
+        }
+        > div{
+            width: 100%;
+            height: 150px;
+            padding: 0 30px;
+            position: relative;
+            p,h1,a{
+                width: 100%;
+            }
+            a{
+                display: block;
+                text-align: center;
+                position: absolute;
+                top: 45%;
+                left: 0;
+                h2{
+                    display: inline-block;
+                    width: 230px;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid;
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
             }
         }
     }
 }
 
-
-
+@include rwdmF(1920);
+@include rwdmF(1700);
+@include rwdmF(1500){
+    div.JH{
+        .container div.step{
+            form#formStep1{
+                div.rule{
+                    p{
+                    line-height: 50px;
+                    }
+                }
+            }
+        }
+    }
+};
+@include rwdmF(1200);
+@include rwdmF(992){
+    div.JH{
+        .container div.step{
+            ol li{
+                line-height: 90px;
+                width: 90px;
+                height: 90px;
+            }
+            form#formStep1{
+                div.rule{
+                    p{
+                    line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+};
+@include rwdmF(768){
+    div.JH{
+        .container div.step{
+            width: 500px;
+            form#formStep3{
+                > div{
+                    > div{
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+};
+@include rwdmF(576){
+    div.JH{
+        .container div.step{
+            width: 360px;
+            ol li{
+                line-height: 80px;
+                width: 80px;
+                height: 80px;
+                margin: 0 10px;
+            }
+            form{
+                padding: 0 15px;
+            }
+            form#formStep1{
+                div.rule{
+                    p{
+                    line-height: 30px;
+                    }
+                }
+            }
+            > div {
+                padding: 0 15px;
+            }
+        }
+    }
+};
+@include rwdmF(360);
 

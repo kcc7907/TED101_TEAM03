@@ -1,0 +1,208 @@
+@import '../../lib/header/variable';
+@import './variableJH';
+
+$f_close: 24px;
+
+body{
+    background-color: #FFFAF4;
+}
+
+div#login {
+    * {
+        color: $csdr;
+        box-sizing: border-box;
+    }
+    margin-top: 50px;
+    div.login {
+        margin: auto;
+        border: 1px solid rgba(0,0,0,0%);
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        position: relative;
+        > h1{
+            margin-top: 100px;
+        }
+        form.login{
+            margin: auto;
+            width: 250px;
+            text-align: left;
+            div:first-child{
+                label{
+                    display: block;
+                    background-color: #FFFAF4;
+                }
+                input{
+                    display: inline-block;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid $cfl;
+                    margin-bottom: 30px;
+                    background-color: #FFFAF4;
+                }
+                input.alive{
+                    display: none;
+                    text-align: left;
+                    &:checked + label{
+                        background-color: $c_secondary_red;
+                    }
+                    
+                }
+                label.alive{
+                    display: inline-block;
+                    vertical-align: middle;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                } 
+                label#alivebox{
+                    @include checkbox(12px,12px,12px,$c_secondary_red);
+                }
+            }
+            div:last-child{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                a,h2,p{
+                    display: inline-block;
+                    border: 1px solid rgba(0,0,0,0%);
+
+                }
+                a{  
+                    border-bottom: 1px solid $csdr;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                p{
+                    margin-bottom: 10px;
+                    text-align: center;
+                    width: 100px;
+                }
+                h2.login{
+                    padding: 40px 15px;
+                    margin: 0 20px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        svg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        div.closebtn{
+            position: absolute;
+            top: 0;
+            right: 0;
+            span{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                font-size: $f_close;
+                text-align: center;
+                line-height: 20px;
+                border: 1px solid ;
+                border-radius: 50%;
+                position: relative;
+                &:hover{
+                    cursor: pointer;
+                    &::after{
+                        content: "取消登入";
+                        display: inline-block;
+                        width: 100px;
+                        font-size: 16px;
+                        position: absolute;
+                        top: 0;
+                        left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+div#signIn {
+    * {
+        color: $csdr;
+        box-sizing: border-box;
+    }
+    div.signIn {
+        margin: auto;
+        border: 1px solid rgba(0,0,0,0%);
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        position: relative;
+        form.signIn{
+            margin: auto;
+            width: 360px;
+            text-align: left;
+            // TODO: 表格排版
+        }
+    }
+}
+@include rwdmF(1920);
+@include rwdmF(1700);
+@include rwdmF(1500);
+@include rwdmF(1200);
+@include rwdmF(992);
+@include rwdmF(768);
+@include rwdmF(576){
+    div#login{
+        div.login{
+            border: 1px solid rgba(0,0,0,0%);
+            width: 350px;
+            height: 350px;
+            > h1{
+                margin-top: 70px;
+            }
+            form.login{
+                width: 200px;
+                div:first-child{
+                    input{
+                        margin-bottom: 10px;
+                    }
+                }
+                div:last-child{
+                    h2.login{
+                        margin: 0 8px;
+                    }
+                }
+            }
+            svg{
+                width: 350px;
+                height: 350px;
+            }
+            div.closebtn{
+                span{
+                    width: 15px;
+                    height: 15px;
+                    font-size: 15px;
+                    line-height: 15px;
+                    &:hover{
+                        &::after{
+                            content: "取消登入";
+                            width: 80px;
+                            font-size: 12px;
+                            position: absolute;
+                            top: 0;
+                            left: -70px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include rwdmF(360);
+
+
