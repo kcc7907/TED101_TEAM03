@@ -9,9 +9,14 @@ $cfm : #787878;
 $cfl : #bda79e;
 $cf :#CAC3BB;
 
-
+.kcc_htmlmain{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 .kcc_contest{
     *{
         box-sizing: border-box;
     }
+    
 }
