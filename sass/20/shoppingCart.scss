@@ -16,12 +16,18 @@ $cf :#CAC3BB;
         span{
             font-size: 8px !important;
         }
+        button{
+            font-size: 12px !important;
+        }
     @media (min-width: 361px) {
         p{
             font-size: 12px !important;
         }
         span{
             font-size: 10px !important;
+        }
+        button{
+            font-size: 12px !important;
         }
     }
     @media (min-width: 576px) {
@@ -31,6 +37,9 @@ $cf :#CAC3BB;
         span{
             font-size: 12px !important;
         }
+        button{
+            font-size: 16px !important;
+        }
     }
     @media (min-width: 768px) {
         p{
@@ -38,6 +47,9 @@ $cf :#CAC3BB;
         }
         span{
             font-size: 12px !important;
+        }
+        button{
+            font-size: 16px !important;
         }
     }
     @media (min-width: 992px) {
@@ -47,6 +59,9 @@ $cf :#CAC3BB;
         span{
             font-size: 14px !important;
         }
+        button{
+            font-size: 20px !important;
+        }
     }
     @media (min-width: 1200px) {
         p{
@@ -54,6 +69,9 @@ $cf :#CAC3BB;
         }
         span{
             font-size: 14px !important;
+        }
+        button{
+            font-size: 20px !important;
         }
     }
     @media (min-width: 1500px) {
@@ -63,6 +81,9 @@ $cf :#CAC3BB;
         span{
             font-size: 16px !important;
         }
+        button{
+            font-size: 24px !important;
+        }
     }
     @media (min-width: 1700px) {
         p{
@@ -70,6 +91,9 @@ $cf :#CAC3BB;
         }
         span{
             font-size: 16px !important;
+        }
+        button{
+            font-size: 24px !important;
         }
     }
 }
@@ -82,7 +106,7 @@ body{
     *{
         box-sizing: border-box;
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
-        outline: red 1px solid;
+        // outline: red 1px solid;
     }
     img{
         max-width: 100%;
@@ -98,6 +122,7 @@ body{
         height: 60px;
         display: flex;
         justify-content: center;
+        color: $cfl;
         .title{
             display: flex;
             margin: 15px;
@@ -123,9 +148,16 @@ body{
             height: 800px;
             justify-content: center;
             display: flex;
+            position: relative;
+            &::before{
+                    content: '';
+                    height: 1px;
+                    background: $csg;
+                    width: 90%;
+                    position: absolute;
+            }
             .product{
-                width: 90%;
-                padding: 20px 0;
+                width: 85%;
             }
         }
         .list{
@@ -136,6 +168,8 @@ body{
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+            margin-top: 10px;
+            border-bottom: $csg 1px solid;
             .pick{
                 height: 100%;
                 display: none;
@@ -146,23 +180,39 @@ body{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                // padding: 15px;
                 .imgbox{
                     position: relative;
                     width: 130px;
+                    border: $csg 1px solid;
                 }
                 .tag{
                     position: absolute;
-                    right: 5px;
-                    top: 5px;
+                    right: 0px;
+                    top: 0px;
+                    color: $csdr;
+                    border: $csdr 1px solid;
+                    width: 15px;
+                    height: 15px;
+                    text-align: center;
                 }
             }
-            .discount{
+            .discountbox{
                 height: 30%;
                 display: flex;
                 width: 45%;
                 justify-content: center;
                 align-items: center;
+                color: $csdr;
+                .discount{
+                    display: flex;
+                    border: $csdr 1px solid;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                    .tag{
+                        margin-right: 5px;
+                    }
+                }
             }
             .info{
                 width: 45%;
@@ -171,6 +221,7 @@ body{
                 justify-content: flex-end;
                 height: 50%;
                 text-align: center;
+                color: #787878;
                 .procduct_name{
                     margin-bottom: 20px;
                 }
@@ -187,6 +238,7 @@ body{
                 display: flex;
                 flex-direction: column;
                 justify-content: start;
+                color: #787878;
                 .totalbox{
                     display: flex;
                     justify-content: center;
@@ -194,9 +246,11 @@ body{
                     align-content: flex-start;
                 }
                 .numbox{
+                    width: 100%;
                     display: flex;
                     height: 20px;
                     justify-content: center;
+                    align-items: center;
                     .arrowl{
                         display: flex;
                         align-items: center;
@@ -211,7 +265,10 @@ body{
                     }
                     .num{
                         width: 15px;
-                        font-size: 12px;
+                        font-size: 18px;
+                        border: none;
+                        background: none;
+                        text-align: center;
                     }
                     img{
                         display: flex;

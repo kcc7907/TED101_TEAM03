@@ -32,9 +32,7 @@
         </div>
         <div class="all">
             <input class="checkAll" type="checkbox">
-            <button class="delAll">
-                <p>刪除勾選商品</p>
-            </button>
+            <button class="delAll">刪除勾選商品</button>
         </div>
         <main>
             <div class="left">
@@ -43,17 +41,19 @@
                         <input type="checkbox" class="pick">
                         <div class="picbox">
                             <div class="imgbox">
-                            <img src="../img/product/bookcase01/bk01-01.jpg" class="pic">
-                            <div class="tag">
-                                <p>A</p>
-                            </div>
+                                <img src="../img/product/bookcase01/bk01-01.jpg" class="pic">
+                                <div class="tag">
+                                    <p>A</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="discount">
-                            <div class="tag">
-                                <p>A</p>
+                        <div class="discountbox">
+                            <div class="discount">
+                                <div class="tag">
+                                    <p>A</p>
+                                </div>
+                                <p>沙發優惠組</p>
                             </div>
-                            <p>沙發優惠組</p>
                         </div>
                         <div class="info">
                             <div class="procduct_name">
@@ -89,6 +89,10 @@
     </div>
     <?php include("../lib/header/footerInclude.html"); ?>
     <script src="../lib/header/header.js"></script>
+
+    <script>
+        document.addEventListener('click', e => console.log(e.target))
+    </script>
 </body>
 
 </html>
