@@ -24,6 +24,7 @@ body{
             padding-top: $containerPaddingTop + px;
             
             .sideMenu{
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
                 width: $sideMenuWidth + px;
                 height: $sideMenuHeight + px;
                 border: 1px solid #465D4C;
@@ -106,7 +107,7 @@ body{
                         
                         &:hover{
                             font-size: 31px;
-                            font-weight: bold;
+                            // font-weight: bold;
                             transition: .1s;
                             
                             @include r1200{
@@ -187,7 +188,7 @@ body{
             }
 
             main{
-                // font-family: 'Noto Sans TC';
+                font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
                 margin: 0 auto;
                 padding-top: $mainPaddingTop + px;
                 width: 75%;

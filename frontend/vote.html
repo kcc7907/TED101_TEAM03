@@ -9,8 +9,34 @@
     
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/vote.css">
+    <link rel="stylesheet" href="../css/navFooter.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <script src="../lib/js/jquery.js"></script>
 </head>
 <body>
+
+    <!-- navbar -->
+    <nav class="topNav">
+        <div>
+            <a>
+                <h1 class="titleFont2">賽制說明</h1>
+            </a>
+            <a>
+                <h1 class="titleFont2">人氣票選</h1>
+            </a>
+        </div>
+        <div>
+            <a>
+                <h1 class="titleFont2">歷屆冠軍</h1>
+            </a>
+            <a>
+                <h1 class="titleFont2">我要投稿</h1>
+            </a>
+        </div>
+    </nav>
+
+
     <div class="jk_wrapper">
         <div class="container">
 
@@ -61,7 +87,7 @@
                             <span>參賽者:<span>李超超</span></span>                
                         </p>
                     </div>
-                    <div class="work">
+                    <div class="work">      <!--還未完成圖片size的樣式設定 -->
                         <div class="img">
                             <img src="https://picsum.photos/300/300?random=210" alt="">
                             <div class="get_num">得票數: <span>80</span></div>                            
@@ -100,5 +126,47 @@
 
         </div>
     </div>
+
+    <!-- footer -->
+    <footer class="libft">
+        <!-- contest 新增用 -->
+        <div class="slideBtn">
+            <div class="slideUp">
+                <img src="../../img/contest/footer_up.png">
+            </div>
+            <div class="slideDn">
+                <img src="../../img/contest/footer_down.png">
+            </div>
+        </div>
+        <!--  -->
+        <section class="herf">
+            <div class="logo">
+                <img src="../../img/headerFooter/logo.svg" alt="">
+            </div>
+            <div class="page">
+                <a href="../../frontend/product.html">救世家具</a>
+                <a href="../../frontend/case.html">優質案例</a>
+                <a href="../../frontend/qa.html">客戶服務</a>
+                <a href="../../frontend/qa.html">聯繫我們</a>
+                <a href="../../frontend/contest_participate.html">傢俱賞</a>
+            </div>
+        </section>
+        <section class="link">
+            <div class="scb">
+                <label for="mail">訂閱電子報</label>
+                <input type="text" class="mail" placeholder="enter your email">
+            </div>
+            <div class="company">
+                <img src="../../img/headerFooter/東和鋼鐵.png">
+                <img src="../../img/headerFooter/cooperate_blum.png">
+                <img src="../../img/headerFooter/foot_logo.png">
+            </div>
+        </section>
+        <section class="copy">
+            <p>Copy right 2020,All Right Reserved | By 救世宅</p>
+        </section>
+    </footer>
+
+    <script src="../lib/contest/contestfooter.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@ body{
     .jk_wrapper{
         background-color: #FFFAF4;
         margin-bottom: 100px;
-        *{
+        *{            
             box-sizing: border-box;
         }
         .container{
@@ -27,6 +27,7 @@ body{
             padding-top: $containerPaddingTop + px;
             
             .sideMenu{
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
                 width: $sideMenuWidth + px;
                 height: $sideMenuHeight + px;
                 border: 1px solid #465D4C;
@@ -109,7 +110,7 @@ body{
                         
                         &:hover{
                             font-size: 31px;
-                            font-weight: bold;
+                            // font-weight: bold;
                             transition: .1s;
                             
                             @include r1200{
@@ -117,7 +118,7 @@ body{
                             }
                             @include r768{
                                 font-size: 12px;
-                                font-weight: normal;
+                                // font-weight: normal;
                             }
                         }
 
@@ -190,7 +191,7 @@ body{
             }
 
             main{
-                // font-family: 'Noto Sans TC';
+                font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
                 margin: 0 auto;
                 padding-top: $mainPaddingTop + px;
                 width: 75%;
@@ -251,7 +252,7 @@ body{
                                 cursor: pointer;
 
                                 &:hover{
-                                    font-weight: bold;
+                                    // font-weight: bold;
                                     color: #465D4C;
                                     transition: .1s;
                                 }
