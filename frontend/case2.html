@@ -5,46 +5,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>參考案例2</title>
+    <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/14.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="../js/14/14.js"></script>
 </head>
 
 <body>
-    <header></header>
-    <section class="select">
-        <div class="select_one">
-            <div class="click">上一頁</div>
-            <div class="click">回到選擇系列</div>
-            <div class="click">下一頁</div>
-            <img src="../img/interiordesign/home/example/chang/C1569228178583.jpg">
+    <header class="common">
+        <div class="logo">
+            <a href=""><img src="../img/headerFooter/logo.svg"></a>
         </div>
-        <div class="show_pic">
-            <img src="../img/interiordesign/home/example/chang/C1569228194525.jpg">
-            <p class="intro">
-                “我是一個出色的傾聽者，我會聽很多東西，直到我能在字裡行間讀懂那個人的意思。”
-                李超超
-            </p>
+        <nav>
+            <dav class="nav1">
+                <a href="">救世傢俱</a>
+                <a href="">參考案例</a>
+            </dav>
+            <dav class="nav2">
+                <a href="">客戶服務</a>
+                <a href="">2020傢聚賞</a>
+            </dav>
+        </nav>
+        <div class="icon">
+            <a class="login" href="">
+                <img src="../img/headerFooter/loginIcon.svg" alt="">
+            </a>
+            <a class="shop" href="">
+                <img src="../img/headerFooter/shoppingCart.svg" alt="">
+            </a>
+            <a class="ham" href="">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
         </div>
+    </header>
+    <div id="JN">
+        <section class="select">
+            <div class="select_one">
+                <div class="select_click">
+                    <div class="click">上一頁</div>
+                    <div class="click">回到選擇系列</div>
+                    <div class="click">下一頁</div>
+                </div>
+                <div class="exhibit_pic">
+                    <img src="../img/interiordesign/home/example/chang/C1569228178583.jpg" class="example_exhibit">
+                </div>
+            </div>
+            <div class="show_pic">
+                <div class="exhibit_pic2">
+                    <img src="../img/interiordesign/home/example/chang/C1569228194525.jpg" class="exhibit_pic2">
+                </div>
+                <div class="designer_intro">
+                    <div class="block_color">
+                        <p class="intro">
+                            “我是一個出色的傾聽者，我會聽很多東西，直到我能在
+                        </p>
+                        <p class="intro">
+                            字裡行間讀懂那個人的意思。”
+                        </p>
+                        <p class="intro">
+                            李超超
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="360pic">
-            <p class="pic">360ﾟ平面展示照</p>
-            <img src="../img/interiordesign/home/example/chu bai/C1569288447471.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288447652.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288447863.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288448034.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288448386.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288448567.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288448738.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288474271.jpg">
-            <img src="../img/interiordesign/home/example/chu bai/C1569288474623.jpg">
-        </div>
+            <div class="d_pic">
+                <p class="pic">360ﾟ平面展示照</p>
+                <div class="d_pic_flex">
+                    <div class="interior_one">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288447471.jpg" class="interior_pics">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288447652.jpg" class="interior_pics">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288447863.jpg" class="interior_pics">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288448034.jpg" class="interior_pics">
+                    </div>
+                    <div class="interior_two">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288448386.jpg" class="interior_pics">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288448567.jpg" class="interior_pics">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288448738.jpg" class="interior_pics">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288474271.jpg" class="interior_pics">
+                    </div>
+                    <div class="interior_three">
+                        <img src="../img/interiordesign/home/example/chu bai/C1569288474623.jpg" class="interior_pics">
+                    </div>
+                </div>
+            </div>
 
-        <div class="more_detail">
-            <img src="../img/interiordesign/excellent/5f4c5e5004c7a.jpg" alt="">
-            <p class="detail">想與我們合作設計嗎，救世宅同您創造美好家園
-                我們樂於傾聽你的想法且盡心盡力做得更好</p>
-            <p class="more_detail">more detail</p>
-        </div>
-    </section>
+            <div class="more_detail">
+                <img src="../img/interiordesign/excellent/5f4c5e5004c7a.jpg" alt="">
+                <p class="detail">想與我們合作設計嗎，救世宅同您創造美好家園
+                    我們樂於傾聽你的想法且盡心盡力做得更好</p>
+                <p class="more_detail">more detail</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="libft">
+        <section class="herf">
+            <div class="logo">
+                <img src="../../img/headerFooter/logo.svg" alt="">
+            </div>
+            <div class="page">
+                <a href="../../frontend/product.html">救世家具</a>
+                <a href="../../frontend/case.html">優質案例</a>
+                <a href="../../frontend/qa.html">客戶服務</a>
+                <a href="../../frontend/qa.html">聯繫我們</a>
+                <a href="../../frontend/contest_participate.html">傢俱賞</a>
+            </div>
+        </section>
+        <section class="link">
+            <div class="scb">
+                <label for="mail">訂閱電子報</label>
+                <input type="text" class="mail" placeholder="enter your email">
+            </div>
+            <div class="company">
+                <img src="../../img/headerFooter/東和鋼鐵.png">
+                <img src="../../img/headerFooter/cooperate_blum.png">
+                <img src="../../img/headerFooter/foot_logo.png">
+            </div>
+        </section>
+        <section class="copy">
+            <p>Copy right 2020,All Right Reserved | By 救世宅</p>
+        </section>
+    </footer>
+    <script src="../lib/header/header.js"></script>
 </body>
 
 </html>

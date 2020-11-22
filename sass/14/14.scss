@@ -1,13 +1,18 @@
 @import '../../lib/header/header.scss';
+@import'../../lib/header/footer.scss';
 
 body{
     border: 3px solid hotpink;
     margin: 0;
-    font-family: "微軟正黑體";
     background-color: #f1ece8;
     // margin-top: 160px;
 }
 
+
+*{
+    font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+    // font-family: "微軟正黑體";
+}
 
 //巢狀寫法
 div#JN{
@@ -25,7 +30,7 @@ div#JN{
         }
 
         .photo{
-            background-image: url(../../img/interiordesign/home/example/chang/C1569228155745.jpg);
+            background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
             width: 100%;
             height: 600px;
             background-attachment: fixed;
@@ -83,12 +88,17 @@ div#JN{
             height: fit-content;
         }
 
-        img{
-            border: 1px solid darkgreen;
-            width: 100%;
-            display: flex;
-            justify-content: center;
+        // img{
+        //     border: 1px solid darkgreen;
+        //     width: 100%;
+        //     display: flex;
+        //     justify-content: center;
+        // }
+
+        .series{
+            border: 2px solid gray;
         }
+
 
         .title{
             border: 3px solid purple;
@@ -103,32 +113,32 @@ div#JN{
         }
 
 
-        .style_one{
+        .style_one, .style_two, .style_three{
             border: 2px solid magenta;
             // width: 100%;  
         }
 
-        .style_one_one, .style_one_two,.style_one_three,.style_one_four{
+        .style_one_one, .style_one_two,.style_one_three,.style_one_four,
+        .style_two_one, .style_three_one{
             border: 5px solid cadetblue;
             width: 100%;
-            display: inline-flex;
         }
 
-        .home_flex_one, .home_flex_two, .home_flex_three, .home_flex_four{
+        .home_flex_one, .home_flex_two, .home_flex_three, .home_flex_four,
+        .commercial_flex_one, .commercial_flex_two, .commercial_flex_three,
+        .commercial_flex_four, .office_flex_one{
             border: 6px solid violet;
             width: 300px;
             display: inline-flex;
-            justify-content: center;
+            // justify-content: center;
         }
 
-        img.homepic{
+        img.homepic, img.commercial_pic, img.office_pic{
             border: 2px solid green;
             width: 100%;
             // height: 100%;
         }
 
-
-        
         // section
         section{
             .award{
@@ -138,6 +148,20 @@ div#JN{
 
             div.div_block{
                 background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
+                width: 100%;
+                height: 750px;
+                border: 1px solid red;
+            }
+
+            div.div_block_two{
+                background-image: url("../img/interiordesign/excellent/award/office/bafc9ce2034689f60e54eaec3784d759.jpg");
+                width: 100%;
+                height: 750px;
+                border: 1px solid red;
+            }
+
+            div.div_block_three{
+                background-image: url("../img/interiordesign/excellent/award/hampshire-54-master-bed-2.jpg");
                 width: 100%;
                 height: 750px;
                 border: 1px solid red;
@@ -180,8 +204,79 @@ div#JN{
             width: 50%;
         }
     }
+
+    //第二頁
+    .select_click{
+        border: 2px solid rebeccapurple;
+        display: inline-flex;
+        width: 100%;
+        text-align: center;
+        height: 80px;
+        // margin-top: 3%;
+    }
+
+    .click{
+        margin-top: 3%;
+    }
+
+    .show_pic{
+        border: 3px solid darkblue;  
+        display: flex;
+        align-items: center;
+        justify-content:  center;
+        margin-top: 3%;
+        line-height: 60px;
+    }
+
+
+    .exhibit_pic{
+        display:  flex;
+        align-items: center;
+        justify-content:  center;
+    }
+
+    .exhibit_pic2{
+        width: 600px;
+        // height: 200px;
+        
+    }
+
+    .designer_intro{
+        border: 2px solid indianred;
+        text-align: center;
+        margin-top: 35%;
+    }
+
+   .block_color{
+        background-color: #b99e9057;
+        color: #54383B;
+        width: 100%;
+    }
+
+   .d_pic{
+       border: 3px solid darkblue;
+    }
+
+    .d_pic_flex{
+        border: 3px solid yellow;
+    }
+
+   .interior_one, .interior_two, .interior_three{
+    border: 2px solid cadetblue;   
+    display: inline-flex;
+    }
+
+ 
 }
 
+    img.exhibit_pic2{
+        width: 100%;
+    }
+
+    p.pic{
+        border: 1px solid cadetblue;
+        text-align: center;
+    }
 
 
 
