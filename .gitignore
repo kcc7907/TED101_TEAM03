@@ -1,4 +1,9 @@
 .vscode
 node_modules
 css
+<<<<<<< HEAD
 dist
+=======
+dist
+donotupload
+>>>>>>> dontuse
