@@ -224,7 +224,7 @@ div.sam_pi{
             }
         }
     }
-    /////////////////////768/////////////////
+    /////////////////////mobile/////////////////
 
     div.mobileBox{
         border:1px solid red;
@@ -407,8 +407,6 @@ div.sam_pi{
             }
         }
 
-
-
     /////////////////////mobile rwd/////////////////////
     @media (max-width:576px){
         p.word{
@@ -511,12 +509,103 @@ div.sam_pi{
 
 
 
+}
+//////////////////section2///////////////
+div.section2{
+    div.topBox{
+        width:90%;
+        margin:0 auto;
+        margin-top:80px;
+        display:flex;
+        justify-content: space-around;
+        border-bottom:1px solid #BDA79E;
+        h2{
+            color:#54383b;
+            font-family: 'Noto Sans TC Light';
+            padding-bottom:10px;
+            cursor: pointer;
+        }
     }
-    // div.section2{
-    //     width: 1900px;
-    //     height: 500px;
-    //     border:1px solid red;
-    // }
+    div.bottomBox{
+        width: 90%;
+        margin: 80px auto 0px;
+        display:flex;
+        border:1px solid blue;
+        justify-content: center;
+        div.cadBox{
+            display:inline-block;
+            width: 70%;
+            height: 65%;
+        }
+        div.taiwanBox{
+            width: 50%;
+            border:1px solid rgb(12, 77, 12);
+            text-align: center;
+            img.taiwan{
+                border:1px solid orangered;
+                width:50%;
+            }
+        }
+        div.truckBox{
+            width: 50%;
+            border:1px solid rgb(66, 7, 25);
+            display:flex;
+            flex-direction: column;
+            div.truck{
+                border:1px solid rgb(68, 66, 66);
+                width:50%;
+                div.word{
+                    display:inline-block;
+                    span.color1{
+                        display:inline-block;
+                        width:60px;
+                        height:60px;
+                        border-radius: 50%;
+                        background-color: #787878;
+                    }
+                    span.color2{
+                        display:inline-block;
+                        width:60px;
+                        height:60px;
+                        border-radius: 50%;
+                        background-color: #BDA79E;
+                    }
+                    span.color3{
+                        display:inline-block;
+                        width:60px;
+                        height:60px;
+                        border-radius: 50%;
+                        background-color: #5F9EA0;
+                    }
+                    span.color4{
+                        display:inline-block;
+                        width:60px;
+                        height:60px;
+                        border-radius: 50%;
+                        background-color: #577C8A;
+                    }
+                    h2{
+                        display:inline-block;
+                        color:#54383b;
+                        font-family: 'Noto Sans TC Light';
+                    }
+                }
+                div.icon{
+                    display:inline-block;
+                    img{
+                        width:80px;
+                        height:60px;
+                    }
+                    h2{
+                        display:inline-block;
+                        color:#54383b;
+                        font-family: 'Noto Sans TC Light';
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 ////////////////////desktop rwd/////////////////////////
