@@ -186,6 +186,173 @@ body{
                     }
                 }
             }
+
+            main{
+                font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+                margin: 0 auto;
+                padding-top: $mainPaddingTop + px;
+                width: 75%;
+                max-width: $containerWidth - $sideMenuWidth + px; 
+                font-size: $fzp;
+
+                @include r576{                        
+                    width: 355px;
+                }
+
+                @include r360{                        
+                    width: 315px;
+                }
+
+                >.table{
+                    width: 1000px;
+                    margin: 0 auto;
+                    color: #465D4C;
+                    
+                    @include r1440{
+                        width: 800px;
+                        font-size: 22px;
+                    }
+                    @include r1200{
+                        width: 650px;
+                        font-size: 18px;
+                    }
+                    
+                    @include r992{
+                        display: flex;
+                        flex-direction: column;
+                        width: 470px;
+                        margin-bottom: 50px;
+                    }
+
+                    @include r576{                        
+                        width: 330px;
+                        font-size: 12px;
+                    }
+
+                    @include r360{                        
+                        width: 300px;
+                    }
+
+                    &:nth-child(n + 2){
+
+                        >ul.title{
+                            display: none;
+
+                            @include r992{
+                                display: flex;
+                            }                            
+                        }
+                    }
+
+                    >ul.title{
+                        //訂單標頭
+                        display: flex;
+                        justify-content: space-around;
+
+                        >li{
+                            text-align: center;
+                            padding: 15px;
+
+                        }
+                    }
+
+                    >ul.item{
+                        //收藏內容
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        border-bottom: 1px solid #465D4C;
+
+                        >li{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            img{
+                                width: 100px;
+                                height: 100px;
+                                margin-bottom: 10px;
+
+                                @include r992{
+                                    width: 85px;
+                                    height: 85px;
+                                }
+
+                                @include r576{
+                                    width: 65px;
+                                    height: 65px;
+                                }
+                            }
+                            span{
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        button{
+                            border: 1px solid #465D4C;
+                            border-radius: 4px;
+                            outline: none;
+                            background-color: rgba(0,0,0,0);
+                            color: #465D4C;
+                            font-size: 16px;
+
+                            width: 110px;
+                            padding: 7px;
+                            margin: 10px;
+                            cursor: pointer;
+
+                            @include r1440{
+                                font-size: 14px;
+                            }
+
+                            @include r992{
+                                width: 90px;
+                                font-size: 12px;
+                            }
+
+                            @include r576{
+                                width: 75px;
+                                padding: 5px;
+                                margin: 5px;
+                                font-size: 10px;
+                            }
+
+                            &:hover{
+                                background-color: #465D4C;
+                                color: #fff;
+                            }
+
+                            i{
+                                display: none;
+
+                                @include r992{
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        .remove{
+                            border: 1px solid #aaa;
+                            color: #aaa;
+
+                        }
+                    }
+
+                    .name{
+                        width: 20%;
+                    }
+                    .size{
+                        width: 30%;
+                    }
+                    .price{
+                        width: 30%;
+                    }
+                    .btn{
+                        width: 20%;
+                    }
+                }
+            }
         }
     }
 }
