@@ -220,3 +220,34 @@
     //      /* 7 */ }
     @content;
 }
+
+
+@mixin  closeBtn($top, $right, $w, $h, $font, $content, $c_w, $c_font, $c_top, $c_left){
+    position: absolute;
+    top: $top + px;
+    right: $right + px;
+    span{
+        display: inline-block;
+        width: $w + px;
+        height:  $h + px;
+        font-size: $font + px;
+        text-align: center;
+        line-height: $h + px;
+        border: 1px solid ;
+        border-radius: 50%;
+        position: relative;
+        &:hover{
+            cursor: pointer;
+            &::after{
+                content: $content;
+                display: inline-block;
+                width: $c_w + px;
+                font-size: $c_font + px;
+                position: absolute;
+                top: $c_top + px;
+                left: $c_left + px;
+            }
+        }
+    }
+    @content;
+}
