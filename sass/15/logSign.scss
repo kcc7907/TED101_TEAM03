@@ -5,6 +5,7 @@ $f_close: 24px;
 
 body{
     background-color: #FFFAF4;
+    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0,#F1EADE);
 }
 
 div#login {
@@ -130,23 +131,66 @@ div#login {
     }
 }
 
-div#signIn {
+div#signUp {
     * {
         color: $csdr;
         box-sizing: border-box;
     }
-    div.signIn {
+    border: 1px solid blue;
+    margin: 40px auto 0;
+    div.signUp {
+        width: 550px;
+        height: 580px; 
         margin: auto;
-        border: 1px solid rgba(0,0,0,0%);
+        padding: 30px 10px;
         text-align: center;
-        width: 500px;
-        height: 500px;
+        background-color: rgba(189,167,156,.1);
         position: relative;
-        form.signIn{
+        svg{
+            position: absolute;
+            top: 10px;
+            left: 0;
+            z-index: -1;
+        }
+        form.signUp{
             margin: auto;
-            width: 360px;
+            width: 100%;
+            padding-left: 20px;
             text-align: left;
-            // TODO: 表格排版
+            input{
+                border: none;
+                outline: none;
+                border-bottom:  1px solid;
+                background-color: none;
+                background-color:  rgba(0,0,0,0);
+                &:focus{
+                    background-color: rgba(189,167,156,.1);
+                }
+            }
+            > div{
+                margin-bottom: 10px;
+                border: 1px solid red;
+                // 姓名&手機
+                &:first-child{
+                    border: 1px solid blue;
+                    display: flex;
+                    > div {
+                        // 姓名
+                        &:first-child{
+                            input{
+                                width: 150px;
+                            }
+                        }
+                        // 手機
+                        &:last-child{
+                            margin-left: 30px;
+                            input{
+                                width: 200px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

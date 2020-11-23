@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // log in animation
     (function () {
 
         document.onreadystatechange = () => {
@@ -11,8 +12,8 @@ $(document).ready(function () {
                  */
 
                 let el = document.querySelector('#logIn');
-                let myAnimation = new LazyLinePainter(el, { "ease": "easeOutExpo", "strokeWidth": 3, "strokeOpacity": 0, "strokeColor": "#bda79e", "strokeCap": "square" });
-                myAnimation.paint();
+                let myAnimation1 = new LazyLinePainter(el, { "ease": "easeOutExpo", "strokeWidth": 3, "strokeOpacity": 0, "strokeColor": "#bda79e", "strokeCap": "square" });
+                myAnimation1.paint();
             }
         }
 

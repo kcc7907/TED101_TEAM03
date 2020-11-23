@@ -194,3 +194,29 @@
     border: 1px solid $bc;
     @content;
 }
+
+
+// TODO:修改select跟輸入的文字大小
+@mixin  scrollBar($a, $b, $c, $d, $e, $f){
+    &::-webkit-scrollbar              {
+        width: $a + px;
+        background-color: $b;
+         /* 1 */ }
+    // &::-webkit-scrollbar-button       {
+    //      /* 2 */ }
+    &::-webkit-scrollbar-track        {
+        background-color: $c;
+        border-radius: $d + px;
+         /* 3 */ }
+    // &::-webkit-scrollbar-track-piece  {
+    //      /* 4 */ }
+    &::-webkit-scrollbar-thumb        {
+        border-radius: $e + px;
+        background-color: $f;
+         /* 5 */ }
+    // &::-webkit-scrollbar-corner       {
+    //      /* 6 */ }
+    // &::-webkit-resizer{
+    //      /* 7 */ }
+    @content;
+}
