@@ -149,7 +149,7 @@ body{
             justify-content: center;
             display: flex;
             position: relative;
-            &::before{
+            &:before{
                     content: '';
                     height: 1px;
                     background: $csg;
@@ -264,12 +264,20 @@ body{
                         height: 20px;
                     }
                     .num{
-                        width: 15px;
+                        width: 25px;
                         font-size: 18px;
                         border: none;
                         background: none;
                         text-align: center;
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
                     }
+                    input[type=number] {
+                            -moz-appearance: textfield;
+                        }
                     img{
                         display: flex;
                         align-items: center;
@@ -286,9 +294,36 @@ body{
         .right{
             width: 100%;
             height: 100px;
-            // background: $csg;
-            // position: fixed;
-            bottom: 0;
+            background: $csg;
+            position: fixed;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .titlenum{
+                display: none;
+            }
+            .cart_top{
+                display: flex;
+                justify-content: space-between;
+            }
+            .cart_btn{
+                display: flex;
+                justify-content: space-between;
+            }
+            .tatal_list{
+                overflow: scroll;
+                max-height: 60px;
+            }
+            .tatal_li{
+                display: flex;
+            }
+            .totalconut{
+                display: flex;
+            }
+            .merge{
+                display: flex;
+            }
         }
     }
 
