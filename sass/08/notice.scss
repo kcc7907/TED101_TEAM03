@@ -9,7 +9,7 @@
 body{
     background-color: #FFFAF4;
     
-    .jk_wrapper{
+    .jk_notice{
         background-color: #FFFAF4;
         margin-bottom: 100px;
         *{
@@ -224,10 +224,30 @@ body{
                         display: flex;
                         flex-direction: column;                        
                         padding: 10px;
+
+                        @include r1440{
+                            font-size: 20px;
+                        }
+
+                        @include r992{
+                            font-size: 16px;
+                        }
+
+                        @include r576{
+                            font-size: 12px;
+                        }
                         
                         >p{
                             padding: 10px;
                             line-height: 60px;
+
+                            @include r992{
+                                line-height: 40px;
+                            }
+
+                            @include r576{
+                                line-height: 30px;
+                            }
                         }
                         >span{
                             align-self: flex-end;

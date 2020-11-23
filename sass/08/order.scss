@@ -12,7 +12,7 @@
 body{
     background-color: #FFFAF4;
     
-    .jk_wrapper{
+    .jk_order{
         background-color: #FFFAF4;
         margin-bottom: 100px;
         *{
@@ -197,14 +197,20 @@ body{
                 width: 75%;
                 max-width: $containerWidth - $sideMenuWidth + px; 
                 font-size: $fzp;
-                // font-weight: lighter;
+
+                @include r576{                        
+                    width: 355px;
+                }
+
+                @include r360{                        
+                    width: 315px;
+                }
 
                 //每筆訂單
                 >.table{
                     width: 1000px;
                     margin: 0 auto;
-                    // border: 1px solid #465D4C;
-                    color: #465D4C;
+                    color: #465D4C;                    
 
                     @include r1440{
                         width: 800px;
@@ -223,7 +229,12 @@ body{
                     }
 
                     @include r576{                        
-                        width: 315px;
+                        width: 330px;
+                        font-size: 12px;
+                    }
+
+                    @include r360{                        
+                        width: 300px;
                     }
 
                     &:nth-child(n + 2){
@@ -294,6 +305,11 @@ body{
                                     border-bottom: 1px solid #FFFAF4;
                                     line-height: 120px;
                                 }
+
+                                @include r576{
+                                    height: 113px;
+                                    line-height: 113px;
+                                }
                             }
     
                             >.name{
@@ -303,13 +319,27 @@ body{
                                     height: 97px;  //js抓高度
                                     line-height: 97px;
                                     
+                                    // display: flex;
+                                    // flex-direction: column;
                                 }
+
+                                @include r576{
+
+                                    height: 85px;  //js抓高度
+                                    line-height: 85px;
+                                }
+                                // span{
+
+                                //     @include r992{
+    
+                                //         height: 28px;  //js抓高度                           
+                                //     }
+                                // }
                             }
     
                             >.count{
                                 @include r992{
-                                    display: none;
-                                    
+                                    display: none;                                    
                                 }
                             }
                             
@@ -380,6 +410,11 @@ body{
                                         width: 90px;
                                         font-size: 18px;
                                     }
+
+                                    @include r576{
+                                        width: 80px;
+                                        font-size: 12px;
+                                    }
     
                                     &:hover{
                                         background-color: #465D4C;
@@ -437,7 +472,7 @@ body{
 
                     //詳細資訊
                     >.detail{
-                        // display: none;
+                        display: none;
                         width: 100%;
                         border-right: 1px solid #465D4C;
                         border-left: 1px solid #465D4C;
@@ -631,6 +666,10 @@ body{
                                 @include r992{
                                     font-weight: bold;
                                     margin: 35px;
+                                }
+
+                                @include r576{
+                                    font-size: 16px;
                                 }
                             }
 
