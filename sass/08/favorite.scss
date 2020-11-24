@@ -194,8 +194,10 @@ body{
                 width: 75%;
                 max-width: $containerWidth - $sideMenuWidth + px; 
                 font-size: $fzp;
+                color: #465D4C;                
 
-                @include r576{                        
+                @include r576{
+                    font-size: 16px;                       
                     width: 355px;
                 }
 
@@ -204,9 +206,10 @@ body{
                 }
 
                 >.table{
-                    width: 1000px;
-                    margin: 0 auto;
+                    width: 1000px;                    
+                    margin: 0 auto 50px;
                     color: #465D4C;
+                    
                     
                     @include r1440{
                         width: 800px;
@@ -251,7 +254,9 @@ body{
 
                         >li{
                             text-align: center;
-                            padding: 15px;
+                            padding: 35px 0;
+                            font-weight: bold;
+
 
                         }
                     }
@@ -283,6 +288,11 @@ body{
                                     width: 65px;
                                     height: 65px;
                                 }
+
+                                @include r360{                        
+                                    width: 55px;
+                                    height: 55px;
+                                }
                             }
                             span{
                                 margin-bottom: 10px;
@@ -311,10 +321,8 @@ body{
                                 font-size: 12px;
                             }
 
-                            @include r576{
-                                width: 75px;
-                                padding: 5px;
-                                margin: 5px;
+                            @include r768{
+                                width: 30px;
                                 font-size: 10px;
                             }
 
@@ -323,11 +331,19 @@ body{
                                 color: #fff;
                             }
 
+                            span{
+
+                                @include r768{
+                                    display: none;
+                                }
+                            }
+
                             i{
                                 display: none;
 
-                                @include r992{
+                                @include r768{
                                     display: block;
+                                    // width: 30px;
                                 }
                             }
                         }
