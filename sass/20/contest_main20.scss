@@ -180,13 +180,23 @@ $cf :#CAC3BB;
         }
         .light{
             color:#BDA79C;
+            text-decoration: underline;
         }
     }
 
     //left
     .content{
-        display: none ;
+        // display: none ;
     }
+    .content_box{
+        .year{
+            font-size: 20px;
+            width: 20px;
+            word-break: break-all;
+        }
+        .contest_name{}
+    }
+
     .slider_titlebox{
         margin: 10px 0 0 20px;
         color: #BDA79C;
