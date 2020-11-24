@@ -11,14 +11,101 @@ body{
 
     .jk_vote{
         background-color: #FFFAF4;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
 
         *{
             box-sizing: border-box;
         }
 
+        .backGround{
+            display: flex;
+            align-items: center;
+            background-color: rgba(0,0,0,.7);
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+
+            z-index: 10;
+
+            .clickVote{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                
+                margin: 0 auto;
+                padding: 85px 0;
+                width: 50%;
+    
+                background-color:#F0EBE5;
+                font-size: 24px;
+                color: #465D4C;
+
+                box-shadow: rgba(240, 240, 240, .6) 10px 10px 20px;
+
+
+                >.close{                    
+                    margin: -60px -20px 0 0;
+                    align-self: flex-start;
+                    order: 2;
+
+                    cursor: pointer;
+
+                    i{
+                        font-size: 30px;
+                    }
+
+                    &:hover{
+
+                        i{
+                            border-radius: 50%;
+                            background-color: #465D4C;
+                            color: #fff;
+                            
+                        }
+                    }
+                }
+                >.text{
+                    >p{
+                        padding: 12px;
+                    }
+    
+                }
+    
+                >.img{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+    
+                    img{
+                        margin-bottom: 40px;
+                    }
+    
+                    button{
+                        outline: none;
+                        border: 1px solid #465D4C;
+                        background-color: rgba(0,0,0,0);
+                        width: 180px;
+                        height: 70px;
+                        font-size: 24px;
+                        color: #465D4C;
+                        cursor: pointer;
+    
+                        &:hover{
+                            background-color: #465D4C;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+        }
+
         >.container{
             width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 40px;
             font-size: 16px;
 
             >.search{
@@ -206,5 +293,7 @@ body{
         }
     
     }
+
+    
 
 }
