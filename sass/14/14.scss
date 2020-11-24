@@ -1,6 +1,197 @@
 @import '../../lib/header/header.scss';
 @import'../../lib/header/footer.scss';
 
+
+
+
+
+@mixin rwdmF($screenSize) {
+    @if $screenSize==1920{
+        @media (max-width: 1920px) {
+            .titleFont1{
+                font-size: 40px !important;
+            } // h1
+            .titleFont2{
+                font-size: 30px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 25px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 24px !important;
+            } // p
+            .detailFont{ 
+                font-size: 16px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 60px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==1700 {
+        @media (max-width: 1700px) {
+            .titleFont1{
+                font-size: 38px !important;
+            } // h1
+            .titleFont2{
+                font-size: 28px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 23px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 24px !important;
+            } // p
+            .detailFont{ 
+                font-size: 16px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 60px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==1500 {
+        @media (max-width: 1500px) {
+            .titleFont1{
+                font-size: 36px !important;
+            } // h1
+            .titleFont2{
+                font-size: 26px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 21px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 20px !important;
+            } // p
+            .detailFont{ 
+                font-size: 14px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 50px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==1200 {
+        @media (max-width: 1200px) {
+            .titleFont1{
+                font-size: 34px !important;
+            } // h1
+            .titleFont2{
+                font-size: 24px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 19px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 20px !important;
+            } // p
+            .detailFont{ 
+                font-size: 14px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 50px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==992 {
+        @media (max-width: 992px) {
+            .titleFont1{
+                font-size: 32px !important;
+            } // h1
+            .titleFont2{
+                font-size: 22px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 17px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 16px !important;
+            } // p
+            .detailFont{ 
+                font-size: 12px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 40px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==768 {
+        @media (max-width: 768px) {
+            .titleFont1{
+                font-size: 30px !important;
+            } // h1
+            .titleFont2{
+                font-size: 20px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 15px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 16px !important;
+            } // p
+            .detailFont{ 
+                font-size: 12px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 40px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==576 {
+        @media (max-width: 576px) {
+            .titleFont1{
+                font-size: 26px !important;
+            } // h1
+            .titleFont2{
+                font-size: 18px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 13px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 12px !important;
+            } // p
+            .detailFont{ 
+                font-size: 10px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 30px !important;
+            }
+            @content;
+        }
+    }
+    @else if $screenSize==360 {
+        @media (max-width: 360px) {
+            .titleFont1{
+                font-size: 20px !important;
+            } // h1
+            .titleFont2{
+                font-size: 16px !important;
+             } // h2
+            .titleFont3{ 
+                font-size: 11px !important;
+             } // h3
+            .contentFont{ 
+                font-size: 12px !important;
+            } // p
+            .detailFont{ 
+                font-size: 8px !important;
+            }  // pu
+            .lineHeight{ 
+                line-height: 30px !important;
+            }
+            @content;
+        }
+    }
+}
+
 body{
     border: 3px solid hotpink;
     margin: 0;
@@ -108,13 +299,21 @@ div#JN{
         }
 
         .stylelist{
-        border: 1px solid blue;    
-        padding: 10px;    
+            border: 1px solid blue;    
+            padding: 10px;    
         }
 
         .style{
             border: 1px solid blue;
             padding: 10px;
+        }
+
+        .pic{
+            border: 1px solid cadetblue;
+            text-align: center;
+            width: 300px;
+            height: 60px;
+            margin: auto;
         }
 
         
@@ -126,6 +325,7 @@ div#JN{
                 border: 5px solid rebeccapurple;
                 width: 80%;
                 font-size: 0;
+                margin: 0px 20px;
                 li{
                     display: inline-block;
                     border: 1px solid;
@@ -136,6 +336,8 @@ div#JN{
                         text-decoration: none;
                         &:hover{
                             cursor: pointer;
+                            background-color: #865454;
+                            color: white;
                         }
                     }
                 }
@@ -166,7 +368,7 @@ div#JN{
         //     // justify-content: center;
         // }
 
-        //戶濱頁籤
+        // 戶濱頁籤
 
         // ul.tab_list{
         //     list-style: none;
@@ -245,8 +447,13 @@ div#JN{
             border: 2px solid red; 
             position: relative;
             overflow: hidden;
+            &:hover > span{
+                opacity: 100%;
+            }
                 span{
                     display: inline-block;
+                    // display: none;
+                    opacity: 0;
                     width: 100%;
                     height: 120px;
                     text-align: center;
@@ -257,6 +464,7 @@ div#JN{
                     line-height: 120px;
                     font-size: 30px;
                     color: white;
+                    transition: all .5s;
                     &:last-child{
                         top: 120px;
                     }
@@ -287,6 +495,7 @@ div#JN{
         .stylebox_right{
             border: 1px solid pink;
             width: 1200px;
+            margin-bottom: 20%;
         }
 
         .style_one_one, .style_one_two, .style_one_three, .style_two_one, 
@@ -331,6 +540,7 @@ div#JN{
             .award{
                 border: 3px solid orange;
                 margin-top: 15%;
+                margin-bottom: 20%;
             }
 
             div.div_block{
@@ -351,6 +561,7 @@ div#JN{
                 background-image: url("../img/interiordesign/excellent/award/hampshire-54-master-bed-2.jpg");
                 width: 100%;
                 height: 750px;
+                background-position: center, center;
                 border: 1px solid red;
             }
             
@@ -382,8 +593,9 @@ div#JN{
             border: 3px solid fuchsia;
             width: 70%;
             margin: auto;
-            margin-top: 15%;
-            height: 750px;
+            margin-top: 35%;
+            // height: 750px;
+            margin-left: 15%;
         }
 
         #sliderBoard{
@@ -400,10 +612,18 @@ div#JN{
         text-align: center;
         height: 80px;
         // margin-top: 3%;
+        justify-content: center;
+
+        i.fas{
+            font-size: 10px;
+        }
     }
 
+
+    
     .click{
         margin-top: 3%;
+        padding: 0px 120px;
     }
 
     .show_pic{
@@ -445,6 +665,16 @@ div#JN{
        margin-top: 100px;
     }
 
+    .pics{
+        border: 1px solid brown;
+        display: flex;
+        width: 300px;
+        height: 50px;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+    }
+
     .d_pic_flex{
         border: 3px solid yellow;
         // display: inline-flex;
@@ -466,38 +696,76 @@ div#JN{
         
     }
 
+
+    .inter_one{
+        border: 2px solid brown;   
+        width: 600px;
+        height: 200px; 
+        padding: 20px;
+    }
+
     .more_detail{
         border: 1px solid darkblue;
-        justify-self: center;
+        margin-top: 5%;
+        position: relative;
+        margin-bottom: 50%;
+        .contact{
+            border: 3px solid red;
+            position: absolute;
+            display: inline-block;
+            opacity: 1;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            z-index: 1;
+            line-height: 120px;
+            font-size: 30px;
+            
+                .more_details{
+                    border: 1px solid brown;
+                    display: inline-block;
+                    width: 200px;
+                    &:hover{
+                        cursor: pointer;
+                        background-color: #865454;
+                        color: white;
+                    }
+                    
+                }
+            }
     }
 
 
-}
+    .deatil_contact{
+        border: 1px solid rebeccapurple;
+        width: 1000px;
+        margin-top: 5%;
+        display: block;
+        margin: auto;
+        background-color: #fff;
+        opacity: 0.5;
+
+    }
+    }
+
+    
+
 
     img{
         .exhibit_pic2{
             width: 100%;
     }
-
-        .interior_pics{
-            width: 100%;
-            height: 300px;
-        }
-
-        
-        
-        
     }
 
-    p.pic{
-        border: 1px solid cadetblue;
-        text-align: center;
-        width: 300px;
-        height: 60px;
-        margin: auto;
-    }
-
-
+@include rwdmF(1920);
+@include rwdmF(1700);
+@include rwdmF(1500);
+@include rwdmF(1200);
+@include rwdmF(992);
+@include rwdmF(768);
+@include rwdmF(576);
+@include rwdmF(360);
+@include titlem();
 
 
 //jquery輪播圖
@@ -543,8 +811,4 @@ div#JN{
 // }
 
 // #contentButton li.clickMe{
-// 	background: #888;
-// }
-
-
-
+// 	background: #888
