@@ -50,6 +50,12 @@ body{
                     font-size: 16px;
                     color: #BDA79C;
                     background-color: rgba(0,0,0,0);
+                    cursor: pointer;
+
+                    &:hover{
+                        color: #fff;
+                        background-color: #BDA79C;
+                    }
                 }
             }
 
@@ -62,11 +68,15 @@ body{
                     width: 220px;
 
                     >.votes{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
                         width: 90px;
                         height: 90px;
                         margin: 0 auto;
                         text-align: center;
-                        line-height: 90px;
+                        // line-height: 90px;
                     
                         background-color: #BDA79C;
                         color: #F1EADE;
@@ -87,10 +97,27 @@ body{
                         
                             transform: translate(5px, 5px);
                         }
+
+                        >div{
+                            padding: 5px 0;
+                        }
                     }
 
-                    >#page{
-                        height: 200px;  //  等內容
+                    >#vote_page{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                        margin: 100px auto 150px;
+
+                        >span{
+                            margin: 20px auto;
+                            padding: 5px 5px;
+                        }
+
+                        >.-on{
+                            border-bottom: 1px solid #54383B;
+                        }
                     }
                     
                     >.visitor{
