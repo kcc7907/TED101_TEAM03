@@ -176,7 +176,7 @@ $cf :#CAC3BB;
             text-align:justify;
             padding-bottom: 20px;
             overflow: auto;
-            max-height: auto;
+            max-height: 300px;
         }
         .light{
             color:#BDA79C;
@@ -244,7 +244,8 @@ $cf :#CAC3BB;
 
 
 
-footer{
+footer.libft{
         display: none;
         position: fixed;
+        bottom: 40px;
 }
