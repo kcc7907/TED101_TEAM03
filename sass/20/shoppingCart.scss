@@ -145,11 +145,11 @@ body{
     main{
         .left{
             width: 100%;
-            height: 800px;
+            min-height: 300px;
             justify-content: center;
             display: flex;
             position: relative;
-            &::before{
+            &:before{
                     content: '';
                     height: 1px;
                     background: $csg;
@@ -264,12 +264,20 @@ body{
                         height: 20px;
                     }
                     .num{
-                        width: 15px;
+                        width: 25px;
                         font-size: 18px;
                         border: none;
                         background: none;
                         text-align: center;
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
                     }
+                    input[type=number] {
+                            -moz-appearance: textfield;
+                        }
                     img{
                         display: flex;
                         align-items: center;
@@ -285,10 +293,69 @@ body{
 
         .right{
             width: 100%;
-            height: 100px;
-            // background: $csg;
-            // position: fixed;
+            background: $csg;
+            position: sticky;
             bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px 10px;
+            color: $cbg;
+            .titlenum{
+                display: none;
+            }
+            .cart_top{
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+            }
+            .cart_top_list{
+                font-size: 0;
+            }
+            .cart_btn{
+                display: flex;
+                justify-content: space-between;
+            }
+            .tatal_list{
+                overflow-y: scroll;
+                max-height: 50px;
+                margin-top: 5px;
+                p{
+                    margin-right: 5px;
+                }
+            }
+            .tatal_li{
+                display: flex;
+                margin-bottom: 5px;
+                border-bottom: 1px solid $cbg;
+                padding-bottom: 5px;
+            }
+            .type{
+                margin-right: 5px;
+                text-align: right;
+            }
+            .pricenum{
+                min-width: 45px;
+            }
+            .totalconut{
+                display: flex;
+                p{
+                    margin-bottom: 5px;
+                }
+            }
+            .merge{
+                display: flex;
+                justify-content: flex-end;
+                .dollar{
+                    margin-right: 3px;
+                }
+            }
+            button{
+                background-color: $csg;
+                border: 1px solid $cbg;
+                color: $cbg;
+                margin: 5px 20px 0;
+            }
         }
     }
 
