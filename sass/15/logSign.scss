@@ -101,7 +101,8 @@ div#login {
             z-index: -1;
         }
         div.closebtn{
-            @include closeBtn( 0, 0, 20, 20, 24, "取消登入", 100, 16, 0, -90)
+            @include closeBtn( 0, 0, 20, 20, 24, "取消登入", 100, 16, 0, -90, 17);
+            line-height: 17px; 
         }
     }
 }
@@ -239,7 +240,7 @@ div#signUp {
             }
         }
         div.closebtn{
-            @include closeBtn( 30, 30, 25, 25, 25, "取消註冊會員", 100, 16, 0, -110)
+            @include closeBtn( 30, 30, 25, 25, 25, "取消註冊會員", 100, 16, 0, -110, 25);
         }
     }
 }
@@ -336,7 +337,7 @@ div#signUp {
                 }
             }
             div.closebtn{
-                @include closeBtn( 30, 30, 20, 20, 24, "取消註冊會員", 100, 16, 0, -105)
+                @include closeBtn( 30, 30, 20, 20, 24, "取消註冊會員", 100, 16, 0, -105, 20)
             }
         }
     }
@@ -382,7 +383,7 @@ div#signUp {
                 height: 350px;
             }
             div.closebtn{
-                @include closeBtn( 0, 0, 15, 15, 15, "取消登入", 80, 12, 0, -70)
+                @include closeBtn( 0, 0, 15, 15, 15, "取消登入", 80, 12, 0, -70, 12)
             }
         }
     }
@@ -455,7 +456,7 @@ div#signUp {
                 }
             }
             div.closebtn{
-                @include closeBtn( 20, 20, 12, 12, 12, "取消註冊會員", 100, 10, 0, -90)
+                @include closeBtn( 20, 20, 12, 12, 12, "取消註冊會員", 100, 10, 0, -90, 12)
             }
         }
     }
@@ -516,7 +517,7 @@ div#signUp {
                 }
             }
             div.closebtn{
-                @include closeBtn( 10, 10, 15, 15, 15, "取消註冊會員", 100, 12, 0, -90)
+                @include closeBtn( 10, 10, 15, 15, 15, "取消註冊會員", 100, 12, 0, -90, 12)
             }
         }
     }

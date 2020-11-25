@@ -14,8 +14,76 @@ div.JHH {
         color: #865454;
     }
 
-    > header {
+    >header {
+        width: 100%;
+        height: 120px;
+        border: 1px solid;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
         display: none;
+
+        .logo {
+            border: 1px solid;
+
+            display: inline-block;
+            width: 25vw;
+            height: 100%;
+
+            a {
+                text-decoration: none;
+                display: inline-block;
+                height: 100%;
+
+                img {
+                    max-height: 100%;
+                }
+            }
+        }
+
+        .icon {
+            border: 1px solid;
+            width: 30vw;
+            height: 25px;
+            display: flex;
+            justify-content: space-around;
+
+            .ham {
+                position: relative;
+
+                span {
+                    background: $c_font_strong;
+                    display: block;
+                    width: 20px;
+                    height: 2px;
+
+                    &:nth-child(1) {
+                        margin-top: 2px;
+                        transform-origin: top right;
+                        transition: all .5s;
+                    }
+
+                    &:nth-child(2) {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        &.-none {
+                            display: none;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        position: absolute;
+                        bottom: 2px;
+                        transform-origin: top right;
+                        transition: all .5s;
+                    }
+                }
+            }
+        }
     }
 
     margin-top: 5vh;
@@ -149,6 +217,7 @@ div.JHH {
                         &:last-child {
                             // 最新消息
                             padding: 5px 20px;
+                            margin-bottom: 50px;
 
                             ul {
                                 padding-left: 10px;
@@ -195,6 +264,10 @@ div.JHH {
                                 max-width: 100%;
                                 max-height: 100%;
                                 position: absolute;
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
                             }
 
                             &:first-child,
@@ -234,7 +307,7 @@ div.JHH {
     div#homeRight {
         border: 1px solid;
         position: relative;
-        overflow: hidden;
+        // overflow: hidden;
 
         >div {
             position: absolute;
@@ -247,15 +320,18 @@ div.JHH {
                 left: 0;
                 position: relative;
 
+
                 &::before {
                     content: "";
                     width: 100%;
                     height: 100%;
                     display: inline-block;
-                    animation: runbcg 10s both;
+                    animation: runbcg 5s both;
                     position: absolute;
                     top: 0;
-                    z-index: -1;
+                    z-index: 1;
+
+
                 }
 
                 button {
@@ -267,6 +343,22 @@ div.JHH {
                     color: #FFFFFF;
                     position: relative;
                     z-index: 2;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                @keyframes runbcg {
+                    0% {
+                        width: 0;
+                        background-color: rgba(134, 84, 84, .4);
+                    }
+
+                    100% {
+                        width: 220px;
+                        background-color: rgba(134, 84, 84, 1);
+                    }
                 }
             }
 
@@ -290,23 +382,78 @@ div.JHH {
     }
 
     div#bottomBox {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid;
+
+        >div {
+            &:first-child {
+                // social media
+                display: flex;
+                justify-content: center;
+                border: 1px solid;
+
+                >div {
+                    width: 30px;
+                    height: 30px;
+                    margin: 30px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        display: inline-block;
+                        max-width: 100%;
+                        max-height: 100%;
+                        position: absolute;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:first-child,
+                    &:nth-child(2),
+                    &:last-child {
+                        top: 0;
+                    }
+
+                    &:nth-child(3) {
+                        img {
+                            bottom: 0;
+                        }
+
+                    }
+                }
+            }
+
+            &:last-child {
+                // 版權
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                p,
+                div,
+                img {
+                    display: inline-block;
+                    margin: 0;
+                    vertical-align: middle;
+                }
+
+
+            }
+        }
+
         display: none;
+
     }
 
 }
 
-@keyframes runbcg {
-    0% {
-        width: 0;
-        background-color: rgba(134, 84, 84, .4);
-    }
 
-    100% {
-        width: 220px;
-        background-color: rgba(134, 84, 84, 1);
-        z-index: 1;
-    }
-}
 
 
 .-hamR {
@@ -345,13 +492,14 @@ div.JHH {
                     }
                 }
 
+                // 底部
                 &:last-child {
                     >div {
                         &:first-child {
                             >div {
-                                width: 25px;
-                                height: 25px;
-                                margin: 40px 20px;
+                                width: 30px;
+                                height: 30px;
+                                margin: 30px 20px;
                             }
                         }
                     }
@@ -402,8 +550,8 @@ div.JHH {
                     >div {
                         &:first-child {
                             >div {
-                                width: 20px;
-                                height: 20px;
+                                width: 25px;
+                                height: 25px;
                                 margin: 24px 20px;
                             }
                         }
@@ -480,11 +628,14 @@ div.JHH {
         padding-top: 30px;
         flex-wrap: wrap;
         width: 80vw;
+        height: 100%;
         margin: auto;
         border: 1px solid red;
-        > header{
-            display: block;
+
+        >header {
+            display: flex;
         }
+
         div#homeLeft {
             width: 100%;
             border: 1px solid blue;
@@ -492,7 +643,11 @@ div.JHH {
             >div {
                 &:first-child {
                     border: 1px solid green;
-                    // overflow-y: hidden;
+                    overflow-y: hidden;
+
+                    header.common {
+                        display: none;
+                    }
 
                     >div {
                         border: 1px solid;
@@ -509,11 +664,65 @@ div.JHH {
 
                             &:last-child {
                                 // 最新消息
-                                height: 80%;
-                                overflow-y: auto;
+                                height: 170px;
+                                border: 1px solid red;
+                                padding: 5px 20px;
+
+                                ul {
+                                    margin: 0;
+                                    border: 1px solid red;
+                                    height: 100%;
+                                    overflow-y: hidden;
+
+                                    li {
+                                        height: 100%;
+                                        margin: 10px 0;
+                                        overflow-y: hidden;
+
+
+                                    }
+                                }
+
                                 @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
                             }
                         }
+                    }
+                }
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+
+        div#homeRight {
+            width: 100%;
+            height: 400px;
+
+            >div {
+                &:first-child {
+                    top: -20px;
+                    left: calc((100% - 220px) / 2);
+                }
+
+            }
+        }
+
+        div#bottomBox {
+            display: flex;
+        }
+    }
+}
+
+;
+
+@include rwdmF(576) {
+    div.JHH {
+        div#bottomBox {
+            >div {
+                &:first-child {
+                    >div {
+                        margin: 15px;
                     }
                 }
             }
@@ -522,5 +731,4 @@ div.JHH {
 }
 
 ;
-@include rwdmF(576);
 @include rwdmF(360);
