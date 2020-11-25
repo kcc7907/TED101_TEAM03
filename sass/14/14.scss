@@ -2,14 +2,12 @@
 @import'../../lib/header/footer.scss';
 
 
-
-
-
 @mixin rwdmF($screenSize) {
     @if $screenSize==1920{
-        @media (max-width: 1920px) {
+        @media all and  (max-width: 1920px) {
             .titleFont1{
                 font-size: 40px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 30px !important;
@@ -22,7 +20,7 @@
             } // p
             .detailFont{ 
                 font-size: 16px !important;
-            }  // pu
+            }  // pu 不重要的小字
             .lineHeight{ 
                 line-height: 60px !important;
             }
@@ -30,9 +28,10 @@
         }
     }
     @else if $screenSize==1700 {
-        @media (max-width: 1700px) {
+        @media all and  (max-width: 1700px) {
             .titleFont1{
                 font-size: 38px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 28px !important;
@@ -53,9 +52,10 @@
         }
     }
     @else if $screenSize==1500 {
-        @media (max-width: 1500px) {
+        @media all and  (max-width: 1500px) {
             .titleFont1{
                 font-size: 36px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 26px !important;
@@ -76,9 +76,10 @@
         }
     }
     @else if $screenSize==1200 {
-        @media (max-width: 1200px) {
+        @media all and  (max-width: 1200px) {
             .titleFont1{
                 font-size: 34px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 24px !important;
@@ -99,9 +100,10 @@
         }
     }
     @else if $screenSize==992 {
-        @media (max-width: 992px) {
+        @media all and  (max-width: 992px) {
             .titleFont1{
                 font-size: 32px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 22px !important;
@@ -122,9 +124,10 @@
         }
     }
     @else if $screenSize==768 {
-        @media (max-width: 768px) {
+        @media all and  (max-width: 768px) {
             .titleFont1{
                 font-size: 30px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 20px !important;
@@ -145,9 +148,10 @@
         }
     }
     @else if $screenSize==576 {
-        @media (max-width: 576px) {
+        @media all and  (max-width: 576px) {
             .titleFont1{
                 font-size: 26px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 18px !important;
@@ -171,6 +175,7 @@
         @media (max-width: 360px) {
             .titleFont1{
                 font-size: 20px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
             } // h1
             .titleFont2{
                 font-size: 16px !important;
@@ -193,9 +198,10 @@
 }
 
 body{
-    border: 3px solid hotpink;
+    border: 1px solid hotpink;
     margin: 0;
     background-color: #f1ece8;
+    // overflow-x: hidden;
     // margin-top: 160px;
 }
 
@@ -209,7 +215,8 @@ body{
 div#JN{
     > div{
         border: 1px solid red;
-        width: 1200px;
+        max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
         font-size: 24px;
 
@@ -234,8 +241,14 @@ div#JN{
             justify-content: center;
         }
 
+        .introduce_detail{
+            border: 1px solid darkgoldenrod;   
+            display: inline-flex;
+            margin-top: 5%;
+            }
+
         .intro_detail{
-            border: 2px solid blue;
+            border: 1px solid blue;
             width: 40%;
             margin-left: 5%;
             margin-top: 100px;
@@ -243,35 +256,29 @@ div#JN{
             font-size: 24px;
         }
 
-        .introduce_detail{
-        border: 3px solid darkgoldenrod;   
-        display: inline-flex;
-        margin-top: 5%;
-        }
-
         .pic_intro{
-            border: 2px solid orangered;
+            border: 1px solid orangered;
             
         }
 
         .designer{
-            border: 2px solid purple;
+            border: 1px solid purple;
             width: auto;
         }
 
         .first{
-            border: 2px solid palevioletred;
+            border: 1px solid palevioletred;
             width: auto;
         }
 
         .designer_say{
-            border: 5px solid navy;
+            border: 1px solid navy;
             display: inline-flex;
             margin-top: 15%;
         }
 
         .second{
-            border: 5px solid darkcyan;
+            border: 1px solid darkcyan;
             width: 60%;
             margin-left: 5%;
             line-height: 60px;
@@ -287,12 +294,12 @@ div#JN{
         // }
 
         .series{
-            border: 2px solid gray;
+            border: 1px solid gray;
         }
 
 
         .title{
-            border: 3px solid purple;
+            border: 1px solid purple;
             display: inline-flex;
             text-align: center;
             width: 50%;
@@ -320,9 +327,10 @@ div#JN{
 
         //頁籤
         .tab_list_block{
+            max-width: 1200px;
             width: 100%;
             .tab_list{
-                border: 5px solid rebeccapurple;
+                border: 1px solid rebeccapurple;
                 width: 80%;
                 font-size: 0;
                 margin: 0px 20px;
@@ -330,10 +338,11 @@ div#JN{
                     display: inline-block;
                     border: 1px solid;
                     a{
-                        font-size: 24px;
+                        font-size: 30px;
                         display: inline-block;
                         padding: 5px 60px;
                         text-decoration: none;
+                        color: black;
                         &:hover{
                             cursor: pointer;
                             background-color: #865454;
@@ -444,7 +453,7 @@ div#JN{
         .jpgbox{
             width: 30%; 
             height: 240px; 
-            border: 2px solid red; 
+            border: 1px solid red; 
             position: relative;
             overflow: hidden;
             &:hover > span{
@@ -483,7 +492,7 @@ div#JN{
         }
 
         img.homepic, img.commercial_pic, img.office_pic{
-            border: 2px solid green;
+            border: 1px solid green;
             // height: 300px;
             // max-width: 100%; 
             max-height: 100%;
@@ -494,13 +503,15 @@ div#JN{
 
         .stylebox_right{
             border: 1px solid pink;
-            width: 1200px;
+            max-width: 1200px;
+            width: 100%;
             margin-bottom: 20%;
         }
 
         .style_one_one, .style_one_two, .style_one_three, .style_two_one, 
         .style_two_two, .style_three_one{
             display: inline-flex;
+            max-width: 1200px;
             width: 100%;
             justify-content: space-around;
         }
@@ -538,7 +549,7 @@ div#JN{
         // section
         section{
             .award{
-                border: 3px solid orange;
+                border: 1px solid orange;
                 margin-top: 15%;
                 margin-bottom: 20%;
             }
@@ -548,6 +559,11 @@ div#JN{
                 width: 100%;
                 height: 750px;
                 border: 1px solid red;
+                &::after{
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
             }
 
             div.div_block_two{
@@ -570,9 +586,11 @@ div#JN{
                 background-color: hsla(0, 0%, 0%, 0.5);
                 color: white;
                 width: 23%;
+                // max-width: 1200px;
+                // width: 100%;
                 height: 73%;
-                margin-left: 720px;
-                display: inline-block;
+                float: right;
+                display: block;
                 padding: 100px; 
             /*   opacity: 1; */
             }
@@ -586,11 +604,10 @@ div#JN{
                 line-height: 50px;
             }
             
-    
         }
 
         .image{
-            border: 3px solid fuchsia;
+            border: 1px solid fuchsia;
             width: 70%;
             margin: auto;
             margin-top: 35%;
@@ -599,16 +616,18 @@ div#JN{
         }
 
         #sliderBoard{
-            border: 3px solid indianred;
+            border: 1px solid indianred;
             width: 50%;
         }
     }
 
     //第二頁
     .select_click{
-        border: 2px solid rebeccapurple;
+        border: 1px solid rebeccapurple;
         display: inline-flex;
+        max-width: 1200px;
         width: 100%;
+        // width: 100%;
         text-align: center;
         height: 80px;
         // margin-top: 3%;
@@ -624,10 +643,11 @@ div#JN{
     .click{
         margin-top: 3%;
         padding: 0px 120px;
+        font-size: 32px;
     }
 
     .show_pic{
-        border: 3px solid darkblue;  
+        border: 1px solid darkblue;  
         display: flex;
         align-items: center;
         justify-content:  center;
@@ -649,7 +669,7 @@ div#JN{
     }
 
     .designer_intro{
-        border: 2px solid indianred;
+        border: 1px solid indianred;
         text-align: center;
         margin-top: 35%;
     }
@@ -669,14 +689,15 @@ div#JN{
         border: 1px solid brown;
         display: flex;
         width: 300px;
-        height: 50px;
+        height: 90px;
         align-items: center;
         justify-content: space-around;
         margin: auto;
+        font-size: 32px;
     }
 
     .d_pic_flex{
-        border: 3px solid yellow;
+        border: 1px solid yellow;
         // display: inline-flex;
         width: 100%;
         margin-top: 60px;
@@ -698,7 +719,7 @@ div#JN{
 
 
     .inter_one{
-        border: 2px solid brown;   
+        border: 1px solid brown;   
         width: 600px;
         height: 200px; 
         padding: 20px;
@@ -710,7 +731,7 @@ div#JN{
         position: relative;
         margin-bottom: 50%;
         .contact{
-            border: 3px solid red;
+            border: 1px solid red;
             position: absolute;
             display: inline-block;
             opacity: 1;
@@ -748,8 +769,6 @@ div#JN{
     }
     }
 
-    
-
 
     img{
         .exhibit_pic2{
@@ -757,15 +776,84 @@ div#JN{
     }
     }
 
-@include rwdmF(1920);
-@include rwdmF(1700);
-@include rwdmF(1500);
-@include rwdmF(1200);
-@include rwdmF(992);
-@include rwdmF(768);
-@include rwdmF(576);
-@include rwdmF(360);
-@include titlem();
+
+// @include rwdmF(1920);
+// @include rwdmF(1700);
+// @include rwdmF(1500);
+// @include rwdmF(1200){
+    
+// };
+    
+// @include rwdmF(992){
+
+    @include rwdmF(992){ 
+    div#JN{
+        > div{
+            border: 1px solid blue;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            font-size: 24px;
+            .photo{
+                background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
+                width: 100%;
+                height: 350px;
+                // background-attachment: fixed;
+                background-position: center center;
+                display: inline-block;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .introduce_detail{
+                border: 1px solid darkgoldenrod;   
+                display: grid;
+                margin-top: 5%;
+                justify-items: center;
+                }
+    
+            .intro_detail{
+                border: 1px solid blue;
+                width: 40%;
+                margin-left: 5%;
+                margin-top: 100px;
+                line-height: 60px;
+                font-size: 24px;
+                order: 2;
+            }
+    
+            .pic_intro{
+                border: 1px solid orangered;
+                order: 1;
+            }
+
+            .designer_say{
+                border: 1px solid navy;
+                display: grid;
+                margin-top: 15%;
+                justify-items: center;
+            }
+
+
+            .style_one_one, .style_one_two, .style_one_three, .style_two_one, 
+        .style_two_two, .style_three_one{
+            display: inline-flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        }
+    }
+};
+
+
+// @include rwdmF(768);
+// @include rwdmF(576);
+// @include rwdmF(360);
 
 
 //jquery輪播圖
@@ -810,5 +898,3 @@ div#JN{
 // 	margin: 5px;
 // }
 
-// #contentButton li.clickMe{
-// 	background: #888

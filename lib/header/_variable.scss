@@ -194,32 +194,32 @@ $lh:30px;
 //rwd區間函式
 @mixin rwdm($screenSize) {
     @if $screenSize==1700 {
-        @media (max-width: 1700px) {
+        @media all and (max-width: 1700px) {
             @content;
         }
     }
     @else if $screenSize==1500 {
-        @media (max-width: 1500px) {
+        @media all and  (max-width: 1500px) {
             @content;
         }
     }
     @else if $screenSize==1200 {
-        @media (max-width: 1200px) {
+        @media all and (max-width: 1200px) {
             @content;
         }
     }
     @else if $screenSize==992 {
-        @media (max-width: 992px) {
+        @media all and (max-width: 992px) {
             @content;
         }
     }
     @else if $screenSize==768 {
-        @media (max-width: 768px) {
+        @media all and  (max-width: 768px) {
             @content;
         }
     }
     @else if $screenSize==576 {
-        @media (max-width: 576px) {
+        @media all and  (max-width: 576px) {
             @content;
         }
     }
