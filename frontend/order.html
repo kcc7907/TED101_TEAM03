@@ -7,96 +7,185 @@
     <title>訂單查詢</title>
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/order.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    
+    <script src="../lib/js/jquery.js"></script>
+    <script src="../js/08/order.js"></script>
+
 </head>
 
 <body>
-    <header></header>
 
-    <div class="jk_wrapper">
+
+    <div class="jk_order">
         <div class="container">
             <div class="sideMenu">
                 <ul>
-                    <li><a href="#">帳戶資料</a></li>
-                    <li><a href="#">我的收藏</a></li>
-                    <li class="-on"><a href="#">訂單查詢</a></li>
-                    <li><a href="#">通知總覽</a></li>
+                    <li><a href="meminfo.html"><i class="fas fa-user"></i><span class="computer">帳戶資料</span><span
+                                class="rwd">帳戶</span></a></li>
+                    <li><a href="favorite.html"><i class="fas fa-folder-open"></i><span class="computer">我的收藏</span><span
+                                class="rwd">收藏</span></a></li>
+                    <li class="-on"><a href="order.html"><i class="fas fa-clipboard-list"></i><span
+                                class="computer">訂單查詢</span><span class="rwd">訂單</span></a></li>
+                    <li><a href="notice.html"><i class="fas fa-bullhorn"></i><span class="computer">通知總覽</span><span
+                                class="rwd">通知</span></a></li>
                 </ul>
             </div>
 
 
             <main>
-                <table id="order">
-                    <tr id="title">
-                        <th>訂單編號</th>
-                        <th>商品名稱</th>
-                        <th width="150">數量</th>
-                        <th>總金額</th>
-                        <th>處理狀態</th>
-                    </tr>
-                    <tr class="item">
-                        <td class="primary">
-                            <p>202011130004</p>
-                            <button>詳細資訊</button>
-                        </td>
-                        <td>
-                            <ol>
-                                <li>辦公桌</li>
-                                <li>辦公椅</li>
-                            </ol>
-                        </td>
-                        <td>
-                            <ol>
-                                <li>1</li>
-                                <li>2</li>
-                            </ol>
-                        </td>
-                        <td class="price">99,999,999 元</td>
-                        <td class="status">運送中</td>
-                    </tr>
-                    <tr class="item">
-                        <td class="primary">
-                            <p>202011130004</p>
-                            <button>詳細資訊</button>
-                        </td>
-                        <td>
-                            <ol>
-                                <li>辦公桌</li>
-                                <li>辦公椅</li>
-                                <li>辦公桌</li>
-                                <li>辦公椅</li>
-                                <li>辦公桌</li>
-                                <li>辦公椅</li>
-                            </ol>
-                        </td>
-                        <td>
-                            <ol>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>1</li>
-                                <li>2</li>
-                            </ol>
-                        </td>
-                        <td class="price">99,999,999 元</td>
-                        <td class="status">運送中</td>
-                    </tr>
-                </table>
+                <!-- 表格 -->
+                <div class="table">
+                    <!-- 概述 -->
+                    <div class="rough">
 
-                <!-- <div id="page">
-                    <ol>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ol>
-                </div> -->
+                        <!-- 標題 -->
+                        <ul class="title">
+                            <li class="primary">訂單編號</li>
+                            <li class="name">商品名稱</li>
+                            <li class="count">數量</li>
+                            <li class="price">總金額</li>
+                            <li class="status">處理狀態</li>
+                        </ul>
+
+                        <!-- 訂單項 -->
+                        <ul class="item">
+                            <li class="primary">
+                                <p>202011130004</p>
+                                <button>詳細資訊</button>
+                            </li>
+                            <li class="name">
+                                <ol>
+                                    <li>辦公桌</li>
+                                    <li>辦公椅</li>
+                                    <!-- <li>辦公桌</li>
+                                <li>辦公椅</li>
+                                <li>辦公桌</li>
+                                <li>辦公椅</li> -->
+                                </ol>
+                            </li>
+                            <li class="count">
+                                <ol>
+                                    <li>1</li>
+                                    <li>2</li>
+                                </ol>
+                            </li>
+                            <li class="price">
+                                99,999,999 元
+                            </li>
+                            <li class="status">
+                                運送中
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 明細 -->
+                    <div class="detail">
+                        <div class="schedule">
+                            <div class="step1">
+                                <img src="" alt="">
+                                <p>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>已訂購</span>
+                                    <span>2020/11/11 11:30</span>                                    
+                                </p>
+                            </div>
+                            <div class="step2">
+                                <img src="" alt="">
+                                <p>
+                                    <i class="fas fa-money-check-alt"></i>
+                                    <span>已付款</span>
+                                    <span>2020/11/11 11:30</span>                                    
+                                </p>
+                            </div>
+                            <div class="step3">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <p>
+                                    <i class="fas fa-truck-moving"></i>
+                                    <span>運送中</span>
+                                    <span>2020/11/11 11:30</span>                                    
+                                </p>
+                            </div>
+                            <div class="step4">
+                                <img src="" alt="">
+                                <img src="" alt="">
+                                <p>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>已送達</span>
+                                    <span>2020/11/11 11:30</span>                                    
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="detail_items">
+                            <h3>商品明細</h3>
+                            <div class="table">
+                                <ul class="title">
+                                    <li class="pro_name">商品名稱</li>
+                                    <li class="pro_price">單價</li>
+                                    <li class="pro_count">數量</li>
+                                    <li class="pro_dsicount">折扣</li>
+                                    <li class="pro_total">小計</li>
+                                </ul>
+
+                                <ul class="item">
+                                    <li class="pro_name">
+                                        <ol>
+                                            <li>辦公椅</li>
+                                            <li>辦公椅</li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li class="pro_price">
+                                        <ol>
+                                            <li>9,999,999 元</li>
+                                            <li>45,000,000 元</li>
+                                        </ol>
+                                    </li>
+
+                                    <li class="pro_count">
+                                        <ol>
+                                            <li>1</li>
+                                            <li>2</li>
+                                        </ol>
+                                    </li>
+
+                                    <li class="pro_dsicount">
+                                        <ol>
+                                            <li>-99 元</li>
+                                            <li>-0 元</li>
+                                        </ol>
+                                    </li>
+
+                                    <li class="pro_total">
+                                        <ol>
+                                            <li>9,999,900 元</li>
+                                            <li>90,000,000 元</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+
+                                <div class="rwd_discount">
+                                    折扣: <span>-99</span> 元
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                
             </main>
         </div>
     </div>
 
-    <footer></footer>
+
 </body>
 
 </html>

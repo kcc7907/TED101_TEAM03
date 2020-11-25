@@ -9,7 +9,7 @@
 body{
     background-color: #FFFAF4;
     
-    .jk_notice{
+    .jk_favorite{
         background-color: #FFFAF4;
         margin-bottom: 100px;
         *{
@@ -194,96 +194,181 @@ body{
                 width: 75%;
                 max-width: $containerWidth - $sideMenuWidth + px; 
                 font-size: $fzp;
-                font-weight: lighter;
+                color: #465D4C;                
 
-                @include r768{
-                    width: 95%;
+                @include r576{
+                    font-size: 16px;                       
+                    width: 355px;
                 }
 
-                >ol{
-                    // width: $noticeWidth + px;
-                    width: 80%;
-                    margin: 0 auto 50px;
-                    border: 1px solid #465D4C;
-                    color: #465D4C;
+                @include r360{                        
+                    width: 315px;
+                }
 
-                    // @include r1440{
-                    //     width: 720px;
-                    // }
-                    // @include r1200{
-                    //     width: 640px;
-                    // }
-                    // @include r992{
-                    //     width: 460px;
-                    // }
-                    @include r768{
-                        width: 95%;
+                >.table{
+                    width: 1000px;                    
+                    margin: 0 auto 50px;
+                    color: #465D4C;
+                    
+                    
+                    @include r1440{
+                        width: 800px;
+                        font-size: 22px;
+                    }
+                    @include r1200{
+                        width: 650px;
+                        font-size: 18px;
+                    }
+                    
+                    @include r992{
+                        display: flex;
+                        flex-direction: column;
+                        width: 470px;
+                        margin-bottom: 50px;
                     }
 
-                    >li{
-                        display: flex;
-                        flex-direction: column;                        
-                        padding: 10px;
+                    @include r576{                        
+                        width: 330px;
+                        font-size: 12px;
+                    }
 
-                        @include r1440{
-                            font-size: 20px;
-                        }
+                    @include r360{                        
+                        width: 300px;
+                    }
 
-                        @include r992{
-                            font-size: 16px;
-                        }
+                    &:nth-child(n + 2){
 
-                        @include r576{
-                            font-size: 12px;
-                        }
-                        
-                        >p{
-                            padding: 10px;
-                            line-height: 60px;
+                        >ul.title{
+                            display: none;
 
                             @include r992{
-                                line-height: 40px;
-                            }
-
-                            @include r576{
-                                line-height: 30px;
-                            }
-                        }
-                        >span{
-                            align-self: flex-end;
-                            padding: 10px;
+                                display: flex;
+                            }                            
                         }
                     }
-                    >li + li{
-                        border-top: 1px solid #465D4C;
-                    }
-                }
 
-                #page{
-                    width: 100%;
-
-
-                    ol{
-                        width: 200px;
-                        margin: 20px auto;
+                    >ul.title{
+                        //訂單標頭
                         display: flex;
-                        justify-content: space-between;
+                        justify-content: space-around;
 
-                        li{
-                            width: 30px;
-                            height: 30px;
-                            border: 1px solid #465D4C;
-                            line-height: 30px;
+                        >li{
                             text-align: center;
-                            color: #54383B;
-                            font-size: $fzSmall;
-                            cursor: pointer;
+                            padding: 35px 0;
+                            font-weight: bold;
+
+
                         }
                     }
+
+                    >ul.item{
+                        //收藏內容
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        border-bottom: 1px solid #465D4C;
+
+                        >li{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            img{
+                                width: 100px;
+                                height: 100px;
+                                margin-bottom: 10px;
+
+                                @include r992{
+                                    width: 85px;
+                                    height: 85px;
+                                }
+
+                                @include r576{
+                                    width: 65px;
+                                    height: 65px;
+                                }
+
+                                @include r360{                        
+                                    width: 55px;
+                                    height: 55px;
+                                }
+                            }
+                            span{
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        button{
+                            border: 1px solid #465D4C;
+                            border-radius: 4px;
+                            outline: none;
+                            background-color: rgba(0,0,0,0);
+                            color: #465D4C;
+                            font-size: 16px;
+
+                            width: 110px;
+                            padding: 7px;
+                            margin: 10px;
+                            cursor: pointer;
+
+                            @include r1440{
+                                font-size: 14px;
+                            }
+
+                            @include r992{
+                                width: 90px;
+                                font-size: 12px;
+                            }
+
+                            @include r768{
+                                width: 30px;
+                                font-size: 10px;
+                            }
+
+                            &:hover{
+                                background-color: #465D4C;
+                                color: #fff;
+                            }
+
+                            span{
+
+                                @include r768{
+                                    display: none;
+                                }
+                            }
+
+                            i{
+                                display: none;
+
+                                @include r768{
+                                    display: block;
+                                    // width: 30px;
+                                }
+                            }
+                        }
+
+                        .remove{
+                            border: 1px solid #aaa;
+                            color: #aaa;
+
+                        }
+                    }
+
+                    .name{
+                        width: 20%;
+                    }
+                    .size{
+                        width: 30%;
+                    }
+                    .price{
+                        width: 30%;
+                    }
+                    .btn{
+                        width: 20%;
+                    }
                 }
-            }          
-            
+            }
         }
     }
-    
 }

@@ -1,22 +1,25 @@
 $(document).ready(function(){
     
+    
     //點擊修改會員資料================================================
     $('form>div>div>span').click(function(e){
 
         //隱藏修改按鈕
-        $(this).css({display:'none'});
+        $(this).hide();
 
         let myself = e.target.className;
-        if(myself === "btn_pwd"){   //修改密碼
+        if(myself == "btn_pwd"){   //修改密碼
             $('#changePassword input').attr({value:''}); //初值為空字串
-            $('#changePassword').css({display:'flex'}).slideDown(); //顯示修改密碼欄位
+            $('#changePassword').css({display:'flex'}); //顯示修改密碼欄位
+            // $('#changePassword').slideDown(300).css({display:'flex'}); //顯示修改密碼欄位
 
-            $('#password').css({display:'none'});            
+            $('#password').hide();         
 
         }else{                      //修改一般資料
             let inputChange = $(`input#${myself}`);
             $(inputChange).attr({
                 disabled: false,
+                className: 'able',
             }).focus();
         }
         //顯示送出按鈕
@@ -53,7 +56,7 @@ $(document).ready(function(){
 
     //資料送出判定==========================================================
     $('#memberInfo').submit(function(e){
-        // e.preventDefault();
+        
         let send_data = true;
 
         let email = document.getElementById("email");
@@ -131,7 +134,7 @@ $(document).ready(function(){
                 if(!(password[i].classList.contains('-error'))){        
                     
                     if(!(changePassword.classList.contains('-er'))){    //內外層皆無錯誤樣式
-                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
+                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>');
                         $('#changePassword').addClass('-er');
                     }
                     password[i].classList.add("-error");
@@ -139,7 +142,7 @@ $(document).ready(function(){
                 }else{                                                  
 
                     if(!(changePassword.classList.contains('-er'))){    //外層無錯誤樣式
-                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
+                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>');
                         $('#changePassword').addClass('-er');
                     }
                     
@@ -196,15 +199,34 @@ $(document).ready(function(){
         if(!send_data){
             e.preventDefault();
         }
+    });
+
+    let memberInfo = document.getElementById('memberInfo');
+    memberInfo.addEventListener('reset', function(){
+
+        $('form>div>div>span.warn').remove();                   //移除警示字串
+        $('#changePassword').removeClass('-er');                //移除.-er
+        $('form input.-error').removeClass('-error');           //移除.-error
+        $('form>div>div>span:hidden').show();                   //顯示修改按鈕
+        $('#changePassword input').attr({value:'********'});    //密碼初值不為空字串
+        $('#changePassword').hide();                            //隱藏密碼更新欄位
+        $('#btn').hide();                                       //隱藏表單送出按鈕
+        $('#password').show();                                  //顯示密碼欄位
+        $('input[className="able"]').attr({                     //資料顯示欄位不可更新
+            disabled: true,
+            className: '',
+        });   
+
+
+
+
     })
-
-    
-
-
-
 
 })
 
-//哪些項目為必填欄位不可為空?
-//長度是否有最少及最多限制?
+
+//長度是否有最少及最多限制?     密碼8-12
+//手機09開頭 長度10
+//空白字元會傳值?               全部trim
+//rwd的按鈕及字體大小 
 
