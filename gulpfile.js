@@ -23,7 +23,7 @@ exports.prefix = cb => {
 
 //sass轉譯
 exports.toCss = cb => {
-    src('./sass/**')
+    src(['./sass/08/**', './sass/13/**', './sass/14/**', './sass/15/**', './sass/19/**', './sass/20/**'])
         .pipe(sass().on('error', sass.logError))
         // .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(dest('./css'));
