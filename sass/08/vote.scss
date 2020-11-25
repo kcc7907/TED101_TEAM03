@@ -18,7 +18,8 @@ body{
         }
 
         .backGround{
-            display: flex;
+            // display: flex;
+            display: none;
             align-items: center;
             background-color: rgba(0,0,0,.7);
 
@@ -200,6 +201,7 @@ body{
                         >span{
                             margin: 20px auto;
                             padding: 5px 5px;
+                            cursor: pointer;
                         }
 
                         >.-on{
