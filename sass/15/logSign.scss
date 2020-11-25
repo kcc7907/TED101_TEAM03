@@ -1,15 +1,16 @@
 @import '../../lib/header/variable';
 @import './variableJH';
 
-$f_close: 24px;
 
 body{
     background-color: #FFFAF4;
+    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0,#F1EADE);
 }
 
 div#login {
     * {
         color: $csdr;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         box-sizing: border-box;
     }
     margin-top: 50px;
@@ -100,61 +101,259 @@ div#login {
             z-index: -1;
         }
         div.closebtn{
-            position: absolute;
-            top: 0;
-            right: 0;
-            span{
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                font-size: $f_close;
-                text-align: center;
-                line-height: 20px;
-                border: 1px solid ;
-                border-radius: 50%;
-                position: relative;
-                &:hover{
-                    cursor: pointer;
-                    &::after{
-                        content: "取消登入";
-                        display: inline-block;
-                        width: 100px;
-                        font-size: 16px;
-                        position: absolute;
-                        top: 0;
-                        left: 10px;
-                    }
-                }
-            }
+            @include closeBtn( 0, 0, 20, 20, 24, "取消登入", 100, 16, 0, -90)
         }
     }
 }
 
-div#signIn {
+
+
+
+div#signUp {
     * {
         color: $csdr;
         box-sizing: border-box;
     }
-    div.signIn {
+    margin: 40px auto 0;
+    div.signUp {
+        width: 800px;
+        height: 830px; 
         margin: auto;
-        border: 1px solid rgba(0,0,0,0%);
+        padding: 30px 10px;
         text-align: center;
-        width: 500px;
-        height: 500px;
+        background-color: #F9F4ED;
         position: relative;
-        form.signIn{
+        svg{
+            width: 800px;
+            height: 810px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+        form.signUp{
             margin: auto;
-            width: 360px;
-            text-align: left;
-            // TODO: 表格排版
+            width: 80%;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            input{
+                border: none;
+                outline: none;
+                border-bottom:  1px solid#BDA79E;
+                background-color: none;
+                background-color:  rgba(0,0,0,0);
+                &:focus{
+                    background-color: rgba(189,167,156,.1);
+                }
+            }
+            > div{
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                > label{
+                    margin-bottom: 3px;
+                }
+                > input{  
+                    flex-grow: 1;
+                }
+                // 姓名&手機
+                &:first-child{
+                    // border: 1px solid blue;
+                    flex-direction: row;
+                    > div {
+                        // 姓名
+                        // border: 1px solid blue;
+                        display: flex;
+                        flex-direction: column;
+                        label{
+                            margin-bottom: 3px;
+                        }
+                        &:first-child{
+                            input{
+                                width: 220px;
+                            }
+                        }
+                        // 手機
+                        &:last-child{
+                            margin-left: 30px;
+                            flex-grow: 1;
+                        }
+                        
+                    }
+                }
+                // 地址
+                &:nth-child(3){
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    label{
+                        flex-basis: 100%;
+                    }
+                    select{
+                        margin-right: 5px;
+                        padding: 5px;
+                        align-self: flex-end;
+                        background-color: #F9F4ED;
+                    }
+                    input{
+                        align-self: stretch;
+                    }
+                }
+                // 按鈕
+                &:nth-child(7){
+                    button{
+                        // 200:80 5:2
+                        width: 160px;
+                        height: 40px;
+                        margin: 30px auto;
+                        border: none;
+                        outline: none;
+                        background-color: #F9F4ED;
+                        border: 1px solid;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+                &:nth-child(8){
+                    span{
+                        display: inline-block;
+                        margin: auto;
+                        color: #BDA79E;
+                        a{  
+                            margin: 0 5px;
+                            text-decoration: underline;
+                            color: #BDA79E;
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                &:last-child{
+                    align-items: center;
+                    a{
+                        color: #BDA79E;
+                    }
+                }
+            }
+        }
+        div.closebtn{
+            @include closeBtn( 30, 30, 25, 25, 25, "取消註冊會員", 100, 16, 0, -110)
         }
     }
 }
+
+
+
 @include rwdmF(1920);
 @include rwdmF(1700);
-@include rwdmF(1500);
+@include rwdmF(1500){
+    div#signUp {
+        margin: 40px auto 0;
+        div.signUp {
+            width: 550px;
+            height: 580px; 
+            padding: 30px 10px;
+            svg{
+                width: 550px;
+                height: 560px;
+            }
+            form.signUp{
+                width: 100%;
+                padding: 0 20px;
+                > div{
+                    margin-bottom: 12px;
+                    flex-direction: row;
+                    > label{
+                        margin-right: 5px;
+                    }
+                    // 所有input
+                    > input{
+                        margin-left: 5px;
+                        flex-grow: 1;
+                    }
+                    // 姓名&手機
+                    &:first-child{
+                        flex-direction: row;
+                        > div {
+                            // 姓名
+                            &:first-child{
+                                flex-direction: row;
+                                input{
+                                    width: 130px;
+                                    margin-left: 5px;                  
+                                }
+                                label{
+                                    margin-right: 5px;
+                                }
+                            }
+                            // 手機
+                            &:last-child{
+                                flex-direction: row;
+                                input{
+                                    flex-grow: 1;
+                                    width: 180px;
+                                    margin-left: 5px;
+                                }
+                                label{
+                                    margin-right: 5px;
+                                }
+                            }
+                            
+                        }
+                    }
+                    // 地址
+                    &:nth-child(3){
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        label{
+                            flex-basis: 9%;
+                        }
+                        select{
+                            padding: 5px;
+                            margin-left: 5px;                   
+                        }
+                    }
+                    // 按鈕
+                    &:nth-child(7){
+                        button{
+                            // 200:80 5:2
+                            width: 160px;
+                            height: 40px;
+                            margin: 30px auto;
+                        }
+                    }
+                    &:nth-child(8){
+                        span{
+                            display: inline-block;
+                            margin: auto;
+                        }
+                    }
+                    &:last-child{
+                        justify-content: center;
+                    }
+                }
+            }
+            div.closebtn{
+                @include closeBtn( 30, 30, 20, 20, 24, "取消註冊會員", 100, 16, 0, -105)
+            }
+        }
+    }
+};
 @include rwdmF(1200);
-@include rwdmF(992);
+@include rwdmF(992){
+    div#signUp {
+        margin: 40px auto 0;
+        div.signUp {
+            form.signUp{
+                > div{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+};
 @include rwdmF(768);
 @include rwdmF(576){
     div#login{
@@ -183,26 +382,144 @@ div#signIn {
                 height: 350px;
             }
             div.closebtn{
-                span{
-                    width: 15px;
-                    height: 15px;
-                    font-size: 15px;
-                    line-height: 15px;
-                    &:hover{
-                        &::after{
-                            content: "取消登入";
-                            width: 80px;
-                            font-size: 12px;
-                            position: absolute;
-                            top: 0;
-                            left: -70px;
+                @include closeBtn( 0, 0, 15, 15, 15, "取消登入", 80, 12, 0, -70)
+            }
+        }
+    }
+    div#signUp {
+        margin: 40px auto 0;
+        div.signUp {
+            width: 80vw;
+            height: 480px; 
+            padding: 30px 10px;
+            svg{
+                width: 0;
+                height: 0; 
+            }
+            form.signUp{           
+                width: 100%;
+                > div{
+                    margin-bottom: 10px;
+                    // 姓名&手機
+                    &:first-child{
+                        flex-direction: column;
+                        > div{
+                            margin-bottom: 10px;
+                            // 姓名
+                            &:first-child{
+                                input{
+                                    flex-grow: 1;
+                                }
+                            }
+                            // 手機
+                            &:last-child{
+                                margin-left: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    // 地址
+                    &:nth-child(3){
+                        flex-wrap: wrap;
+                        label{
+                            flex-basis: 30px
+                        }
+                        select{
+                            margin-bottom: 5px;
+                            margin-right: 0;
+                            padding: 2px;
+                            background-color: #F9F4ED;
+                        }
+                        input{
+                            width:100%;
+                            margin-left: 0;
+                        }
+                    }
+                    // 按鈕
+                    &:nth-child(7){
+                        button{
+                            // 5:2
+                            width: 120px;
+                            height: 40px;
+                            margin: 10px auto;
+                        }
+                    }
+                    &:nth-child(8){
+                        span{
+                            display: inline-block;
+                            width: 170px;
+                            margin: auto;
+                            text-align: center;
                         }
                     }
                 }
             }
+            div.closebtn{
+                @include closeBtn( 20, 20, 12, 12, 12, "取消註冊會員", 100, 10, 0, -90)
+            }
         }
     }
 }
-@include rwdmF(360);
+@include rwdmF(360){
+    div#signUp {
+        margin: 40px auto 0;
+        div.signUp {
+            height: 450px; 
+            form.signUp{           
+                width: 100%;
+                > div{
+                    // 姓名&手機
+                    &:first-child{
+                        > div{
+                            // 手機
+                            &:last-child{
+                                input{
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+                    // 地址
+                    &:nth-child(3){
+                        label{
+                            flex-basis: 15%;
+                        }
+                        select{
+                            margin-bottom: 5px;
+                            margin-right: 0;
+                            padding: 1px;
+                            background-color: #F9F4ED;
+                        }
+                        input{
+                            width:100%;
+                            margin-left: 0;
+                        }
+                    }
+                    &:nth-child(6){
+                        display: flex;
+                        label{
+                            flex-shrink: 0;
+                        }
+                        input{
+                            width: 100px !important;
+                        }
+                    }
+                    // 按鈕
+                    &:nth-child(7){
+                        button{
+                            // 5:2
+                            width: 100px;
+                            height: 30px;
+                            margin: 10px auto;
+                        }
+                    }
+                }
+            }
+            div.closebtn{
+                @include closeBtn( 10, 10, 15, 15, 15, "取消註冊會員", 100, 12, 0, -90)
+            }
+        }
+    }
+};
 
 
