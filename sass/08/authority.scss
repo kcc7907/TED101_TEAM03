@@ -16,7 +16,7 @@ body{
             box-sizing: border-box;
         }
         >.container{
-            width: 100%;
+            width: 1850px;
             display: flex;
 
             color: #474747;
@@ -40,20 +40,20 @@ body{
                     text-align: center;
                     font-size: 30px;
 
-                    @include r1600{
-                        font-size: 26px;
-                    }
+                    // @include r1600{
+                    //     font-size: 26px;
+                    // }
 
-                    @include r1440{
-                        width: 92%;
-                        margin-bottom: 50px;
-                        font-size: 24px;
-                    }
+                    // @include r1440{
+                    //     width: 92%;
+                    //     margin-bottom: 50px;
+                    //     font-size: 24px;
+                    // }
 
-                    @include r1200{
-                        margin-bottom: 40px;
-                        font-size: 22px;
-                    }
+                    // @include r1200{
+                    //     margin-bottom: 40px;
+                    //     font-size: 22px;
+                    // }
                 }
 
                 >.menu{
@@ -87,6 +87,8 @@ body{
                             i{
                                 position: absolute;
                                 right: 10%;
+
+                                transition: .5s;
                             }
                         }
 
