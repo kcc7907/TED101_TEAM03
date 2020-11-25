@@ -17,7 +17,6 @@ div.JHH {
     >header {
         width: 100%;
         height: 120px;
-        border: 1px solid;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -26,8 +25,6 @@ div.JHH {
         display: none;
 
         .logo {
-            border: 1px solid;
-
             display: inline-block;
             width: 25vw;
             height: 100%;
@@ -44,7 +41,6 @@ div.JHH {
         }
 
         .icon {
-            border: 1px solid;
             width: 30vw;
             height: 25px;
             display: flex;
@@ -344,6 +340,17 @@ div.JHH {
                     position: relative;
                     z-index: 2;
 
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        border: 1px solid;
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                    }
+
                     &:hover {
                         cursor: pointer;
                     }
@@ -365,9 +372,9 @@ div.JHH {
             &:nth-child(2) {
                 width: 100%;
                 height: 100%;
-                background-image: url("../../img/product/bookcase01/bk01-01.jpg");
+                background-image: url("../../img/product/tv/tv04.jpg");
                 background-repeat: no-repeat;
-                background-size: contain;
+                background-size: cover;
                 background-position: center center;
             }
 
@@ -386,14 +393,12 @@ div.JHH {
         height: 150px;
         display: flex;
         flex-direction: column;
-        border: 1px solid;
 
         >div {
             &:first-child {
                 // social media
                 display: flex;
                 justify-content: center;
-                border: 1px solid;
 
                 >div {
                     width: 30px;
@@ -630,7 +635,6 @@ div.JHH {
         width: 80vw;
         height: 100%;
         margin: auto;
-        border: 1px solid red;
 
         >header {
             display: flex;
@@ -638,11 +642,9 @@ div.JHH {
 
         div#homeLeft {
             width: 100%;
-            border: 1px solid blue;
 
             >div {
                 &:first-child {
-                    border: 1px solid green;
                     overflow-y: hidden;
 
                     header.common {
@@ -650,10 +652,8 @@ div.JHH {
                     }
 
                     >div {
-                        border: 1px solid;
 
                         >div {
-                            border: 1px solid;
                             width: 80%;
                             margin: auto;
 
@@ -665,12 +665,10 @@ div.JHH {
                             &:last-child {
                                 // 最新消息
                                 height: 170px;
-                                border: 1px solid red;
                                 padding: 5px 20px;
 
                                 ul {
                                     margin: 0;
-                                    border: 1px solid red;
                                     height: 100%;
                                     overflow-y: hidden;
 
@@ -718,6 +716,26 @@ div.JHH {
 
 @include rwdmF(576) {
     div.JHH {
+        div#homeLeft {
+            >div {
+                &:first-child {
+                    >div {
+                        >div {
+                            &:last-child {
+                                height: 120px;
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div#homeRight {
+            
+        }
+
+
         div#bottomBox {
             >div {
                 &:first-child {
