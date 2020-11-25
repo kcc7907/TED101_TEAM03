@@ -6,11 +6,16 @@ body {
     @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
 }
 
+
 div.JHH {
     * {
         box-sizing: border-box;
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         color: #865454;
+    }
+
+    > header {
+        display: none;
     }
 
     margin-top: 5vh;
@@ -134,7 +139,7 @@ div.JHH {
 
                         &:first-child {
                             // 關於我們
-                            margin: 60px 0 60px 0;
+                            margin: 60px 0;
 
                             p {
                                 padding: 5px 20px;
@@ -432,6 +437,7 @@ div.JHH {
 
                             &:first-child {
                                 margin: 40px 0 40px 0;
+
                                 // 關於我們
                                 p {
                                     padding: 5px 20px;
@@ -467,8 +473,54 @@ div.JHH {
 }
 
 ;
-@include rwdmF(768){
-    // TODO:開始上下排
-};
+
+@include rwdmF(768) {
+    div.JHH {
+        margin-top: 0;
+        padding-top: 30px;
+        flex-wrap: wrap;
+        width: 80vw;
+        margin: auto;
+        border: 1px solid red;
+        > header{
+            display: block;
+        }
+        div#homeLeft {
+            width: 100%;
+            border: 1px solid blue;
+
+            >div {
+                &:first-child {
+                    border: 1px solid green;
+                    // overflow-y: hidden;
+
+                    >div {
+                        border: 1px solid;
+
+                        >div {
+                            border: 1px solid;
+                            width: 80%;
+                            margin: auto;
+
+                            &:first-child {
+                                // 關於我們
+                                margin: 50px auto;
+                            }
+
+                            &:last-child {
+                                // 最新消息
+                                height: 80%;
+                                overflow-y: auto;
+                                @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+;
 @include rwdmF(576);
 @include rwdmF(360);
