@@ -61,15 +61,47 @@ body{
 
                     >ul{
                         width: 100%;
+
+                        position: relative;
+
+                        //menu大項目
                         >li{
                             width: 100%;
-                            padding: 20px 0;
                             font-size: 24px;
                             text-align: center;
+
+                            //menu小項目
+                            li{
+                                width: 100%;
+                                padding: 20px 0;
+                                font-size: 24px;
+                                text-align: center;
+                                cursor: pointer;
+                            }
+                            
+                            //menu小項目隱藏，待點擊後展開
+                            li + li{
+                                display: none;
+                            }
+
+                            i{
+                                position: absolute;
+                                right: 10%;
+                            }
                         }
+
                         >li.-on{
-                            background-color: #965454;
                             color: #fff;
+                        }
+                        
+                        >li.-on li:first-child{
+                            background-color: #965454;                            
+                        }
+
+                        //調整'新增管理員'位置
+                        >li.-on li:nth-child(2){
+                            margin-left: 21px;
+                            width: 94%;
                         }
                     }
 
@@ -108,8 +140,7 @@ body{
 
                         >td{
 
-                            >select{
-                                
+                            >select{                                
                                 outline: none;
                                 
                             }
