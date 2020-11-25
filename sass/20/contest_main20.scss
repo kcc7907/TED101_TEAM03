@@ -192,7 +192,6 @@ $cf :#CAC3BB;
     }
 
     //left
-    
     .content_box{
         position: relative;
         .content{
@@ -246,7 +245,7 @@ $cf :#CAC3BB;
             position: absolute;
             top: 20px;
             z-index: -1;
-        }
+    }
     .slider_titlebox{
         margin: 10px 0 0 20px;
         color: #BDA79C;
@@ -338,11 +337,90 @@ $cf :#CAC3BB;
                 justify-content: center;
             }
         }
+        //right
+        .rule_contentbox{
+            .rule_tab{
+                margin: 20px 0;
+            }
+            .rule_content{
+            margin-bottom: 40px;
+            }
+        }
+
+        //left
+        .slider{
+            .picbox{
+            width: 210px;
+            height: 70px;
+                img{
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+        .slider_titlebox{
+        margin: 10px 0 0 20px;
+        }
+        .content_box{
+            .year{
+                left: 7%;
+            }
+        }
+        .bgbox{
+            height: 100%;
+            top: 00px;
+        }
     }
-    @include rwd(992){}
-    @include rwd(1200){}
-    @include rwd(1500){}
-    @include rwd(1700){}
+    @include rwd(992){
+        
+        //left
+        .slider{
+            .picbox{
+            width: 280px;
+            }
+        }
+        .content_box{
+            .year{
+                left: 10%;
+            }
+        }
+        .slider_titlebox{
+        margin: 10px 0 0 50px;
+        }
+    }
+    @include rwd(1200){
+        .wrap .right{
+            padding-right: 50px;
+        }
+        .contest_nav::after{
+            height: 20px;
+            bottom: 10px;
+        }
+        //left
+        .slider{
+            .picbox{
+            width: 360px;
+            height: 90px;
+                img{
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+    @include rwd(1500){
+        .wrap .right{
+            padding-right: 70px;
+        }
+        .rule_contentbox{
+            padding-left: 80px;
+        }
+    }
+    @include rwd(1700){
+        .wrap{
+            height: calc(100vh - 200px);
+        }
+    }
 
 }
 
