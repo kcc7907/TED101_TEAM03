@@ -100,11 +100,10 @@ $cf :#CAC3BB;
 
 .kcc_htmlmain{
     width: 100vw;
-    height: 100vh;
-    // overflow: hidden;
+    overflow-x: hidden;
     background-color: $cbg;
-    
 }
+
 .kcc_contest{
     *{
         box-sizing: border-box;
@@ -120,8 +119,15 @@ $cf :#CAC3BB;
         display: flex;
         flex-direction: column-reverse;
         // max-height: calc(100vh - 100px);
-        .left{}
-        .rightt{}
+        .left{
+            position: relative;
+        }
+        .right{
+            // display: none;
+            &.-block{
+                display: block;
+            }
+        }
     }
 
     //right
@@ -171,12 +177,13 @@ $cf :#CAC3BB;
             padding: 0 10px 20px;
         }
         .rule_content{
+            padding: 0 15px;
             line-height: 30px;
             text-indent: 15px;
             text-align:justify;
-            padding-bottom: 20px;
             overflow: auto;
             max-height: 300px;
+            margin-bottom: 20px;
         }
         .light{
             color:#BDA79C;
@@ -185,18 +192,61 @@ $cf :#CAC3BB;
     }
 
     //left
-    .content{
-        // display: none ;
-    }
+    
     .content_box{
-        .year{
-            font-size: 20px;
-            width: 20px;
-            word-break: break-all;
+        position: relative;
+        .content{
+        position: relative;
+            &.-none{
+                display: none;
+            }
+            .arrow{
+                position: absolute;
+            width: 130px;
+            height: 130px;
+            border: #465d4c 30px solid;
+            top: 200px;
+            left: 0;
+            transform: rotate(45deg)translateX(-70%);
+            }
         }
-        .contest_name{}
+        .year{
+            font-size: 15px;
+            width: 15px;
+            word-break: break-all;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            color: #BDA79C;
+        }
+        .contest_name{
+            font-size: 50px;
+            width: 130px;
+            height: 130px;
+            border: #BDA79C 1px solid;
+            text-align: center;
+            line-height: 130px;
+            margin: auto;
+            color: #BDA79C;
+            &:nth-child(2){
+                transform: translate(-40%,10px);
+            }
+            &:nth-child(3){
+                transform: translate(40%,0px);
+            }
+            &:nth-child(4){
+                transform: translate(0%,-10px);
+            }
+        }
     }
-
+    .bgbox{
+            height: 350px;
+            width: 100%;
+            background-color: #F5F5F5;
+            position: absolute;
+            top: 20px;
+            z-index: -1;
+        }
     .slider_titlebox{
         margin: 10px 0 0 20px;
         color: #BDA79C;
@@ -208,8 +258,13 @@ $cf :#CAC3BB;
     .slider{
         width: 100%;
         display: flex;
+        justify-content: center;
+        align-items: center;
         button{
-            width: 10%;
+            padding: 0;
+            border:none;
+            background: none;
+            width: 25px;
             img{
                 height: 20px;
                 width: 20px;
@@ -218,19 +273,24 @@ $cf :#CAC3BB;
         .picbox{
             float: left;
             overflow: hidden;
-            width: 80%;
+            width: 280px;
             height: 70px;
+            font-size: 0;
             img{
                 width: 70px;
                 height: 70px;
             }
         }
     }
-.down{
-    width: 100%;
-    min-height: 40px;
-    background-color: #F1EADE;
-}
+
+    .down{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 40px;
+        background-color: #F1EADE;
+    }
 
 
 
@@ -245,6 +305,44 @@ $cf :#CAC3BB;
     @include title();
     @include para();
 
+    @include rwd(360){}
+    @include rwd(576){
+        .rule_contentbox{
+            padding:0 50px;
+        }
+
+        .slider_titlebox{
+        margin: 10px 0 0 100px;
+        }
+        .slider{
+            .picbox{
+            width: 450px;
+            height: 90px;
+                img{
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+    @include rwd(768){
+        .wrap{
+            flex-direction: row;
+            .left{
+                width: 40%;
+            }
+            .right{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+    @include rwd(992){}
+    @include rwd(1200){}
+    @include rwd(1500){}
+    @include rwd(1700){}
 
 }
 
