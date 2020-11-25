@@ -244,8 +244,17 @@ nav.topNav{
     }
 }
 ///////////////////////champion/////////////////////////
-
+body{
+    background-color: #fffaf4;
+}
 main.sam_champion{
+    img{
+        width:100%;
+    }
+    *{
+        box-sizing: border-box;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+    }
     div.select{
         // border:1px solid red;
         width:55%;
@@ -285,6 +294,7 @@ main.sam_champion{
         margin: 0 auto;
         border:1px solid #465d4c;
         position: relative;
+        display:flex;
         span.icon{
             position: absolute;
             top:-12%;
@@ -318,7 +328,28 @@ main.sam_champion{
             width: 35%;
             border:1px solid green;
             p{
-                
+                font-size:24px;
+                font-family: 'Noto Sans TC Light';
+                color:#465d4c;
+                margin-top:8%;
+            }
+            a{
+                button{
+                    color:#465d4c;
+                    font-size: 24px;
+                    width: 180px;
+                    height: 65px;
+                    border:1px solid #465d4c;
+                    background: none;
+                    cursor: pointer;
+                    transition:background-color,.5s;
+                    margin-top:20%;
+                    margin-left:10px;
+                    &:hover{
+                        color:#fffaf4;
+                        background-color: #465d4c;
+                    }
+                }
             }
         }
 
