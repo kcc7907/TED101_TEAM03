@@ -1,9 +1,12 @@
+@import "../../lib/header/variable";
+
 body{
     background-color: #fffaf4;
 }
 div.sam{
     *{
         box-sizing: border-box;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
     }
     img{
         width: 100%;
@@ -25,6 +28,7 @@ div.sam{
             top:40%;
             font-weight: 300;
             color:#54383b;
+            font-family: 'Noto Sans TC Light'
         }
         h2.bannerWord02{
             font-size:30px;
@@ -33,6 +37,7 @@ div.sam{
             bottom:30%;
             font-weight: 300;
             color:#54383b;
+            font-family: 'Noto Sans TC Light'
         }
     }
     div.selectBar{
@@ -40,14 +45,16 @@ div.sam{
         width:84%;
         margin:0 auto;
         font-size: 0;
-        &::after{
-            content:'';
-            display:block;
-            width:100%;
-            margin:0 auto;
-            border:1px solid #BDA79E;
-            margin-bottom:80px;
-        }
+        display:flex;
+        justify-content: center;
+        // &::after{
+        //     content:'';
+        //     display:block;
+        //     width:100%;
+        //     margin:0 auto;
+        //     border:1px solid #BDA79E;
+        //     margin-bottom:80px;
+        // }
         button.iconButton{
             width: 12%;
             height: 75px;
@@ -55,52 +62,128 @@ div.sam{
             border:1px solid #54383b;
             border-radius: 15px;
             margin-top:80px;
-            margin-bottom:80px;
-            margin-left:26px;
+            margin-left:10px;
+            margin-right:10px;
             position: relative;
             cursor: pointer;
-            img.icon1{
-                width:50px;
-                height:40px;
-                border:1px solid red;
-                vertical-align: bottom;
-            }
-            p.iconWord{
+            h2.iconWord{
                 font-size:30px;
                 display:inline-block;
                 margin-left:10px;
                 border:1px solid red;
             }
+            img.icon1{
+                width:35%;
+                height:40px;
+                border:1px solid red;
+                vertical-align: bottom;
+            }
             img.icon2{
-                width:70px;
+                width:35%;
                 height:40px;
                 border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon3{
-                width:70px;
+                width:35%;
                 height:40px;
                 border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon4{
-                width:70px;
+                width:35%;
                 height:40px;
                 border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon5{
-                width:50px;
+                width:30%;
                 height:40px;
                 border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon6{
-                width:50px;
+                width:30%;
                 height:40px;
                 border:1px solid red;
                 vertical-align: bottom;
             }
+            span.singleWord{
+                display:none;
+            }
+        }
+    }
+    @media (max-width:1600px){
+        div.selectBar{
+            flex-wrap: wrap;
+            button.iconButton{
+                width:20%;
+                margin:20px 25px;
+            }
+        }
+    }
+    @media (max-width:1200px){
+        div.selectBar{
+            button.iconButton{
+                margin:20px 15px;
+            }
+        }
+    }
+    @media (max-width:992px){
+        div.selectBar{
+            button.iconButton{
+                height: 50px;
+                img.icon1{
+                    height: 30px;
+                }
+                img.icon2{
+                    height: 30px;
+                }
+                img.icon3{
+                    height: 30px;
+                }
+                img.icon4{
+                    height: 30px;
+                }
+                img.icon5{
+                    height: 30px;
+                }
+                img.icon6{
+                    height: 30px;
+                }
+                img.icon7{
+                    height: 30px;
+                }
+            }
+        }
+    }
+    @media (max-width:768px){
+        div.selectBar{
+            button.iconButton{
+                margin:20px 10px;
+                h2.iconWord{
+                    display:none;
+                }
+                span.singleWord{
+                    display:block;
+                    font-size: 24px;
+                    color:#54383b;
+                }
+            }
+        }
+    }
+    @media (max-width:360px){
+        div.selectBar{
+            button.iconButton{
+                height: 40px;
+                margin:10px 5px;
+                span.singleWord{
+                    font-size: 20px;
+                }
+            }
+        }
+        span.line1{
+            margin:10px auto;
         }
     }
     div.productBox{
@@ -111,11 +194,11 @@ div.sam{
         justify-content: space-between;
         div.product{
             overflow: hidden;
-            border:1px solid blue;
+            border:1px solid rgb(108, 108, 126);
             width: 31%;
             position: relative;
             margin-bottom:60px;
-            p.productWord01{
+            h2.productWord01{
                 font-size: 40px;
                 display:inline-block;
                 margin-left:35px;
@@ -123,7 +206,7 @@ div.sam{
                 margin-top: 15px;
                 color:#54383b;
             }
-            p.productWord02{
+            h2.productWord02{
                 font-size: 30px;
                 display:inline-block;
                 border:1px solid red;
@@ -146,6 +229,12 @@ div.sam{
         display:block;
         border:1px solid #BDA79E;
     }
+    span.line1{
+        width:84%;
+        margin:50px auto;
+        display:block;
+        border:1px solid #BDA79E;
+    }
     h1.orderTitle{
         font-size:40px;
         margin:40px 0px 40px 150px;
@@ -161,18 +250,94 @@ div.sam{
             width: 31%;
             position: relative;
             margin-bottom:60px;
-            p.orderTitle{
+            h2.orderTitle{
                 font-size: 30px;
                 margin-top: 15px;
             }
         }
     }
-    img#qqq{
-        width: 1500px;
-        height: 1200px;
-        margin: 0 auto;
-        border:1px solid red;
+    @media (max-width:360px){
+        span.line1{
+            margin:0px auto 10px;
+        }
     }
+    @media (max-width:1500px){
+        div.productBox{
+            div.product{
+                p.productWord03{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+    @media (max-width:992px){
+        div.productBox{
+            div.product{
+                h2.productWord01{
+                    margin-left:20px;
+                }
+                p.productWord03{
+                    font-size:16px;
+                    margin-left:20px;
+                }
+            }
+        }
+        h1.orderTitle{
+            margin-left:80px;
+        }
+    }
+    @media (max-width:768px){
+        div.productBox{
+            width:100%;
+            justify-content:center;
+            div.product{
+                width: 45%;
+                margin-left:5px;
+                margin-right:5px;
+            }
+        }
+        div.orderBox{
+            flex-wrap: wrap;
+            justify-content: center;
+            div.orderCase{
+                width:100%;
+            }
+        }
+    }
+    @media (max-width:576px){
+        div.productBox{
+            div.product{
+                p.productWord03{
+                    font-size:12px;
+                }
+            }
+        }
+        h1.orderTitle{
+            margin-left:50px;
+        }
+        span.line1{
+            margin:30px auto;
+        }
+    }
+    @media (max-width:360px){
+        div.productBox{
+            div.product{
+                h2.productWord01{
+                    margin-left:10px;
+                }
+                p.productWord03{
+                    margin-left:10px;
+                }
+            }
+        }
+        h1.orderTitle{
+            margin-left:30px;
+        }
+    }
+
+
+
+    @include titlem();
 
 
 
