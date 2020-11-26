@@ -42,21 +42,7 @@ body{
                     border-bottom: 1px solid #707070;
                     text-align: center;
                     font-size: 30px;
-
-                    // @include r1600{
-                    //     font-size: 26px;
-                    // }
-
-                    // @include r1440{
-                    //     width: 92%;
-                    //     margin-bottom: 50px;
-                    //     font-size: 24px;
-                    // }
-
-                    // @include r1200{
-                    //     margin-bottom: 40px;
-                    //     font-size: 22px;
-                    // }
+                    
                 }
 
                 >.menu{
@@ -80,8 +66,6 @@ body{
                                 font-size: 24px;
                                 text-align: center;
                                 cursor: pointer;
-
-                                
                             }
                             
                             //menu小項目隱藏，待點擊後展開
@@ -101,10 +85,6 @@ body{
                         >li.-on{
                             color: #fff;
                         }
-                        
-                        >li.-on li:first-child{
-                            background-color: #965454;                            
-                        }
 
                         //調整'新增管理員'位置
                         >li.-on li:nth-child(2){
@@ -120,9 +100,9 @@ body{
                     padding-right: 25px;
                     align-self: flex-end;
 
-                    position: sticky;
-                    bottom: 25px;
-                    
+                    position: fixed;
+                    top: 525px;
+                    left: 215px;                    
 
                     >i{
                         font-size: 50px;
