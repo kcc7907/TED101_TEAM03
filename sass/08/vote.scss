@@ -123,6 +123,14 @@ body{
                 width: 720px;
             }
 
+            @include r768{
+                width: 540px;
+            }
+
+            @include r576{
+                width: 315px;
+            }
+
             >.search{
                 display: flex;
                 justify-content: flex-end;
@@ -131,6 +139,11 @@ body{
                 @include r1200{
                     margin-right: 20px;
                 }
+
+                @include r768{
+                    width: 250px;
+                    margin: 0 auto;
+                }                
 
                 >.search_input{
                     border-bottom: 3px solid #BDA79C;
@@ -166,7 +179,7 @@ body{
             }
 
             >.vote_page{
-                display: flex;
+                display: none;
                 justify-content: space-between;
 
                 width: 250px;
@@ -174,6 +187,14 @@ body{
 
                 color: #BDA79E;
                 font-size: 20px;
+
+                @include r768{
+                    display: flex;
+                }
+
+                @include r576{
+                    width: 200px;
+                }
 
                 >span{
                     padding: 5px 5px;
@@ -189,7 +210,13 @@ body{
             >.main{
                 display: flex;
                 justify-content: space-between;
-                width: 100%;                
+                width: 100%;               
+
+                @include r768{
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
 
                 >.side{
                     width: 220px;
@@ -202,10 +229,9 @@ body{
                         width: 170px;
                     }
 
-                    // @include r768{
-                    //     position: absolute;
-                    //     left: 20px;
-                    // }
+                    @include r768{
+                        width: 0;
+                    }
                     
 
                     >.votes{
@@ -217,7 +243,6 @@ body{
                         height: 90px;
                         margin: 0 auto;
                         text-align: center;
-                        // line-height: 90px;
                     
                         background-color: #BDA79C;
                         color: #F1EADE;
@@ -227,8 +252,19 @@ body{
                         cursor: pointer;
 
                         @include r768{
+                            width: 60px;
+                            height: 60px;
+
                             position: absolute;
                             left: 20px;
+                        }
+
+                        @include r576{
+                            width: 50px;
+                            height: 50px;
+
+                            left: 10px;
+                            font-size: 8px;
                         }
 
                         &::after{
@@ -241,7 +277,7 @@ body{
                             left: 0;
                             bottom: 0;
                         
-                            transform: translate(5px, 5px);
+                            transform: translate(3px, 3px);
                         }
 
                         >div{
@@ -297,6 +333,10 @@ body{
                             position: absolute;
                         
                             transform: translate(-65px, -25px) rotate(-50deg);
+
+                            @include r768{
+                                display: none;
+                            }
                         }
 
                         &::after{
@@ -308,6 +348,10 @@ body{
                             position: absolute;
                         
                             transform: translate(0px, 20px) rotate(-50deg);
+
+                            @include r768{
+                                display: none;
+                            }
                         }
                         
                     }
@@ -316,7 +360,6 @@ body{
 
                 >main{
                     display: flex;
-                    // justify-content: space-between;
                     flex-flow: wrap;
                     width: 915px;
 
@@ -327,6 +370,15 @@ body{
 
                     @include r992{
                         width: 500px;
+                    }
+
+                    @include r768{
+                        width: 210px;
+                        margin-right: 0;
+                    }
+
+                    @include r576{
+                        width: 200px;
                     }
                     
                     >.work{
@@ -340,10 +392,18 @@ body{
                         @include r992{
                             margin-right: 80px;
                         }
+
+                        @include r768{
+                            margin-right: 0px;
+                        }
                         
                         &:nth-child(2n){
                             
                             @include r992{
+                                margin-right: 0px;
+                            }
+
+                            @include r768{
                                 margin-right: 0px;
                             }
                         }
@@ -356,6 +416,10 @@ body{
 
                             @include r992{
                                 margin-right: 80px;
+                            }
+
+                            @include r768{
+                                margin-right: 0px;
                             }
                         }
 
