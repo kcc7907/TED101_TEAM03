@@ -198,6 +198,10 @@ body{
                 max-width: 960px; 
                 font-size: $fzp;
                 font-weight: lighter;
+
+                @include r768{
+                    padding-top: 0;
+                }
                 
 
                 form{

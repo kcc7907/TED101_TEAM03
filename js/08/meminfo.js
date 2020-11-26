@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     
     //點擊修改會員資料================================================
-    $('form>div>div>span').click(function(e){
+    $('.jk_meminfo form>div>div>span').click(function(e){
 
         //隱藏修改按鈕
         $(this).hide();
