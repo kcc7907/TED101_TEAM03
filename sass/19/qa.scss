@@ -18,7 +18,7 @@
 
 /* 內文 */
 .contain{
-    width: 1200px;
+    // width: 100%;
 }
 
 /* 大標題 */
@@ -26,7 +26,7 @@
     font-size: 40px;
     color: #865454;
     text-align: center;
-    width: 100%;
+    width: 1200px;
 }
 
 /* 篩選鈕 */
@@ -124,6 +124,14 @@
     line-height: 60px;
 }
 
+  /* 第五標題 */
+  .title6{
+    font-size: 24px;
+    color: #BDA79E;
+    padding: 0px 60px;
+    line-height: 60px;
+}
+
 /* 小線 */
 .line2{
     width: 1020px;
@@ -141,11 +149,22 @@
     color: #865454;
 }
 
-.paper2{
-    background-color: rgba(189, 167, 156, .1);
-    padding: 100px 150px;
+.paper3{
     width: 980px;
     height: 1020px;
+    position: relative;
+    border: 1px solid #865454;
+}
+
+.paper2{
+    position: absolute;
+    left: -30px;
+    top: -30px;
+    background-color: rgba(189, 167, 156, .1);
+    padding: 100px 150px;
+    width: 100%;
+    height: 100%;
+
 }
 
 .item{
@@ -269,6 +288,8 @@ label{
     line-height: 60px;}
   .title5{font-size: 24px;
     line-height: 60px;}
+  .title6{font-size: 24px;
+    line-height: 60px;}
   .paper1{font-size: 30px;}
   .push{font-size: 30px;}
   .line{
@@ -292,6 +313,8 @@ label{
     line-height: 60px;}
   .title5{font-size: 24px;
     line-height: 60px;}
+  .title6{font-size: 24px;
+  line-height: 60px;}
   .paper1{font-size: 28px;}
   .push{font-size: 28px;}
   .line{
@@ -315,6 +338,8 @@ label{
     line-height: 50px;}
   .title5{font-size: 20px;
     line-height: 50px;}
+  .title6{font-size: 20px;
+    line-height: 50px;}
   .paper1{font-size: 26px;}
   .push{font-size: 26px;}
   .line{
@@ -330,7 +355,9 @@ label{
 
 // 993px~1200px
 @media (max-width:1200px){
-  .title{font-size: 34px;}
+  .title{font-size: 34px;
+    width: 960px;
+  }
   ul.nav_list > li > a {font-size: 24px;}
   .title2 {font-size: 24px;
     width: 960px;
@@ -341,7 +368,8 @@ label{
     line-height: 50px;}
   .title5{font-size: 20px;
     line-height: 50px;}
-  .paper1{font-size: 24px;}
+  .title6{font-size: 20px;
+    line-height: 50px;}
   .push{font-size: 24px;}
   .ex{
     width: 993px;
@@ -374,6 +402,12 @@ label{
     padding: 20px 30px;
     width: 550px;
     height: 650px;
+    left: -20px;
+    top: -20px;
+}
+.paper3{
+  width: 550px;
+  height: 650px;
 }
 .reply{
   font-size: 24px;
@@ -394,7 +428,8 @@ label{
 
 // 769px~992px
 @media (max-width:992px){
-  .title{font-size: 32px;}
+  .title{font-size: 32px;
+    width: 750px;}
   ul.nav_list > li > a {font-size: 22px;}
   .title2 {font-size: 22px;
     width: 750px;
@@ -403,6 +438,8 @@ label{
   .title4{font-size: 16px;
     line-height: 40px;}
   .title5{font-size: 16px;
+    line-height: 40px;}
+  .title6{font-size: 16px;
     line-height: 40px;}
   .paper1{font-size: 22px;}
   .push{font-size: 22px;}
@@ -437,6 +474,10 @@ label{
     width: 450px;
     height: 600px;
 }
+.paper3{
+  width: 450px;
+  height: 600px;
+}
 .reply{
   font-size: 22px;
   margin: 0;
@@ -456,7 +497,9 @@ label{
 
 // 577px~768px
 @media (max-width:768px){
-  .title{font-size: 30px;}
+  .title{font-size: 30px;
+    width: 550px;
+  }
   ul.nav_list > li > a {font-size: 20px;}
   .title2 {font-size: 20px;
     text-align: center;
@@ -466,6 +509,8 @@ label{
   .title4{font-size: 16px;
     line-height: 40px;}
   .title5{font-size: 16px;
+    line-height: 40px;}
+  .title6{font-size: 16px;
     line-height: 40px;}
   .list{display: none;}
   .icon{display: none;}
@@ -481,7 +526,7 @@ label{
   .line2{
     width: 400px;
   }
-  .pa{display: none;}
+  // .pa{display: none;}
 
   .about{width: 100%;}
   .icon {display: none;}
@@ -495,6 +540,12 @@ label{
     padding: 5px 30px;
     width: 400px;
     height: 550px;
+    left: -10px;
+    top: -10px;
+}
+.paper3{
+  width: 400px;
+  height: 550px;
 }
 .reply{
   font-size: 20px;
@@ -514,7 +565,9 @@ label{
 
 // 361px~576px
 @media (max-width:576px){
-  .title{font-size: 26px;}
+  .title{font-size: 26px;
+    width: 380px;
+  }
   ul.nav_list > li > a {font-size: 18px;}
   .title2 {font-size: 18px;
     text-align: center;
@@ -525,7 +578,9 @@ label{
     line-height: 30px;}
   .title5{font-size: 12px;
     line-height: 30px;}
-  .pa{display: none;}
+  .title6{font-size: 12px;
+    line-height: 30px;}
+  // .pa{display: none;}
   .paper1{font-size: 18px;}
   .push{font-size: 18px;}
   .ex{
@@ -549,18 +604,22 @@ label{
 }
   .paper2{
     padding: 5px 30px;
-    width: 370px;
+    width: 300px;
     height: 550px;
+}
+.paper3{
+  width: 300px;
+  height: 550px;
 }
 .reply{
   font-size: 18px;
   margin: 0;
-  width: 310px;
+  width: 240px;
 }
 .txt{
   margin: 0;
   font-size: 18px;
-  width: 310px;
+  width: 240px;
 }
 .load img{
   width: 20px;
@@ -580,7 +639,9 @@ label{
     line-height: 30px;}
   .title5{font-size: 12px;
     line-height: 30px;}
-  .pa{display: none;}
+  .title6{font-size: 12px;
+    line-height: 30px;}
+  // .pa{display: none;}
   .paper1{font-size: 16px;}
   .push{font-size: 16px;}
 
