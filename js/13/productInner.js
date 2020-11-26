@@ -44,6 +44,12 @@ $(document).ready(function () {
             left: '-500px',
         });
     });
+    $('#right').click(function () {
+        // alert();
+        $('#content').animate({
+            left: '250px',
+        });
+    });
 
 
     // $(document).ready(function () {
