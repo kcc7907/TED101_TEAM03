@@ -5,6 +5,28 @@
 @import 'var';
 @import 'mixin';
 
+//動畫設定
+@keyframes stepRotation {
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(-30deg);
+    }
+    50%{
+        transform: rotate(0);
+    }
+    75%{
+        transform: rotate(30deg);
+
+    }
+    100%{
+        transform: rotate(0);
+    }
+    
+}
+
+
 
 
 
@@ -198,6 +220,10 @@ body{
                 max-width: $containerWidth - $sideMenuWidth + px; 
                 font-size: $fzp;
 
+                @include r768{
+                    padding-top: 0;
+                }
+
                 @include r576{                        
                     width: 355px;
                 }
@@ -315,9 +341,18 @@ body{
                             >.name{
                                 
                                 @include r992{
+
+                                    flex-grow: 1;
+
+                                    display: flex;
+                                    justify-content: center;                                   
+                                    flex-direction: column;
+                                    align-items: center;
+
+
     
-                                    height: 97px;  //js抓高度
-                                    line-height: 97px;
+                                    // height: 97px;  //js抓高度
+                                    // line-height: 97px;
                                     
                                     // display: flex;
                                     // flex-direction: column;
@@ -505,6 +540,7 @@ body{
                                 padding: 20px;
                             }
 
+                            //進度階段
                             >div{
                                 display: flex;
                                 flex-direction: column;
@@ -535,7 +571,19 @@ body{
                                     width: 100%;
                                     height: auto;
                                     border: none;
-                                    
+                                }
+
+                                &:hover{
+
+                                    i{
+                                        animation-name: stepRotation;
+                                        animation-duration: .5s;
+                                        animation-iteration-count: infinite;
+                                        animation-timing-function: linear;
+
+                                    }
+
+
                                 }
 
                                 >p{
@@ -577,6 +625,12 @@ body{
 
                                         @include r992{
                                             display: none;
+                                        }
+                                    }
+                                    >span{
+                                        @include r992{
+
+                                            width: 107.53px;
                                         }
                                     }
                                     >span:nth-child(2){
@@ -646,9 +700,14 @@ body{
                                     }
                                 }
                             }
-                            .-now{
+                            div.-now{
                                 background-color: #465D4C;
                                 color: #fff;
+
+                                @include r992{
+                                    color: #465D4C;
+                                    background-color: rgba(0, 0, 0, 0);
+                                }
                             }
                         }
 
