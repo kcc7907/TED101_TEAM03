@@ -1120,6 +1120,39 @@ div.sam_pi{
 }
     
     
+///////////////////////slider//////////////////
+div.sam_pi{
+    div.leftIcon{
+        width:5%;
+        display:inline-block;
+        img{
+            width: 50px;
+            height: 85px;
+        }
+    }
+    div.rightIcon{
+        width:5%;
+        display:inline-block;
+        img{
+            width: 50px;
+            height: 85px;
+        }
+    }
+    div.sliderBox{
+        border:1px solid red;
+        width: 80%;
+        margin:0 auto;
+        overflow: hidden;
+        height: 400px;
+        margin:30px auto;
+        ul#content{
+            position: relative;
+            li{
+                float:left;
+            }
+        }
+    }
+}
 
 
 
