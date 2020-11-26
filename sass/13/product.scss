@@ -14,7 +14,7 @@ div.sam{
     div.banner{
         width:73%;
         margin:0 auto;
-        border:1px solid pink;
+        // border:1px solid pink;
         font-size:0;
         position: relative;
 
@@ -70,42 +70,42 @@ div.sam{
                 font-size:30px;
                 display:inline-block;
                 margin-left:10px;
-                border:1px solid red;
+                // border:1px solid red;
             }
             img.icon1{
                 width:35%;
                 height:40px;
-                border:1px solid red;
+                // border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon2{
                 width:35%;
                 height:40px;
-                border:1px solid red;
+                // border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon3{
                 width:35%;
                 height:40px;
-                border:1px solid red;
+                // border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon4{
                 width:35%;
                 height:40px;
-                border:1px solid red;
+                // border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon5{
                 width:30%;
                 height:40px;
-                border:1px solid red;
+                // border:1px solid red;
                 vertical-align: bottom;
             }
             img.icon6{
                 width:30%;
                 height:40px;
-                border:1px solid red;
+                // border:1px solid red;
                 vertical-align: bottom;
             }
             span.singleWord{
@@ -158,6 +158,9 @@ div.sam{
         }
     }
     @media (max-width:768px){
+        div.banner{
+            width:65%;
+        }
         div.selectBar{
             button.iconButton{
                 margin:20px 10px;
@@ -194,7 +197,7 @@ div.sam{
         justify-content: space-between;
         div.product{
             overflow: hidden;
-            border:1px solid rgb(108, 108, 126);
+            // border:1px solid rgb(108, 108, 126);
             width: 31%;
             position: relative;
             margin-bottom:60px;
@@ -209,7 +212,7 @@ div.sam{
             h2.productWord02{
                 font-size: 30px;
                 display:inline-block;
-                border:1px solid red;
+                // border:1px solid red;
                 position: absolute;
                 right:0;
                 margin-top: 15px;
@@ -246,7 +249,7 @@ div.sam{
         justify-content: space-between;
         div.orderCase{
             overflow: hidden;
-            border:1px solid purple;
+            // border:1px solid purple;
             width: 31%;
             position: relative;
             margin-bottom:60px;

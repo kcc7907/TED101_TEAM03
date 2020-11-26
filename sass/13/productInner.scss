@@ -26,12 +26,12 @@ div.sam_pi{
         width:90%;
         margin:0 auto;
         display:flex;
-        border:1px solid black;
+        // border:1px solid black;
         div.leftWrap{
-            border:1px solid pink;
+            // border:1px solid pink;
             width:50%;
             div.productImg{
-                border:2px solid orangered;
+                // border:2px solid orangered;
                 position: relative;
                 img.rotateIcon1{
                     width:6%;
@@ -52,7 +52,7 @@ div.sam_pi{
             }
             div.lightBox{
                 font-size: 0;
-                border:1px solid brown;
+                // border:1px solid brown;
                 margin-top:190px;
                 text-align: right;
                 img{
@@ -63,7 +63,7 @@ div.sam_pi{
             }
         }
         div.rightWrap{
-            border:1px solid blue;
+            // border:1px solid blue;
             width:50%;
             margin-left:20px;
             div.productWord{
@@ -99,7 +99,7 @@ div.sam_pi{
                 }
             }
             div.material{
-                border:1px solid green;
+                // border:1px solid green;
                 margin-top:100px;
                 p{
                     display:inline-block;
@@ -110,7 +110,7 @@ div.sam_pi{
                 }
                 div.buttonBox{
                     display:inline-block;
-                    border:1px solid red;
+                    // border:1px solid red;
                     text-align: right;
                     button.wood{
                         width:100px;
@@ -153,7 +153,7 @@ div.sam_pi{
                 
             }
             div.moneyBox{
-                border:1px solid blue;
+                // border:1px solid blue;
                 position: relative;
                 margin-top:16%;
                 h1.money{
@@ -199,7 +199,7 @@ div.sam_pi{
                 }
             }
             div.shoppingBtn{
-                border:1px solid purple;
+                // border:1px solid purple;
                 display:flex;
                 justify-content: space-around;
                 button.shbtn{
@@ -220,7 +220,7 @@ div.sam_pi{
                 }
             }
             div.productMessage{
-                border:1px solid rgb(107, 179, 107);
+                // border:1px solid rgb(107, 179, 107);
                 p{
                     font-size:20px;
                     font-family: 'Noto Sans TC Light';
@@ -233,7 +233,7 @@ div.sam_pi{
     /////////////////////mobile/////////////////
 
     div.mobileBox{
-        border:1px solid red;
+        // border:1px solid red;
         width:84%;
         margin:0 auto;
         h1.productTitle{
@@ -270,7 +270,7 @@ div.sam_pi{
             // min-width: 360px;
             // min-height: 320px;
             img.product{
-                border:1px solid maroon;
+                // border:1px solid maroon;
             }
             img.rotate1{
                 width:26px;
@@ -298,7 +298,7 @@ div.sam_pi{
             }
         }
         div.material{
-            border:1px solid blue;
+            // border:1px solid blue;
             margin-top:50px;
             p{
                 display:inline-block;
@@ -351,7 +351,7 @@ div.sam_pi{
             }
         }
         div.moneyBox{
-            border:1px solid maroon;
+            // border:1px solid maroon;
             margin-top:50px;
             display:flex;
             h1.money{
@@ -400,9 +400,10 @@ div.sam_pi{
                 border:1px solid #BDA79E;
                 margin:0 40px;
                 margin-top:10%;
+            }
         }
         div.productMessage{
-            border:1px solid black;
+            // border:1px solid black;
             margin-top: 30px;
             p{
                 font-size: 16px;
@@ -411,7 +412,9 @@ div.sam_pi{
                 font-family: 'Noto Sans TC Light';
             }
         }
-    }
+
+
+
 
     /////////////////////mobile rwd/////////////////////
     @media (max-width:576px){
@@ -509,11 +512,7 @@ div.sam_pi{
             }
         }
     }
-
-
-
-
-
+}
 }
 //////////////////section2///////////////
 div.section2{
@@ -546,7 +545,7 @@ div.section2{
         width: 90%;
         margin: 80px auto 0px;
         display:flex;
-        border:1px solid blue;
+        // border:1px solid blue;
         justify-content: center;
         div.cadBox{
             display:inline-block;
@@ -555,21 +554,21 @@ div.section2{
         }
         div.taiwanBox{
             width: 55%;
-            border:1px solid rgb(12, 77, 12);
+            // border:1px solid rgb(12, 77, 12);
             text-align: center;
             img.taiwan{
-                border:1px solid orangered;
+                // border:1px solid orangered;
                 width:50%;
             }
         }
         div.truckBox{
             width: 50%;
-            border:1px solid rgb(66, 7, 25);
+            // border:1px solid rgb(66, 7, 25);
             display:flex;
             flex-direction: column;
             align-items: center;
             div.truck{
-                border:1px solid rgb(133, 93, 196);
+                // border:1px solid rgb(133, 93, 196);
                 width:70%;
                 margin-bottom:20px;
                 margin-left:30px;
@@ -579,7 +578,7 @@ div.section2{
                 div.word{
                     display:flex;
                     align-items: center;
-                    border:1px solid red;
+                    // border:1px solid red;
                     span.color{
                         display:inline-block;
                         height:60px;
@@ -604,7 +603,7 @@ div.section2{
                         color:#54383b;
                         font-family: 'Noto Sans TC Light';
                         margin-right:30px;
-                        border:1px solid green;
+                        // border:1px solid green;
                     }
                 }
                 span.middleLine{
@@ -828,6 +827,7 @@ div.section3{
     }
 }
 ////////////////////desktop rwd/////////////////////////
+div.sam_pi{
     @media (max-width:1700px){
         div.deskTopBox{
             div.leftWrap{
@@ -1117,6 +1117,11 @@ div.section3{
     }
 
 
+}
+    
+    
+
+
 
 
 
@@ -1137,7 +1142,7 @@ div.section3{
 
 
 
-}
+
 
 
 
