@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    //點擊menu選項
     $('.jk_authority .menu .item').click(function(){
         
         if($(this).hasClass('-open')){      //子項已展開
@@ -17,8 +18,21 @@ $(document).ready(function(){
             })
             
 
-        }
+        } 
+    });
 
+    //收合sideMenu    
+    $('.jk_authority .sideMenu .arrow>i').click(function(){
+
+        if($(this).hasClass('-rotate')){
+
+            $('.jk_authority .sideMenu').removeClass('-close');
+            $('.jk_authority .sideMenu .arrow>i').removeClass('-rotate');
+        }else{
+
+            $('.jk_authority .sideMenu').addClass('-close');
+            $('.jk_authority .sideMenu .arrow>i').addClass('-rotate');
+        }
 
     });
 

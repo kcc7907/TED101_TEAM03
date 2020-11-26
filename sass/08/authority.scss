@@ -25,12 +25,15 @@ body{
                 font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
                 display: flex;
                 flex-direction: column;
+                // justify-content: space-between;
                 align-items: center;
 
                 width: 15.7%;
                 min-height: 100vh;
                 background-color: #CAC3BB;
                 border: 1px solid #707070;
+
+                transition: transform .5s;
 
                 >.title{
                     width: 86.6%;
@@ -108,6 +111,35 @@ body{
                     }
 
                 }
+
+                >.arrow{
+                    margin-top: 320px;
+                    padding-right: 25px;
+                    align-self: flex-end;
+
+                    position: sticky;
+                    bottom: 25px;
+                    
+
+                    >i{
+                        font-size: 50px;
+                        cursor: pointer;
+
+                        transition: .5s;
+                        
+                    }
+
+                    >i.-rotate{
+
+                        transform: translateX(100px) rotate(180deg);
+
+                    }
+                }
+            }
+
+            >.sideMenu.-close{
+                transform: translateX(-100%);
+
             }
 
             >main{
