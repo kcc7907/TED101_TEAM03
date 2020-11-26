@@ -165,6 +165,27 @@ body{
                 }
             }
 
+            >.vote_page{
+                display: flex;
+                justify-content: space-between;
+
+                width: 250px;
+                margin: 30px auto;
+
+                color: #BDA79E;
+                font-size: 20px;
+
+                >span{
+                    padding: 5px 5px;
+                    cursor: pointer;
+                }
+
+                >.-on{
+                    border-bottom: 1px solid #54383B;
+                    color: #54383B;
+                }
+            }
+
             >.main{
                 display: flex;
                 justify-content: space-between;
@@ -180,6 +201,11 @@ body{
                     @include r992{
                         width: 170px;
                     }
+
+                    // @include r768{
+                    //     position: absolute;
+                    //     left: 20px;
+                    // }
                     
 
                     >.votes{
@@ -199,6 +225,11 @@ body{
                         position: relative;
                     
                         cursor: pointer;
+
+                        @include r768{
+                            position: absolute;
+                            left: 20px;
+                        }
 
                         &::after{
                             content: '';
@@ -225,6 +256,12 @@ body{
                         
                         margin: 100px auto 150px;
 
+                        color: #BDA79E;
+
+                        @include r768{
+                            display: none;
+                        }
+
                         >span{
                             margin: 20px auto;
                             padding: 5px 5px;
@@ -233,6 +270,7 @@ body{
 
                         >.-on{
                             border-bottom: 1px solid #54383B;
+                            color: #54383B;
                         }
                     }
                     
@@ -241,6 +279,14 @@ body{
                         color: #BDA79C;
                     
                         position: relative;
+
+                        @include r768{
+                            position: fixed;
+                            left: 20px;
+                            bottom: 5px;
+
+                            z-index: 2;
+                        }
 
                         &::before{
                             content: '';
@@ -280,7 +326,7 @@ body{
                     }
 
                     @include r992{
-                        width: 520px;
+                        width: 500px;
                     }
                     
                     >.work{
@@ -292,7 +338,7 @@ body{
                         }
 
                         @include r992{
-                            margin-right: 100px;
+                            margin-right: 80px;
                         }
                         
                         &:nth-child(2n){
@@ -309,7 +355,7 @@ body{
                             }
 
                             @include r992{
-                                margin-right: 100px;
+                                margin-right: 80px;
                             }
                         }
 
