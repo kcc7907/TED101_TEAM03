@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>權限管理</title>
+
+    <link rel="stylesheet" href="../lib/reset.css">
+    <link rel="stylesheet" href="../css/authority.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    
+    <script src="../lib/js/jquery.js"></script>
+    <script src="../js/08/authority.js"></script>
+
+</head>
+<body>
+    <div class="jk_authority">
+        <div class="container">
+            <!-- 側邊攔 -->
+            <div class="sideMenu">
+
+                <!-- 標題 -->
+                <div class="title">救世宅後台管理</div>
+
+                <!-- 欄位 -->
+                <div class="menu">
+                    <ul>
+
+                        <li>
+                            <ul>
+                                <li class="item">會員管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">訂單管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+                        <li class="-on">
+                            <ul>
+                                <li class="item">
+                                    權限管理
+                                    <i class="fas fa-chevron-left"></i>
+                                </li>
+                                <li id="jk_newManager">新增管理員</li>
+                                <li id="jk_authorityChange">權限異動</li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <ul>
+                                <li class="item">消息管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <ul>
+                                <li class="item">商品管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">客服管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="arrow"><i class="far fa-arrow-alt-circle-left"></i></div>
+            </div>
+
+            
+            <main>
+
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        權限管理
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="jk_newManager">
+
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>管理員編號</th>                       
+                        <th>管理員帳號</th>                       
+                        <th>管理員姓名</th>                        
+                        <th>管理員權限</th>
+                        <th>權限變更</th>
+                    </tr>
+
+                    <!-- 表格內容 -->
+                    <tr>
+                        <td>A201125001</td>
+                        <td>q123456789</td>
+                        <td>鄭總裁</td>
+                        <td>A</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="A" disabled>A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">停權</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A201125002</td>
+                        <td>a12345678</td>
+                        <td>何狀元</td>
+                        <td>B</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="A">A</option>
+                                <option value="B" disabled>B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">停權</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A201125003</td>
+                        <td>z13456789</td>
+                        <td>黃書記</td>
+                        <td>B</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="A">A</option>
+                                <option value="B" disabled>B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">停權</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A201125004</td>
+                        <td>w15678</td>
+                        <td>王設計</td>
+                        <td>B</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="A">A</option>
+                                <option value="B" disabled>B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">停權</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A201125005</td>
+                        <td>s1278</td>
+                        <td>邱客服</td>
+                        <td>B</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="A">A</option>
+                                <option value="B" disabled>B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">停權</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A201125006</td>
+                        <td>x123456789</td>
+                        <td>李打雜</td>
+                        <td>B</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="A">A</option>
+                                <option value="B" disabled>B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">停權</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>
