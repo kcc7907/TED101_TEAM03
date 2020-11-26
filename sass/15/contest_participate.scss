@@ -3,24 +3,27 @@
 
 
 
-body{
-    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0,#F1EADE);
+body {
+    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
     background-color: #FFFAF4 !important;
 }
 
-div.JHC{
-    *{
+div.JHC {
+    * {
         box-sizing: border-box;
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         color: #865454;
     }
-    .container div.step{
+
+    .container div.step {
         width: 600px;
         margin: auto;
-        ol{
+
+        ol {
             font-size: 0;
             text-align: center;
-            li{
+
+            li {
                 display: inline-block;
                 text-align: center;
                 line-height: 100px;
@@ -29,80 +32,104 @@ div.JHC{
                 border-radius: 50%;
                 background-color: #F1EADE;
                 margin: 0 20px;
-                &:first-child{
+
+                &:first-child {
                     color: #F1EADE;
                     background-color: #865454;
                 }
             }
         }
-        form{
+
+        form {
             margin: 20px 0 48px;
             padding: 0 30px;
-            label.fileUpload{
+
+            label.fileUpload {
                 display: inline-block;
                 padding: 10px 15px;
                 border: 1px solid #865454;
                 border-radius: 30px;
-                &:hover{
+                transition: all .3s;
+
+                &:hover {
                     cursor: pointer;
+                    background-color: #865454;
+                    color: white;
                 }
             }
-            input.fileUpload{
+
+            input.fileUpload {
                 display: none;
             }
-            span{
+
+            span {
                 display: inline-block;
             }
-            button{
+
+            button {
                 border: none;
                 outline: none;
                 background: none;
                 border: 1px solid;
                 padding: 5px 20px;
                 border-radius: 30px;
-                &:hover{
+                transition: all .3s;
+
+                &:hover {
                     cursor: pointer;
+                    background-color: #865454;
+                    color: white;
                 }
             }
-            div.btn{
+
+            div.btn {
                 display: flex;
                 justify-content: space-around;
-                border-top: 1px solid ;
+                border-top: 1px solid;
             }
         }
-        form#formStep1{
+
+        form#formStep1 {
             text-align: center;
             vertical-align: middle;
-            div.rule{
+
+            div.rule {
                 height: 30vh;
                 overflow-y: auto;
                 margin-bottom: 15px;
                 border-bottom: 1px solid;
                 padding-bottom: 15px;
-                @include scrollBar(10, none, none, 10, 10, rgba(134,84,84, .5)){
+
+                @include scrollBar(10, none, none, 10, 10, rgba(134, 84, 84, .5)) {
                     &::-webkit-scrollbar-track {
                         -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3);
                     }
+
                     &::-webkit-scrollbar-thumb {
                         -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 1);
                     }
                 }
-                p{
+
+                p {
                     text-align: left;
                     line-height: 60px;
                 }
             }
-            input{
+
+            input {
                 margin-right: 10px;
                 display: none;
-                &:checked + label span{
-                    background-color:#865454;
+
+                &:checked+label span {
+                    background-color: #865454;
                 }
             }
-            label{
+
+            label {
                 margin-right: 50px;
                 vertical-align: middle;
-                span{
+
+                span {
                     margin: 0 10px;
                     margin-bottom: 2px;
                     display: inline-block;
@@ -111,28 +138,34 @@ div.JHC{
                     border: 1px solid #865454;
                     border-radius: 50%;
                     vertical-align: middle;
-                    cursor:pointer;
+                    cursor: pointer;
                 }
             }
         }
-        form#formStep2, form#formStep3{
-            > div{
+
+        form#formStep2,
+        form#formStep3 {
+            >div {
                 padding-top: 20px;
             }
         }
-        form#formStep2{
-            > div{
-                > span{
+
+        form#formStep2 {
+            >div {
+                >span {
                     margin: 10px 0;
                 }
-                > div{
-                    width:324px;
+
+                >div {
+                    width: 324px;
                     position: relative;
-                    &:hover{
+
+                    &:hover {
                         cursor: pointer;
                     }
-                    > span{
-                        width:100%;
+
+                    >span {
+                        width: 100%;
                         padding: 10px 0;
                         background-color: rgba(0, 0, 0, .3);
                         font-size: 14px;
@@ -145,37 +178,59 @@ div.JHC{
                 }
             }
         }
-        form#formStep3{
-            > div{
-                label{
+
+        form#formStep3 {
+            >div {
+                label {
                     display: inline-block;
                     margin: 10px 0;
 
                 }
-                label.fConcept , textarea#fConcept{
+
+                select,
+                option,
+                input {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    border: 1px solid;
+                }
+
+                label.fConcept,
+                textarea#fConcept {
                     vertical-align: top;
                 }
-                textarea#fConcept{
+
+                textarea#fConcept {
                     width: 80%;
                     height: 150px;
                     resize: none;
                     margin-bottom: 10px;
+                    background-color: transparent;
+                    outline: none;
+                    border: 1px solid;
                 }
-                > div{
+
+                >div {
                     display: flex;
                     justify-content: space-between;
-                    div{
+
+                    div {
                         width: 250px;
-                        span{
+
+                        span {
                             margin: 10px 0;
                         }
-                        div{
+
+                        div {
                             position: relative;
-                            &:hover{
-                            cursor: pointer;
+
+                            &:hover {
+                                cursor: pointer;
                             }
-                            > span{
-                                width:100%;
+
+                            >span {
+                                width: 100%;
                                 padding: 10px 0;
                                 margin: 0;
                                 background-color: rgba(0, 0, 0, .3);
@@ -189,29 +244,105 @@ div.JHC{
                         }
                     }
                 }
+
+                &:last-child {
+                    width: 450px;
+                    height: 120px;
+                    padding-top: 30px;
+                    text-align: center;
+                    background-color: #F0EBE5;
+                    position: fixed;
+                    top: 30%;
+                    left: calc((100% - 450px) / 2);
+                    opacity: 0;
+                    transition: all .3s;
+
+                    input {
+                        transition: all .3s;
+                        margin: 15px 20px 0;
+                        padding: 5px 10px;
+                        border-color: #BDA79E;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #BDA79E;
+                            color: white;
+                        }
+                    }
+                }
             }
+
         }
-        > div{
+
+        form.lastP {
             width: 100%;
             height: 150px;
             padding: 0 30px;
             position: relative;
-            p,h1,a{
+
+            p,
+            h1,
+            a {
                 width: 100%;
             }
-            a{
+
+            a {
                 display: block;
                 text-align: center;
                 position: absolute;
                 top: 45%;
                 left: 0;
-                h2{
+
+                h2 {
                     display: inline-block;
                     width: 230px;
                     padding-bottom: 5px;
-                    border-bottom: 1px solid;
-                    &:hover{
+                    border-bottom: 2px solid;
+                    transition: all .3s;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 0%;
+                        height: 2px;
+                        background-color: #465d4c;
+                        position: absolute;
+                        left: 0;
+                        bottom: -2px;
+                        transition: all .3s;
+                        opacity: 0;
+                    }
+
+                    &:hover {
                         cursor: pointer;
+                        color: #465d4c;
+                        border-color: transparent;
+
+                        &::after {
+                            width: 100%;
+                            opacity: 100%;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+
+@include rwdmF(1920);
+@include rwdmF(1700);
+
+@include rwdmF(1500) {
+    div.JHC {
+        .container div.step {
+            form#formStep1 {
+                div.rule {
+                    p {
+                        line-height: 50px;
                     }
                 }
             }
@@ -219,80 +350,106 @@ div.JHC{
     }
 }
 
-@include rwdmF(1920);
-@include rwdmF(1700);
-@include rwdmF(1500){
-    div.JHC{
-        .container div.step{
-            form#formStep1{
-                div.rule{
-                    p{
-                    line-height: 50px;
-                    }
-                }
-            }
-        }
-    }
-};
+;
 @include rwdmF(1200);
-@include rwdmF(992){
-    div.JHC{
-        .container div.step{
-            ol li{
+
+@include rwdmF(992) {
+    div.JHC {
+        .container div.step {
+            ol li {
                 line-height: 90px;
                 width: 90px;
                 height: 90px;
             }
-            form#formStep1{
-                div.rule{
-                    p{
-                    line-height: 40px;
+
+            form#formStep1 {
+                div.rule {
+                    p {
+                        line-height: 40px;
+                    }
+                }
+            }
+
+            form#formStep3 {
+                >div {
+                    &:last-child {
+                        width: 400px;
+                        left: calc((100% - 400px) / 2);
+
                     }
                 }
             }
         }
     }
-};
-@include rwdmF(768){
-    div.JHC{
-        .container div.step{
+}
+
+;
+
+@include rwdmF(768) {
+    div.JHC {
+        .container div.step {
             width: 500px;
-            form#formStep3{
-                > div{
-                    > div{
+
+            form#formStep3 {
+                >div {
+                    >div {
                         width: 100%;
                         display: block;
                     }
+
+                    &:last-child {
+                        width: 350px;
+                        left: calc((100% - 350px) / 2);
+
+                    }
                 }
             }
         }
     }
-};
-@include rwdmF(576){
-    div.JHC{
-        .container div.step{
+}
+
+;
+
+@include rwdmF(576) {
+    div.JHC {
+        .container div.step {
             width: 360px;
-            ol li{
+
+            ol li {
                 line-height: 80px;
                 width: 80px;
                 height: 80px;
                 margin: 0 10px;
             }
-            form{
+
+            form {
                 padding: 0 15px;
             }
-            form#formStep1{
-                div.rule{
-                    p{
-                    line-height: 30px;
+
+            form#formStep1 {
+                div.rule {
+                    p {
+                        line-height: 30px;
                     }
                 }
             }
-            > div {
+
+            form#formStep3 {
+                >div {
+                    &:last-child {
+                        width: 300px;
+                        left: calc((100% - 300px) / 2);
+
+                    }
+                }
+            }
+
+            form.lastP {
                 padding: 0 15px;
             }
         }
     }
-};
-@include rwdmF(360);
+}
 
+;
+@include rwdmF(360);

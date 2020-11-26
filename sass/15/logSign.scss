@@ -2,9 +2,9 @@
 @import './variableJH';
 
 
-body{
+body {
     background-color: #FFFAF4;
-    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0,#F1EADE);
+    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
 }
 
 div#login {
@@ -13,27 +13,37 @@ div#login {
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         box-sizing: border-box;
     }
+
+    a {
+        text-decoration: none;
+    }
+
     margin-top: 50px;
+
     div.login {
         margin: auto;
-        border: 1px solid rgba(0,0,0,0%);
+        border: 1px solid rgba(0, 0, 0, 0%);
         text-align: center;
         width: 500px;
         height: 500px;
         position: relative;
-        > h1{
+
+        >h1 {
             margin-top: 100px;
         }
-        form.login{
+
+        form.login {
             margin: auto;
             width: 250px;
             text-align: left;
-            div:first-child{
-                label{
+
+            div:first-child {
+                label {
                     display: block;
                     background-color: #FFFAF4;
                 }
-                input{
+
+                input {
                     display: inline-block;
                     width: 100%;
                     border: none;
@@ -42,26 +52,32 @@ div#login {
                     margin-bottom: 30px;
                     background-color: #FFFAF4;
                 }
-                input.alive{
+
+                input.alive {
                     display: none;
                     text-align: left;
-                    &:checked + label{
+
+                    &:checked+label {
                         background-color: $c_secondary_red;
                     }
-                    
+
                 }
-                label.alive{
+
+                label.alive {
                     display: inline-block;
                     vertical-align: middle;
-                    &:hover{
+
+                    &:hover {
                         cursor: pointer;
                     }
-                } 
-                label#alivebox{
-                    @include checkbox(12px,12px,12px,$c_secondary_red);
+                }
+
+                label#alivebox {
+                    @include checkbox(12px, 12px, 12px, $c_secondary_red);
                 }
             }
-            div:last-child{
+
+            div:last-child {
                 width: 100%;
                 display: flex;
                 justify-content: center;
@@ -69,39 +85,50 @@ div#login {
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                a,h2,p{
+
+                a,
+                h2,
+                p {
                     display: inline-block;
-                    border: 1px solid rgba(0,0,0,0%);
+                    border: 1px solid rgba(0, 0, 0, 0%);
 
                 }
-                a{  
+
+                a {
                     border-bottom: 1px solid $csdr;
-                    &:hover{
+
+                    &:hover {
                         cursor: pointer;
                     }
                 }
-                p{
+
+                p {
                     margin-bottom: 10px;
                     text-align: center;
                     width: 100px;
                 }
-                h2.login{
+
+                h2.login {
                     padding: 40px 15px;
                     margin: 0 20px;
-                    &:hover{
+
+                    &:hover {
                         cursor: pointer;
                     }
                 }
             }
         }
-        svg{
+
+        svg {
             position: absolute;
             top: 0;
             left: 0;
             z-index: -1;
         }
-        div.closebtn{
-            @include closeBtn( 0, 0, 20, 20, 24, "取消登入", 100, 16, 0, -90)
+
+        div.closebtn {
+            @include closeBtn(0, 0, 20, 20, 14, "取消登入", 100, 16, 0, -90, 20);
+            line-height: 17px;
         }
     }
 }
@@ -114,94 +141,114 @@ div#signUp {
         color: $csdr;
         box-sizing: border-box;
     }
+
+
     margin: 40px auto 0;
+
     div.signUp {
         width: 800px;
-        height: 830px; 
+        height: 830px;
         margin: auto;
         padding: 30px 10px;
         text-align: center;
         background-color: #F9F4ED;
         position: relative;
-        svg{
+
+        svg {
             width: 800px;
             height: 810px;
             position: absolute;
             top: 10px;
             left: 0;
         }
-        form.signUp{
+
+        form.signUp {
             margin: auto;
             width: 80%;
             padding: 0 20px;
             position: relative;
             z-index: 1;
-            input{
+
+            input {
                 border: none;
                 outline: none;
-                border-bottom:  1px solid#BDA79E;
+                border-bottom: 1px solid#BDA79E;
                 background-color: none;
-                background-color:  rgba(0,0,0,0);
-                &:focus{
-                    background-color: rgba(189,167,156,.1);
+                background-color: rgba(0, 0, 0, 0);
+
+                &:focus {
+                    background-color: rgba(189, 167, 156, .1);
                 }
             }
-            > div{
+
+            >div {
                 margin-bottom: 10px;
                 display: flex;
                 flex-direction: column;
                 text-align: left;
-                > label{
+
+                >label {
                     margin-bottom: 3px;
                 }
-                > input{  
+
+                >input {
                     flex-grow: 1;
                 }
+
                 // 姓名&手機
-                &:first-child{
+                &:first-child {
                     // border: 1px solid blue;
                     flex-direction: row;
-                    > div {
+
+                    >div {
                         // 姓名
                         // border: 1px solid blue;
                         display: flex;
                         flex-direction: column;
-                        label{
+
+                        label {
                             margin-bottom: 3px;
                         }
-                        &:first-child{
-                            input{
+
+                        &:first-child {
+                            input {
                                 width: 220px;
                             }
                         }
+
                         // 手機
-                        &:last-child{
+                        &:last-child {
                             margin-left: 30px;
                             flex-grow: 1;
                         }
-                        
+
                     }
                 }
+
                 // 地址
-                &:nth-child(3){
+                &:nth-child(3) {
                     flex-direction: row;
                     flex-wrap: wrap;
-                    label{
+
+                    label {
                         flex-basis: 100%;
                     }
-                    select{
+
+                    select {
                         margin-right: 5px;
                         padding: 5px;
                         align-self: flex-end;
                         background-color: #F9F4ED;
                     }
-                    input{
+
+                    input {
                         align-self: stretch;
                     }
                 }
+
                 // 按鈕
-                &:nth-child(7){
-                    button{
+                &:nth-child(7) {
+                    button {
                         // 200:80 5:2
                         width: 160px;
                         height: 40px;
@@ -210,36 +257,43 @@ div#signUp {
                         outline: none;
                         background-color: #F9F4ED;
                         border: 1px solid;
-                        &:hover{
+
+                        &:hover {
                             cursor: pointer;
                         }
                     }
                 }
-                &:nth-child(8){
-                    span{
+
+                &:nth-child(8) {
+                    span {
                         display: inline-block;
                         margin: auto;
                         color: #BDA79E;
-                        a{  
+
+                        a {
                             margin: 0 5px;
                             text-decoration: underline;
                             color: #BDA79E;
-                            &:hover{
+
+                            &:hover {
                                 cursor: pointer;
                             }
                         }
                     }
                 }
-                &:last-child{
+
+                &:last-child {
                     align-items: center;
-                    a{
+
+                    a {
                         color: #BDA79E;
                     }
                 }
             }
         }
-        div.closebtn{
-            @include closeBtn( 30, 30, 25, 25, 25, "取消註冊會員", 100, 16, 0, -110)
+
+        div.closebtn {
+            @include closeBtn(30, 30, 25, 25, 25, "取消註冊會員", 100, 16, 0, -110, 25);
         }
     }
 }
@@ -248,204 +302,254 @@ div#signUp {
 
 @include rwdmF(1920);
 @include rwdmF(1700);
-@include rwdmF(1500){
+
+@include rwdmF(1500) {
     div#signUp {
         margin: 40px auto 0;
+
         div.signUp {
             width: 550px;
-            height: 580px; 
+            height: 580px;
             padding: 30px 10px;
-            svg{
+
+            svg {
                 width: 550px;
                 height: 560px;
             }
-            form.signUp{
+
+            form.signUp {
                 width: 100%;
                 padding: 0 20px;
-                > div{
+
+                >div {
                     margin-bottom: 12px;
                     flex-direction: row;
-                    > label{
+
+                    >label {
                         margin-right: 5px;
                     }
+
                     // 所有input
-                    > input{
+                    >input {
                         margin-left: 5px;
                         flex-grow: 1;
                     }
+
                     // 姓名&手機
-                    &:first-child{
+                    &:first-child {
                         flex-direction: row;
-                        > div {
+
+                        >div {
+
                             // 姓名
-                            &:first-child{
+                            &:first-child {
                                 flex-direction: row;
-                                input{
+
+                                input {
                                     width: 130px;
-                                    margin-left: 5px;                  
+                                    margin-left: 5px;
                                 }
-                                label{
+
+                                label {
                                     margin-right: 5px;
                                 }
                             }
+
                             // 手機
-                            &:last-child{
+                            &:last-child {
                                 flex-direction: row;
-                                input{
+
+                                input {
                                     flex-grow: 1;
                                     width: 180px;
                                     margin-left: 5px;
                                 }
-                                label{
+
+                                label {
                                     margin-right: 5px;
                                 }
                             }
-                            
+
                         }
                     }
+
                     // 地址
-                    &:nth-child(3){
+                    &:nth-child(3) {
                         flex-direction: row;
                         flex-wrap: nowrap;
-                        label{
+
+                        label {
                             flex-basis: 9%;
                         }
-                        select{
+
+                        select {
                             padding: 5px;
-                            margin-left: 5px;                   
+                            margin-left: 5px;
                         }
                     }
+
                     // 按鈕
-                    &:nth-child(7){
-                        button{
+                    &:nth-child(7) {
+                        button {
                             // 200:80 5:2
                             width: 160px;
                             height: 40px;
                             margin: 30px auto;
                         }
                     }
-                    &:nth-child(8){
-                        span{
+
+                    &:nth-child(8) {
+                        span {
                             display: inline-block;
                             margin: auto;
                         }
                     }
-                    &:last-child{
+
+                    &:last-child {
                         justify-content: center;
                     }
                 }
             }
-            div.closebtn{
-                @include closeBtn( 30, 30, 20, 20, 24, "取消註冊會員", 100, 16, 0, -105)
+
+            div.closebtn {
+                @include closeBtn(30, 30, 20, 20, 24, "取消註冊會員", 100, 16, 0, -105, 20)
             }
         }
     }
-};
+}
+
+;
 @include rwdmF(1200);
-@include rwdmF(992){
+
+@include rwdmF(992) {
     div#signUp {
         margin: 40px auto 0;
+
         div.signUp {
-            form.signUp{
-                > div{
+            form.signUp {
+                >div {
                     margin-bottom: 20px;
                 }
             }
         }
     }
-};
+}
+
+;
 @include rwdmF(768);
-@include rwdmF(576){
-    div#login{
-        div.login{
-            border: 1px solid rgba(0,0,0,0%);
+
+@include rwdmF(576) {
+    div#login {
+        div.login {
+            border: 1px solid rgba(0, 0, 0, 0%);
             width: 350px;
             height: 350px;
-            > h1{
+
+            >h1 {
                 margin-top: 70px;
             }
-            form.login{
+
+            form.login {
                 width: 200px;
-                div:first-child{
-                    input{
+
+                div:first-child {
+                    input {
                         margin-bottom: 10px;
                     }
                 }
-                div:last-child{
-                    h2.login{
+
+                div:last-child {
+                    h2.login {
                         margin: 0 8px;
                     }
                 }
             }
-            svg{
+
+            svg {
                 width: 350px;
                 height: 350px;
             }
-            div.closebtn{
-                @include closeBtn( 0, 0, 15, 15, 15, "取消登入", 80, 12, 0, -70)
+
+            div.closebtn {
+                @include closeBtn(0, 0, 15, 15, 8, "取消登入", 80, 12, 0, -70, 15)
             }
         }
     }
+
     div#signUp {
         margin: 40px auto 0;
+
         div.signUp {
             width: 80vw;
-            height: 480px; 
+            height: 480px;
             padding: 30px 10px;
-            svg{
+
+            svg {
                 width: 0;
-                height: 0; 
+                height: 0;
             }
-            form.signUp{           
+
+            form.signUp {
                 width: 100%;
-                > div{
+
+                >div {
                     margin-bottom: 10px;
+
                     // 姓名&手機
-                    &:first-child{
+                    &:first-child {
                         flex-direction: column;
-                        > div{
+
+                        >div {
                             margin-bottom: 10px;
+
                             // 姓名
-                            &:first-child{
-                                input{
+                            &:first-child {
+                                input {
                                     flex-grow: 1;
                                 }
                             }
+
                             // 手機
-                            &:last-child{
+                            &:last-child {
                                 margin-left: 0;
                                 margin-bottom: 0;
                             }
                         }
                     }
+
                     // 地址
-                    &:nth-child(3){
+                    &:nth-child(3) {
                         flex-wrap: wrap;
-                        label{
+
+                        label {
                             flex-basis: 30px
                         }
-                        select{
+
+                        select {
                             margin-bottom: 5px;
                             margin-right: 0;
                             padding: 2px;
                             background-color: #F9F4ED;
                         }
-                        input{
-                            width:100%;
+
+                        input {
+                            width: 100%;
                             margin-left: 0;
                         }
                     }
+
                     // 按鈕
-                    &:nth-child(7){
-                        button{
+                    &:nth-child(7) {
+                        button {
                             // 5:2
                             width: 120px;
                             height: 40px;
                             margin: 10px auto;
                         }
                     }
-                    &:nth-child(8){
-                        span{
+
+                    &:nth-child(8) {
+                        span {
                             display: inline-block;
                             width: 170px;
                             margin: auto;
@@ -454,59 +558,73 @@ div#signUp {
                     }
                 }
             }
-            div.closebtn{
-                @include closeBtn( 20, 20, 12, 12, 12, "取消註冊會員", 100, 10, 0, -90)
+
+            div.closebtn {
+                @include closeBtn(20, 20, 12, 12, 12, "取消註冊會員", 100, 10, 0, -90, 12)
             }
         }
     }
 }
-@include rwdmF(360){
+
+@include rwdmF(360) {
     div#signUp {
         margin: 40px auto 0;
+
         div.signUp {
-            height: 450px; 
-            form.signUp{           
+            height: 450px;
+
+            form.signUp {
                 width: 100%;
-                > div{
+
+                >div {
+
                     // 姓名&手機
-                    &:first-child{
-                        > div{
+                    &:first-child {
+                        >div {
+
                             // 手機
-                            &:last-child{
-                                input{
+                            &:last-child {
+                                input {
                                     width: 100px;
                                 }
                             }
                         }
                     }
+
                     // 地址
-                    &:nth-child(3){
-                        label{
+                    &:nth-child(3) {
+                        label {
                             flex-basis: 15%;
                         }
-                        select{
+
+                        select {
                             margin-bottom: 5px;
                             margin-right: 0;
                             padding: 1px;
                             background-color: #F9F4ED;
                         }
-                        input{
-                            width:100%;
+
+                        input {
+                            width: 100%;
                             margin-left: 0;
                         }
                     }
-                    &:nth-child(6){
+
+                    &:nth-child(6) {
                         display: flex;
-                        label{
+
+                        label {
                             flex-shrink: 0;
                         }
-                        input{
+
+                        input {
                             width: 100px !important;
                         }
                     }
+
                     // 按鈕
-                    &:nth-child(7){
-                        button{
+                    &:nth-child(7) {
+                        button {
                             // 5:2
                             width: 100px;
                             height: 30px;
@@ -515,11 +633,12 @@ div#signUp {
                     }
                 }
             }
-            div.closebtn{
-                @include closeBtn( 10, 10, 15, 15, 15, "取消註冊會員", 100, 12, 0, -90)
+
+            div.closebtn {
+                @include closeBtn(10, 10, 15, 15, 15, "取消註冊會員", 100, 12, 0, -90, 12)
             }
         }
     }
-};
+}
 
-
+;

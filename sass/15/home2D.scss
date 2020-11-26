@@ -6,11 +6,99 @@ body {
     @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
 }
 
+
 div.JHH {
     * {
         box-sizing: border-box;
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         color: #865454;
+    }
+
+    >header {
+        * {
+            font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+        }
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        display: none;
+
+        nav {
+            position: absolute;
+            top: 80px;
+            right: 3%;
+            text-align: center;
+            display: none;
+            z-index: 2;
+            a {
+                display: block;
+                text-decoration: none;
+                margin-bottom: 15px;
+                color: $c_font_strong;
+                font-size: 20px;
+            }
+        }
+
+        .logo {
+            display: inline-block;
+            width: 25vw;
+            height: 100%;
+
+            a {
+                text-decoration: none;
+                display: inline-block;
+                height: 100%;
+
+                img {
+                    max-height: 100%;
+                }
+            }
+        }
+
+        .icon {
+            width: 30vw;
+            height: 25px;
+            display: flex;
+            justify-content: space-around;
+
+            .ham {
+                position: relative;
+
+                span {
+                    background: $c_font_strong;
+                    display: block;
+                    width: 20px;
+                    height: 2px;
+
+                    &:nth-child(1) {
+                        margin-top: 2px;
+                        transform-origin: top right;
+                        transition: all .5s;
+                    }
+
+                    &:nth-child(2) {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                        &.-none {
+                            display: none;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        position: absolute;
+                        bottom: 2px;
+                        transform-origin: top right;
+                        transition: all .5s;
+                    }
+                }
+            }
+        }
     }
 
     margin-top: 5vh;
@@ -58,11 +146,30 @@ div.JHH {
                 }
 
                 header.common {
+                    * {
+                        font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+                    }
                     height: 120px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     position: relative;
+
+                    nav {
+                        position: absolute;
+                        top: 80px;
+                        right: 3%;
+                        text-align: center;
+                        display: none;
+                        z-index: 2;
+                        a {
+                            text-decoration: none;
+                            display: block;
+                            margin-bottom: 15px;
+                            color: #54383b;
+                            font-size: 20px;
+                        }
+                    }
 
                     .logo {
                         display: inline-block;
@@ -134,7 +241,7 @@ div.JHH {
 
                         &:first-child {
                             // 關於我們
-                            margin: 60px 0 60px 0;
+                            margin: 60px 0;
 
                             p {
                                 padding: 5px 20px;
@@ -190,6 +297,10 @@ div.JHH {
                                 max-width: 100%;
                                 max-height: 100%;
                                 position: absolute;
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
                             }
 
                             &:first-child,
@@ -229,7 +340,7 @@ div.JHH {
     div#homeRight {
         border: 1px solid;
         position: relative;
-        overflow: hidden;
+        // overflow: hidden;
 
         >div {
             position: absolute;
@@ -242,18 +353,22 @@ div.JHH {
                 left: 0;
                 position: relative;
 
+
                 &::before {
                     content: "";
                     width: 100%;
                     height: 100%;
                     display: inline-block;
-                    animation: runbcg 10s both;
+                    animation: runbcg 5s both;
                     position: absolute;
                     top: 0;
-                    z-index: -1;
+                    z-index: 1;
+
+
                 }
 
-                button {
+                a {
+                    display: inline-block;
                     border: none;
                     outline: none;
                     background-color: rgba(134, 84, 84, .8);
@@ -262,15 +377,45 @@ div.JHH {
                     color: #FFFFFF;
                     position: relative;
                     z-index: 2;
+                    text-decoration: none;
+                    line-height: 80px;
+                    text-align: center;
+
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        border: 1px solid;
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                @keyframes runbcg {
+                    0% {
+                        width: 0;
+                        background-color: rgba(134, 84, 84, .4);
+                    }
+
+                    100% {
+                        width: 220px;
+                        background-color: rgba(134, 84, 84, 1);
+                    }
                 }
             }
 
             &:nth-child(2) {
                 width: 100%;
                 height: 100%;
-                background-image: url("../../img/product/bookcase01/bk01-01.jpg");
+                background-image: url("../../img/product/tv/tv04.jpg");
                 background-repeat: no-repeat;
-                background-size: contain;
+                background-size: cover;
                 background-position: center center;
             }
 
@@ -285,31 +430,82 @@ div.JHH {
     }
 
     div#bottomBox {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+
+        >div {
+            &:first-child {
+                // social media
+                display: flex;
+                justify-content: center;
+
+                >div {
+                    width: 30px;
+                    height: 30px;
+                    margin: 30px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+                    img {
+                        display: inline-block;
+                        max-width: 100%;
+                        max-height: 100%;
+                        position: absolute;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:first-child,
+                    &:nth-child(2),
+                    &:last-child {
+                        top: 0;
+                    }
+
+                    &:nth-child(3) {
+                        img {
+                            bottom: 0;
+                        }
+
+                    }
+                }
+            }
+
+            &:last-child {
+                // 版權
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                p,
+                div,
+                img {
+                    display: inline-block;
+                    margin: 0;
+                    vertical-align: middle;
+                }
+
+
+            }
+        }
+
         display: none;
+
     }
 
-}
-
-@keyframes runbcg {
-    0% {
-        width: 0;
-        background-color: rgba(134, 84, 84, .4);
-    }
-
-    100% {
-        width: 220px;
-        background-color: rgba(134, 84, 84, 1);
-        z-index: 1;
-    }
 }
 
 
 .-hamR {
-    transform: rotateZ(-45deg) translate(-3px, -3px);
+    transform: rotateZ(-45deg) translate(-2px, -1px);
 }
 
 .-hamL {
-    transform: rotateZ(45deg) translate(-1px, 2px);
+    transform: rotateZ(45deg) translate(-3px, -3px);
 }
 
 @include rwdmF(1920) {
@@ -340,13 +536,14 @@ div.JHH {
                     }
                 }
 
+                // 底部
                 &:last-child {
                     >div {
                         &:first-child {
                             >div {
-                                width: 25px;
-                                height: 25px;
-                                margin: 40px 20px;
+                                width: 30px;
+                                height: 30px;
+                                margin: 30px 20px;
                             }
                         }
                     }
@@ -397,8 +594,8 @@ div.JHH {
                     >div {
                         &:first-child {
                             >div {
-                                width: 20px;
-                                height: 20px;
+                                width: 25px;
+                                height: 25px;
                                 margin: 24px 20px;
                             }
                         }
@@ -432,6 +629,7 @@ div.JHH {
 
                             &:first-child {
                                 margin: 40px 0 40px 0;
+
                                 // 關於我們
                                 p {
                                     padding: 5px 20px;
@@ -467,8 +665,126 @@ div.JHH {
 }
 
 ;
-@include rwdmF(768){
-    // TODO:開始上下排
-};
-@include rwdmF(576);
+
+@include rwdmF(768) {
+    div.JHH {
+        margin-top: 0;
+        padding-top: 30px;
+        flex-wrap: wrap;
+        width: 80vw;
+        height: 100%;
+        margin: auto;
+
+        >header {
+            display: flex;
+        }
+
+        div#homeLeft {
+            width: 100%;
+
+            >div {
+                &:first-child {
+                    overflow-y: hidden;
+
+                    header.common {
+                        display: none;
+                    }
+
+                    >div {
+
+                        >div {
+                            width: 80%;
+                            margin: auto;
+
+                            &:first-child {
+                                // 關於我們
+                                margin: 50px auto;
+                            }
+
+                            &:last-child {
+                                // 最新消息
+                                height: 170px;
+                                padding: 5px 20px;
+                                margin-bottom: 50px;
+
+                                ul {
+                                    margin: 0;
+                                    height: 100%;
+                                    overflow-y: hidden;
+
+                                    li {
+                                        height: 100%;
+                                        margin: 10px 0;
+                                        overflow-y: hidden;
+
+
+                                    }
+                                }
+
+                                @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+
+        div#homeRight {
+            width: 100%;
+            height: 400px;
+
+            >div {
+                &:first-child {
+                    top: -20px;
+                    left: calc((100% - 220px) / 2);
+                }
+
+            }
+        }
+
+        div#bottomBox {
+            display: flex;
+        }
+    }
+}
+
+;
+
+@include rwdmF(576) {
+    div.JHH {
+        div#homeLeft {
+            >div {
+                &:first-child {
+                    >div {
+                        >div {
+                            &:last-child {
+                                height: 120px;
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div#homeRight {}
+
+
+        div#bottomBox {
+            >div {
+                &:first-child {
+                    >div {
+                        margin: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+;
 @include rwdmF(360);
