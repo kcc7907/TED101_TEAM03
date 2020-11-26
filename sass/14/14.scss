@@ -203,12 +203,14 @@ body{
     background-color: #f1ece8;
     // overflow-x: hidden;
     // margin-top: 160px;
+    // border: none !important;
 }
 
 
 *{
     font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
     // font-family: "微軟正黑體";
+    // border: none !important;
 }
 
 //巢狀寫法
@@ -333,10 +335,10 @@ div#JN{
                 border: 1px solid rebeccapurple;
                 width: 80%;
                 font-size: 0;
-                margin: 0px 20px;
+                // margin: 0px 20px;
                 li{
                     display: inline-block;
-                    border: 1px solid;
+                    border: 1px solid black !important;
                     a{
                         font-size: 30px;
                         display: inline-block;
@@ -451,15 +453,15 @@ div#JN{
 
         //風格圖片
         .jpgbox{
-            width: 30%; 
+            width: 33.1%; 
             height: 240px; 
             border: 1px solid red; 
             position: relative;
             overflow: hidden;
-            &:hover > span{
+            &:hover  span{
                 opacity: 100%;
             }
-                span{
+               span{
                     display: inline-block;
                     // display: none;
                     opacity: 0;
@@ -499,6 +501,8 @@ div#JN{
             position: absolute;
             top: 0;
             left: 0px;
+            width: 100%;
+            height: fit-content;
         }
 
         .stylebox_right{
@@ -506,6 +510,9 @@ div#JN{
             max-width: 1200px;
             width: 100%;
             margin-bottom: 20%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         .style_one_one, .style_one_two, .style_one_three, .style_two_one, 
@@ -632,6 +639,7 @@ div#JN{
         height: 80px;
         // margin-top: 3%;
         justify-content: center;
+        background-color: #BDA79E;
 
         i.fas{
             font-size: 10px;
@@ -641,9 +649,11 @@ div#JN{
 
     
     .click{
-        margin-top: 3%;
+        border: 1px solid green;
+        margin-top: 2%;
         padding: 0px 120px;
         font-size: 32px;
+        display: flex;
     }
 
     .show_pic{
@@ -658,15 +668,12 @@ div#JN{
 
     .exhibit_pic{
         display:  flex;
-        align-items: center;
         justify-content:  center;
+        margin-top: 15%;
+        // width: 600px;
+
     }
 
-    .exhibit_pic2{
-        width: 600px;
-        // height: 200px;
-        
-    }
 
     .designer_intro{
         border: 1px solid indianred;
@@ -694,13 +701,14 @@ div#JN{
         justify-content: space-around;
         margin: auto;
         font-size: 32px;
+        background-color: #b99e9057;
     }
 
     .d_pic_flex{
-        border: 1px solid yellow;
+        border: 6px solid yellow;
         // display: inline-flex;
         width: 100%;
-        margin-top: 60px;
+        margin-top: 5%;
     }
 
     .interior_one, .interior_two, .interior_three{
@@ -709,7 +717,7 @@ div#JN{
 
     .interior_pics{
         width: 100%;
-        height: 200px;
+        height: 100%;
     }
 
     .d_pic_word{
@@ -722,7 +730,7 @@ div#JN{
         border: 1px solid brown;   
         width: 600px;
         height: 200px; 
-        padding: 20px;
+        padding: 2%;
     }
 
     .more_detail{
@@ -739,8 +747,12 @@ div#JN{
             width: 100%;
             text-align: center;
             z-index: 1;
-            line-height: 120px;
+            line-height: 90px;
             font-size: 30px;
+            .titleFont3{
+                border: 1px solid greenyellow;
+                // width: 1000px;
+            }
             
                 .more_details{
                     border: 1px solid brown;
@@ -759,9 +771,10 @@ div#JN{
 
     .deatil_contact{
         border: 1px solid rebeccapurple;
-        width: 1000px;
+        max-width: 100%;
         margin-top: 5%;
-        display: block;
+        display: flex;
+        justify-content: center;
         margin: auto;
         background-color: #fff;
         opacity: 0.5;
@@ -770,23 +783,92 @@ div#JN{
     }
 
 
-    img{
+    // img{
+        .example_exhibit{
+            // width: 100%;
+            width: 900px;
+        }
         .exhibit_pic2{
-            width: 100%;
-    }
-    }
+            width: 600px;
+        }
+        .contact_detail{
+            width: 1000px;
+            height: 800px;
+            
+        }
+    // }
 
 
 // @include rwdmF(1920);
 // @include rwdmF(1700);
 // @include rwdmF(1500);
-// @include rwdmF(1200){
-    
+@include rwdmF(1200){
+    div#JN{
+        > div{
+        .show_pic{
+            display: grid;
+        }
+        .designer_intro{
+            margin-top: 0%;
+        }
+        .interior_one, .interior_two{
+            display: block;
+        }
+
+        // 第二頁
+        .interior_pics{
+            width: auto;
+        }
+        .d_pic_flex{
+            display: flex;
+            justify-content: center;
+        }
+        .inter_one{
+            width: 310px;
+        }
+
+        .example_exhibit{
+            // width: 100%;
+            width: 700px;
+        }
+        .exhibit_pic2{
+            width: 600px;
+        }
+        .contact_detail{
+            width: 800px;
+            height: 500px;
+
+        }
+
+        .more_detail{
+            .contact{
+                line-height: 75px;
+                }
+            }
+        .select_click{
+            border: 1px solid rebeccapurple;
+            display: flex;
+            max-width: 1200px;
+            width: 90%;
+            // width: 100%;
+            text-align: center;
+            height: 80px;
+            // margin-top: 3%;
+            justify-content: center;
+            background-color: #BDA79E;
+            margin: auto;
+        }
+        .click{
+            padding: 5px 90px;
+        }
+}
+}
+};
 // };
     
 // @include rwdmF(992){
 
-    @include rwdmF(992){ 
+@include rwdmF(992){ 
     div#JN{
         > div{
             border: 1px solid blue;
@@ -797,14 +879,14 @@ div#JN{
             .photo{
                 background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
                 width: 100%;
-                height: 350px;
+                height: 550px;
                 // background-attachment: fixed;
                 background-position: center center;
-                display: inline-block;
-                background-size: cover;
-                background-repeat: no-repeat;
-                display: flex;
-                flex-direction: column;
+                // display: inline-block;
+                // background-size: cover;
+                // background-repeat: no-repeat;
+                // display: flex;
+                // flex-direction: column;
                 justify-content: center;
             }
             .introduce_detail{
@@ -836,9 +918,8 @@ div#JN{
                 justify-items: center;
             }
 
-
             .style_one_one, .style_one_two, .style_one_three, .style_two_one, 
-        .style_two_two, .style_three_one{
+            .style_two_two, .style_three_one{
             display: inline-flex;
             flex-wrap: wrap;
             max-width: 1200px;
@@ -846,14 +927,202 @@ div#JN{
             justify-content: space-around;
         }
 
-        }
+            .tab_list_block{
+                .tab_list{
+                    li{
+                        a{
+                            padding: 5px 30px;
+                        }
+                    }
+                }
+            }
+
+        
+            .jpgbox{
+                width: 49%; 
+                height: 240px; 
+                border: 1px solid red; 
+                position: relative;
+                overflow: hidden;
+                &:hover  span{
+                    opacity: 100%;
+                }
+                    span{
+                        display: inline-block;
+                        // display: none;
+                        opacity: 0;
+                        width: 100%;
+                        height: 120px;
+                        text-align: center;
+                        position: absolute;
+                        top: 0;
+                        z-index: 1;
+                        background-color: rgba(0,0,0,.3);
+                        line-height: 120px;
+                        font-size: 30px;
+                        color: white;
+                        transition: all .5s;
+                        &:last-child{
+                            top: 120px;
+                        }
+                    }
+                }
+            .section{
+                div.div_block{
+                    background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
+                    width: 100%;
+                    height: 350px;
+                    border: 1px solid red;
+                }
+                div.other_text{
+                    width: 15%;
+                }
+            }
+            }
+            .example_exhibit{
+                // width: 100%;
+                width: 600px;
+            }
+            .exhibit_pic2{
+                width: 400px;
+            }
+            .contact_detail{
+                width: 500px;
+                height: 300px;
+            }
+            
+    
     }
 };
 
+@include rwdmF(768){
+div#JN{
+    > div{
+        .jpgbox{
+            width: 50%; 
+            height: 240px; 
+            border: 1px solid red; 
+            position: relative;
+            overflow: hidden;
+            &:hover > span{
+                opacity: 100%;
+            }  
+        }  
+        .tab_list_block{
+            .tab_list{
+                li{
+                    a{
+                        padding: 5px 30px;
+                    }
+                }
+            }
+        }
+        .stylebox_right{
+            border: 1px solid pink;
+            max-width: 1200px;
+            width: 100%;
+            margin-bottom: 20%;
+            display: block;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .d_pic_flex{
+            display: grid;
+        }
+        .contact_detail{
+            width: 600px;
+            height: 500px;
+            
+        }
+        .select_click{
+            display: block;
+            width: 90%;
+            // width: 100%;
+            text-align: center;
+            height: 30%;
+            // margin-top: 3%;
+            justify-content: center;
+            background-color: #BDA79E;
+            margin: auto;
+        }
+        .click{
+            padding: 5px 90px;
+        }
+        .example_exhibit{
+            // width: 100%;
+            width: 600px;
+        }
+        .exhibit_pic2{
+            width: 400px;
+        }
+    }
+}
 
-// @include rwdmF(768);
-// @include rwdmF(576);
-// @include rwdmF(360);
+}
+
+@include rwdmF(576){
+    div#JN{
+        > div{
+            .jpgbox{
+                width: 80%; 
+                height: 240px; 
+                border: 1px solid red; 
+                position: relative;
+                overflow: hidden;
+                &:hover > span{
+                    opacity: 100%;
+                }  
+            }  
+    .tab_list_block{
+        .tab_list{
+            width: 70%;
+            display: grid;
+            li{
+                display: block;
+                text-align: center;
+                a{
+                    padding: 5px 30px;
+                    
+                }
+            }
+        }
+    }
+    .contact_detail{
+        width: 400px;
+        height: 300px;
+        
+    }
+
+    .more_detail{
+        .contact{
+            line-height: 45px;
+            }
+        }
+    .example_exhibit{
+        // width: 100%;
+        width: 400px;
+    }
+    .exhibit_pic2{
+        width: 300px;
+    }
+}
+};
+@include rwdmF(360){
+    .tab_list_block{
+        .tab_list{
+            width: 20%;
+            display: grid;
+            li{
+                display: block;
+                text-align: center;
+                a{
+                    padding: 5px 15px;
+                }
+            }
+        }
+    }
+}
+};
 
 
 //jquery輪播圖
@@ -896,5 +1165,4 @@ div#JN{
 
 // 	display: inline-block;
 // 	margin: 5px;
-// }
-
+// 
