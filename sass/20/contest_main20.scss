@@ -102,6 +102,7 @@ $cf :#CAC3BB;
     width: 100vw;
     overflow-x: hidden;
     background-color: $cbg;
+    font-size: 0;
 }
 
 .kcc_contest{
@@ -123,7 +124,7 @@ $cf :#CAC3BB;
             position: relative;
         }
         .right{
-            // display: none;
+            display: none;
             &.-block{
                 display: block;
             }
@@ -174,16 +175,25 @@ $cf :#CAC3BB;
         .rule_tab{
             display: flex;
             justify-content: space-around;
-            padding: 0 10px 20px;
+            margin: 10px 0;
+            padding: 0 10px;
         }
         .rule_content{
-            padding: 0 15px;
+            padding: 0 15px 0 5px;
             line-height: 30px;
             text-indent: 15px;
             text-align:justify;
             overflow: auto;
             max-height: 300px;
             margin-bottom: 20px;
+            @include scrollBar(10, none, none, 10, 10, rgba(134,84,84, .5)){
+                &::-webkit-scrollbar-track {
+                    -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3); 
+                }
+                &::-webkit-scrollbar-thumb {
+                    -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 1);
+                }
+            }
         }
         .light{
             color:#BDA79C;
@@ -192,7 +202,6 @@ $cf :#CAC3BB;
     }
 
     //left
-    
     .content_box{
         position: relative;
         .content{
@@ -204,7 +213,7 @@ $cf :#CAC3BB;
                 position: absolute;
             width: 130px;
             height: 130px;
-            border: #465d4c 30px solid;
+            border: rgba(255, 255, 255, 0.6) 30px solid;
             top: 200px;
             left: 0;
             transform: rotate(45deg)translateX(-70%);
@@ -246,13 +255,13 @@ $cf :#CAC3BB;
             position: absolute;
             top: 20px;
             z-index: -1;
-        }
+    }
     .slider_titlebox{
         margin: 10px 0 0 20px;
         color: #BDA79C;
         p{
-        font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif ;
-        margin: 10px 0;
+            font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif ;
+            margin: 10px 0;
         }
     }
     .slider{
@@ -307,13 +316,15 @@ $cf :#CAC3BB;
 
     @include rwd(360){}
     @include rwd(576){
+        //right
         .rule_contentbox{
             padding:0 50px;
+            .rule_content{
+                line-height: 40px;
+            }
         }
-
-        .slider_titlebox{
-        margin: 10px 0 0 100px;
-        }
+        //left
+        
         .slider{
             .picbox{
             width: 450px;
@@ -328,6 +339,7 @@ $cf :#CAC3BB;
     @include rwd(768){
         .wrap{
             flex-direction: row;
+            height: calc(100vh - 145px);
             .left{
                 width: 40%;
             }
@@ -338,11 +350,209 @@ $cf :#CAC3BB;
                 justify-content: center;
             }
         }
+        //right
+        .rule_contentbox{
+            margin-top: 20px;
+            .rule_tab{
+                margin: 20px 0;
+            }
+            .rule_content{
+            margin-bottom: 40px;
+            }
+        }
+
+        //left
+        .content_box{
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .contest_name{
+                width: 100px;
+                height: 100px;
+                line-height: 100px;
+            }
+        }
+        .slider_titlebox{
+            position: absolute;
+            bottom: 0;
+        }
+        .slider{
+            height: 20%;
+            .picbox{
+            width: 210px;
+            height: 70px;
+                img{
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+        .slider_titlebox{
+            margin: 10px 0 0 20px;
+        }
+        .content_box{
+            .year{
+                left: 7%;
+            }
+        }
+        .bgbox{
+            position: fixed;
+            height: 100vh;
+            width: 40%;
+            top: 0;
+        }
     }
-    @include rwd(992){}
-    @include rwd(1200){}
-    @include rwd(1500){}
-    @include rwd(1700){}
+    @include rwd(992){
+        .wrap{
+            height: calc(100vh - 175px);
+        }
+        //right
+        .rule_contentbox{
+            padding:0 50px;
+            .rule_content{
+                line-height: 50px;
+            }
+        }
+        //left
+        .content_box{
+            .contest_name{
+                width: 130px;
+                height: 130px;
+                line-height: 130px;
+            }
+        }
+        .slider{
+            .picbox{
+            width: 280px;
+            }
+        }
+        .content_box{
+            .year{
+                left: 10%;
+            }
+        }
+        .slider_titlebox{
+        margin: 10px 0 0 50px;
+        }
+    }
+    @include rwd(1200){
+        .wrap{
+            height: calc(100vh - 200px);
+            .right{
+                padding-right: 50px;
+            }
+        }
+        .contest_nav::after{
+            height: 20px;
+            bottom: 10px;
+        }
+        //left
+        .slider{
+            .picbox{
+            width: 360px;
+            height: 90px;
+                img{
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+    @include rwd(1500){
+        .wrap .right{
+            padding-right: 70px;
+        }
+
+        .rule_contentbox{
+            .rule_content{
+                line-height: 60px;
+            }
+        }
+
+        .content_box{
+            .contest_name{
+                width: 160px;
+                height: 160px;
+                line-height: 160px;
+            }
+        }
+    }
+    @include rwd(1700){
+        .wrap{
+            height: calc(100vh - 220px);
+        }
+        .wrap .right{
+            padding-right: 160px;
+        }
+        //right
+        .rule_contentbox{
+            margin-left: 50px;
+            .rule_tab{
+                margin: 20px 0;
+            }
+            .rule_content{
+                padding: 0 60px;
+                margin-bottom: 40px;
+                text-indent: 50px;
+                max-height: 45vh;
+            }
+        }
+        //left
+        .content_box{
+            .content{
+                .arrow{
+                    position: absolute;
+                    width: 200px;
+                    height: 200px;
+                    border: #465d4c 30px solid;
+                    top: 300px;
+                    left: 0;
+                    transform: rotate(45deg)translateX(-70%);
+                    border: rgba(255, 255, 255, 0.6) 50px solid;
+                }
+            }
+            .year{
+                font-size: 30px;
+                width: 30px;
+                line-height: 40px;
+                word-break: break-all;
+                position: absolute;
+                top: 1%;
+                left: 20%;
+                color: #BDA79C;
+            }
+            .contest_name{
+                width: 200px;
+                height: 200px;
+                line-height: 200px;
+                font-size: 80px;
+                &:nth-child(2){
+                    transform: translate(-40%,50px);
+                }
+                &:nth-child(3){
+                    transform: translate(40%,0px);
+                }
+                &:nth-child(4){
+                    transform: translate(0%,-30px);
+                }
+            }
+        }
+
+        .slider{
+            .picbox{
+            width: 540px;
+            height: 90px;
+            }
+        }
+
+        .bgbox{
+            position: fixed;
+            height: 100vh;
+            width: 40%;
+        }
+    }
+
 
 }
 
