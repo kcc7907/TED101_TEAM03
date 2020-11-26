@@ -44,15 +44,21 @@ body{
                 font-size: 24px;
                 color: #465D4C;
 
-                box-shadow: rgba(240, 240, 240, .6) 10px 10px 20px;
+                position: relative;
+
+                // box-shadow: rgba(240, 240, 240, .6) 10px 10px 20px;
 
 
                 >.close{                    
-                    margin: -60px -20px 0 0;
-                    align-self: flex-start;
+                    // margin: -60px -20px 0 0;
+                    // align-self: flex-start;
                     order: 2;
 
                     cursor: pointer;
+
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
 
                     i{
                         font-size: 30px;
@@ -105,14 +111,30 @@ body{
         }
 
         >.container{
-            width: 1200px;
+            width: 1140px;
             margin: 0 auto 40px;
             font-size: 16px;
+
+            @include r1200{
+                width: 960px;
+            }
+
+            @include r992{
+                width: 720px;
+            }
 
             >.search{
                 display: flex;
                 justify-content: flex-end;
                 margin: 30px 0;
+
+                @include r1200{
+                    margin-right: 40px;
+                }
+
+                @include r992{
+                    margin-right: 0px;
+                }
 
                 >.search_input{
                     border-bottom: 3px solid #BDA79C;
@@ -150,10 +172,18 @@ body{
             >.main{
                 display: flex;
                 justify-content: space-between;
-                width: 100%;
+                width: 100%;                
 
                 >.side{
                     width: 220px;
+
+                    @include r1440{
+                        width: 200px;
+                    }
+
+                    @include r1200{
+                        width: 180px;;
+                    }
 
                     >.votes{
                         display: flex;
@@ -243,15 +273,55 @@ body{
 
                 >main{
                     display: flex;
+                    // justify-content: space-between;
                     flex-flow: wrap;
                     width: 915px;
 
+                    @include r1200{
+                        width: 730px;
+                        margin-right: 40px;
+                    }
+
+                    @include r992{
+                        margin-right: 0px;
+                    }
+                    
                     >.work{
                         width: 210px;
                         margin: 0 25px 30px 0;
+
+                        @include r1200{
+                            margin-right: 50px;
+                        }
+
+                        @include r992{
+                            width: 250px;
+                            margin-right: 37px;
+                        }
                         
+                        // &:nth-child(2n){
+                            
+                            
+                        // }
+
+                        &:nth-child(3n){
+                            
+                            @include r1200{
+                                margin-right: 0;
+                            }
+                        }
+
+
                         &:nth-child(4n){
-                            margin-right: 0;   
+                            margin-right: 0;
+                            
+                            @include r1200{
+                                margin-right: 50px;
+                            }
+
+                            @include r992{
+                                margin-right: 0px;
+                            }
                         }
 
                         >.img{
