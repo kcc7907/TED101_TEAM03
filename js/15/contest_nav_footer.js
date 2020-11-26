@@ -1,5 +1,5 @@
-// footer
 $(document).ready(function () {
+    // ======= footer ========
     $('.slideUp').click(function () {
         $('footer').addClass('on').css('box-shadow','rgb(0,0,0,.5) 0 -0px 30px');
         $(this).hide().css({

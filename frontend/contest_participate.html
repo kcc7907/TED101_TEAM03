@@ -23,7 +23,7 @@
                 <a href="../../frontend/case.html">參考案例</a>
             </dav>
             <dav class="nav2">
-                <a href="javascript:;">客戶服務</a>
+                <a href="../../frontend/qa.html">客戶服務</a>
                 <a href="../../frontend/contest_participate.html">傢聚賞</a>
             </dav>
         </nav>
@@ -34,7 +34,7 @@
             <a class="shop" href="javascript:;">
                 <img src="../../img/headerFooter/shoppingCart.svg" alt="">
             </a>
-            <a class="ham" href="javascript:;">
+            <a class="ham">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -43,18 +43,18 @@
     </header>
     <nav class="topNav">
         <div>
-            <a>
+            <a href="./contest_main20.html">
                 <h1 class="titleFont2">賽制說明</h1>
             </a>
-            <a>
+            <a href="./vote.html">
                 <h1 class="titleFont2">人氣票選</h1>
             </a>
         </div>
         <div>
-            <a>
+            <a href="./navbarChampion.html">
                 <h1 class="titleFont2">歷屆冠軍</h1>
             </a>
-            <a>
+            <a href="./contest_participate.html">
                 <h1 class="titleFont2">我要投稿</h1>
             </a>
         </div>
@@ -76,7 +76,7 @@
                     </div>
                     <input type="radio" id="submitStep1" name="submitStep1">
                     <label for="submitStep1"><span></span>我同意以上規定</label>
-                    <button type="submit" class="nextBtn detailFont">下一步</button>
+                    <button type="button" class="nextBtn detailFont">下一步</button>
                 </form>
                 <form action="#" name="formStep2" class="formStep contentFont" id="formStep2">
                     <p>&frasl;&frasl;&emsp;參賽者資料&emsp;&frasl;&frasl;</p>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="btn">
                         <button type="button" class="backBtn detailFont">上一步</button>
-                        <button type="submit" class="nextBtn detailFont">下一步</button>
+                        <button type="button" class="nextBtn detailFont">下一步</button>
                     </div>
                 </form>
                 <form action="#" name="formStep3" class="formStep contentFont" id="formStep3">
@@ -147,15 +147,20 @@
                     </div>
                     <div class="btn">
                         <button type="button" class="backBtn detailFont">上一步</button>
-                        <button type="submit" class="nextBtn detailFont">下一步</button>
+                        <button type="button" class="detailFont sureThis">送出投稿</button>
+                    </div>
+                    <div>
+                        <p class="contentFont">提醒: 確認送出將無法修改您所上傳的內容。</p>
+                        <input type="submit" class="detailFont" id="sureGo" value="確認送出">
+                        <input type="button" class="detailFont" id="notsureGo" value="返回檢查">
                     </div>
                 </form>
-                <div class="lastP">
+                <form class="lastP">
                     <p class="contentFont">恭喜您完成此次投稿!</p>
-                    <a>
+                    <a href="./product.html">
                         <h2 class="titleFont2">前往參觀其他作品</h2>
                     </a>
-                </div>
+                </form>
             </div>
         </div>
     </div>

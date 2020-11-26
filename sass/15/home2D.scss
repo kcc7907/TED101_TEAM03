@@ -15,6 +15,9 @@ div.JHH {
     }
 
     >header {
+        * {
+            font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+        }
         width: 100%;
         height: 120px;
         display: flex;
@@ -23,6 +26,22 @@ div.JHH {
         align-items: center;
         position: relative;
         display: none;
+
+        nav {
+            position: absolute;
+            top: 80px;
+            right: 3%;
+            text-align: center;
+            display: none;
+            z-index: 2;
+            a {
+                display: block;
+                text-decoration: none;
+                margin-bottom: 15px;
+                color: $c_font_strong;
+                font-size: 20px;
+            }
+        }
 
         .logo {
             display: inline-block;
@@ -127,11 +146,30 @@ div.JHH {
                 }
 
                 header.common {
+                    * {
+                        font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+                    }
                     height: 120px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     position: relative;
+
+                    nav {
+                        position: absolute;
+                        top: 80px;
+                        right: 3%;
+                        text-align: center;
+                        display: none;
+                        z-index: 2;
+                        a {
+                            text-decoration: none;
+                            display: block;
+                            margin-bottom: 15px;
+                            color: #54383b;
+                            font-size: 20px;
+                        }
+                    }
 
                     .logo {
                         display: inline-block;
@@ -213,7 +251,6 @@ div.JHH {
                         &:last-child {
                             // 最新消息
                             padding: 5px 20px;
-                            margin-bottom: 50px;
 
                             ul {
                                 padding-left: 10px;
@@ -330,7 +367,8 @@ div.JHH {
 
                 }
 
-                button {
+                a {
+                    display: inline-block;
                     border: none;
                     outline: none;
                     background-color: rgba(134, 84, 84, .8);
@@ -339,6 +377,9 @@ div.JHH {
                     color: #FFFFFF;
                     position: relative;
                     z-index: 2;
+                    text-decoration: none;
+                    line-height: 80px;
+                    text-align: center;
 
                     &::after {
                         content: "";
@@ -459,14 +500,12 @@ div.JHH {
 }
 
 
-
-
 .-hamR {
-    transform: rotateZ(-45deg) translate(-3px, -3px);
+    transform: rotateZ(-45deg) translate(-2px, -1px);
 }
 
 .-hamL {
-    transform: rotateZ(45deg) translate(-1px, 2px);
+    transform: rotateZ(45deg) translate(-3px, -3px);
 }
 
 @include rwdmF(1920) {
@@ -666,6 +705,7 @@ div.JHH {
                                 // 最新消息
                                 height: 170px;
                                 padding: 5px 20px;
+                                margin-bottom: 50px;
 
                                 ul {
                                     margin: 0;
@@ -731,9 +771,7 @@ div.JHH {
             }
         }
 
-        div#homeRight {
-            
-        }
+        div#homeRight {}
 
 
         div#bottomBox {
