@@ -1,10 +1,10 @@
 @mixin r1600 {
-    @media all and (max-width: 1600px){
+    @media all and (max-width: 1599px){
         @content;
     }
 }
 @mixin r1440 {
-    @media all and (max-width: 1440px){
+    @media all and (max-width: 1439px){
         @content;
     }
 }
@@ -29,7 +29,7 @@
     }
 }
 @mixin r360 {
-    @media all and (max-width: 360px){
+    @media all and (max-width: 359px){
         @content;
     }
 }
