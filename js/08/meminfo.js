@@ -75,10 +75,19 @@ $(document).ready(function(){
 
         //信箱格式
         // if(is.email(email.value)){
-        //     account.removeClass("-error");
+        //     $('email').removeClass("-error");
+        //     $('form>div>div>label[for="email"]+span.warn').remove();
         // }else{
         //     send_data = false;
-        //     account.addClass("-error");
+        //     if(email.hasClass('-error')){
+
+        //         $('.jk_meminfo form>div>div>label[for="email"]+span.warn').remove();
+        //         $('.jk_meminfo form>div>div>label[for="email"]').after('<span class="warn" style="color:red;">*信箱格式錯誤</sapn>');
+
+        //     }else{
+        //         $('.jk_meminfo form>div>div>label[for="email"]').after('<span class="warn" style="color:red;">*信箱格式錯誤</sapn>');
+        //         email.addClass("-error");
+        //     }
         // }
         
         //手機未填

@@ -66,6 +66,8 @@ body{
                                 font-size: 24px;
                                 text-align: center;
                                 cursor: pointer;
+
+                                
                             }
                             
                             //menu小項目隱藏，待點擊後展開
@@ -84,6 +86,10 @@ body{
 
                         >li.-on{
                             color: #fff;
+                        }
+                        
+                        >li.-on li:first-child{
+                            background-color: #965454;                          
                         }
 
                         //調整'新增管理員'位置
