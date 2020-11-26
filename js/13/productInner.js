@@ -31,6 +31,7 @@ $(document).ready(function () {
     //////////////////////////slider/////////////////////////
     let divWidth = $('sliderBox').width();
     let imgCount = $('#content li').length;
+    let liWidth = $('#content li').width;
     //alert(imgCount);
 
     $('#content').width(divWidth * imgCount);
@@ -38,9 +39,9 @@ $(document).ready(function () {
 
 
     $('#left').click(function () {
-        //alert();
+        // alert();
         $('#content').animate({
-            left:
+            left: '-500px',
         });
     });
 

@@ -1142,11 +1142,14 @@ div.sam_pi{
         border:1px solid red;
         width: 80%;
         margin:0 auto;
-        overflow: hidden;
+        // overflow: hidden;
         height: 400px;
         margin:30px auto;
+        // position: relative;
         ul#content{
+            // overflow: hidden;
             position: relative;
+            width:2000px;
             li{
                 float:left;
             }
