@@ -564,8 +564,10 @@ div#JN{
             div.div_block{
                 background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
                 width: 100%;
-                height: 750px;
+                height: 100%;
                 border: 1px solid red;
+                background-position: left;
+                background-size: cover;
                 &::after{
                     content: "";
                     display: block;
@@ -592,7 +594,7 @@ div#JN{
             /*   background-color: yellow; */
                 background-color: hsla(0, 0%, 0%, 0.5);
                 color: white;
-                width: 23%;
+                width: 20%;
                 // max-width: 1200px;
                 // width: 100%;
                 height: 73%;
@@ -654,6 +656,7 @@ div#JN{
         padding: 0px 120px;
         font-size: 32px;
         display: flex;
+        justify-content: center;
     }
 
     .show_pic{
@@ -816,9 +819,9 @@ div#JN{
         }
 
         // 第二頁
-        .interior_pics{
-            width: auto;
-        }
+        // .interior_pics{
+        //     // width: auto;
+        // }
         .d_pic_flex{
             display: flex;
             justify-content: center;
@@ -898,7 +901,7 @@ div#JN{
     
             .intro_detail{
                 border: 1px solid blue;
-                width: 40%;
+                width: 80%;
                 margin-left: 5%;
                 margin-top: 100px;
                 line-height: 60px;
@@ -926,6 +929,7 @@ div#JN{
             width: 100%;
             justify-content: space-around;
         }
+         
 
             .tab_list_block{
                 .tab_list{
@@ -973,10 +977,7 @@ div#JN{
                     width: 100%;
                     height: 350px;
                     border: 1px solid red;
-                }
-                div.other_text{
-                    width: 15%;
-                }
+                }                
             }
             }
             .example_exhibit{
@@ -990,7 +991,13 @@ div#JN{
                 width: 500px;
                 height: 300px;
             }
+            .image{
+                width: 100%;
+                height: 100%;
+
+            }
             
+           
     
     }
 };
@@ -1004,17 +1011,26 @@ div#JN{
             border: 1px solid red; 
             position: relative;
             overflow: hidden;
+            margin: auto;
             &:hover > span{
                 opacity: 100%;
             }  
         }  
         .tab_list_block{
             .tab_list{
+                width: 100%;
+                display: flex;
+                justify-content: center;
                 li{
                     a{
                         padding: 5px 30px;
                     }
                 }
+            }
+        }
+        section{
+            div.other_text{
+                width: 75%;
             }
         }
         .stylebox_right{
@@ -1055,6 +1071,11 @@ div#JN{
         .exhibit_pic2{
             width: 400px;
         }
+        div.other_text{
+            width: 75%;
+        }
+   
+      
     }
 }
 
@@ -1075,8 +1096,8 @@ div#JN{
             }  
     .tab_list_block{
         .tab_list{
-            width: 70%;
-            display: grid;
+            width: 100%;
+            display: flex;
             li{
                 display: block;
                 text-align: center;
