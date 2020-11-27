@@ -25,7 +25,6 @@ body{
                 font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
                 display: flex;
                 flex-direction: column;
-                // justify-content: space-between;
                 align-items: center;
 
                 width: 15.7%;
@@ -42,7 +41,6 @@ body{
                     border-bottom: 1px solid #707070;
                     text-align: center;
                     font-size: 30px;
-                    
                 }
 
                 >.menu{
@@ -73,7 +71,6 @@ body{
                             //menu小項目隱藏，待點擊後展開
                             li + li{
                                 display: none;
-                                
                             }
 
                             i{
@@ -86,6 +83,10 @@ body{
 
                         >li.-on{
                             color: #fff;
+
+                            i{
+                                transform: rotate(-90deg);
+                            }
                         }
                         
                         >li.-on li:first-child{
