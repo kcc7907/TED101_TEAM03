@@ -29,27 +29,90 @@ $(document).ready(function () {
         });
     });
     //////////////////////////slider/////////////////////////
-    let divWidth = $('sliderBox').width();
-    let imgCount = $('#content li').length;
-    let liWidth = $('#content li').width;
-    //alert(imgCount);
+    
+    const sliderBox = document.querySelector('.slider');
+    const slider = document.querySelectorAll('.slider img');
 
-    $('#content').width(divWidth * imgCount);
-    $('#content li').width(divWidth);
+    const leftBtn = document.querySelector('#left');
+    const rightBtn = document.querySelector('#right');
+    
+    //Counter
+    let counter = 1;
+    const size = slider[0].clientWidth;
 
+    console.log(size);
 
-    $('#left').click(function () {
-        // alert();
-        $('#content').animate({
-            left: '-500px',
-        });
+    // sliderBox.style.transform = 'translateX(' + (-size * counter) +'px)';
+
+    //Button Listeners
+    rightBtn.addEventListener('click',()=>{
+        if(counter >= slider.length -1)return;
+        sliderBox.style.transition = "transform 0.3s ease-in-out";
+        counter++;
+        sliderBox.style.transform = 'translateX(' + (-size * counter) +'px)';
     });
-    $('#right').click(function () {
-        // alert();
-        $('#content').animate({
-            left: '250px',
-        });
+
+    leftBtn.addEventListener('click',()=>{
+        if(counter <= 0)return;
+        sliderBox.style.transition = "transform 0.3s ease-in-out";
+        counter--;
+        sliderBox.style.transform = 'translateX(' + (-size * counter) +'px)';
     });
+    
+    sliderBox.addEventListener('transitionend',()=>{
+        //console.log(slider[counter]);
+        if(slider[counter].id === 'lastClone'){
+            sliderBox.style.transition = 'none';
+            counter = slider.length -2;
+            sliderBox.style.transform = 'translateX(' + (-size * counter)+'px)';
+        };
+        if(slider[counter].id === 'firstClone'){
+            sliderBox.style.transition = 'none';
+            counter = slider.length - counter;
+            sliderBox.style.transform = 'translateX(' + (-size * counter)+'px)';
+        };
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // let divWidth = $('sliderBox').width();
+    // let imgCount = $('#content li').length;
+    // let liWidth = $('#content li').width;
+    // //alert(imgCount);
+
+    // $('#content').width(divWidth * imgCount);
+    // $('#content li').width(divWidth);
+
+
+    // $('#left').click(function () {
+    //     // alert();
+    //     $('#content').animate({
+    //         left: '-500px',
+    //     });
+    // });
+    // $('#right').click(function () {
+    //     // alert();
+    //     $('#content').animate({
+    //         left: '250px',
+    //     });
+    // });
 
 
     // $(document).ready(function () {
