@@ -18,6 +18,7 @@ div.JHH {
         * {
             font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
         }
+
         width: 100%;
         height: 120px;
         display: flex;
@@ -34,6 +35,7 @@ div.JHH {
             text-align: center;
             display: none;
             z-index: 2;
+
             a {
                 display: block;
                 text-decoration: none;
@@ -149,6 +151,7 @@ div.JHH {
                     * {
                         font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
                     }
+
                     height: 120px;
                     display: flex;
                     justify-content: space-between;
@@ -162,6 +165,7 @@ div.JHH {
                         text-align: center;
                         display: none;
                         z-index: 2;
+
                         a {
                             text-decoration: none;
                             display: block;
@@ -243,8 +247,38 @@ div.JHH {
                             // 關於我們
                             margin: 60px 0;
 
-                            p {
-                                padding: 5px 20px;
+                            >div {
+                                display: flex;
+                                padding-left: 10px;
+
+                                p {
+                                    margin: 0;
+                                }
+
+                                span {
+                                    padding-left: 5px;
+                                    position: relative;
+                                    height: 100%;
+
+                                    &::before {
+                                        content: "";
+                                        width: 10px;
+                                        height: 1px;
+                                        background-color: #54383b;
+                                        position: absolute;
+                                        left: -10px;
+                                        top: calc((100% - 1px) / 2);
+                                        // transform: rotate(90deg);
+                                    }
+                                }
+                            }
+
+                            .time {
+                                margin-top: 30px;
+                            }
+
+                            .tel {
+                                margin-bottom: 30px;
                             }
                         }
 
@@ -363,6 +397,7 @@ div.JHH {
                     position: absolute;
                     top: 0;
                     z-index: 1;
+                    display: none;
 
 
                 }
@@ -380,6 +415,7 @@ div.JHH {
                     text-decoration: none;
                     line-height: 80px;
                     text-align: center;
+                    display: none;
 
                     &::after {
                         content: "";
@@ -390,6 +426,7 @@ div.JHH {
                         position: absolute;
                         top: 10px;
                         left: 10px;
+
                     }
 
                     &:hover {
@@ -419,12 +456,145 @@ div.JHH {
                 background-position: center center;
             }
 
+            // 關於我們
             &:nth-child(3) {
-                display: none;
+                width: 100%;
+                height: 100%;
+                background-color: #FFFAF4;
+
+                >div {
+                    h3 {
+                        display: inline-block;
+                        width: 50px;
+                        padding: 10px 10px 25px;
+                        color: #54383B;
+                        line-height: 40px;
+                        text-align: center;
+                        background-color: rgba(255, 255, 255, .3);
+                        box-shadow: 10px 10px 20px rgba(0, 0, 0, .16);
+                        border-top: 5px solid #BDA79E;
+                        position: absolute;
+                    }
+
+                    // 簡介
+                    &:first-child {
+                        border: 1px solid red;
+
+                        >div {
+
+
+                            // 關於救世宅
+                            &:first-child {
+                                border: 1px solid red;
+                                display: inline-block;
+                                box-shadow: 10px 10px 20px rgba(0, 0, 0, .16);
+                                position: absolute;
+                                left: 0;
+                                top: 3%;
+
+                                &::after {
+                                    content: "";
+                                    display: inline-block;
+                                    width: 150px;
+                                    height: 1px;
+                                    background-color: #BDA79E;
+                                    position: absolute;
+                                    top: calc((100% - 1px) / 2);
+                                    right: -120px;
+                                }
+
+                                span {
+                                    display: inline-block;
+                                    width: 90%;
+                                    height: 5px;
+                                    background-color: #BDA79E;
+                                    position: absolute;
+                                    top: -3px;
+                                    left: 0;
+                                }
+
+                                p {
+                                    margin: 0;
+                                    padding: 15px 100px 15px 150px;
+                                    color: #54383B;
+                                    background-color: rgba(255, 255, 255, .5);
+                                }
+
+
+                            }
+
+                            &:last-child {
+                                display: flex;
+                                border: 1px solid blue;
+
+                                >div {
+                                    display: flex;
+                                    width: 50%;
+                                    position: relative;
+
+
+
+                                    p {
+                                        align-self: flex-start;
+                                        background-color: #F8F2EB;
+                                        box-shadow: 10px 10px 20px rgba(0, 0, 0, .16);
+                                        margin: 0;
+                                    }
+
+                                    // 救世團隊
+                                    &:first-child {
+                                        border: 1px solid purple;
+                                        margin-top: 350px;
+                                        justify-content: flex-end;
+
+                                        h3 {
+                                            top: -150px;
+                                            right: 30px;
+                                        }
+
+                                        p {
+                                            width: 500px;
+                                            padding-left: 60px;
+                                            padding-right: 100px;
+                                        }
+                                    }
+
+                                    // 救世理念
+                                    &:last-child {
+                                        border: 1px solid green;
+                                        margin-top: 160px;
+                                        justify-content: flex-start;
+
+                                        h3 {
+                                            top: -150px;
+                                            left: 50px;
+                                        }
+
+                                        p {
+                                            width: 420px;
+                                            margin-left: 30px;
+                                            padding-left: 100px;
+                                            padding-right: 60px;
+                                        }
+
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    // 救世產品
+                    &:last-child {
+                        // TODO:
+                    }
+                }
             }
 
             &:last-child {
-                display: none;
+                // display: none;
+                width: 100%;
+                height: 100%;
             }
         }
     }
@@ -523,8 +693,13 @@ div.JHH {
                             }
 
                             &:first-child {
-                                p {
-                                    padding: 5px 40px;
+                                // 關於我們
+                                padding: 5px 40px;
+
+                                >div {
+                                    .clock {
+                                        margin-left: 5px;
+                                    }
                                 }
                             }
 
@@ -575,10 +750,15 @@ div.JHH {
                             }
 
                             &:first-child {
+                                padding: 5px 35px;
 
                                 // 關於我們
-                                p {
-                                    padding: 5px 35px;
+                                .time {
+                                    flex-wrap: wrap;
+
+                                    .clock {
+                                        padding-left: 70px;
+                                    }
                                 }
                             }
 
@@ -629,10 +809,15 @@ div.JHH {
 
                             &:first-child {
                                 margin: 40px 0 40px 0;
+                                padding: 5px 20px;
 
                                 // 關於我們
-                                p {
-                                    padding: 5px 20px;
+                                .time {
+                                    flex-wrap: nowrap;
+
+                                    .clock {
+                                        padding-left: 0;
+                                    }
                                 }
                             }
 
@@ -761,6 +946,18 @@ div.JHH {
                 &:first-child {
                     >div {
                         >div {
+                            &:first-child {
+
+                                // 關於我們
+                                .time {
+                                    flex-wrap: wrap;
+
+                                    .clock {
+                                        padding-left: 60px;
+                                    }
+                                }
+                            }
+
                             &:last-child {
                                 height: 120px;
                                 padding: 5px 10px;

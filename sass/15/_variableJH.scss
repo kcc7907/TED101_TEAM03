@@ -21,6 +21,9 @@
             .lineHeight{ 
                 line-height: 60px !important;
             }
+            .hugeP{
+                font-size: 50px !important;
+            }
             @content;
         }
     }
