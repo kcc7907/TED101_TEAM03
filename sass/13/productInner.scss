@@ -269,9 +269,6 @@ div.sam_pi{
             margin-top:50px;
             // min-width: 360px;
             // min-height: 320px;
-            img.product{
-                // border:1px solid maroon;
-            }
             img.rotate1{
                 width:26px;
                 height:30px;
@@ -1120,6 +1117,42 @@ div.sam_pi{
 }
     
     
+///////////////////////slider//////////////////
+div.sam_pi{
+    div.leftIcon{
+        width:5%;
+        display:inline-block;
+        img{
+            width: 50px;
+            height: 85px;
+        }
+    }
+    div.rightIcon{
+        width:5%;
+        display:inline-block;
+        img{
+            width: 50px;
+            height: 85px;
+        }
+    }
+    div.sliderBox{
+        border:1px solid red;
+        width: 80%;
+        margin:0 auto;
+        overflow: hidden;
+        height: 400px;
+        margin:30px auto;
+        // position: relative;
+        ul#content{
+            // overflow: hidden;
+            position: relative;
+            width:2000px;
+            li{
+                float:left;
+            }
+        }
+    }
+}
 
 
 
