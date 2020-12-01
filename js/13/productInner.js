@@ -1,3 +1,4 @@
+///////////////尺寸圖 /運送 切換////////////////
 $(document).ready(function () {
     $('#size').on('click', function () {
         $('#bottomCad').css({
