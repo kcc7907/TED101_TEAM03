@@ -63,13 +63,13 @@
 
 
             <main>
-                <form id="memberInfo" action="#" method="post">
+                <form id="memberInfo" action="../php/08/jk_resetInfo.php" method="post">
 
                     <div>
                         <div>
                             <label for="account">帳號</label>
                         </div>
-                        <input type="text" id="account" value="goodguy" disabled>
+                        <input type="text" id="account" name="account" value="goodguy" disabled>
                     </div>
 
                     <div>
@@ -77,7 +77,7 @@
                             <label for="email">信箱</label>
                             <span class="email">修改</span>
                         </div>
-                        <input class="input" type="text" id="email" value="goodguy@gmail.com" disabled>
+                        <input class="input" type="text" id="email" name="email" value="goodguy@gmail.com" disabled>
                     </div>
 
                     <div>
@@ -85,7 +85,7 @@
                             <label for="phone">手機</label>
                             <span class="phone">修改</span>
                         </div>
-                        <input class="input" type="text" id="phone" value="0912345678" disabled>
+                        <input class="input" type="text" id="phone" name="phone" value="0912345678" disabled>
                     </div>
 
                     <div>
@@ -93,7 +93,7 @@
                             <label for="name">姓名</label>
                             <span class="name">修改</span>
                         </div>
-                        <input class="input" type="text" id="name" value="就是宅" disabled>
+                        <input class="input" type="text" id="name" name="name" value="就是宅" disabled>
                     </div>
 
                     <div>
@@ -101,7 +101,7 @@
                             <label for="address">地址</label>
                             <span class="address">修改</span>
                         </div>
-                        <input class="input" type="text" id="address" value="天龍國" disabled>
+                        <input class="input" type="text" id="address" name="address" value="天龍國" disabled>
                     </div>
 
                     <div>
@@ -115,8 +115,8 @@
                         <input type="text" id="password" value="************" disabled>
 
                         <div id="changePassword">                
-                            <input class="input" type="password" id="oldPassword" maxlength="12" minlength="6" placeholder="輸入舊密碼" value="123456789">
-                            <input class="input" type="password" id="newPassword" maxlength="12" minlength="6" placeholder="輸入新密碼" value="123456789">
+                            <input class="input" type="password" id="oldPassword" name="oldPassword" maxlength="12" minlength="6" placeholder="輸入舊密碼" value="123456789">
+                            <input class="input" type="password" id="newPassword" name="newPassword" maxlength="12" minlength="6" placeholder="輸入新密碼" value="123456789">
                             <input class="input" type="password" id="checkPassword" maxlength="12" minlength="6" placeholder="確認新密碼" value="123456789">
                         </div>
                     </div>
