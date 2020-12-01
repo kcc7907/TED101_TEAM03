@@ -372,16 +372,160 @@ body{
             flex-direction: column;
             align-items: center;
             padding-bottom: 20px;
+            *{
+                font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+                color: #465d4c;
+            }
             h2{
                 padding: 20px 0 10px;
             }
             .outer{
-                width: 280px;
+                width: 80%;
                 border: #465d4c 1px solid;
             }
+            .checkT{
+                display: flex;
+                >input{
+                    margin: auto 10px;
+                }
+            }
+            .df{
+                display: flex;
+            }
+            .lh{
+                display: inline-block;
+                margin: auto 0;
+            }
+            input{
+                background-color: $cbg;
+                padding: 0;
+                outline: none;
+                border: 1px solid #465d4c;
+                font-size: 12px;
+                font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+                color: #787878;
+            }
 
+            //購買人
+            .memberbox{
+                padding: 15px 15px 0;
+                white-space: nowrap;
+                > div{
+                    margin-bottom: 15px;
+                }
+                button{
+                    padding: 0;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    color: #787878;
+                }
+                .innerT{
+                    width: 15%;
+                    text-align: center;
+                }
+                .modified{
+                    width: 15%;
+                }
+                input{
+                    padding: 0;
+                    width: 70%;
+                    margin-left: 20px;
+                    border: none;
+                    border-bottom: 1px solid #465d4c;
+                }
+            }
+
+            //付款
+            .paymentbox{
+                padding-top: 15px;
+                img{
+                    max-width: 100%;
+                }
+                >div{
+                    margin-bottom: 10px;
+                }
+            }
+            .card_box{
+                padding: 10px 10px 0;
+                width: 80%;
+                margin: 0 auto;
+                border: #465d4c 1px solid;
+                position: relative;
+                font-size: 0;
+                .inputnum_box{
+                    width: 100%;
+                }
+                input{
+                    width: 20%;
+                    margin-bottom: 10px;
+                    margin-right: 10px;
+                }
+                p{
+                    margin-bottom: 10px;
+                }
+            }
+            .cardicon_box{
+                position: absolute;
+                right: 15px;
+                bottom: 10px;
+                img{
+                    width: 35px;
+                    margin-left: 5px;
+                    // filter: grayscale(100%);
+                }
+            }
+            .remit_box{
+                padding: 10px 10px 0;
+                width: 80%;
+                margin: 0 auto;
+                border: #465d4c 1px solid;
+                font-size: 0;
+                white-space: nowrap;
+                >div{
+                    margin-bottom: 10px;
+                    >p:nth-child(1){
+                        width: 25%;
+                        margin-right: 20px;
+                    }
+                }
+                .gary{
+                    font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+                    color: #787878;
+                }
+            }
+            
+            //運送
+            .addsbox{
+                padding: 10px 0;
+                font-size: 0;
+                >div{
+                    margin-bottom: 10px;
+                }
+                .address_box{
+                    padding: 10px 10px 0;
+                    width: 80%;
+                    margin: 0 auto;
+                    border: #465d4c 1px solid;
+                    font-size: 0;
+                    white-space: nowrap;
+                    select{
+                        font-size: 12px;
+                        color: #787878;
+                        border-color: #465d4c;
+                        margin-bottom: 10px;
+                    }
+                    input{
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
         }
-    }
+}
 
     //paragraph
     @include title();
@@ -596,7 +740,6 @@ body{
         }
     }
 
-
-
+    //order rwd
 
 }
