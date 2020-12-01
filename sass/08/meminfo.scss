@@ -239,6 +239,15 @@ body{
 
                                 @include r576{
                                     font-size: 20px;
+                                    
+                                }
+
+                                .pwd_warn{
+                                    margin-left: 10px;
+                                    
+                                    @include r576{
+                                        margin-left: 5px;                                       
+                                    }
                                 }
                             }
                             span{
@@ -246,9 +255,17 @@ body{
                                 align-self: flex-end;
                                 color: #aaa;
 
+                                @include r768{
+                                    font-size: 14px;                                    
+                                }
+
                                 @include r576{
                                     font-size: 12px;
-                                } 
+                                }
+
+                                @include r360{
+                                    font-size: 8px;
+                                }
                                 
                             }
                             span.email, span.phone, span.name, span.address, span.btn_pwd{
@@ -262,6 +279,7 @@ body{
                                 }
                             }
                         }
+                        
                         input{
                             width: 100%;
                             padding: $inputPadding;
@@ -323,8 +341,8 @@ body{
 
                             @include r360{
                                 width: 75px;
-                                height: 30px;
-                                line-height: 30px;
+                                height: 35px;
+                                line-height: 35px;
                                 font-size: 16px;
                             } 
                         }

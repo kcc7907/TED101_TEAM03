@@ -106,15 +106,18 @@
 
                     <div>
                         <div>
-                            <label for="password">密碼</label>
+                            <label for="password">密碼
+                                <span class="pwd_warn">密碼長度限制6~12字元</span>
+                            </label>
                             <span class="btn_pwd">修改</span>
                         </div>
+                        
                         <input type="text" id="password" value="************" disabled>
 
                         <div id="changePassword">                
-                            <input class="input" type="password" id="oldPassword" placeholder="輸入舊密碼" value="123456789">
-                            <input class="input" type="password" id="newPassword" placeholder="輸入新密碼" value="123456789">
-                            <input class="input" type="password" id="checkPassword" placeholder="確認新密碼" value="123456789">
+                            <input class="input" type="password" id="oldPassword" maxlength="12" minlength="6" placeholder="輸入舊密碼" value="123456789">
+                            <input class="input" type="password" id="newPassword" maxlength="12" minlength="6" placeholder="輸入新密碼" value="123456789">
+                            <input class="input" type="password" id="checkPassword" maxlength="12" minlength="6" placeholder="確認新密碼" value="123456789">
                         </div>
                     </div>
 

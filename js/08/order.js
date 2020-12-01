@@ -1,9 +1,9 @@
 $(document).ready(function (){
 
-    setStyle();
+    orderSetStyle();
 
     $(window).resize(function(){
-        setStyle();
+        orderSetStyle();
     });
 
     $('.jk_order .item .primary button').click(function(){
@@ -17,7 +17,7 @@ $(document).ready(function (){
 
 });
 
-function setStyle() {   //table RWD
+function orderSetStyle() {   //table RWD
 
     let winWidth = $(window).width();
     
