@@ -525,7 +525,56 @@ body{
                 }
             }
         }
-}
+    }
+
+    //done
+    .done_wrap{
+        width: 90%;
+        margin: 0 auto;
+        h2{
+            font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+        }
+        .icon{
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 20px;
+        }
+        .tks{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .done_payment_text{
+            margin: 0 auto 20px;
+            width: 60%;
+        }
+        .done_detail{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        table{
+            width: 80%;
+            margin: 0 auto 20px;
+            text-align: center;
+            td,th,tr{
+                border: #465d4c 1px solid;
+                padding: 10px;
+                font-size: 12px;
+            }
+            th{
+                font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+                color: #465d4c;
+            }
+            td{
+                font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+                color: #787878;
+            }
+        }
+        .backshop{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
 
     //paragraph
     @include title();
@@ -741,5 +790,18 @@ body{
     }
 
     //order rwd
+    @include rwd(768){}
+    @include rwd(992){}
+    @include rwd(768){}
+    @include rwd(992){}
+    @include rwd(768){}
+    @include rwd(992){}
 
+    //done rwd
+    @include rwd(768){}
+    @include rwd(992){}
+    @include rwd(768){}
+    @include rwd(992){}
+    @include rwd(768){}
+    @include rwd(992){}
 }
