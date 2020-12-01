@@ -200,17 +200,17 @@
 body{
     border: 1px solid hotpink;
     margin: 0;
-    background-color: #f1ece8;
+    background-color: #FFFAF4;
     // overflow-x: hidden;
     // margin-top: 160px;
-    border: none !important;
+    // border: none !important;
 }
 
 
 *{
     font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
     // font-family: "微軟正黑體";
-    border: none !important;
+    // border: none !important;
 }
 
 //巢狀寫法
@@ -271,6 +271,9 @@ div#JN{
         .first{
             border: 1px solid palevioletred;
             width: auto;
+            background-color: #BDA79C;
+            opacity: 0.5;
+            z-index: 1;
         }
 
         .designer_say{
@@ -286,6 +289,8 @@ div#JN{
             line-height: 60px;
             margin-top: 10%;
             height: fit-content;
+            background-color: #BDA79C;
+            opacity: 0.5;
         }
 
         // img{
@@ -638,18 +643,25 @@ div#JN{
         width: 100%;
         // width: 100%;
         text-align: center;
-        height: 80px;
+        height: 100%;
         // margin-top: 3%;
         justify-content: center;
         background-color: #BDA79E;
-
-        i.fas{
-            font-size: 10px;
-        }
     }
 
-
-    
+    //icon
+    .icon_border{
+    width: 30px;
+    height: 30px;    
+    }
+    .icon_left{
+    width: 30px;
+    height: 30px;    
+    }
+    .icon_right{
+    width: 30px;
+    height: 30px;    
+    }
     .click{
         border: 1px solid green;
         margin-top: 2%;
@@ -758,7 +770,7 @@ div#JN{
             }
             
                 .more_details{
-                    border: 1px solid brown !important;
+                    border: 1px solid #865454 !important;
                     display: inline-block;
                     width: 20%;
                     &:hover{
