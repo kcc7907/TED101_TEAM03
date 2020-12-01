@@ -6,6 +6,27 @@ body {
     @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
 }
 
+@keyframes runbcg {
+    0% {
+        width: 0;
+        background-color: rgba(134, 84, 84, .4);
+    }
+
+    100% {
+        width: 220px;
+        background-color: rgba(134, 84, 84, 1);
+    }
+}
+
+@keyframes runPdt {
+    0%{
+        right: 0;
+    }
+
+    100%{
+        right: 1230px;
+    }
+}
 
 div.JHH {
     * {
@@ -433,18 +454,6 @@ div.JHH {
                         cursor: pointer;
                     }
                 }
-
-                @keyframes runbcg {
-                    0% {
-                        width: 0;
-                        background-color: rgba(134, 84, 84, .4);
-                    }
-
-                    100% {
-                        width: 220px;
-                        background-color: rgba(134, 84, 84, 1);
-                    }
-                }
             }
 
             &:nth-child(2) {
@@ -463,6 +472,8 @@ div.JHH {
                 background-color: #FFFAF4;
 
                 >div {
+                    position: relative;
+
                     h3 {
                         display: inline-block;
                         width: 50px;
@@ -585,10 +596,88 @@ div.JHH {
                     }
 
                     // 救世產品
-                    &:last-child {
-                        // TODO:
+                    &:nth-child(2) {
+                        width: 80%;
+                        height: 200px;
+                        margin: auto;
+                        border: 1px solid red;
+                        // overflow: hidden;
+                        position: relative;
+
+                        h3 {
+                            top: 450px;
+                            right: 300px;
+                            z-index: 2;
+                        }
+
+                        #pdtJH {
+                            display: inline-block;
+                            width: 2200px;
+                            height: 200px;
+                            position: relative;
+                            animation: runPdt 1s linear both ;
+                            >div {
+                                display: inline-block;
+                                border: 1px solid;
+                                width: 300px;
+                                height: 200px;
+                                position: relative;
+                                overflow: hidden;
+                                margin: 0 5px;
+
+                                img {
+                                    max-width: 100%;
+                                    // width: 100%;
+                                    // max-height: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+
+                                &:nth-child(6) {
+                                    img {
+                                        max-width: 120%;
+
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                >span {
+                    display: inline-block;
+                    border: 20px solid #787878 ;
+                    align-self: center;
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 2;
+                    transition: all .5s;
+                    &:hover{
+                        cursor: pointer;
+                        border-color: #865454;
                     }
                 }
+
+                #bckButton {
+                    border-top-color: transparent;
+                    border-bottom-color: transparent;
+                    border-left-color: transparent;
+                    left: -50px;
+                }
+
+                #frtButton {
+                    border-top-color: transparent;
+                    border-bottom-color: transparent;
+                    border-right-color: transparent;
+                    right: 0;
+                }
+
+
+
             }
 
             &:last-child {
@@ -668,6 +757,8 @@ div.JHH {
     }
 
 }
+
+
 
 
 .-hamR {

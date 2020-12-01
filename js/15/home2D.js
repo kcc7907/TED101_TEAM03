@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // ===== 漢堡包 ======
     let $_headerNav = $('header nav');
     $('.ham').click(function(){
         $('.ham span:first-child').toggleClass('-hamR');
@@ -6,4 +7,10 @@ $(document).ready(function () {
         $('.ham span:last-child').toggleClass('-hamL');
         $_headerNav.slideToggle();
     });
+
+    // ===== 商品輪播 =====
+    // let pdtOutside = $('#sliderBoardJH').width();
+    // let pdtCount = $('#pdtJH div').length;
+    // console.log(pdtOutside);
+    // console.log(pdtCount);
 });
