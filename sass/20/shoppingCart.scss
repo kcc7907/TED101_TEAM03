@@ -160,6 +160,7 @@ body{
                 width: 85%;
             }
         }
+
         .list{
             width: 100%;
             height: 180px;
@@ -363,14 +364,28 @@ body{
                 margin: 5px 20px 0;
             }
         }
+
+        //left2
+        .left2{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            h2{
+                padding: 20px 0 10px;
+            }
+            .outer{
+                width: 280px;
+                border: #465d4c 1px solid;
+            }
+
+        }
     }
 
-
+    //paragraph
     @include title();
     @include para();
-
-
-
 
     //cart
     @include rwd(360){
