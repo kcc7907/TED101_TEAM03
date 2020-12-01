@@ -1,7 +1,7 @@
 @import '../../lib/header/footer.scss';
 @mixin rwdmF($screenSize) {
     @if $screenSize==1920{
-        @media (max-width: 1920px) {
+        @media (max-width: 5120px) {
             .titleFont1{
                 font-size: 40px !important;
                 font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;

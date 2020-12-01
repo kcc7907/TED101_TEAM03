@@ -19,12 +19,12 @@ body {
 }
 
 @keyframes runPdt {
-    0%{
-        right: 0;
+    0% {
+        transform: translateX(0);
     }
 
-    100%{
-        right: 1230px;
+    100% {
+        transform: translate(-50%);
     }
 }
 
@@ -130,6 +130,7 @@ div.JHH {
     justify-content: center;
 
     div#homeLeft {
+        width: 500px;
         height: 100%;
 
         >div {
@@ -262,15 +263,20 @@ div.JHH {
 
                         h2 {
                             position: absolute;
+                            top: -55px;
+                            left: 40px;
                         }
 
                         &:first-child {
                             // 關於我們
                             margin: 60px 0;
+                            padding: 5px 40px;
+
 
                             >div {
                                 display: flex;
                                 padding-left: 10px;
+
 
                                 p {
                                     margin: 0;
@@ -292,6 +298,10 @@ div.JHH {
                                         // transform: rotate(90deg);
                                     }
                                 }
+
+                                .clock {
+                                    margin-left: 5px;
+                                }
                             }
 
                             .time {
@@ -305,7 +315,8 @@ div.JHH {
 
                         &:last-child {
                             // 最新消息
-                            padding: 5px 20px;
+                            // padding: 5px 20px;
+                            padding: 5px 40px;
 
                             ul {
                                 padding-left: 10px;
@@ -342,7 +353,9 @@ div.JHH {
                         justify-content: center;
 
                         >div {
-
+                            width: 30px;
+                            height: 30px;
+                            margin: 30px 20px;
                             position: relative;
                             display: flex;
                             justify-content: center;
@@ -393,9 +406,11 @@ div.JHH {
     }
 
     div#homeRight {
+        width: calc(100% - 500px - 200px);
         border: 1px solid;
         position: relative;
-        // overflow: hidden;
+        overflow-y: auto;
+        @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
 
         >div {
             position: absolute;
@@ -469,39 +484,40 @@ div.JHH {
             &:nth-child(3) {
                 width: 100%;
                 height: 100%;
-                background-color: #FFFAF4;
+                // background-color: #FFFAF4;
+                background-color:  rgba(120, 120, 120, .8);
+
+                h3 {
+                    display: inline-block;
+                    width: 50px;
+                    padding: 10px 10px 25px;
+                    color: #54383B;
+                    line-height: 40px;
+                    text-align: center;
+                    background-color: rgba(255, 255, 255, .5);
+                    box-shadow: 10px 10px 20px rgba(0, 0, 0, .16);
+                    border-top: 5px solid #BDA79E;
+                    position: absolute;
+
+                }
 
                 >div {
                     position: relative;
 
-                    h3 {
-                        display: inline-block;
-                        width: 50px;
-                        padding: 10px 10px 25px;
-                        color: #54383B;
-                        line-height: 40px;
-                        text-align: center;
-                        background-color: rgba(255, 255, 255, .3);
-                        box-shadow: 10px 10px 20px rgba(0, 0, 0, .16);
-                        border-top: 5px solid #BDA79E;
-                        position: absolute;
-                    }
 
                     // 簡介
                     &:first-child {
-                        border: 1px solid red;
 
                         >div {
 
 
                             // 關於救世宅
                             &:first-child {
-                                border: 1px solid red;
                                 display: inline-block;
-                                box-shadow: 10px 10px 20px rgba(0, 0, 0, .16);
+                                box-shadow: 10px 10px 20px rgba(65, 20, 20, 0.16);
                                 position: absolute;
                                 left: 0;
-                                top: 3%;
+                                top: 50px;
 
                                 &::after {
                                     content: "";
@@ -536,7 +552,6 @@ div.JHH {
 
                             &:last-child {
                                 display: flex;
-                                border: 1px solid blue;
 
                                 >div {
                                     display: flex;
@@ -547,22 +562,25 @@ div.JHH {
 
                                     p {
                                         align-self: flex-start;
-                                        background-color: #F8F2EB;
-                                        box-shadow: 10px 10px 20px rgba(0, 0, 0, .16);
+                                        background: linear-gradient(to right, rgba(248,242,235, .9) 0%, rgba(248,242,235, .9) 100%);
+                                        box-shadow: 30px 10px 20px rgba(0, 0, 0, .16);
                                         margin: 0;
+                                        border: 5px solid #BDA79E;
+                                        border-top-color: transparent;
+                                        border-bottom-color: transparent;
+                                        border-right-color: transparent;
                                     }
 
                                     // 救世團隊
                                     &:first-child {
-                                        border: 1px solid purple;
                                         margin-top: 350px;
                                         justify-content: flex-end;
-
+                                        
                                         h3 {
                                             top: -150px;
-                                            right: 30px;
+                                            right: 25px;
                                         }
-
+                                        
                                         p {
                                             width: 500px;
                                             padding-left: 60px;
@@ -572,20 +590,21 @@ div.JHH {
 
                                     // 救世理念
                                     &:last-child {
-                                        border: 1px solid green;
-                                        margin-top: 160px;
+                                        margin-top: 220px;
+                                        margin-left: 100px;
                                         justify-content: flex-start;
 
                                         h3 {
                                             top: -150px;
-                                            left: 50px;
+                                            left: 25px;
                                         }
 
                                         p {
                                             width: 420px;
-                                            margin-left: 30px;
                                             padding-left: 100px;
                                             padding-right: 60px;
+                                            background: linear-gradient(to left, rgba(248,242,235, .9) 0%, rgba(248,242,235, .9) 100%);
+
                                         }
 
                                     }
@@ -597,47 +616,99 @@ div.JHH {
 
                     // 救世產品
                     &:nth-child(2) {
-                        width: 80%;
+                        width: 90%;
                         height: 200px;
-                        margin: auto;
-                        border: 1px solid red;
-                        // overflow: hidden;
+                        margin: 50px auto 0;
+                        display: flex;
+                        align-items: center;
+                        overflow: hidden;
                         position: relative;
 
-                        h3 {
-                            top: 450px;
-                            right: 300px;
+                        &::before {
+                            content: "";
+                            display: inline-block;
+                            width: 10%;
+                            height: 100%;
+                            background: linear-gradient(to left, rgba(238, 238, 238, 0) 0%, rgba(120, 120, 120, 1) 100%);
+                            position: absolute;
+                            left: 0;
+                            top: 0;
                             z-index: 2;
                         }
 
-                        #pdtJH {
+                        &::after {
+                            content: "";
                             display: inline-block;
-                            width: 2200px;
+                            width: 10%;
+                            height: 100%;
+                            background: linear-gradient(to right, rgba(238, 238, 238, 0) 0%, rgba(120, 120, 120, 1) 100%);
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            z-index: 2;
+                        }
+
+
+
+                        #pdtJH {
+                            display: flex;
                             height: 200px;
-                            position: relative;
-                            animation: runPdt 1s linear both ;
+                            animation: runPdt 50s linear infinite running;
+
+                            &:hover {
+                                cursor: pointer;
+                                animation-play-state: paused;
+                            }
+
                             >div {
-                                display: inline-block;
-                                border: 1px solid;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
                                 width: 300px;
                                 height: 200px;
                                 position: relative;
                                 overflow: hidden;
                                 margin: 0 5px;
+                                transition: all .5s;
 
-                                img {
-                                    max-width: 100%;
-                                    // width: 100%;
-                                    // max-height: 100%;
+                                &::after {
+                                    content: "";
+                                    display: inline-block;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-color: rgba(255, 255, 255, .5);
                                     position: absolute;
                                     top: 0;
                                     left: 0;
+                                    transition: all .5s;
                                 }
 
-                                &:nth-child(6) {
+                                &:hover {
+                                    background: rgba(255, 255, 255, .5);
+                                    cursor: pointer;
+                                    z-index: 2;
+
+                                    &::after {
+                                        opacity: 0;
+                                    }
+
+                                    >img {
+                                        transform: scale(1.1);
+                                    }
+                                }
+
+                                img {
+                                    max-width: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    transition: all .5s;
+                                }
+
+                                &:nth-child(6),
+                                &:nth-child(7) {
                                     img {
                                         max-width: 120%;
-
                                     }
                                 }
                             }
@@ -648,17 +719,25 @@ div.JHH {
 
                 }
 
+                > h3 {
+                    top: 500px;
+                    right: 400px;
+                    z-index: 2;
+                }
+
                 >span {
                     display: inline-block;
-                    border: 20px solid #787878 ;
+                    border: 20px solid #bda79e;
+                    opacity: .5;
                     align-self: center;
                     position: absolute;
-                    bottom: 0;
+                    bottom: 100px;
                     z-index: 2;
                     transition: all .5s;
-                    &:hover{
+                    &:hover {
                         cursor: pointer;
-                        border-color: #865454;
+                        border-color: #f8f2eb;
+                        opacity: .8;
                     }
                 }
 
@@ -666,7 +745,7 @@ div.JHH {
                     border-top-color: transparent;
                     border-bottom-color: transparent;
                     border-left-color: transparent;
-                    left: -50px;
+                    left: 0;
                 }
 
                 #frtButton {
@@ -769,61 +848,7 @@ div.JHH {
     transform: rotateZ(45deg) translate(-3px, -3px);
 }
 
-@include rwdmF(1920) {
-    div.JHH {
-        div#homeLeft {
-            width: 500px;
-
-            >div {
-                &:first-child {
-                    >div {
-                        >div {
-                            h2 {
-                                top: -55px;
-                                left: 40px;
-                            }
-
-                            &:first-child {
-                                // 關於我們
-                                padding: 5px 40px;
-
-                                >div {
-                                    .clock {
-                                        margin-left: 5px;
-                                    }
-                                }
-                            }
-
-                            &:last-child {
-                                // 最新消息
-                                padding: 5px 40px;
-                            }
-                        }
-                    }
-                }
-
-                // 底部
-                &:last-child {
-                    >div {
-                        &:first-child {
-                            >div {
-                                width: 30px;
-                                height: 30px;
-                                margin: 30px 20px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        div#homeRight {
-            width: calc(100% - 500px - 200px);
-        }
-    }
-}
-
-;
+@include rwdmF(1920);
 @include rwdmF(1700);
 
 @include rwdmF(1500) {

@@ -13,4 +13,6 @@ $(document).ready(function () {
     // let pdtCount = $('#pdtJH div').length;
     // console.log(pdtOutside);
     // console.log(pdtCount);
+
+
 });
