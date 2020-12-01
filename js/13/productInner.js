@@ -1,5 +1,31 @@
-///////////////尺寸圖 /運送 切換////////////////
+
 $(document).ready(function () {
+    //////////LIGHTBOX////////////////////////////
+    $('#lightBox01').on('click',function(){
+        $('div.blackBack').addClass('-on');
+    });
+
+    $('#cancel').on('click',function(){
+        $('div.blackBack').addClass('-opacity-zero');
+
+        setTimeout(function(){
+            $('div.blackBack').removeClass('-on -opacity-zero');
+        },1000);
+    });
+/////////////////lightbox mobile/////////////////
+    $('#lightBox01-mobile').on('click',function(){
+        $('div.blackBack').addClass('-on');
+    });
+
+    $('#cancel-mobile01').on('click',function(){
+        $('div.blackBack').addClass('-opacity-zero');
+
+        setTimeout(function(){
+            $('div.blackBack').removeClass('-on -opacity-zero');
+        },1000);
+    });
+
+    ///////////////尺寸圖 /運送 切換////////////////
     $('#size').on('click', function () {
         $('#bottomCad').css({
             display: 'flex',
@@ -73,75 +99,6 @@ $(document).ready(function () {
             sliderBox.style.transform = 'translateX(' + (-size * counter) + 'px)';
         };
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // let divWidth = $('sliderBox').width();
-    // let imgCount = $('#content li').length;
-    // let liWidth = $('#content li').width;
-    // //alert(imgCount);
-
-    // $('#content').width(divWidth * imgCount);
-    // $('#content li').width(divWidth);
-
-
-    // $('#left').click(function () {
-    //     // alert();
-    //     $('#content').animate({
-    //         left: '-500px',
-    //     });
-    // });
-    // $('#right').click(function () {
-    //     // alert();
-    //     $('#content').animate({
-    //         left: '250px',
-    //     });
-    // });
-
-
-
-    // $(document).ready(function () {
-    //     let divWidth = $('#sliderBoard').width();
-    //     let imgCount = $('#content li').length;
-    //     // alert(imgCount)
-
-    //     $('#content').width(divWidth * imgCount);    //ul的寬度
-    //     $('#content li').width(divWidth);    //li的寬度
-
-    //     for (let i = 0; i < imgCount; i++) {
-    //         $('#contentButton').append('<li></li>');
-    //     }
-    //     $('#contentButton li:nth-child(1)').addClass('clickMe');
-
-    //     let index;
-    //     $('#contentButton li').click(function () {
-    //         index = $(this).index();
-
-    //         $('#content').animate({
-    //             left: divWidth * index * -1,
-    //         });
-
-    //         $(this).addClass('clickMe');
-    //         $('#contentButton li').not(this).removeClass('clickMe');
-    //     });
-    // });
 
 
 });
