@@ -37,19 +37,15 @@ $(document).ready(function () {
     $('#content').width(divWidth * imgCount);
     $('#content li').width(divWidth);
 
-
+    let index;
     $('#left').click(function () {
-        // alert();
+        index = $(this).index();
+
         $('#content').animate({
-            left: '-500px',
+            left: divWidth * index * -1,
         });
     });
-    $('#right').click(function () {
-        // alert();
-        $('#content').animate({
-            left: '250px',
-        });
-    });
+
 
 
     // $(document).ready(function () {
