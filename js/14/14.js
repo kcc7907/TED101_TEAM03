@@ -59,7 +59,7 @@ $(document).ready(function () {
         });
     }
 
-    setInterval(movemove, 1000);
+    setInterval(movemove, 1300);
 });
 
 // 風格切換

@@ -247,13 +247,14 @@ div#JN{
             border: 1px solid darkgoldenrod;   
             display: inline-flex;
             margin-top: 5%;
+            width: 100%;
             }
 
         .intro_detail{
             border: 1px solid blue;
-            width: 100%;
-            margin-left: 5%;
-            margin-top: 100px;
+            width: 50%;
+            margin: 5%;
+            margin-top: 5%;
             line-height: 60px;
             font-size: 24px;
         }
@@ -330,6 +331,40 @@ div#JN{
             margin: auto;
         }
 
+
+        //介紹輪播圖
+        #intro_sliderBoard{			/*div*/
+            border: 3px solid firebrick;
+            width: 300px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        #intro_sliderBoard ul{		/*ul*/
+            width: 1200px;
+            position: relative;
+            animation: slider 10s infinite;
+        }
+        #intro_sliderBoard li{		/*li*/
+            // border: 5px solid green;
+            width: 300px;
+            height: 400px;
+        
+            font: bold 150px Tahoma;
+            text-align: center;
+            line-height: 400px; 
+        
+            /* display: inline-block; */
+            float: left;
+            
+        }
+    
+        //%是秒數， 
+        @keyframes slider{
+            0%{left: 0px;}
+            30%{left: -300px;}
+            60%{left: -600px;}
+            90%{left: -900px;}
+        }
         
 
         //頁籤
@@ -558,79 +593,19 @@ div#JN{
             }
         }
 
-        // section 靜態輪播圖
-        // section{
-        //     .award{
-        //         border: 1px solid orange;
-        //         margin-top: 15%;
-        //         margin-bottom: 20%;
-        //     }
-
-        //     div.div_block{
-        //         background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
-        //         width: 100%;
-        //         height: 100%;
-        //         border: 1px solid red;
-        //         background-position: left;
-        //         background-size: cover;
-        //         &::after{
-        //             content: "";
-        //             display: block;
-        //             clear: both;
-        //         }
-        //     }
-
-        //     div.div_block_two{
-        //         background-image: url("../img/interiordesign/excellent/award/office/bafc9ce2034689f60e54eaec3784d759.jpg");
-        //         width: 100%;
-        //         height: 750px;
-        //         border: 1px solid red;
-        //     }
-
-        //     div.div_block_three{
-        //         background-image: url("../img/interiordesign/excellent/award/hampshire-54-master-bed-2.jpg");
-        //         width: 100%;
-        //         height: 750px;
-        //         background-position: center, center;
-        //         border: 1px solid red;
-        //     }
-            
-        //     div.other_text{
-        //     /*   background-color: yellow; */
-        //         background-color: hsla(0, 0%, 0%, 0.5);
-        //         color: white;
-        //         width: 20%;
-        //         // max-width: 1200px;
-        //         // width: 100%;
-        //         height: 73%;
-        //         float: right;
-        //         display: block;
-        //         padding: 100px; 
-        //     /*   opacity: 1; */
-        //     }
-
-            
-        //     p.other_text_award{
-        //         font-size: 50px;
-        //     }
-
-        //     p.other_text{
-        //         line-height: 50px;
-        //     }
-            
-        // }
-
+        
+        //獎項輪播圖
         .image{
             /* border: 1px solid #ccc; */
-            /* width: 100%; */
-            /* height: 450px; */
+            width: 35%;
+            // height: 450px;
             position: absolute;
             margin-bottom: 0px;
             
         }
         #sliderBoard{  /*div*/
             border: 1px solid #ccc;
-            width: 60%;
+            width: 90%;
             height: 550px;
             margin: 50px auto;
             overflow: hidden;
@@ -654,9 +629,8 @@ div#JN{
             height: 20px;
             border-radius: 50%;
             background: #ccc;
-        
             display: inline-block;
-            margin: 5px;
+            margin: 30px 5px;
         }
         #contentButton li.clickMe{
             background: #888;
@@ -675,25 +649,21 @@ div#JN{
             right: 0px;
             height: 550px;
             background-color: black;
-              background-color: rgba(0, 0, 0, 0.37);
+            background-color: rgba(0, 0, 0, 0.37);
             color: white;
-            width: 30%;
-            left: 70%;
+            width: 35%;
+            left: 65%;
             background-position: center;
+            line-height: 2.5;
+        }
+
+        .intro_sliderBoard{
+            border: 3px solid darkblue;    
         }
 
         .intro_image{
-            border: 1px solid fuchsia;
-            width: 70%;
-            margin: auto;
-            margin-top: 20%;
-            // height: 750px;
-            margin-left: 15%;
-        }
-
-        #sliderBoard{
-            border: 1px solid indianred;
             width: 100%;
+            margin-top: 40%;
         }
     }
 
@@ -703,7 +673,7 @@ div#JN{
         border: 1px solid rebeccapurple;
         display: inline-flex;
         max-width: 1200px;
-        width: 100%;
+        width: 75%;
         // width: 100%;
         text-align: center;
         height: 100%;
