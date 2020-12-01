@@ -1,3 +1,23 @@
+<?php
+    include("../php/08/jk_link.php");
+
+    $sql = "SELECT * FROM member WHERE MEM_ID =?";
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, "A111200001");     //測試帳號
+    $statement->execute();
+    $data = $statement->fetchAll();
+
+    $account = $data[0]["MEM_ID"];
+    $pwd = $data[0]["MEM_PWD"];
+    $name = $data[0]["MEM_NAME"];
+    $phone = $data[0]["MEM_PHONE"];
+    $email = $data[0]["MEM_EMAIL"];
+    // $city = $data[0]["MEM_CITY"];
+    $address = $data[0]["MEM_ADDRESS"];
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -11,6 +31,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
+    
     <script src="../js/08/is.min.js"></script>
     <script src="../lib/js/jquery.js"></script>
     <script src="../js/08/meminfo.js"></script>
@@ -52,10 +73,10 @@
         <div class="container">
             <div class="sideMenu">
                 <ul>
-                    <li class="-on"><a href="meminfo.html"><i class="fas fa-user"></i><span class="computer">帳戶資料</span><span class="rwd">帳戶</span></a></li>
-                    <li><a href="favorite.html"><i class="fas fa-folder-open"></i><span class="computer">我的收藏</span><span class="rwd">收藏</span></a></li>
-                    <li><a href="order.html"><i class="fas fa-clipboard-list"></i><span class="computer">訂單查詢</span><span class="rwd">訂單</span></a></li>
-                    <li><a href="notice.html"><i class="fas fa-bullhorn"></i><span class="computer">通知總覽</span><span class="rwd">通知</span></a></li>
+                    <li class="-on"><a href="meminfo.php"><i class="fas fa-user"></i><span class="computer">帳戶資料</span><span class="rwd">帳戶</span></a></li>
+                    <li><a href="favorite.php"><i class="fas fa-folder-open"></i><span class="computer">我的收藏</span><span class="rwd">收藏</span></a></li>
+                    <li><a href="order.php"><i class="fas fa-clipboard-list"></i><span class="computer">訂單查詢</span><span class="rwd">訂單</span></a></li>
+                    <li><a href="notice.php"><i class="fas fa-bullhorn"></i><span class="computer">通知總覽</span><span class="rwd">通知</span></a></li>
                 </ul>
             </div>
 
@@ -67,7 +88,7 @@
                         <div>
                             <label for="account">帳號</label>
                         </div>
-                        <input type="text" id="account" name="account" value="goodguy" disabled>
+                        <input type="text" id="account" name="account" value="<?=$account?>" disabled>
                     </div>
 
                     <div>
@@ -75,7 +96,7 @@
                             <label for="email">信箱</label>
                             <span class="email">修改</span>
                         </div>
-                        <input class="input" type="text" id="email" name="email" value="goodguy@gmail.com" disabled>
+                        <input class="input" type="text" id="email" name="email" value="<?=$email?>" disabled>
                     </div>
 
                     <div>
@@ -83,7 +104,7 @@
                             <label for="phone">手機</label>
                             <span class="phone">修改</span>
                         </div>
-                        <input class="input" type="text" id="phone" name="phone" value="0912345678" disabled>
+                        <input class="input" type="text" id="phone" name="phone" value="<?=$phone?>" disabled>
                     </div>
 
                     <div>
@@ -91,7 +112,7 @@
                             <label for="name">姓名</label>
                             <span class="name">修改</span>
                         </div>
-                        <input class="input" type="text" id="name" name="name" value="就是宅" disabled>
+                        <input class="input" type="text" id="name" name="name" value="<?=$name?>" disabled>
                     </div>
 
                     <div>
@@ -99,7 +120,7 @@
                             <label for="address">地址</label>
                             <span class="address">修改</span>
                         </div>
-                        <input class="input" type="text" id="address" name="address" value="天龍國" disabled>
+                        <input class="input" type="text" id="address" name="address" value="<?=$address?>" disabled>
                     </div>
 
                     <div>
@@ -119,8 +140,6 @@
                         </div>
                     </div>
 
-                    <input type="hidden" name="date">
-
                     <div id="btn">
                         <input type="submit" value="儲存">
                         <input type="reset" value="取消">
@@ -129,8 +148,6 @@
             </main>
         </div>
     </div>
-
-    
 
     <script src="../lib/header/header.js"></script>
 

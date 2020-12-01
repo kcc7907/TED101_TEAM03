@@ -61,7 +61,7 @@ $(document).ready(function(){
     
     $('#memberInfo').submit(function(e){
         
-        let send_data = true;        
+        let send_data = true;   
 
         let email = document.getElementById("email");
         $(email).removeClass("-error");
@@ -183,6 +183,7 @@ $(document).ready(function(){
             }
         }
         
+        $('.jk_meminfo input[type="hidden"]').attr('value', `${new Date()}`);
 
         if(!send_data){
             e.preventDefault();
