@@ -251,7 +251,7 @@ div#JN{
 
         .intro_detail{
             border: 1px solid blue;
-            width: 40%;
+            width: 100%;
             margin-left: 5%;
             margin-top: 100px;
             line-height: 60px;
@@ -558,82 +558,145 @@ div#JN{
             }
         }
 
-        // section
-        section{
-            .award{
-                border: 1px solid orange;
-                margin-top: 15%;
-                margin-bottom: 20%;
-            }
+        // section 靜態輪播圖
+        // section{
+        //     .award{
+        //         border: 1px solid orange;
+        //         margin-top: 15%;
+        //         margin-bottom: 20%;
+        //     }
 
-            div.div_block{
-                background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
-                width: 100%;
-                height: 100%;
-                border: 1px solid red;
-                background-position: left;
-                background-size: cover;
-                &::after{
-                    content: "";
-                    display: block;
-                    clear: both;
-                }
-            }
+        //     div.div_block{
+        //         background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
+        //         width: 100%;
+        //         height: 100%;
+        //         border: 1px solid red;
+        //         background-position: left;
+        //         background-size: cover;
+        //         &::after{
+        //             content: "";
+        //             display: block;
+        //             clear: both;
+        //         }
+        //     }
 
-            div.div_block_two{
-                background-image: url("../img/interiordesign/excellent/award/office/bafc9ce2034689f60e54eaec3784d759.jpg");
-                width: 100%;
-                height: 750px;
-                border: 1px solid red;
-            }
+        //     div.div_block_two{
+        //         background-image: url("../img/interiordesign/excellent/award/office/bafc9ce2034689f60e54eaec3784d759.jpg");
+        //         width: 100%;
+        //         height: 750px;
+        //         border: 1px solid red;
+        //     }
 
-            div.div_block_three{
-                background-image: url("../img/interiordesign/excellent/award/hampshire-54-master-bed-2.jpg");
-                width: 100%;
-                height: 750px;
-                background-position: center, center;
-                border: 1px solid red;
-            }
+        //     div.div_block_three{
+        //         background-image: url("../img/interiordesign/excellent/award/hampshire-54-master-bed-2.jpg");
+        //         width: 100%;
+        //         height: 750px;
+        //         background-position: center, center;
+        //         border: 1px solid red;
+        //     }
             
-            div.other_text{
-            /*   background-color: yellow; */
-                background-color: hsla(0, 0%, 0%, 0.5);
-                color: white;
-                width: 20%;
-                // max-width: 1200px;
-                // width: 100%;
-                height: 73%;
-                float: right;
-                display: block;
-                padding: 100px; 
-            /*   opacity: 1; */
-            }
+        //     div.other_text{
+        //     /*   background-color: yellow; */
+        //         background-color: hsla(0, 0%, 0%, 0.5);
+        //         color: white;
+        //         width: 20%;
+        //         // max-width: 1200px;
+        //         // width: 100%;
+        //         height: 73%;
+        //         float: right;
+        //         display: block;
+        //         padding: 100px; 
+        //     /*   opacity: 1; */
+        //     }
 
             
-            p.other_text_award{
-                font-size: 50px;
-            }
+        //     p.other_text_award{
+        //         font-size: 50px;
+        //     }
 
-            p.other_text{
-                line-height: 50px;
-            }
+        //     p.other_text{
+        //         line-height: 50px;
+        //     }
             
-        }
+        // }
 
         .image{
+            /* border: 1px solid #ccc; */
+            /* width: 100%; */
+            /* height: 450px; */
+            position: absolute;
+            margin-bottom: 0px;
+            
+        }
+        #sliderBoard{  /*div*/
+            border: 1px solid #ccc;
+            width: 60%;
+            height: 550px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        #content{		/*ul*/
+            position: relative;
+        }
+        #content li{	/*li*/
+            float: left;
+        }
+        
+        /* button */
+        #contentButton{
+            /* border: 1px solid red; */
+            text-align: center;
+            width: 100%;
+            height: 50px;
+        }
+        #contentButton li{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ccc;
+        
+            display: inline-block;
+            margin: 5px;
+        }
+        #contentButton li.clickMe{
+            background: #888;
+        }
+        
+        div.award_list{
+            border: 3px solid brown;
+            width: 600px;
+            height: 450px;
+            background-color: #fff;
+        }
+        
+        div.other_text{
+            border: 1px solid rebeccapurple;
+            position: relative;
+            right: 0px;
+            height: 550px;
+            background-color: black;
+              background-color: rgba(0, 0, 0, 0.37);
+            color: white;
+            width: 30%;
+            left: 70%;
+            background-position: center;
+        }
+
+        .intro_image{
             border: 1px solid fuchsia;
             width: 70%;
             margin: auto;
-            margin-top: 35%;
+            margin-top: 20%;
             // height: 750px;
             margin-left: 15%;
         }
 
         #sliderBoard{
             border: 1px solid indianred;
-            width: 50%;
+            width: 100%;
         }
     }
+
 
     //第二頁
     .select_click{
