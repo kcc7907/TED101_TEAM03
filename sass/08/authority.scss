@@ -94,10 +94,10 @@ body{
                         }
 
                         //調整'新增管理員'位置
-                        >li.-on li:nth-child(2){
-                            margin-left: 21px;
-                            width: 94%;
-                        }
+                        // >li.-on li:nth-child(2){
+                        //     margin-left: 21px;
+                        //     width: 94%;
+                        // }
                     }
 
                 }
@@ -133,6 +133,7 @@ body{
             }
 
             >main{
+                display: none;
                 font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
 
                 width: 79.1%;
@@ -149,7 +150,7 @@ body{
                 }
 
                 >table{
-                    display: none;
+                    
                     margin: 60px auto 0;
                     border-top: 1px solid #707070;
                     border-right: 1px solid #707070;

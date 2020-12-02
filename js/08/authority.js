@@ -35,7 +35,10 @@ $(document).ready(function(){
 
     $('#jk_authorityChange').click(function(){
 
-        $('.jk_authorityChange').css('display', 'table');
+        // $('.jk_authorityChange').css('display', 'table');
+        $('.jk_authority main').css('display', 'block');
+
+
     });
 
 
