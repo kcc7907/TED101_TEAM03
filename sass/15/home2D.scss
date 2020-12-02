@@ -34,6 +34,11 @@ div.JHH {
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         color: #865454;
     }
+    margin-top: 5vh;
+    height: 90vh;
+    min-height: 910px;
+    display: flex;
+    justify-content: center;
 
     >header {
         * {
@@ -123,12 +128,6 @@ div.JHH {
             }
         }
     }
-
-    margin-top: 5vh;
-    height: 90vh;
-    min-height: 910px;
-    display: flex;
-    justify-content: center;
 
     div#homeLeft {
         width: 500px;
@@ -565,7 +564,7 @@ div.JHH {
 
                                     p {
                                         align-self: flex-start;
-                                        background: linear-gradient(to right, rgba(87, 124, 138, .8) 0%, rgba(87, 124, 138, .8) 100%);
+                                        background: linear-gradient(to left, rgba(248, 242, 235, .9) 0%, rgba(248, 242, 235, .9) 100%);
                                         box-shadow: 30px 10px 20px rgba(0, 0, 0, .16);
                                         margin: 0;
                                         border: 5px solid #BDA79E;
@@ -1231,11 +1230,6 @@ div.JHH {
                                 &:first-child {
                                     top: 50px;
 
-                                    &::after {
-                                        width: 0;
-                                        right: -170px;
-                                    }
-
                                     p {
                                         padding: 15px 30px 15px 60px;
 
@@ -1249,6 +1243,7 @@ div.JHH {
                                         // 救世團隊
                                         &:first-child {
                                             width: 340px;
+
                                             h3 {
                                                 top: -30px;
                                                 right: 30px;
@@ -1256,7 +1251,7 @@ div.JHH {
 
                                             p {
                                                 width: 100%;
-                                            padding-left: 30px;
+                                                padding-left: 30px;
 
                                             }
                                         }
@@ -1273,7 +1268,7 @@ div.JHH {
 
                                             p {
                                                 width: 100%;
-                                            padding-right: 30px;
+                                                padding-right: 30px;
 
                                             }
                                         }
@@ -1290,8 +1285,8 @@ div.JHH {
                                 height: 150px;
 
                                 >div {
-                                width: 200px;
-                                height: 150px;
+                                    width: 200px;
+                                    height: 150px;
 
                                 }
                             }
@@ -1379,7 +1374,7 @@ div.JHH {
 
         div#homeRight {
             width: 100%;
-            height: 400px;
+            height: 910px;
 
             >div {
                 &:first-child {
@@ -1387,6 +1382,90 @@ div.JHH {
                     left: calc((100% - 220px) / 2);
                 }
 
+                // 關於我們
+                &:nth-child(3) {
+                    >div {
+
+                        // 簡介
+                        &:first-child {
+                            >div {
+
+                                // 關於救世宅
+                                &:first-child {
+                                    // top: 50px;
+
+                                    &::after {
+                                        width: 120px;
+                                        right: -100px;
+                                    }
+
+                                    p {
+                                        padding: 15px 30px 15px 100px;
+                                    }
+                                }
+
+                                &:last-child {
+                                    >div {
+                                        width: 100%;
+                                        // 救世團隊
+                                        &:first-child {
+                                            width: 450px;
+
+                                            h3 {
+                                                // top: -30px;
+                                                // right: 30px;
+                                            }
+
+                                            p {
+                                                // width: 100%;
+                                                // padding-left: 30px;
+                                            }
+                                        }
+
+                                        // 救世理念
+                                        &:last-child {
+                                            width: 450px;
+                                            margin: 200px 0 50px;
+
+                                            h3 {
+                                                top: -30px;
+                                                left: 30px;
+                                            }
+
+                                            p {
+                                                width: 100%;
+                                                padding-right: 30px;
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // 救世產品
+                        &:nth-child(2) {
+                            height: 150px;
+
+                            #pdtJH {
+                                height: 150px;
+
+                                >div {
+                                    width: 200px;
+                                    height: 150px;
+
+                                }
+                            }
+                        }
+                    }
+
+                    >h3 {
+                        top: 650px;
+                        left: calc(100% - 110px);
+                    }
+                }
+
+                
             }
         }
 
