@@ -67,9 +67,14 @@ div.sam{
             position: relative;
             cursor: pointer;
             outline:none;
+            transition:transform .3s;
             &:focus{
                 content:'';
                 border:4px solid #865454;
+            }
+            &:hover{
+                content:'';
+                transform: translateY(-6px);
             }
             h2.iconWord{
                 font-size:30px;
@@ -279,6 +284,7 @@ div.sam{
             h2.orderTitle{
                 font-size: 30px;
                 margin-top: 15px;
+                color:#54383b;
             }
         }
     }
