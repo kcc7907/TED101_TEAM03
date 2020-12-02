@@ -203,14 +203,14 @@ body{
     background-color: #FFFAF4;
     // overflow-x: hidden;
     // margin-top: 160px;
-    // border: none !important;
+    border: none !important;
 }
 
 
 *{
     font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
     // font-family: "微軟正黑體";
-    // border: none !important;
+    border: none !important;
 }
 
 //巢狀寫法
@@ -230,7 +230,7 @@ div#JN{
         }
 
         .photo{
-            background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
+            background-image: url(../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
             width: 100%;
             height: 600px;
             background-attachment: fixed;
@@ -280,7 +280,7 @@ div#JN{
         .designer_say{
             border: 1px solid navy;
             display: inline-flex;
-            margin-top: 15%;
+            // margin-top: 15%;
         }
 
         .second{
@@ -653,7 +653,7 @@ div#JN{
             background-color: black;
             background-color: rgba(0, 0, 0, 0.37);
             color: white;
-            width: 39%;
+            width: 40%;
             left: 60%;
             line-height: 2.5;
         }
@@ -678,7 +678,7 @@ div#JN{
         border: 1px solid rebeccapurple;
         display: inline-flex;
         max-width: 1200px;
-        width: 75%;
+        width: 100%;
         // width: 100%;
         text-align: center;
         height: 100%;
@@ -702,8 +702,8 @@ div#JN{
     }
     .click{
         border: 1px solid green;
-        margin-top: 2%;
-        padding: 0px 120px;
+        margin-top: 5%;
+        padding: 5px 20px;
         font-size: 32px;
         display: flex;
         justify-content: center;
@@ -877,10 +877,15 @@ div#JN{
         div.other_text{
             width: 27%;
             left: 50%;
-            height: 490px;
+            height: 540px;
         }
         .image{
             width: 26%;
+        }
+        #content li{	/*li*/
+            float: left;
+            display: flex;
+            justify-items: center;
         }
 
 
@@ -1001,7 +1006,11 @@ div#JN{
         div.other_text{
             width: 100%;
             left: 0%;
-
+        }
+        #content li{	/*li*/
+            float: left;
+            display: flex;
+            justify-items: center;
         }
          
 
