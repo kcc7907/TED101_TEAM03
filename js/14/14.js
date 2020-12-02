@@ -1,10 +1,9 @@
 //jQuery輪播圖
 $(document).ready(function () {
 
-    let divWidth = $('#sliderBoard').width(); //60%
-    let imgCount = $('#content li').length;   //8(張照片)
+    let divWidth = $('#sliderBoard').width(); //90%
+    let imgCount = $('#content li').length;   //3(張照片)
     // console.log(imgCount);
-    // alert(imgCount)
 
     $('#content').width(divWidth * imgCount);    //ul的寬度
     $('#content li').width(divWidth);            //li的寬度
@@ -26,22 +25,22 @@ $(document).ready(function () {
         $('#contentButton li').not(this).removeClass('clickMe');
     });
 
-    function change() {
-        let winWidth = $(window).width();
-        $('#sliderBoard').css({
-            left: (winWidth - divWidth) / 2,
-        });
-        // console.log(divWidth);
-    }
-    change();
+    // function change() {
+    //     let winWidth = $(window).width();
+    //     $('#sliderBoard').css({
+    //         left: (winWidth - divWidth) / 2,
+    //     });
+    //     // console.log(divWidth);
+    // }
+    // change();
 
-    $(window).resize(function () {
-        divWidth = $('#sliderBoard').width(); //60% 不用let
-        // console.log(divWidth);
-        $('#content').width(divWidth * imgCount);    //ul的寬度
-        $('#content li').width(divWidth);            //li的寬度
-        change();
-    });
+    // $(window).resize(function () {
+    //     divWidth = $('#sliderBoard').width(); //60% 不用let
+    //     // console.log(divWidth);
+    //     $('#content').width(divWidth * imgCount);    //ul的寬度
+    //     $('#content li').width(divWidth);            //li的寬度
+    //     change();
+    // });
 
     function movemove() {
         $('li.clickMe').removeClass('clickMe').next().addClass('clickMe');
@@ -54,12 +53,14 @@ $(document).ready(function () {
         // console.log($('li.clickMe').index());
         // $('li.clickMe').removeClass('clickMe').next().addClass('clickMe');
         let tt = $('li.clickMe').index();
-        $('#content').animate({
-            left: divWidth * tt * -1,
-        });
+        if (tt <= 2) {
+            $('#content').animate({
+                left: divWidth * tt * -1,
+            });
+        }
     }
-
     setInterval(movemove, 1300);
+
 });
 
 // 風格切換

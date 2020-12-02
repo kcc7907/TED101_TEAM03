@@ -596,12 +596,11 @@ div#JN{
         
         //獎項輪播圖
         .image{
-            /* border: 1px solid #ccc; */
+            border: 1px solid #ccc;
             width: 35%;
             // height: 450px;
             position: absolute;
-            margin-bottom: 0px;
-            
+            margin-bottom: 0px;            
         }
         #sliderBoard{  /*div*/
             border: 1px solid #ccc;
@@ -609,6 +608,7 @@ div#JN{
             height: 550px;
             margin: 50px auto;
             overflow: hidden;
+            position: relative;
         }
         #content{		/*ul*/
             position: relative;
@@ -623,6 +623,8 @@ div#JN{
             text-align: center;
             width: 100%;
             height: 50px;
+            position: absolute;
+            bottom: 0;
         }
         #contentButton li{
             width: 20px;
@@ -644,16 +646,15 @@ div#JN{
         }
         
         div.other_text{
-            border: 1px solid rebeccapurple;
+            border: 5px solid rebeccapurple;
             position: relative;
             right: 0px;
             height: 550px;
             background-color: black;
             background-color: rgba(0, 0, 0, 0.37);
             color: white;
-            width: 35%;
-            left: 65%;
-            background-position: center;
+            width: 39%;
+            left: 60%;
             line-height: 2.5;
         }
 
@@ -663,7 +664,11 @@ div#JN{
 
         .intro_image{
             width: 100%;
-            margin-top: 40%;
+            margin-top: 30%;
+        }
+
+        .other_text_award{
+            font-size: 36px;
         }
     }
 
@@ -862,6 +867,22 @@ div#JN{
         .interior_one, .interior_two{
             display: block;
         }
+        #intro_sliderBoard{
+            margin: 50px auto;
+        }
+        .intro_image{
+            width: 100%;
+            margin: 0%;
+        }
+        div.other_text{
+            width: 27%;
+            left: 50%;
+            height: 490px;
+        }
+        .image{
+            width: 26%;
+        }
+
 
         // 第二頁
         // .interior_pics{
@@ -974,6 +995,14 @@ div#JN{
             width: 100%;
             justify-content: space-around;
         }
+        .intro_image{
+            width: 100%;
+        }
+        div.other_text{
+            width: 100%;
+            left: 0%;
+
+        }
          
 
             .tab_list_block{
@@ -1036,11 +1065,7 @@ div#JN{
                 width: 500px;
                 height: 300px;
             }
-            .image{
-                width: 100%;
-                height: 100%;
-
-            }
+           
             
            
     
