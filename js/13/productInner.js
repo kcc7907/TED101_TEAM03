@@ -1,28 +1,78 @@
 
 $(document).ready(function () {
     //////////LIGHTBOX////////////////////////////
-    $('#lightBox01').on('click',function(){
+    $('#lightBox01').on('click', function () {
         $('div.blackBack').addClass('-on');
     });
 
-    $('#cancel').on('click',function(){
+    $('.cancel').on('click', function () {
         $('div.blackBack').addClass('-opacity-zero');
 
-        setTimeout(function(){
+        setTimeout(function () {
             $('div.blackBack').removeClass('-on -opacity-zero');
-        },1000);
+        }, 1000);
     });
-/////////////////lightbox mobile/////////////////
-    $('#lightBox01-mobile').on('click',function(){
+
+    $('#lightBox02').on('click', function () {
+        $('div.blackBack2').addClass('-on');
+    });
+
+    $('.cancel').on('click', function () {
+        $('div.blackBack2').addClass('-opacity-zero');
+
+        setTimeout(function () {
+            $('div.blackBack2').removeClass('-on -opacity-zero');
+        }, 1000);
+    });
+
+    $('#lightBox03').on('click', function () {
+        $('div.blackBack3').addClass('-on');
+    });
+
+    $('.cancel').on('click', function () {
+        $('div.blackBack3').addClass('-opacity-zero');
+
+        setTimeout(function () {
+            $('div.blackBack3').removeClass('-on -opacity-zero');
+        }, 1000);
+    });
+
+
+    /////////////////lightbox mobile/////////////////
+    $('#lightBox01-mobile').on('click', function () {
         $('div.blackBack').addClass('-on');
     });
 
-    $('#cancel-mobile01').on('click',function(){
+    $('.cancel-mobile').on('click', function () {
         $('div.blackBack').addClass('-opacity-zero');
 
-        setTimeout(function(){
+        setTimeout(function () {
             $('div.blackBack').removeClass('-on -opacity-zero');
-        },1000);
+        }, 1000);
+    });
+
+    $('#lightBox02-mobile').on('click', function () {
+        $('div.blackBack2').addClass('-on');
+    });
+
+    $('.cancel-mobile').on('click', function () {
+        $('div.blackBack2').addClass('-opacity-zero');
+
+        setTimeout(function () {
+            $('div.blackBack2').removeClass('-on -opacity-zero');
+        }, 1000);
+    });
+
+    $('#lightBox03-mobile').on('click', function () {
+        $('div.blackBack3').addClass('-on');
+    });
+
+    $('.cancel-mobile').on('click', function () {
+        $('div.blackBack3').addClass('-opacity-zero');
+
+        setTimeout(function () {
+            $('div.blackBack3').removeClass('-on -opacity-zero');
+        }, 1000);
     });
 
     ///////////////尺寸圖 /運送 切換////////////////
@@ -70,7 +120,11 @@ $(document).ready(function () {
     console.log(size);
 
     // sliderBox.style.transform = 'translateX(' + (-size * counter) +'px)';
-
+    function leftmove() {
+        sliderBox.style.transition = "transform 0.3s ease-in-out";
+        counter++;
+        sliderBox.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    };
     //Button Listeners
     rightBtn.addEventListener('click', () => {
         if (counter >= slider.length - 1) return;
@@ -100,5 +154,5 @@ $(document).ready(function () {
         };
     });
 
-
+    setInterval(leftmove, 3000);
 });

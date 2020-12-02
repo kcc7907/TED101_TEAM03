@@ -114,4 +114,11 @@ $(document).ready(function () {
             marginLeft: '15px',
         });
     });
+
+    //////////////毛點///////////////
+    $('.icon6Btn').on('click', function () {
+        $('html,body').animate({
+            scrollTop: $('span.line').offset().top
+        }, 1500);
+    });
 });
