@@ -1,27 +1,29 @@
 @import '../../lib/header/variable';
 @import './variableJH';
 
-
-body {
-    background-color: #FFFAF4;
-    @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE);
-}
-
-div#login {
+div.LogIn {
     * {
         color: $csdr;
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         box-sizing: border-box;
     }
-
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: -30vh;
+    left: 0;
+    background-color:  #FFFAF4;
+    // z-index: 10;
+    opacity: 0;
+    transition: all 1s;
+    
     a {
         text-decoration: none;
     }
-
-    margin-top: 50px;
-
+    
     div.login {
         margin: auto;
+        margin-top: 50px;
         border: 1px solid rgba(0, 0, 0, 0%);
         text-align: center;
         width: 500px;
@@ -134,16 +136,19 @@ div#login {
 }
 
 
-
-
-div#signUp {
+div.SignUp {
     * {
         color: $csdr;
         box-sizing: border-box;
     }
-
-
-    margin: 40px auto 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: -30vh;
+    left: 0;
+    background-color:  #FFFAF4;
+    opacity: 0;
+    transition: all 1s;
 
     div.signUp {
         width: 800px;

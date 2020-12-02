@@ -11,7 +11,7 @@ $(document).ready(function () {
                  * see README file for more settings
                  */
 
-                let el = document.querySelector('#logIn');
+                let el = document.querySelector('.LogIn');
                 let myAnimation1 = new LazyLinePainter(el, { "ease": "easeOutExpo", "strokeWidth": 3, "strokeOpacity": 0, "strokeColor": "#bda79e", "strokeCap": "square" });
                 myAnimation1.paint();
             }
