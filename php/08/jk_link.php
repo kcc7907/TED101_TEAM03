@@ -3,7 +3,7 @@
         $db_host = "localhost";
         $db_user = "root";
         $db_pass = "My890213qq";
-        $db_select = "ted101";
+        $db_select = "team03";
 
        //建立資料庫連線物件
         $dsn = "mysql:host=".$db_host.";dbname=".$db_select;

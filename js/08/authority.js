@@ -31,9 +31,9 @@ $(document).ready(function(){
 
     });
 
-    $('#jk_newManager').click(function(){
+    $('#jk_authorityChange').click(function(){
 
-        $('.jk_newManager').css('display', 'table');
+        $('.jk_authorityChange').css('display', 'table');
     });
 
 

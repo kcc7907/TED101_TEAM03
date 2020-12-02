@@ -2,59 +2,79 @@
 
     include("jk_link.php");
 
-    
+    $user = "A111200001";
+
     //資料庫資料
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, "A111200001");     //測試帳號
+    $statement->bindValue(1, "$user");
     $statement->execute();
     $data = $statement->fetchAll();
 
     $pwd = $data[0]["MEM_PWD"];
-    // $name = $data[0]["MEM_NAME"];
-    // $phone = $data[0]["MEM_PHONE"];
-    // $email = $data[0]["MEM_EMAIL"];
-    // $address = $data[0]["MEM_ADDRESS"];
+    $name = $data[0]["MEM_NAME"];
+    $phone = $data[0]["MEM_PHONE"];
+    $email = $data[0]["MEM_EMAIL"];
+    $address = $data[0]["MEM_ADDRESS"];
 
-    //輸入資料
+    //輸入資料========================================================
 
-    if($_POST['name']){
-        alert();
+    // 一般資料
+    if(isset($_POST['name'])){      //名字
+        $name = $_POST['name'];
+        $sql = "UPDATE member SET MEM_NAME = ? WHERE MEM_ID =?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(1, "$name");
+        $statement->bindValue(2, "$user");
+        $statement->execute();
     }
-    // $oldPassword = $_POST['oldPassword'];
-    // $newPassword = $_POST['newPassword'];
-
-
-        
-    // $name = $_POST['name'];
-    // $phone = $_POST['phone'];
-    // $email = $_POST['email'];
-    // $address = $_POST['address'];
-    // $date = $_POST['date'];
-
-
-
-
-    // if($oldPassword == $pwd){
-
-    //     $sql = "UPDATE member SET MEM_PWD = ?, MEM_NAME = ?, MEM_PHONE = ?, MEM_EMAIL = ?, MEM_ADDRESS = ?, MEM_DATE = ? WHERE MEM_ID = ?";
+    if(isset($_POST['phone'])){     //電話        
+        $phone = $_POST['phone'];
+        $sql = "UPDATE member SET MEM_PHONE = ? WHERE MEM_ID =?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(1, "$phone");
+        $statement->bindValue(2, "$user");
+        $statement->execute();
+    }
+    if(isset($_POST['email'])){     //信箱
+        $email = $_POST['email'];
+        $sql = "UPDATE member SET MEM_EMAIL = ? WHERE MEM_ID =?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(1, "$email");
+        $statement->bindValue(2, "$user");
+        $statement->execute();
+    }
+    if(isset($_POST['address'])){   //地址
+        $address = $_POST['address'];
+        $sql = "UPDATE member SET MEM_ADDRESS = ? WHERE MEM_ID =?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(1, "$address");
+        $statement->bindValue(2, "$user");
+        $statement->execute();
+    }
     
-    //     $statement = $pdo->prepare($sql);
-    //     $statement->bindValue(1, "$newPassword");
-    //     $statement->bindValue(2, "$name");
-    //     $statement->bindValue(3, "$phone");
-    //     $statement->bindValue(4, "$email");
-    //     $statement->bindValue(5, "$address");
-    //     $statement->bindValue(6, "$date");
-    //     $statement->bindValue(7, "A111200001");
-    //     $statement->execute();
 
-    // }else {
-        
-    // }
+    //密碼
 
+    if(isset($_POST['oldPassword'])){
+        $oldPassword = $_POST['oldPassword'];
+        if($pwd == $oldPassword){
 
+            $newPassword = $_POST['newPassword'];
+            $sql = "UPDATE member SET MEM_PWD = ? WHERE MEM_ID =?";
+            $statement = $pdo->prepare($sql);
+            $statement->bindValue(1, "$newPassword");
+            $statement->bindValue(2, "$user");
+            $statement->execute();
+        }else{
 
+        }
+    }
+
+    // header("Location: ../../frontend/meminfo.php");
+
+    //提示文字?
+    echo "<script>alert('已成功修改會員資料'); location.href = '../../frontend/meminfo.php';</script>";
 
 
 ?>
