@@ -1,8 +1,201 @@
+
+
 .bodykm{
   display: flex;
   justify-content: center;
   background-color: #FFFAF4;
 }
+
+// JS顯示/不顯示
+.part11{
+  display: none;
+  // display: block;
+}
+.part11.on{
+  display: block;
+//  display: none;
+}
+
+.part111{
+  display: none;
+}
+.part111.on{
+  display: block;
+}
+
+.part112{
+  display: none;
+}
+.part112.on{
+  display: block;
+}
+
+.part113{
+  display: none;
+}
+.part113.on{
+  display: block;
+}
+
+
+.part12{
+  display: none;
+}
+.part12.on{
+  display: block;
+}
+
+.part121{
+  display: none;
+}
+.part121.on{
+  display: block;
+}
+
+.part122{
+  display: none;
+}
+.part122.on{
+  display: block;
+}
+
+.part123{
+  display: none;
+}
+.part123.on{
+  display: block;
+}
+
+
+.part13{
+  display: none;
+}
+.part13.on{
+  display: block;
+}
+
+.part131{
+  display: none;
+}
+.part131.on{
+  display: block;
+}
+
+.part132{
+  display: none;
+}
+.part132.on{
+  display: block;
+}
+
+.part133{
+  display: none;
+}
+.part133.on{
+  display: block;
+}
+
+
+.part21{
+  display: none;
+}
+.part21.on{
+  display: block;
+}
+
+.part211{
+  display: none;
+}
+.part211.on{
+  display: block;
+}
+
+.part212{
+  display: none;
+}
+.part212.on{
+  display: block;
+}
+
+.part22{
+  display: none;
+}
+.part22.on{
+  display: block;
+}
+
+.part221{
+  display: none;
+}
+.part221.on{
+  display: block;
+}
+
+.part222{
+  display: none;
+}
+.part222.on{
+  display: block;
+}
+
+.part23{
+  display: none;
+}
+.part23.on{
+  display: block;
+}
+
+.part231{
+  display: none;
+}
+.part231.on{
+  display: block;
+}
+
+.part232{
+  display: none;
+}
+.part232.on{
+  display: block;
+}
+
+
+
+
+// 篩選BAR
+.aaa{
+  display: block;
+}
+.aaa.on{
+  display: none;
+}
+.bbb{
+  display: block;
+}
+.bbb.on{
+  display: none;
+}
+.ccc{
+  display: block;
+}
+.ccc.on{
+  display: none;
+}
+.ddd{
+  display: block;
+}
+.ddd.on{
+  display: none;
+}
+.eee{
+  display: block;
+}
+.eee.on{
+  display: none;
+}
+
+
+
 
 .km{
 
@@ -40,7 +233,7 @@
     margin-top: 20px;
   }
 
-  ul.nav_list > li > a{
+  ul.nav_list > li{
     text-decoration: none;
     border: 1px solid #BDA79E;
     padding: 5px 10px;
@@ -49,8 +242,9 @@
     font-size: 24px;
     border-radius: 10px;
     box-shadow: 3px 3px 10px 0px  #BDA79E;
+    cursor: pointer;
   }
-  ul.nav_list > li > a:hover{
+  ul.nav_list > li:hover{
     background-color:#BDA79E;
     color: white;
   }
@@ -58,7 +252,7 @@
   /* 大標題 */
   .title2{
     margin-top: 30px;
-    width: 100%;
+    width: 1200px;
     background-color: #865454;
     color: white;
     font-size: 30px;
@@ -88,15 +282,18 @@
    }
 
   /* 第二標題 */
+.part1{
+  width: 1200px;
+}
 .title3{
     font-size: 30px;
     color: #865454;
-    padding: 0 30px;
+    margin: 30px 0px;
 }
 
 /* 線 */
 .line{
-    width: 1145px;
+    width: 1200px;
     border-top: solid #BDA79E 1px;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -112,29 +309,32 @@
   .title4{
     font-size: 24px;
     color: #865454;
-    padding: 0px 90px;
+    // padding: 0px 90px;
     line-height: 60px;
+    margin: 20px 40px;
 }
 
   /* 第四標題 */
   .title5{
     font-size: 24px;
     color: #BDA79E;
-    padding: 0px 120px;
+    // padding: 0px 120px;
     line-height: 60px;
+    margin: 10px 75px;
 }
 
   /* 第五標題 */
   .title6{
     font-size: 24px;
     color: #BDA79E;
-    padding: 0px 60px;
+    // padding: 0px 60px;
     line-height: 60px;
+    margin: 20px 80px;
 }
 
 /* 小線 */
 .line2{
-    width: 1020px;
+    width: 1130px;
     border-top: solid #BDA79E 1px;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -235,8 +435,7 @@ label{
   background-color: #BDA79E;
   color: white;
   font-size: 30px;
-  padding: 3px 10px;
-
+  padding: 5px 10px;
 }
 
 .boss{
@@ -371,7 +570,7 @@ label{
   .title6{font-size: 20px;
     line-height: 50px;}
   .push{font-size: 24px;}
-  .ex{
+  .part1{
     width: 993px;
     margin: 0 auto;
   }
@@ -443,7 +642,7 @@ label{
     line-height: 40px;}
   .paper1{font-size: 22px;}
   .push{font-size: 22px;}
-  .ex{
+  .part1{
     width: 769px;
     margin: 0 auto;
   }
@@ -516,7 +715,7 @@ label{
   .icon{display: none;}
   .paper1{font-size: 20px;}
   .push{font-size: 20px;}
-  .ex{
+  .part1{
     width: 577px;
     margin: 0 auto;
   }
@@ -583,7 +782,7 @@ label{
   // .pa{display: none;}
   .paper1{font-size: 18px;}
   .push{font-size: 18px;}
-  .ex{
+  .part1{
     width: 361px;
     margin: 0 auto;
   }
