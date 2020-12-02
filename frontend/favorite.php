@@ -52,13 +52,13 @@
         <div class="container">
             <div class="sideMenu">
                 <ul>
-                    <li><a href="meminfo.html"><i class="fas fa-user"></i><span class="computer">帳戶資料</span><span
+                    <li><a href="meminfo.php"><i class="fas fa-user"></i><span class="computer">帳戶資料</span><span
                                 class="rwd">帳戶</span></a></li>
-                    <li class="-on"><a href="favorite.html"><i class="fas fa-folder-open"></i><span class="computer">我的收藏</span><span
+                    <li class="-on"><a href="favorite.php"><i class="fas fa-folder-open"></i><span class="computer">我的收藏</span><span
                                 class="rwd">收藏</span></a></li>
-                    <li><a href="order.html"><i class="fas fa-clipboard-list"></i><span
+                    <li><a href="order.php"><i class="fas fa-clipboard-list"></i><span
                                 class="computer">訂單查詢</span><span class="rwd">訂單</span></a></li>
-                    <li><a href="notice.html"><i class="fas fa-bullhorn"></i><span class="computer">通知總覽</span><span
+                    <li><a href="notice.php"><i class="fas fa-bullhorn"></i><span class="computer">通知總覽</span><span
                                 class="rwd">通知</span></a></li>
                 </ul>
             </div>
