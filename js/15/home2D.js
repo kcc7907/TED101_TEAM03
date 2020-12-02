@@ -15,32 +15,24 @@ $(document).ready(function () {
             e.preventDefault();
     });
     // *** 點選'會員icon'出現表單 ***
-    $('div.LogIn').hide();
+    $('#login').hide();
     $('.icon a:first-child').click(function(){
-        $('div.LogIn').show().css({
+        $('#login').show().css({
             'z-index': '3',
             'opacity': '1',
             'top': '0',
         });
         // logAni();
     });
-    // $('.SignUp').hide();
-    // $('.icon a:first-child').click(function(){
-    //     $('.SignUp').show().css({
-    //         'z-index': '3',
-    //         'opacity': '1',
-    //         'top': '0',
-    //     });
-    //     // logAni();
-    // });
+    
     // *** 點選closeBtn關閉表單 ***
-    // $('div.closebtn').click(function(){
-    //     $('#login').css({
-    //         'z-index': '-3',
-    //         'opacity': '0',
-    //         'top': '-30vh',
-    //     }).hide();
-    // });
+    $('.closebtn').click(function(){
+        $('#login').css({
+            'z-index': '-3',
+            'opacity': '0',
+            'top': '-30vh',
+        }).hide();
+    });
 
 });
 
