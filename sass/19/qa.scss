@@ -160,6 +160,65 @@
 }
 
 
+.part31{
+  display: none;
+}
+.part31.on{
+  display: block;
+}
+
+.part311{
+  display: none;
+}
+.part311.on{
+  display: block;
+}
+
+.part32{
+  display: none;
+}
+.part32.on{
+  display: block;
+}
+
+.part321{
+  display: none;
+}
+.part321.on{
+  display: block;
+}
+
+
+.part41{
+  display: none;
+}
+.part41.on{
+  display: block;
+}
+
+.part411{
+  display: none;
+}
+.part411.on{
+  display: block;
+}
+
+.part42{
+  display: none;
+}
+.part42.on{
+  display: block;
+}
+
+.part421{
+  display: none;
+}
+.part421.on{
+  display: block;
+}
+
+
+
 
 
 // 篩選BAR
@@ -289,6 +348,8 @@
     font-size: 30px;
     color: #865454;
     margin: 30px 0px;
+    cursor: pointer;
+
 }
 
 /* 線 */
@@ -312,6 +373,8 @@
     // padding: 0px 90px;
     line-height: 60px;
     margin: 20px 40px;
+    cursor: pointer;
+
 }
 
   /* 第四標題 */
