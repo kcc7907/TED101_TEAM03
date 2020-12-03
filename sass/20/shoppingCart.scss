@@ -186,6 +186,7 @@ body{
             .pick{
                 height: 100%;
                 display: none;
+                cursor: pointer;
             }
             .picbox{
                 height: 70%;
@@ -306,6 +307,7 @@ body{
             .trash{
                 width: 10%;
                 height: 20px;
+                cursor: pointer;
             }
         }
 
@@ -389,6 +391,14 @@ body{
                 border: 1px solid $cbg;
                 color: $cbg;
                 margin: 5px 20px 0;
+            }
+            .buy:hover{
+                background: $cbg;
+                color: $csg;
+            }
+            .backstep:hover{
+                background: $cbg;
+                color: $csg;
             }
         }
 
@@ -542,6 +552,7 @@ body{
                         color: #787878;
                         border-color: #465d4c;
                         margin-bottom: 10px;
+                        background: none;
                     }
                     input{
                         display: block;
@@ -559,6 +570,7 @@ body{
     .done_wrap{
         width: 90%;
         margin: 0 auto;
+        padding-bottom: 30px;
         h2{
             font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
         }
@@ -576,7 +588,6 @@ body{
             margin: 0 auto 20px;
             width: 60%;
             line-height: 30px;
-            text-indent: 15px;
             text-align:justify;
         }
         .done_detail{
@@ -609,6 +620,10 @@ body{
             display: block;
             margin: 0 auto;
             color: #465d4c;
+            &:hover{
+                background: $csg;
+                color: $cbg;
+            }
         }
     }
 
@@ -767,6 +782,11 @@ body{
                 color: $csg;
                 background: none;
                 margin-left: 20px;
+                outline: none;
+                &:hover{
+                    background: #465d4c;
+                    color: $cbg;
+                }
             }
         }
         main{
@@ -789,6 +809,7 @@ body{
                 .pick{
                     display: block;
                     height: 70%;
+                    background: none;
                 }
                 .picbox{
                     order: 1;
@@ -907,12 +928,19 @@ body{
                         order: -1;
                         border:1px solid $csg;
                         margin-top: 15px;
+                        &:hover{
+                            background: $csg;
+                            color: $cbg;
+                        }
                     }
                     .backstep{
                         display: flex;
                         align-items: center;
                         font-size: 14px !important;
                         color: #787878;
+                        &:hover{
+                            color: $csg;
+                        }
                         .backimg{
                             display: block;
                             height: 10px;
@@ -1277,7 +1305,6 @@ body{
             .done_payment_text{
                 margin: 0 auto 30px;
                 width: 180px;
-                text-indent: 25px;
             }
             .done_detail{
                 margin-bottom: 20px;
@@ -1292,7 +1319,6 @@ body{
         .done_wrap{
             .done_payment_text{
                 width: 220px;
-                text-indent: 30px;
                 line-height: 50px;
             }
             table{
