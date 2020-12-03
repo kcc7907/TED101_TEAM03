@@ -25,6 +25,7 @@ div.sam_pi{
     div.deskTopBox{
         width:90%;
         margin:0 auto;
+        margin-top:100px;
         display:flex;
         // border:1px solid black;
         div.leftWrap{
@@ -59,7 +60,134 @@ div.sam_pi{
                     width:25%;
                     height: 25%;
                     margin-left: 10px;
+                    cursor:pointer;
                 }
+            }
+            div.blackBack{
+                position: fixed;
+                width:100%;
+                height: 100vh;
+                background-color: rgba(97,97,97,.8);
+                z-index: 5;
+                top:0;
+                left:0;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 1s;
+                div.secondBack{
+                    width:70%;
+                    margin:0 auto;
+                    border:1px solid rgb(155, 155, 155);
+                    background-color: #fffaf4;
+                    margin-top: 2%;
+                    position: relative;
+                    div.opacityBox{
+                        width:90%;
+                        border:1px solid rgb(100, 70, 70);
+                        background-color: #fffaf4;
+                        font-size: 0;
+                        margin: 3% auto;
+                        img.cancel{
+                            position: absolute;
+                            width: 30px;
+                            height: 30px;
+                            top:1%;
+                            right:1%;
+                            cursor:pointer;
+                        }
+                    }   
+                }
+            }
+            div.blackBack.-on{
+                opacity: 1;
+                z-index: 2;
+            }
+            div.blackBack.-opacity-zero{
+                opacity: 0;
+            }
+            div.blackBack2{
+                position: fixed;
+                width:100%;
+                height: 100vh;
+                background-color: rgba(97,97,97,.8);
+                z-index: 5;
+                top:0;
+                left:0;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 1s;
+                div.secondBack{
+                    width:70%;
+                    margin:0 auto;
+                    border:1px solid rgb(155, 155, 155);
+                    background-color: #fffaf4;
+                    margin-top: 2%;
+                    position: relative;
+                    div.opacityBox{
+                        width:90%;
+                        border:1px solid rgb(100, 70, 70);
+                        background-color: #fffaf4;
+                        font-size: 0;
+                        margin: 3% auto;
+                        img.cancel{
+                            position: absolute;
+                            width: 30px;
+                            height: 30px;
+                            top:1%;
+                            right:1%;
+                            cursor:pointer;
+                        }
+                    }   
+                }
+            }
+            div.blackBack2.-on{
+                opacity: 1;
+                z-index: 2;
+            }
+            div.blackBack2.-opacity-zero{
+                opacity: 0;
+            }
+            div.blackBack3{
+                position: fixed;
+                width:100%;
+                height: 100vh;
+                background-color: rgba(97,97,97,.8);
+                z-index: 5;
+                top:0;
+                left:0;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 1s;
+                div.secondBack{
+                    width:70%;
+                    margin:0 auto;
+                    border:1px solid rgb(155, 155, 155);
+                    background-color: #fffaf4;
+                    margin-top: 2%;
+                    position: relative;
+                    div.opacityBox{
+                        width:90%;
+                        border:1px solid rgb(100, 70, 70);
+                        background-color: #fffaf4;
+                        font-size: 0;
+                        margin: 3% auto;
+                        img.cancel{
+                            position: absolute;
+                            width: 30px;
+                            height: 30px;
+                            top:1%;
+                            right:1%;
+                            cursor:pointer;
+                        }
+                    }   
+                }
+            }
+            div.blackBack3.-on{
+                opacity: 1;
+                z-index: 2;
+            }
+            div.blackBack3.-opacity-zero{
+                opacity: 0;
             }
         }
         div.rightWrap{
@@ -138,16 +266,16 @@ div.sam_pi{
                         }
                     }
                     button.wood1{
-                        background-image: url(../../img/product/material/wood01-10080.jpg);
+                        background-image: url(../img/product/material/wood01-10080.jpg);
                     }
                     button.wood2{
-                        background-image: url(../../img/product/material/wood02-10080.jpg);
+                        background-image: url(../img/product/material/wood02-10080.jpg);
                     }
                     button.wood3{
-                        background-image: url(../../img/product/material/wood03-10080.jpg);
+                        background-image: url(../img/product/material/wood03-10080.jpg);
                     }
                     button.wood4{
-                        background-image: url(../../img/product/material/wood04-10080.jpg);
+                        background-image: url(../img/product/material/wood04-10080.jpg);
                     }
                 }
                 
@@ -236,6 +364,7 @@ div.sam_pi{
         // border:1px solid red;
         width:84%;
         margin:0 auto;
+        margin-top:80px;
         h1.productTitle{
             color:#54383b;
             font-family: 'Noto Sans Tc Regular';
@@ -275,6 +404,7 @@ div.sam_pi{
                 position: absolute;
                 bottom:2%;
                 right:10%;
+                cursor:pointer;
             }
             img.rotate2{
                 width:26px;
@@ -282,6 +412,7 @@ div.sam_pi{
                 position: absolute;
                 bottom:2%;
                 right:3%;
+                cursor:pointer;
             }
         }
         div.lightBox{
@@ -292,7 +423,134 @@ div.sam_pi{
                 width: 120px;
                 height: 120px;
                 margin:0 20px;
+                cursor:pointer;
             }
+        }
+        div.blackBack{
+            position: fixed;
+            width:100%;
+            height: 100vh;
+            background-color: rgba(97,97,97,.8);
+            z-index: 5;
+            top:0;
+            left:0;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 1s;
+            div.secondBack{
+                width:70%;
+                margin:0 auto;
+                border:1px solid rgb(155, 155, 155);
+                background-color: #fffaf4;
+                margin-top: 35%;
+                position: relative;
+                div.opacityBox{
+                    width:90%;
+                    border:1px solid rgb(100, 70, 70);
+                    background-color: #fffaf4;
+                    font-size: 0;
+                    margin: 3% auto;
+                    img.cancel-mobile{
+                        position: absolute;
+                        width: 15px;
+                        height: 15px;
+                        top:1%;
+                        right:1%;
+                        cursor:pointer;
+                    }
+                }   
+            }
+        }
+        div.blackBack.-on{
+            opacity: 1;
+            z-index: 2;
+        }
+        div.blackBack.-opacity-zero{
+            opacity: 0;
+        }
+        div.blackBack2{
+            position: fixed;
+            width:100%;
+            height: 100vh;
+            background-color: rgba(97,97,97,.8);
+            z-index: 5;
+            top:0;
+            left:0;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 1s;
+            div.secondBack{
+                width:70%;
+                margin:0 auto;
+                border:1px solid rgb(155, 155, 155);
+                background-color: #fffaf4;
+                margin-top: 35%;
+                position: relative;
+                div.opacityBox{
+                    width:90%;
+                    border:1px solid rgb(100, 70, 70);
+                    background-color: #fffaf4;
+                    font-size: 0;
+                    margin: 3% auto;
+                    img.cancel-mobile{
+                        position: absolute;
+                        width: 15px;
+                        height: 15px;
+                        top:1%;
+                        right:1%;
+                        cursor:pointer;
+                    }
+                }   
+            }
+        }
+        div.blackBack2.-on{
+            opacity: 1;
+            z-index: 2;
+        }
+        div.blackBack2.-opacity-zero{
+            opacity: 0;
+        }
+        div.blackBack3{
+            position: fixed;
+            width:100%;
+            height: 100vh;
+            background-color: rgba(97,97,97,.8);
+            z-index: 5;
+            top:0;
+            left:0;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 1s;
+            div.secondBack{
+                width:70%;
+                margin:0 auto;
+                border:1px solid rgb(155, 155, 155);
+                background-color: #fffaf4;
+                margin-top: 35%;
+                position: relative;
+                div.opacityBox{
+                    width:90%;
+                    border:1px solid rgb(100, 70, 70);
+                    background-color: #fffaf4;
+                    font-size: 0;
+                    margin: 3% auto;
+                    img.cancel-mobile{
+                        position: absolute;
+                        width: 15px;
+                        height: 15px;
+                        top:1%;
+                        right:1%;
+                        cursor:pointer;
+                    }
+                }   
+            }
+        }
+        div.blackBack3.-on{
+            opacity: 1;
+            z-index: 2;
+        }
+        div.blackBack3.-opacity-zero{
+            opacity: 0;
         }
         div.material{
             // border:1px solid blue;
@@ -334,16 +592,16 @@ div.sam_pi{
                     }
                 }
                 button.wood1{
-                    background-image: url(../../img/product/material/wood01-10080.jpg);
+                    background-image: url(../img/product/material/wood01-10080.jpg);
                 }
                 button.wood2{
-                    background-image: url(../../img/product/material/wood02-10080.jpg);
+                    background-image: url(../img/product/material/wood02-10080.jpg);
                 }
                 button.wood3{
-                    background-image: url(../../img/product/material/wood03-10080.jpg);
+                    background-image: url(../img/product/material/wood03-10080.jpg);
                 }
                 button.wood4{
-                    background-image: url(../../img/product/material/wood04-10080.jpg);
+                    background-image: url(../img/product/material/wood04-10080.jpg);
                 }
             }
         }
@@ -381,6 +639,7 @@ div.sam_pi{
                 img.up,img.down{
                     width:18px;
                     height:16px;
+                    cursor:pointer;
                 }
             }
         }
@@ -397,6 +656,12 @@ div.sam_pi{
                 border:1px solid #BDA79E;
                 margin:0 40px;
                 margin-top:10%;
+                transition:all .5s;
+                cursor:pointer;
+                &:hover{
+                    background-color: #BDA79E;
+                    color:#fffaf4;
+                }
             }
         }
         div.productMessage{
@@ -428,6 +693,36 @@ div.sam_pi{
                 width:80px;
                 height:80px;
                 margin:0 20px;
+            }
+        }
+        div.blackBack{
+            div.secondBack{
+                div.opacityBox{
+                    img.cancel-mobile{
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+        div.blackBack2{
+            div.secondBack{
+                div.opacityBox{
+                    img.cancel-mobile{
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+        div.blackBack3{
+            div.secondBack{
+                div.opacityBox{
+                    img.cancel-mobile{
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
             }
         }
         div.material{
@@ -466,6 +761,45 @@ div.sam_pi{
         div.lightBox{
             img.boxImg{
                 margin:0 5px;
+            }
+        }
+        div.blackBack{
+            div.secondBack{
+                top:25%;
+                div.opacityBox{
+                    img.cancel-mobile{
+                        width: 9px;
+                        height: 9px;
+                        top:0;
+                        right:0;
+                    }
+                }
+            }
+        }
+        div.blackBack2{
+            div.secondBack{
+                top:25%;
+                div.opacityBox{
+                    img.cancel-mobile{
+                        width: 9px;
+                        height: 9px;
+                        top:0;
+                        right:0;
+                    }
+                }
+            }
+        }
+        div.blackBack3{
+            div.secondBack{
+                top:25%;
+                div.opacityBox{
+                    img.cancel-mobile{
+                        width: 9px;
+                        height: 9px;
+                        top:0;
+                        right:0;
+                    }
+                }
             }
         }
         div.material{
@@ -1005,6 +1339,38 @@ div.sam_pi{
             margin:30px 0px 30px 80px;
         }
         div.deskTopBox{
+            div.leftWrap{
+                div.blackBack{
+                    div.secondBack{
+                        div.opacityBox{
+                            img.cancel{
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+                    }
+                }
+                div.blackBack2{
+                    div.secondBack{
+                        div.opacityBox{
+                            img.cancel{
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+                    }
+                }
+                div.blackBack3{
+                    div.secondBack{
+                        div.opacityBox{
+                            img.cancel{
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
             div.rightWrap{
                 div.productWord{
                     p.word{
@@ -1119,36 +1485,188 @@ div.sam_pi{
     
 ///////////////////////slider//////////////////
 div.sam_pi{
-    div.leftIcon{
-        width:5%;
-        display:inline-block;
-        img{
-            width: 50px;
-            height: 85px;
+    div.container{
+        position: relative;
+        margin:80px auto;
+        div.leftIcon{
+            display:inline-block;
+            position: absolute;
+            top:30%;
+            left:1%;
+            cursor:pointer;
+            img{
+                width: 50px;
+                height: 85px;
+            }
+        }
+        div.rightIcon{
+            display:inline-block;
+            position: absolute;
+            top:30%;
+            right:1%;
+            cursor:pointer;
+            img{
+                width: 50px;
+                height: 85px;
+            }
+        }
+        div.sliderBox{
+            width:86%;
+            margin:0 auto;
+            overflow: hidden;
+            div.slider{
+                display:flex;
+                width: 100%;
+                height: 400px;
+                img{
+                    padding:0px 25px;
+                    width:550px;
+                }
+            }
         }
     }
-    div.rightIcon{
-        width:5%;
-        display:inline-block;
-        img{
-            width: 50px;
-            height: 85px;
+    @media (max-width:1915px){
+        div.container{
+            div.leftIcon{
+                top:30%;
+                left:1%;
+                img{
+                    width: 50px;
+                    height: 85px;
+                }
+            }
+            div.rightIcon{
+                top:30%;
+                right:1%;
+                img{
+                    width: 50px;
+                    height: 85px;
+                }
+            }
+            div.sliderBox{
+                width:1100px;
+                margin:0 auto;
+                overflow: hidden;
+                div.slider{
+                    width: 100%;
+                    height: 400px;
+                    img{
+                    }
+                }
+            }
         }
     }
-    div.sliderBox{
-        border:1px solid red;
-        width: 80%;
-        margin:0 auto;
-        overflow: hidden;
-        height: 400px;
-        margin:30px auto;
-        // position: relative;
-        ul#content{
-            // overflow: hidden;
-            position: relative;
-            width:2000px;
-            li{
-                float:left;
+    @media (max-width:1366px){
+        div.container{
+            div.leftIcon{
+                top:50%;
+                left:1%;
+                img{
+                    width: 30px;
+                    height: 50px;
+                }
+            }
+            div.rightIcon{
+                top:50%;
+                right:1%;
+                img{
+                    width: 30px;
+                    height: 50px;
+                }
+            }
+            div.sliderBox{
+                width:1100px;
+                margin:0 auto;
+                overflow: hidden;
+                div.slider{
+                    width: 100%;
+                    height: 400px;
+                    img{
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:1200px){
+        div.container{
+            div.leftIcon{
+                top:40%;
+                img{
+                    width: 40px;
+                    height: 60px;
+                }
+            }
+            div.rightIcon{
+                top:40%;
+                img{
+                    width: 40px;
+                    height: 60px;
+                }
+            }
+            div.sliderBox{
+                width:550px;
+                margin:0 auto;
+                overflow: hidden;
+                div.slider{
+                    width: 100%;
+                    height: 400px;
+                    img{
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:600px){
+        div.container{
+            div.leftIcon{
+                top:25%;
+                img{
+                    width: 20px;
+                    height: 40px;
+                }
+            }
+            div.rightIcon{
+                top:25%;
+                img{
+                    width: 20px;
+                    height: 40px;
+                }
+            }
+            div.sliderBox{
+                width:360px;
+                margin:0 auto;
+                overflow: hidden;
+                div.slider{
+                    width: 100%;
+                    height: 400px;
+                    img{
+                        width:360px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:360px){
+        div.container{
+            div.leftIcon{
+                img{
+                }
+            }
+            div.rightIcon{
+                img{
+                }
+            }
+            div.sliderBox{
+                width:330px;
+                margin:0 auto;
+                overflow: hidden;
+                div.slider{
+                    width: 100%;
+                    height: 400px;
+                    img{
+                        width:330px;
+                    }
+                }
             }
         }
     }

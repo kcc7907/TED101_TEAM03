@@ -1,5 +1,10 @@
 $(document).ready(function(){
     
+    memSetStyle();
+
+    $(window).resize(function(){
+        memSetStyle();
+    });
     
     //點擊修改會員資料================================================
     $('.jk_meminfo form>div>div>span').click(function(e){
@@ -10,10 +15,8 @@ $(document).ready(function(){
         let myself = e.target.className;
         if(myself == "btn_pwd"){   //修改密碼
             $('#changePassword input').attr({value:''}); //初值為空字串
-            $('#changePassword').css({display:'flex'}); //顯示修改密碼欄位
-            // $('#changePassword').slideDown(300).css({display:'flex'}); //顯示修改密碼欄位
-
-            $('#password').hide();         
+            $('#changePassword').css({display:'flex'}); //顯示修改密碼欄位 
+            $('#password').hide();  
 
         }else{                      //修改一般資料
             let inputChange = $(`input#${myself}`);
@@ -29,12 +32,12 @@ $(document).ready(function(){
 
     //輸入時背景提醒
     
-    $('.input').focus(function(){
+    $('.jk_meminfo .input').focus(function(){
         $(this).css({
             backgroundColor: '#ddd',
         })
     });
-    $('.input').blur(function(){
+    $('.jk_meminfo .input').blur(function(){
         $(this).css({
             backgroundColor: 'rgba(0,0,0,0)',
         })
@@ -55,82 +58,58 @@ $(document).ready(function(){
     })
 
     //資料送出判定==========================================================
+    
     $('#memberInfo').submit(function(e){
         
-        let send_data = true;
+        let send_data = true;   
 
         let email = document.getElementById("email");
+        $(email).removeClass("-error");
+        $('.jk_meminfo form>div>div>label[for="email"]+span.warn').remove();
+
          //信箱未填
         if(email.value.trim() == ""){
             send_data = false;
             email.value = "";
-            if(!(email.classList.contains('-error'))){                
-                $('label[for="email"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
-                $(email).addClass("-error");
-            }
-        }else{
-            $(email).removeClass("-error");
-            $('form>div>div>label[for="email"]+span.warn').remove();
-        }
-
-        //信箱格式
-        // if(is.email(email.value)){
-        //     $('email').removeClass("-error");
-        //     $('form>div>div>label[for="email"]+span.warn').remove();
-        // }else{
-        //     send_data = false;
-        //     if(email.hasClass('-error')){
-
-        //         $('.jk_meminfo form>div>div>label[for="email"]+span.warn').remove();
-        //         $('.jk_meminfo form>div>div>label[for="email"]').after('<span class="warn" style="color:red;">*信箱格式錯誤</sapn>');
-
-        //     }else{
-        //         $('.jk_meminfo form>div>div>label[for="email"]').after('<span class="warn" style="color:red;">*信箱格式錯誤</sapn>');
-        //         email.addClass("-error");
-        //     }
-        // }
+            $('.jk_meminfo label[for="email"]').after('<span class="warn" style="color:red;">*欄位不可為空</sapn>')
+            $(email).addClass("-error");
+            
+        }        
+        
+        let phone = document.getElementById("phone");
+        $(phone).removeClass("-error");
+        $('.jk_meminfo form>div>div>label[for="phone"]+span.warn').remove();
         
         //手機未填
-        let phone = document.getElementById("phone");
         if(phone.value == ""){  //已限制輸入字元，不用trim()
-            send_data = false;            
-            if(!(phone.classList.contains('-error'))){                
-                $('label[for="phone"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
-                $(phone).addClass("-error");
-            }
-        }else{
-            $(phone).removeClass("-error");
-            $('form>div>div>label[for="phone"]+span.warn').remove();
+            send_data = false; 
+            $('.jk_meminfo label[for="phone"]').after('<span class="warn" style="color:red;">*欄位不可為空</sapn>')
+            $(phone).addClass("-error");
+            
         }
 
-        //姓名未填
         let name = document.getElementById("name");
+        $(name).removeClass("-error");
+        $('.jk_meminfo form>div>div>label[for="name"]+span.warn').remove();
+
+        //姓名未填
         if(name.value.trim() == ""){
             send_data = false;
             name.value = "";
-            if(!(name.classList.contains('-error'))){                
-                $('label[for="name"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
-                $(name).addClass("-error");
-            }
-            
-        }else{
-            $(name).removeClass("-error");
-            $('form>div>div>label[for="name"]+span.warn').remove();
+            $('.jk_meminfo label[for="name"]').after('<span class="warn" style="color:red;">*欄位不可為空</sapn>')
+            $(name).addClass("-error");                        
         }
 
-        //地址未填
         let address = document.getElementById("address");
+        $(address).removeClass("-error");
+        $('.jk_meminfo form>div>div>label[for="address"]+span.warn').remove();
+
+        //地址未填
         if(address.value.trim() == ""){
             send_data = false;
             address.value = "";
-            if(!(address.classList.contains('-error'))){                
-                $('label[for="address"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>')
-                $(address).addClass("-error");
-            }
-
-        }else{
-            $(address).removeClass("-error");
-            $('form>div>div>label[for="address"]+span.warn').remove();
+            $('.jk_meminfo label[for="address"]').after('<span class="warn" style="color:red;">*欄位不可為空</sapn>')
+            $(address).addClass("-error");
         }
 
         //修改密碼============================================
@@ -143,7 +122,7 @@ $(document).ready(function(){
                 if(!(password[i].classList.contains('-error'))){        
                     
                     if(!(changePassword.classList.contains('-er'))){    //內外層皆無錯誤樣式
-                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>');
+                        $('.jk_meminfo label[for="password"]').after('<span class="warn" style="color:red;">*欄位不可為空</sapn>');
                         $('#changePassword').addClass('-er');
                     }
                     password[i].classList.add("-error");
@@ -151,7 +130,7 @@ $(document).ready(function(){
                 }else{                                                  
 
                     if(!(changePassword.classList.contains('-er'))){    //外層無錯誤樣式
-                        $('label[for="password"]').after('<span class="warn" style="color:red;">*修改欄位不可為空</sapn>');
+                        $('.jk_meminfo label[for="password"]').after('<span class="warn" style="color:red;">*欄位不可為空</sapn>');
                         $('#changePassword').addClass('-er');
                     }
                     
@@ -164,14 +143,14 @@ $(document).ready(function(){
                 if(!password[0].classList.contains('-error') && !password[1].classList.contains('-error') && !password[2].classList.contains('-error')){
                     
                     $('#changePassword').removeClass('-er');
-                    $('form>div>div>label[for="password"]+span.warn').remove();
+                    $('.jk_meminfo form>div>div>label[for="password"]+span.warn').remove();
 
 
                     //新密碼相符判斷
                     if(password[1].value === password[2].value){    
                         
                         $('#changePassword').removeClass('-er');
-                        $('form>div>div>label[for="password"]+span.warn').remove();
+                        $('.jk_meminfo form>div>div>label[for="password"]+span.warn').remove();
     
                     }else{ 
                         
@@ -179,10 +158,10 @@ $(document).ready(function(){
                         if(!(password[i].classList.contains('-error'))){
     
                             if(!(changePassword.classList.contains('-er'))){
-                                $('label[for="password"]').after('<span class="warn" style="color:red;">*確認密碼不正確</sapn>')
+                                $('.jk_meminfo label[for="password"]').after('<span class="warn" style="color:red;">*確認密碼不正確</sapn>')
                                 $('#changePassword').addClass('-er');
                             }else{
-                                $('label[for="password"]+span').replace('修改欄位不可為空','確認密碼不正確')
+                                $('.jk_meminfo label[for="password"]+span').replace('欄位不可為空','確認密碼不正確')
                                 // $('label[for="password"]').after('<span class="warn" style="color:red;">*確認密碼不正確</sapn>')
                                 
                             }
@@ -191,10 +170,10 @@ $(document).ready(function(){
                         }else{
     
                             if(!(changePassword.classList.contains('-er'))){
-                                $('label[for="password"]').after('<span class="warn" style="color:red;">*確認密碼不正確</sapn>')
+                                $('.jk_meminfo label[for="password"]').after('<span class="warn" style="color:red;">*確認密碼不正確</sapn>')
                                 $('#changePassword').addClass('-er');
                             }else{
-                                $('label[for="password"]+span').replace('修改欄位不可為空','確認密碼不正確')
+                                $('.jk_meminfo label[for="password"]+span').replace('欄位不可為空','確認密碼不正確')
                                 // $('label[for="password"]').after('<span class="warn" style="color:red;">*確認密碼不正確</sapn>')
                                 
                             }        
@@ -204,24 +183,27 @@ $(document).ready(function(){
             }
         }
         
+        $('.jk_meminfo input[type="hidden"]').attr('value', `${new Date()}`);
 
         if(!send_data){
             e.preventDefault();
         }
     });
 
+
+    //取消修改資料==========================================================
     let memberInfo = document.getElementById('memberInfo');
     memberInfo.addEventListener('reset', function(){
 
-        $('form>div>div>span.warn').remove();                   //移除警示字串
+        $('.jk_meminfo form>div>div>span.warn').remove();                   //移除警示字串
         $('#changePassword').removeClass('-er');                //移除.-er
-        $('form input.-error').removeClass('-error');           //移除.-error
-        $('form>div>div>span:hidden').show();                   //顯示修改按鈕
+        $('.jk_meminfo form input.-error').removeClass('-error');           //移除.-error
+        $('.jk_meminfo form>div>div>span:hidden').show();                   //顯示修改按鈕
         $('#changePassword input').attr({value:'********'});    //密碼初值不為空字串
         $('#changePassword').hide();                            //隱藏密碼更新欄位
         $('#btn').hide();                                       //隱藏表單送出按鈕
         $('#password').show();                                  //顯示密碼欄位
-        $('input[className="able"]').attr({                     //資料顯示欄位不可更新
+        $('.jk_meminfo input[className="able"]').attr({                     //資料顯示欄位不可更新
             disabled: true,
             className: '',
         });   
@@ -231,11 +213,19 @@ $(document).ready(function(){
 
     })
 
-})
+});
 
+function memSetStyle(){
 
-//長度是否有最少及最多限制?     密碼8-12
+    let winWidth = $(window).width();
+
+    if(winWidth < 576){
+        $('.jk_meminfo .pwd_warn').text('6~12字元')
+    }else{
+        $('.jk_meminfo .pwd_warn').text('密碼長度限制6~12字元')
+    }
+
+}
+
 //手機09開頭 長度10
-//空白字元會傳值?               全部trim
-//rwd的按鈕及字體大小 
 

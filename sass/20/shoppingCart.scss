@@ -137,7 +137,18 @@ body{
                 margin-right: 3px;
             }
         }
+        .title.-onColor{
+            color: #54383b;
+            .circle{
+                background: #54383b;
+                color: $cbg;
+            }
+            h2{
+                font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+            }
+        }
     }
+    
     .all{
         display: none;
     }
@@ -150,16 +161,18 @@ body{
             position: relative;
             margin-bottom: 40px;
             &:before{
-                    content: '';
-                    height: 1px;
-                    background: $csg;
-                    width: 90%;
-                    position: absolute;
+                content: '';
+                height: 1px;
+                background: $csg;
+                width: 90%;
+                position: absolute;
+                top:0px;
             }
             .product{
                 width: 85%;
             }
         }
+
         .list{
             width: 100%;
             height: 180px;
@@ -173,6 +186,7 @@ body{
             .pick{
                 height: 100%;
                 display: none;
+                cursor: pointer;
             }
             .picbox{
                 height: 70%;
@@ -187,13 +201,16 @@ body{
                 }
                 .tag{
                     position: absolute;
-                    right: 0px;
-                    top: 0px;
+                    right: -0.45px;
+                    top: -0.5px;
                     color: $csdr;
                     border: $csdr 1px solid;
-                    width: 15px;
-                    height: 15px;
                     text-align: center;
+                    padding: 2px 4px;
+                    p{
+                        display: block;
+                        margin: auto;
+                    }
                 }
             }
             .discountbox{
@@ -255,16 +272,18 @@ body{
                         align-items: center;
                         width: 20px;
                         height: 20px;
+                        cursor: pointer;
                     }
                     .arrowr{
                         display: flex;
                         align-items: center;
                         width: 20px;
                         height: 20px;
+                        cursor: pointer;
                     }
                     .num{
                         width: 25px;
-                        font-size: 18px;
+                        font-size: 12px;
                         border: none;
                         background: none;
                         text-align: center;
@@ -281,12 +300,14 @@ body{
                         display: flex;
                         align-items: center;
                         width: 20px;
-                        height: 15px;
+                        height: 10px;
                     }
                 }
             }
             .trash{
-                    height: 20px;
+                width: 10%;
+                height: 20px;
+                cursor: pointer;
             }
         }
 
@@ -309,8 +330,15 @@ body{
                 justify-content: space-between;
                 text-align: center;
                 .openimg{
-                    display: none;
+                    height: 8px;
+                    margin-left: 5px;
                 }
+                .unflod{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                    }
             }
             .cart_top_list{
                 font-size: 0;
@@ -357,20 +385,252 @@ body{
                 }
             }
             button{
+                cursor: pointer;
+                outline: none;
                 background-color: $csg;
                 border: 1px solid $cbg;
                 color: $cbg;
                 margin: 5px 20px 0;
             }
+            .buy:hover{
+                background: $cbg;
+                color: $csg;
+            }
+            .backstep:hover{
+                background: $cbg;
+                color: $csg;
+            }
+        }
+
+
+        //left2
+        .left2{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            *{
+                font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+                color: #465d4c;
+            }
+            h2{
+                padding: 20px 0 10px;
+            }
+            .outer{
+                width: 80%;
+                border: #465d4c 1px solid;
+            }
+            .checkT{
+                display: flex;
+                >input{
+                    margin: auto 10px;
+                }
+            }
+            .df{
+                display: flex;
+            }
+            .lh{
+                display: inline-block;
+                margin: auto 0;
+            }
+            input{
+                background-color: $cbg;
+                padding: 0;
+                outline: none;
+                border: 1px solid #465d4c;
+                font-size: 12px;
+                font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+                color: #787878;
+            }
+
+            //購買人
+            .memberbox{
+                padding: 15px 15px 0;
+                white-space: nowrap;
+                > div{
+                    margin-bottom: 15px;
+                }
+                button{
+                    padding: 0;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    color: #787878;
+                }
+                .innerT{
+                    width: 15%;
+                    text-align: center;
+                }
+                .modified{
+                    width: 15%;
+                }
+                input{
+                    padding: 0;
+                    width: 70%;
+                    margin-left: 20px;
+                    border: none;
+                    border-bottom: 1px solid #465d4c;
+                }
+            }
+
+            //付款
+            .paymentbox{
+                padding-top: 15px;
+                img{
+                    max-width: 100%;
+                }
+                >div{
+                    margin-bottom: 10px;
+                }
+            }
+            .card_box{
+                padding: 10px 10px 0;
+                width: 80%;
+                margin: 0 auto;
+                border: #465d4c 1px solid;
+                position: relative;
+                font-size: 0;
+                .inputnum_box{
+                    width: 100%;
+                }
+                input{
+                    width: 20%;
+                    margin-bottom: 10px;
+                    margin-right: 10px;
+                }
+                p{
+                    margin-bottom: 10px;
+                }
+            }
+            .cardicon_box{
+                position: absolute;
+                right: 15px;
+                bottom: 10px;
+                img{
+                    width: 35px;
+                    margin-left: 5px;
+                    // filter: grayscale(100%);
+                }
+            }
+            .remit_box{
+                padding: 10px 10px 0;
+                width: 80%;
+                margin: 0 auto;
+                border: #465d4c 1px solid;
+                font-size: 0;
+                white-space: nowrap;
+                >div{
+                    margin-bottom: 10px;
+                    >p:nth-child(1){
+                        width: 25%;
+                        margin-right: 20px;
+                    }
+                }
+                .gary{
+                    font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+                    color: #787878;
+                }
+            }
+
+            //運送
+            .addsbox{
+                padding: 10px 0;
+                font-size: 0;
+                >div{
+                    margin-bottom: 10px;
+                }
+                .address_box{
+                    padding: 10px 10px 0;
+                    width: 80%;
+                    margin: 0 auto;
+                    border: #465d4c 1px solid;
+                    font-size: 0;
+                    white-space: nowrap;
+                    select{
+                        font-size: 12px;
+                        color: #787878;
+                        border-color: #465d4c;
+                        margin-bottom: 10px;
+                        background: none;
+                    }
+                    input{
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                    p{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    //done
+    .done_wrap{
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        h2{
+            font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+        }
+        .icon{
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 20px;
+        }
+        .tks{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #54383b;
+        }
+        .done_payment_text{
+            margin: 0 auto 20px;
+            width: 60%;
+            line-height: 30px;
+            text-align:justify;
+        }
+        .done_detail{
+            text-align: center;
+            margin-bottom: 10px;
+            color: #787878;
+        }
+        table{
+            width: 80%;
+            margin: 0 auto 20px;
+            text-align: center;
+            td,th,tr{
+                border: #465d4c 1px solid;
+                padding: 10px;
+                font-size: 12px;
+            }
+            th{
+                font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+                color: #465d4c;
+            }
+            td{
+                font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+                color: #787878;
+            }
+        }
+        .backshop{
+            outline: none;
+            background: none;
+            border: #465d4c 1px solid;
+            display: block;
+            margin: 0 auto;
+            color: #465d4c;
+            &:hover{
+                background: $csg;
+                color: $cbg;
+            }
         }
     }
 
 
+    //paragraph
     @include title();
     @include para();
-
-
-
 
     //cart
     @include rwd(360){
@@ -388,17 +648,111 @@ body{
                 }
             }
         }
-        .right{
-            .cart_top{
-                padding: 0 20px;
+        main{
+            .right{
+                .cart_top{
+                    padding: 0 20px;
+                }
+                .cart_btn{
+                    padding: 0 20px;
+                }
             }
-            .cart_btn{
-                padding: 0 20px;
+
+            .list{
+                .count{
+                    .totalbox{
+                        margin-bottom: 30px;
+                    }
+                    .numbox{
+                        .num{
+                            font-size: 16px;
+                        }
+                        img{
+                            height: 12px;
+                        }
+                    }
+                }
             }
         }
     }
-    @include rwd(768){}
-    @include rwd(992){}
+    @include rwd(768){
+        main{
+            .right{
+                .cart_top{
+                    padding: 0 50px;
+                }
+                .cart_btn{
+                    padding: 0 80px;
+                }
+                .tatal_list{
+                    p:nth-child(1),
+                    p:nth-child(2){
+                        margin-right: 25px;
+                    }
+                }
+                .pricenum{
+                min-width: 110px;
+                }
+            }
+            .left{
+                &:before{
+                    width: 80%;
+                }
+            }
+            .list{
+                width: 85%;
+                margin: 0 auto;
+                height: 250px;
+                margin-top: 20px;
+                .picbox{
+                    .imgbox{
+                        width: 180px;
+                    }
+                }
+                .info{
+                    .procduct_name{
+                        margin-bottom: 25px;
+                    }
+                    .material{
+                        margin-bottom: 0px;
+                    }
+                }
+                .count{
+                    .totalbox{
+                        margin-top: 25px;
+                        margin-bottom: 30px;
+                    }
+                }
+                .trash{
+                height: 25px;
+                }
+            }
+        }
+    }
+    @include rwd(992){
+        main{
+            .right{
+                .cart_top{
+                    padding: 0 90px;
+                }
+                .cart_btn{
+                    padding: 0 110px;
+                }
+            }
+            .list{
+                .count{
+                    .numbox{
+                        .num{
+                            font-size: 20px;
+                        }
+                        img{
+                            height: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
     @include rwd(1200){
         .kcc_cartbody{
             // display: flex;
@@ -428,6 +782,11 @@ body{
                 color: $csg;
                 background: none;
                 margin-left: 20px;
+                outline: none;
+                &:hover{
+                    background: #465d4c;
+                    color: $cbg;
+                }
             }
         }
         main{
@@ -443,18 +802,19 @@ body{
                 }
             }
             .list{
+                width: 100%;
                 height: 320px;
+                justify-content: flex-start;
+                padding-bottom: 20px;
                 .pick{
                     display: block;
+                    height: 70%;
+                    background: none;
                 }
                 .picbox{
                     order: 1;
                     .imgbox{
                         width: 200px;
-                    }
-                    .tag{
-                        width: 25px;
-                        height: 25px;
                     }
                 }
                 .info{
@@ -462,16 +822,18 @@ body{
                     height: 30%;
                     flex-direction: row;
                     flex-wrap: wrap;
+                    justify-content: center;
                     padding: 0 60px;
                     .procduct_name{
                         width: 100%;
+                        margin: 10px 0 0;
                     }
                     .material{
                         width: 50%;
-                        text-align: left;
+                        text-align: center;
                     }
                     .pricebox{
-                        display: flex;
+                        // display: flex;
                         width: 50%;
                         justify-content: flex-end;
                     }
@@ -483,6 +845,7 @@ body{
                     justify-content: center;
                     align-items: center;
                     .totalbox{
+                        margin-top: 0;
                         margin-bottom: 0px;
                         width: 50%;
                     }
@@ -496,14 +859,17 @@ body{
                 }
                 .trash{
                     order: 5;
+                    height: 70%;
+                    width: 24px;
                 }
             }
             .right{
+                padding: 10px;
                 width: 300px;
                 flex-direction: row;
                 flex-wrap: wrap;
                 background:none;
-                color: #465d4c;
+                color: #787878;
                 border: #465d4c solid 1px;
                 top: 0;
                 .titlenum{
@@ -515,6 +881,7 @@ body{
                     width: 100%;
                     flex-direction: column;
                     align-items: center;
+                    padding: 0 ;
                     .openimg{
                         display: block;
                         height: 10px;
@@ -522,9 +889,6 @@ body{
                         margin-left: 5px;
                     }
                     .unflod{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
                         margin-bottom: 10px;
                     }
                 }
@@ -536,6 +900,24 @@ body{
                 }
                 .totalconut{
                     align-self: flex-end;
+                    p{
+                    margin-bottom: 10px;
+                    }
+                }
+                .pricenum{
+                    min-width: 90px;
+                }
+                .discount_num{
+                    color: $csdr;
+                    p{
+                        font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+                    }
+                }
+                .final_num{
+                    color: #465d4c;
+                    p{
+                        font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+                    }
                 }
                 .cart_btn{
                     width: 100%;
@@ -543,12 +925,22 @@ body{
                     justify-content: center;
                     align-items: center;
                     .buy{
+                        order: -1;
                         border:1px solid $csg;
+                        margin-top: 15px;
+                        &:hover{
+                            background: $csg;
+                            color: $cbg;
+                        }
                     }
                     .backstep{
                         display: flex;
                         align-items: center;
                         font-size: 14px !important;
+                        color: #787878;
+                        &:hover{
+                            color: $csg;
+                        }
                         .backimg{
                             display: block;
                             height: 10px;
@@ -565,7 +957,44 @@ body{
         }
 
     }
-    @include rwd(1500){}
+    @include rwd(1500){
+        .all{
+            .checkAll{
+                width: 18px;
+                height: 18px;
+            }
+            .delAll{
+                margin-left: 40px;
+            }
+        }
+        main{
+            .list{
+                .pick{
+                    display: block;
+                    height: 70%;
+                    width: 18px;
+                }
+                .picbox{
+                    .imgbox{
+                        width: 230px;
+                    }
+                }
+                .count{
+                    .numbox{
+                        .num{
+                            font-size: 24px;
+                        }
+                        img{
+                            height: 18px;
+                        }
+                    }
+                }
+                 .trash{
+                    width: 26px;
+                }
+            }
+        }
+    }
     @include rwd(1700){
         .top{
             height: 140px;
@@ -582,6 +1011,362 @@ body{
     }
 
 
+    //order rwd
+    @include rwd(360){
+        main{
+            .left2{
+                width: 100%;
+            }
+        }
+    }
+    @include rwd(576){
+        main{
+            .left2{
+                width: 80%;
+                margin: 0 auto;
+                input{
+                padding: 0;
+                font-size: 14px;
+                }
+                .addsbox{
+                    .address_box{
+                        select{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include rwd(768){
+        main{
+            .left2{
+                h2{
+                    padding: 30px 0 20px;
+                }
+                .outer{
+                    width: 100%;
+                }
+                input{
+                padding: 0;
+                }
+                .checkT{
+                    >input{
+                        margin-left: 20px;
+                    }
+                }
+                .memberbox{
+                    padding: 20px 20px 0;
+                    white-space: nowrap;
+                    > div{
+                        margin-bottom: 20px;
+                    }
+                }
+                .paymentbox{
+                    padding-top: 20px;
+                    >div{
+                        margin-bottom: 20px;
+                    }
+                }
+                .card_box{
+                    padding: 20px 20px 0;
+                    input{
+                        width: 20%;
+                        margin-bottom: 20px;
+                        margin-right: 20px;
+                    }
+                    p{
+                        margin-bottom: 20px;
+                    }
+                }
+                .cardicon_box{
+                    right: 25px;
+                    bottom: 20px;
+                    img{
+                        width: 50px;
+                        margin-left: 15px;
+                    }
+                }
+                .remit_box{
+                    padding: 20px 20px 0;
+                    >div{
+                        margin-bottom: 20px;
+                        >p:nth-child(1){
+                        margin-right: 30px;
+                    }
+                    }
+                }
+                .addsbox{
+                    padding: 20px 0;
+                    >div{
+                    margin-bottom: 20px;
+                    }
+                    .address_box{
+                        padding: 20px 20px 0;
+                        select{
+                            width: 20%;
+                            margin-bottom: 20px;
+                        }
+                        input{
+                            width: 75%;
+                            margin-left: 5%;
+                            display: inline-block;
+                        }
+                        p{
+                        margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include rwd(992){
+        main{
+            .left2{
+                width: 70%;
+                input{
+                padding: 0;
+                font-size: 18px;
+                }
+                .addsbox{
+                    .address_box{
+                        select{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include rwd(1200){
+        main{
+            .left2{
+                padding-bottom: 30px;
+                width: 800px;
+                margin: 0;
+                align-items: flex-start;
+                h2{
+                    padding: 40px 0 30px 10px;
+                }
+                .info{
+                    padding-top: 0;
+                }
+                input{
+                padding: 0;
+                }
+                .checkT{
+                    >input{
+                        margin-left: 30px;
+                    }
+                }
+                .memberbox{
+                    padding: 30px 30px 0;
+                    white-space: nowrap;
+                    > div{
+                        margin-bottom: 30px;
+                    }
+                }
+                .paymentbox{
+                    padding-top: 30px;
+                    >div{
+                        margin-bottom: 30px;
+                    }
+                }
+                .card_box{
+                    padding: 30px 30px 0;
+                    input{
+                        width: 85px;
+                        margin-bottom: 30px;
+                        margin-right: 20px;
+                    }
+                    p{
+                        margin-bottom: 30px;
+                        margin-right: 10px;
+                        width: 25%;
+                    }
+                    .cardnum_box{
+                        display: flex;
+                        .inputnum_box{
+                            width: auto;
+                        }
+                    }
+                    .carddate_box{
+                        display: flex;
+                    }
+                    .cardcode_box{
+                        display: flex;
+                    }
+                }
+                .cardicon_box{
+                    right: 30px;
+                    bottom: 30px;
+                    img{
+                        width: 65px;
+                        margin-left: 20px;
+                    }
+                }
+                .remit_box{
+                    padding: 30px 30px 0;
+                    >div{
+                        margin-bottom: 30px;
+                        >p:nth-child(1){
+                        margin-right: 30px;
+                    }
+                    }
+                }
+                .addsbox{
+                    padding: 30px 0;
+                    >div{
+                    margin-bottom: 30px;
+                    }
+                    .address_box{
+                        padding: 30px 30px 0;
+                        select{
+                            width: 20%;
+                            margin-bottom: 30px;
+                        }
+                        input{
+                            width: 75%;
+                            margin-left: 5%;
+                            display: inline-block;
+                        }
+                        p{
+                        margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include rwd(1500){
+        main{
+            .left2{
+                input{
+                padding: 0;
+                font-size: 22px;
+                }
+                .addsbox{
+                    .address_box{
+                        select{
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include rwd(1700){
+        main{
+            .left2{
+                .checkT{
+                    input{
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
+    }
 
-
+    //done rwd
+    @include rwd(360){
+        .done_wrap{
+            .done_payment_text{
+                width: 150px;
+            }
+            table{
+                width: 60%;
+            }
+        }
+    }
+    @include rwd(576){
+        .done_wrap{
+            .done_payment_text{
+                width: 150px;
+                line-height: 40px;
+            }
+            table{
+                td,th,tr{
+                font-size: 16px;
+                }
+            }
+        }
+    }
+    @include rwd(768){
+        .done_wrap{
+            .icon{
+                width: 65px;
+                height: 65px;
+                margin: 10px auto 30px;
+            }
+            .tks{
+                margin-bottom: 30px;
+            }
+            .done_payment_text{
+                margin: 0 auto 30px;
+                width: 180px;
+            }
+            .done_detail{
+                margin-bottom: 20px;
+            }
+            table{
+                width: 50%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    @include rwd(992){
+        .done_wrap{
+            .done_payment_text{
+                width: 220px;
+                line-height: 50px;
+            }
+            table{
+                width: 40%;
+                td,th,tr{
+                font-size: 20px;
+                }
+            }
+        }
+    }
+    @include rwd(1200){
+        .done_wrap{
+            width: 1200px;
+            .done_payment_text{
+                width: 250px;
+            }
+            table{
+                width: 35%;
+            }
+        }
+    }
+    @include rwd(1500){
+        .done_wrap{
+            .done_payment_text{
+                line-height: 60px;
+                margin: 0 auto 40px;
+            }
+            .icon{
+                width: 90px;
+                height: 90px;
+                margin: 20px auto 40px;
+            }
+            .tks{
+                margin-bottom: 40px;
+            }
+            .done_detail{
+                margin-bottom: 30px;
+            }
+            table{
+                margin-bottom: 30px;
+                width: 40%;
+                td,th,tr{
+                    padding: 15px;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    @include rwd(1700){
+    }
 }
