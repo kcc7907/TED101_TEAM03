@@ -141,6 +141,20 @@ $cf :#CAC3BB;
         h2{
         font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif ;
         color:#BDA79C;
+        position: relative;
+            &:hover{
+                color: #865454;
+            }
+            &:hover:after{
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                display: block;
+                width: 0%;
+                height: 2px;
+                background:  #865454;
+                animation: navHover 1s both;
+            }
         }
         &::after{
             content: '';
@@ -150,8 +164,22 @@ $cf :#CAC3BB;
             background-color: rgba(134, 84, 84, 0.10);
             position: absolute;
             bottom: 15px;
+            z-index: -1;
+        }
+        a:nth-child(1) h2{
+            color: #865454;
+            &:after{
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background:  #865454;
+            }
         }
     }
+
     .rule_contentbox{
         padding: 0 25px;
         display: flex;
@@ -167,6 +195,9 @@ $cf :#CAC3BB;
                 left: 50%;
                 transform: translateX(-50%);
             }
+        span{
+            cursor: pointer;
+        }
         .spacebox{
             align-self: stretch;
             min-width: 10px;
@@ -179,6 +210,7 @@ $cf :#CAC3BB;
             padding: 0 10px;
         }
         .rule_content{
+            display: none;
             padding: 0 15px 0 5px;
             line-height: 30px;
             text-indent: 15px;
@@ -199,7 +231,25 @@ $cf :#CAC3BB;
             color:#BDA79C;
             text-decoration: underline;
         }
+        .content_rule_tile{
+            text-indent: 0px;
+        }
+        .rule_content_none1{
+            display: block;
+        }
+
     }
+    
+    @keyframes navHover{
+        0%{
+            width: 0%;
+        }
+
+        100%{
+            width: 100%;
+        }
+    }
+
 
     //left
     .content_box{
@@ -299,7 +349,21 @@ $cf :#CAC3BB;
         width: 100%;
         min-height: 40px;
         background-color: #F1EADE;
+        position: relative;
+        z-index: 3;
+        img{
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: all 1s ease-in-out;
+
+            &.-scale{
+                transform: scaleY(-1);
+            }
+        }
     }
+
+
 
 
 
@@ -403,6 +467,7 @@ $cf :#CAC3BB;
             top: 0;
         }
     }
+
     @include rwd(992){
         .wrap{
             height: calc(100vh - 175px);
@@ -561,9 +626,12 @@ $cf :#CAC3BB;
 
 
 
-
 footer.libft{
-        display: none;
-        position: fixed;
-        bottom: 40px;
+    position: fixed;
+    bottom: -400px;
+    transition: all 1s ease-in-out;
+}
+
+footer.libft.-on{
+    bottom: 40px;
 }
