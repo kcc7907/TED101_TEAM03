@@ -285,12 +285,14 @@ div.sam_pi{
                 }
             }
             div.productMessage{
-                // border:1px solid rgb(107, 179, 107);
+                p.ppp{
+                    margin-top:10%;
+                }
                 p{
+                    margin-top:5%;
                     font-size:20px;
                     font-family: 'Noto Sans TC Light';
                     color:#BDA79E;
-                    margin-top:75px;
                 }
             }
         }
@@ -1071,6 +1073,17 @@ div.sam_pi{
                         height: 65px;
                         margin:0 20px;
                         margin-top:30px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width:1366px){
+        div.deskTopBox{
+            div.rightWrap{
+                div.productWord{
+                    p.champion{
+                        margin-top:2.5%;
                     }
                 }
             }
