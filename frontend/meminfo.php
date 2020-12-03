@@ -1,14 +1,16 @@
 <?php
     include("../php/08/jk_link.php");
 
+    $user = "A111200001";   //測試帳號
+
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, "A111200001");     //測試帳號
+    $statement->bindValue(1, "$user");     
     $statement->execute();
     $data = $statement->fetchAll();
 
     $account = $data[0]["MEM_ID"];
-    $pwd = $data[0]["MEM_PWD"];
+    // $pwd = $data[0]["MEM_PWD"];
     $name = $data[0]["MEM_NAME"];
     $phone = $data[0]["MEM_PHONE"];
     $email = $data[0]["MEM_EMAIL"];
@@ -23,8 +25,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>帳戶資料</title>
-
+    <title>救世宅 | 會員中心</title>
+    
+    <link rel="Shortcut Icon" href="img/favicon.ico">
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/meminfo.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -96,7 +99,7 @@
                             <label for="email">信箱</label>
                             <span class="email">修改</span>
                         </div>
-                        <input class="input" type="text" id="email" name="email" value="<?=$email?>" disabled>
+                        <input class="input" type="email" id="email" name="email" value="<?=$email?>" disabled>
                     </div>
 
                     <div>
@@ -134,9 +137,9 @@
                         <input type="text" id="password" value="************" disabled>
 
                         <div id="changePassword">                
-                            <input class="input" type="password" id="oldPassword" name="oldPassword" maxlength="12" minlength="6" placeholder="輸入舊密碼" value="123456789">
-                            <input class="input" type="password" id="newPassword" name="newPassword" maxlength="12" minlength="6" placeholder="輸入新密碼" value="123456789">
-                            <input class="input" type="password" id="checkPassword" maxlength="12" minlength="6" placeholder="確認新密碼" value="123456789">
+                            <input class="input" type="password" id="oldPassword" name="oldPassword" maxlength="12" minlength="6" placeholder="輸入舊密碼" value="123456789" disabled>
+                            <input class="input" type="password" id="newPassword" name="newPassword" maxlength="12" minlength="6" placeholder="輸入新密碼" value="123456789" disabled>
+                            <input class="input" type="password" id="checkPassword" maxlength="12" minlength="6" placeholder="確認新密碼" value="123456789" disabled>
                         </div>
                     </div>
 

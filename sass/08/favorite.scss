@@ -240,16 +240,16 @@ body{
                         width: 300px;
                     }
 
-                    &:nth-child(n + 2){
+                    // &:nth-child(n + 2){
 
-                        >ul.title{
-                            display: none;
+                    //     >ul.title{
+                    //         display: none;
 
-                            @include r992{
-                                display: flex;
-                            }                            
-                        }
-                    }
+                    //         @include r992{
+                    //             display: flex;
+                    //         }                            
+                    //     }
+                    // }
 
                     >ul.title{
                         //訂單標頭
@@ -272,6 +272,7 @@ body{
                         align-items: center;
 
                         border-bottom: 1px solid #465D4C;
+                        margin-bottom: 50px;
 
                         >li{
                             display: flex;

@@ -4,7 +4,7 @@ $(document).ready(function(){
         
     $('.jk_favorite .remove').click(function(){
 
-        $(this).closest('.table').remove();
+        $(this).closest('ul.item').remove();
 
         mainText();
         
@@ -13,9 +13,9 @@ $(document).ready(function(){
 
 function mainText(){
     let main = document.querySelector('.jk_favorite main');
-    let table = document.querySelector('.jk_favorite .table');
+    let item = document.querySelector('.jk_favorite .table .item');
 
-    if(table == null){
+    if(item == null){
         $(main).text('您目前沒有收藏任何商品');
         $(main).css('textAlign', 'center');
 
