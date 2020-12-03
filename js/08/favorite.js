@@ -2,11 +2,21 @@ $(document).ready(function(){
 
     mainText();
         
-    $('.jk_favorite .remove').click(function(){
+    $('.jk_favorite .remove').click(function(e){
 
         $(this).closest('ul.item').remove();
 
         mainText();
+
+        //資料庫移除
+        let removeItem = $(this).data("name");
+        $.ajax({
+            url: '../../../ted10103/php/08/jk_favoriteDlete.php',   //檔案位置奇怪       
+            type: 'POST',
+            data: {
+                removeItem,
+            },            
+        });
         
     });
 });

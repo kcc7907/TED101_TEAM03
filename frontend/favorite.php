@@ -92,7 +92,7 @@
                         foreach($data as $index => $row){
                     ?>
                     
-                    <ul class="item" data-name="<?=$row["PRD_ID"]?>">
+                    <ul class="item">
                         <li class="name">
                             <img src="<?=$row["PIMG_URL"]?>">
                             <span><?=$row["PRD_NAME"]?></span>
@@ -105,7 +105,7 @@
                         </li>
                         <li class="btn">
                             <button class="add"><span>加入購物車</span><i class="fas fa-cart-arrow-down"></i></button>
-                            <button class="remove"><span>移除</span><i class="far fa-trash-alt"></i></button>
+                            <button class="remove" data-name="<?=$row["PRD_ID"]?>"><span>移除</span><i class="far fa-trash-alt"></i></button>
                         </li>
                     </ul>
 
