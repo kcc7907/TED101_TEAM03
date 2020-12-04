@@ -262,16 +262,15 @@ body{
                     @include r360{                        
                         width: 300px;
                     }
-
+                    
                     &:nth-child(n + 2){
 
-                        >ul.title{
+                        >div.rough >ul.title{
                             display: none;
 
                             @include r992{
                                 display: flex;
-                            }
-                            
+                            }                            
                         }
                     }
                     
