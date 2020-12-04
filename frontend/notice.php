@@ -1,3 +1,17 @@
+<?php
+    include("../php/08/jk_link.php");
+
+    $user = "A111200001";   //測試帳號
+
+    $sql = "SELECT * from NOTI where MEMBER_ID = ? order by NOTI_ID desc;";     //缺少建立時間
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, "$user");
+    $statement->execute();
+    $data = $statement->fetchAll();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
@@ -64,26 +78,24 @@
 
             <main>
                 <ol>
-                    <li>                        
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li>
-                    <!-- <li>
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li> 
-                    <li>
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li>
-                    <li>
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li>
-                    <li>
+                    <!-- <li>                        
                         <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
                         <span>2020-11-13</span>
                     </li> -->
+
+                    <?php
+                        foreach($data as $index => $row){
+                    ?>
+
+                    <li>                        
+                        <p><?=$row["NOTI_TEXT"]?></p>
+                        <span>2020-11-13</span>
+                    </li> 
+
+                    <?php
+                        };
+                    ?>
+                    
                 </ol>
 
                 <!-- <div id="page">
