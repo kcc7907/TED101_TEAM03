@@ -92,7 +92,7 @@ div#login {
                 left: 0;
 
                 a,
-                h2,
+                button,
                 p {
                     display: inline-block;
                     border: 1px solid rgba(0, 0, 0, 0%);
@@ -109,11 +109,15 @@ div#login {
 
                 p {
                     margin-bottom: 10px;
-                    text-align: center;
+                    text-align: center; 
                     width: 100px;
                 }
 
-                h2.login {
+                button.login {
+                    border: none;
+                    outline: none;
+                    background: none;
+                    background-color: transparent;
                     padding: 40px 15px;
                     margin: 0 20px;
 
@@ -122,6 +126,7 @@ div#login {
                     }
                 }
             }
+
         }
 
         svg {
@@ -571,7 +576,7 @@ div#signUp {
                 }
 
                 div:last-child {
-                    h2.login {
+                    button.login {
                         margin: 0 8px;
                     }
                 }
