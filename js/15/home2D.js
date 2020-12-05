@@ -75,9 +75,9 @@ function signAni(){
 
 // ===== log in lightbox =====
 function log() {  
-    $('div#login').show().css({
-        'z-index': '3',
-        'opacity': '1',
+    $('div#login').show().css('z-index', '3');
+    $('div#login div.login').css({
+        'opacity':'1',
         'top': '0',
     });
     // 動畫
@@ -89,15 +89,15 @@ function log() {
 // ===== sign up lightbox =====
 function sign() {  
     // 登入隱藏
-    $('div#login').css({
-        'z-index': '-3',
-        'opacity': '0',
+    $('div#login').css('z-index','-3').hide();
+    $('div#login div.login').css({
+        'opacity':'0',
         'top': '-30vh',
-    }).hide();
+    });
     // 註冊顯現
-    $('div#signUp').show().css({
-        'z-index': '3',
-        'opacity': '1',
+    $('div#signUp').show().css('z-index', '3');
+    $('div#signUp div.signUp').css({
+        'opacity':'1',
         'top': '0',
     });
     // 動畫
@@ -109,15 +109,15 @@ function sign() {
 // ===== back to log in lightbox =====
 function backToLog() {  
             // 註冊隱藏
-            $('div#signUp').css({
-                'z-index': '-3',
-                'opacity': '0',
+            $('div#signUp').css('z-index', '-3').hide();
+            $('div#signUp div.signUp').css({
+                'opacity':'0',
                 'top': '-30vh',
-            }).hide();
+            });
             // 登入顯現
-            $('div#login').show().css({
-                'z-index': '3',
-                'opacity': '1',
+            $('div#login').show().css('z-index', '3');
+            $('div#login div.login').css({
+                'opacity':'1',
                 'top': '0',
             });
             // 動畫
@@ -130,7 +130,9 @@ function backToLog() {
 function closeLB() {  
     $(this).parent('div').parent('div').css({
         'z-index': '-3',
-        'opacity': '0',
-        'top': '-30vh',
     }).hide();
+    $(this).parent('div').css({
+        'opacity':'0',
+        'top': '-30vh',
+    });
 }
