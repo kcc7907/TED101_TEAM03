@@ -65,8 +65,8 @@
             if(!isset($_SESSION)){
                 session_start(); 
             }
-            $_SESSION["MemberID"] = $MemberID; //Table 'ec_member'裡的ID欄位值
-            $_SESSION["MemberName"] = $MemberName; //Table 'ec_member'裡的Account欄位值
+            $_SESSION["MemberID"] = $MemberID;
+            $_SESSION["MemberName"] = $MemberName;
         }
         
     }

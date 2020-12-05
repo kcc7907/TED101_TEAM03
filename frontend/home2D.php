@@ -248,16 +248,16 @@
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" id="account" name="account" class="titleFont3" required="required">
+                    <input type="text" id="account" name="account" class="titleFont3" minlength="8" maxlength="12" required="required">
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="password" class="titleFont3" id="pwd" name="pwd" required="required">
+                    <input type="password" class="titleFont3" id="pwd" name="pwd" minlength="8" maxlength="12" required="required">
                     <input type="checkbox" id="alive" name="alive" class="alive detailFont">
                     <label for="alive" class="alive" id="alivebox"></label>
                     <label for="alive" class="alive detailFont">保持登入</label>
                 </div>
                 <div>
                     <p class="detailFont"><a>忘記密碼</a></p>
-                    <button type="submit" class="login titleFont2">登入</button>
+                    <button type="button" class="login titleFont2">登入</button>
                     <p class="detailFont"><a href="./signUp.html" class="signLink">註冊新會員</a></p>
                 </div>
             </form>

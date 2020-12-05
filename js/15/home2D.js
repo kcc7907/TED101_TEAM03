@@ -32,28 +32,27 @@ $(document).ready(function () {
     $('div.closebtn').click(closeLB);
 
 
-    // =================================== 登入判斷 ===================================
-    // $('button.login').click(function (e) {
-    //     let theThis = e;
-    //     $('.login :text').each(function () {  
-    //         if($(this).val() == ""){
-    //             $('form.login').preventDefault();
-    //             alert('no');
-    //             console.log(this);
-    //         }else{
-    //             alert('ok');
-    //         }
-    //     });
-    // });
-    // $('form.login').submit(function (e) { 
-    //     // e.preventDefault();
-    //     $('form.login :text, form.login :password').each(function () {  
-    //         if($(this).val() == ''){
-    //             e.preventDefault();
-    //             console.log(e);
-    //         }
-    //     });
-    // });
+    // =================================== 登入ajax ===================================
+    $('button.login').click(function (e) {
+        let account = $('#account').val();
+        let pwd = $('#pwd').val();
+        console.log(account);
+        console.log(pwd);
+
+        $.ajax({  
+            url: './LoginR.php',
+            data:{
+                account,
+                pwd
+            },
+            type: 'POST',
+            dataType: 'text',
+            success(res) {
+                console.log(res);
+                $('body').append(res);
+            },
+        });
+    });
 
 });
 
