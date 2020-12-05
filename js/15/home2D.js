@@ -34,24 +34,31 @@ $(document).ready(function () {
 
     // =================================== 登入ajax ===================================
     $('button.login').click(function (e) {
-        let account = $('#account').val();
-        let pwd = $('#pwd').val();
-        console.log(account);
-        console.log(pwd);
 
-        $.ajax({  
-            url: './LoginR.php',
-            data:{
-                account,
-                pwd
-            },
-            type: 'POST',
-            dataType: 'text',
-            success(res) {
-                console.log(res);
-                $('body').append(res);
-            },
-        });
+        if($('input#account').val() == '' && $('input#pwd').val() !== ''){
+            alert('請輸入帳號');
+        }else if($('input#account').val() !== '' && $('input#pwd').val() == ''){
+            alert('請輸入密碼');
+        }else if($('input#account').val() == '' && $('input#pwd').val() == ''){
+            alert('請輸入帳號密碼');
+        }else{
+            let account = $('#account').val();
+            let pwd = $('#pwd').val();
+            $.ajax({  
+                url: './LoginR.php',
+                data:{
+                    account,
+                    pwd
+                },
+                type: 'POST',
+                dataType: 'text',
+                success(res) {
+                    console.log(res);
+                    $('body').append(res);
+                },
+            });
+        }
+        
     });
 
 });
@@ -94,6 +101,9 @@ function sign() {
         'opacity':'0',
         'top': '-30vh',
     });
+    // input值清空
+    $('#account').val('');
+    $('#pwd').val('');
     // 註冊顯現
     $('div#signUp').show().css('z-index', '3');
     $('div#signUp div.signUp').css({
@@ -114,6 +124,7 @@ function backToLog() {
                 'opacity':'0',
                 'top': '-30vh',
             });
+            $('div#signUp input').val('');
             // 登入顯現
             $('div#login').show().css('z-index', '3');
             $('div#login div.login').css({
@@ -128,6 +139,7 @@ function backToLog() {
 
 // ===== close lightbox =====
 function closeLB() {  
+    // 關閉lightbox
     $(this).parent('div').parent('div').css({
         'z-index': '-3',
     }).hide();
@@ -135,4 +147,12 @@ function closeLB() {
         'opacity':'0',
         'top': '-30vh',
     });
+    // 將input值清空 // TODO:待寫判斷
+    // alert('關閉後將清空您所輸入的資料，請確認是否關閉');
+    // if($('#account').val() !== '' || $('#pwd').val() !== ''){       
+    // }else{
+        $('#account').val('');
+        $('#pwd').val('');
+    // }
+
 }
