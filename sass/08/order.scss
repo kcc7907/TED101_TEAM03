@@ -28,9 +28,6 @@
 
 
 
-
-
-
 body{
     background-color: #FFFAF4;
     
@@ -396,8 +393,7 @@ body{
     
                             @include r992{
                                 flex-direction: column;
-                                justify-content: flex-start;
-                                
+                                justify-content: flex-start;                                
                                 width: 70%;
                             }
     
@@ -413,11 +409,9 @@ body{
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
-                                vertical-align: middle;
-                                
+                                vertical-align: middle;                                
     
-                                @include r992{
-                                    
+                                @include r992{                                    
                                     width: 100%;
                                 }
     
@@ -451,11 +445,16 @@ body{
                                     }
     
                                     &:hover{
-                                        background-color: #465D4C;
+                                        background-color: #56725d;
                                         color: #fff;
                                     }
                                     
                                 }
+                                >button.-on{
+                                    background-color: #56725d;
+                                    color: #fff;
+                                }
+
                                 >ol{
                                     
                                     >li{
@@ -510,6 +509,12 @@ body{
                         width: 100%;
                         border-right: 1px solid #465D4C;
                         border-left: 1px solid #465D4C;
+                        border-bottom: 2px solid #465D4C;
+                        margin-bottom: 5px;
+
+                        @include r992{
+                            border-bottom: none;
+                        }
 
                         //訂單進度
                         >.schedule{
