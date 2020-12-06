@@ -8,6 +8,7 @@
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
     <script src="../lib/js/jquery.js"></script>
+    <script src="../donotupload/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
 </head>
 
@@ -71,7 +72,7 @@
                         </a>
                     </div>
                 </header>
-                
+
                 <div>
                     <div>
                         <h2 class="contentFont lineHeight">關於我們</h2>
@@ -90,7 +91,7 @@
                         </div>
                     </div>
                     <div>
-                        <h2  class="contentFont lineHeight">最新消息</h2>
+                        <h2 class="contentFont lineHeight">最新消息</h2>
                         <ul>
                             <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
                             <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
@@ -106,7 +107,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div>
                 <div>
                     <div>
@@ -261,15 +262,9 @@
                     <p class="detailFont"><a href="./signUp.html" class="signLink">註冊新會員</a></p>
                 </div>
             </form>
-            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693"
-                data-llp-composed="true" id="logIn" class="lazy-line-painter">
-                <path id="Path_17" data-name="Path 17"
-                    d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z"
-                    transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000"
-                    data-llp-delay="0" fill-opacity="0" style="" />
-                <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7"
-                    transform="translate(244 518.801)" fill="none" data-llp-id="logIn-1" data-llp-duration="5000"
-                    data-llp-delay="0" fill-opacity="0" style="" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true" id="logIn" class="lazy-line-painter">
+                <path id="Path_17" data-name="Path 17" d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z" transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
+                <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)" fill="none" data-llp-id="logIn-1" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
             </svg>
             <div class="closebtn">
                 <span>&times;</span>
@@ -280,55 +275,53 @@
     <!-- 註冊燈箱 -->
     <div id="signUp">
         <div class="signUp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009"
-                data-llp-composed="true" id="signUp" class="lazy-line-painter">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009" data-llp-composed="true" id="signUp" class="lazy-line-painter">
                 <g id="Rectangle_457" data-name="Rectangle 457" fill="none" stroke="#865454" stroke-width="1">
-                    <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0"
-                        fill-opacity="0" style="" />
+                    <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
                 </g>
             </svg>
             <h1 class="titleFont1">加入會員享受輕鬆購物</h1>
-            <form action="#" class="signUp" name="signUp">
+            <form action="SignR.php" class="signUp" name="signUp">
                 <div>
                     <div>
-                        <label for="memName" class="titleFont3">姓名</label>
-                        <input type="text" name="memName" class="titleFont3" id="JHmemName">
+                        <label for="memName" class="titleFont3" >姓名</label>
+                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required">
                     </div>
                     <div>
                         <label for="Phone" class="titleFont3">手機</label>
-                        <input type="text" name="Phone" class="titleFont3" id="JHPhone">
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" required="required">
                     </div>
                 </div>
                 <div>
                     <label for="email" class="titleFont3">信箱</label>
-                    <input type="email" name="email" class="titleFont3" id="JHemail">
+                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required">
                 </div>
-                <div>
+                <div id="addressOption">
                     <label for="address" class="titleFont3">地址</label>
-                    <select class="detailFont">
-                        <option class="detailFont" value="">台北市</option>
-                        <option class="detailFont" value="">新北市</option>
+                    <select name="memCity" id="memCityJH" class="detailFont" required="required">
+                        <option name="memCity" selected disabled value="0">請選擇縣市</option>
+                        <option v-for="city in citys" class="detailFont" name="memCity" :value="city">{{city}}</option>
                     </select>
-                    <input type="email" name="address" class="titleFont3" id="JHaddress">
+                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required">
                 </div>
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" name="account" class="titleFont3" id="JHaccount">
+                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="8" maxlength="12" required="required">
                 </div>
                 <div>
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="password" name="pwd" class="titleFont3" id="JHpwd">
+                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="8" maxlength="12" required="required">
                 </div>
                 <div>
                     <label for="checkP" class="titleFont3">密碼確認</label>
-                    <input type="password" name="checkP" class="titleFont3" id="checkP">
+                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required">
                 </div>
                 <div>
-                    <button type="submit" class="titleFont3">註冊</button>
+                    <!-- <button type="button" class="titleFont3 signup">註冊</button> -->
+                    <button type="button" class="titleFont3 signup">註冊</button>
                 </div>
                 <div>
-                    <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a
-                            class="detailFont">會員責任規範及個資聲明</a>。</span>
+                    <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a class="detailFont">會員責任規範及個資聲明</a>。</span>
                 </div>
                 <div>
                     <a href="./login.html" class="detailFont logLink">回登入頁面</a>

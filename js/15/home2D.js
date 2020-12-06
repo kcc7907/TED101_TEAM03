@@ -1,4 +1,13 @@
 $(document).ready(function () {
+    // =================================== 地址 Vue ===================================
+    new Vue({
+        el: '#addressOption',     
+        data: {
+            // city: '<?=$city?>',
+            citys: ['台北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '苗栗縣','台中市','彰化縣','南投縣','雲林縣','嘉義市','嘉義縣','台南市','高雄市','屏東縣','宜蘭縣','花蓮縣','台東縣'],
+        },
+    });
+
     // =================================== 漢堡包 ===================================
     let $_headerNav = $('header nav');
     $('.ham').click(function(){
@@ -31,16 +40,18 @@ $(document).ready(function () {
     // 點選closeBtn關閉表單
     $('div.closebtn').click(closeLB);
 
-
-    // =================================== 登入ajax ===================================
-    $('button.login').click(function (e) {
-
+    // =================================== 登入判斷 ===================================
+    $('button.login').click(function () {
         if($('input#account').val() == '' && $('input#pwd').val() !== ''){
             alert('請輸入帳號');
+            $('input#account').css('border', '1px solid red');
         }else if($('input#account').val() !== '' && $('input#pwd').val() == ''){
             alert('請輸入密碼');
+            $('input#pwd').css('border', '1px solid red');
         }else if($('input#account').val() == '' && $('input#pwd').val() == ''){
             alert('請輸入帳號密碼');
+            $('input#account').css('border', '1px solid red');
+            $('input#pwd').css('border', '1px solid red');
         }else{
             let account = $('#account').val();
             let pwd = $('#pwd').val();
@@ -58,10 +69,65 @@ $(document).ready(function () {
                 },
             });
         }
-        
     });
 
+
+    // =================================== 註冊判斷 ===================================
+    $('button.signup').click(function () {
+        let theCheck = 1;
+        $('form.signUp input').each(function () {
+            if ($(this).val() == ''){
+                $(this).css('border', '1px solid red');
+                theCheck = 0;
+            }
+        });
+
+        if(Boolean($('select[name="memCity"]').val()) == false){
+            $('select[name="memCity"]').css('border', '1px solid red');
+        }
+
+        switch(theCheck){
+            case 0:
+                alert('紅色方框為必填欄位，請輸入完整資訊。');
+                break;
+            case 1:
+                let memAccount = $('#memAccountJH').val();
+                let memPwd = $('#memPwdJH').val();
+                let memName = $('#memNameJH').val();
+                let memPhone = $('#memPhoneJH').val();
+                let memEmail = $('#memEmailJH').val();
+                let memCity = $('#memCityJH').val();
+                let memAddress = $('#memAddressJH').val();
+                $.ajax({  
+                    url: './SignR.php',
+                    data:{
+                        memAccount,
+                        memPwd,
+                        memName,
+                        memPhone,
+                        memEmail,
+                        memCity,
+                        memAddress,
+                    },
+                    type: 'POST',
+                    dataType: 'text',
+                    success(res) {
+                        console.log(res);
+                        $('body').append(res);
+                    },
+                });
+                break;
+        }
+    });
+
+
+    // =================================== 發生change事件時消除紅框: input&select ===================================
+    $('input').change(changeBGC);
+    $('select').change(function(){
+        $(this).css('border' , '1px solid #BDA79E');
+    });
 });
+
 
 
 
@@ -147,12 +213,26 @@ function closeLB() {
         'opacity':'0',
         'top': '-30vh',
     });
-    // 將input值清空 // TODO:待寫判斷
+    // input&select初始化 // TODO:待寫判斷
     // alert('關閉後將清空您所輸入的資料，請確認是否關閉');
     // if($('#account').val() !== '' || $('#pwd').val() !== ''){       
     // }else{
-        $('#account').val('');
-        $('#pwd').val('');
-    // }
+        $(this).parent('div').find('form').find('input').val('').css({
+            'backgroundColor': 'rgba(0, 0, 0, 0)',
+            'border': 'none',
+            'borderBottom': '1px solid #BDA79E',
+        });
+        $(this).parent('div').find('form').find('select').val('0').css('border', '1px solid #BDA79E');
 
+    // }
 }
+
+// ===== 發生change，input改變背景色跟換border顏色 =====
+function changeBGC() {  
+    $(this).css({
+        'backgroundColor': 'rgba(0, 0, 0, 0)',
+        'border': 'none',
+        'borderBottom': '1px solid #BDA79E',
+    });
+}
+
