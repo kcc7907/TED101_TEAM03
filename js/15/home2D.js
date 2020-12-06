@@ -8,6 +8,7 @@ $(document).ready(function () {
         },
     });
 
+
     // =================================== 漢堡包 ===================================
     let $_headerNav = $('header nav');
     $('.ham').click(function(){
@@ -40,6 +41,7 @@ $(document).ready(function () {
     // 點選closeBtn關閉表單
     $('div.closebtn').click(closeLB);
 
+    
     // =================================== 登入判斷 ===================================
     $('button.login').click(function () {
         if($('input#account').val() == '' && $('input#pwd').val() !== ''){
@@ -55,25 +57,27 @@ $(document).ready(function () {
         }else{
             let account = $('#account').val();
             let pwd = $('#pwd').val();
-            $.ajax({  
-                url: './LoginR.php',
-                data:{
-                    account,
-                    pwd
-                },
-                type: 'POST',
-                dataType: 'text',
-                success(res) {
-                    console.log(res);
-                    $('body').append(res);
-                },
-            });
+                $.ajax({  
+                    url: './LoginR.php',
+                    data:{
+                        account,
+                        pwd
+                    },
+                    type: 'POST',
+                    dataType: 'text',
+                    success(res) {
+                        $('body').append(res);
+                    },
+                });
         }
     });
 
 
     // =================================== 註冊判斷 ===================================
+    // keyup 判斷
+    // button 判斷
     $('button.signup').click(function () {
+        // input&select未輸入值，產生紅框
         let theCheck = 1;
         $('form.signUp input').each(function () {
             if ($(this).val() == ''){
@@ -84,6 +88,7 @@ $(document).ready(function () {
 
         if(Boolean($('select[name="memCity"]').val()) == false){
             $('select[name="memCity"]').css('border', '1px solid red');
+            theCheck = 0;
         }
 
         switch(theCheck){
@@ -91,33 +96,46 @@ $(document).ready(function () {
                 alert('紅色方框為必填欄位，請輸入完整資訊。');
                 break;
             case 1:
-                let memAccount = $('#memAccountJH').val();
-                let memPwd = $('#memPwdJH').val();
-                let memName = $('#memNameJH').val();
-                let memPhone = $('#memPhoneJH').val();
-                let memEmail = $('#memEmailJH').val();
-                let memCity = $('#memCityJH').val();
-                let memAddress = $('#memAddressJH').val();
-                $.ajax({  
-                    url: './SignR.php',
-                    data:{
-                        memAccount,
-                        memPwd,
-                        memName,
-                        memPhone,
-                        memEmail,
-                        memCity,
-                        memAddress,
-                    },
-                    type: 'POST',
-                    dataType: 'text',
-                    success(res) {
-                        console.log(res);
-                        $('body').append(res);
-                    },
-                });
+                // 判斷帳號密碼輸入值
+                let accNum = $('#memAccountJH').val().length;
+                let pwdNum = $('#memPwdJH').val().length;
+                if(accNum < 8 || accNum > 12 ){
+                    alert('帳號請輸入 8 - 12 字元');
+                }else if(pwdNum < 8 || pwdNum > 12){
+                    alert('密碼請輸入 8 - 12 字元');
+                }else if((accNum < 8 && accNum > 12) || (pwdNum < 8 && pwdNum > 12)){
+                    alert('帳號及密碼請輸入 8 - 12 字元');
+                }else{
+                    alert('傳送ajax');
+                }
+                // let memAccount = $('#memAccountJH').val();
+                // let memPwd = $('#memPwdJH').val();
+                // let memName = $('#memNameJH').val();
+                // let memPhone = $('#memPhoneJH').val();
+                // let memEmail = $('#memEmailJH').val();
+                // let memCity = $('#memCityJH').val();
+                // let memAddress = $('#memAddressJH').val();
+                // $.ajax({  
+                //     url: './SignR.php',
+                //     data:{
+                //         memAccount,
+                //         memPwd,
+                //         memName,
+                //         memPhone,
+                //         memEmail,
+                //         memCity,
+                //         memAddress,
+                //     },
+                //     type: 'POST',
+                //     dataType: 'text',
+                //     success(res) {
+                //         $('body').append(res);
+                //     },
+                // });
                 break;
         }
+
+
     });
 
 
