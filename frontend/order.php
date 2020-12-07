@@ -92,15 +92,38 @@
                 <?php
                     //依訂單編號取明細資料
                     foreach($order_ids as $i => $item){
-                        $sql_orderDetail = "SELECT * from `ORDER` o join (select * from `ORDER_DETAIL` od join product p on od.PRODUCT_ID = p.PRD_ID) op on op.ORDER_ID = o.ORD_ID where ORDER_ID = ?";
+                        $sql_orderDetail = "SELECT * from `ORDER` o join (select * from `ORDER_DETAIL` od join product p on od.PRODUCT_ID = p.PRD_ID) op on op.ORDER_ID = o.ORD_ID where ORDER_ID = ?";                        
                         $statement = $pdo->prepare($sql_orderDetail);
                         $statement->bindValue(1, "$item");
                         $statement->execute();
                         $orderDetailData = $statement->fetchAll();
+
+                        //找優惠資料 需調整篩選
+                        $sql_discount = "SELECT *
+                                        from `ORDER` o
+                                        join
+                                        (select *
+                                        from `ORDER_DETAIL` od
+                                        join
+                                        (select *
+                                        from product p
+                                            join discount d
+                                            on p.PRD_ID = d.DIS_PRODUCT_ID1 
+                                                or p.PRD_ID = d.DIS_PRODUCT_ID2) pd
+                                        on pd.PRD_ID = od.PRODUCT_ID) m
+                                        on m.ORDER_ID = o.ORD_ID
+                                        
+                                        where ORDER_ID = ?";                        
+                        $statementDis = $pdo->prepare($sql_discount);
+                        $statementDis->bindValue(1, "$item");
+                        $statementDis->execute();
+                        $discountDate = $statementDis->fetchAll();
+
+                        foreach($discountDate as $d => $dis){};
                 ?>
 
                 
-                        <div class="table">                    
+                        <div class="table <?=$i?>">                    
                             <div class="rough">
                                 <ul class="title">
                                     <li class="primary">訂單編號</li>
@@ -123,7 +146,7 @@
                                                 foreach($orderDetailData as $j => $row){
                                             ?>
 
-                                            <li><?=$row["PRD_NAME"]?></li>
+                                            <li><?=$row["PRD_NAME"]?><span> * <?=$row["ORDER_QUANTITY"]?></span></li>
                                             
                                             <?php
                                                 }
@@ -139,7 +162,7 @@
                                                 foreach($orderDetailData as $j => $row){
                                             ?>
 
-                                            <li><?='缺數量欄位'?></li>
+                                            <li><?=$row["ORDER_QUANTITY"]?></li>
 
                                             <?php
                                                 }
@@ -153,8 +176,9 @@
                                             foreach($orderDetailData as $j => $row){
                                                 array_push($sumPrice, $row["PRD_PRICE"]);                           
                                             };
-                                            echo array_sum($sumPrice);
+                                            echo array_sum($sumPrice).' 元';
                                         ?>
+                                        
                                     </li>
 
                                     <li class="status">
@@ -166,38 +190,32 @@
                             <!-- 明細 -->
                             <div class="detail">
                                 <div class="schedule">
-                                    <div class="step1">
-                                        <img src="" alt="">
+                                    <div class="status first">
                                         <p>
                                             <i class="fas fa-shopping-cart"></i>
                                             <span>已訂購</span>
-                                            <span><?='缺狀態時間欄位'?></span>
+                                            <span><?=$row["ORD_BUY"]?></span>
                                         </p>
                                     </div>
-                                    <div class="step2">
-                                        <img src="" alt="">
+                                    <div class="status">
                                         <p>
                                             <i class="fas fa-money-check-alt"></i>
                                             <span>已付款</span>
-                                            <span><?='缺狀態時間欄位'?></span>
+                                            <span><?=$row["ORD_PAY"]?></span>
                                         </p>
                                     </div>
-                                    <div class="step3 -now">
-                                        <img src="" alt="">
-                                        <img src="" alt="">
+                                    <div class="status">
                                         <p>
                                             <i class="fas fa-truck-moving"></i>
                                             <span>運送中</span>
-                                            <span><?='缺狀態時間欄位'?></span>
+                                            <span><?=$row["ORD_TRANS"]?></span>
                                         </p>
                                     </div>
-                                    <div class="step4">
-                                        <img src="" alt="">
-                                        <img src="" alt="">
+                                    <div class="status last">
                                         <p>
                                             <i class="fas fa-check-circle"></i>
                                             <span>已送達</span>
-                                            <span><?='缺狀態時間欄位'?></span>
+                                            <span><?=$row["ORD_ARR"]?></span>
                                         </p>
                                     </div>
                                 </div>
@@ -209,8 +227,9 @@
                                             <li class="pro_name">商品名稱</li>
                                             <li class="pro_price">單價</li>
                                             <li class="pro_count">數量</li>
-                                            <li class="pro_dsicount">折扣</li>
                                             <li class="pro_total">小計</li>
+                                            <li class="pro_dsicount">折扣</li>
+                                            
                                         </ul>
 
                                         <ul class="item">
@@ -233,7 +252,7 @@
                                                     foreach($orderDetailData as $j => $row){
                                                 
                                                 ?>
-                                                    <li><?=$row["PRD_PRICE"]?></li>
+                                                    <li><?=$row["PRD_PRICE"]?><span> 元<span></li>
 
                                                 <?php
                                                     };
@@ -244,28 +263,62 @@
 
                                             <li class="pro_count">
                                                 <ol>
-                                                    <li><?='缺數量欄位'?></li>
-                                                    <li><?='缺數量欄位'?></li>
+                                                <?php
+                                                    foreach($orderDetailData as $j => $row){
+                                                ?>
+
+                                                    <li><?=$row["ORDER_QUANTITY"]?></li>
+
+                                                <?php
+                                                    }
+                                                ?>
+                                                </ol>
+                                            </li>
+
+                                            
+
+                                            <li class="pro_total">
+                                                <ol>
+                                                <?php
+                                                    foreach($orderDetailData as $j => $row){
+                                                ?>
+
+                                                    <li><?=$row["PRD_PRICE"]*$row["ORDER_QUANTITY"]?><span> 元</span></li>
+
+                                                <?php
+                                                    }
+                                                ?>
                                                 </ol>
                                             </li>
 
                                             <li class="pro_dsicount">
                                                 <ol>
-                                                    <li>-99 元</li>
-                                                    <li>-0 元</li>
+                                                    <li>
+                                                    <?php
+                                                    if(isset($dis)){
+                                                        echo -$dis["DIS_AMOUNT"].'元';
+                                                    }else {
+                                                        echo '-0 元';
+                                                    }
+                                                    ?>
+                                                    </li>
                                                 </ol>
                                             </li>
-
-                                            <li class="pro_total">
-                                                <ol>
-                                                    <li>9,999,900 元</li>
-                                                    <li>90,000,000 元</li>
-                                                </ol>
-                                            </li>
+                                            
                                         </ul>
 
                                         <div class="rwd_discount">
-                                            折扣: <span>-99</span> 元
+                                            折扣: 
+                                            <span>
+                                                <?php
+                                                if(isset($dis)){
+                                                    echo -$dis["DIS_AMOUNT"];
+                                                    unset($dis);
+                                                }else {
+                                                    echo '-0';
+                                                }
+                                                ?>
+                                            </span> 元
                                         </div>
 
                                     </div>

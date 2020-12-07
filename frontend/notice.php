@@ -78,18 +78,14 @@
 
             <main>
                 <ol>
-                    <!-- <li>                        
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li> -->
-
+                    
                     <?php
                         foreach($data as $index => $row){
                     ?>
 
                     <li>                        
                         <p><?=$row["NOTI_TEXT"]?></p>
-                        <span>2020-11-13</span>
+                        <span><?=$row["NOTI_DATE"]?></span>
                     </li> 
 
                     <?php

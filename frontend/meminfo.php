@@ -5,7 +5,7 @@
 
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, "$user");     
+    $statement->bindValue(1, "$user");
     $statement->execute();
     $data = $statement->fetchAll();
 
