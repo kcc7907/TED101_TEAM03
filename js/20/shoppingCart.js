@@ -150,7 +150,7 @@ let left = new Vue({
         axios.post('http://localhost:8787/php/20/getProduct.php', this.prdid).then(res => {
             res.data.forEach((x,y) => {
                 this.rp.push(x);
-            })
+            });
         }).catch(err=>{
             if (err.response) {
                 console.log(err.response.status)
@@ -162,7 +162,6 @@ let left = new Vue({
         });
     },
     mounted() {
-        
     },
 });
 

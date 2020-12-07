@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/shoppingCart.css">
     <script src="../lib/js/jquery.js"></script>
-    <script defer src="../js/20/shopCommon.js"></script>
+    <script src="../lib/js/vue.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js'></script>
+    <!-- <script defer src="../js/20/shopCommon.js"></script> -->
     <script defer src="../js/20/shoppingOrder.js"></script>
     <script defer src="../lib/header/header.js"></script>
 </head>
@@ -39,7 +41,7 @@
                 <div class="outer memberbox">
                     <div class="name df">
                         <p class="innerT lh">姓名</p>
-                        <input type="text" class="name_input" value="王小名">
+                        <input type="text" class="name_input" :value="memName">
                         <button class="modified">修改</button>
                     </div>
                     <div class="phone df">
@@ -48,16 +50,16 @@
                     </div>
                     <div class="lives df">
                         <p class="innerT lh">住址</p>
-                        <input type="text" class="live_input" value="台北市你家隔壁"><button class="modified">修改</button>
+                        <input type="text" class="live_input" :value="addrs"><button class="modified">修改</button>
                     </div>
                 </div>
                 <h2 class="payment">付款方式</h2>
-                <div class="outer paymentbox">
+                <div class="outer paymentbox" >
                     <div class="checkT">
-                        <input type="checkbox" class="credit_check">
-                        <p class="lh">信用卡</p>
+                        <input type="checkbox" class="credit_check" v-model="payment">
+                        <p class="lh" >信用卡</p>
                     </div>
-                    <div class="card_box">
+                    <div class="card_box" v-show="payment">
                         <div class="cardnum_box">
                             <p class="card_num">信用卡號碼</p>
                             <div class="inputnum_box df">
@@ -83,10 +85,10 @@
                         </div>
                     </div>
                     <div class="checkT">
-                        <input type="checkbox" class="remit_input">
+                        <input type="checkbox" class="remit_input" v-model="remit">
                         <p class="remit lh">匯款</p>
                     </div>
-                    <div class="remit_box">
+                    <div class="remit_box" v-show="remit">
                         <div class="remitbank_box df">
                             <p>銀行</p>
                             <p class="gary">台灣銀行(004)南門分行</p>
@@ -108,10 +110,10 @@
                         <p class="lh">同購買人住址</p>
                     </div>
                     <div class="checkT">
-                        <input type="checkbox" class="adds_input">
+                        <input type="checkbox" class="adds_input" v-model="addressBox">
                         <p class="lh">新增寄送地址</p>
                     </div>
-                    <div class="address_box">
+                    <div class="address_box" v-show="addressBox">
                         <select class="freight_city">
                             <option selected disabled>居住縣市</option>
                             <optgroup label="運費2000元">
@@ -147,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <div class="right">
+            <div class="right" id="right">
                 <h2 class="titlenum">合計商品3項</h2>
                 <div class="cart_top">
                     <div class="cart_top_list">
