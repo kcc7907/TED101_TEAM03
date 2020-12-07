@@ -72,7 +72,8 @@
                         </a>
                     </div>
                 </header>
-
+            </div>
+            <div>
                 <div>
                     <div>
                         <h2 class="contentFont lineHeight">關於我們</h2>
@@ -136,12 +137,12 @@
             </div>
         </div>
         <div id="homeRight">
-            <div class="into">
+            <div class="into" style="display:none;">
                 <a href="./home3D.html" class="titleFont3">點此進入3D模式</a>
             </div>
             <div>
             </div>
-            <div>
+            <div style="display:none;">
                 <div>
                     <div>
                         <span></span>
@@ -159,7 +160,6 @@
                     </div>
                 </div>
                 <div id="sliderBoardJH">
-
                     <div id="pdtJH">
                         <div>
                             <img src="../img/product/sofa05/sofa05_03.jpg" alt="沙發">
@@ -209,8 +209,63 @@
                 <span id="frtButton"></span>
                 <span id="bckButton"></span>
             </div>
-            <div style="display:none;">
-                這裡放最新消息
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <img src="../img/news/news01.jpg" alt="news">
+                        </div>
+                        <time>01 / 29 / 2021</time>
+                        <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                    </div>
+                    <div>
+                        <div>
+                            <div>
+                                <img src="../img/news/news02.jpg" alt="news">
+                            </div>
+                            <time>01 / 29 / 2021</time>
+                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="../img/news/news03.jpg" alt="news">
+                            </div>
+                            <time>01 / 29 / 2021</time>
+                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="../img/news/news04.jpg" alt="news">
+                            </div>
+                            <time>01 / 29 / 2021</time>
+                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="../img/news/news05.jpg" alt="news">
+                            </div>
+                            <time>01 / 29 / 2021</time>
+                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="../img/news/news06.jpg" alt="news">
+                            </div>
+                            <time>01 / 29 / 2021</time>
+                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        </div>
+                        <div>
+                            <div>
+                                <img src="../img/news/news07.jpg" alt="news">
+                            </div>
+                            <time>01 / 29 / 2021</time>
+                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button></button>
+                </div>
             </div>
         </div>
         <div id="bottomBox">
@@ -285,16 +340,16 @@
                 <div>
                     <div>
                         <label for="memName" class="titleFont3">姓名</label>
-                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required" autocomplete="off">
+                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required" autocomplete="off" placeholder="請輸入姓名">
                     </div>
                     <div>
                         <label for="Phone" class="titleFont3">手機</label>
-                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" maxlength="10" required="required" autocomplete="off">
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" maxlength="10" required="required" autocomplete="off" placeholder="請輸入手機號碼">
                     </div>
                 </div>
                 <div>
                     <label for="email" class="titleFont3">信箱</label>
-                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required" autocomplete="off">
+                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required" autocomplete="off" placeholder="請輸入信箱">
                 </div>
                 <div id="addressOption">
                     <label for="address" class="titleFont3">地址</label>
@@ -302,19 +357,19 @@
                         <option name="memCity" selected disabled value="0">請選擇縣市</option>
                         <option v-for="city in citys" class="detailFont" name="memCity" :value="city">{{city}}</option>
                     </select>
-                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required" autocomplete="off">
+                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required" autocomplete="off" placeholder="請輸入地址">
                 </div>
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="8" maxlength="12" required="required" autocomplete="off">
+                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="8" maxlength="12" required="required" autocomplete="off" placeholder="請輸入英文或數字(8-12字元)">
                 </div>
                 <div>
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="8" maxlength="12" required="required" autocomplete="off">
+                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="8" maxlength="12" required="required" autocomplete="off" placeholder="請輸入英文或數字(8-12字元)">
                 </div>
                 <div>
                     <label for="checkP" class="titleFont3">密碼確認</label>
-                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required" autocomplete="off">
+                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required" autocomplete="off" placeholder="請重複輸入密碼">
                 </div>
                 <div>
                     <!-- <button type="button" class="titleFont3 signup">註冊</button> -->

@@ -82,18 +82,46 @@ $(document).ready(function () {
             e.preventDefault();
         }
     })
-
     $('#memPhoneJH').keyup(function(e){
         let str = (e.target.value).replace(/\D/g, "");
         e.target.value = str;
     })
 
+    $('#memPhoneJH').change(function(e){
+        let thePhone = $(this).val();
+        let testP = /^[0-9]{2}[0-9]{8}$/g;
+        if(!testP.test(thePhone)){
+            alert('請輸入正確手機格式');
+        }
+    });
+
     // 信箱只能輸入英數
-    $('#memEmailJH').keyup(function(e){
+    // $('#memEmailJH').keyup(function(e){
+    //     let str = (e.target.value).replace(/\W/g, "");
+    //     e.target.value = str;
+    // })
+
+
+    // 信箱格式
+    $('#memEmailJH').change(function(e){
+        let theEmail = $(this).val();
+        let testE = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+        if(!testE.test(theEmail)){
+            alert('請輸入正確EMAIL格式');
+        }
+    });
+
+    // 帳號只能輸入英數
+    $('#memAccountJH').keyup(function(e){
         let str = (e.target.value).replace(/\W/g, "");
         e.target.value = str;
     })
 
+    // 密碼只能輸入英數
+    $('#memPwdJH').keyup(function(e){
+        let str = (e.target.value).replace(/\W/g, "");
+        e.target.value = str;
+    })
 
     // button 判斷
     $('button.signup').click(function () {
@@ -106,7 +134,7 @@ $(document).ready(function () {
             }
         });
 
-        if(Boolean($('select[name="memCity"]').val().trim()) == false){
+        if(Boolean($('select[name="memCity"]').val()) == false){
             $('select[name="memCity"]').css('border', '1px solid red');
             theCheck = 0;
         }
@@ -137,23 +165,33 @@ $(document).ready(function () {
                     if(memPwd !== memCheckPwd){
                         alert('確認密碼有誤');
                     }else{
-                        $.ajax({  
-                            url: './SignR.php',
-                            data:{
-                                memAccount,
-                                memPwd,
-                                memName,
-                                memPhone,
-                                memEmail,
-                                memCity,
-                                memAddress,
-                            },
-                            type: 'POST',
-                            dataType: 'text',
-                            success(res) {
-                                $('body').append(res);
-                            },
-                        });
+                        let testE = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+                        let testP = /^[0-9]{2}[0-9]{8}$/g;
+                        if(!testP.test(memPhone)){
+                            alert('請輸入正確手機格式');
+                        }else{
+                            if(!testE.test(memEmail)){
+                                alert('請輸入正確EMAIL格式');
+                            }else{
+                                $.ajax({  
+                                    url: './SignR.php',
+                                    data:{
+                                        memAccount,
+                                        memPwd,
+                                        memName,
+                                        memPhone,
+                                        memEmail,
+                                        memCity,
+                                        memAddress,
+                                    },
+                                    type: 'POST',
+                                    dataType: 'text',
+                                    success(res) {
+                                        $('body').append(res);
+                                    },
+                                });
+                            }
+                        }
                     }
                 }
                 break;
@@ -218,6 +256,8 @@ function sign() {
         'opacity':'1',
         'top': '0',
     });
+    // 手機09顯示
+    $('#memPhoneJH').val('09');
     // 動畫
     setTimeout(() => {
         signAni();

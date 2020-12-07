@@ -225,6 +225,27 @@ div#signUp {
                     background-color: rgba(189, 167, 156, .1) !important;
                 }
 
+                &::placeholder{
+                    color:  rgba(0, 0, 0, .2);
+                }
+
+                &::-webkit-input-placeholder { /* Chrome, Safari */
+
+                    color:  rgba(0, 0, 0, .2);
+                
+                }
+                
+                &:-ms-input-placeholder { /* IE 10+ */
+                
+                    color: rgba(0, 0, 0, .2);
+                
+                }
+                
+                &::-moz-placeholder { /* Firefox 19+ */
+                    color:  rgba(0, 0, 0, .2);
+                    opacity: .2;
+                }
+
             }
 
             >div {

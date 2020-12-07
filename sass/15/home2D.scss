@@ -135,43 +135,13 @@ div.JHH {
         width: 500px;
         height: 100%;
 
+
+
         >div {
             padding: 0 15px;
 
             &:first-child {
-                width: 100%;
-                height: 80%;
-                overflow-y: auto;
-
-                @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE) {
-                    // ::-webkit-scrollbar-button:single-button {
-                    //     background-color: #bbbbbb;
-                    //     display: block;
-                    //     border-style: solid;
-                    //     height: 13px;
-                    //     width: 16px;
-                    // }
-                    // ::-webkit-scrollbar-button:single-button:vertical:decrement {
-                    //     border-width: 0 8px 8px 8px;
-                    //     border-color: transparent transparent #555555 transparent;
-                    // }
-
-                    // ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-                    //     border-color: transparent transparent #777777 transparent;
-                    // }
-
-                    // /* Down */
-                    // ::-webkit-scrollbar-button:single-button:vertical:increment {
-                    //     border-width: 8px 8px 0 8px;
-                    //     border-color: #555555 transparent transparent transparent;
-                    // }
-
-                    // ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-                    //     border-color: #777777 transparent transparent transparent;
-                    // }
-                }
-
-                header.common {
+                >header.common {
                     * {
                         font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
                     }
@@ -256,6 +226,42 @@ div.JHH {
                         }
                     }
                 }
+            }
+
+            &:nth-child(2) {
+                width: 100%;
+                height: 70%;
+                overflow-y: auto;
+
+                @include scrollBar(10, #FFFAF4, #FFFAF4, 0, 0, #F1EADE) {
+                    // ::-webkit-scrollbar-button:single-button {
+                    //     background-color: #bbbbbb;
+                    //     display: block;
+                    //     border-style: solid;
+                    //     height: 13px;
+                    //     width: 16px;
+                    // }
+                    // ::-webkit-scrollbar-button:single-button:vertical:decrement {
+                    //     border-width: 0 8px 8px 8px;
+                    //     border-color: transparent transparent #555555 transparent;
+                    // }
+
+                    // ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+                    //     border-color: transparent transparent #777777 transparent;
+                    // }
+
+                    // /* Down */
+                    // ::-webkit-scrollbar-button:single-button:vertical:increment {
+                    //     border-width: 8px 8px 0 8px;
+                    //     border-color: #555555 transparent transparent transparent;
+                    // }
+
+                    // ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+                    //     border-color: #777777 transparent transparent transparent;
+                    // }
+                }
+
+
 
                 >div {
                     >div {
@@ -435,9 +441,7 @@ div.JHH {
                     position: absolute;
                     top: 0;
                     z-index: 1;
-                    display: none;
-
-
+                    // display: none;
                 }
 
                 a {
@@ -453,7 +457,7 @@ div.JHH {
                     text-decoration: none;
                     line-height: 80px;
                     text-align: center;
-                    display: none;
+                    // display: none;
 
                     &::after {
                         content: "";
@@ -486,7 +490,6 @@ div.JHH {
             &:nth-child(3) {
                 width: 100%;
                 height: 100%;
-                // background-color: #FFFAF4;
                 background-color: rgba(120, 120, 120, .8);
 
                 h3 {
@@ -760,10 +763,75 @@ div.JHH {
 
             }
 
+            // 最新消息
             &:last-child {
-                // display: none;
                 width: 100%;
                 height: 100%;
+                background-color: rgba(255, 255, 255, 0.8);
+                display: flex;
+                flex-direction: column;
+                >div{
+                    // 消息區
+                    &:first-child{
+                        border: 1px solid blue;
+                        height: 80%;
+                        margin-top: 10vh;
+                        display: flex;
+                        time{
+                            display: block;
+                        }
+                        >div{
+                            &:first-child{
+                                width: 40%;
+                                >div{
+                                    width: 100%;
+                                    height: 350px;
+                                    position: relative;
+                                    border: 1px solid blue;
+                                    overflow: hidden;
+                                    img{
+                                        width: 110%;
+                                        max-width: 110%;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                    }
+                                }  
+                            }
+
+                            &:last-child{
+                                width: 60%;
+                                display: flex;
+                                flex-wrap: wrap;
+                                >div{
+                                border: 1px solid red;
+                                width: 30%;
+                                margin-left: 10px;
+                                align-self: flex-start;
+                                    >div{
+                                        width: 100%;
+                                        height: 150px;
+                                        position: relative;
+                                        border: 1px solid blue;
+                                        overflow: hidden;
+                                        img{
+                                            width: 100%;
+                                            max-width: 100%;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                        }
+                                    }  
+                                }
+                            }
+                        }
+                    }
+                    // 按鈕區
+                    &:last-child{
+                        border: 1px solid blue;
+                        height: 20%;
+                    }
+                }
             }
         }
     }
@@ -993,7 +1061,7 @@ div.JHH {
             width: 400px;
 
             >div {
-                &:first-child {
+                &:nth-child(2) {
                     >div {
                         >div {
                             h2 {
@@ -1168,7 +1236,7 @@ div.JHH {
             width: 350px;
 
             >div {
-                &:first-child {
+                &:nth-child(2) {
                     >div {
                         >div {
                             h2 {
@@ -1322,11 +1390,15 @@ div.JHH {
 
             >div {
                 &:first-child {
-                    overflow-y: hidden;
-
                     header.common {
                         display: none;
                     }
+                }
+
+                &:nth-child(2) {
+                    overflow-y: hidden;
+
+
 
                     >div {
 
@@ -1486,7 +1558,7 @@ div.JHH {
 
         div#homeLeft {
             >div {
-                &:first-child {
+                &:nth-child(2) {
                     >div {
                         >div {
                             width: 100%;
