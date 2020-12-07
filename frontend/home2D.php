@@ -285,11 +285,11 @@
                 <div>
                     <div>
                         <label for="memName" class="titleFont3" >姓名</label>
-                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required">
+                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required" autocomplete="off">
                     </div>
                     <div>
                         <label for="Phone" class="titleFont3">手機</label>
-                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" required="required">
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" required="required"autocomplete="off">
                     </div>
                 </div>
                 <div>
