@@ -203,7 +203,7 @@ body{
     background-color: #FFFAF4;
     // overflow-x: hidden;
     // margin-top: 160px;
-    border: none !important;
+    // border: none !important;
 }
 
 
@@ -211,7 +211,9 @@ body{
     font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
     // font-family: "微軟正黑體";
     border: none !important;
+    // box-sizing: border-box;
 }
+
 
 //巢狀寫法
 div#JN{
@@ -272,10 +274,21 @@ div#JN{
         .first{
             border: 1px solid palevioletred;
             width: auto;
-            background-color: #BDA79C;
-            opacity: 0.5;
-            z-index: 1;
+            background-color: rgba(189, 167, 156, 0.1);
+            // z-index: 1;
             padding: 5%;
+            position: relative;
+            &:after{
+                content: '';
+                display: inline-block;
+                border: 1px solid #bda79e;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 3%;
+                left: 3%;
+                z-index: -1;
+            }
         }
 
         .designer_say{
@@ -371,126 +384,46 @@ div#JN{
 
         //頁籤
         .tab_list_block{
-            max-width: 1200px;
-            width: 100%;
-            .tab_list{
-                border: 1px solid rebeccapurple;
-                width: 80%;
-                font-size: 0;
-                // margin: 0px 20px;
-                li{
-                    display: inline-block;
-                    border: 1px solid black !important;
-                    a{
-                        font-size: 30px;
-                        display: inline-block;
-                        padding: 5px 60px;
-                        text-decoration: none;
-                        color: black;
-                        &:hover{
-                            cursor: pointer;
-                            background-color: #865454;
-                            color: white;
+                    max-width: 1200px;
+                    width: 100%;
+                    .tab_list{
+                        border: 1px solid rebeccapurple;
+                        width: 80%;
+                        font-size: 0;
+                        // margin: 0px 20px;
+                        li{
+                            display: inline-block;
+                            border: 1px solid black !important;
+                            a{
+                                font-size: 30px;
+                                display: inline-block;
+                                padding: 5px 60px;
+                                text-decoration: none;
+                                color: black;
+                                padding: 15px 60px;
+                                &:hover{
+                                    cursor: pointer;
+                                    background-color: #865454;
+                                    color: white;
+                                }
+                            }
+                            a.-on{
+                                // border: 1px solid black;
+                                color: white;
+                                background-color: #865454;
+                            }
                         }
                     }
-                }
-            }
         }
 
-        
+        div.tab{
+            display: none;
+            // padding: 30px;
+        }
 
-
-
-        // .style_one, .style_two, .style_three{
-        //     border: 2px solid magenta;
-        //     // width: 100%;  
-        // }
-
-        // .style_one_one, .style_one_two,.style_one_three,.style_one_four,
-        // .style_two_one, .style_three_one{
-        //     border: 5px solid cadetblue;
-        //     width: 100%;
-        // }
-
-        // .home_flex_one, .home_flex_two, .home_flex_three, .home_flex_four,
-        // .commercial_flex_one, .commercial_flex_two, .commercial_flex_three,
-        // .commercial_flex_four, .office_flex_one{
-        //     border: 6px solid violet;
-        //     width: 300px;
-        //     display: inline-flex;
-        //     // justify-content: center;
-        // }
-
-        // 戶濱頁籤
-
-        // ul.tab_list{
-        //     list-style: none;
-        //     display: inline-block;
-        //     margin: 0;
-        //     padding: 0;
-        //   }
-
-        //   .tab_container div.tab_list_block ul.tab_list > li{
-        //     display: inline-block;
-        //   }
-
-        //   .tab_container div.tab_list_block ul.tab_list > li > a{
-        //     text-decoration: none;
-        //     display: inline-block;
-        //     border: 1px solid #ccc;
-        //     border-bottom: 1px solid black;
-        //     padding: 2px 20px;
-        //     border-radius: 5px 5px 0 0;
-        //     cursor: pointer;
-        //     color: #ccc;
-          
-        //     position: relative;
-        //     top: 1px;
-        //   }
-
-        //   .tab_container div.tab_list_block ul.tab_list > li > a::after{
-        //     content: "";
-        //     position: absolute;
-        //     width: calc(100% + 2px);
-        //     height: 1px;
-        //     background-color: black;
-        //     bottom:-1px;
-        //     left: -1px;
-        //     z-index: 1;
-        //   }
-        //   div.tab_container div.tab_list_block ul.tab_list > li > a.-on{
-        //     border: 1px solid black;
-        //     color: black;
-        //   }
-
-        //   .tab_container div.tab_list_block ul.tab_list > li > a::after{
-        //     content: "";
-        //     position: absolute;
-        //     width: calc(100% + 2px);
-        //     height: 1px;
-        //     background-color: black;
-        //     bottom:-1px;
-        //     left: -1px;
-        //     z-index: 1;
-        //   }
-        //   div.tab_container div.tab_list_block ul.tab_list > li > a.-on{
-        //     border: 1px solid black;
-        //     color: black;
-        //   }
-
-        //   .tab_container div.tab_contents{
-        //     border: 1px solid black;
-        //   }
-
-        //   .tab_container div.tab_contents div.tab{
-        //     padding: 10px;
-        //     display: none;
-        //   }
-
-        //   .tab_container div.tab_contents div.tab.-on{
-        //     display: block;
-        //   }
-
+        div.tab.-on{
+            display: block;
+        }
 
 
         //風格圖片
@@ -658,6 +591,8 @@ div#JN{
             width: 40%;
             left: 60%;
             line-height: 2.5;
+            padding: 0px 40px 0px 10px;
+            box-sizing: border-box;
         }
 
         .intro_sliderBoard{

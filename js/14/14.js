@@ -43,16 +43,16 @@ $(document).ready(function () {
     // });
 
     function movemove() {
-        $('li.clickMe').removeClass('clickMe').next().addClass('clickMe');
+        $('#contentButton li.clickMe').removeClass('clickMe').next().addClass('clickMe');
 
-        if ($('li.clickMe').index() == -1) {
-            $('li:last-child').removeClass('clickMe');
-            $('li:first-child').addClass('clickMe');
+        if ($('#contentButton li.clickMe').index() == -1) {
+            $('#contentButton li:last-child').removeClass('clickMe');
+            $('#contentButton li:first-child').addClass('clickMe');
         }
 
         // console.log($('li.clickMe').index());
         // $('li.clickMe').removeClass('clickMe').next().addClass('clickMe');
-        let tt = $('li.clickMe').index();
+        let tt = $('#contentButton li.clickMe').index();
         if (tt <= 2) {
             $('#content').animate({
                 left: divWidth * tt * -1,
@@ -113,5 +113,6 @@ $(function () {
         /* 找到對應的頁籤內容，加上 -on 來顯示 */
         $("div.tab").removeClass("-on");
         $("div.tab." + $(this).attr("data-target")).addClass("-on");
+        console.log($("div.tab." + $(this).attr("data-target")));
     });
 });
