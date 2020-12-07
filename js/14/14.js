@@ -1,5 +1,5 @@
-//jQuery輪播圖
 $(document).ready(function () {
+    //jQuery輪播圖
 
     let divWidth = $('#sliderBoard').width(); //90%
     let imgCount = $('#content li').length;   //3(張照片)
@@ -61,6 +61,27 @@ $(document).ready(function () {
     }
     setInterval(movemove, 1300);
 
+
+
+    // 360平面圖燈箱
+    $('div.inter_one a').click(function (e) {
+        // <a>連結不作用
+        e.preventDefault();
+        // 改寫img src
+        $('#picsLightBox img:first-child').attr('src', `${$(this).children('img').attr('src')}`);
+        // 燈箱出現
+        $('#picsLightBox').css({
+            'opacity': '1',
+            'z-index': '10',
+        });
+        // 關閉燈箱
+        $('#picsLightBox img:last-child').click(function () {
+            $('#picsLightBox').css({
+                'opacity': '0',
+                'z-index': '-10',
+            });
+        });
+    });
 });
 
 // 風格切換
@@ -81,16 +102,16 @@ $(document).ready(function () {
 // }
 
 // 頁籤
-// $(function () {
-//     $("a.tab").on("click", function (e) {
-//         e.preventDefault();
+$(function () {
+    $("a.tab").on("click", function (e) {
+        e.preventDefault();
 
-//         /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
-//         $(this).closest("ul").find("a.tab").removeClass("-on");
-//         $(this).addClass("-on");
+        /* 將頁籤列表移除所有 -on，再將指定的加上 -on */
+        $(this).closest("ul").find("a.tab").removeClass("-on");
+        $(this).addClass("-on");
 
-//         /* 找到對應的頁籤內容，加上 -on 來顯示 */
-//         $("div.tab").removeClass("-on");
-//         $("div.tab." + $(this).attr("data-target")).addClass("-on");
-//     });
-// });
+        /* 找到對應的頁籤內容，加上 -on 來顯示 */
+        $("div.tab").removeClass("-on");
+        $("div.tab." + $(this).attr("data-target")).addClass("-on");
+    });
+});
