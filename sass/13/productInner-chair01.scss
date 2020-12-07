@@ -220,7 +220,7 @@ div.sam_pi{
             div.moneyBox{
                 // border:1px solid blue;
                 position: relative;
-                margin-top:16%;
+                margin-top:30%;
                 h1.money{
                     display:inline-block;
                     color:#54383b;
@@ -751,9 +751,9 @@ div.section2{
             flex-direction: column;
             align-items: center;
             div.truck{
-                // border:1px solid rgb(133, 93, 196);
+                // border:1px solid rgb(201, 4, 4);
                 width:70%;
-                margin-bottom:5%;
+                margin-bottom:6%;
                 margin-left:30px;
                 &:first-child{
                     margin-top:30px;
@@ -1123,7 +1123,7 @@ div.sam_pi{
                     }
                 }
                 div.moneyBox{
-                    margin-top:5%;
+                    margin-top:12%;
                 }
                 div.shoppingBtn{
                     button.shbtn{
@@ -1248,10 +1248,9 @@ div.sam_pi{
         div.deskTopBox{
             div.rightWrap{
                 div.moneyBox{
+                    margin-top:5%;
                     h1.money{
-                        margin-right:20%;
                         &:before{
-                            width: 60px;
                             margin-right:10px;
                         }
                     }
