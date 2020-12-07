@@ -34,7 +34,7 @@
             </div>
         </div>
         <main>
-            <div class="left2">
+            <div class="left2" id="left2">
                 <h2 class="info">購買人資料</h2>
                 <div class="outer memberbox">
                     <div class="name df">
@@ -112,12 +112,35 @@
                         <p class="lh">新增寄送地址</p>
                     </div>
                     <div class="address_box">
-                        <select name="" class="freight_city">
+                        <select class="freight_city">
                             <option selected disabled>居住縣市</option>
-                            <option>台北市</option>
-                            <option>新北市</option>
-                            <option>基隆市</option>
-                            <option>新竹市</option>
+                            <optgroup label="運費2000元">
+                                <option>台北市</option>
+                                <option>新北市</option>
+                                <option>桃園市</option>
+                            </optgroup>
+                            <optgroup label="運費3000元">
+                                <option>基隆市</option>
+                                <option>新竹市</option>
+                                <option>新竹縣</option>
+                                <option>宜蘭縣</option>
+                            </optgroup>
+                            <optgroup label="運費4000元">
+                                <option>苗栗縣</option>
+                                <option>台中市</option>
+                                <option>彰化縣</option>
+                                <option>南投縣</option>
+                                <option>雲林縣</option>
+                                <option>嘉義市</option>
+                                <option>嘉義縣</option>
+                                <option>花蓮縣</option>
+                            </optgroup>
+                            <optgroup label="運費5000元">
+                                <option>台南市</option>
+                                <option>高雄市</option>
+                                <option>屏東縣</option>
+                                <option>台東縣</option>
+                            </optgroup>
                         </select>
                         <input type="text">
                         <p class="onlytw">*僅提供本島寄送</p>
