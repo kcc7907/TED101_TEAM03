@@ -32,13 +32,12 @@
         $Member->setMemberInfo($memberID, $memberName);
 
         //導回產品頁        
-        // echo "<script>alert('登入成功!'); location.href = 'home2D.php';</script>"; 
         echo "<script>alert('登入成功!');</script>"; 
         echo "<script>document.cookie='loging=".$memberID."';</script>";
-        echo "<script>log();</script>";
+        echo "<script>closeLB();</script>";
 
     }else{
         //跳出提示停留在登入頁
-        echo "<>alert('帳號或密碼錯誤!');</>"; 
+        echo "<script>alert('帳號或密碼錯誤!');</script>"; 
     }
 ?>

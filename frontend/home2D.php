@@ -8,7 +8,7 @@
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
     <script src="../lib/js/jquery.js"></script>
-    <script src="../donotupload/vue.js"></script>
+    <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
 </head>
 
@@ -249,9 +249,9 @@
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" id="account" name="account" class="titleFont3" minlength="8" maxlength="12" required="required">
+                    <input type="text" id="account" name="account" class="titleFont3" minlength="8" maxlength="12" required="required" autocomplete="off">
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="password" class="titleFont3" id="pwd" name="pwd" minlength="8" maxlength="12" required="required">
+                    <input type="password" class="titleFont3" id="pwd" name="pwd" minlength="8" maxlength="12" required="required" autocomplete="off">
                     <input type="checkbox" id="alive" name="alive" class="alive detailFont">
                     <label for="alive" class="alive" id="alivebox"></label>
                     <label for="alive" class="alive detailFont">保持登入</label>
@@ -284,17 +284,17 @@
             <form action="SignR.php" class="signUp" name="signUp">
                 <div>
                     <div>
-                        <label for="memName" class="titleFont3" >姓名</label>
+                        <label for="memName" class="titleFont3">姓名</label>
                         <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required" autocomplete="off">
                     </div>
                     <div>
                         <label for="Phone" class="titleFont3">手機</label>
-                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" required="required"autocomplete="off">
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" required="required" autocomplete="off">
                     </div>
                 </div>
                 <div>
                     <label for="email" class="titleFont3">信箱</label>
-                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required">
+                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required" autocomplete="off">
                 </div>
                 <div id="addressOption">
                     <label for="address" class="titleFont3">地址</label>
@@ -302,19 +302,19 @@
                         <option name="memCity" selected disabled value="0">請選擇縣市</option>
                         <option v-for="city in citys" class="detailFont" name="memCity" :value="city">{{city}}</option>
                     </select>
-                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required">
+                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required" autocomplete="off">
                 </div>
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="8" maxlength="12" required="required">
+                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="8" maxlength="12" required="required" autocomplete="off">
                 </div>
                 <div>
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="8" maxlength="12" required="required">
+                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="8" maxlength="12" required="required" autocomplete="off">
                 </div>
                 <div>
                     <label for="checkP" class="titleFont3">密碼確認</label>
-                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required">
+                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required" autocomplete="off">
                 </div>
                 <div>
                     <!-- <button type="button" class="titleFont3 signup">註冊</button> -->
