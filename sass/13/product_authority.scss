@@ -1,0 +1,191 @@
+//通用
+@import '../../lib/header/variable';
+
+//排版設定
+// @import 'var';
+// @import 'mixin';
+
+
+
+
+body{
+    background-color: #FFFAF4;
+    
+    >.jk_authority{
+        *{
+            box-sizing: border-box;
+        }
+        >.container{
+            width: 1850px;
+            display: flex;
+
+            color: #474747;
+
+            >.sideMenu{
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 15.7%;
+                min-height: 100vh;
+                background-color: #CAC3BB;
+                border: 1px solid #707070;
+
+                transition: transform .5s;
+
+                >.title{
+                    width: 86.6%;
+                    margin-bottom: 60px;
+                    padding: 25px 0;
+                    border-bottom: 1px solid #707070;
+                    text-align: center;
+                    font-size: 30px;
+                }
+
+                >.menu{
+                    width: 100%;
+
+                    >ul{
+                        width: 100%;
+
+                        position: relative;
+
+                        //menu大項目
+                        >li{
+                            width: 100%;
+                            font-size: 24px;
+                            text-align: center;
+
+                            //menu小項目
+                            li{
+                                width: 100%;
+                                padding: 20px 0;
+                                font-size: 24px;
+                                text-align: center;
+                                cursor: pointer;
+
+                                
+                            }
+                            
+                            //menu小項目隱藏，待點擊後展開
+                            li + li{
+                                display: none;
+                            }
+
+                            i{
+                                position: absolute;
+                                right: 10%;
+
+                                transition: .5s;
+                            }
+                        }
+
+                        >li.-on{
+                            color: #fff;
+
+                            i{
+                                transform: rotate(-90deg);
+                            }
+                        }
+                        
+                        >li.-on li:first-child{
+                            background-color: #965454;                          
+                        }
+
+                        //調整'新增管理員'位置
+                        // >li.-on li:nth-child(2){
+                        //     margin-left: 21px;
+                        //     width: 94%;
+                        // }
+                    }
+
+                }
+
+                >.arrow{
+                    margin-top: 320px;
+                    padding-right: 25px;
+                    align-self: flex-end;
+
+                    position: fixed;
+                    top: 525px;
+                    left: 215px;                    
+
+                    >i{
+                        font-size: 50px;
+                        cursor: pointer;
+
+                        transition: .5s;
+                        
+                    }
+
+                    >i.-rotate{
+
+                        transform: translateX(100px) rotate(180deg);
+
+                    }
+                }
+            }
+
+            >.sideMenu.-close{
+                transform: translateX(-100%);
+
+            }
+
+            >main{
+                display: none;
+                font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+
+                width: 79.1%;
+                margin: 0 auto;
+                font-size: 24px;
+
+                >.top{
+                    display: flex;
+                    justify-content: space-between;
+
+                    border-bottom: 1px solid #707070;
+                    margin-top: 26px;
+                    padding: 15px 0;
+                }
+
+                >table{
+                    
+                    margin: 60px auto 0;
+                    border-top: 1px solid #707070;
+                    border-right: 1px solid #707070;
+                    border-left: 1px solid #707070;
+
+                    tr{
+                        border-bottom: 1px solid #707070;
+
+                        >th{
+                            background-color: #CAC3BB;
+                            font-weight: bold;
+                        }
+
+                        >td{
+
+                            >select{                                
+                                outline: none;
+                                
+                            }
+                        }
+
+                        >th, >td{
+                            padding: 15px;
+                            text-align: center;
+                        }
+                        >th + th, >td + td{
+                            border-left: 1px solid #707070;
+                        }
+
+                        
+                    }
+                }
+            }
+        }
+
+
+    }
+}
