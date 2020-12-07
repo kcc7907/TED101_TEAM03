@@ -289,7 +289,7 @@
                     </div>
                     <div>
                         <label for="Phone" class="titleFont3">手機</label>
-                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" required="required" autocomplete="off">
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" maxlength="10" required="required" autocomplete="off">
                     </div>
                 </div>
                 <div>

@@ -1,13 +1,14 @@
 <?php
     include("../php/utilClassJH.php");
-	$Util = new UtilClass();	
+	// $Util = new UtilClass();	
 
     //建立SQL
     $sql = "SELECT * FROM MEMBER WHERE MEM_ID = ? and MEM_PWD = ?";
 
     //執行
-    $statement = $Util->getPDO()->prepare($sql);
-
+    // $statement = $Util->getPDO()->prepare($sql);
+    $statement = $pdo->prepare($sql);
+    
     //給值 //post變數自定義但要跟ajax裡的data命名相同才接的到
     $statement->bindValue(1, $_POST["account"]);
     $statement->bindValue(2, $_POST["pwd"]);
@@ -34,7 +35,10 @@
         //導回產品頁        
         echo "<script>alert('登入成功!');</script>"; 
         echo "<script>document.cookie='loging=".$memberID."';</script>";
-        echo "<script>closeLB();</script>";
+        echo "<script>$('div#login').css('z-index','-3').hide();</script>";
+        echo "<script>$('div.login').css({'opacity':'0','top':'-30vh',});</script>";
+        echo "<script>$('form input').val('')</script>";
+        echo "<script>$('form select').val('0')</script>";
 
     }else{
         //跳出提示停留在登入頁

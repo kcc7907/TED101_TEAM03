@@ -75,18 +75,38 @@ $(document).ready(function () {
 
     // =================================== 註冊判斷 ===================================
     // keyup 判斷
+    // 手機只能輸入數字
+    $('#memPhoneJH').keydown(function(e){ 
+        if((e.which >= 48 && e.which <= 57)|| e.which == 8 || e.which == 46 || e.which == 37 || e.which == 39 || e.which == 13){
+        }else{
+            e.preventDefault();
+        }
+    })
+
+    $('#memPhoneJH').keyup(function(e){
+        let str = (e.target.value).replace(/\D/g, "");
+        e.target.value = str;
+    })
+
+    // 信箱只能輸入英數
+    $('#memEmailJH').keyup(function(e){
+        let str = (e.target.value).replace(/\W/g, "");
+        e.target.value = str;
+    })
+
+
     // button 判斷
     $('button.signup').click(function () {
         // input&select未輸入值，產生紅框
         let theCheck = 1;
         $('form.signUp input').each(function () {
-            if ($(this).val() == ''){
+            if ($(this).val().trim() == ''){
                 $(this).css('border', '1px solid red');
                 theCheck = 0;
             }
         });
 
-        if(Boolean($('select[name="memCity"]').val()) == false){
+        if(Boolean($('select[name="memCity"]').val().trim()) == false){
             $('select[name="memCity"]').css('border', '1px solid red');
             theCheck = 0;
         }
@@ -97,8 +117,10 @@ $(document).ready(function () {
                 break;
             case 1:
                 // 判斷帳號密碼輸入值
-                let accNum = $('#memAccountJH').val().length;
-                let pwdNum = $('#memPwdJH').val().length;
+                let memAccount = $('#memAccountJH').val().trim();
+                let memPwd = $('#memPwdJH').val().trim();
+                let accNum = memAccount.length;
+                let pwdNum = memPwd.length;
                 if(accNum < 8 || accNum > 12 ){
                     alert('帳號請輸入 8 - 12 字元');
                 }else if(pwdNum < 8 || pwdNum > 12){
@@ -106,32 +128,34 @@ $(document).ready(function () {
                 }else if((accNum < 8 && accNum > 12) || (pwdNum < 8 && pwdNum > 12)){
                     alert('帳號及密碼請輸入 8 - 12 字元');
                 }else{
-                    alert('傳送ajax');
+                    let memName = $('#memNameJH').val().trim();
+                    let memPhone = $('#memPhoneJH').val().trim();
+                    let memEmail = $('#memEmailJH').val().trim();
+                    let memCity = $('#memCityJH').val().trim();
+                    let memAddress = $('#memAddressJH').val().trim();
+                    let memCheckPwd = $('#memCheckPJH').val().trim();
+                    if(memPwd !== memCheckPwd){
+                        alert('確認密碼有誤');
+                    }else{
+                        $.ajax({  
+                            url: './SignR.php',
+                            data:{
+                                memAccount,
+                                memPwd,
+                                memName,
+                                memPhone,
+                                memEmail,
+                                memCity,
+                                memAddress,
+                            },
+                            type: 'POST',
+                            dataType: 'text',
+                            success(res) {
+                                $('body').append(res);
+                            },
+                        });
+                    }
                 }
-                // let memAccount = $('#memAccountJH').val();
-                // let memPwd = $('#memPwdJH').val();
-                // let memName = $('#memNameJH').val();
-                // let memPhone = $('#memPhoneJH').val();
-                // let memEmail = $('#memEmailJH').val();
-                // let memCity = $('#memCityJH').val();
-                // let memAddress = $('#memAddressJH').val();
-                // $.ajax({  
-                //     url: './SignR.php',
-                //     data:{
-                //         memAccount,
-                //         memPwd,
-                //         memName,
-                //         memPhone,
-                //         memEmail,
-                //         memCity,
-                //         memAddress,
-                //     },
-                //     type: 'POST',
-                //     dataType: 'text',
-                //     success(res) {
-                //         $('body').append(res);
-                //     },
-                // });
                 break;
         }
 
@@ -253,4 +277,5 @@ function changeBGC() {
         'borderBottom': '1px solid #BDA79E',
     });
 }
+
 
