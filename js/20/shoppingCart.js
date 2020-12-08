@@ -53,8 +53,8 @@ let left = new Vue({
         rp:[],
         proTotal:0
     },
-    // mounted() {
-    created() {
+    mounted() {
+    // created() {
         let list = JSON.parse(localStorage.getItem("lists"));
         this.proTotal = list.length;
         list.forEach((a, b) => {
@@ -72,8 +72,6 @@ let left = new Vue({
             }
         });
     },
-    // mounted() {
-    // },
 });
 
 Vue.component('myList', {
@@ -83,10 +81,10 @@ Vue.component('myList', {
             price: 1000,
         };
     },
-    props: ['check', 'prdId', 'url', 'prdName', 'prdPrice', 'discountId'],
+    props: ['mycheck', 'prdId', 'url', 'prdName', 'prdPrice', 'discountId'],
     template:
         `<li class="list">
-                <input type="checkbox" class="pick" v-model="check">
+                <input type="checkbox" class="pick" :checked="mycheck">
                 <div class="picbox">
                     <div class="imgbox">
                         <img :src="url" class="pic">
