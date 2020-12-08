@@ -42,6 +42,41 @@ $(document).ready(function () {
     });
 
     ///////////////////SAM START////////////////
+    $('#sam_authorityChange1').click(function () {
+        $('main.sam_class').css('display', 'block');
+    });
+
+    $('#sam_authorityChange2').click(function () {
+        $('div.sam_jump').addClass('-on');
+    });
+
+    $('img.cancel-icon').click(function () {
+        $('div.sam_jump').addClass('-opacity-zero');
+
+        setTimeout(function () {
+            $('div.sam_jump').removeClass('-on -opacity-zero');
+        }, 1000);
+    });
+
+
+    /////////////////////////kcc start ////////////////////////////
+    $('#kcc_authorityChange1').click(function () {
+        $('main.kcc_class').css('display', 'block');
+    });
+
+    $('#kcc_authorityChange2').click(function () {
+        $('div.kcc_jump').addClass('-on');
+    });
+
+    $('img.cancel-icon').click(function () {
+        $('div.kcc_jump').addClass('-opacity-zero');
+
+        setTimeout(function () {
+            $('div.kcc_jump').removeClass('-on -opacity-zero');
+        }, 1000);
+    });
+
+
 
 
 
