@@ -59,7 +59,26 @@ $(document).ready(function () {
             });
         }
     }
-    setInterval(movemove, 1300);
+    setInterval(movemove, 2000);
+
+
+    //RWD輪播圖
+    // if (windows.ineerwidth < 993) {
+    // $('.slider-for').slick({
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     fade: true,
+    //     asNavFor: '.interior_two'
+    // });
+    // $('.slider-nav').slick({
+    //     slidesToShow: 3,
+    //     slidesToScroll: 2,
+    //     asNavFor: '.interior_one',
+    //     dots: true,
+    //     focusOnSelect: true
+    // });
+    // }
 
 
 
@@ -83,6 +102,9 @@ $(document).ready(function () {
         });
     });
 });
+
+
+
 
 // 風格切換
 // let spanbtn = document.querySelectorAll('.stylelist li');

@@ -210,7 +210,7 @@ body{
 *{
     font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
     // font-family: "微軟正黑體";
-    border: none !important;
+    // border: none !important;
     // box-sizing: border-box;
 }
 
@@ -382,6 +382,8 @@ div#JN{
             float: left;
             
         }
+
+     
     
         //%是秒數， 
         @keyframes slider{
@@ -753,10 +755,18 @@ div#JN{
         // display: inline-flex;
         width: 100%;
         margin-top: 5%;
+        
     }
 
     .interior_one, .interior_two, .interior_three{
         display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 1px solid rebeccapurple;
+    }
+
+    .interior_two{
+        display: none;
     }
 
     .interior_pics{
@@ -765,15 +775,14 @@ div#JN{
     }
 
     .d_pic_word{
-        width: 100%;
-        
+        width: 100%; 
     }
 
 
     .inter_one{
-        border: 1px solid brown;   
-        width: 600px;
-        height: 200px; 
+        // border: 1px solid brown;   
+        width: 290px;
+        // height: 200px; 
         padding: 2%;
     }
 
@@ -896,7 +905,7 @@ div#JN{
         .designer_intro{
             margin-top: 0%;
         }
-        .interior_one, .interior_two{
+        .interior_one{
             display: block;
         }
         #intro_sliderBoard{
@@ -918,6 +927,9 @@ div#JN{
             float: left;
             display: flex;
             justify-items: center;
+        }
+        .interior_two{
+            display: none;
         }
 
 
@@ -1031,19 +1043,40 @@ div#JN{
             max-width: 1200px;
             width: 100%;
             justify-content: space-around;
-        }
-        .intro_image{
-            width: 100%;
-        }
-        div.other_text{
-            width: 100%;
-            left: 0%;
-        }
-        #content li{	/*li*/
-            float: left;
-            display: flex;
-            justify-items: center;
-        }
+            }
+            .intro_image{
+                width: 100%;
+            }
+            div.other_text{
+                width: 100%;
+                left: 0%;
+            }
+            #content li{	/*li*/
+                float: left;
+                display: flex;
+                justify-items: center;
+            }
+
+            .d_pic_flex{
+                font-family:Arial;
+                width:700px;
+                display:block;
+                margin:0 auto;
+            }
+
+            // .interior_one, .interior_two{
+            //     display: block;
+            //     background: #fff;
+            //     color: #3498db;
+            //     font-size: 36px;
+            //     line-height: 100px;
+            //     margin: 10px;
+            //     padding: 2%;
+            //     position: relative;
+            //     text-align: center;
+            // }
+
+
          
 
             .tab_list_block{
@@ -1055,7 +1088,7 @@ div#JN{
                     }
                 }
             }
-
+        
         
             .jpgbox{
                 width: 49%; 
@@ -1105,10 +1138,7 @@ div#JN{
             .contact_detail{
                 width: 500px;
                 height: 300px;
-            }
-           
-            
-           
+            }     
     
     }
 };
