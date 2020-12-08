@@ -17,7 +17,6 @@
             $sql = $sql."or a.`PRD_ID` ="."'".$row."'"." ";
         }
     }
-    // echo $sql;
     $result = $pdo->query($sql);
     $result->execute();
     $data = $result->fetchAll(PDO::FETCH_ASSOC);

@@ -50,16 +50,16 @@
                     </div>
                     <div class="lives df">
                         <p class="innerT lh">住址</p>
-                        <input type="text" class="live_input" :value="addrs"><button class="modified">修改</button>
+                        <input type="text" class="live_input" v-model="formData.fadd"><button class="modified">修改</button>
                     </div>
                 </div>
                 <h2 class="payment">付款方式</h2>
                 <div class="outer paymentbox" >
                     <div class="checkT">
-                        <input type="checkbox" class="credit_check" v-model="payment">
+                        <input type="checkbox" class="credit_check" v-model="cardBox">
                         <p class="lh" >信用卡</p>
                     </div>
-                    <div class="card_box" v-show="payment">
+                    <div class="card_box" v-show="cardBox">
                         <div class="cardnum_box">
                             <p class="card_num">信用卡號碼</p>
                             <div class="inputnum_box df">
@@ -114,7 +114,7 @@
                         <p class="lh">新增寄送地址</p>
                     </div>
                     <div class="address_box" v-show="addressBox">
-                        <select class="freight_city">
+                        <select class="freight_city" @change="getCity" >
                             <option selected disabled>居住縣市</option>
                             <optgroup label="運費2000元">
                                 <option>台北市</option>
@@ -237,7 +237,7 @@
                 <div class="cart_btn">
                     <button class="backstep" type="button"><img src="../img/shoppincart/cart_left.svg"
                             class="backimg">返回購物車</button>
-                    <button class="buy" type="button">完成訂購</button>
+                    <button class="buy" type="button" @click='gotest'>完成訂購</button>
                 </div>
             </div>
         </main>

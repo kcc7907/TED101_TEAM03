@@ -30,17 +30,62 @@ title[0].classList.add('-onColor');
 //     location.href ="shoppingorder.html"
 // });
 
+let all = new Vue({
+    el:'#all',
+    data:{
+    },
+    methods: {
+        deleteAll(){
+            let ul = document.querySelector('.product');
+            ul.innerHTML = '';
+        },
+        checkAll(e){
+            e.target.checked==true?left.check=true:left.check=false;
+        },
+    },
+});
+
+let left = new Vue({
+    el:'#list',
+    data:{
+        check:false,
+        prdid:[],
+        rp:[],
+        proTotal:0
+    },
+    // mounted() {
+    created() {
+        let list = JSON.parse(localStorage.getItem("lists"));
+        this.proTotal = list.length;
+        list.forEach((a, b) => {
+                this.prdid.push(a.prd_id);
+            });
+        axios.post('http://localhost:8787/php/20/getProduct.php', this.prdid).then(res => {
+            this.rp = res.data;
+        }).catch(err=>{
+            if (err.response) {
+                console.log(err.response.status)
+            } else if (err.request) {
+                console.log(err.request)
+            } else {
+                console.log('Error', err.message)
+            }
+        });
+    },
+    // mounted() {
+    // },
+});
+
 Vue.component('myList', {
-    data(){
-        return{
-            num:1,
-            price:1000,
-            check:false
+    data() {
+        return {
+            num: 1,
+            price: 1000,
         };
-            },
-	props: ['check','prdId','url','prdName','prdPrice','discountId'],
+    },
+    props: ['check', 'prdId', 'url', 'prdName', 'prdPrice', 'discountId'],
     template:
-            `<li class="list">
+        `<li class="list">
                 <input type="checkbox" class="pick" v-model="check">
                 <div class="picbox">
                     <div class="imgbox">
@@ -84,84 +129,20 @@ Vue.component('myList', {
                 </div>
                 <img src="../img/shoppincart/trash.svg" alt="" class="trash" @click='deleteList'>
             </li>`,
-    methods:{
-        btnl(e){
-            this.num>1?this.num--:1;
+    methods: {
+        btnl(e) {
+            this.num > 1 ? this.num-- : 1;
             right.total = this.num * this.price + right.total;
             right.totalPrice();
         },
-        btnr(){
+        btnr() {
             this.num++;
             right.total = this.num * this.price + right.total;
             right.totalPrice();
         },
-        deleteList(e){
-            e.target.closest('ul').removeChild(e.target.closest('li'))
+        deleteList(e) {
+            e.target.closest('ul').removeChild(e.target.closest('li'));
         },
-    },
-});
-
-let all = new Vue({
-    el:'#all',
-    data:{
-        mine:123,
-    },
-    methods: {
-        deleteAll(){
-            let ul = document.querySelector('.product');
-            ul.innerHTML = '';
-        },
-        checkAll(e){
-            e.target.checked==true?left.check=true:left.check=false;
-        },
-    },
-});
-
-let left = new Vue({
-    el:'#list',
-    data:{
-        check:false,
-        prdid:[],
-        rp:[],
-        proTotal:0
-    },
-    // methods:{
-    //     btnl(e){
-    //         this.num>1?this.num--:1;
-    //     },
-    //     btnr(){
-    //         this.num++;
-    //     },
-    //     deleteList(e){
-    //         e.target.closest('ul').removeChild(e.target.closest('li'))
-    //     },
-    // },
-    // computed: {
-    //     selectAll(){
-    //         return selectAll=false;
-    //     },
-    // },
-    created() {
-        let list = JSON.parse(localStorage.getItem("lists"));
-        this.proTotal = list.length;
-        list.forEach((a, b) => {
-                this.prdid.push(a.prd_id);
-            });
-        axios.post('http://localhost:8787/php/20/getProduct.php', this.prdid).then(res => {
-            res.data.forEach((x,y) => {
-                this.rp.push(x);
-            });
-        }).catch(err=>{
-            if (err.response) {
-                console.log(err.response.status)
-            } else if (err.request) {
-                console.log(err.request)
-            } else {
-                console.log('Error', err.message)
-            }
-        });
-    },
-    mounted() {
     },
 });
 
@@ -178,7 +159,7 @@ let list = [
         prd_id : 'b003',
         num : '3'
     }
-]
+];
 
 localStorage.clear();
 localStorage.setItem("lists", JSON.stringify(list));

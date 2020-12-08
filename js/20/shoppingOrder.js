@@ -1,9 +1,6 @@
 let buy= document.querySelector('.buy');
 let title= document.querySelectorAll('.title');
 title[1].classList.add('-onColor');
-buy.addEventListener('click',()=>{
-    location.href ="shoppingdone.html"
-});
 
 document.cookie = 'loging=A111200001';
 
@@ -22,7 +19,6 @@ function getCookie(cname) {
     }
     return "";
 }
-
 // 檢查某 cookie 是否存在
 function checkCookie(cname) {
     var cookie_value = getCookie(cname);
@@ -32,24 +28,54 @@ function checkCookie(cname) {
         return false;
     }
 }
+
 let left2 = new Vue({
     el:'#left2',
     data:{
+        members:[],
         memName: '',
         addrs:'',
-        payment:false,
+        cardBox:false,
         remit:false,
         addressBox:false,
+        selected:'居住縣市',
+        area:'',
+        formData:{
+            fname:'',
+            fphone:'',
+            fadd:'',
+            payment:'',
+            products:[],
+            total:0,
+        }
     },
     methods: {
+        getCity(e){
+            console.log(e.target.value);
+        }
     },
     created() {
         let cookie = getCookie('loging');
-        axios.post('http://localhost:8787/php/20/getMember.php', {  ID: cookie}).then(res => {
+        axios.post('http://localhost:8787/php/20/getMember.php', {ID: cookie}).then(res => {
             this.members = res.data;
-            this.addrs = res.data[0].MEM_CITY + res.data[0].MEM_ADDRESS;
+            this.formData.fadd = res.data[0].MEM_CITY + res.data[0].MEM_ADDRESS;
+            this.formData.fphone = res.data[0].MEM_PHONE;
             this.memName = res.data[0].MEM_NAME;
-        })
+        });
+    },
+    watch: {
+        cardBox:function(e){
+            if (this.cardBox === true) {
+                this.remit=false;
+                this.area = '已付款';
+            }
+        },
+        remit:function(e){
+            if (this.remit === true) {
+                this.cardBox=false;
+                this.area = '未付款';
+            }
+        },
     },
 });
 
@@ -62,16 +88,16 @@ let right = new Vue({
         final: 0,
         proTotal: 0
     },
-    // methods: {
-    //     buy() {
-    //         let x = confirm();
-    //         if (x) location.href = "shoppingorder.html"
-    //         else return
-    //     },
-    //     totalPrice() {
-    //         this.final = this.total + this.discount + this.Shipping;
-    //     }
-    // },
+    methods: {
+        totalPrice() {
+            this.final = this.total + this.discount + this.Shipping;
+        },
+        gotest() {
+            let x = confirm();
+            if (x) location.href = "shoppingdone.html"
+            else return
+        },
+    },
     mounted() {
         let list = JSON.parse(localStorage.getItem("lists"));
         this.proTotal = list.length;
