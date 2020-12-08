@@ -767,69 +767,187 @@ div.JHH {
             &:last-child {
                 width: 100%;
                 height: 100%;
-                background-color: rgba(255, 255, 255, 0.8);
+                background-color: rgba(70, 93, 76, .8);
+                // color: ;
+                padding: 0 30px;
                 display: flex;
                 flex-direction: column;
-                >div{
+
+                >div {
+
                     // 消息區
-                    &:first-child{
-                        border: 1px solid blue;
+                    &:first-child {
                         height: 80%;
-                        margin-top: 10vh;
+                        margin-top: 15vh;
                         display: flex;
-                        time{
+                        opacity: .7;
+
+                        time {
                             display: block;
+                            color: #FFFAF4;
                         }
-                        >div{
-                            &:first-child{
-                                width: 40%;
-                                >div{
-                                    width: 100%;
-                                    height: 350px;
-                                    position: relative;
-                                    border: 1px solid blue;
-                                    overflow: hidden;
-                                    img{
-                                        width: 110%;
-                                        max-width: 110%;
-                                        position: absolute;
-                                        top: 0;
-                                        left: 0;
-                                    }
-                                }  
+
+
+                        >div {
+                            img {
+                                position: absolute;
+                                transition: all .5s;
+
+                                // &::after {
+                                //     content: "點擊了解更多";
+                                //     display: inline-block;
+                                //     width: 300px;
+                                //     height: 300px;
+                                //     color: white;
+                                //     position: absolute;
+                                //     left: 0;
+                                //     top: 0;
+                                //     background-color: rgba(0, 0, 0, .3);
+                                //     z-index: 10;
+                                //     opacity: 1;
+                                //     transition: all .5s;
+                                // }
+
+                                &:hover {
+                                    cursor: pointer;
+                                    transform: scale(.9);
+
+                                    // &::after {
+                                    //     opacity: 1;
+                                    //     z-index: 3;
+                                    // }
+                                }
                             }
 
-                            &:last-child{
+                            &:first-child {
+                                width: 40%;
+                                padding: 0 20px;
+
+                                a {
+                                    color: #FFFAF4;
+                                }
+
+                                >div {
+                                    width: 100%;
+                                    height: 300px;
+                                    position: relative;
+                                    overflow: hidden;
+                                    border: 5px solid transparent;
+                                    border-left-color: rgba(255, 250, 245, .8);
+
+                                    img {
+                                        width: 130%;
+                                        max-width: 130%;
+                                        top: -10%;
+                                        left: -30%;
+                                    }
+
+                                }
+                            }
+
+                            &:last-child {
                                 width: 60%;
+                                padding-top: 150px;
                                 display: flex;
                                 flex-wrap: wrap;
-                                >div{
-                                border: 1px solid red;
-                                width: 30%;
-                                margin-left: 10px;
-                                align-self: flex-start;
-                                    >div{
+                                justify-content: center;
+
+                                a {
+                                    display: inline-block;
+                                    // border: 1px solid blue;
+                                    width: 100%;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    color: #FFFAF4;
+                                }
+
+                                >div {
+                                    // border: 1px solid red;
+                                    width: 30%;
+                                    margin-left: 10px;
+                                    align-self: flex-start;
+
+                                    &:first-child,
+                                    &:nth-child(4) {
+                                        margin-left: 0;
+                                    }
+
+
+                                    >div {
                                         width: 100%;
                                         height: 150px;
                                         position: relative;
-                                        border: 1px solid blue;
+                                        // border: 1px solid blue;
                                         overflow: hidden;
-                                        img{
-                                            width: 100%;
-                                            max-width: 100%;
-                                            position: absolute;
-                                            top: 0;
-                                            left: 0;
+                                        border: 3px solid transparent;
+                                        border-left-color: rgba(255, 250, 245, .8);
+
+
+                                        img {
+                                            width: 130%;
+                                            max-width: 130%;
+                                            top: -15%;
+                                            left: -10%;
                                         }
-                                    }  
+
+
+                                    }
                                 }
                             }
                         }
                     }
+
                     // 按鈕區
-                    &:last-child{
-                        border: 1px solid blue;
+                    &:last-child {
+                        width: 100%;
                         height: 20%;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        >div {
+                            width: 300px;
+                            margin-right: 50px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            span {
+                                margin: 0 30px;
+                                color: rgba(255, 250, 244, .5);
+                                transition: all .5s;
+                            }
+
+                            button {
+                                display: inline-block;
+                                background-color: rgba(255, 250, 244, .5);
+                                font-size: 0;
+                                border: none;
+                                outline: none;
+                                width: 30px;
+                                height: 30px;
+                                clip-path: polygon(50% 30%, 0% 100%, 100% 100%);
+                                transition: all .5s;
+                                &:hover {
+                                    cursor: pointer;
+                                    background-color: #FFFAF4;
+
+                                    ~span {
+                                        color: rgba(255, 250, 244, 1);
+
+                                    }
+                                }
+                            }
+
+                            button.left {
+                                transform: rotate(-90deg);
+                            }
+
+                            button.right {
+                                transform: rotate(90deg);
+                                order: 1;
+                            }
+                        }
                     }
                 }
             }
@@ -970,6 +1088,52 @@ div.JHH {
                     >h3 {
                         top: 550px;
 
+                    }
+                }
+
+                // 最新消息
+                &:last-child {
+                    >div {
+
+                        // 消息區
+                        &:first-child {
+                            height: 90%;
+                            margin-top: 0;
+                            padding-top: 3vh;
+                            flex-direction: column;
+                            align-items: center;
+
+                            >div {
+                                &:first-child {
+                                    width: 60%;
+                                    order: 1;
+                                    align-self: flex-start;
+
+                                    a {
+                                        display: inline-block;
+                                        width: 100%;
+                                        text-overflow: ellipsis;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                    }
+                                }
+
+                                &:last-child {
+                                    padding-top: 0;
+                                    width: 100%;
+                                    margin-bottom: 20px;
+                                }
+                            }
+                        }
+
+                        // 按鈕區
+                        &:last-child {
+                            height: 10%;
+
+                            >div {
+                                margin-right: 0;
+                            }
+                        }
                     }
                 }
             }
@@ -1152,6 +1316,22 @@ div.JHH {
                         top: 620px;
                     }
                 }
+
+                // 最新消息
+                &:last-child {
+                    >div {
+
+                        // 消息區
+                        &:first-child {
+                            >div {
+                                &:first-child {
+                                    width: 100%;
+
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -1223,6 +1403,41 @@ div.JHH {
                         left: calc(100% - 110px);
                     }
                 }
+
+                // 最新消息
+                &:last-child {
+                    >div {
+
+                        // 消息區
+                        &:first-child {
+                            >div {
+                                &:last-child {
+                                    >div {
+                                        width: 45%;
+
+                                        >div {
+                                            // height: 100px;
+                                        }
+
+                                        &:nth-child(3) {
+                                            margin-left: 0;
+                                        }
+
+                                        &:nth-child(4) {
+                                            margin-left: 10px;
+                                        }
+
+                                        &:last-child,
+                                        &:nth-child(5) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }
@@ -1363,6 +1578,69 @@ div.JHH {
                     >h3 {
                         top: 650px;
                         left: calc(100% - 110px);
+                    }
+                }
+
+                // 最新消息
+                &:last-child {
+                    >div {
+
+                        // 消息區
+                        &:first-child {
+                            justify-content: center;
+
+                            a,
+                            time {
+                                font-size: 16px !important;
+                            }
+
+                            >div {
+                                &:first-child {
+                                    margin-bottom: 80px;
+
+                                    padding: 0;
+                                    order: 0;
+
+                                    >div {
+                                        height: 220px;
+                                    }
+                                }
+
+                                &:last-child {
+                                    >div {
+                                        padding: 0;
+                                        width: 100%;
+
+                                        >div {
+                                            height: 220px;
+
+                                        }
+
+                                        &:nth-child(3) {
+                                            margin-left: 0;
+                                        }
+
+                                        &:nth-child(4) {
+                                            margin-left: 10px;
+                                        }
+
+                                        &:last-child,
+                                        &:nth-child(5),
+                                        &:nth-child(4),
+                                        &:nth-child(3),
+                                        &:nth-child(2) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // 按鈕區
+                        &:last-child {
+                            justify-content: center;
+
+                        }
                     }
                 }
             }

@@ -118,10 +118,10 @@ $(document).ready(function () {
     })
 
     // 密碼只能輸入英數
-    $('#memPwdJH').keyup(function(e){
-        let str = (e.target.value).replace(/\W/g, "");
-        e.target.value = str;
-    })
+    // $('#memPwdJH').keyup(function(e){
+    //     let str = (e.target.value).replace(/\W/g, "");
+    //     e.target.value = str;
+    // })
 
     // button 判斷
     $('button.signup').click(function () {
@@ -144,17 +144,17 @@ $(document).ready(function () {
                 alert('紅色方框為必填欄位，請輸入完整資訊。');
                 break;
             case 1:
-                // 判斷帳號密碼輸入值
+                // 判斷帳號密碼輸入字元
                 let memAccount = $('#memAccountJH').val().trim();
                 let memPwd = $('#memPwdJH').val().trim();
                 let accNum = memAccount.length;
                 let pwdNum = memPwd.length;
-                if(accNum < 8 || accNum > 12 ){
-                    alert('帳號請輸入 8 - 12 字元');
-                }else if(pwdNum < 8 || pwdNum > 12){
-                    alert('密碼請輸入 8 - 12 字元');
-                }else if((accNum < 8 && accNum > 12) || (pwdNum < 8 && pwdNum > 12)){
-                    alert('帳號及密碼請輸入 8 - 12 字元');
+                if(accNum < 6 || accNum > 12 ){
+                    alert('帳號請輸入 6 - 12 字元');
+                }else if(pwdNum < 6 || pwdNum > 12){
+                    alert('密碼請輸入 6 - 12 字元');
+                }else if((accNum < 6 && accNum > 12) || (pwdNum < 8 && pwdNum > 12)){
+                    alert('帳號及密碼請輸入 6 - 12 字元');
                 }else{
                     let memName = $('#memNameJH').val().trim();
                     let memPhone = $('#memPhoneJH').val().trim();

@@ -215,56 +215,60 @@
                         <div>
                             <img src="../img/news/news01.jpg" alt="news">
                         </div>
-                        <time>01 / 29 / 2021</time>
-                        <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <time class="titleFont2">01 / 29 / 2021</time>
+                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                     </div>
                     <div>
                         <div>
                             <div>
                                 <img src="../img/news/news02.jpg" alt="news">
                             </div>
-                            <time>01 / 29 / 2021</time>
-                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
                             <div>
                                 <img src="../img/news/news03.jpg" alt="news">
                             </div>
-                            <time>01 / 29 / 2021</time>
-                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
                             <div>
                                 <img src="../img/news/news04.jpg" alt="news">
                             </div>
-                            <time>01 / 29 / 2021</time>
-                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
                             <div>
                                 <img src="../img/news/news05.jpg" alt="news">
                             </div>
-                            <time>01 / 29 / 2021</time>
-                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
                             <div>
                                 <img src="../img/news/news06.jpg" alt="news">
                             </div>
-                            <time>01 / 29 / 2021</time>
-                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
                             <div>
                                 <img src="../img/news/news07.jpg" alt="news">
                             </div>
-                            <time>01 / 29 / 2021</time>
-                            <a href="">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <button></button>
+                    <div>
+                        <button class="left"></button>
+                        <button class="right"></button>
+                        <span class="hugeP pageBtn">第一頁</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -361,11 +365,11 @@
                 </div>
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="8" maxlength="12" required="required" autocomplete="off" placeholder="請輸入英文或數字(8-12字元)">
+                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="6" maxlength="12" required="required" autocomplete="off" placeholder="請輸入英文或數字(6-12字元)">
                 </div>
                 <div>
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="8" maxlength="12" required="required" autocomplete="off" placeholder="請輸入英文或數字(8-12字元)">
+                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="6" maxlength="12" required="required" autocomplete="off" placeholder="請輸入密碼(6-12字元)">
                 </div>
                 <div>
                     <label for="checkP" class="titleFont3">密碼確認</label>
