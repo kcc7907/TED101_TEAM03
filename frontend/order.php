@@ -174,9 +174,13 @@
                                         <?php
                                             $sumPrice = [];
                                             foreach($orderDetailData as $j => $row){
-                                                array_push($sumPrice, $row["PRD_PRICE"]);                           
+                                                array_push($sumPrice, $row["PRD_PRICE"] * $row["ORDER_QUANTITY"]);                           
                                             };
-                                            echo array_sum($sumPrice).' 元';
+                                            if(isset($dis)){
+                                                echo array_sum($sumPrice) - $dis["DIS_AMOUNT"].' 元';
+                                            }else {
+                                                echo array_sum($sumPrice).' 元';
+                                            }
                                         ?>
                                         
                                     </li>
@@ -190,7 +194,7 @@
                             <!-- 明細 -->
                             <div class="detail">
                                 <div class="schedule">
-                                    <div class="status first">
+                                    <div class="status">
                                         <p>
                                             <i class="fas fa-shopping-cart"></i>
                                             <span>已訂購</span>
@@ -211,7 +215,7 @@
                                             <span><?=$row["ORD_TRANS"]?></span>
                                         </p>
                                     </div>
-                                    <div class="status last">
+                                    <div class="status">
                                         <p>
                                             <i class="fas fa-check-circle"></i>
                                             <span>已送達</span>
@@ -325,7 +329,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                 <?php
                         

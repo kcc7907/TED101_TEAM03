@@ -22,6 +22,15 @@ $(document).ready(function(){
             margin: '0 auto',
         });
 
+        // let main = document.querySelector('.jk_vote main');
+        // let workV = document.querySelector('.jk_vote main .work:visible');
+
+        // if(workV == null){
+        //     $(main).text('查無此作品');
+        //     $(main).css('textAlign', 'center');
+
+        // }
+
     });
 
 });
