@@ -298,15 +298,25 @@ div#JN{
         }
 
         .second{
-            border: 1px solid darkcyan;
-            width: 60%;
-            margin-left: 5%;
-            line-height: 60px;
-            margin-top: 10%;
-            height: fit-content;
-            background-color: #BDA79C;
-            opacity: 0.5;
-            padding: 3%;
+            border: 1px solid palevioletred;
+            width: auto;
+            background-color: rgba(189, 167, 156, 0.1);
+            // z-index: 1;
+            padding: 5%;
+            position: relative;
+            margin: auto 50px;
+            line-height: 2;
+            &:after{
+                content: '';
+                display: inline-block;
+                border: 1px solid #bda79e;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 3%;
+                left: 3%;
+                z-index: -1;
+            }
         }
 
         // img{
@@ -611,6 +621,16 @@ div#JN{
 
 
     //第二頁
+
+    @keyframes runPdt {
+        0% {
+            transform: translateX(0);
+        }
+    
+        100% {
+            transform: translate(-50%);
+        }
+    }
     .select_click{
         border: 1px solid rebeccapurple;
         display: inline-flex;
@@ -672,9 +692,25 @@ div#JN{
     }
 
    .block_color{
-        background-color: #b99e9057;
-        color: #54383B;
+    border: 1px solid palevioletred;
+    width: 100%;
+    background-color: rgba(189, 167, 156, 0.1);
+    // z-index: 1;
+    padding: 5%;
+    position: relative;
+    // margin: auto 50px;
+    line-height: 2;
+    &:after{
+        content: '';
+        display: inline-block;
+        border: 1px solid #bda79e;
         width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 3%;
+        left: 3%;
+        z-index: -1;
+    }
     }
 
    .d_pic{
@@ -691,7 +727,25 @@ div#JN{
         justify-content: space-around;
         margin: auto;
         font-size: 32px;
-        background-color: #b99e9057;
+        
+        border: 1px solid palevioletred;
+        // width: 100%;
+        background-color: rgba(189, 167, 156, 0.1);
+        // z-index: 1;
+        // padding: 5%;
+        position: relative;
+        // margin: auto 50px;
+        &:after{
+            content: '';
+            display: inline-block;
+            border: 1px solid #bda79e;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 3%;
+            left: 3%;
+            z-index: -1;
+        }
     }
 
     .d_pic_flex{
