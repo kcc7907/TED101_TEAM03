@@ -419,7 +419,7 @@ body{
                         }
                     }
 
-                    >#vote_page{
+                    >.vote_page{                        
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -457,6 +457,7 @@ body{
                             position: fixed;
                             left: 20px;
                             bottom: 5px;
+                            transform: translateX(0);
 
                             z-index: 2;
                         }

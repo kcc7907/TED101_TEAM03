@@ -2,6 +2,8 @@
 
     include("../php/08/jk_link.php");
 
+    $pageindex = isset($_POST["page"]) ? $_POST["page"]: 1;
+
     $sql = "SELECT * from `work` w
     join 
     (select * from `member`
@@ -38,7 +40,6 @@
     <script src="../js/08/vote.js"></script>
 </head>
 <body>
-
     <!-- header -->
     <header class="common">
         <div class="logo">
@@ -110,7 +111,7 @@
             </div>
             
             <div class="main"> 
-
+                
                 <!-- 即時戰況與頁碼 -->
                 <div class="side">
                     <div class="votes">
@@ -118,7 +119,7 @@
                         <div>戰況</div>
                     </div>
 
-                    <div id="vote_page">
+                    <div class="vote_page">
                         <span class="-on">1</span>
                         <!-- <span>2</span>
                         <span>3</span> -->
@@ -135,6 +136,7 @@
 
                 <?php
                 foreach($data as $index => $row){
+                    if($index < $page * 8 && $index >= $page * 8){
                 ?>
 
                     <div class="work">
@@ -151,6 +153,9 @@
 
 
                 <?php
+                    }else{
+
+                    }
                 }
                 ?>
                     
