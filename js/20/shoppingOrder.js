@@ -28,7 +28,11 @@ function checkCookie(cname) {
         return false;
     }
 }
-
+Vue.config.keyCodes = {
+    f1: 112,
+    up: [38, 87],
+    "insert-mode": [],
+};
 let left2 = new Vue({
     el:'#left2',
     data:{
@@ -40,6 +44,9 @@ let left2 = new Vue({
         addressBox:false,
         selected:'居住縣市',
         area:'',
+        // modified:{
+        //     namebtn:'',
+        // },
         formData:{
             fname:'',
             fphone:'',
@@ -51,8 +58,39 @@ let left2 = new Vue({
     },
     methods: {
         getCity(e){
-            console.log(e.target.value);
-        }
+        },
+        focus(e){
+            e.target.closest('div').querySelector('input').disabled = false;
+            e.target.closest('div').querySelector('input').focus();
+        },
+        blur(e){
+            e.target.closest('div').querySelector('input').disabled = true;
+        },
+        cardCode(e){
+            if (e.which >= 48 && e.which <= 57 || e.which == 8 || e.which == 37 || e.which == 39) {
+                if(e.target.value.length>2 &&e.which !== 8)e.preventDefault();
+            }else{
+                e.preventDefault();
+            }
+        },
+        cardNum(e){
+            let v= this.$refs;
+            if (e.which >= 48 && e.which <= 57 || e.which == 8 || e.which == 37 || e.which == 39) {
+            }else{
+                e.preventDefault();
+            }
+            if(v.cardnum1.value.length===4)v.cardnum2.focus()
+            if(v.cardnum2.value.length===4)v.cardnum3.focus()
+            if(v.cardnum3.value.length===4)v.cardnum4.focus()
+            if(v.cardnum4.value.length===4)e.preventDefault();
+        },
+        cardDate(e){
+            if(e.target.value.length>3 &&e.which !== 8)e.preventDefault();
+            if (e.which >= 48 && e.which <= 57 || e.which == 8 || e.which == 37 || e.which == 39) {
+            }else{
+                e.preventDefault();
+            }
+        },
     },
     created() {
         let cookie = getCookie('loging');
@@ -60,22 +98,23 @@ let left2 = new Vue({
             this.members = res.data;
             this.formData.fadd = res.data[0].MEM_CITY + res.data[0].MEM_ADDRESS;
             this.formData.fphone = res.data[0].MEM_PHONE;
-            this.memName = res.data[0].MEM_NAME;
+            this.formData.fname = res.data[0].MEM_NAME;
         });
     },
     watch: {
-        cardBox:function(e){
+        cardBox(){
             if (this.cardBox === true) {
                 this.remit=false;
                 this.area = '已付款';
             }
         },
-        remit:function(e){
+        remit(){
             if (this.remit === true) {
                 this.cardBox=false;
                 this.area = '未付款';
             }
         },
+        
     },
 });
 

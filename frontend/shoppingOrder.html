@@ -41,42 +41,44 @@
                 <div class="outer memberbox">
                     <div class="name df">
                         <p class="innerT lh">姓名</p>
-                        <input type="text" class="name_input" :value="memName">
-                        <button class="modified">修改</button>
+                        <input type="text" class="name_input" :value="formData.fname" disabled @blur="blur">
+                        <button class="modified" @click="focus">修改</button>
                     </div>
                     <div class="phone df">
                         <p class="innerT lh">電話</p>
-                        <input type="text" class="phone_input" value="0912345678"><button class="modified">修改</button>
+                        <input type="text" class="phone_input" value="0912345678" disabled @blur="blur"><button
+                            class="modified" @click="focus">修改</button>
                     </div>
                     <div class="lives df">
                         <p class="innerT lh">住址</p>
-                        <input type="text" class="live_input" v-model="formData.fadd"><button class="modified">修改</button>
+                        <input type="text" class="live_input" v-model="formData.fadd" disabled @blur="blur"><button
+                            class="modified" @click="focus">修改</button>
                     </div>
                 </div>
                 <h2 class="payment">付款方式</h2>
-                <div class="outer paymentbox" >
+                <div class="outer paymentbox">
                     <div class="checkT">
                         <input type="checkbox" class="credit_check" v-model="cardBox">
-                        <p class="lh" >信用卡</p>
+                        <p class="lh">信用卡</p>
                     </div>
                     <div class="card_box" v-show="cardBox">
                         <div class="cardnum_box">
                             <p class="card_num">信用卡號碼</p>
                             <div class="inputnum_box df">
-                                <input type="text" class="card_num1">
-                                <input type="text" class="card_num2">
-                                <input type="text" class="card_num3">
-                                <input type="text" class="card_num4">
+                                <input type="text" class="card_num1" ref="cardnum1" @keydown="cardNum">
+                                <input type="text" class="card_num2" ref="cardnum2" @keydown="cardNum">
+                                <input type="text" class="card_num3" ref="cardnum3" @keydown="cardNum">
+                                <input type="text" class="card_num4" ref="cardnum4" @keydown="cardNum">
                             </div>
                         </div>
                         <div class="carddate_box">
                             <p class="card_date">有效日期</p>
-                            <input type="text" class="card_date1">
-                            <input type="text" class="card_date2">
+                            <input type="text" class="card_date1" @keydown="cardDate">
+                            <input type="text" class="card_date2" style="display: none;">
                         </div>
                         <div class="cardcode_box">
                             <p class="card_code">安全碼</p>
-                            <input type="text" class="card_code1">
+                            <input type="text" class="card_code1" @keydown="cardCode">
                         </div>
                         <div class="cardicon_box">
                             <img src="../img/shoppincart/visa.svg" alt="">
@@ -114,7 +116,7 @@
                         <p class="lh">新增寄送地址</p>
                     </div>
                     <div class="address_box" v-show="addressBox">
-                        <select class="freight_city" @change="getCity" >
+                        <select class="freight_city" v-model="selected">
                             <option selected disabled>居住縣市</option>
                             <optgroup label="運費2000元">
                                 <option>台北市</option>
