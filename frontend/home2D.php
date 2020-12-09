@@ -31,6 +31,10 @@
             <div class="icon">
                 <a class="login" href="./meminfo.html">
                     <img src="../img/headerFooter/loginIcon.svg" alt="">
+                    <span>
+                        <span href="">會員中心</span>
+                        <span href="">登出</span>
+                    </span>
                 </a>
                 <a class="shop" href="./contest_main20.html">
                     <img src="../img/headerFooter/shoppingCart.svg" alt="">
@@ -61,6 +65,10 @@
                     <div class="icon">
                         <a class="login" href="./meminfo.html">
                             <img src="../img/headerFooter/loginIcon.svg" alt="">
+                            <span>
+                                <a href="">會員中心</a>
+                                <a href="">登出</a>
+                            </span>
                         </a>
                         <a class="shop" href="./contest_main20.html">
                             <img src="../img/headerFooter/shoppingCart.svg" alt="">
@@ -73,7 +81,7 @@
                     </div>
                 </header>
             </div>
-            <div>
+            <div id="goScroll">
                 <div>
                     <div>
                         <h2 class="contentFont lineHeight">關於我們</h2>
@@ -137,12 +145,12 @@
             </div>
         </div>
         <div id="homeRight">
-            <div class="into" style="display:none;">
+            <div class="into">
                 <a href="./home3D.html" class="titleFont3">點此進入3D模式</a>
             </div>
             <div>
             </div>
-            <div style="display:none;">
+            <div class="aboutDiv">
                 <div>
                     <div>
                         <span></span>
@@ -209,64 +217,124 @@
                 <span id="frtButton"></span>
                 <span id="bckButton"></span>
             </div>
-            <div>
-                <div>
+            <div class="newsDiv">
+                <div class="newsSection">
                     <div>
+                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <time class="titleFont2">01 / 29 / 2021</time>
                         <div>
                             <img src="../img/news/news01.jpg" alt="news">
                         </div>
-                        <time class="titleFont2">01 / 29 / 2021</time>
-                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                     </div>
                     <div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news02.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news03.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news04.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news05.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news06.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news07.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="newsSection">
                     <div>
-                        <button class="left"></button>
-                        <button class="right"></button>
+                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <time class="titleFont2">01 / 29 / 2021</time>
+                        <div>
+                            <img src="../img/news/news01.jpg" alt="news">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news02.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news03.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news04.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news05.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news06.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news07.jpg" alt="news">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnSection">
+                    <div>
+                        <!-- <span class="rotateSpan" id="rotateSpan1"></span> -->
+                        <span class="titleFont1">
+                            最新消息
+                        </span>
+                        <!-- <span class="rotateSpan" id="rotateSpan2"></span> -->
+                    </div>
+                    <div>
+                        <button class="left pageLeftBtn"></button>
+                        <button class="right pageRightBtn"></button>
                         <span class="hugeP pageBtn">第一頁</span>
                     </div>
                 </div>

@@ -22,6 +22,7 @@
         $memberID = $row["MEM_ID"];
         $memberName = $row["MEM_NAME"];
     }
+    
 
 
     //判斷是否有會員資料?
@@ -39,7 +40,6 @@
         echo "<script>$('div.login').css({'opacity':'0','top':'-30vh',});</script>";
         echo "<script>$('form input').val('')</script>";
         echo "<script>$('form select').val('0')</script>";
-
     }else{
         //跳出提示停留在登入頁
         echo "<script>alert('帳號或密碼錯誤!');</script>"; 
