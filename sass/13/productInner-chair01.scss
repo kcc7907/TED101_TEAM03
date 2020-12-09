@@ -34,22 +34,6 @@ div.sam_pi{
             div.productImg{
                 // border:2px solid orangered;
                 position: relative;
-                img.rotateIcon1{
-                    width:6%;
-                    height: 6%;
-                    position: absolute;
-                    bottom:0;
-                    right:10%;
-                    cursor: pointer;
-                }
-                img.rotateIcon2{
-                    width:6%;
-                    height: 6%;
-                    position: absolute;
-                    bottom:0;
-                    right:3%;
-                    cursor: pointer;
-                }
             }
             div.lightBox{
                 font-size: 0;
@@ -225,65 +209,18 @@ div.sam_pi{
                     margin-top:25px;
                     line-height: 60px;
                 }
-            }
-            div.material{
-                // border:1px solid green;
-                margin-top:100px;
-                p{
-                    display:inline-block;
-                    font-size: 24px;
+                p.champion{
+                    font-size:24px;
                     color:$cfs;
-                    vertical-align: top;
-                    margin-right:70px;
-                }
-                div.buttonBox{
-                    display:inline-block;
-                    // border:1px solid red;
+                    font-family: 'Noto Sans TC Light';
                     text-align: right;
-                    button.wood{
-                        width:100px;
-                        height: 80px;
-                        cursor: pointer;
-                        border:0;
-                        border-radius: 15px;
-                        position: relative;
-                        outline:none;
-                        margin: 0px 15px;
-                        &:hover .tip{
-                            visibility: visible;
-                        }
-                        span.tip{
-                            visibility: hidden;
-                            position: absolute;
-                            right:-20%;
-                            font-size: 14px;
-                            width:80px;
-                            height: 20px;
-                            background-color: #54383b;
-                            color:rgb(233, 233, 233);
-                            font-family:'Noto Sans TC Light';
-                            z-index: 1;
-                        }
-                    }
-                    button.wood1{
-                        background-image: url(../img/product/material/wood01-10080.jpg);
-                    }
-                    button.wood2{
-                        background-image: url(../img/product/material/wood02-10080.jpg);
-                    }
-                    button.wood3{
-                        background-image: url(../img/product/material/wood03-10080.jpg);
-                    }
-                    button.wood4{
-                        background-image: url(../img/product/material/wood04-10080.jpg);
-                    }
+                    margin-top:10%;
                 }
-                
             }
             div.moneyBox{
                 // border:1px solid blue;
                 position: relative;
-                margin-top:16%;
+                margin-top:30%;
                 h1.money{
                     display:inline-block;
                     color:#54383b;
@@ -348,12 +285,14 @@ div.sam_pi{
                 }
             }
             div.productMessage{
-                // border:1px solid rgb(107, 179, 107);
+                p.ppp{
+                    margin-top:10%;
+                }
                 p{
+                    margin-top:5%;
                     font-size:20px;
                     font-family: 'Noto Sans TC Light';
                     color:#BDA79E;
-                    margin-top:6.5%;
                 }
             }
         }
@@ -389,31 +328,23 @@ div.sam_pi{
         }
         p.word{
             font-size:16px;
+            color:#54383b;
             line-height: 40px;
             font-family: 'Noto Sans Tc Thin';
             margin-top:20px;
+        }
+        p.champion{
+            color:#54383b;
+            font-size:16px;
+            font-family: 'Noto Sans Tc Thin';
+            margin-top:20px;
+            text-align:right;
         }
         div.productImg{
             position: relative;
             margin-top:50px;
             // min-width: 360px;
             // min-height: 320px;
-            img.rotate1{
-                width:26px;
-                height:30px;
-                position: absolute;
-                bottom:2%;
-                right:10%;
-                cursor:pointer;
-            }
-            img.rotate2{
-                width:26px;
-                height:30px;
-                position: absolute;
-                bottom:2%;
-                right:3%;
-                cursor:pointer;
-            }
         }
         div.lightBox{
             display:flex;
@@ -552,59 +483,6 @@ div.sam_pi{
         div.blackBack3.-opacity-zero{
             opacity: 0;
         }
-        div.material{
-            // border:1px solid blue;
-            margin-top:50px;
-            p{
-                display:inline-block;
-                font-size: 16px;
-                color:#54383b;
-                margin-right:15%;
-                font-family: 'Noto Sans Tc Light';
-                vertical-align: top;
-            }
-            div.buttonBox{
-                display:inline-block;
-                button.wood{
-                    width:50px;
-                    height: 40px;
-                    cursor: pointer;
-                    border:0;
-                    border-radius: 6px;
-                    position: relative;
-                    outline:none;
-                    margin: 0px 10px;
-                    &:hover .tip{
-                        visibility: visible;
-                    }
-                    span.tip{
-                        visibility: hidden;
-                        position: absolute;
-                        right:-20%;
-                        top:-20%;
-                        font-size: 12px;
-                        width:40px;
-                        height: 18px;
-                        background-color: #54383b;
-                        color:rgb(233, 233, 233);
-                        font-family:'Noto Sans TC Light';
-                        z-index: 1;
-                    }
-                }
-                button.wood1{
-                    background-image: url(../img/product/material/wood01-10080.jpg);
-                }
-                button.wood2{
-                    background-image: url(../img/product/material/wood02-10080.jpg);
-                }
-                button.wood3{
-                    background-image: url(../img/product/material/wood03-10080.jpg);
-                }
-                button.wood4{
-                    background-image: url(../img/product/material/wood04-10080.jpg);
-                }
-            }
-        }
         div.moneyBox{
             // border:1px solid maroon;
             margin-top:50px;
@@ -669,7 +547,7 @@ div.sam_pi{
             margin-top: 30px;
             p{
                 font-size: 16px;
-                color:#54383b;
+                color:#BDA79E;
                 line-height: 40px;
                 font-family: 'Noto Sans TC Light';
             }
@@ -683,6 +561,9 @@ div.sam_pi{
         p.word{
             font-size:12px;
             line-height: 30px;
+        }
+        p.champion{
+            font-size:12px;
         }
         div.productImg{
             margin-top:30px;
@@ -725,13 +606,6 @@ div.sam_pi{
                 }
             }
         }
-        div.material{
-            margin-top:30px;
-            p{
-                font-size:12px;
-                margin-right:8%;
-            }
-        }
         div.moneyBox{
             h1.money{
                 &:before{
@@ -748,16 +622,6 @@ div.sam_pi{
         }
     }
     @media (max-width:360px){
-        div.productImg{
-            img.rotate1{
-                width: 22px;
-                height:22px;
-            }
-            img.rotate2{
-                width: 22px;
-                height:22px;
-            }
-        }
         div.lightBox{
             img.boxImg{
                 margin:0 5px;
@@ -799,18 +663,6 @@ div.sam_pi{
                         top:0;
                         right:0;
                     }
-                }
-            }
-        }
-        div.material{
-            p{
-                margin-right:10px;
-            }
-            div.buttonBox{
-                button.wood{
-                    width:45px;
-                    height:38px;
-                    margin:0 5px;
                 }
             }
         }
@@ -899,9 +751,9 @@ div.section2{
             flex-direction: column;
             align-items: center;
             div.truck{
-                // border:1px solid rgb(133, 93, 196);
+                // border:1px solid rgb(201, 4, 4);
                 width:70%;
-                margin-bottom:5%;
+                margin-bottom:6%;
                 margin-left:30px;
                 &:first-child{
                     margin-top:30px;
@@ -1062,7 +914,7 @@ div.section2{
             div.truckBox{
                 div.truck{
                     width:90%;
-                    margin-bottom:5%;
+                    margin-bottom:6%;
                     div.word{
                         span.color{
                             width:20px;
@@ -1093,8 +945,8 @@ div.section2{
     div.section2{
         div.bottomBox{
             div.truckBox{
-                margin-bottom:10%;
                 div.truck{
+                    margin-bottom:10%;
                     span.middleLine{
                         width:100%;
                     }
@@ -1168,15 +1020,6 @@ div.sam_pi{
                 }
             }
             div.rightWrap{
-                div.material{
-                    margin-top:40px;
-                    div.buttonBox{
-                        button.wood{
-                            width: 80px;
-                            height: 60px;
-                        }
-                    }
-                }
                 div.moneyBox{
                     margin-top:10%;
                     img.up,img.down{
@@ -1203,16 +1046,8 @@ div.sam_pi{
                         font-size:20px;
                         line-height:50px;
                     }
-                }
-                div.material{
-                    p{
+                    p.champion{
                         font-size:20px;
-                        margin-right:40px;
-                    }
-                    div.buttonBox{
-                        button.wood{
-                            margin:0 10px;
-                        }
                     }
                 }
                 div.moneyBox{
@@ -1244,18 +1079,20 @@ div.sam_pi{
             }
         }
     }
+    @media (max-width:1366px){
+        div.deskTopBox{
+            div.rightWrap{
+                div.productWord{
+                    p.champion{
+                        margin-top:2.5%;
+                    }
+                }
+            }
+        }
+    }
     @media (max-width:1250px){
         div.deskTopBox{
             div.rightWrap{
-                div.material{
-                    div.buttonBox{
-                        button.wood{
-                            width: 60px;
-                            height: 40px;
-                            border-radius: 8px;
-                        }
-                    }
-                }
                 div.moneyBox{
                     img.up,img.down{
                         right:5%;
@@ -1285,22 +1122,8 @@ div.sam_pi{
                         line-height: 45px;
                     }
                 }
-                div.material{
-                    margin-top:30px;
-                    div.buttonBox{
-                        button.wood{
-                            span.tip{
-                                right:-30%;
-                                font-size: 12px;
-                                width:60px;
-                                height: 20px;
-                                bottom:-20%;
-                            }
-                        }
-                    }
-                }
                 div.moneyBox{
-                    margin-top:5%;
+                    margin-top:12%;
                 }
                 div.shoppingBtn{
                     button.shbtn{
@@ -1315,16 +1138,6 @@ div.sam_pi{
     @media (max-width:1080px){
         div.deskTopBox{
             div.rightWrap{
-                div.material{
-                    p{
-                        margin-right:25px;
-                    }
-                    div.buttonBox{
-                        button.wood{
-                            margin:0 6px;
-                        }
-                    }
-                }
                 div.moneyBox{
                     h1.quantity{
                         &:after{
@@ -1378,21 +1191,10 @@ div.sam_pi{
                         font-size:16px;
                         line-height:40px;
                     }
-                }
-                div.material{
-                    p{
+                    p.champion{
                         font-size:16px;
-                    }
-                    div.buttonBox{
-                        button.wood{
-                            span.tip{
-                                right:-25%;
-                                font-size: 11px;
-                                width:50px;
-                                height: 20px;
-                                bottom:-20%;
-                            }
-                        }
+                        margin-top:5%;
+                        margin-bottom:5%;
                     }
                 }
                 div.moneyBox{
@@ -1425,18 +1227,6 @@ div.sam_pi{
     @media (max-width:935px){
         div.deskTopBox{
             div.rightWrap{
-                div.material{
-                    p{
-                        margin-right:5px;
-                    }
-                    div.buttonBox{
-                        button.wood{
-                            margin:0 4px;
-                            width: 50px;
-                            height: 38px;
-                        }
-                    }
-                }
                 div.moneyBox{
                     h1.money{
                         margin-right:20%;
@@ -1458,10 +1248,9 @@ div.sam_pi{
         div.deskTopBox{
             div.rightWrap{
                 div.moneyBox{
+                    margin-top:5%;
                     h1.money{
-                        margin-right:20%;
                         &:before{
-                            width: 60px;
                             margin-right:10px;
                         }
                     }
