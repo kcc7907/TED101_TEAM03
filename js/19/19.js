@@ -200,24 +200,246 @@ for(let i = 0; i < name133.length; i++){
 }
 
 
-let select1 = document.getElementsByClassName("select1");
-let aaa = document.getElementsByClassName("aaa")[0];
-let bbb = document.getElementsByClassName("bbb")[0];
-let ccc = document.getElementsByClassName("ccc")[0];
-let ddd = document.getElementsByClassName("ddd")[0];
-let eee = document.getElementsByClassName("eee")[0];
-for(let i = 0; i < select1.length; i++){
-    select1[i].addEventListener("click",function(){
-        if(aaa.classList.contains("on")){
-            bbb.classList.remove("on");
-            ccc.classList.remove("on");
-            ddd.classList.remove("on");
-            eee.classList.remove("on");
+// part2-1
+let name21 = document.getElementsByClassName("name21");
+let part21 = document.getElementsByClassName("part21")[0];
+let title21 = document.getElementsByClassName("title21")[0];
+for(let i = 0; i < name21.length; i++){
+    name21[i].addEventListener("click",function(){
+        if(part21.classList.contains("on")){
+            part21.classList.remove("on");
+            title21.innerText = "＋ 救世宅是否可使用振興三倍卷?"
         }else{
-            bbb.classList.add("on");
-            ccc.classList.add("on");
-            ddd.classList.add("on");
-            eee.classList.add("on");
+            part21.classList.add("on");
+            title21.innerText = "－ 救世宅是否可使用振興三倍卷?";
         }
     });
 }
+
+let name211 = document.getElementsByClassName("name211");
+let part211 = document.getElementsByClassName("part211")[0];
+let title211 = document.getElementsByClassName("title211")[0];
+for(let i = 0; i < name211.length; i++){
+    name211[i].addEventListener("click",function(){
+        if(part211.classList.contains("on")){
+            part211.classList.remove("on");
+            title211.innerText = "＋ OOOOOO"
+        }else{
+            part211.classList.add("on");
+            title211.innerText = "－ OOOOOO";
+        }
+    });
+}
+
+let name212 = document.getElementsByClassName("name212");
+let part212 = document.getElementsByClassName("part212")[0];
+let title212 = document.getElementsByClassName("title212")[0];
+for(let i = 0; i < name212.length; i++){
+    name212[i].addEventListener("click",function(){
+        if(part212.classList.contains("on")){
+            part212.classList.remove("on");
+            title212.innerText = "＋ QQQQQQ"
+        }else{
+            part212.classList.add("on");
+            title212.innerText = "－ QQQQQQ";
+        }
+    });
+}
+
+
+// part2-2
+let name22 = document.getElementsByClassName("name22");
+let part22 = document.getElementsByClassName("part22")[0];
+let title22 = document.getElementsByClassName("title22")[0];
+for(let i = 0; i < name22.length; i++){
+    name22[i].addEventListener("click",function(){
+        if(part22.classList.contains("on")){
+            part22.classList.remove("on");
+            title22.innerText = "＋ 線上購物付款方式?"
+        }else{
+            part22.classList.add("on");
+            title22.innerText = "－ 線上購物付款方式?";
+        }
+    });
+}
+
+let name221 = document.getElementsByClassName("name221");
+let part221 = document.getElementsByClassName("part221")[0];
+let title221 = document.getElementsByClassName("title221")[0];
+for(let i = 0; i < name221.length; i++){
+    name221[i].addEventListener("click",function(){
+        if(part221.classList.contains("on")){
+            part221.classList.remove("on");
+            title221.innerText = "＋ SSSSSS"
+        }else{
+            part221.classList.add("on");
+            title221.innerText = "－ SSSSSS";
+        }
+    });
+}
+
+let name222 = document.getElementsByClassName("name222");
+let part222 = document.getElementsByClassName("part222")[0];
+let title222 = document.getElementsByClassName("title222")[0];
+for(let i = 0; i < name222.length; i++){
+    name222[i].addEventListener("click",function(){
+        if(part222.classList.contains("on")){
+            part222.classList.remove("on");
+            title222.innerText = "＋ UUUUUU"
+        }else{
+            part222.classList.add("on");
+            title222.innerText = "－ UUUUUU";
+        }
+    });
+}
+
+// part2-3
+let name23 = document.getElementsByClassName("name23");
+let part23 = document.getElementsByClassName("part23")[0];
+let title23 = document.getElementsByClassName("title23")[0];
+for(let i = 0; i < name23.length; i++){
+    name23[i].addEventListener("click",function(){
+        if(part23.classList.contains("on")){
+            part23.classList.remove("on");
+            title23.innerText = "＋ 線上購物發票問題?"
+        }else{
+            part23.classList.add("on");
+            title23.innerText = "－ 線上購物發票問題?";
+        }
+    });
+}
+
+let name231 = document.getElementsByClassName("name231");
+let part231 = document.getElementsByClassName("part231")[0];
+let title231 = document.getElementsByClassName("title231")[0];
+for(let i = 0; i < name231.length; i++){
+    name231[i].addEventListener("click",function(){
+        if(part231.classList.contains("on")){
+            part231.classList.remove("on");
+            title231.innerText = "＋ 線上購物提供那些發票選擇?"
+        }else{
+            part231.classList.add("on");
+            title231.innerText = "－ 線上購物提供那些發票選擇?";
+        }
+    });
+}
+
+let name232 = document.getElementsByClassName("name232");
+let part232 = document.getElementsByClassName("part232")[0];
+let title232 = document.getElementsByClassName("title232")[0];
+for(let i = 0; i < name232.length; i++){
+    name232[i].addEventListener("click",function(){
+        if(part232.classList.contains("on")){
+            part232.classList.remove("on");
+            title232.innerText = "＋ 一筆訂單可以開立多張發票嗎?"
+        }else{
+            part232.classList.add("on");
+            title232.innerText = "－ 一筆訂單可以開立多張發票嗎?";
+        }
+    });
+}
+
+
+// part3-1
+let name31 = document.getElementsByClassName("name31");
+let part31 = document.getElementsByClassName("part31")[0];
+let title31 = document.getElementsByClassName("title31")[0];
+for(let i = 0; i < name31.length; i++){
+    name31[i].addEventListener("click",function(){
+        if(part31.classList.contains("on")){
+            part31.classList.remove("on");
+            title31.innerText = "＋ 忘記帳號或密碼怎麼辦?"
+        }else{
+            part31.classList.add("on");
+            title31.innerText = "－ 忘記帳號或密碼怎麼辦?";
+        }
+    });
+}
+
+// part3-2
+let name32 = document.getElementsByClassName("name32");
+let part32 = document.getElementsByClassName("part32")[0];
+let title32 = document.getElementsByClassName("title32")[0];
+for(let i = 0; i < name32.length; i++){
+    name32[i].addEventListener("click",function(){
+        if(part32.classList.contains("on")){
+            part32.classList.remove("on");
+            title32.innerText = "＋ 帳號被盜用時該如何處置?"
+        }else{
+            part32.classList.add("on");
+            title32.innerText = "－ 帳號被盜用時該如何處置?";
+        }
+    });
+}
+
+// part4-1
+let name41 = document.getElementsByClassName("name41");
+let part41 = document.getElementsByClassName("part41")[0];
+let title41 = document.getElementsByClassName("title41")[0];
+for(let i = 0; i < name41.length; i++){
+    name41[i].addEventListener("click",function(){
+        if(part41.classList.contains("on")){
+            part41.classList.remove("on");
+            title41.innerText = "＋ 救世宅的聯絡方式?"
+        }else{
+            part41.classList.add("on");
+            title41.innerText = "－ 救世宅的聯絡方式?";
+        }
+    });
+}
+
+// part4-2
+let name42 = document.getElementsByClassName("name42");
+let part42 = document.getElementsByClassName("part42")[0];
+let title42 = document.getElementsByClassName("title42")[0];
+for(let i = 0; i < name42.length; i++){
+    name42[i].addEventListener("click",function(){
+        if(part42.classList.contains("on")){
+            part42.classList.remove("on");
+            title42.innerText = "＋ 救世宅的聯絡方式?"
+        }else{
+            part42.classList.add("on");
+            title42.innerText = "－ 救世宅的聯絡方式?";
+        }
+    });
+}
+
+// let name231 = document.getElementsByClassName("name231");
+// let part231 = document.getElementsByClassName("part231")[0];
+// let title231 = document.getElementsByClassName("title231")[0];
+// for(let i = 0; i < name231.length; i++){
+//     name231[i].addEventListener("click",function(){
+//         if(part231.classList.contains("on")){
+//             part231.classList.remove("on");
+//             title231.innerText = "＋ 線上購物提供那些發票選擇?"
+//         }else{
+//             part231.classList.add("on");
+//             title231.innerText = "－ 線上購物提供那些發票選擇?";
+//         }
+//     });
+// }
+
+
+
+
+// let select1 = document.getElementsByClassName("select1");
+// let aaa = document.getElementsByClassName("aaa")[0];
+// let bbb = document.getElementsByClassName("bbb")[0];
+// let ccc = document.getElementsByClassName("ccc")[0];
+// let ddd = document.getElementsByClassName("ddd")[0];
+// let eee = document.getElementsByClassName("eee")[0];
+// for(let i = 0; i < select1.length; i++){
+//     select1[i].addEventListener("click",function(){
+//         if(aaa.classList.contains("on")){
+//             bbb.classList.remove("on");
+//             ccc.classList.remove("on");
+//             ddd.classList.remove("on");
+//             eee.classList.remove("on");
+//         }else{
+//             bbb.classList.add("on");
+//             ccc.classList.add("on");
+//             ddd.classList.add("on");
+//             eee.classList.add("on");
+//         }
+//     });
+// }
