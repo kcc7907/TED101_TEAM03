@@ -1,10 +1,25 @@
+<?php
+    include("../php/08/jk_link.php");
+
+    $user = "A111200001";   //測試帳號
+
+    $sql = "SELECT PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE from favorite f join(select * from product p join product_img i on i.PRODUCT_ID = p.PRD_ID)m on m.PRD_ID = f.PRODUCT_ID where MEMBER_ID = ?";
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, "$user");
+    $statement->execute();
+    $data = $statement->fetchAll();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的收藏</title>
-
+    <title>救世宅 | 會員中心</title>
+    
+    <link rel="Shortcut Icon" href="img/favicon.ico">
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/favorite.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -63,34 +78,7 @@
                 </ul>
             </div>
 
-            <main>
-                <div class="table">
-                    <ul class="title">
-                        <li class="name">項目</li>
-                        <li class="size">規格</li>
-                        <li class="price">價錢</li>
-                        <li class="btn"></li>
-                    </ul>
-                    
-                    
-                    <ul class="item">
-                        <li class="name">
-                            <img src="../img/product/sofa02/sofa02_01.jpg">
-                            <span>聚樂沙發組</span>
-                        </li>
-                        <li class="size">
-                            犀牛真皮
-                        </li>
-                        <li class="price">
-                            32,000 元
-                        </li>
-                        <li class="btn">
-                            <button class="add"><span>加入購物車</span><i class="fas fa-cart-arrow-down"></i></button>
-                            <button class="remove"><span>移除</span><i class="far fa-trash-alt"></i></button>
-                        </li>
-                    </ul>
-                    
-                </div>
+            <main>  
 
                 <div class="table">
                     <ul class="title">
@@ -100,57 +88,36 @@
                         <li class="btn"></li>
                     </ul>
                     
+                    <?php
+                        foreach($data as $index => $row){
+                    ?>
                     
                     <ul class="item">
                         <li class="name">
-                            <img src="../img/product/bed02/bed02_02.jpg">
-                            <span>尊榮雙人床</span>
+                            <img src="<?=$row["PIMG_URL"]?>">
+                            <span><?=$row["PRD_NAME"]?></span>
                         </li>
                         <li class="size">
-                            雙人床
+                            <?=$row["PRD_MATERIAL"]?>
                         </li>
                         <li class="price">
-                            42,000 元
+                            <?=$row["PRD_PRICE"]?> 元
                         </li>
                         <li class="btn">
                             <button class="add"><span>加入購物車</span><i class="fas fa-cart-arrow-down"></i></button>
-                            <button class="remove"><span>移除</span><i class="far fa-trash-alt"></i></button>
+                            <button class="remove" data-name="<?=$row["PRD_ID"]?>"><span>移除</span><i class="far fa-trash-alt"></i></button>
                         </li>
                     </ul>
-                    
+
+                    <?php
+                        };
+                    ?>
+                                        
                 </div>
+                
             </main>
         </div>
     </div>
-
-    <!-- <footer class="libft">
-        <section class="herf">
-            <div class="logo">
-                <img src="../../img/headerFooter/logo.svg" alt="">
-            </div>
-            <div class="page">
-                <a href="../../frontend/product.html">救世家具</a>
-                <a href="../../frontend/case.html">優質案例</a>
-                <a href="../../frontend/qa.html">客戶服務</a>
-                <a href="../../frontend/qa.html">聯繫我們</a>
-                <a href="../../frontend/contest_participate.html">傢俱賞</a>
-            </div>
-        </section>
-        <section class="link">
-            <div class="scb">
-                <label for="mail">訂閱電子報</label>
-                <input type="text" class="mail" placeholder="enter your email">
-            </div>
-            <div class="company">
-                <img src="../../img/headerFooter/東和鋼鐵.png">
-                <img src="../../img/headerFooter/cooperate_blum.png">
-                <img src="../../img/headerFooter/foot_logo.png">
-            </div>
-        </section>
-        <section class="copy">
-            <p>Copy right 2020,All Right Reserved | By 救世宅</p>
-        </section>
-    </footer> -->
 
     <script src="../lib/header/header.js"></script>
 </body>

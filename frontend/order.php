@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>訂單查詢</title>
+    <title>救世宅 | 會員中心</title>
+    
+    <link rel="Shortcut Icon" href="img/favicon.ico">
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/order.css">
     <link rel="stylesheet" href="../css/header.css">
-    <!-- <link rel="stylesheet" href="../css/footer.css"> -->
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
