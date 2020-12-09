@@ -79,6 +79,23 @@ $(document).ready(function () {
     //     focusOnSelect: true
     // });
     // }
+    // $('.slider-for').slick({
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     fade: true,
+    //     asNavFor: '.slider-nav'
+    // });
+    // $('.slider-nav').slick({
+    //     slidesToShow: 3,
+    //     slidesToScroll: 1,
+    //     asNavFor: '.slider-for',
+    //     dots: true,
+    //     centerMode: true,
+    //     focusOnSelect: true
+    // });
+
+
 
 
 
@@ -101,27 +118,43 @@ $(document).ready(function () {
             });
         });
     });
+
+
+
+    //RWD輪播圖
+    let S_photo = $('.small');
+    console.log(S_photo);
+    for (let i = 0; i < S_photo.length; i++) {
+        S_photo[i].addEventListener('click', function (e) {
+            document.getElementById('big').src = e.target.src;
+            console.log(document.getElementById('big').src);
+        });
+    };
+
+    //箭頭綁定
+    //
+    $('#to_left').click(function () {
+
+    });
+
+    $('#to_right').click(function () {
+        let now_Src = document.getElementById('big').src;
+        // let now_Src = $('#big');
+        // let S_photo = document.getElementsByClassName('small').src;
+        let smallP = $('.small');
+        for (let i = 0; i < smallP.length; i++) {
+            if (smallP[i].src == now_Src) {
+                let bbb = smallP[i].parentElement.parentElement.nextElementSibling.querySelector('img.small').src
+                document.getElementById('big').src = bbb;
+            }
+        }
+        // for (let i = 0; i < smallP.length; i++) {
+        //     if (smallP[i] == now_Src) {
+        //         console.log(smallP[i]);
+        //     }
+        // }
+    });
 });
-
-
-
-
-// 風格切換
-// let spanbtn = document.querySelectorAll('.stylelist li');
-
-// let flexjpg = document.getElementsByClassName('stylebox_right');
-
-// for (let x = 0; x < spanbtn.length; x++) {
-//     spanbtn[x].addEventListener('click', function () {
-//         for (let y = 0; y < flexjpg.length; y++) {
-
-//             flexjpg[y].style.display = 'none';
-//             spanbtn[y].style.border = 'none';
-//         }
-//         flexjpg[x].style.display = 'inline-flex';
-//         spanbtn[x].style.border = '1px solid #aca8a4';
-//     });
-// }
 
 // 頁籤
 $(function () {
@@ -138,3 +171,5 @@ $(function () {
         console.log($("div.tab." + $(this).attr("data-target")));
     });
 });
+
+

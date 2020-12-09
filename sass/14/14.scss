@@ -781,7 +781,7 @@ div#JN{
 
     .inter_one{
         // border: 1px solid brown;   
-        width: 290px;
+        width: 250px;
         // height: 200px; 
         padding: 2%;
     }
@@ -891,6 +891,8 @@ div#JN{
             height: 800px;
         }
     // }
+
+    
 
 
 // @include rwdmF(1920);
@@ -1064,20 +1066,24 @@ div#JN{
                 margin:0 auto;
             }
 
-            // .interior_one, .interior_two{
-            //     display: block;
-            //     background: #fff;
-            //     color: #3498db;
-            //     font-size: 36px;
-            //     line-height: 100px;
-            //     margin: 10px;
-            //     padding: 2%;
-            //     position: relative;
-            //     text-align: center;
-            // }
+            .interior_one{
+                display: flex;
+                background: #fff;
+                margin: 10px;
+                padding: 2%;
+                position: relative;
+                text-align: center;
+            }
 
-
-         
+            .interior_two{
+                display: flex;
+                background: #fff;
+                margin: 10px;
+                padding: 2%;
+                position: relative;
+                text-align: center;
+                flex-wrap: nowrap;
+            }
 
             .tab_list_block{
                 .tab_list{
@@ -1087,6 +1093,20 @@ div#JN{
                         }
                     }
                 }
+            }
+
+            .inter_one{
+                width: 100%;
+                display: contents;
+            }
+
+            .small{
+                border: 1px solid rebeccapurple;
+                // padding: 0px 20%;
+            }
+
+            .aa{
+                display: none;
             }
         
         
@@ -1139,8 +1159,33 @@ div#JN{
                 width: 500px;
                 height: 300px;
             }     
-    
     }
+    span.triangle1{
+        display: inline-block;        
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 0px solid yellow;
+        border-bottom: 25px solid black;
+        transform: rotate(270deg);
+        width:0px;
+        height:20px;
+        cursor: pointer;
+        
+      }
+
+      span.triangle2{
+        display: inline-block;        
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 0px solid yellow;
+        border-bottom: 25px solid black;
+        transform: rotate(90deg);
+        width:0px;
+        height:20px;
+        cursor: pointer;
+        
+      }
+    
 };
 
 @include rwdmF(768){
