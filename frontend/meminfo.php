@@ -5,16 +5,15 @@
 
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, "$user");     
+    $statement->bindValue(1, "$user");
     $statement->execute();
     $data = $statement->fetchAll();
 
     $account = $data[0]["MEM_ID"];
-    // $pwd = $data[0]["MEM_PWD"];
     $name = $data[0]["MEM_NAME"];
     $phone = $data[0]["MEM_PHONE"];
     $email = $data[0]["MEM_EMAIL"];
-    // $city = $data[0]["MEM_CITY"];
+    $city = $data[0]["MEM_CITY"];
     $address = $data[0]["MEM_ADDRESS"];
     
 
@@ -34,10 +33,11 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
-    
+    <script src="../lib/js/vue.js"></script>
     <script src="../js/08/is.min.js"></script>
     <script src="../lib/js/jquery.js"></script>
     <script src="../js/08/meminfo.js"></script>
+
 
 </head>
 
@@ -118,11 +118,15 @@
                         <input class="input" type="text" id="name" name="name" value="<?=$name?>" disabled>
                     </div>
 
-                    <div>
+                    <div id="vueScope">
                         <div>
                             <label for="address">地址</label>
                             <span class="address">修改</span>
                         </div>
+                        <select name="city" v-model="city" disabled>
+                            <option disabled>居住縣市</option>
+                            <option v-for="city in citys">{{city}}</option>
+                        </select>
                         <input class="input" type="text" id="address" name="address" value="<?=$address?>" disabled>
                     </div>
 
@@ -152,6 +156,16 @@
         </div>
     </div>
 
+    <script>     
+        new Vue({
+            el: '#vueScope',     
+            data: {
+                city: '<?=$city?>',
+                citys: ['台北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '苗栗縣','台中市','彰化縣','南投縣','雲林縣','嘉義市','嘉義縣','台南市','高雄市','屏東縣','宜蘭縣','花蓮縣','台東縣'],
+            },
+        });
+    </script>
+    
     <script src="../lib/header/header.js"></script>
 
 </body>

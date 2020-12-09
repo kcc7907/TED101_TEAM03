@@ -98,7 +98,9 @@
                             <span><?=$row["PRD_NAME"]?></span>
                         </li>
                         <li class="size">
-                            <?=$row["PRD_MATERIAL"]?>
+                            <?php
+                                if($row["PRD_MATERIAL"] != 'null' && $row["PRD_MATERIAL"] != '' ){echo $row["PRD_MATERIAL"];}else{echo '無特殊規格';};
+                            ?>
                         </li>
                         <li class="price">
                             <?=$row["PRD_PRICE"]?> 元

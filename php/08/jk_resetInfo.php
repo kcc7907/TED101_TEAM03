@@ -46,10 +46,12 @@
     }
     if(isset($_POST['address'])){   //地址
         $address = $_POST['address'];
-        $sql = "UPDATE member SET MEM_ADDRESS = ?, MEM_DATE = now() WHERE MEM_ID =?";
+        $city = $_POST['city'];
+        $sql = "UPDATE member SET MEM_ADDRESS = ?, MEM_CITY = ?, MEM_DATE = now() WHERE MEM_ID =?";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, "$address");
-        $statement->bindValue(2, "$user");
+        $statement->bindValue(2, "$city");
+        $statement->bindValue(3, "$user");
         $statement->execute();
     }
     
@@ -74,6 +76,7 @@
     // header("Location: ../../frontend/meminfo.php");
 
     echo "<script>alert('已成功修改會員資料'); location.href = '../../frontend/meminfo.php';</script>";
+    // echo "$city";
 
 
 ?>

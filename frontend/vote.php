@@ -1,3 +1,22 @@
+<?php
+
+    include("../php/08/jk_link.php");
+
+    $sql = "SELECT * from `work` w
+    join 
+    (select * from `member`
+    join `contestant` on MEM_ID = CT_MEMBER_ID) m
+    on m.CT_WORK_ID = w.WK_ID";
+    $statement = $pdo->prepare($sql);     
+    $statement->execute();
+    $data = $statement->fetchAll();
+    
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -112,63 +131,29 @@
                     </div>
                 </div>
                 
-                <!-- 參賽作品 -->
+                <!-- 參賽作品 --><!-- 8圖換頁如何做-->
                 <main>
+
+                <?php
+                foreach($data as $index => $row){
+                ?>
+
                     <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=10">
-                            <div class="get_num">得票數: <span>80</span></div>                            
+                        <div class="img" data-id="<?=$row["WK_ID"]?>">
+                            <img src="<?=$row["WK_IMG"]?>">
+                            <div class="get_num">得票數: <span><?=$row["WK_VOTES"]?></span></div>                            
                         </div>
                         <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
+                            <span>參賽號碼:<span><?=$row["WK_ID"]?></span></span>
+                            <span>作品名稱:<span><?=$row["WK_NAME"]?></span></span>
+                            <span>參賽者:<span><?=$row["MEM_NAME"]?></span></span>                
                         </p>
                     </div>
-                    <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=200" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
-                    <div class="work">      <!--還未完成圖片size的樣式設定 -->
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=210" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
-                    <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=220" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
-                    <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=230" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
+
+
+                <?php
+                }
+                ?>
                     
                 </main>
 

@@ -28,9 +28,6 @@
 
 
 
-
-
-
 body{
     background-color: #FFFAF4;
     
@@ -59,6 +56,8 @@ body{
                 z-index: 1;
 
                 position: relative;
+                // position: sticky;
+                // top: 0px;
 
                 @include r1200{
                     width: 250px;
@@ -262,19 +261,19 @@ body{
                     @include r360{                        
                         width: 300px;
                     }
-
+                    
                     &:nth-child(n + 2){
 
-                        >ul.title{
+                        >div.rough >ul.title{
                             display: none;
 
                             @include r992{
                                 display: flex;
-                            }
-                            
+                            }                            
                         }
                     }
                     
+
                     >.rough{
 
                         @include r992{
@@ -304,8 +303,7 @@ body{
     
                                 @include r992{
                                     width: 100%;
-                                    // flex-grow: 1;
-                                    // line-height: 106.36px;    //之後用js改變行高置中
+                                    
                                 }
                             }
                             
@@ -347,29 +345,17 @@ body{
                                     display: flex;
                                     justify-content: center;                                   
                                     flex-direction: column;
-                                    align-items: center;
-
-
-    
-                                    // height: 97px;  //js抓高度
-                                    // line-height: 97px;
+                                    align-items: center;    
                                     
-                                    // display: flex;
-                                    // flex-direction: column;
                                 }
 
-                                @include r576{
+                                // @include r576{
 
-                                    height: 85px;  //js抓高度
-                                    line-height: 85px;
-                                }
-                                // span{
+                                //     height: 85px; 
+                                //     line-height: 85px;
 
-                                //     @include r992{
-    
-                                //         height: 28px;  //js抓高度                           
-                                //     }
                                 // }
+                                
                             }
     
                             >.count{
@@ -397,8 +383,7 @@ body{
     
                             @include r992{
                                 flex-direction: column;
-                                justify-content: flex-start;
-                                
+                                justify-content: flex-start;                                
                                 width: 70%;
                             }
     
@@ -414,11 +399,9 @@ body{
                                 display: flex;
                                 flex-direction: column;
                                 justify-content: center;
-                                vertical-align: middle;
-                                
+                                vertical-align: middle;                                
     
-                                @include r992{
-                                    
+                                @include r992{                                    
                                     width: 100%;
                                 }
     
@@ -452,11 +435,16 @@ body{
                                     }
     
                                     &:hover{
-                                        background-color: #465D4C;
+                                        background-color: #56725d;
                                         color: #fff;
                                     }
                                     
                                 }
+                                >button.-on{
+                                    background-color: #56725d;
+                                    color: #fff;
+                                }
+
                                 >ol{
                                     
                                     >li{
@@ -480,6 +468,28 @@ body{
                                 @include r992{
                                     border-top: 1px solid #465D4C;
                                 }
+                            }
+
+                            >li.name{
+                                
+                                @include r992{
+
+                                    flex-grow: 1;
+
+                                    display: flex;
+                                    justify-content: center;                                   
+                                    flex-direction: column;
+                                    align-items: center;    
+                                    
+                                }
+
+                                span{
+                                    display: none;
+                                    @include r992{
+                                        display: inline-block;
+                                    }
+                                }
+                                
                             }
     
                             >li.count{
@@ -511,6 +521,12 @@ body{
                         width: 100%;
                         border-right: 1px solid #465D4C;
                         border-left: 1px solid #465D4C;
+                        border-bottom: 2px solid #465D4C;
+                        margin-bottom: 5px;
+
+                        @include r992{
+                            border-bottom: none;
+                        }
 
                         //訂單進度
                         >.schedule{
@@ -701,9 +717,9 @@ body{
                                 }
                             }
                             div.-now{
-                                background-color: #465D4C;
+                                background-color: #56725d;
                                 color: #fff;
-
+                                
                                 @include r992{
                                     color: #465D4C;
                                     background-color: rgba(0, 0, 0, 0);
@@ -832,7 +848,25 @@ body{
 
                                             }
                                         }
+                                        
+                                        
 
+                                    }
+
+                                    .pro_price span{
+
+                                        @include r992{
+                                            display: none;
+
+                                        }
+                                    }
+
+                                    .pro_total span{
+
+                                        @include r992{
+                                            display: none;
+
+                                        }
                                     }
                                 }
 

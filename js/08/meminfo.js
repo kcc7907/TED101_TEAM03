@@ -22,6 +22,9 @@ $(document).ready(function(){
             $('#changePassword').css({display:'flex'}); //顯示修改密碼欄位 
             $('#password').hide();            
 
+        }else if(myself == "address"){
+            $('input#address').attr('disabled', false).focus();
+            $('.jk_meminfo #memberInfo select').attr('disabled', false);
         }else{                      //修改一般資料
             let inputChange = $(`input#${myself}`);
             $(inputChange).attr({
