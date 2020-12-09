@@ -9,9 +9,8 @@
     on m.CT_WORK_ID = w.WK_ID";
     $statement = $pdo->prepare($sql);     
     $statement->execute();
-    $data = $statement->fetchAll();
+    $data = $statement->fetchAll();    
     
-
 ?>
 
 
@@ -76,7 +75,7 @@
             <a href="./contest_main20.html">
                 <h1 class="titleFont2">賽制說明</h1>
             </a>
-            <a href="./vote.html">
+            <a href="./vote.php">
                 <h1 class="titleFont2">人氣票選</h1>
             </a>
         </div>

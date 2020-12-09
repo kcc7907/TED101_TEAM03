@@ -46,27 +46,28 @@ $(document).ready(function(){
     });
 
     //搜尋作品
-    // $('.jk_vote .search button').click(function(){
-
+    $('.jk_vote .search button').click(function(){
+                
+        let searchId = $('.jk_vote .search input').val();
+        $.ajax({
+            url: '../php/08/jk_voteDetail.php',
+            type: 'POST',
+            data:{
+				work: searchId,
+			},
+            dataType: 'text',
+            success(res){
+                $('.jk_vote .clickVote .content').html(`${res}`);
+            },
+        });
         
-    //     let search = $('.jk_vote .search input').val();
-    //     $('.jk_vote .work').css('display', 'none');
-    //     $(`.jk_vote .work.${search}`).css({
-    //         display: 'block',
-    //         margin: '0 auto',
-    //     });
-
-    //     let main = document.querySelector('.jk_vote main');
-    //     let workV = document.querySelector('.jk_vote main .work:visible');
-
-    //     if(workV == null){
-    //         $(main).text('查無此作品');
-    //         $(main).css('textAlign', 'center');
-
-    //     }
-    // });
+        $('.jk_vote .backGround').css('display', 'flex');
+        
+    });
 
     
 
 });
+
+
 
