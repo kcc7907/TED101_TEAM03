@@ -307,7 +307,7 @@ body{
 
             >.vote_page{
                 display: none;
-                justify-content: space-between;
+                justify-content: center;
 
                 width: 250px;
                 margin: 30px auto;
@@ -324,6 +324,7 @@ body{
                 }
 
                 >span{
+                    margin: 0 12px;
                     padding: 5px 5px;
                     cursor: pointer;
                 }
@@ -347,6 +348,8 @@ body{
 
                 >.side{
                     width: 220px;
+
+                    position: relative;
 
                     @include r1440{
                         width: 200px;
@@ -445,7 +448,10 @@ body{
                         text-align: center;
                         color: #BDA79C;
                     
-                        position: relative;
+                        position: absolute;
+                        left: 50%;
+                        bottom: 100px;
+                        transform: translateX(-50%);
 
                         @include r768{
                             position: fixed;
@@ -565,6 +571,11 @@ body{
                             @include r992{
                                 margin-right: 0px;
                             }
+                        }
+
+                        &:last-child{
+                                margin-bottom: 50px;
+                            
                         }
 
                         >.img{

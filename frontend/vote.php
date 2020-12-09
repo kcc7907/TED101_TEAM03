@@ -106,8 +106,8 @@
             <!-- 隱藏頁碼 -->
             <div class="vote_page">
                 <span class="-on">1</span>
-                <span>2</span>
-                <span>3</span>
+                <!-- <span>2</span> -->
+                <!-- <span>3</span> -->
             </div>
             
             <div class="main"> 
@@ -121,8 +121,8 @@
 
                     <div id="vote_page">
                         <span class="-on">1</span>
-                        <span>2</span>
-                        <span>3</span>
+                        <!-- <span>2</span>
+                        <span>3</span> -->
                     </div>
 
                     <div class="visitor">
@@ -139,7 +139,7 @@
                 ?>
 
                     <div class="work">
-                        <div class="img" data-id="<?=$row["WK_ID"]?>">
+                        <div class="img <?=$row["WK_ID"]?>" data-id="<?=$row["WK_ID"]?>">
                             <img src="<?=$row["WK_IMG"]?>">
                             <div class="get_num">得票數: <span><?=$row["WK_VOTES"]?></span></div>                            
                         </div>
@@ -167,35 +167,8 @@
                 <div class="close">
                     <i class="far fa-times-circle"></i>
                 </div>
-                <div>
-                    
-                </div>
                 <div class="content">
-                    <div class="text">
-                        <p>
-                            # 參賽號碼：<span>2020-1020-1111</span>
-                        </p>
-                        <p>
-                            # 得票數：<span>53234票</span>
-                        </p>
-                        <p>
-                            # 參賽者：<span>李超超</span>
-                        </p>
-                        <p>
-                            # 作品種類：<span>椅子</span>
-                        </p>
-                        <p>
-                            # 作品名稱：<span>午後的時光</span>
-                        </p>
-                        <p>
-                            # 創作理念：
-                            <p>閒。</p>
-                        </p>
-                    </div>
-        
-                    <div class="img">
-                        <img src="https://picsum.photos/300/300?random=23">
-                    </div>
+                    
                 </div>
 
                 <div class="btn">
