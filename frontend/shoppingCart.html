@@ -44,8 +44,9 @@
         <main>
             <div class="left" id="list">
                 <ul class="product">
-                    <my-list v-for='key in rp' :mycheck='check' :prd-id="key.PRD_ID" :url="key.PIMG_URL"
-                        :prd-name='key.PRD_NAME' :prd-price='key.PRD_PRICE' :discount-id='key.DISCOUNT_ID'></my-list>
+                    <my-list v-for='(key,index) in rp' :key="index" :mycheck='check' :prd-id="key.PRD_ID"
+                        :url="key.PIMG_URL" :prd-name='key.PRD_NAME' :prd-price='key.PRD_PRICE'
+                        :discount-id='key.DISCOUNT_ID' :prd-mtl='key.PRD_MATERIAL'></my-list>
             </div>
             <div class="right" id="right">
                 <h2 class="titlenum">合計商品{{proTotal}}項</h2>

@@ -41,18 +41,19 @@
                 <div class="outer memberbox">
                     <div class="name df">
                         <p class="innerT lh">姓名</p>
-                        <input type="text" class="name_input" :value="formData.fname" disabled @blur="blur">
+                        <input type="text" class="name_input" v-model="formData.fname" disabled @blur="blur"
+                            @keyup.13="blur">
                         <button class="modified" @click="focus">修改</button>
                     </div>
                     <div class="phone df">
                         <p class="innerT lh">電話</p>
-                        <input type="text" class="phone_input" value="0912345678" disabled @blur="blur"><button
-                            class="modified" @click="focus">修改</button>
+                        <input type="text" class="phone_input" v-model="formData.fphone" disabled @blur="blur"
+                            @keyup.13="blur" @keydown="phoneInput"><button class="modified" @click="focus">修改</button>
                     </div>
                     <div class="lives df">
                         <p class="innerT lh">住址</p>
-                        <input type="text" class="live_input" v-model="formData.fadd" disabled @blur="blur"><button
-                            class="modified" @click="focus">修改</button>
+                        <input type="text" class="live_input" v-model="memLives" disabled @blur="blur"
+                            @keyup.13="blur"><button class="modified" @click="focus">修改</button>
                     </div>
                 </div>
                 <h2 class="payment">付款方式</h2>
@@ -108,7 +109,7 @@
                 <h2 class="adds">運送地址</h2>
                 <div class="outer addsbox">
                     <div class="checkT">
-                        <input type="checkbox" class="freight_input">
+                        <input type="checkbox" class="freight_input" v-model="freight">
                         <p class="lh">同購買人住址</p>
                     </div>
                     <div class="checkT">
@@ -146,7 +147,7 @@
                                 <option>台東縣</option>
                             </optgroup>
                         </select>
-                        <input type="text">
+                        <input type="text" v-model="formData.fadd">
                         <p class="onlytw">*僅提供本島寄送</p>
                     </div>
                 </div>
@@ -227,7 +228,7 @@
                             </div>
                             <div class="merge Shipping_num">
                                 <p class="dollar">$</p>
-                                <p class="cart_price3">0</p>
+                                <p class="cart_price3">{{Shipping}}</p>
                             </div>
                             <div class="merge final_num">
                                 <p class="dollar">$</p>
@@ -239,7 +240,7 @@
                 <div class="cart_btn">
                     <button class="backstep" type="button"><img src="../img/shoppincart/cart_left.svg"
                             class="backimg">返回購物車</button>
-                    <button class="buy" type="button" @click='gotest'>完成訂購</button>
+                    <button class="buy" type="button" @click='sendData'>完成訂購</button>
                 </div>
             </div>
         </main>
