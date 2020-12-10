@@ -16,7 +16,7 @@
     <div class="JHH">
         <header class="common">
             <div class="logo">
-                <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+                <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
             </div>
             <nav>
                 <dav class="nav1">
@@ -29,13 +29,13 @@
                 </dav>
             </nav>
             <div class="icon">
-                <a class="login" href="./meminfo.html">
-                    <img src="../img/headerFooter/loginIcon.svg" alt="">
-                    <span>
-                        <span href="">會員中心</span>
-                        <span href="">登出</span>
+                <span class="login">
+                    <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
+                    <span class="logMem">
+                        <a href="./meminfo.php">會員中心</a>
+                        <span href="" class="logout">登出</span>
                     </span>
-                </a>
+                </span>
                 <a class="shop" href="./contest_main20.html">
                     <img src="../img/headerFooter/shoppingCart.svg" alt="">
                 </a>
@@ -50,7 +50,7 @@
             <div>
                 <header class="common">
                     <div class="logo">
-                        <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+                        <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
                     </div>
                     <nav>
                         <dav class="nav1">
@@ -63,13 +63,13 @@
                         </dav>
                     </nav>
                     <div class="icon">
-                        <a class="login" href="./meminfo.html">
-                            <img src="../img/headerFooter/loginIcon.svg" alt="">
-                            <span>
-                                <a href="">會員中心</a>
-                                <a href="">登出</a>
+                        <span class="login">
+                            <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
+                            <span class="logMem">
+                                <a href="./meminfo.php">會員中心</a>
+                                <span href="" class="logout">登出</span>
                             </span>
-                        </a>
+                        </span>
                         <a class="shop" href="./contest_main20.html">
                             <img src="../img/headerFooter/shoppingCart.svg" alt="">
                         </a>
@@ -386,7 +386,7 @@
                 <div>
                     <p class="detailFont"><a>忘記密碼</a></p>
                     <button type="button" class="login titleFont2">登入</button>
-                    <p class="detailFont"><a href="./signUp.html" class="signLink">註冊新會員</a></p>
+                    <p class="detailFont"><a href="javascript: void(0)" class="signLink">註冊新會員</a></p>
                 </div>
             </form>
             <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true" id="logIn" class="lazy-line-painter">
@@ -451,7 +451,7 @@
                     <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a class="detailFont">會員責任規範及個資聲明</a>。</span>
                 </div>
                 <div>
-                    <a href="./login.html" class="detailFont logLink">回登入頁面</a>
+                    <a href="javascript: void(0)" class="detailFont logLink">回登入頁面</a>
                 </div>
             </form>
             <div class="closebtn">

@@ -95,27 +95,36 @@ $(document).ready(function () {
     
     });
 
-    // =================================== 會員燈箱 ===================================
-    // <a>停止預設事件
-    $('.icon a , a.signLink , a.logLink').click(function (e) {  
-        e.preventDefault();
-    });
 
+    // =================================== 登入/註冊燈箱 ===================================
+    if(Boolean(document.cookie)){
+        $('img.logMem').attr('src','../img/homepage/logInMem.png');
+    }else{
+        $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+    }
+    
+    $('span.login img').click(function(){
+        if(Boolean(document.cookie)){
+            $('span.logMem').slideToggle();
+        }else{
+            logBox();
+            memBox();
+        }
+    });
+    
     // 隱藏表單
     $('div#login , div#signUp').hide();
 
-    // 點選「會員icon」出現「登入」表單
-    $('div.icon a:first-child').click(log);
+    $('.logout').click(function(){
+        let time = new Date(Date.now());
+        // let time = Date.now();
+        let timeE = time.toUTCString();
+        console.log(timeE);
+        document.cookie = `loging=; expires=${timeE}`;
+        $('span.logMem').hide();
+        $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+    });
 
-    // 點選「註冊新會員」出現「註冊」表單
-    $('a.signLink').click(sign);
-
-
-    // 點選「回登入頁面」出現「登入」表單
-    $('a.logLink').click(backToLog);
-    
-    // 點選closeBtn關閉表單
-    $('div.closebtn').click(closeLB);
 
     
     // =================================== 登入判斷 ===================================
@@ -286,8 +295,7 @@ $(document).ready(function () {
 
 
 
-
-
+// *********************************** 以下 function ************************************* //
 // ===== log in animation =====
 function logAni(){
     let el = document.querySelector('#logIn');
@@ -303,7 +311,7 @@ function signAni(){
 }
 
 // ===== log in lightbox =====
-function log() {  
+function logBox() {  
     $('div#login').show().css('z-index', '3');
     $('div#login div.login').css({
         'opacity':'1',
@@ -315,8 +323,9 @@ function log() {
     }, 500);
 }
 
+
 // ===== sign up lightbox =====
-function sign() {  
+function signBox() {  
     // 登入隱藏
     $('div#login').css('z-index','-3').hide();
     $('div#login div.login').css({
@@ -385,6 +394,27 @@ function closeLB() {
     // }
 }
 
+// ===== log/sign click event =====
+function memBox() {  
+    // <a>停止預設事件
+    $('.icon >a , a.signLink').click(function (e) {  
+        e.preventDefault();
+    });
+
+    // 點選「會員icon」出現「登入」表單
+    // $('span.login img').click(logBox);
+
+    // 點選「註冊新會員」出現「註冊」表單
+    $('a.signLink').click(signBox);
+
+
+    // 點選「回登入頁面」出現「登入」表單
+    $('a.logLink').click(backToLog);
+    
+    // 點選closeBtn關閉表單
+    $('div.closebtn').click(closeLB);
+}
+
 // ===== 發生change，input改變背景色跟換border顏色 =====
 function changeBGC() {  
     $(this).css({
@@ -394,4 +424,8 @@ function changeBGC() {
     });
 }
 
+// ===== 會員cookie判斷 =====
+// function memLogCheck(){
+
+// }
 

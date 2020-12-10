@@ -27,11 +27,11 @@
 
     //判斷是否有會員資料?
     if($memberID != "" && $memberName != ""){
-        include("../php/memberClassJH.php");
-        $Member = new MemberClass();
+        // include("../php/memberClassJH.php");
+        // $Member = new MemberClass();
     
         //將會員資訊寫入session
-        $Member->setMemberInfo($memberID, $memberName);
+        // $Member->setMemberInfo($memberID, $memberName);
 
         //導回產品頁        
         echo "<script>alert('登入成功!');</script>"; 
@@ -40,6 +40,8 @@
         echo "<script>$('div.login').css({'opacity':'0','top':'-30vh',});</script>";
         echo "<script>$('form input').val('')</script>";
         echo "<script>$('form select').val('0')</script>";
+        echo "<script>$('img.logMem').attr('src','../img/homepage/logInMem.png');</script>";
+
     }else{
         //跳出提示停留在登入頁
         echo "<script>alert('帳號或密碼錯誤!');</script>"; 
