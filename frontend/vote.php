@@ -2,7 +2,7 @@
 
     include("../php/08/jk_link.php");
 
-    $pageindex = isset($_POST["page"]) ? $_POST["page"]: 1;
+    $page = isset($_POST["page"]) ? $_POST["page"] : 1;
 
     $sql = "SELECT * from `work` w
     join 
@@ -105,7 +105,7 @@
 
             <!-- 隱藏頁碼 -->
             <div class="vote_page">
-                <span class="-on">1</span>
+                <!-- <span class="-on">1</span> -->
                 <!-- <span>2</span> -->
                 <!-- <span>3</span> -->
             </div>
@@ -135,27 +135,24 @@
                 <main>
 
                 <?php
-                foreach($data as $index => $row){
-                    if($index < $page * 8 && $index >= $page * 8){
-                ?>
-
-                    <div class="work">
-                        <div class="img <?=$row["WK_ID"]?>" data-id="<?=$row["WK_ID"]?>">
-                            <img src="<?=$row["WK_IMG"]?>">
-                            <div class="get_num">得票數: <span><?=$row["WK_VOTES"]?></span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span><?=$row["WK_ID"]?></span></span>
-                            <span>作品名稱:<span><?=$row["WK_NAME"]?></span></span>
-                            <span>參賽者:<span><?=$row["MEM_NAME"]?></span></span>                
+                foreach ($data as $i => $row) {
+                    if($i < $page * 8 && $i >= $page * 8 - 8){
+            
+            
+                    echo '<div class="work">';
+                        echo '<div class="img '.$row["WK_ID"].'" data-id="'.$row["WK_ID"].'">';
+                        echo '<img src="'.$row["WK_IMG"].'">';
+                        echo '<div class="get_num">得票數: <span>'.$row["WK_VOTES"].'</span></div>';                     
+                    echo '</div>
+                            <p>
+                            <span>參賽號碼:<span>'.$row["WK_ID"].'</span></span>';
+                    echo '<span>作品名稱:<span>'.$row["WK_NAME"].'</span></span>';
+                    echo '<span>參賽者:<span>'.$row["MEM_NAME"].'</span></span>             
                         </p>
-                    </div>
-
-
-                <?php
-                    }else{
-
+                    </div>';
+            
                     }
+            
                 }
                 ?>
                     
