@@ -62,43 +62,6 @@ $(document).ready(function () {
     setInterval(movemove, 2000);
 
 
-    //RWD輪播圖
-    // if (windows.ineerwidth < 993) {
-    // $('.slider-for').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     arrows: false,
-    //     fade: true,
-    //     asNavFor: '.interior_two'
-    // });
-    // $('.slider-nav').slick({
-    //     slidesToShow: 3,
-    //     slidesToScroll: 2,
-    //     asNavFor: '.interior_one',
-    //     dots: true,
-    //     focusOnSelect: true
-    // });
-    // }
-    // $('.slider-for').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     arrows: false,
-    //     fade: true,
-    //     asNavFor: '.slider-nav'
-    // });
-    // $('.slider-nav').slick({
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1,
-    //     asNavFor: '.slider-for',
-    //     dots: true,
-    //     centerMode: true,
-    //     focusOnSelect: true
-    // });
-
-
-
-
-
     // 360平面圖燈箱
     $('div.inter_one a').click(function (e) {
         // <a>連結不作用
@@ -132,22 +95,50 @@ $(document).ready(function () {
     };
 
     //箭頭綁定
-    //
     $('#to_left').click(function () {
+        let now_Src = document.getElementById('big').src;
+        let smallP = $('.small');
+        var sphoto = document.querySelectorAll('img.small');
 
+        if (sphoto[0].src == now_Src) {
+            //sphoto.length - 1是取得總共的張數，動態去抓取
+            document.getElementById('big').src = sphoto[(sphoto.length - 1)].src;
+        } else {
+            for (let i = 0; i < smallP.length; i++) {
+                if (smallP[i].src == now_Src) {
+                    let bbb = smallP[i].closest('div.inter_one').previousElementSibling.querySelector('img.small').src;
+                    console.log(bbb);
+                    document.getElementById('big').src = bbb;
+                }
+            }
+        }
     });
 
     $('#to_right').click(function () {
+        //宣告抓出id="big"(大圖片)
         let now_Src = document.getElementById('big').src;
-        // let now_Src = $('#big');
-        // let S_photo = document.getElementsByClassName('small').src;
-        let smallP = $('.small');
-        for (let i = 0; i < smallP.length; i++) {
-            if (smallP[i].src == now_Src) {
-                let bbb = smallP[i].parentElement.parentElement.nextElementSibling.querySelector('img.small').src
-                document.getElementById('big').src = bbb;
+        var sphoto = document.querySelectorAll('img.small');
+        //最後一張才會到這裡判斷，長度判斷要減一
+        if (sphoto[(sphoto.length - 1)].src == now_Src) {
+            //從第一張找
+            document.getElementById('big').src = sphoto[0].src;
+        }
+        // console.log(backToLeft[(backToLeft.length - 1)].src);
+        // console.log(backToLeft.length);
+        else {
+            let smallPic = $('.small');
+            for (let i = 0; i < smallPic.length; i++) {
+                if (smallPic[i].src == now_Src) {
+                    let bbb = smallPic[i].parentElement.parentElement.nextElementSibling.querySelector('img.small').src
+                    document.getElementById('big').src = bbb;
+                }
             }
         }
+
+        // let now_Src = $('#big');
+        // let S_photo = document.getElementsByClassName('small').src;
+        //宣告小張圖片
+
         // for (let i = 0; i < smallP.length; i++) {
         //     if (smallP[i] == now_Src) {
         //         console.log(smallP[i]);
