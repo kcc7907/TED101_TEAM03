@@ -14,7 +14,10 @@
 
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
     <script defer src="../js/13/13.js"></script>
+    <script dfer src="../js/13/product_authority.js"></script>
+
 
 </head>
 
@@ -113,15 +116,15 @@
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr>
-                        <td>A201125001</td>
-                        <td>231654</td>
-                        <td>鎮冠群</td>
-                        <td>0912345678</td>
-                        <td>kcc@gmail.com</td>
-                        <td>台北</td>
-                        <td>早安區安安路50號2F之3</td>
-                        <td>2020/12/08</td>
+                    <tr v-for="(item, index) in rp" :key="index">
+                        <td>{{item.MEM_ID}}</td>MEM_ADDRESS
+                        <td>{{item.MEM_PWD}}</td>
+                        <td>{{item.MEM_NAME}}</td>
+                        <td>{{item.MEM_PHONE}}</td>
+                        <td>{{item.MEM_EMAIL}}</td>
+                        <td>{{item.MEM_CITY}}</td>
+                        <td>{{item.MEM_ADDRESS}}</td>
+                        <td>{{item.MEM_DATE}}</td>
                         <td><button class="cancel">刪除</button></td>
                     </tr>
                 </table>

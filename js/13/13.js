@@ -7,7 +7,7 @@ let app = new Vue({
     methods: {
     },
     mounted() {
-        axios.post('http://localhost:8787/php/20/getProduct.php', this.prdid).then(res => {
+        axios.post('../php/13/kc_getMember.php').then(res => {
             this.rp = res.data;
         })
     },
