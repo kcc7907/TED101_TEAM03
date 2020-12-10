@@ -40,7 +40,7 @@
         echo "<script>$('div.login').css({'opacity':'0','top':'-30vh',});</script>";
         echo "<script>$('form input').val('')</script>";
         echo "<script>$('form select').val('0')</script>";
-        echo "<script>$('img.logMem').attr('src','../img/homepage/logInMem.png');</script>";
+        echo "<script>$('img.logMem').attr('src','../img/homepage/logInMemHome.png');</script>";
 
     }else{
         //跳出提示停留在登入頁

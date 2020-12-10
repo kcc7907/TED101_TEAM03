@@ -366,6 +366,14 @@
                 </div>
             </div>
         </div>
+        <!-- confirm燈箱 -->
+        <div class="confirmDiv ">
+            <div>
+                <p class="contentFont lineHeight"></p>
+                <input type="button" class="detailFont" id="sureGoHome" value="確認">
+                <input type="button" class="detailFont" id="notsureGoHome" value="取消">
+            </div>
+        </div>
     </div>
 
 
@@ -459,6 +467,8 @@
             </div>
         </div>
     </div>
+
+
     <script src="../js/15/home2D.js"></script>
 </body>
 

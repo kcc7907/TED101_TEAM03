@@ -246,16 +246,19 @@ div.JHC {
                 }
 
                 &:last-child {
-                    width: 450px;
-                    height: 120px;
-                    padding-top: 30px;
+                    // width: 450px;
+                    padding: 15px 50px 30px;
                     text-align: center;
                     background-color: #F0EBE5;
                     position: fixed;
                     top: 30%;
-                    left: calc((100% - 450px) / 2);
                     opacity: 0;
                     transition: all .3s;
+                    border: 5px solid #BDA79E;
+
+                    p {
+                        text-align: left;
+                    }
 
                     input {
                         transition: all .3s;
@@ -279,6 +282,7 @@ div.JHC {
             height: 150px;
             padding: 0 30px;
             position: relative;
+            z-index: -3;
 
             p,
             h1,

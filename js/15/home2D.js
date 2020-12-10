@@ -97,12 +97,17 @@ $(document).ready(function () {
 
 
     // =================================== 登入/註冊燈箱 ===================================
+    // 隱藏註冊/登入表單
+    $('div#login , div#signUp').hide();
+    
+    // 重整或開啟時，判斷「會員icon」圖示
     if(Boolean(document.cookie)){
-        $('img.logMem').attr('src','../img/homepage/logInMem.png');
+        $('img.logMem').attr('src','../img/homepage/logInMemHome.png');
     }else{
         $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
     }
     
+    // 點擊「會員icon」時，判斷是否有cookie並出現相對應視窗
     $('span.login img').click(function(){
         if(Boolean(document.cookie)){
             $('span.logMem').slideToggle();
@@ -112,17 +117,49 @@ $(document).ready(function () {
         }
     });
     
-    // 隱藏表單
-    $('div#login , div#signUp').hide();
+    // 點擊「登出時」，出現confirm視窗
+    // **** 先隱藏 ****
+    $('div.confirmDiv').hide();
 
+    // **** 寫入置中函式 ****
+    $(window).resize(function(){
+        gotoCenter();
+    });
+
+    gotoCenter();
+
+    function gotoCenter(){
+        // **** 寫入內容 ****
+        $('div.confirmDiv').find('p.contentFont').text(`確認是否登出？`);
+        // **** 改寫top/left ****
+        let confirmWidth = $('div.confirmDiv >div').width();
+        let confirmHeight = $('div.confirmDiv >div').height();
+        let winWidth = $(window).width();
+        let winHeight = $(window).height();
+        $('div.confirmDiv >div').css({
+            left: (winWidth - confirmWidth)/2,
+            top: (winHeight - confirmHeight)/2,
+        });
+        console.log(confirmWidth);
+        console.log(confirmHeight);
+        console.log(winWidth);
+        console.log(winHeight);
+    }
+
+
+
+    // **** 點擊出現confirm視窗 ****
     $('.logout').click(function(){
-        let time = new Date(Date.now());
-        // let time = Date.now();
-        let timeE = time.toUTCString();
-        console.log(timeE);
-        document.cookie = `loging=; expires=${timeE}`;
-        $('span.logMem').hide();
-        $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+        $('div.confirmDiv').show().css({
+            'zIndex': '99',
+            'opacity': '1',
+        });
+        // let time = new Date(Date.now());
+        // // let time = Date.now();
+        // let timeE = time.toUTCString();
+        // document.cookie = `loging=; expires=${timeE}`;
+        // $('span.logMem').hide();
+        // $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
     });
 
 
@@ -424,8 +461,4 @@ function changeBGC() {
     });
 }
 
-// ===== 會員cookie判斷 =====
-// function memLogCheck(){
-
-// }
 
