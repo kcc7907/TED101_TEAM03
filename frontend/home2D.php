@@ -470,6 +470,7 @@
 
 
     <script src="../js/15/home2D.js"></script>
+    <script src="../js/15/logSign.js"></script>
 </body>
 
 </html>

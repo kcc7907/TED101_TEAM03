@@ -1268,12 +1268,15 @@ div.JHH {
         left: 0;
         z-index: -99;
         opacity: 0;
+        display: flex;
+        justify-content: center;
         >div{
             // width: 300px;
             padding: 15px 50px 30px;
             text-align: center;
-            background-color: rgba(240, 235, 229, .95);
+            background-color: rgba(240, 235, 229, .98);
             position: absolute;
+            top: 30%;
             transition: all .3s;
             border: 5px solid #BDA79E;
             // p{
