@@ -13,7 +13,8 @@
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
     <script src="../lib/js/jquery.js"></script>
-    <script src="../js/13/product_authority.js"></script>
+    <script src="../lib/js/vue.js"></script>
+    <script defer src="../js/13/13.js"></script>
 
 </head>
 
@@ -84,7 +85,7 @@
 
             <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
 
-            <main class="kcc_class">
+            <main class="kcc_class" id="app">
                 <!-- 頂部資訊 -->
                 <div class="top">
                     <div class="path">
@@ -126,7 +127,7 @@
                 </table>
 
                 <!-- 跳窗 -->
-                <div class="kcc_jump">
+                <div class="kcc_jump" >
                     <div class="secondBack">
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form action="" method="">
