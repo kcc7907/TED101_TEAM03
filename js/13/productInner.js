@@ -119,7 +119,7 @@ $(document).ready(function () {
     let counter = 1;
     const size = slider[0].clientWidth;
 
-    // console.log(size);
+    console.log(size);
 
     // sliderBox.style.transform = 'translateX(' + (-size * counter) +'px)';
     function leftmove() {
@@ -146,7 +146,7 @@ $(document).ready(function () {
         //console.log(slider[counter]);
         if (slider[counter].id === 'lastClone') {
             sliderBox.style.transition = 'none';
-            counter = slider.length - 2;
+            counter = slider.length - 3;
             sliderBox.style.transform = 'translateX(' + (-size * counter) + 'px)';
         };
         if (slider[counter].id === 'firstClone') {
@@ -156,7 +156,7 @@ $(document).ready(function () {
         };
     });
 
-    setInterval(leftmove, 3000);
+    // setInterval(leftmove, 3000);
 });
 
 ///////////////////////////////價錢///////////////
@@ -192,8 +192,6 @@ function todoless() {
 // for (i = 0; i < down.length; i++) {
 //     down[i].addEventListener('click', todoless);
 // };
-
-
 up[0].addEventListener('click', todoadd);
 up[1].addEventListener('click', todoadd);
 down[0].addEventListener('click', todoless);

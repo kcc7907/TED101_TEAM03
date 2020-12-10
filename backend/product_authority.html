@@ -11,9 +11,11 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
+    <script src="../lib/js/vue.js"></script>
     <script src="../lib/js/jquery.js"></script>
-    <script src="../js/13/product_authority.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
+    <script defer src="../js/13/product_authority.js"></script>
+
 
 </head>
 
@@ -82,7 +84,7 @@
 
             <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
 
-            <main class="sam_class">
+            <main class="sam_class" id="app">
                 <!-- 頂部資訊 -->
                 <div class="top">
                     <div class="path">
@@ -109,14 +111,14 @@
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr>
-                        <td>A201125001</td>
-                        <td>書櫃</td>
-                        <td>日日</td>
-                        <td>7700</td>
-                        <td>松木/25</td>
-                        <td>2020/12/08</td>
-                        <td>無</td>
+                    <tr v-for="rp in rp">
+                        <td>{{rp.PRD_ID}}</td>
+                        <td>{{rp.PRD_SPECIES}}</td>
+                        <td>{{rp.PRD_NAME}}</td>
+                        <td>{{rp.PRD_PRICE}}</td>
+                        <td>{{rp.PRD_MATERIAL}}</td>
+                        <td>{{rp.PRD_DATE}}</td>
+                        <td>{{DISCOUNT_ID}}</td>
                         <td><button class="cancel">下架</button></td>
                     </tr>
                 </table>
@@ -160,6 +162,22 @@
             </main>
         </div>
     </div>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                rp: '',
+            },
+            methods: {
+
+            },
+            mounted() {
+                axios.post('../php/13/product.php').then(res => {
+                    this.rp = res.data;
+                })
+            },
+        });
+    </script>
 </body>
 
 </html>
