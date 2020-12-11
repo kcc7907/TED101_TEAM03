@@ -119,7 +119,7 @@ $(document).ready(function () {
     let counter = 1;
     const size = slider[0].clientWidth;
 
-    console.log(size);
+    // console.log(size);
 
     // sliderBox.style.transform = 'translateX(' + (-size * counter) +'px)';
     function leftmove() {
@@ -156,7 +156,8 @@ $(document).ready(function () {
         };
     });
 
-    // setInterval(leftmove, 3000);
+
+    setInterval(leftmove, 3000);
 });
 
 ///////////////////////////////價錢///////////////
@@ -168,7 +169,7 @@ let down = document.querySelectorAll('img.down');
 // console.log(up);
 // console.log(money[0].getAttribute('data-price'));
 // console.log(down);
-console.log(quantity[0].innerText);
+// console.log(quantity[0].innerText);
 let price = money[0].getAttribute('data-price');
 
 function todoadd() {
