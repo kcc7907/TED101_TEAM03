@@ -51,9 +51,6 @@ let right = new Vue({
             if(x)location.href ="shoppingorder.html"
             else return
         },
-        // totalPrice(){
-        //     this.final =this.total+this.discount+this.Shipping;
-        // }
     },
     created() {
         let list = JSON.parse(localStorage.getItem("lists"));
@@ -92,7 +89,9 @@ let left = new Vue({
         discount_specie:[],
         disA:false,
         disB:false,
-        disShow:false
+        disShow:false,
+        disArrA:[],
+        disArrB:[]
     },
     // mounted() {
     created() {
@@ -142,6 +141,8 @@ let left = new Vue({
             });
             if(sp1.length>1)this.disA=true;
             if(sp2.length>1)this.disB=true;
+            this.disArrA=sp1;
+            this.disArrB=sp2;
         });
     },
     watch: {
@@ -159,9 +160,9 @@ Vue.component('myList', {
             num: 1,
         };
     },
-    props: ['mycheck', 'prdId', 'url', 'prdName', 'prdPrice', 'discountId','prdMtl'],
+    props: ['mycheck', 'prdId', 'url', 'prdName', 'prdPrice', 'discountId', 'prdMtl','myindex'],
     template:
-        `<li class="list">
+        `<li class="list" :data-id="myindex">
                 <input type="checkbox" class="pick" :checked="mycheck">
                 <div class="picbox">
                     <div class="imgbox">
@@ -180,8 +181,8 @@ Vue.component('myList', {
                     </div>
                 </div>
                 <div class="info">
-                    <div class="procduct_name">
-                        <p>{{prdName}}</p>
+                    <div class="procduct_name" >
+                        <p @click="checkIndex">{{prdName}}</p>
                     </div>
                     <div class="material" v-show="prdMtl">
                         <p>黑色</p>
@@ -206,6 +207,9 @@ Vue.component('myList', {
                 <img src="../img/shoppincart/trash.svg" alt="" class="trash" @click='deleteList'>
             </li>`,
     methods: {
+        checkIndex(){
+            console.log(123);
+        },
         btnl(e) {
             if(this.num > 1){
                 this.num--;
