@@ -18,7 +18,7 @@ $(document).ready(function () {
     }else{
         $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
     }
-    
+
     // 點擊「會員icon」時，判斷是否有cookie並出現相對應視窗
     $('span.login img').click(function(){
         if(Boolean(document.cookie)){
@@ -29,47 +29,54 @@ $(document).ready(function () {
         }
     });
     
+    // 點擊「保持登入」
+    $('label.alive').click(function(){
+        $('#alivebox').toggleClass('bcgColor');;
+    });
+
     // 點擊「登出時」，出現confirm視窗
-    // **** 先隱藏 ****
+    // 1.先隱藏
     $('div.confirmDiv').hide();
     $('div.confirmDiv').find('p.contentFont').text(`確認是否登出？`);
-
-    // **** 寫入置中函式 ****
-    // $(window).resize(function(){
-    //     gotoCenter();
-    // });
-
-    // gotoCenter();
-
-    // function gotoCenter(){
-    //     // **** 寫入內容 ****
-    //     // **** 改寫top/left ****
-    //     let confirmWidth = $('div.confirmDiv >div').width();
-    //     let confirmHeight = $('div.confirmDiv >div').height();
-    //     let winWidth = $(window).width();
-    //     let winHeight = $(window).height();
-    //     $('div.confirmDiv >div').css({
-    //         left: (winWidth - confirmWidth)/2,
-    //         top: (winHeight - confirmHeight)/2,
-    //     });
-    //     console.log(confirmWidth);
-    //     console.log(confirmHeight);
-    //     console.log(winWidth);
-    //     console.log(winHeight);
-    // }
-
-    // **** 點擊出現confirm視窗 ****
+    
+    // 2.點擊出現confirm視窗
     $('.logout').click(function(){
         $('div.confirmDiv').show().css({
             'zIndex': '99',
             'opacity': '1',
         });
-        // let time = new Date(Date.now());
-        // // let time = Date.now();
-        // let timeE = time.toUTCString();
-        // document.cookie = `loging=; expires=${timeE}`;
-        // $('span.logMem').hide();
-        // $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+    });
+
+    // 3.點擊確認鈕
+    $('#sureGoHome').click(function(){
+        let time = new Date(Date.now());
+        // let time = Date.now();
+        let timeE = time.toUTCString();
+        document.cookie = `loging=; expires=${timeE}`;
+        $('span.logMem').hide();
+        $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+        $('div.confirmDiv').css({
+            'zIndex': '-99',
+            'opacity': '0',
+        }).hide();
+    });
+    
+    // 4.點擊取消鈕
+    $('#notsureGoHome').click(function(){
+        $('div.confirmDiv').css({
+            'zIndex': '-99',
+            'opacity': '0',
+        }).hide();
+    });
+
+    // =================================== 登入hover ===================================
+    $('button.login').mouseenter(function () {
+        $('#Path_18').hide();
+        logDoorAni();
+    });
+
+    $('button.login').mouseout(function () {
+        logDoorBackAni();
     });
 
     // =================================== 登入判斷 ===================================
@@ -248,6 +255,18 @@ function logAni(){
     myAnimation1.paint();
 }
 
+function logDoorAni(){
+    let elDoor = document.querySelector('#logInDoor');
+    let myAnimation2 = new LazyLinePainter(elDoor, { "ease": "easeOutExpo", "strokeWidth": 3, "strokeOpacity": 0, "strokeColor": "#577c8a", "strokeCap": "square", });
+    myAnimation2.paint();
+}
+
+function logDoorBackAni(){
+    let elDoor = document.querySelector('#logInDoor');
+    let myAnimation3 = new LazyLinePainter(elDoor, { "ease": "easeOutExpo", "strokeWidth": 3, "strokeOpacity": 0, "strokeColor": "#bda79e", "strokeCap": "square", });
+    myAnimation3.paint();
+}
+
 // ===== sign up animation =====
 function signAni(){
     let el = document.querySelector('#signUp');
@@ -257,7 +276,7 @@ function signAni(){
 
 // ===== log in lightbox =====
 function logBox() {  
-    $('div#login').show().css('z-index', '3');
+    $('div#login').show().css('zIndex', '3');
     $('div#login div.login').css({
         'opacity':'1',
         'top': '0',
@@ -271,7 +290,7 @@ function logBox() {
 // ===== sign up lightbox =====
 function signBox() {  
     // 登入隱藏
-    $('div#login').css('z-index','-3').hide();
+    $('div#login').css('zIndex','-3').hide();
     $('div#login div.login').css({
         'opacity':'0',
         'top': '-30vh',
@@ -280,7 +299,7 @@ function signBox() {
     $('#account').val('');
     $('#pwd').val('');
     // 註冊顯現
-    $('div#signUp').show().css('z-index', '3');
+    $('div#signUp').show().css('zIndex', '3');
     $('div#signUp div.signUp').css({
         'opacity':'1',
         'top': '0',
@@ -295,47 +314,62 @@ function signBox() {
 
 // ===== back to log in lightbox =====
 function backToLog() {  
-            // 註冊隱藏
-            $('div#signUp').css('z-index', '-3').hide();
-            $('div#signUp div.signUp').css({
-                'opacity':'0',
-                'top': '-30vh',
-            });
-            $('div#signUp input').val('');
-            // 登入顯現
-            $('div#login').show().css('z-index', '3');
-            $('div#login div.login').css({
-                'opacity':'1',
-                'top': '0',
-            });
-            // 動畫
-            setTimeout(() => {
-                logAni();
-            }, 500);
-}
-
-// ===== close lightbox =====
-function closeLB() {  
-    // 關閉lightbox
-    $(this).parent('div').parent('div').css({
-        'z-index': '-3',
-    }).hide();
-    $(this).parent('div').css({
+    // 註冊隱藏
+    $('div#signUp').css('zIndex', '-3').hide();
+    $('div#signUp div.signUp').css({
         'opacity':'0',
         'top': '-30vh',
     });
-    // input&select初始化 // TODO:待寫判斷
-    // alert('關閉後將清空您所輸入的資料，請確認是否關閉');
-    // if($('#account').val() !== '' || $('#pwd').val() !== ''){       
-    // }else{
-        $(this).parent('div').find('form').find('input').val('').css({
+    $('div#signUp input').val('');
+    // 登入顯現
+    $('div#login').show().css('zIndex', '3');
+    $('div#login div.login').css({
+        'opacity':'1',
+        'top': '0',
+    });
+    // 動畫
+    setTimeout(() => {
+        logAni();
+    }, 500);
+}
+
+// ===== close lightbox =====
+function closeLB(theB) {
+    // console.log(theB);
+    $('div.confirmDiv').hide();
+    $('div.confirmDiv').find('p.contentFont').text(`關閉後將清空您所輸入的資料，請確認是否關閉？`);
+
+    $('div.confirmDiv').show().css({
+        'zIndex': '99',
+        'opacity': '1',
+    });
+
+    $('#sureGoHome').click(function(){
+        // 關閉lightbox
+        $(theB).parent('div').parent('div').parent('div').css('zIndex', '-3').hide();
+        $(theB).parent('div').parent('div').css({
+            'opacity':'0',
+            'top': '-30vh',
+        });
+
+        // input&select初始化
+        $(theB).parent('div').parent('div').find('form').find('input').val('').css({
             'backgroundColor': 'rgba(0, 0, 0, 0)',
             'border': 'none',
             'borderBottom': '1px solid #BDA79E',
         });
-        $(this).parent('div').find('form').find('select').val('0').css('border', '1px solid #BDA79E');
+        $(theB).parent('div').parent('div').find('form').find('select').val('0').css('border', '1px solid #BDA79E');
+        $('#alivebox').removeClass('bcgColor');
+    });
 
-    // }
+    $('#notsureGoHome').click(function(){
+        $('div.confirmDiv').css({
+            'zIndex': '-99',
+            'opacity': '0',
+        }).hide();
+    });
+
+    $('#logInDoor').hide();
 }
 
 // ===== log/sign click event =====
@@ -349,14 +383,34 @@ function memBox() {
     // $('span.login img').click(logBox);
 
     // 點選「註冊新會員」出現「註冊」表單
-    $('a.signLink').click(signBox);
+    $('a.signLink').click(function(){
+        signBox();
+        $('form input').css({
+            'backgroundColor': 'rgba(0, 0, 0, 0)',
+            'border': 'none',
+            'borderBottom': '1px solid #BDA79E',
+        });
+        $('form select').css('border' , '1px solid #BDA79E');
+        $('#alivebox').removeClass('bcgColor');
 
+    });
 
     // 點選「回登入頁面」出現「登入」表單
-    $('a.logLink').click(backToLog);
+    $('a.logLink').click(function(e){
+        backToLog();
+        $('form input').css({
+            'backgroundColor': 'rgba(0, 0, 0, 0)',
+            'border': 'none',
+            'borderBottom': '1px solid #BDA79E',
+        });
+        $('form select').css('border' , '1px solid #BDA79E');
+    });
     
     // 點選closeBtn關閉表單
-    $('div.closebtn').click(closeLB);
+    $('div.closebtn').click(function(e){
+        let thisBtn = e.target;
+        closeLB(thisBtn);
+    });
 }
 
 // ===== 發生change，input改變背景色跟換border顏色 =====
@@ -367,5 +421,4 @@ function changeBGC() {
         'borderBottom': '1px solid #BDA79E',
     });
 }
-
 
