@@ -21,11 +21,11 @@ $(document).ready(function () {
     $('.sureThis').click(function(){
         $(this).closest('div').next('div').show().css('opacity','100%');
     });
-    $('#sureGo').click(function(){
+    $('#sureGoContest').click(function(){
         $('form').hide();
         $(this).closest('form').next('form').show();
     });
-    $('#notsureGo').click(function(){
+    $('#notsureGoContest').click(function(){
         $(this).closest('div').hide();
     });
 });

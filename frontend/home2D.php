@@ -8,6 +8,7 @@
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
     <script src="../lib/js/jquery.js"></script>
+    <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
 </head>
 
@@ -15,7 +16,7 @@
     <div class="JHH">
         <header class="common">
             <div class="logo">
-                <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+                <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
             </div>
             <nav>
                 <dav class="nav1">
@@ -28,9 +29,13 @@
                 </dav>
             </nav>
             <div class="icon">
-                <a class="login" href="./meminfo.html">
-                    <img src="../img/headerFooter/loginIcon.svg" alt="">
-                </a>
+                <span class="login">
+                    <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
+                    <span class="logMem">
+                        <a href="./meminfo.php">會員中心</a>
+                        <span href="" class="logout">登出</span>
+                    </span>
+                </span>
                 <a class="shop" href="./contest_main20.html">
                     <img src="../img/headerFooter/shoppingCart.svg" alt="">
                 </a>
@@ -45,7 +50,7 @@
             <div>
                 <header class="common">
                     <div class="logo">
-                        <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+                        <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
                     </div>
                     <nav>
                         <dav class="nav1">
@@ -58,9 +63,13 @@
                         </dav>
                     </nav>
                     <div class="icon">
-                        <a class="login" href="./meminfo.html">
-                            <img src="../img/headerFooter/loginIcon.svg" alt="">
-                        </a>
+                        <span class="login">
+                            <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
+                            <span class="logMem">
+                                <a href="./meminfo.php">會員中心</a>
+                                <span href="" class="logout">登出</span>
+                            </span>
+                        </span>
                         <a class="shop" href="./contest_main20.html">
                             <img src="../img/headerFooter/shoppingCart.svg" alt="">
                         </a>
@@ -71,7 +80,8 @@
                         </a>
                     </div>
                 </header>
-                
+            </div>
+            <div id="goScroll">
                 <div>
                     <div>
                         <h2 class="contentFont lineHeight">關於我們</h2>
@@ -90,7 +100,7 @@
                         </div>
                     </div>
                     <div>
-                        <h2  class="contentFont lineHeight">最新消息</h2>
+                        <h2 class="contentFont lineHeight">最新消息</h2>
                         <ul>
                             <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
                             <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
@@ -106,7 +116,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div>
                 <div>
                     <div>
@@ -140,7 +150,7 @@
             </div>
             <div>
             </div>
-            <div>
+            <div class="aboutDiv">
                 <div>
                     <div>
                         <span></span>
@@ -158,7 +168,6 @@
                     </div>
                 </div>
                 <div id="sliderBoardJH">
-
                     <div id="pdtJH">
                         <div>
                             <img src="../img/product/sofa05/sofa05_03.jpg" alt="沙發">
@@ -208,8 +217,127 @@
                 <span id="frtButton"></span>
                 <span id="bckButton"></span>
             </div>
-            <div style="display:none;">
-                這裡放最新消息
+            <div class="newsDiv">
+                <div class="newsSection">
+                    <div>
+                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <time class="titleFont2">01 / 29 / 2021</time>
+                        <div>
+                            <img src="../img/news/news01.jpg" alt="news">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news02.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news03.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news04.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news05.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news06.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news07.jpg" alt="news">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="newsSection">
+                    <div>
+                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <time class="titleFont2">01 / 29 / 2021</time>
+                        <div>
+                            <img src="../img/news/news01.jpg" alt="news">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news02.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news03.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news04.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news05.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news06.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news07.jpg" alt="news">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnSection">
+                    <div>
+                        <!-- <span class="rotateSpan" id="rotateSpan1"></span> -->
+                        <span class="titleFont1">
+                            最新消息
+                        </span>
+                        <!-- <span class="rotateSpan" id="rotateSpan2"></span> -->
+                    </div>
+                    <div>
+                        <button class="left pageLeftBtn"></button>
+                        <button class="right pageRightBtn"></button>
+                        <span class="hugeP pageBtn">第一頁</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="bottomBox">
@@ -238,6 +366,14 @@
                 </div>
             </div>
         </div>
+        <!-- confirm燈箱 -->
+        <div class="confirmDiv ">
+            <div>
+                <p class="contentFont lineHeight"></p>
+                <input type="button" class="detailFont" id="sureGoHome" value="確認">
+                <input type="button" class="detailFont" id="notsureGoHome" value="取消">
+            </div>
+        </div>
     </div>
 
 
@@ -248,28 +384,22 @@
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" id="account" name="account" class="titleFont3">
+                    <input type="text" id="account" name="account" class="titleFont3" minlength="8" maxlength="12" required="required" autocomplete="off">
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="text" class="titleFont3" id="pwd" name="pwd">
+                    <input type="password" class="titleFont3" id="pwd" name="pwd" minlength="8" maxlength="12" required="required" autocomplete="off">
                     <input type="checkbox" id="alive" name="alive" class="alive detailFont">
                     <label for="alive" class="alive" id="alivebox"></label>
                     <label for="alive" class="alive detailFont">保持登入</label>
                 </div>
                 <div>
                     <p class="detailFont"><a>忘記密碼</a></p>
-                    <button type="submit" class="login titleFont2" onclick="return doSubmit();">登入</button>
-                    <p class="detailFont"><a href="./signUp.html" class="signLink">註冊新會員</a></p>
+                    <button type="button" class="login titleFont2">登入</button>
+                    <p class="detailFont"><a href="javascript: void(0)" class="signLink">註冊新會員</a></p>
                 </div>
             </form>
-            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693"
-                data-llp-composed="true" id="logIn" class="lazy-line-painter">
-                <path id="Path_17" data-name="Path 17"
-                    d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z"
-                    transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000"
-                    data-llp-delay="0" fill-opacity="0" style="" />
-                <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7"
-                    transform="translate(244 518.801)" fill="none" data-llp-id="logIn-1" data-llp-duration="5000"
-                    data-llp-delay="0" fill-opacity="0" style="" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true" id="logIn" class="lazy-line-painter">
+                <path id="Path_17" data-name="Path 17" d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z" transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
+                <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)" fill="none" data-llp-id="logIn-1" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
             </svg>
             <div class="closebtn">
                 <span>&times;</span>
@@ -280,58 +410,56 @@
     <!-- 註冊燈箱 -->
     <div id="signUp">
         <div class="signUp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009"
-                data-llp-composed="true" id="signUp" class="lazy-line-painter">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009" data-llp-composed="true" id="signUp" class="lazy-line-painter">
                 <g id="Rectangle_457" data-name="Rectangle 457" fill="none" stroke="#865454" stroke-width="1">
-                    <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0"
-                        fill-opacity="0" style="" />
+                    <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
                 </g>
             </svg>
             <h1 class="titleFont1">加入會員享受輕鬆購物</h1>
-            <form action="#" class="signUp" name="signUp">
+            <form action="SignR.php" class="signUp" name="signUp">
                 <div>
                     <div>
                         <label for="memName" class="titleFont3">姓名</label>
-                        <input type="text" name="memName" class="titleFont3" id="JHmemName">
+                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required" autocomplete="off" placeholder="請輸入姓名">
                     </div>
                     <div>
                         <label for="Phone" class="titleFont3">手機</label>
-                        <input type="text" name="Phone" class="titleFont3" id="JHPhone">
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" maxlength="10" required="required" autocomplete="off" placeholder="請輸入手機號碼">
                     </div>
                 </div>
                 <div>
                     <label for="email" class="titleFont3">信箱</label>
-                    <input type="email" name="email" class="titleFont3" id="JHemail">
+                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required" autocomplete="off" placeholder="請輸入信箱">
                 </div>
-                <div>
+                <div id="addressOption">
                     <label for="address" class="titleFont3">地址</label>
-                    <select class="detailFont">
-                        <option class="detailFont" value="">台北市</option>
-                        <option class="detailFont" value="">新北市</option>
+                    <select name="memCity" id="memCityJH" class="detailFont" required="required">
+                        <option name="memCity" selected disabled value="0">請選擇縣市</option>
+                        <option v-for="city in citys" class="detailFont" name="memCity" :value="city">{{city}}</option>
                     </select>
-                    <input type="email" name="address" class="titleFont3" id="JHaddress">
+                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required" autocomplete="off" placeholder="請輸入地址">
                 </div>
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
-                    <input type="text" name="account" class="titleFont3" id="JHaccount">
+                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="6" maxlength="12" required="required" autocomplete="off" placeholder="請輸入英文或數字(6-12字元)">
                 </div>
                 <div>
                     <label for="pwd" class="titleFont3">密碼</label>
-                    <input type="password" name="pwd" class="titleFont3" id="JHpwd">
+                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="6" maxlength="12" required="required" autocomplete="off" placeholder="請輸入密碼(6-12字元)">
                 </div>
                 <div>
                     <label for="checkP" class="titleFont3">密碼確認</label>
-                    <input type="password" name="checkP" class="titleFont3" id="checkP">
+                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required" autocomplete="off" placeholder="請重複輸入密碼">
                 </div>
                 <div>
-                    <button type="submit" class="titleFont3">註冊</button>
+                    <!-- <button type="button" class="titleFont3 signup">註冊</button> -->
+                    <button type="button" class="titleFont3 signup">註冊</button>
                 </div>
                 <div>
-                    <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a
-                            class="detailFont">會員責任規範及個資聲明</a>。</span>
+                    <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a class="detailFont">會員責任規範及個資聲明</a>。</span>
                 </div>
                 <div>
-                    <a href="./login.html" class="detailFont logLink">回登入頁面</a>
+                    <a href="javascript: void(0)" class="detailFont logLink">回登入頁面</a>
                 </div>
             </form>
             <div class="closebtn">
@@ -339,7 +467,10 @@
             </div>
         </div>
     </div>
+
+
     <script src="../js/15/home2D.js"></script>
+    <script src="../js/15/logSign.js"></script>
 </body>
 
 </html>
