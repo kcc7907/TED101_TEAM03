@@ -764,6 +764,7 @@ div#JN{
         flex-wrap: wrap;
         justify-content: center;
         border: 1px solid rebeccapurple;
+        width: 100%;
     }
 
     .interior_two{
@@ -801,7 +802,7 @@ div#JN{
             width: 100%;
             text-align: center;
             z-index: 1;
-            line-height: 90px;
+            line-height: 2.5;
             font-size: 30px;
             .titleFont3{
                 border: 1px solid greenyellow;
@@ -833,6 +834,11 @@ div#JN{
         background-color: #fff;
         opacity: 0.5;
 
+    }
+
+    .inter_one_pack{
+        border: 2px solid steelblue;
+        display: flex;
     }
 
     #picsLightBox{
@@ -888,6 +894,8 @@ div#JN{
     }
 }
 
+    
+
 
 
 
@@ -920,9 +928,9 @@ div#JN{
         .designer_intro{
             margin-top: 0%;
         }
-        .interior_one{
-            display: block;
-        }
+        // .interior_one{
+        //     // display: block;
+        // }
         #intro_sliderBoard{
             margin: 50px auto;
         }
@@ -1075,7 +1083,7 @@ div#JN{
 
             .d_pic_flex{
                 font-family:Arial;
-                width:700px;
+                // width:700px;
                 display:block;
                 margin:0 auto;
             }
@@ -1083,8 +1091,8 @@ div#JN{
             .interior_one{
                 display: flex;
                 background: #fff;
-                margin: 10px;
-                padding: 2%;
+                // margin: 10px;
+                // padding: 2%;
                 position: relative;
                 text-align: center;
             }
@@ -1093,10 +1101,16 @@ div#JN{
                 display: flex;
                 background: #fff;
                 // margin: 10px;
-                padding: 2%;
+                // padding: 2%;
                 position: relative;
                 text-align: center;
                 flex-wrap: nowrap;
+                margin-top: 5%;
+            }
+
+            .inter_one_pack{
+                border: 2px solid steelblue;
+                display: block;
             }
 
             .tab_list_block{
@@ -1117,6 +1131,8 @@ div#JN{
             .small{
                 border: 1px solid rebeccapurple;
                 height: auto;
+                width: 20%;
+                margin: auto;
             }
 
             .aa{
@@ -1275,6 +1291,8 @@ div#JN{
         div.other_text{
             width: 75%;
         }
+
+        
    
       
     }
