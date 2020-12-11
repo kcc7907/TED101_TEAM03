@@ -61,9 +61,6 @@ let right = new Vue({
         if(!list)return;
         this.proTotal = list.length;
     },
-    // mounted(){
-    //     this.final = this.total+this.discount;
-    // },
     watch: {
         total(){ this.final = this.total+this.discount}
     },
@@ -213,7 +210,7 @@ Vue.component('myList', {
         btnl(e) {
             if(this.num > 1){
                 this.num--;
-                right.total = this.num * this.prdPrice + right.total;}
+                right.total -= parseInt(this.prdPrice);}
         },
         btnr() {
             this.num++;
