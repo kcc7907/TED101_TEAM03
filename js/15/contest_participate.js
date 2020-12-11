@@ -28,4 +28,9 @@ $(document).ready(function () {
     $('#notsureGoContest').click(function(){
         $(this).closest('div').hide();
     });
+
+
+    // ======== 身分證長寬 =========
+    $('#pImg').css('width');
+    console.log($('#pImg').css('width'));
 });

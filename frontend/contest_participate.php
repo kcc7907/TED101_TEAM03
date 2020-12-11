@@ -87,8 +87,8 @@
                         <br>
                         <span class="file">檔案名稱：</span>
                         <span class="file" id="fileName">請選擇上傳檔案</span>
-                        <div>
-                            <img src="../img/" alt="正面預覽">
+                        <div id="pImg">
+                            <img src="../img/contest/mem_A111200001.png" alt="正面預覽">
                             <span>點擊放大圖片</span>
                         </div>
                     </div>

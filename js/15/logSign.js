@@ -11,17 +11,28 @@ $(document).ready(function () {
     // =================================== 登入/註冊燈箱 ===================================
     // 隱藏註冊/登入表單
     $('div#login , div#signUp').hide();
-    
+
+
     // 重整或開啟時，判斷「會員icon」圖示
-    if(Boolean(document.cookie)){
+    if(checkCookie('loging')){
         $('img.logMem').attr('src','../img/homepage/logInMemHome.png');
+        let cookieCheck = true;
     }else{
         $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+        let cookieCheck = false;
     }
 
     // 點擊「會員icon」時，判斷是否有cookie並出現相對應視窗
     $('span.login img').click(function(){
-        if(Boolean(document.cookie)){
+        let cookieCheck = checkCookie('loging');
+
+        if(Boolean(cookieCheck)){
+            $('img.logMem').attr('src','../img/homepage/logInMemHome.png');
+        }else{
+            $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+        }
+        
+        if(Boolean(cookieCheck)){
             $('span.logMem').slideToggle();
         }else{
             logBox();
@@ -422,3 +433,26 @@ function changeBGC() {
     });
 }
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+  // 檢查某 cookie 是否存在
+function checkCookie(cname) {
+    var cookie_value = getCookie(cname);
+    if (cookie_value != "") {
+        return true;
+    } else {
+        return false;
+    }
+}
