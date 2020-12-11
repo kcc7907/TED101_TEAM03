@@ -4,31 +4,6 @@ title[1].classList.add('-onColor');
 
 document.cookie = 'loging=A111200001';
 
-// 取得 cookie 的值
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-// 檢查某 cookie 是否存在
-function checkCookie(cname) {
-    var cookie_value = getCookie(cname);
-    if (cookie_value != "") {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 let left2 = new Vue({
     el:'#left2',
     data:{

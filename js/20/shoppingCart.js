@@ -25,6 +25,7 @@ let list = [
         num : '1'
     }
 ];
+
 localStorage.clear();
 localStorage.setItem("lists", JSON.stringify(list));
 
@@ -45,8 +46,6 @@ let right = new Vue({
                 numAll+=parseInt(x[b].value);
                 console.log(numAll);
             });
-
-
 
             let x =confirm();
             if(x)location.href ="shoppingorder.html"
