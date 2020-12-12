@@ -1,3 +1,10 @@
+<?php
+    include("../php/14/conn14.php");
+    $sql = "SELECT * from `CASE`";
+    $statement = $pdo->query($sql);
+    $data = $statement->fetchAll();
+    // print_r($data);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -182,7 +189,7 @@
                             <a href="./case2.html" class="img_inter">
                                 <img src="../img/interiordesign/home/example/yo/C1569288522107.jpg" class="homepic">
                                 <span class="contentFont">內湖</span>
-                                <span class="contentFont">毛公館</span>
+                                <span class="contentFont">黃公館</span>
                             </a>
                         </div>
 
@@ -203,7 +210,7 @@
                             <a href="./case2.html" class="img_inter">
                                 <img src="../img/interiordesign/home/example/rezo/1493275936.jpg" class="homepic">
                                 <span class="contentFont">大安</span>
-                                <span class="contentFont">黃公館</span>
+                                <span class="contentFont">侯公館</span>
                             </a>
                         </div>
                     </div>
@@ -252,7 +259,7 @@
                                 <img src="../img/interiordesign/commercial/example/coffee/_SKA6416_resize.jpg"
                                     class="commercial_pic">
                                 <span class="contentFont">紐約</span>
-                                <span class="contentFont">Nsoe Sden </span>
+                                <span class="contentFont">FABULOUS</span>
                             </a>
                         </div>
                     </div>
@@ -299,8 +306,8 @@
                                 <a href="./case4.html" class="img_inter">
                                     <img src="../img/interiordesign/office/example/chia/10-Scandinavian-iDiD-taoyuan 8_aef73.jpg"
                                         class="office_pic">
-                                    <span class="contentFont">士林</span>
-                                    <span class="contentFont">紀公館</span></a>
+                                    <span class="contentFont">南京復興</span>
+                                    <span class="contentFont">TIBAME</span></a>
                             </div>
                         </div>
                         <div class="jpgbox">
@@ -308,8 +315,8 @@
                                 <a href="./case4.html" class="img_inter">
                                     <img src="../img/interiordesign/office/example/ren/12Modern-iDiD-ntc 2_fe819.jpg"
                                         class="office_pic">
-                                    <span class="contentFont">士林</span>
-                                    <span class="contentFont">紀公館</span></a>
+                                    <span class="contentFont">忠孝復興</span>
+                                    <span class="contentFont">法華香水</span></a>
                             </div>
                         </div>
                     </div>
