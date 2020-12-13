@@ -146,7 +146,7 @@ $(document).ready(function () {
         //console.log(slider[counter]);
         if (slider[counter].id === 'lastClone') {
             sliderBox.style.transition = 'none';
-            counter = slider.length - 2;
+            counter = slider.length - 3;
             sliderBox.style.transform = 'translateX(' + (-size * counter) + 'px)';
         };
         if (slider[counter].id === 'firstClone') {
@@ -155,6 +155,7 @@ $(document).ready(function () {
             sliderBox.style.transform = 'translateX(' + (-size * counter) + 'px)';
         };
     });
+
 
     setInterval(leftmove, 3000);
 });
@@ -168,7 +169,7 @@ let down = document.querySelectorAll('img.down');
 // console.log(up);
 // console.log(money[0].getAttribute('data-price'));
 // console.log(down);
-console.log(quantity[0].innerText);
+// console.log(quantity[0].innerText);
 let price = money[0].getAttribute('data-price');
 
 function todoadd() {
@@ -192,8 +193,6 @@ function todoless() {
 // for (i = 0; i < down.length; i++) {
 //     down[i].addEventListener('click', todoless);
 // };
-
-
 up[0].addEventListener('click', todoadd);
 up[1].addEventListener('click', todoadd);
 down[0].addEventListener('click', todoless);
