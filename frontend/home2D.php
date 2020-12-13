@@ -25,7 +25,7 @@
                 </dav>
                 <dav class="nav2">
                     <a href="./qa.html">客戶服務</a>
-                    <a href="./contest_participate.html">傢聚賞</a>
+                    <a href="./contest_participate.php">傢聚賞</a>
                 </dav>
             </nav>
             <div class="icon">
@@ -59,7 +59,7 @@
                         </dav>
                         <dav class="nav2">
                             <a href="./qa.html">客戶服務</a>
-                            <a href="./contest_participate.html">傢聚賞</a>
+                            <a href="./contest_participate.php">傢聚賞</a>
                         </dav>
                     </nav>
                     <div class="icon">
@@ -401,8 +401,12 @@
                 <path id="Path_17" data-name="Path 17" d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z" transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
                 <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)" fill="none" data-llp-id="logIn-1" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
             </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true" id="logInDoor" class="lazy-line-painter">
+                <path id="Path_19" data-name="Path 19" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)" fill="none" data-llp-id="logIn-2" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
+            </svg>
+
             <div class="closebtn">
-                <span>&times;</span>
+                <span class="closebtn">&times;</span>
             </div>
         </div>
     </div>
