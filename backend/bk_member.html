@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品管理</title>
+
+    <link rel="stylesheet" href="../lib/reset.css">
+    <link rel="stylesheet" href="../css/product_authority.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <script src="../lib/js/jquery.js"></script>
+    <script src="../lib/js/vue.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
+    <script defer src="../js/13/13.js"></script>
+    <script dfer src="../js/13/product_authority.js"></script>
+
+
+</head>
+
+<body>
+    <div class="jk_authority">
+        <div class="container">
+            <!-- 側邊攔 -->
+            <div class="sideMenu">
+
+                <!-- 標題 -->
+                <div class="title">救世宅後台管理</div>
+
+                <!-- 欄位 -->
+                <div class="menu">
+                    <ul>
+
+                        <li>
+                            <ul>
+                                <li class="item">會員管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="kcc_authorityChange1">會員總覽</li>
+                                <li id="kcc_authorityChange2">新增會員</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">訂單管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">
+                                    權限管理
+                                    <i class="fas fa-chevron-left"></i>
+                                </li>
+                                <!-- <li id="jk_newManager">新增管理員</li> -->
+                                <li id="jk_authorityChange">權限異動</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">消息管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">商品管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="sam_authorityChange1">商品總覽</li>
+                                <li id="sam_authorityChange2">產品上架</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">客服管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+                <div class="arrow"><i class="far fa-arrow-alt-circle-left"></i></div>
+            </div>
+
+            <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
+
+            <main class="kcc_class" id="app">
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        會員管理 / 會員總覽
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="kcc_authorityChange">
+
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>會員編號</th>
+                        <th>會員密碼</th>
+                        <th>會員名稱</th>
+                        <th>會員電話</th>
+                        <th>會員伊媚兒</th>
+                        <th>居住城市</th>
+                        <th>地址</th>
+                        <th>建立日期</th>
+                        <th></th>
+                    </tr>
+
+                    <!-- 表格內容 -->
+                    <tr v-for="(item, index) in rp" :key="index">
+                        <td>{{item.MEM_ID}}</td>MEM_ADDRESS
+                        <td>{{item.MEM_PWD}}</td>
+                        <td>{{item.MEM_NAME}}</td>
+                        <td>{{item.MEM_PHONE}}</td>
+                        <td>{{item.MEM_EMAIL}}</td>
+                        <td>{{item.MEM_CITY}}</td>
+                        <td>{{item.MEM_ADDRESS}}</td>
+                        <td>{{item.MEM_DATE}}</td>
+                        <td><button class="cancel">刪除</button></td>
+                    </tr>
+                </table>
+
+                <!-- 跳窗 -->
+                <div class="kcc_jump" >
+                    <div class="secondBack">
+                        <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
+                        <form action="" method="">
+                            <label for="product_number">會員編號</label>
+                            <input type="text" name="product_number" id="product_number" placeholder="安安">
+                            <br>
+
+                            <label for="product_kind">會員密碼</label>
+                            <input type="text" name="product_kind" id="product_kind" placeholder="安安">
+                            <br>
+
+                            <label for="product_name">會員名稱</label>
+                            <input type="text" name="product_name" id="product_name" placeholder="安安">
+                            <br>
+
+                            <label for="product_price">會員電話</label>
+                            <input type="text" name="product_price" id="product_price" placeholder="安安">
+                            <br>
+
+                            <label for="product_material">會員伊媚兒</label>
+                            <input type="text" name="product_material" id="product_material" placeholder="安安">
+                            <br>
+
+                            <label for="product_update">居住城市</label>
+                            <input type="text" name="product_update" id="product_update" placeholder="安安">
+                            <br>
+
+                            <label for="product_discount">地址</label>
+                            <input type="text" name="product_discount" id="product_discount" placeholder="安安">
+                            <br>
+
+                            <label for="product_discount">建立日期</label>
+                            <input type="text" name="product_discount" id="product_discount" placeholder="安安">
+
+                            <button id="product_submit" type="submit">上架</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

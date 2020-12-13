@@ -222,7 +222,14 @@ div.sam{
             margin-bottom:60px;
             margin-left:5px;
             margin-right:5px;
-            img#threed{
+            img.threed{
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top:2%;
+                right:2%;
+            }
+            img#championIcon{
                 position: absolute;
                 width: 10%;
                 height: 10%;

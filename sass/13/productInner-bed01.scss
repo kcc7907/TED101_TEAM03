@@ -32,7 +32,9 @@ div.sam_pi{
             // border:1px solid pink;
             width:50%;
             div.productImg{
-                // border:2px solid orangered;
+                border:2px solid orangered;
+                width:100%;
+                height: 68%;
                 position: relative;
                 img.rotateIcon1{
                     width:6%;
@@ -266,16 +268,16 @@ div.sam_pi{
                         }
                     }
                     button.wood1{
-                        background-image: url(../img/product/material/wood01-10080.jpg);
+                        background-image: url(../img/product/material/cloth01-10080.jpg);
                     }
                     button.wood2{
-                        background-image: url(../img/product/material/wood02-10080.jpg);
+                        background-image: url(../img/product/material/cloth02-10080.jpg);
                     }
                     button.wood3{
-                        background-image: url(../img/product/material/wood03-10080.jpg);
+                        background-image: url(../img/product/material/cloth03-10080.jpg);
                     }
                     button.wood4{
-                        background-image: url(../img/product/material/wood04-10080.jpg);
+                        background-image: url(../img/product/material/cloth04-10080.jpg);
                     }
                 }
                 
@@ -396,8 +398,9 @@ div.sam_pi{
         div.productImg{
             position: relative;
             margin-top:50px;
-            // min-width: 360px;
-            // min-height: 320px;
+            width:100%;
+            height:460px;
+            border:1px solid red;
             img.rotate1{
                 width:26px;
                 height:30px;
@@ -592,16 +595,16 @@ div.sam_pi{
                     }
                 }
                 button.wood1{
-                    background-image: url(../img/product/material/wood01-10080.jpg);
+                    background-image: url(../img/product/material/cloth01-10080.jpg);
                 }
                 button.wood2{
-                    background-image: url(../img/product/material/wood02-10080.jpg);
+                    background-image: url(../img/product/material/cloth02-10080.jpg);
                 }
                 button.wood3{
-                    background-image: url(../img/product/material/wood03-10080.jpg);
+                    background-image: url(../img/product/material/cloth03-10080.jpg);
                 }
                 button.wood4{
-                    background-image: url(../img/product/material/wood04-10080.jpg);
+                    background-image: url(../img/product/material/cloth04-10080.jpg);
                 }
             }
         }
@@ -1512,7 +1515,8 @@ div.sam_pi{
             }
         }
         div.sliderBox{
-            width:86%;
+            border:1px solid red;
+            width:57%;
             margin:0 auto;
             overflow: hidden;
             div.slider{

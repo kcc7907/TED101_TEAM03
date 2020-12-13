@@ -54,7 +54,7 @@ div.sam_pi{
             div.lightBox{
                 font-size: 0;
                 // border:1px solid brown;
-                margin-top:190px;
+                margin-top:150px;
                 text-align: right;
                 img{
                     width:25%;
@@ -266,16 +266,16 @@ div.sam_pi{
                         }
                     }
                     button.wood1{
-                        background-image: url(../img/product/material/wood01-10080.jpg);
+                        background-image: url(../img/product/material/cloth01-10080.jpg);
                     }
                     button.wood2{
-                        background-image: url(../img/product/material/wood02-10080.jpg);
+                        background-image: url(../img/product/material/cloth02-10080.jpg);
                     }
                     button.wood3{
-                        background-image: url(../img/product/material/wood03-10080.jpg);
+                        background-image: url(../img/product/material/cloth03-10080.jpg);
                     }
                     button.wood4{
-                        background-image: url(../img/product/material/wood04-10080.jpg);
+                        background-image: url(../img/product/material/cloth04-10080.jpg);
                     }
                 }
                 
@@ -592,16 +592,16 @@ div.sam_pi{
                     }
                 }
                 button.wood1{
-                    background-image: url(../img/product/material/wood01-10080.jpg);
+                    background-image: url(../img/product/material/cloth01-10080.jpg);
                 }
                 button.wood2{
-                    background-image: url(../img/product/material/wood02-10080.jpg);
+                    background-image: url(../img/product/material/cloth02-10080.jpg);
                 }
                 button.wood3{
-                    background-image: url(../img/product/material/wood03-10080.jpg);
+                    background-image: url(../img/product/material/cloth03-10080.jpg);
                 }
                 button.wood4{
-                    background-image: url(../img/product/material/wood04-10080.jpg);
+                    background-image: url(../img/product/material/cloth04-10080.jpg);
                 }
             }
         }
@@ -628,6 +628,7 @@ div.sam_pi{
                 // border:1px solid rgb(103, 74, 182);
                 width: 25%;
                 text-align: center;
+                color:#54383b;
             }
             div.topdown{
                 // border:1px solid red;
@@ -1062,7 +1063,7 @@ div.section2{
             div.truckBox{
                 div.truck{
                     width:90%;
-                    margin-bottom:5%;
+                    margin-bottom:10%;
                     div.word{
                         span.color{
                             width:20px;
