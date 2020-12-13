@@ -1,0 +1,262 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap");
+header.common {
+  position: relative;
+  height: 60px;
+  padding: 10px 0;
+}
+
+header.common * {
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+}
+
+header.common img {
+  max-height: 100%;
+}
+
+header.common a {
+  text-decoration: none;
+}
+
+header.common .logo {
+  height: 60px;
+}
+
+header.common nav {
+  position: fixed;
+  right: 3%;
+  text-align: center;
+  display: none;
+}
+
+header.common nav a {
+  display: block;
+  margin-bottom: 15px;
+  color: #54383b;
+  font-size: 20px;
+}
+
+header.common .icon {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+header.common .icon a {
+  height: 20px;
+  margin-left: 10px;
+}
+
+header.common .icon .ham {
+  position: relative;
+}
+
+header.common .icon .ham span {
+  background: #54383b;
+  display: block;
+  width: 20px;
+  height: 2px;
+}
+
+header.common .icon .ham span:nth-child(1) {
+  margin-top: 2px;
+  transform-origin: top right;
+  transition: all .5s;
+}
+
+header.common .icon .ham span:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header.common .icon .ham span:nth-child(2).-none {
+  display: none;
+}
+
+header.common .icon .ham span:nth-child(3) {
+  position: absolute;
+  bottom: 2px;
+  transform-origin: top right;
+  transition: all .5s;
+}
+
+.-hamR {
+  transform: rotateZ(-45deg) translate(-3px, -3px);
+}
+
+.-hamL {
+  transform: rotateZ(45deg) translate(-1px, 2px);
+}
+
+@media (min-width: 361px) {
+  header.common nav a {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  header.common nav a {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 768px) {
+  header.common {
+    display: flex;
+    justify-content: center;
+    height: 85px;
+  }
+  header.common .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 85px;
+  }
+  header.common nav {
+    position: static;
+    display: flex !important;
+    width: 100vw;
+    text-align: center;
+    align-items: center;
+  }
+  header.common nav a {
+    font-size: 21px;
+    display: inline-block;
+    margin-bottom: 0px;
+  }
+  header.common nav .nav2 {
+    text-align: left;
+    flex: 1;
+    padding-left: 8vw;
+    position: relative;
+  }
+  header.common nav .nav2 a:nth-child(2) {
+    margin-left: 15px;
+  }
+  header.common nav .nav2 a:nth-child(1) {
+    margin-left: 5vw;
+  }
+  header.common nav .nav2:before {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 2px;
+    background: #CAC3BB;
+    position: absolute;
+    top: -15px;
+    left: 10%;
+  }
+  header.common nav .nav2::after {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 2px;
+    background: #CAC3BB;
+    position: absolute;
+    bottom: -15px;
+    right: 10%;
+  }
+  header.common nav .nav1 {
+    position: relative;
+    text-align: right;
+    flex: 1;
+    padding-right: 8vw;
+    box-sizing: border-box;
+  }
+  header.common nav .nav1 a:nth-child(2) {
+    margin-left: 15px;
+    margin-right: 5vw;
+  }
+  header.common nav .nav1:before {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 2px;
+    background: #CAC3BB;
+    position: absolute;
+    top: -15px;
+    left: 10%;
+  }
+  header.common nav .nav1::after {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 2px;
+    background: #CAC3BB;
+    position: absolute;
+    bottom: -15px;
+    right: 10%;
+  }
+  header.common .icon {
+    right: 5%;
+  }
+  header.common .icon .ham {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  header.common {
+    height: 115px;
+  }
+  header.common .logo {
+    height: 115px;
+  }
+  header.common nav a {
+    font-size: 23px;
+  }
+  header.common nav .nav2 {
+    padding-left: 12vw;
+  }
+  header.common nav .nav1 {
+    padding-right: 12vw;
+  }
+}
+
+@media (min-width: 1200px) {
+  header.common {
+    height: 140px;
+  }
+  header.common .logo {
+    height: 140px;
+  }
+  header.common nav a {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 1500px) {
+  header.common nav a {
+    font-size: 25px;
+  }
+  header.common .icon {
+    right: 8%;
+  }
+  header.common .icon a img {
+    max-height: none;
+    height: 25px;
+  }
+}
+
+@media (min-width: 1700px) {
+  header.common {
+    height: 160px;
+  }
+  header.common .logo {
+    height: 160px;
+  }
+  header.common nav a {
+    font-size: 25px;
+  }
+  header.common nav .nav2 {
+    padding-left: 15vw;
+  }
+  header.common nav .nav1 {
+    padding-right: 15vw;
+  }
+}
+/*# sourceMappingURL=header.css.map */
