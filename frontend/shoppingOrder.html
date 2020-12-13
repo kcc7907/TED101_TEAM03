@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/shoppingCart.css">
     <script src="../lib/js/jquery.js"></script>
+    <script src="../lib/js/vue.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js'></script>
     <script defer src="../js/20/shopCommon.js"></script>
     <script defer src="../js/20/shoppingOrder.js"></script>
     <script defer src="../lib/header/header.js"></script>
@@ -34,47 +36,50 @@
             </div>
         </div>
         <main>
-            <div class="left2">
+            <div class="left2" id="left2">
                 <h2 class="info">購買人資料</h2>
                 <div class="outer memberbox">
                     <div class="name df">
                         <p class="innerT lh">姓名</p>
-                        <input type="text" class="name_input" value="王小名">
-                        <button class="modified">修改</button>
+                        <input type="text" class="name_input" v-model="formData.fname" disabled @blur="blur"
+                            @keyup.13="blur">
+                        <button class="modified" @click="focus">修改</button>
                     </div>
                     <div class="phone df">
                         <p class="innerT lh">電話</p>
-                        <input type="text" class="phone_input" value="0912345678"><button class="modified">修改</button>
+                        <input type="text" class="phone_input" v-model="formData.fphone" disabled @blur="blur"
+                            @keyup.13="blur" @keydown="phoneInput"><button class="modified" @click="focus">修改</button>
                     </div>
                     <div class="lives df">
                         <p class="innerT lh">住址</p>
-                        <input type="text" class="live_input" value="台北市你家隔壁"><button class="modified">修改</button>
+                        <input type="text" class="live_input" v-model="memLives" disabled @blur="blur"
+                            @keyup.13="blur"><button class="modified" @click="focus">修改</button>
                     </div>
                 </div>
                 <h2 class="payment">付款方式</h2>
                 <div class="outer paymentbox">
                     <div class="checkT">
-                        <input type="checkbox" class="credit_check">
+                        <input type="checkbox" class="credit_check" v-model="cardBox">
                         <p class="lh">信用卡</p>
                     </div>
-                    <div class="card_box">
+                    <div class="card_box" v-show="cardBox">
                         <div class="cardnum_box">
                             <p class="card_num">信用卡號碼</p>
                             <div class="inputnum_box df">
-                                <input type="text" class="card_num1">
-                                <input type="text" class="card_num2">
-                                <input type="text" class="card_num3">
-                                <input type="text" class="card_num4">
+                                <input type="text" class="card_num1" ref="cardnum1" @keydown="cardNum">
+                                <input type="text" class="card_num2" ref="cardnum2" @keydown="cardNum">
+                                <input type="text" class="card_num3" ref="cardnum3" @keydown="cardNum">
+                                <input type="text" class="card_num4" ref="cardnum4" @keydown="cardNum">
                             </div>
                         </div>
                         <div class="carddate_box">
                             <p class="card_date">有效日期</p>
-                            <input type="text" class="card_date1">
-                            <input type="text" class="card_date2">
+                            <input type="text" class="card_date1" @keydown="cardDate">
+                            <input type="text" class="card_date2" style="display: none;">
                         </div>
                         <div class="cardcode_box">
                             <p class="card_code">安全碼</p>
-                            <input type="text" class="card_code1">
+                            <input type="text" class="card_code1" @keydown="cardCode">
                         </div>
                         <div class="cardicon_box">
                             <img src="../img/shoppincart/visa.svg" alt="">
@@ -83,10 +88,10 @@
                         </div>
                     </div>
                     <div class="checkT">
-                        <input type="checkbox" class="remit_input">
+                        <input type="checkbox" class="remit_input" v-model="remit">
                         <p class="remit lh">匯款</p>
                     </div>
-                    <div class="remit_box">
+                    <div class="remit_box" v-show="remit">
                         <div class="remitbank_box df">
                             <p>銀行</p>
                             <p class="gary">台灣銀行(004)南門分行</p>
@@ -104,27 +109,50 @@
                 <h2 class="adds">運送地址</h2>
                 <div class="outer addsbox">
                     <div class="checkT">
-                        <input type="checkbox" class="freight_input">
+                        <input type="checkbox" class="freight_input" v-model="freight">
                         <p class="lh">同購買人住址</p>
                     </div>
                     <div class="checkT">
-                        <input type="checkbox" class="adds_input">
+                        <input type="checkbox" class="adds_input" v-model="addressBox">
                         <p class="lh">新增寄送地址</p>
                     </div>
-                    <div class="address_box">
-                        <select name="" class="freight_city">
+                    <div class="address_box" v-show="addressBox">
+                        <select class="freight_city" v-model="selected">
                             <option selected disabled>居住縣市</option>
-                            <option>台北市</option>
-                            <option>新北市</option>
-                            <option>基隆市</option>
-                            <option>新竹市</option>
+                            <optgroup label="運費2000元">
+                                <option>台北市</option>
+                                <option>新北市</option>
+                                <option>桃園市</option>
+                            </optgroup>
+                            <optgroup label="運費3000元">
+                                <option>基隆市</option>
+                                <option>新竹市</option>
+                                <option>新竹縣</option>
+                                <option>宜蘭縣</option>
+                            </optgroup>
+                            <optgroup label="運費4000元">
+                                <option>苗栗縣</option>
+                                <option>台中市</option>
+                                <option>彰化縣</option>
+                                <option>南投縣</option>
+                                <option>雲林縣</option>
+                                <option>嘉義市</option>
+                                <option>嘉義縣</option>
+                                <option>花蓮縣</option>
+                            </optgroup>
+                            <optgroup label="運費5000元">
+                                <option>台南市</option>
+                                <option>高雄市</option>
+                                <option>屏東縣</option>
+                                <option>台東縣</option>
+                            </optgroup>
                         </select>
-                        <input type="text">
+                        <input type="text" v-model="formData.fadd">
                         <p class="onlytw">*僅提供本島寄送</p>
                     </div>
                 </div>
             </div>
-            <div class="right">
+            <div class="right" id="right">
                 <h2 class="titlenum">合計商品3項</h2>
                 <div class="cart_top">
                     <div class="cart_top_list">
@@ -200,7 +228,7 @@
                             </div>
                             <div class="merge Shipping_num">
                                 <p class="dollar">$</p>
-                                <p class="cart_price3">0</p>
+                                <p class="cart_price3">{{Shipping}}</p>
                             </div>
                             <div class="merge final_num">
                                 <p class="dollar">$</p>
@@ -212,7 +240,7 @@
                 <div class="cart_btn">
                     <button class="backstep" type="button"><img src="../img/shoppincart/cart_left.svg"
                             class="backimg">返回購物車</button>
-                    <button class="buy" type="button">完成訂購</button>
+                    <button class="buy" type="button" @click='sendData'>完成訂購</button>
                 </div>
             </div>
         </main>
