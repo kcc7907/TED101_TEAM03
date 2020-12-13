@@ -16,14 +16,15 @@ div.JHC {
     }
 
     .container div.step {
-        width: 40%;
+        width: 55%;
         min-width: 600px;
         margin: auto;
 
         ol {
             font-size: 0;
             text-align: center;
-            margin: 8% auto 5%;
+            margin: 3% auto;
+
             li {
                 display: inline-block;
                 text-align: center;
@@ -47,10 +48,12 @@ div.JHC {
             margin: 20px 0 48px;
             padding: 0 30px;
 
-            .view{
+            .view {
                 margin-top: 30px;
-                height: 30vh;
+                padding: 0 15px 15px;
+                height: 40vh;
                 overflow-y: auto;
+
                 @include scrollBar(10, none, none, 10, 10, rgba(134, 84, 84, .5)) {
                     &::-webkit-scrollbar-track {
                         -webkit-box-shadow: inset 0 0 6px rgba(134, 84, 84, 0.3);
@@ -112,11 +115,11 @@ div.JHC {
             vertical-align: middle;
 
             div.rule {
-                height: 30vh;
+                height: 45vh;
                 overflow-y: auto;
                 margin-bottom: 15px;
                 border-bottom: 1px solid;
-                padding-bottom: 15px;
+                padding: 0 15px 15px;
 
                 @include scrollBar(10, none, none, 10, 10, rgba(134, 84, 84, .5)) {
                     &::-webkit-scrollbar-track {
@@ -174,18 +177,23 @@ div.JHC {
                     margin: 10px 0;
                 }
 
+
+
                 >div {
+
                     width: 100%;
-                    // height: 400px;
+                    height: 400px;
                     position: relative;
+
                     &:hover {
                         cursor: pointer;
                     }
 
-                    img{
+                    img {
                         width: 100%;
-                        height: 100%;
-                        max-height: 100%;
+                        // height: 100%;
+                        max-width: 100%;
+                        margin-top: 50px;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -195,7 +203,9 @@ div.JHC {
                         width: 100%;
                         padding: 10px 0;
                         background-color: rgba(0, 0, 0, .3);
-                        font-size: 14px;
+                        background-color: #865454;
+                        ;
+                        // font-size: 14px;
                         text-align: center;
                         color: white;
                         position: absolute;
@@ -239,28 +249,52 @@ div.JHC {
                 }
 
                 >div {
+                    width: 100%;
                     display: flex;
                     justify-content: space-between;
 
                     div {
-                        width: 250px;
+                        width: 50%;
 
                         span {
+                            display: inline-block;
+                            overflow: hidden;
                             margin: 10px 0;
+                        }
+
+                        span#draftName,
+                        span#drawName {
+                            display: inline-block;
+                            width: 100%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            padding: 5px 0;
                         }
 
                         div {
                             position: relative;
+                            width: 90%;
+                            height: 350px;
 
                             &:hover {
                                 cursor: pointer;
+                            }
+
+                            img {
+                                width: 100%;
+                                max-width: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                margin-top: 50px;
                             }
 
                             >span {
                                 width: 100%;
                                 padding: 10px 0;
                                 margin: 0;
-                                background-color: rgba(0, 0, 0, .3);
+                                background-color: #865454;
                                 font-size: 14px;
                                 text-align: center;
                                 color: white;
@@ -268,6 +302,8 @@ div.JHC {
                                 top: 0;
                                 left: 0;
                             }
+
+
                         }
                     }
                 }
@@ -365,11 +401,23 @@ div.JHC {
 
 
 @include rwdmF(1920);
-@include rwdmF(1700);
+
+@include rwdmF(1700) {
+    div.JHC {
+        .container div.step {
+            width: 60%;
+
+        }
+    }
+}
+
+;
 
 @include rwdmF(1500) {
     div.JHC {
         .container div.step {
+            width: 70%;
+
             form#formStep1 {
                 div.rule {
                     p {
@@ -382,7 +430,17 @@ div.JHC {
 }
 
 ;
-@include rwdmF(1200);
+
+@include rwdmF(1200) {
+    div.JHC {
+        .container div.step {
+            width: 80%;
+
+        }
+    }
+}
+
+;
 
 @include rwdmF(992) {
     div.JHC {
@@ -419,13 +477,23 @@ div.JHC {
 @include rwdmF(768) {
     div.JHC {
         .container div.step {
-            width: 500px;
+            min-width: 500px;
 
             form#formStep3 {
                 >div {
                     >div {
                         width: 100%;
                         display: block;
+
+                        div {
+                            width: 100%;
+
+                            div {
+                                width: 100%;
+                                height: 400px;
+
+                            }
+                        }
                     }
 
                     &:last-child {
@@ -444,7 +512,7 @@ div.JHC {
 @include rwdmF(576) {
     div.JHC {
         .container div.step {
-            width: 360px;
+            min-width: 360px;
 
             ol li {
                 line-height: 80px;
@@ -455,10 +523,17 @@ div.JHC {
 
             form {
                 padding: 0 15px;
+
+                .view {
+                    height: 50vh;
+
+                }
             }
 
             form#formStep1 {
                 div.rule {
+                    height: 55vh;
+
                     p {
                         line-height: 30px;
                     }
@@ -467,6 +542,18 @@ div.JHC {
 
             form#formStep3 {
                 >div {
+                    >div {
+                        div {
+                            width: 100%;
+
+                            div {
+                                width: 100%;
+                                height: 300px;
+
+                            }
+                        }
+                    }
+
                     &:last-child {
                         width: 300px;
                         left: calc((100% - 300px) / 2);
@@ -483,4 +570,44 @@ div.JHC {
 }
 
 ;
-@include rwdmF(360);
+
+@include rwdmF(360) {
+    div.JHC {
+        .container div.step {
+            form {
+                .view {
+                    height: 45vh;
+
+                }
+            }
+
+            form#formStep1 {
+                div.rule {
+                    height: 50vh;
+                }
+            }
+
+            form#formStep2 {
+                >div {
+                    >div {
+                        height: 300px;
+                    }
+                }
+            }
+
+            form#formStep3 {
+                >div {
+                    >div {
+                        div {
+                            div {
+                                height: 250px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+;

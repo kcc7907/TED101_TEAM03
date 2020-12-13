@@ -1,7 +1,7 @@
 <?php
     include("../php/utilClassJH.php");
     // $Util = new UtilClass();
-    $sql="SELECT MEM_ID FROM MEMBER WHERE MEM_ID = ?";
+    $sql="SELECT MEM_ID FROM MEMBER WHERE BINARY MEM_ID = ?";
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $_POST["memAccount"]);
     $statement->execute();
@@ -32,11 +32,20 @@
         $statement->execute();
 
         echo "<script>alert('加入成功，請重新登入!');</script>"; 
+        echo "<br/>";
         echo "<script>$('div#signUp').css('z-index','-3').hide();</script>";
+        echo "<br/>";
         echo "<script>$('div.signUp').css({'opacity':'0','top':'-30vh',});</script>";
+        echo "<br/>";
         echo "<script>$('div.login').css({'opacity':'0','top':'-30vh',});</script>";
+        echo "<br/>";
         echo "<script>$('form input').val('')</script>";
+        echo "<br/>";
         echo "<script>$('form select').val('0')</script>";
+        echo "<br/>";
         echo "<script>$('form input').val('')</script>";
+        echo "<br/>";
         echo "<script>$('form select').val('0')</script>";
+        echo "<br/>";
+        echo "<script>logBox();</script>";
     }

@@ -59,7 +59,7 @@
             </a>
         </div>
     </nav>
-    <div class="JHC">
+    <div class="JHC" id="JHC">
         <header></header>
         <div class="container">
             <div class="step">
@@ -74,22 +74,22 @@
                             請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定
                         </p>
                     </div>
-                    <input type="radio" id="submitStep1" name="submitStep1">
-                    <label for="submitStep1"><span></span>我同意以上規定</label>
+                    <input type="radio" id="submitStep1" name="submitStep1" required="required" value="0" data-id="submitStep1">
+                    <label for="submitStep1" class="contentFont"><span></span>我同意以上規定</label>
                     <button type="button" class="nextBtn contentFont">下一步</button>
                 </form>
                 <form action="#" name="formStep2" class="formStep contentFont" id="formStep2">
-                    <p>&frasl;&frasl;&emsp;參賽者資料&emsp;&frasl;&frasl;</p>
+                    <p class="contentFont">&frasl;&frasl;&emsp;參賽者資料&emsp;&frasl;&frasl;</p>
                     <div class="view">
-                        <label for="pId">身分證正面：</label>
-                        <label for="pId" class="fileUpload detailFont">上傳檔案</label>
-                        <input type="file" id="pId" name="pId" class="fileUpload">
+                        <label for="pId" class="contentFont">身分證正面：</label>
+                        <label for="pId" class="fileUpload detailFont" data-id="pId">上傳檔案</label>
+                        <input type="file" id="pId" name="pId" class="fileUpload" required="required" @change="file1">
                         <br>
-                        <span class="file">檔案名稱：</span>
-                        <span class="file" id="fileName">請選擇上傳檔案</span>
+                        <span class="file contentFont">檔案名稱：</span>
+                        <span class="file contentFont" id="fileName">{{pImgName[0]}}</span>
                         <div id="pImg">
-                            <img src="../img/contest/mem_A111200001.png" alt="正面預覽">
-                            <span>點擊放大圖片</span>
+                            <img :src="pImgUrl.url1" id="pIdImg">
+                            <span class="detailFont previewP">圖片預覽</span>
                         </div>
                     </div>
                     <div class="btn">
@@ -98,49 +98,43 @@
                     </div>
                 </form>
                 <form action="#" name="formStep3" class="formStep contentFont" id="formStep3">
-                    <p>&frasl;&frasl;&emsp;作品資料&emsp;&frasl;&frasl;</p>
+                    <p class="contentFont">&frasl;&frasl;&emsp;作品資料&emsp;&frasl;&frasl;</p>
                     <div class="view">
-                        <label for="fType">作品種類：</label>
-                        <select class="detailFont" id="fType" name="fType">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">6</option>
-                            <option value="">7</option>
-                            <option value="">8</option>
+                        <label class="contentFont" for="fType">作品種類：</label>
+                        <select class="detailFont" id="fType" name="fType" required="required" data-id="fType">
+                            <option value="0" disabled selected>請選擇作品種類</option>
+                            <option v-for="type in workTypes" class="detailFont" value="type">{{type}}</option>
                         </select>
                         <br>
-                        <label for="fName">作品名稱：</label>
-                        <input type="text" class="detailFont" id="fName">
+                        <label class="contentFont" for="fName">作品名稱：</label>
+                        <input type="text" class="detailFont" id="fName" required="required" autocomplete="off" data-id="fName">
                         <br>
-                        <label for="fConcept" class="fConcept">設計理念：</label>
-                        <textarea name="fConcept" class="contentFont" id="fConcept"></textarea>
+                        <label for="fConcept" class="fConcept contentFont">設計理念：</label>
+                        <textarea name="fConcept" class="detailFont" id="fConcept" required="required" autocomplete="off" data-id="fConcept"></textarea>
                         <br>
                         <div>
                             <div>
-                                <label for="draft">設計稿：</label>
-                                <label for="draft" class="fileUpload detailFont">上傳檔案</label>
-                                <input type="file" id="draft" name="draft" class="fileUpload">
+                                <label class="contentFont" for="draft">設計稿：</label>
+                                <label for="draft" class="fileUpload detailFont" data-id="draft">上傳檔案</label>
+                                <input type="file" id="draft" name="draft" class="fileUpload" required="required" @change="file2">
                                 <br>
-                                <span class="file">檔案名稱：</span>
-                                <span class="file" id="draftName">請選擇上傳檔案</span>
+                                <span class="file contentFont">檔案名稱：</span>
+                                <span class="file contentFont" id="draftName">{{pImgName[1]}}</span>
                                 <div>
-                                    <img src="https://fakeimg.pl/250x150/" alt="設計稿">
-                                    <span>點擊放大圖片</span>
+                                    <img :src="pImgUrl.url2">
+                                    <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
                             </div>
                             <div>
-                                <label for="draw">設計圖：</label>
-                                <label for="draw" class="fileUpload detailFont">上傳檔案</label>
-                                <input type="file" id="draw" name="draw" class="fileUpload">
+                                <label class="contentFont" for="draw">設計圖：</label>
+                                <label for="draw" class="fileUpload detailFont" data-id="draw">上傳檔案</label>
+                                <input type="file" id="draw" name="draw" class="fileUpload" required="required" @change="file3">
                                 <br>
-                                <span class="file">檔案名稱：</span>
-                                <span class="file" id="drawName">請選擇上傳檔案</span>
+                                <span class="file contentFont">檔案名稱：</span>
+                                <span class="file contentFont" id="drawName">{{pImgName[2]}}</span>
                                 <div>
-                                    <img src="https://fakeimg.pl/250x150/" alt="設計圖">
-                                    <span>點擊放大圖片</span>
+                                    <img :src="pImgUrl.url3">
+                                    <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
                             </div>
                         </div>
