@@ -13,11 +13,18 @@ $(document).ready(function(){
         $(this).hide();
 
         let myself = e.target.className;
-        if(myself == "btn_pwd"){   //修改密碼
-            $('#changePassword input').attr({value:''}); //初值為空字串
+        if(myself == "btn_pwd"){    //修改密碼
+            $('#changePassword input').attr({
+                value: '',           //初值為空字串
+                disabled: false,
+                className: 'able',
+            }); 
             $('#changePassword').css({display:'flex'}); //顯示修改密碼欄位 
-            $('#password').hide();  
+            $('#password').hide();            
 
+        }else if(myself == "address"){
+            $('input#address').attr('disabled', false).focus();
+            $('.jk_meminfo #memberInfo select').attr('disabled', false);
         }else{                      //修改一般資料
             let inputChange = $(`input#${myself}`);
             $(inputChange).attr({
@@ -183,7 +190,6 @@ $(document).ready(function(){
             }
         }
         
-        $('.jk_meminfo input[type="hidden"]').attr('value', `${new Date()}`);
 
         if(!send_data){
             e.preventDefault();

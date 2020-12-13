@@ -1,9 +1,31 @@
+<?php
+
+    include("../php/08/jk_link.php");
+
+    $page = isset($_POST["page"]) ? $_POST["page"] : 1;
+
+    $sql = "SELECT * from `work` w
+    join 
+    (select * from `member`
+    join `contestant` on MEM_ID = CT_MEMBER_ID) m
+    on m.CT_WORK_ID = w.WK_ID";
+    $statement = $pdo->prepare($sql);     
+    $statement->execute();
+    $data = $statement->fetchAll();    
+    
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>人氣票選</title>
+    <title>救世宅 | 傢聚賞</title>
+    
+    <link rel="Shortcut Icon" href="img/favicon.ico">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     
@@ -18,7 +40,6 @@
     <script src="../js/08/vote.js"></script>
 </head>
 <body>
-
     <!-- header -->
     <header class="common">
         <div class="logo">
@@ -55,7 +76,7 @@
             <a href="./contest_main20.html">
                 <h1 class="titleFont2">賽制說明</h1>
             </a>
-            <a href="./vote.html">
+            <a href="./vote.php">
                 <h1 class="titleFont2">人氣票選</h1>
             </a>
         </div>
@@ -84,13 +105,13 @@
 
             <!-- 隱藏頁碼 -->
             <div class="vote_page">
-                <span class="-on">1</span>
-                <span>2</span>
-                <span>3</span>
+                <!-- <span class="-on">1</span> -->
+                <!-- <span>2</span> -->
+                <!-- <span>3</span> -->
             </div>
             
             <div class="main"> 
-
+                
                 <!-- 即時戰況與頁碼 -->
                 <div class="side">
                     <div class="votes">
@@ -98,10 +119,10 @@
                         <div>戰況</div>
                     </div>
 
-                    <div id="vote_page">
+                    <div class="vote_page">
                         <span class="-on">1</span>
-                        <span>2</span>
-                        <span>3</span>
+                        <!-- <span>2</span>
+                        <span>3</span> -->
                     </div>
 
                     <div class="visitor">
@@ -110,63 +131,30 @@
                     </div>
                 </div>
                 
-                <!-- 參賽作品 -->
+                <!-- 參賽作品 --><!-- 8圖換頁如何做-->
                 <main>
-                    <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=10">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
+
+                <?php
+                foreach ($data as $i => $row) {
+                    if($i < $page * 8 && $i >= $page * 8 - 8){
+            
+            
+                    echo '<div class="work">';
+                        echo '<div class="img '.$row["WK_ID"].'" data-id="'.$row["WK_ID"].'">';
+                        echo '<img src="'.$row["WK_IMG"].'">';
+                        echo '<div class="get_num">得票數: <span>'.$row["WK_VOTES"].'</span></div>';                     
+                    echo '</div>
+                            <p>
+                            <span>參賽號碼:<span>'.$row["WK_ID"].'</span></span>';
+                    echo '<span>作品名稱:<span>'.$row["WK_NAME"].'</span></span>';
+                    echo '<span>參賽者:<span>'.$row["MEM_NAME"].'</span></span>             
                         </p>
-                    </div>
-                    <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=200" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
-                    <div class="work">      <!--還未完成圖片size的樣式設定 -->
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=210" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
-                    <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=220" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
-                    <div class="work">
-                        <div class="img">
-                            <img src="https://picsum.photos/300/300?random=230" alt="">
-                            <div class="get_num">得票數: <span>80</span></div>                            
-                        </div>
-                        <p>
-                            <span>參賽號碼:<span>202010201111</span></span>
-                            <span>作品名稱:<span>午後的時光</span></span>
-                            <span>參賽者:<span>李超超</span></span>                
-                        </p>
-                    </div>
+                    </div>';
+            
+                    }
+            
+                }
+                ?>
                     
                 </main>
 
@@ -180,35 +168,8 @@
                 <div class="close">
                     <i class="far fa-times-circle"></i>
                 </div>
-                <div>
-                    
-                </div>
                 <div class="content">
-                    <div class="text">
-                        <p>
-                            # 參賽號碼：<span>2020-1020-1111</span>
-                        </p>
-                        <p>
-                            # 得票數：<span>53234票</span>
-                        </p>
-                        <p>
-                            # 參賽者：<span>李超超</span>
-                        </p>
-                        <p>
-                            # 作品種類：<span>椅子</span>
-                        </p>
-                        <p>
-                            # 作品名稱：<span>午後的時光</span>
-                        </p>
-                        <p>
-                            # 創作理念：
-                            <p>閒。</p>
-                        </p>
-                    </div>
-        
-                    <div class="img">
-                        <img src="https://picsum.photos/300/300?random=23">
-                    </div>
+                    
                 </div>
 
                 <div class="btn">

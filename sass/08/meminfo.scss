@@ -279,7 +279,25 @@ body{
                                 }
                             }
                         }
-                        
+
+                        select{
+                            outline: none;
+                            background-color: rgba(0,0,0,0);
+                            margin: 5px;
+                            padding: $inputPadding;
+                            border-radius: 1px;
+                            font-size: 20px;
+
+                            &:disabled{
+                                color: black;
+                                border: 1px solid #465D4C;
+                            }
+
+                            @include r576{
+                                font-size: 18px;
+                            }
+                        }
+
                         input{
                             width: 100%;
                             padding: $inputPadding;

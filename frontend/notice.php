@@ -1,10 +1,26 @@
+<?php
+    include("../php/08/jk_link.php");
+
+    $user = "A111200001";   //測試帳號
+
+    $sql = "SELECT * from NOTI where MEMBER_ID = ? order by NOTI_ID desc;";     //缺少建立時間
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1, "$user");
+    $statement->execute();
+    $data = $statement->fetchAll();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>通知總覽</title>
+    <title>救世宅 | 會員中心</title>
+    
+    <link rel="Shortcut Icon" href="img/favicon.ico">
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/notice.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -62,26 +78,20 @@
 
             <main>
                 <ol>
+                    
+                    <?php
+                        foreach($data as $index => $row){
+                    ?>
+
                     <li>                        
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li>
-                    <!-- <li>
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
+                        <p><?=$row["NOTI_TEXT"]?></p>
+                        <span><?=$row["NOTI_DATE"]?></span>
                     </li> 
-                    <li>
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li>
-                    <li>
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li>
-                    <li>
-                        <p>歡迎成為「救世宅」會員，趕快來看看您可以選擇什麼傢俱吧！</p>
-                        <span>2020-11-13</span>
-                    </li> -->
+
+                    <?php
+                        };
+                    ?>
+                    
                 </ol>
 
                 <!-- <div id="page">

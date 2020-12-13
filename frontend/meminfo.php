@@ -1,18 +1,19 @@
 <?php
     include("../php/08/jk_link.php");
 
+    $user = "A111200001";   //測試帳號
+
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, "A111200001");     //測試帳號
+    $statement->bindValue(1, "$user");
     $statement->execute();
     $data = $statement->fetchAll();
 
     $account = $data[0]["MEM_ID"];
-    $pwd = $data[0]["MEM_PWD"];
     $name = $data[0]["MEM_NAME"];
     $phone = $data[0]["MEM_PHONE"];
     $email = $data[0]["MEM_EMAIL"];
-    // $city = $data[0]["MEM_CITY"];
+    $city = $data[0]["MEM_CITY"];
     $address = $data[0]["MEM_ADDRESS"];
     
 
@@ -23,18 +24,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>帳戶資料</title>
-
+    <title>救世宅 | 會員中心</title>
+    
+    <link rel="Shortcut Icon" href="img/favicon.ico">
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/meminfo.css">
     <link rel="stylesheet" href="../css/header.css">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
-    
+    <script src="../lib/js/vue.js"></script>
     <script src="../js/08/is.min.js"></script>
     <script src="../lib/js/jquery.js"></script>
     <script src="../js/08/meminfo.js"></script>
+
 
 </head>
 
@@ -96,7 +99,7 @@
                             <label for="email">信箱</label>
                             <span class="email">修改</span>
                         </div>
-                        <input class="input" type="text" id="email" name="email" value="<?=$email?>" disabled>
+                        <input class="input" type="email" id="email" name="email" value="<?=$email?>" disabled>
                     </div>
 
                     <div>
@@ -115,11 +118,15 @@
                         <input class="input" type="text" id="name" name="name" value="<?=$name?>" disabled>
                     </div>
 
-                    <div>
+                    <div id="vueScope">
                         <div>
                             <label for="address">地址</label>
                             <span class="address">修改</span>
                         </div>
+                        <select name="city" v-model="city" disabled>
+                            <option disabled>居住縣市</option>
+                            <option v-for="city in citys">{{city}}</option>
+                        </select>
                         <input class="input" type="text" id="address" name="address" value="<?=$address?>" disabled>
                     </div>
 
@@ -134,9 +141,9 @@
                         <input type="text" id="password" value="************" disabled>
 
                         <div id="changePassword">                
-                            <input class="input" type="password" id="oldPassword" name="oldPassword" maxlength="12" minlength="6" placeholder="輸入舊密碼" value="123456789">
-                            <input class="input" type="password" id="newPassword" name="newPassword" maxlength="12" minlength="6" placeholder="輸入新密碼" value="123456789">
-                            <input class="input" type="password" id="checkPassword" maxlength="12" minlength="6" placeholder="確認新密碼" value="123456789">
+                            <input class="input" type="password" id="oldPassword" name="oldPassword" maxlength="12" minlength="6" placeholder="輸入舊密碼" value="123456789" disabled>
+                            <input class="input" type="password" id="newPassword" name="newPassword" maxlength="12" minlength="6" placeholder="輸入新密碼" value="123456789" disabled>
+                            <input class="input" type="password" id="checkPassword" maxlength="12" minlength="6" placeholder="確認新密碼" value="123456789" disabled>
                         </div>
                     </div>
 
@@ -149,6 +156,16 @@
         </div>
     </div>
 
+    <script>     
+        new Vue({
+            el: '#vueScope',     
+            data: {
+                city: '<?=$city?>',
+                citys: ['台北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣', '苗栗縣','台中市','彰化縣','南投縣','雲林縣','嘉義市','嘉義縣','台南市','高雄市','屏東縣','宜蘭縣','花蓮縣','台東縣'],
+            },
+        });
+    </script>
+    
     <script src="../lib/header/header.js"></script>
 
 </body>
