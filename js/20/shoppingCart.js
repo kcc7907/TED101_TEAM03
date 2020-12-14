@@ -3,10 +3,11 @@ let checkAll= document.querySelector('.checkAll');
 let title= document.querySelectorAll('.title');
 title[0].classList.add('-onColor');
 
-let list = [
+let list =
+[
     {
         prd_id : 'c001',
-        num : '1'
+        num : '3'
     },
     {
         prd_id : 't001',
@@ -27,7 +28,7 @@ let list = [
 ];
 
 localStorage.clear();
-localStorage.setItem("lists", JSON.stringify(list));
+// localStorage.setItem("lists", JSON.stringify(list));
 
 let right = new Vue({
     el:'#right',
@@ -40,22 +41,28 @@ let right = new Vue({
     },
     methods: {
         buy(){
-            let numAll=0;
-            left.rp.forEach((a,b) => {
-                let x =document.querySelectorAll('.num')
-                numAll+=parseInt(x[b].value);
-                console.log(numAll);
+            localStorage.removeItem("lists");
+            let buy = document.querySelectorAll('.product li');
+            let lists=[];
+            buy.forEach((a,b) => {
+                let obj ={
+                    prd_id: a.getAttribute('data-id'),
+                    num: a.getAttribute('data-num'),
+                    prd_price: a.getAttribute('data-price')
+                }
+                lists.push(obj);
             });
+            localStorage.setItem("lists", JSON.stringify(lists));
+            localStorage.setItem("discount", this.discount);
 
             let x =confirm();
-            if(x)location.href ="shoppingorder.html"
+            if(x)location.href ="shoppingorder.html";
             else return
         },
     },
     created() {
         let list = JSON.parse(localStorage.getItem("lists"));
         if(!list)return;
-        this.proTotal = list.length;
     },
     watch: {
         total(){ this.final = this.total+this.discount}
@@ -67,9 +74,24 @@ let all = new Vue({
     data:{
     },
     methods: {
-        deleteAll(){
-            let ul = document.querySelector('.product');
-            ul.innerHTML = '';
+        deleteAll(e){
+            let pick = document.querySelectorAll('.pick');
+            let lists=[];
+            pick.forEach((a,b) => {
+                if(a.checked===true){
+                    right.total-= a.closest('li').getAttribute('data-price')*a.closest('li').getAttribute('data-num')
+                    a.closest('ul').removeChild(a.closest('li'));
+                    right.proTotal -=a.closest('li').getAttribute('data-num');
+                }else{
+                    let obj ={
+                    prd_id: a.closest('li').getAttribute('data-id'),
+                    num: a.closest('li').getAttribute('data-num'),
+                    }
+                    lists.push(obj)
+                }
+            });
+            localStorage.removeItem("lists");
+            localStorage.setItem("lists", JSON.stringify(lists));
         },
         checkAll(e){
             e.target.checked==true?left.check=true:left.check=false;
@@ -96,17 +118,18 @@ let left = new Vue({
     // mounted() {
     created() {
         let list = JSON.parse(localStorage.getItem("lists"));
-        if(!list)return false;
-        this.proTotal = list.length;
+        if(!list){
+            let list = document.querySelector('.left');
+            list.style.borderBottom = '1px solid #465d4c'
+            return false;
+        }
         list.forEach((a, b) => {
-                this.prdid.push(a.prd_id);
+            this.prdid.push(a.prd_id);
+            right.proTotal += parseInt(a.num);
         });
         //product
         axios.post('http://localhost:8787/php/20/getProduct.php', this.prdid).then(res => {
             this.rp = res.data;
-            this.rp.forEach((a,b) => {
-                right.total+=parseInt(a.PRD_PRICE);
-            });
         }).catch(err=>{
             if (err.response) {
                 console.log(err.response.status)
@@ -146,11 +169,30 @@ let left = new Vue({
         });
     },
     watch: {
-        disA(){if(this.disA==true)right.discount -= 500},
+        disA(){
+            if(this.disA==true)right.discount -= 500;
+            else right.discount +=500;
+        },
         disB(){
             if(this.disB==true)right.discount -= 2500;
+            else right.discount +=2500;
+
             right.final = right.total+right.discount;
         },
+        disArrA(){
+            console.log(this.disArrA.length);
+            if(this.disArrA.length<1)this.disA=false;
+        },
+        disArrB(){
+            console.log(this.disArrB.length);
+            if(this.disArrB.length<1)this.disB=false;
+        },
+    },
+    methods: {
+        disCheck(){
+            console.log('test');
+            let dis = document.querySelectorAll()
+        }
     },
 });
 
@@ -162,7 +204,7 @@ Vue.component('myList', {
     },
     props: ['mycheck', 'prdId', 'url', 'prdName', 'prdPrice', 'discountId', 'prdMtl','myindex'],
     template:
-        `<li class="list" :data-id="myindex">
+        `<li class="list" :data-id="prdId" :data-price="prdPrice" :data-num="num" :data-dis="discountId">
                 <input type="checkbox" class="pick" :checked="mycheck">
                 <div class="picbox">
                     <div class="imgbox">
@@ -182,7 +224,7 @@ Vue.component('myList', {
                 </div>
                 <div class="info">
                     <div class="procduct_name" >
-                        <p @click="checkIndex">{{prdName}}</p>
+                        <p>{{prdName}}</p>
                     </div>
                     <div class="material" v-show="prdMtl">
                         <p>黑色</p>
@@ -207,17 +249,17 @@ Vue.component('myList', {
                 <img src="../img/shoppincart/trash.svg" alt="" class="trash" @click='deleteList'>
             </li>`,
     methods: {
-        checkIndex(){
-            console.log(123);
-        },
         btnl(e) {
             if(this.num > 1){
                 this.num--;
-                right.total -= parseInt(this.prdPrice);}
+                right.total -= parseInt(this.prdPrice);
+                right.proTotal--;
+            }
         },
         btnr() {
             this.num++;
             right.total += parseInt(this.prdPrice) ;
+            right.proTotal++;
         },
         deleteList(e) {
             let list = JSON.parse(localStorage.getItem("lists"));
@@ -227,43 +269,26 @@ Vue.component('myList', {
                     newList.push(a);
                 }
             });
+            switch (this.$el.getAttribute('data-dis')) {
+                case 'A':
+                    left.disArrA=left.disArrA.replace('A','')
+                    break;
+                case 'B':
+                    left.disArrB=left.disArrB.replace('B','')
+                    break;
+            }
             localStorage.setItem("lists", JSON.stringify(newList));
             this.$destroy();
             this.$el.parentNode.removeChild(this.$el);
             right.total = right.total- (this.prdPrice * this.num);
+            right.proTotal-=this.num;
         },
     },
+    mounted() {
+        let list = JSON.parse(localStorage.getItem("lists"));
+        list.forEach((a,b)=>{
+            if(this.prdId===a.prd_id)this.num=a.num;
+        });
+        right.total+=parseInt(this.prdPrice)*this.num;
+    },
 });
-
-let dis =
-[
-    {
-        A:['雨豆','天鵝']
-    },
-    {
-        B:['舒服','日常']
-    }
-];
-let dis2 =
-[
-    {
-        DIS_AMOUNT:500,
-        DIS_ID:'A',
-        DIS_PRODUCT_ID1:"雨豆"
-    },
-    {
-        DIS_AMOUNT:500,
-        DIS_ID:'A',
-        DIS_PRODUCT_ID1:"天鵝"
-    },
-    {
-        DIS_AMOUNT:500,
-        DIS_ID:"B",
-        DIS_PRODUCT_ID1:"舒服"
-    },
-    {
-        DIS_AMOUNT:500,
-        DIS_ID:"B",
-        DIS_PRODUCT_ID1:"日常"
-    }
-];

@@ -25,7 +25,8 @@ let left2 = new Vue({
             fadd:'',
             payment:'',
             total:0,
-            products:[],
+            discount:0,
+            products:[]
         }
     },
     methods: {
@@ -51,9 +52,9 @@ let left2 = new Vue({
             }else{
                 e.preventDefault();
             }
-            if(v.cardnum1.value.length===4)v.cardnum2.focus()
-            if(v.cardnum2.value.length===4)v.cardnum3.focus()
-            if(v.cardnum3.value.length===4)v.cardnum4.focus()
+            if(v.cardnum1.value.length===4)v.cardnum2.focus();
+            if(v.cardnum2.value.length===4)v.cardnum3.focus();
+            if(v.cardnum3.value.length===4)v.cardnum4.focus();
             if(v.cardnum4.value.length===4)e.preventDefault();
             this.cardmix = v.cardnum1.value+ v.cardnum2.value+v.cardnum3.value+v.cardnum4.value;
         },
@@ -71,7 +72,6 @@ let left2 = new Vue({
             }
         },
         changAddr(){
-
         },
     },
     created() {
@@ -82,6 +82,7 @@ let left2 = new Vue({
             this.memCity = res.data[0].MEM_CITY ;
             this.formData.fphone = res.data[0].MEM_PHONE;
             this.formData.fname = res.data[0].MEM_NAME;
+            this.formData.memid = getCookie('loging');
         });
     },
     watch: {
@@ -101,6 +102,8 @@ let left2 = new Vue({
         freight(){
             if (this.freight === true) {
                 this.addressBox=false;
+                this.formData.fcity = this.members[0].MEM_CITY;
+                this.formData.fadd = this.members[0].MEM_ADDRESS;
                 switch (this.memCity) {
                     case '台北市':
                     case '新北市':
@@ -130,13 +133,14 @@ let left2 = new Vue({
                         right.Shipping = 5000;
                         break;
                 }
-            }
+            }else right.Shipping = 0;
         },
         addressBox(){
             if (this.addressBox === true) {
                 this.freight=false;
                 right.Shipping =0;
-            }
+                this.formData.fadd='';
+            }else right.Shipping = 0;
         },
         selected(){
             this.formData.fcity = this.selected;
@@ -193,14 +197,35 @@ let right = new Vue({
         },
         sendData(){
             let that = this;
-            console.log(left2.formData);
+            let list = JSON.parse(localStorage.getItem("lists"));
+            left2.formData.products = list;
             axios.post('http://localhost:8787/php/20/sendData.php',left2.formData).then(res => {
-            console.log(res.data);
+                console.log(res.data);
         })
         },
     },
     mounted() {
         let list = JSON.parse(localStorage.getItem("lists"));
         if(!list)this.proTotal = list.length;
+        this.discount = parseInt(localStorage.getItem("discount"));
+        list.forEach((a,b) => {
+            this.total+=parseInt(a.prd_price);
+        });
+        this.final = this.total+this.discount;
+        left2.formData.discount = this.discount;
+    },
+    watch: {
+        Shipping(){
+            this.final= this.total+this.discount+this.Shipping;
+        },
+        final(){
+            left2.formData.total = this.final;
+        }
     },
 });
+
+// window.addEventListener('beforeunload',()=>{
+//     localStorage.removeItem("lists");
+// });
+
+

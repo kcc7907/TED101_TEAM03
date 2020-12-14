@@ -106,7 +106,6 @@ body{
     *{
         box-sizing: border-box;
         font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
-        // outline: red 1px solid;
     }
     img{
         max-width: 100%;
@@ -148,7 +147,6 @@ body{
             }
         }
     }
-    
     .all{
         display: none;
     }
@@ -160,6 +158,7 @@ body{
             display: flex;
             position: relative;
             margin-bottom: 40px;
+            min-height: 45vh;
             &:before{
                 content: '';
                 height: 1px;
@@ -989,8 +988,11 @@ body{
                         }
                     }
                 }
-                 .trash{
+                .trash{
                     width: 26px;
+                }
+                .discountbox .discount{
+                    padding: 8px;
                 }
             }
         }
