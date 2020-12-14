@@ -88,7 +88,7 @@
                         <span class="file contentFont">檔案名稱：</span>
                         <span class="file contentFont" id="fileName">{{pImgName[0]}}</span>
                         <div id="pImg">
-                            <img :src="pImgUrl.url1" id="pIdImg">
+                            <img :src="pImgUrl[0]" id="pIdImg">
                             <span class="detailFont previewP">圖片預覽</span>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="draftName">{{pImgName[1]}}</span>
                                 <div>
-                                    <img :src="pImgUrl.url2">
+                                    <img :src="pImgUrl[1]">
                                     <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="drawName">{{pImgName[2]}}</span>
                                 <div>
-                                    <img :src="pImgUrl.url3">
+                                    <img :src="pImgUrl[2]">
                                     <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
                             </div>
@@ -141,12 +141,52 @@
                     </div>
                     <div class="btn">
                         <button type="button" class="backBtn contentFont">上一步</button>
-                        <button type="button" class="contentFont sureThis">送出投稿</button>
+                        <button type="button" class="contentFont sureThis">預覽投稿</button>
                     </div>
                     <div>
                         <p class="contentFont lineHeight">提醒:<br>確認送出將無法修改您所上傳的內容。</p>
                         <input type="submit" class="detailFont" id="sureGoContest" value="確認送出">
                         <input type="button" class="detailFont" id="notsureGoContest" value="返回檢查">
+                    </div>
+                </form>
+                <form id="preview">
+                    <div class="backGround">
+                        <div class="clickVote">
+                            <div class="close">
+                                <i class="far fa-times-circle"></i>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="content">
+                                <div class="text">
+                                    <p>
+                                        # 參賽號碼：<span>2020-1020-1111</span>
+                                    </p>
+                                    <p>
+                                        # 得票數：<span>53234票</span>
+                                    </p>
+                                    <p>
+                                        # 參賽者：<span>李超超</span>
+                                    </p>
+                                    <p>
+                                        # 作品種類：<span>椅子</span>
+                                    </p>
+                                    <p>
+                                        # 作品名稱：<span>午後的時光</span>
+                                    </p>
+                                    <p>
+                                        # 創作理念：
+                                        <p>閒。</p>
+                                    </p>
+                                </div>
+                                <div class="img">
+                                    <img src="https://picsum.photos/300/300?random=23">
+                                </div>
+                            </div>
+                            <div class="btn">
+                                <button>投他一票</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <form class="lastP">
@@ -155,6 +195,14 @@
                         <h2 class="titleFont2">前往參觀其他作品</h2>
                     </a>
                 </form>
+            </div>
+        </div>
+        <!-- confirm燈箱 -->
+        <div class="confirmDiv ">
+            <div>
+                <p class="contentFont lineHeight"></p>
+                <input type="button" class="detailFont" id="sureGoContest" value="確認">
+                <input type="button" class="detailFont" id="notsureGoContest" value="取消">
             </div>
         </div>
     </div>

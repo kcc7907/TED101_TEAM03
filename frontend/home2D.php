@@ -7,6 +7,7 @@
     <title>救世宅 | 首頁</title>
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
+    <link rel="stylesheet" href="../lib/reset.css">
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
@@ -380,7 +381,7 @@
     <!-- 登入燈箱 -->
     <div id="login">
         <div class="login">
-            <h1>歡迎回來</h1>
+            <h1 class="titleFont2">歡迎回來</h1>
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
                     <label for="account" class="titleFont3">帳號</label>

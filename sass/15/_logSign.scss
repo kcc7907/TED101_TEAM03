@@ -19,11 +19,14 @@ div#login {
     width: 100%;
     height: 100vh;
     min-height: 1000px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(97, 97, 97, 0.8);
     z-index: -3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     a {
         text-decoration: none;
@@ -31,7 +34,7 @@ div#login {
 
     div.login {
         margin: auto;
-        margin-top: 15vh;
+        // margin-top: 10vh;
         border: 1px solid rgba(0, 0, 0, 0%);
         text-align: center;
         width: 750px;
@@ -77,6 +80,7 @@ div#login {
                     border-bottom: 1px solid $cfl;
                     margin-bottom: 30px;
                     background-color: rgba(255, 250, 244, 0) !important;
+                    margin-top: 5px; // ***************** 12/14新增
 
                     &:focus {
                         background-color: rgba(189, 167, 156, .1) !important;
@@ -106,7 +110,7 @@ div#login {
                     @include checkbox(12px, 12px, 12px, $c_secondary_red);
                 }
 
-                label.bcgColor{
+                label.bcgColor {
                     background-color: #865454;
                 }
             }
@@ -188,19 +192,21 @@ div#signUp {
 
     width: 100%;
     height: 100vh;
-    min-height: 1000px;
-    position: absolute;
+    // min-height: 1000px;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -3;
     background-color: rgba(97, 97, 97, 0.8);
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     div.signUp {
         width: 800px;
         height: 830px;
         margin: auto;
-        margin-top: 10vh;
+        // margin-top: 10vh;
         padding: 30px 10px;
         text-align: center;
         background-color: #F9F4ED;
@@ -208,6 +214,10 @@ div#signUp {
         top: -30vh;
         opacity: 0;
         transition: all 1s;
+
+        >h1 {
+            margin: 8% 0; // ******** 12/14新增
+        }
 
         svg {
             width: 800px;
@@ -268,7 +278,7 @@ div#signUp {
                 text-align: left;
 
                 >label {
-                    margin-bottom: 3px;
+                    margin-bottom: 5px; // ******** 12/14新增
                 }
 
                 >input {
@@ -280,14 +290,14 @@ div#signUp {
                     flex-direction: row;
 
                     >div {
-                        // 姓名
                         display: flex;
                         flex-direction: column;
 
                         label {
-                            margin-bottom: 3px;
+                            margin-bottom: 5px; // ******** 12/14新增
                         }
 
+                        // 姓名
                         &:first-child {
                             input {
                                 width: 220px;
@@ -350,11 +360,13 @@ div#signUp {
                         display: inline-block;
                         margin: auto;
                         color: #BDA79E;
+                        line-height: 30px; // ****** 12/14新增
 
                         a {
                             margin: 0 5px;
                             text-decoration: underline;
                             color: #BDA79E;
+                            line-height: 30px; // ****** 12/14新增
                             transition: all .3s;
 
                             &:hover {
@@ -428,7 +440,6 @@ div.confirmDiv {
             }
         }
     }
-
 }
 
 
@@ -482,6 +493,8 @@ div.confirmDiv {
                 width: 650px;
                 height: 650px;
             }
+
+
         }
     }
 
@@ -505,9 +518,11 @@ div.confirmDiv {
                 >div {
                     margin-bottom: 12px;
                     flex-direction: row;
+                    align-items: center; // ******** 12/14新增
 
                     >label {
                         margin-right: 5px;
+                        margin-bottom: 0; // ******** 12/14新增
                     }
 
                     // 所有input
@@ -519,12 +534,14 @@ div.confirmDiv {
                     // 姓名&手機
                     &:first-child {
                         flex-direction: row;
+                        align-items: center; // ******** 12/14新增
 
                         >div {
 
                             // 姓名
                             &:first-child {
                                 flex-direction: row;
+                                align-items: center; // ******** 12/14新增
 
                                 input {
                                     width: 130px;
@@ -533,21 +550,26 @@ div.confirmDiv {
 
                                 label {
                                     margin-right: 5px;
+                                    
                                 }
                             }
 
                             // 手機
                             &:last-child {
                                 flex-direction: row;
+                                align-items: center; // ******** 12/14新增
 
                                 input {
                                     flex-grow: 1;
                                     width: 180px;
                                     margin-left: 5px;
+                                    vertical-align: center; // ******** 12/14新增
                                 }
 
                                 label {
                                     margin-right: 5px;
+                                    vertical-align: center; // ******** 12/14新增
+                                    margin-bottom: 0; // ******** 12/14新增
                                 }
                             }
 
@@ -656,6 +678,10 @@ div.confirmDiv {
         // margin: 40px auto 0;
 
         div.signUp {
+            >h1 {
+                margin: 5% 0; // ******** 12/14新增
+            }
+
             form.signUp {
                 >div {
                     margin-bottom: 20px;
@@ -765,7 +791,9 @@ div.confirmDiv {
 
                     // 姓名&手機
                     &:first-child {
-                        flex-direction: column;
+                        // flex-direction: column;
+                        flex-direction: row; // ******** 12/14新增
+
 
                         >div {
                             margin-bottom: 10px;
@@ -780,7 +808,7 @@ div.confirmDiv {
                             // 手機
                             &:last-child {
                                 margin-left: 0;
-                                margin-bottom: 0;
+                                // margin-bottom: 0; // ******** 12/14新增
                             }
                         }
                     }
@@ -822,6 +850,11 @@ div.confirmDiv {
                             width: 170px;
                             margin: auto;
                             text-align: center;
+                            line-height: 1px; // ******** 12/14新增
+                        }
+
+                        a {
+                            line-height: 1px; // ******** 12/14新增
                         }
                     }
                 }
@@ -902,6 +935,16 @@ div.confirmDiv {
                             width: 100px;
                             height: 30px;
                             margin: 10px auto;
+                        }
+                    }
+
+                    &:nth-child(8) {
+                        span {
+                            line-height: 1px; // ******** 12/14新增
+                        }
+
+                        a {
+                            line-height: 1px; // ******** 12/14新增
                         }
                     }
                 }
