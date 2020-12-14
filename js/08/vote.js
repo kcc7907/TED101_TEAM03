@@ -28,7 +28,14 @@ $(document).ready(function () {
         // $(this).addClass('-on');
     });
 
-
+    //瀏覽人次
+    $.ajax({
+        url: '../php/08/jk_voteVisit.php',
+        dataType: 'text',
+        success(res) {
+            $('.jk_vote .visitor .num').html(`${res}`);
+        },
+    });
 
     //點擊詳細資訊
     $('.jk_vote main').on('click', '.work .img', function () {

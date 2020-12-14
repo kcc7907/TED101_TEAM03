@@ -73,10 +73,29 @@
         }
     }
 
-    // header("Location: ../../frontend/meminfo.php");
 
-    echo "<script>alert('已成功修改會員資料'); location.href = '../../frontend/meminfo.php';</script>";
-    // echo "$city";
+    // setcookie("resetInfo_inf", "已成功修改會員資料", time()+500000000);
+
+    header("Location: ../../frontend/meminfo.php");
+
+    // echo "
+    // <script>setcookie('resetInfo_inf', '已成功修改會員資料', time()+500000000);
+    // location.href = '../../frontend/meminfo.php';</script>
+    // ";
+    
+    
+    // echo "
+    // <script>
+    // location.href = '../../frontend/meminfo.php';
+    
+    // let noticeDiv = createElement('div');
+    // noticeDiv.innerHTML = '<p>已成功修改會員資料</p>';
+    // document.getElementsByClassName('body')[0].appendChild(childNode);
+
+
+    // </script>
+    
+    // ";
 
 
 ?>

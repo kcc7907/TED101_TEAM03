@@ -212,12 +212,13 @@ $(document).ready(function(){
         $('.jk_meminfo input[className="able"]').attr({                     //資料顯示欄位不可更新
             disabled: true,
             className: '',
-        });   
+        });
+
+    });
+    
 
 
-
-
-    })
+    
 
 });
 
