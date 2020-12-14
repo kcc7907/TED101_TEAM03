@@ -1,0 +1,1350 @@
+@import '../header/variable';
+@import '../header/footer.scss';
+
+@mixin rwdmF($screenSize) {
+    @if $screenSize==1920 {
+        @media (max-width: 5120px) {
+            .titleFont1 {
+                font-size: 40px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 30px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 25px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 24px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 16px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 60px !important;
+            }
+
+            .hugeP {
+                font-size: 50px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==1800 {
+        @media (max-width: 1800px) {
+            .titleFont1 {
+                font-size: 40px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 30px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 25px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 24px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 16px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 60px !important;
+            }
+
+            .hugeP {
+                font-size: 50px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==1700 {
+        @media (max-width: 1700px) {
+            .titleFont1 {
+                font-size: 38px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 28px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 23px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 24px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 16px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 60px !important;
+            }
+
+            .hugeP {
+                font-size:  48px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==1500 {
+        @media (max-width: 1500px) {
+            .titleFont1 {
+                font-size: 36px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 26px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 21px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 20px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 14px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 50px !important;
+            }
+
+            .hugeP {
+                font-size: 46px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==1200 {
+        @media (max-width: 1200px) {
+            .titleFont1 {
+                font-size: 34px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 24px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 19px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 20px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 14px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 50px !important;
+            }
+
+            .hugeP {
+                font-size: 44px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==992 {
+        @media (max-width: 992px) {
+            .titleFont1 {
+                font-size: 32px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 22px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 17px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 16px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 12px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 40px !important;
+            }
+
+            .hugeP {
+                font-size: 42px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==768 {
+        @media (max-width: 768px) {
+            .titleFont1 {
+                font-size: 30px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 20px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 15px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 16px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 12px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 40px !important;
+            }
+
+            .hugeP {
+                font-size: 40px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==576 {
+        @media (max-width: 576px) {
+            .titleFont1 {
+                font-size: 26px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 18px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 13px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 12px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 10px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 30px !important;
+            }
+
+            .hugeP {
+                font-size: 36px !important;
+            }
+
+            @content;
+        }
+    }
+
+    @else if $screenSize==360 {
+        @media (max-width: 360px) {
+            .titleFont1 {
+                font-size: 20px !important;
+                font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif !important;
+            }
+
+            // h1
+            .titleFont2 {
+                font-size: 16px !important;
+            }
+
+            // h2
+            .titleFont3 {
+                font-size: 11px !important;
+            }
+
+            // h3
+            .contentFont {
+                font-size: 12px !important;
+            }
+
+            // p
+            .detailFont {
+                font-size: 8px !important;
+            }
+
+            // pu
+            .lineHeight {
+                line-height: 30px !important;
+            }
+
+            .hugeP {
+                font-size: 30px !important;
+            }
+
+            @content;
+        }
+    }
+}
+@mixin checkbox ($w, $h, $mgr, $bc) {
+    width: $w;
+    height: $h;
+    margin-right: $mgr;
+    border: 1px solid $bc;
+    @content;
+}
+// TODO:修改select跟輸入的文字大小
+@mixin scrollBar($a, $b, $c, $d, $e, $f) {
+    &::-webkit-scrollbar {
+        width: $a + px;
+        background-color: $b;
+        /* 1 */
+    }
+
+    // &::-webkit-scrollbar-button       {
+    //      /* 2 */ }
+    &::-webkit-scrollbar-track {
+        background-color: $c;
+        border-radius: $d + px;
+        /* 3 */
+    }
+
+    // &::-webkit-scrollbar-track-piece  {
+    //      /* 4 */ }
+    &::-webkit-scrollbar-thumb {
+        border-radius: $e + px;
+        background-color: $f;
+        /* 5 */
+    }
+
+    // &::-webkit-scrollbar-corner       {
+    //      /* 6 */ }
+    // &::-webkit-resizer{
+    //      /* 7 */ }
+    @content;
+}
+@mixin closeBtn($top, $right, $w, $h, $font, $content, $c_w, $c_font, $c_top, $c_left, $lineH) {
+    position: absolute;
+    top: $top + px;
+    right: $right + px;
+
+    span {
+        display: inline-block;
+        width: $w + px;
+        height: $h + px;
+        font-size: $font + px;
+        text-align: center;
+        line-height: $lineH + px;
+        border: 1px solid;
+        border-radius: 50%;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+
+            &::after {
+                content: $content;
+                display: inline-block;
+                width: $c_w + px;
+                font-size: $c_font + px;
+                position: absolute;
+                top: $c_top + px;
+                left: $c_left + px;
+            }
+        }
+    }
+
+    @content;
+}
+
+input {
+    &:-internal-autofill-selected {
+        background-color: rgba(0, 0, 0, 0) !important;
+        background: none !important;
+    }
+}
+
+div#login {
+    * {
+        color: $csdr;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+        box-sizing: border-box;
+    }
+
+    width: 100%;
+    height: 100vh;
+    // min-height: 1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(97, 97, 97, 0.8);
+    z-index: -3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+        text-decoration: none;
+    }
+
+    div.login {
+        // margin: auto;
+        // margin-top: 15vh;
+        border: 1px solid rgba(0, 0, 0, 0%);
+        text-align: center;
+        width: 750px;
+        height: 750px;
+        position: relative;
+        top: -30vh;
+        opacity: 0;
+        transition: all 1s;
+
+
+        &::after {
+            content: "";
+            width: 1000px;
+            height: 850px;
+            background-color: rgba(255, 250, 244, .9);
+            position: absolute;
+            left: -125px;
+            top: -50px;
+            z-index: -2;
+        }
+
+        >h1 {
+            margin-top: 150px;
+            margin-bottom: 80px;
+        }
+
+        form.login {
+            margin: auto;
+            width: 250px;
+            text-align: left;
+
+            div:first-child {
+                label {
+                    display: block;
+                    background-color: rgba(255, 250, 244, 0);
+                }
+
+                input {
+                    display: inline-block;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid $cfl;
+                    margin-bottom: 30px;
+                    background-color: rgba(255, 250, 244, 0) !important;
+
+                    &:focus {
+                        background-color: rgba(189, 167, 156, .1) !important;
+                    }
+                }
+
+                input.alive {
+                    display: none;
+                    text-align: left;
+
+                    // &:checked+label {
+                    //     background-color: $c_secondary_red;
+                    // }
+
+                }
+
+                label.alive {
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                label#alivebox {
+                    @include checkbox(12px, 12px, 12px, $c_secondary_red);
+                }
+
+                label.bcgColor{
+                    background-color: #865454;
+                }
+            }
+
+            div:last-child {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                a,
+                button,
+                p {
+                    display: inline-block;
+                    border: 1px solid rgba(0, 0, 0, 0%);
+
+                }
+
+                a {
+                    border-bottom: 1px solid $csdr;
+                    transition: all .3s;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #577c8a;
+                        border-bottom-color: #577c8a;
+                    }
+                }
+
+                p {
+                    margin-bottom: 10px;
+                    text-align: center;
+                    width: 100px;
+                }
+
+                button.login {
+                    border: none;
+                    outline: none;
+                    background: none;
+                    background-color: transparent;
+                    padding: 40px 15px;
+                    margin: 0 20px;
+                    transition: all .5s;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: #577c8a;
+                    }
+                }
+            }
+
+        }
+
+        svg {
+            width: 750px;
+            height: 750px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        div.closebtn {
+            @include closeBtn(0, 0, 20, 20, 14, "取消登入", 100, 16, 0, -90, 20);
+            line-height: 17px;
+        }
+    }
+}
+
+
+div#signUp {
+    * {
+        color: $csdr;
+        box-sizing: border-box;
+    }
+
+    width: 100%;
+    height: 100vh;
+    min-height: 1000px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+    background-color: rgba(97, 97, 97, 0.8);
+
+
+    div.signUp {
+        width: 800px;
+        height: 830px;
+        margin: auto;
+        margin-top: 10vh;
+        padding: 30px 10px;
+        text-align: center;
+        background-color: #F9F4ED;
+        position: relative;
+        top: -30vh;
+        opacity: 0;
+        transition: all 1s;
+
+        svg {
+            width: 800px;
+            height: 810px;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+
+        form.signUp {
+            margin: auto;
+            width: 80%;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+
+            input {
+                border: none;
+                outline: none;
+                border-bottom: 1px solid#BDA79E;
+                background-color: none;
+                background-color: rgba(0, 0, 0, 0) !important;
+
+                &:focus {
+                    background-color: rgba(189, 167, 156, .1) !important;
+                }
+
+                &::placeholder {
+                    color: rgba(0, 0, 0, .2);
+                }
+
+                &::-webkit-input-placeholder {
+                    /* Chrome, Safari */
+
+                    color: rgba(0, 0, 0, .2);
+
+                }
+
+                &:-ms-input-placeholder {
+                    /* IE 10+ */
+
+                    color: rgba(0, 0, 0, .2);
+
+                }
+
+                &::-moz-placeholder {
+                    /* Firefox 19+ */
+                    color: rgba(0, 0, 0, .2);
+                    opacity: .2;
+                }
+
+            }
+
+            >div {
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+
+                >label {
+                    margin-bottom: 3px;
+                }
+
+                >input {
+                    flex-grow: 1;
+                }
+
+                // 姓名&手機
+                &:first-child {
+                    flex-direction: row;
+
+                    >div {
+                        // 姓名
+                        display: flex;
+                        flex-direction: column;
+
+                        label {
+                            margin-bottom: 3px;
+                        }
+
+                        &:first-child {
+                            input {
+                                width: 220px;
+                            }
+                        }
+
+                        // 手機
+                        &:last-child {
+                            margin-left: 30px;
+                            flex-grow: 1;
+                        }
+
+                    }
+                }
+
+                // 地址
+                &:nth-child(3) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+
+                    label {
+                        flex-basis: 100%;
+                    }
+
+                    select {
+                        margin-right: 5px;
+                        padding: 5px;
+                        align-self: flex-end;
+                        background-color: #F9F4ED;
+                        outline: none;
+                    }
+
+                    input {
+                        align-self: stretch;
+                    }
+                }
+
+                // 按鈕
+                &:nth-child(7) {
+                    button {
+                        width: 160px;
+                        height: 40px;
+                        margin: 30px auto;
+                        border: none;
+                        outline: none;
+                        background-color: #F9F4ED;
+                        border: 1px solid #54383b;
+                        transition: all .3s;
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #BDA79E;
+                            color: white;
+                        }
+                    }
+                }
+
+                &:nth-child(8) {
+                    span {
+                        display: inline-block;
+                        margin: auto;
+                        color: #BDA79E;
+
+                        a {
+                            margin: 0 5px;
+                            text-decoration: underline;
+                            color: #BDA79E;
+                            transition: all .3s;
+
+                            &:hover {
+                                cursor: pointer;
+                                color: #577c8a;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    align-items: center;
+
+                    a {
+                        color: #BDA79E;
+                        transition: all .3s;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: #577c8a;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.closebtn {
+            @include closeBtn(30, 30, 25, 25, 25, "取消註冊會員", 100, 16, 0, -110, 25);
+        }
+    }
+}
+
+div.confirmDiv {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+
+    >div {
+        max-width: 80%;
+        padding: 15px 50px 30px;
+        text-align: center;
+        background-color: rgb(240, 235, 229);
+        position: absolute;
+        top: 30%;
+        transition: all .3s;
+        border: 5px solid #BDA79E;
+        // p{
+        //     text-align: left;
+        // }
+
+        input {
+            transition: all .3s;
+            margin: 15px 30px 0;
+            padding: 10px 30px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #BDA79E;
+            background-color: rgb(240, 235, 229);
+
+            &:hover {
+                cursor: pointer;
+                background-color: #BDA79E;
+                color: white;
+            }
+        }
+    }
+
+}
+
+
+
+@include rwdmF(1920);
+
+@include rwdmF(1700) {
+    div#login {
+
+        div.login {
+            width: 700px;
+            height: 700px;
+
+            &::after {
+                width: 950px;
+                height: 800px;
+            }
+
+            >h1 {
+                margin-top: 140px;
+                margin-bottom: 70px;
+            }
+
+            svg {
+                width: 700px;
+                height: 700px;
+            }
+        }
+    }
+}
+
+;
+
+@include rwdmF(1500) {
+    div#login {
+        div.login {
+            width: 650px;
+            height: 650px;
+
+            &::after {
+                width: 900px;
+                height: 750px;
+            }
+
+            >h1 {
+                margin-top: 130px;
+                margin-bottom: 60px;
+            }
+
+            svg {
+                width: 650px;
+                height: 650px;
+            }
+        }
+    }
+
+    div#signUp {
+        // margin: 40px auto 0;
+
+        div.signUp {
+            width: 550px;
+            height: 580px;
+            padding: 30px 10px;
+
+            svg {
+                width: 550px;
+                height: 560px;
+            }
+
+            form.signUp {
+                width: 100%;
+                padding: 0 20px;
+
+                >div {
+                    margin-bottom: 12px;
+                    flex-direction: row;
+
+                    >label {
+                        margin-right: 5px;
+                    }
+
+                    // 所有input
+                    >input {
+                        margin-left: 5px;
+                        flex-grow: 1;
+                    }
+
+                    // 姓名&手機
+                    &:first-child {
+                        flex-direction: row;
+
+                        >div {
+
+                            // 姓名
+                            &:first-child {
+                                flex-direction: row;
+
+                                input {
+                                    width: 130px;
+                                    margin-left: 5px;
+                                }
+
+                                label {
+                                    margin-right: 5px;
+                                }
+                            }
+
+                            // 手機
+                            &:last-child {
+                                flex-direction: row;
+
+                                input {
+                                    flex-grow: 1;
+                                    width: 180px;
+                                    margin-left: 5px;
+                                }
+
+                                label {
+                                    margin-right: 5px;
+                                }
+                            }
+
+                        }
+                    }
+
+                    // 地址
+                    &:nth-child(3) {
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+
+                        label {
+                            flex-basis: 9%;
+                        }
+
+                        select {
+                            padding: 5px;
+                            margin-left: 5px;
+                        }
+                    }
+
+                    // 按鈕
+                    &:nth-child(7) {
+                        button {
+                            // 200:80 5:2
+                            width: 160px;
+                            height: 40px;
+                            margin: 30px auto;
+                        }
+                    }
+
+                    &:nth-child(8) {
+                        span {
+                            display: inline-block;
+                            margin: auto;
+                        }
+                    }
+
+                    &:last-child {
+                        justify-content: center;
+                    }
+                }
+            }
+
+            div.closebtn {
+                @include closeBtn(30, 30, 20, 20, 24, "取消註冊會員", 100, 16, 0, -105, 20)
+            }
+        }
+    }
+}
+
+;
+
+@include rwdmF(1200) {
+    div#login {
+        div.login {
+            width: 600px;
+            height: 600px;
+
+            &::after {
+                width: 850px;
+                height: 700px;
+            }
+
+            >h1 {
+                margin-top: 120px;
+                margin-bottom: 50px;
+            }
+
+            svg {
+                width: 600px;
+                height: 600px;
+            }
+        }
+    }
+}
+
+;
+
+@include rwdmF(992) {
+    div#login {
+        div.login {
+            width: 550px;
+            height: 550px;
+
+            &::after {
+                width: 750px;
+                height: 600px;
+                left: -100px;
+                top: -25px;
+            }
+
+            >h1 {
+                margin-top: 110px;
+                margin-bottom: 40px;
+            }
+
+            svg {
+                width: 550px;
+                height: 550px;
+            }
+        }
+    }
+
+    div#signUp {
+        // margin: 40px auto 0;
+
+        div.signUp {
+            form.signUp {
+                >div {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+;
+
+@include rwdmF(768) {
+    div#login {
+        div.login {
+            width: 550px;
+            height: 550px;
+
+            &::after {
+                width: 570px;
+                height: 600px;
+                left: -10px;
+                top: -25px;
+            }
+
+            >h1 {
+                margin-top: 100px;
+                margin-bottom: 30px;
+            }
+
+            svg {
+                width: 550px;
+                height: 550px;
+            }
+        }
+    }
+}
+
+;
+
+@include rwdmF(576) {
+    div#login {
+        min-height: 500px;
+
+        div.login {
+            border: 1px solid rgba(0, 0, 0, 0%);
+            width: 350px;
+            height: 350px;
+
+            &::after {
+                width: 360px;
+                height: 370px;
+                left: -5px;
+                top: -10px;
+            }
+
+            >h1 {
+                margin-top: 70px;
+                margin-bottom: 10px;
+            }
+
+            form.login {
+                width: 200px;
+
+                div:first-child {
+                    input {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                div:last-child {
+                    button.login {
+                        margin: 0 8px;
+                    }
+                }
+            }
+
+            svg {
+                width: 350px;
+                height: 350px;
+            }
+
+            div.closebtn {
+                @include closeBtn(0, 0, 15, 15, 8, "取消登入", 80, 12, 0, -70, 15)
+            }
+        }
+    }
+
+    div#signUp {
+        // margin: 40px auto 0;
+        min-height: 500px;
+
+        div.signUp {
+            width: 80vw;
+            height: 480px;
+            padding: 30px 10px;
+
+            svg {
+                width: 0;
+                height: 0;
+            }
+
+            form.signUp {
+                width: 100%;
+
+                >div {
+                    margin-bottom: 10px;
+
+                    // 姓名&手機
+                    &:first-child {
+                        flex-direction: column;
+
+                        >div {
+                            margin-bottom: 10px;
+
+                            // 姓名
+                            &:first-child {
+                                input {
+                                    flex-grow: 1;
+                                }
+                            }
+
+                            // 手機
+                            &:last-child {
+                                margin-left: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    // 地址
+                    &:nth-child(3) {
+                        flex-wrap: wrap;
+
+                        label {
+                            flex-basis: 30px
+                        }
+
+                        select {
+                            margin-bottom: 5px;
+                            margin-right: 0;
+                            padding: 2px;
+                            background-color: #F9F4ED;
+                        }
+
+                        input {
+                            width: 100%;
+                            margin-left: 0;
+                        }
+                    }
+
+                    // 按鈕
+                    &:nth-child(7) {
+                        button {
+                            // 5:2
+                            width: 120px;
+                            height: 40px;
+                            margin: 10px auto;
+                        }
+                    }
+
+                    &:nth-child(8) {
+                        span {
+                            display: inline-block;
+                            width: 170px;
+                            margin: auto;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            div.closebtn {
+                @include closeBtn(20, 20, 12, 12, 12, "取消註冊會員", 100, 10, 0, -90, 12)
+            }
+        }
+    }
+}
+
+@include rwdmF(360) {
+    div#signUp {
+        margin: 40px auto 0;
+
+        div.signUp {
+            height: 450px;
+
+            >h1 {
+                margin-top: 80px;
+                margin-bottom: 10px;
+            }
+
+            form.signUp {
+                width: 100%;
+
+                >div {
+
+                    // 姓名&手機
+                    &:first-child {
+                        >div {
+
+                            // 手機
+                            &:last-child {
+                                input {
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+
+                    // 地址
+                    &:nth-child(3) {
+                        label {
+                            flex-basis: 15%;
+                        }
+
+                        select {
+                            margin-bottom: 5px;
+                            margin-right: 0;
+                            padding: 1px;
+                            background-color: #F9F4ED;
+                        }
+
+                        input {
+                            width: 100%;
+                            margin-left: 0;
+                        }
+                    }
+
+                    &:nth-child(6) {
+                        display: flex;
+
+                        label {
+                            flex-shrink: 0;
+                        }
+
+                        input {
+                            width: 100px !important;
+                        }
+                    }
+
+                    // 按鈕
+                    &:nth-child(7) {
+                        button {
+                            // 5:2
+                            width: 100px;
+                            height: 30px;
+                            margin: 10px auto;
+                        }
+                    }
+                }
+            }
+
+            div.closebtn {
+                @include closeBtn(10, 10, 15, 15, 15, "取消註冊會員", 100, 12, 0, -90, 12)
+            }
+        }
+    }
+}
+
+;
