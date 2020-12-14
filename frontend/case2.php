@@ -5,6 +5,7 @@
     $data = $statement->fetchAll();
     // print_r($data);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

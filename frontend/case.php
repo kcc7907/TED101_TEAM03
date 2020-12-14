@@ -1,10 +1,4 @@
-<?php
-    include("../php/14/conn14.php");
-    $sql = "SELECT * from `CASE`";
-    $statement = $pdo->query($sql);
-    $data = $statement->fetchAll();
-    // print_r($data);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +11,10 @@
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="../js/14/14.js"></script>
-    <link rel="stylesheet" href="css/uikit.min.css" />
+    <!-- <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script> -->
+    <script src="../js/14/photoPathAjax.js"></script>
 </head>
 
 <body>
@@ -134,7 +129,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/chang/C1569228155031.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">信義</span>
                                 <span class="contentFont">徐公館</span>
                             </a>
@@ -143,8 +138,9 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/chu bai/C1569288447471.jpg"
+                                <img src=""
                                     class="homepic">
+                                    
                                 <span class="contentFont">北投</span>
                                 <span class="contentFont">李公館</span>
                             </a>
