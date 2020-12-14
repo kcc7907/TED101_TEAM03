@@ -36,13 +36,14 @@
             </div>
         </div>
         <div class="all" id="all">
-            <input class="checkAll" type="checkbox" @click='checkAll'>
+            <input id="checkAll" class="checkAll" type="checkbox" @click='checkAll'>
+            <label for="checkAll"><span></span></label>
             <button class="delAll" @click='deleteAll'>刪除勾選商品</button>
         </div>
         <main>
             <div class="left" id="list">
                 <ul class="product">
-                    <my-list v-for='(key,index) in rp' :key="index" :myindex="index" :mycheck='check' :prd-id="key.PRD_ID"
+                    <my-list v-for='(key,index) in rp' :myindex="index" :mycheck='check' :prd-id="key.PRD_ID"
                         :url="key.PIMG_URL" :prd-name='key.PRD_NAME' :prd-price='key.PRD_PRICE'
                         :discount-id='key.DISCOUNT_ID' :prd-mtl='key.PRD_MATERIAL'></my-list>
             </div>
