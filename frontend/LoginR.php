@@ -3,7 +3,7 @@
 	// $Util = new UtilClass();	
 
     //建立SQL
-    $sql = "SELECT * FROM MEMBER WHERE MEM_ID = ? and MEM_PWD = ?";
+    $sql = "SELECT * FROM MEMBER WHERE BINARY MEM_ID = ? and MEM_PWD = ?";
 
     //執行
     // $statement = $Util->getPDO()->prepare($sql);
@@ -35,13 +35,18 @@
 
         //導回產品頁        
         echo "<script>alert('登入成功!');</script>"; 
+        echo "<br/>";
         echo "<script>document.cookie='loging=".$memberID."';</script>";
+        echo "<br/>";
         echo "<script>$('div#login').css('z-index','-3').hide();</script>";
+        echo "<br/>";
         echo "<script>$('div.login').css({'opacity':'0','top':'-30vh',});</script>";
+        echo "<br/>";
         echo "<script>$('form input').val('')</script>";
+        echo "<br/>";
         echo "<script>$('form select').val('0')</script>";
+        echo "<br/>";
         echo "<script>$('img.logMem').attr('src','../img/homepage/logInMemHome.png');</script>";
-
     }else{
         //跳出提示停留在登入頁
         echo "<script>alert('帳號或密碼錯誤!');</script>"; 

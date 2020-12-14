@@ -433,6 +433,7 @@ function changeBGC() {
     });
 }
 
+// ===== 取得 cookie 的值 =====
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -447,7 +448,8 @@ function getCookie(cname) {
     }
     return "";
 }
-  // 檢查某 cookie 是否存在
+
+// ===== 檢查某 cookie 是否存在 =====
 function checkCookie(cname) {
     var cookie_value = getCookie(cname);
     if (cookie_value != "") {
