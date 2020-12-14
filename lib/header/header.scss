@@ -4,7 +4,7 @@
 header.common {
     * {
         box-sizing: border-box;
-        font-family: 'Noto Sans TC Regular', '微軟正黑體', sans-serif;
+        font-family: 'Noto Sans TC thin', '微軟正黑體', sans-serif;
     }
     position: relative;
     height: 60px;
@@ -17,6 +17,8 @@ header.common {
     }
     .logo {
         height: 60px;
+        position: relative;
+        z-index: 3;
     }
     nav {
         position: fixed;
@@ -28,6 +30,9 @@ header.common {
             margin-bottom: 15px;
             color: $c_font_strong;
             font-size: 20px;
+            &:hover{
+                font-family: 'Noto Sans TC regular';
+            }
         }
     }
     .icon {
@@ -36,9 +41,40 @@ header.common {
         top: 50%;
         transform: translateY(-50%);
         display: flex;
+        z-index: 3;
         a {
             height: 20px;
             margin-left: 10px;
+        }
+        .logMembox{
+            position: absolute;
+            left: 0;
+            top:0;
+            text-align: center;
+            white-space: nowrap;
+            transform: translateY(60%)translateX(-10%);
+            color: $c_font_strong;
+            font-size: 20px;
+            padding: 10px;
+            background-color: #F1EADE;
+            border: 1px solid #BDA79E;
+            display: none;
+            z-index: 3;
+            a{
+                display: block;
+                color: $c_font_strong;
+                margin-bottom: 15px;
+                margin-left: 0;
+                &:hover{
+                font-family: 'Noto Sans TC regular';
+            }
+            }
+            span{
+                display: block;
+                &:hover{
+                font-family: 'Noto Sans TC regular';
+                }
+            }
         }
         .ham {
             position: relative;
@@ -83,11 +119,17 @@ header.common {
         nav a{
             font-size: 20px;
         }
+        .logMembox{
+            font-size: 20px;
+        }
     }
 }
 @include rwd(576){
     header.common{
         nav a{
+            font-size: 21px;
+        }
+        .icon .logMembox{
             font-size: 21px;
         }
     }
@@ -203,6 +245,9 @@ header.common {
                 padding-right:12vw;
             }
         }
+        .icon .logMembox{
+            font-size: 23px;
+        }
     }
 }
 @include rwd(1200){
@@ -214,6 +259,9 @@ header.common {
         nav a{
             font-size: 23px;
         }
+        .icon .logMembox{
+            font-size: 23px;
+        }
     }
 }
 @include rwd(1500){
@@ -221,11 +269,40 @@ header.common {
         nav a{
             font-size: 25px;
         }
+        .icon .logMembox{
+            font-size: 25px;
+        }
         .icon{
             right: 8%;
             a img{
                 max-height: none;
                 height: 25px;
+            }
+        }
+        nav {
+            .nav2{
+                &:before{
+                    top: -20px;
+                }
+                &::after{
+
+                    bottom: -20px;
+                }
+                a:nth-child(2){
+                    margin-left: 50px;
+                }
+            }
+            .nav1{
+                &:before{
+                    top: -20px;
+                }
+                &::after{
+
+                    bottom: -20px;
+                }
+                a:nth-child(2){
+                    margin-left: 50px;
+                }
             }
         }
     }
@@ -238,6 +315,9 @@ header.common {
         }
         nav a{
             font-size:25px;
+        }
+        .icon .logMembox{
+            font-size: 25px;
         }
         nav {
             .nav2{
