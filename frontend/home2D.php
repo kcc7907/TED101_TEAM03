@@ -221,7 +221,7 @@
             <div class="newsDiv">
                 <div class="newsSection">
                     <div>
-                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         <time class="titleFont2">01 / 29 / 2021</time>
                         <div>
                             <img src="../img/news/news01.jpg" alt="news">
@@ -274,7 +274,7 @@
                 </div>
                 <div class="newsSection">
                     <div>
-                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         <time class="titleFont2">01 / 29 / 2021</time>
                         <div>
                             <img src="../img/news/news01.jpg" alt="news">

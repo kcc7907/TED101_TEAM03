@@ -159,24 +159,24 @@
                             </div>
                             <div class="content">
                                 <div class="text">
-                                    <p>
-                                        # 參賽號碼：<span>2020-1020-1111</span>
+                                    <p class="contentFont">
+                                        # 參賽號碼：<span class="contentFont">2020-1020-1111</span>
                                     </p>
-                                    <p>
-                                        # 得票數：<span>53234票</span>
+                                    <p class="contentFont">
+                                        # 得票數：<span class="contentFont">53234票</span>
                                     </p>
-                                    <p>
-                                        # 參賽者：<span>李超超</span>
+                                    <p class="contentFont">
+                                        # 參賽者：<span class="contentFont">李超超</span>
                                     </p>
-                                    <p>
-                                        # 作品種類：<span>椅子</span>
+                                    <p class="contentFont">
+                                        # 作品種類：<span class="contentFont">椅子</span>
                                     </p>
-                                    <p>
-                                        # 作品名稱：<span>午後的時光</span>
+                                    <p class="contentFont">
+                                        # 作品名稱：<span class="contentFont">午後的時光</span>
                                     </p>
-                                    <p>
+                                    <p class="contentFont">
                                         # 創作理念：
-                                        <p>閒。</p>
+                                        <p class="contentFont">閒。</p>
                                     </p>
                                 </div>
                                 <div class="img">
@@ -184,7 +184,7 @@
                                 </div>
                             </div>
                             <div class="btn">
-                                <button>投他一票</button>
+                                <button class="contentFont">投他一票</button>
                             </div>
                         </div>
                     </div>
