@@ -103,7 +103,8 @@ body{
                 }
 
                 .content.warn{
-                    padding: 50px;
+                    padding: 30px;
+                    margin-bottom: 20px;
                     font-size: 24px;
 
                     @include r1600{

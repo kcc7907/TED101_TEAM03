@@ -74,14 +74,19 @@
     }
 
 
-    // setcookie("resetInfo_inf", "已成功修改會員資料", time()+500000000);
-
-    header("Location: ../../frontend/meminfo.php");
+    // session_start();
+    // $_SESSION["key"]= "value";
+    // header("Location: ../../frontend/meminfo.php");
 
     // echo "
-    // <script>setcookie('resetInfo_inf', '已成功修改會員資料', time()+500000000);
+    // <script>alert('已成功修改會員資料');
     // location.href = '../../frontend/meminfo.php';</script>
     // ";
+
+    echo "
+    <script>sessionStorage.setItem('reset', 'true');
+    location.href = '../../frontend/meminfo.php';</script>
+    ";
     
     
     // echo "

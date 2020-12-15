@@ -1,8 +1,6 @@
 <?php
     include("../php/08/jk_link.php");
 
-    $user = "A111200001";   //測試帳號
-
     $sql = "SELECT * from NOTI where MEMBER_ID = ? order by NOTI_ID desc;";     //缺少建立時間
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, "$user");
