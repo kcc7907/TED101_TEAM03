@@ -1,5 +1,5 @@
 <?php
-    include("13.php");
+    include("../connect.php");
 
     $sql='SELECT * FROM team03.MEMBER';
     $result = $pdo->query($sql);
