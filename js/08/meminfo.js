@@ -5,6 +5,8 @@ $(document).ready(function(){
     $(window).resize(function(){
         memSetStyle();
     });
+
+    
     
     //點擊修改會員資料================================================
     $('.jk_meminfo form>div>div>span').click(function(e){
