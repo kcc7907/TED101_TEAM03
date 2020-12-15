@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>救世宅 | 我要投稿</title>
     <link rel="Shortcut Icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/contest_participate.css">
+    <link rel="stylesheet" href="../css/logSign.css">
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+
+
 </head>
 
 <body>
+
     <header class="common">
         <div class="logo">
             <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
@@ -102,15 +108,15 @@
                     <div class="view">
                         <label class="contentFont" for="fType">作品種類：</label>
                         <select class="detailFont" id="fType" name="fType" required="required" data-id="fType">
-                            <option value="0" disabled selected>請選擇作品種類</option>
+                            <option disabled selected>請選擇作品種類</option>
                             <option v-for="type in workTypes" class="detailFont" value="type">{{type}}</option>
                         </select>
                         <br>
                         <label class="contentFont" for="fName">作品名稱：</label>
-                        <input type="text" class="detailFont" id="fName" required="required" autocomplete="off" data-id="fName">
+                        <input type="text" class="detailFont" id="fName" required="required" autocomplete="off" data-id="fName" v-model="fName">
                         <br>
                         <label for="fConcept" class="fConcept contentFont">設計理念：</label>
-                        <textarea name="fConcept" class="detailFont" id="fConcept" required="required" autocomplete="off" data-id="fConcept"></textarea>
+                        <textarea name="fConcept" class="detailFont" id="fConcept" required="required" autocomplete="off" data-id="fConcept">{{fConcept}}</textarea>
                         <br>
                         <div>
                             <div>
@@ -141,12 +147,8 @@
                     </div>
                     <div class="btn">
                         <button type="button" class="backBtn contentFont">上一步</button>
-                        <button type="button" class="contentFont sureThis">預覽投稿</button>
-                    </div>
-                    <div>
-                        <p class="contentFont lineHeight">提醒:<br>確認送出將無法修改您所上傳的內容。</p>
-                        <input type="submit" class="detailFont" id="sureGoContest" value="確認送出">
-                        <input type="button" class="detailFont" id="notsureGoContest" value="返回檢查">
+                        <button type="button" class="contentFont viewThis">預覽投稿</button>
+                        <button type="button" class="contentFont sureThis">送出投稿</button>
                     </div>
                 </form>
                 <form id="preview">
@@ -169,22 +171,22 @@
                                         # 參賽者：<span class="contentFont">李超超</span>
                                     </p>
                                     <p class="contentFont">
-                                        # 作品種類：<span class="contentFont">椅子</span>
+                                        <!-- # 作品種類：<span class="contentFont">{{type}}</span> -->
                                     </p>
                                     <p class="contentFont">
-                                        # 作品名稱：<span class="contentFont">午後的時光</span>
+                                        # 作品名稱：<span class="contentFont">{{fName}}</span>
                                     </p>
                                     <p class="contentFont">
                                         # 創作理念：
-                                        <p class="contentFont">閒。</p>
+                                        <p class="contentFont">{{fConcept}}</p>
                                     </p>
                                 </div>
                                 <div class="img">
                                     <img src="https://picsum.photos/300/300?random=23">
                                 </div>
                             </div>
-                            <div class="btn">
-                                <button class="contentFont">投他一票</button>
+                            <div class="preViewBtn">
+                                <p class="contentFont">投他一票</p>
                             </div>
                         </div>
                     </div>
@@ -198,7 +200,7 @@
             </div>
         </div>
         <!-- confirm燈箱 -->
-        <div class="confirmDiv ">
+        <div class="confirmDiv">
             <div>
                 <p class="contentFont lineHeight"></p>
                 <input type="button" class="detailFont" id="sureGoContest" value="確認">
@@ -206,6 +208,7 @@
             </div>
         </div>
     </div>
+    <?php include("../lib/login/loginInclude.html"); ?>
     <footer class="libft">
         <!-- contest 新增用 -->
         <div class="slideBtn">
@@ -244,10 +247,11 @@
             <p>Copy right 2020,All Right Reserved | By 救世宅</p>
         </section>
     </footer>
-
+    <script src="../js/15/contest_participate.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
     <script src="../lib/header/header.js"></script>
     <script src="../js/15/contest_nav_footer.js"></script>
-    <script src="../js/15/contest_participate.js"></script>
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-    include("../php/utilClassJH.php");
+    include("../php/connect.php");
 
     //建立SQL
     $sql = "SELECT * FROM MEMBER WHERE BINARY MEM_ID = ? and MEM_PWD = ?";

@@ -1,5 +1,5 @@
 <?php
-    include("../php/utilClassJH.php");
+    include("../php/connect.php");
     $sql="SELECT MEM_ID FROM MEMBER WHERE BINARY MEM_ID = ?";
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $_POST["memAccount"]);

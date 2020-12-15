@@ -11,6 +11,8 @@
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
+    <script src="../js/15/home2D.js"></script>
+    <script src="../js/15/logSign.js"></script>
 </head>
 
 <body>
@@ -474,8 +476,7 @@
     </div>
 
 
-    <script src="../js/15/home2D.js"></script>
-    <script src="../js/15/logSign.js"></script>
+
 </body>
 
 </html>

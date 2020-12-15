@@ -307,41 +307,14 @@ div.JHC {
                         }
                     }
                 }
-
-                &:last-child {
-                    // width: 450px;
-                    padding: 15px 50px 30px;
-                    text-align: center;
-                    background-color: #F0EBE5;
-                    position: fixed;
-                    top: 30%;
-                    opacity: 0;
-                    transition: all .3s;
-                    border: 5px solid #BDA79E;
-
-                    p {
-                        text-align: left;
-                    }
-
-                    input {
-                        transition: all .3s;
-                        margin: 15px 20px 0;
-                        padding: 5px 10px;
-                        border-color: #BDA79E;
-
-                        &:hover {
-                            cursor: pointer;
-                            background-color: #BDA79E;
-                            color: white;
-                        }
-                    }
-                }
             }
 
         }
 
         form#preview {
+            z-index: -99;
             div.backGround {
+                display: flex;
                 align-items: center;
                 background-color: rgba(0, 0, 0, 0.7);
                 position: fixed;
@@ -351,7 +324,11 @@ div.JHC {
                 bottom: 0;
                 z-index: 10;
 
-                .clickVote {
+
+
+                div.clickVote {
+                    transition: all .5s;
+                    opacity: 0;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -361,9 +338,83 @@ div.JHC {
                     font-size: 24px;
                     color: #465D4C;
 
-                    // TODO:
-                    .content{
+                    &::after{
+                        content: "點擊任意位置結束預覽模式。";
+                        display: inline-block;
+                        padding: 15px 20px;
+                        font-size: 22px;
+                        color: white;
+                        background-color: #000;
+                        position: absolute;
+                        top: 10%;
+                    }
+
+                    div.content {
                         display: flex;
+
+                        .img {
+                            margin: 15px;
+                            padding: 20px;
+                            text-align: center;
+                        }
+
+                        >div.text {
+                            margin: 15px;
+
+                            >p {
+                                margin: 20px;
+                                color: #465D4C;
+
+                                >span {
+                                    color: #465D4C;
+
+                                }
+                            }
+                        }
+                    }
+
+                    .preViewBtn {
+                        border: none;
+                        padding: 30px 0 50px;
+
+                        p {
+                            // outline: none;
+                            text-align: center;
+                            border: none;
+                            border: 1px solid #465D4C;
+                            background-color: rgba(0, 0, 0, 0);
+                            border-radius: 0;
+                            width: 180px;
+                            height: 70px;
+                            font-size: 24px;
+                            line-height: 70px;
+                            color: #465D4C;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: #465D4C;
+                                color: #fff;
+                            }
+                        }
+                    }
+
+                    .close {
+                        align-self: flex-end;
+                        padding: 15px;
+                        cursor: pointer;
+
+                        i {
+                            font-size: 30px;
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 400;
+                            -moz-osx-font-smoothing: grayscale;
+                            -webkit-font-smoothing: antialiased;
+                            display: inline-block;
+                            font-style: normal;
+                            font-variant: normal;
+                            text-rendering: auto;
+                            line-height: 1;
+                        }
+
                     }
                 }
             }
