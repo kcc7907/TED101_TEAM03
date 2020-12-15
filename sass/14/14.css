@@ -654,13 +654,16 @@ body {
   font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
 }
 
+div#JN {
+  /* button */
+}
+
 div#JN > div {
   border: 1px solid red;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   font-size: 24px;
-  /* button */
 }
 
 div#JN > div h1 {
@@ -707,9 +710,20 @@ div#JN > div .pic_intro {
 div#JN > div .designer {
   border: 1px solid purple;
   width: auto;
+  position: relative;
 }
 
-div#JN > div .first {
+div#JN > div .designer::after {
+  content: "";
+  position: absolute;
+  background: #865454;
+  width: 50%;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+}
+
+div#JN .first {
   border: 1px solid palevioletred;
   width: auto;
   background-color: rgba(189, 167, 156, 0.1);
@@ -717,7 +731,7 @@ div#JN > div .first {
   position: relative;
 }
 
-div#JN > div .first:after {
+div#JN .first:after {
   content: '';
   display: inline-block;
   border: 1px solid #bda79e;
@@ -729,12 +743,12 @@ div#JN > div .first:after {
   z-index: -1;
 }
 
-div#JN > div .designer_say {
+div#JN .designer_say {
   border: 1px solid navy;
   display: inline-flex;
 }
 
-div#JN > div .second {
+div#JN .second {
   border: 1px solid palevioletred;
   width: auto;
   background-color: rgba(189, 167, 156, 0.1);
@@ -744,7 +758,7 @@ div#JN > div .second {
   line-height: 2;
 }
 
-div#JN > div .second:after {
+div#JN .second:after {
   content: '';
   display: inline-block;
   border: 1px solid #bda79e;
@@ -756,28 +770,28 @@ div#JN > div .second:after {
   z-index: -1;
 }
 
-div#JN > div .series {
+div#JN .series {
   border: 1px solid gray;
 }
 
-div#JN > div .title {
+div#JN .title {
   border: 1px solid purple;
   display: inline-flex;
   text-align: center;
   width: 50%;
 }
 
-div#JN > div .stylelist {
+div#JN .stylelist {
   border: 1px solid blue;
   padding: 10px;
 }
 
-div#JN > div .style {
+div#JN .style {
   border: 1px solid blue;
   padding: 10px;
 }
 
-div#JN > div .pic {
+div#JN .pic {
   border: 1px solid cadetblue;
   text-align: center;
   width: 300px;
@@ -785,7 +799,7 @@ div#JN > div .pic {
   margin: auto;
 }
 
-div#JN > div #intro_sliderBoard {
+div#JN #intro_sliderBoard {
   /*div*/
   border: 3px solid firebrick;
   width: 300px;
@@ -793,14 +807,14 @@ div#JN > div #intro_sliderBoard {
   overflow: hidden;
 }
 
-div#JN > div #intro_sliderBoard ul {
+div#JN #intro_sliderBoard ul {
   /*ul*/
   width: 1200px;
   position: relative;
   animation: slider 10s infinite;
 }
 
-div#JN > div #intro_sliderBoard li {
+div#JN #intro_sliderBoard li {
   /*li*/
   width: 300px;
   height: 400px;
@@ -826,23 +840,23 @@ div#JN > div #intro_sliderBoard li {
   }
 }
 
-div#JN > div .tab_list_block {
+div#JN .tab_list_block {
   max-width: 1200px;
   width: 100%;
 }
 
-div#JN > div .tab_list_block .tab_list {
+div#JN .tab_list_block .tab_list {
   border: 1px solid rebeccapurple;
   width: 80%;
   font-size: 0;
 }
 
-div#JN > div .tab_list_block .tab_list li {
+div#JN .tab_list_block .tab_list li {
   display: inline-block;
   border: 1px solid black !important;
 }
 
-div#JN > div .tab_list_block .tab_list li a {
+div#JN .tab_list_block .tab_list li a {
   font-size: 30px;
   display: inline-block;
   padding: 5px 60px;
@@ -851,26 +865,26 @@ div#JN > div .tab_list_block .tab_list li a {
   padding: 15px 60px;
 }
 
-div#JN > div .tab_list_block .tab_list li a:hover {
+div#JN .tab_list_block .tab_list li a:hover {
   cursor: pointer;
   background-color: #865454;
   color: white;
 }
 
-div#JN > div .tab_list_block .tab_list li a.-on {
+div#JN .tab_list_block .tab_list li a.-on {
   color: white;
   background-color: #865454;
 }
 
-div#JN > div div.tab {
+div#JN div.tab {
   display: none;
 }
 
-div#JN > div div.tab.-on {
+div#JN div.tab.-on {
   display: block;
 }
 
-div#JN > div .jpgbox {
+div#JN .jpgbox {
   width: 33.1%;
   height: 240px;
   border: 1px solid red;
@@ -878,11 +892,11 @@ div#JN > div .jpgbox {
   overflow: hidden;
 }
 
-div#JN > div .jpgbox:hover span {
+div#JN .jpgbox:hover span {
   opacity: 100%;
 }
 
-div#JN > div .jpgbox span {
+div#JN .jpgbox span {
   display: inline-block;
   opacity: 0;
   width: 100%;
@@ -898,22 +912,22 @@ div#JN > div .jpgbox span {
   transition: all .5s;
 }
 
-div#JN > div .jpgbox span:last-child {
+div#JN .jpgbox span:last-child {
   top: 120px;
 }
 
-div#JN > div .inter_pic {
+div#JN .inter_pic {
   width: 100%;
   height: 100%;
 }
 
-div#JN > div .img_inter {
+div#JN .img_inter {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-div#JN > div img.homepic, div#JN > div img.commercial_pic, div#JN > div img.office_pic {
+div#JN img.homepic, div#JN img.commercial_pic, div#JN img.office_pic {
   border: 1px solid green;
   max-height: 100%;
   position: absolute;
@@ -923,7 +937,7 @@ div#JN > div img.homepic, div#JN > div img.commercial_pic, div#JN > div img.offi
   height: fit-content;
 }
 
-div#JN > div .stylebox_right {
+div#JN .stylebox_right {
   border: 1px solid pink;
   max-width: 1200px;
   width: 100%;
@@ -933,39 +947,39 @@ div#JN > div .stylebox_right {
   justify-content: flex-start;
 }
 
-div#JN > div .style_one_one, div#JN > div .style_one_two, div#JN > div .style_one_three, div#JN > div .style_two_one,
-div#JN > div .style_two_two, div#JN > div .style_three_one {
+div#JN .style_one_one, div#JN .style_one_two, div#JN .style_one_three, div#JN .style_two_one,
+div#JN .style_two_two, div#JN .style_three_one {
   display: inline-flex;
   max-width: 1200px;
   width: 100%;
   justify-content: space-around;
 }
 
-div#JN > div .style_one_one div:nth-child(2) img {
+div#JN .style_one_one div:nth-child(2) img {
   max-width: 120%;
   max-height: 120%;
   top: -10px;
   left: -10px;
 }
 
-div#JN > div .style_one_three div:nth-child(2) img, div#JN > div .style_two_one div:nth-child(2) img {
+div#JN .style_one_three div:nth-child(2) img, div#JN .style_two_one div:nth-child(2) img {
   max-width: 100%;
   max-height: 150%;
 }
 
-div#JN > div .style_two_two div:nth-child(3) img {
+div#JN .style_two_two div:nth-child(3) img {
   max-width: 100%;
   max-height: 150%;
 }
 
-div#JN > div .image {
+div#JN .image {
   border: 1px solid #ccc;
   width: 35%;
   position: absolute;
   margin-bottom: 0px;
 }
 
-div#JN > div #sliderBoard {
+div#JN #sliderBoard {
   /*div*/
   border: 1px solid #ccc;
   width: 90%;
@@ -975,17 +989,17 @@ div#JN > div #sliderBoard {
   position: relative;
 }
 
-div#JN > div #content {
+div#JN #content {
   /*ul*/
   position: relative;
 }
 
-div#JN > div #content li {
+div#JN #content li {
   /*li*/
   float: left;
 }
 
-div#JN > div #contentButton {
+div#JN #contentButton {
   /* border: 1px solid red; */
   text-align: center;
   width: 100%;
@@ -994,7 +1008,7 @@ div#JN > div #contentButton {
   bottom: 0;
 }
 
-div#JN > div #contentButton li {
+div#JN #contentButton li {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -1003,18 +1017,18 @@ div#JN > div #contentButton li {
   margin: 30px 5px;
 }
 
-div#JN > div #contentButton li.clickMe {
+div#JN #contentButton li.clickMe {
   background: #888;
 }
 
-div#JN > div div.award_list {
+div#JN div.award_list {
   border: 3px solid brown;
   width: 600px;
   height: 450px;
   background-color: #fff;
 }
 
-div#JN > div div.other_text {
+div#JN div.other_text {
   border: 5px solid rebeccapurple;
   position: relative;
   right: 0px;
@@ -1029,16 +1043,16 @@ div#JN > div div.other_text {
   box-sizing: border-box;
 }
 
-div#JN > div .intro_sliderBoard {
+div#JN .intro_sliderBoard {
   border: 3px solid darkblue;
 }
 
-div#JN > div .intro_image {
+div#JN .intro_image {
   width: 100%;
   margin-top: 30%;
 }
 
-div#JN > div .other_text_award {
+div#JN .other_text_award {
   font-size: 36px;
 }
 
@@ -1051,7 +1065,7 @@ div#JN > div .other_text_award {
   }
 }
 
-div#JN .select_click {
+.select_click {
   border: 1px solid rebeccapurple;
   display: inline-flex;
   max-width: 1200px;
@@ -1062,22 +1076,22 @@ div#JN .select_click {
   background-color: #BDA79E;
 }
 
-div#JN .icon_border {
+.icon_border {
   width: 30px;
   height: 30px;
 }
 
-div#JN .icon_left {
+.icon_left {
   width: 30px;
   height: 30px;
 }
 
-div#JN .icon_right {
+.icon_right {
   width: 30px;
   height: 30px;
 }
 
-div#JN .click {
+.click {
   border: 1px solid green;
   margin-top: 2.5%;
   padding: 5px 20px;
@@ -1086,7 +1100,7 @@ div#JN .click {
   justify-content: center;
 }
 
-div#JN .show_pic {
+.show_pic {
   border: 1px solid darkblue;
   display: flex;
   align-items: center;
@@ -1095,19 +1109,19 @@ div#JN .show_pic {
   line-height: 60px;
 }
 
-div#JN .exhibit_pic {
+.exhibit_pic {
   display: flex;
   justify-content: center;
   margin-top: 15%;
 }
 
-div#JN .designer_intro {
+.designer_intro {
   border: 1px solid indianred;
   text-align: center;
   margin-top: 35%;
 }
 
-div#JN .block_color {
+.block_color {
   border: 1px solid palevioletred;
   width: 100%;
   background-color: rgba(189, 167, 156, 0.1);
@@ -1116,24 +1130,22 @@ div#JN .block_color {
   line-height: 2;
 }
 
-div#JN .block_color:after {
-  content: '';
-  display: inline-block;
-  border: 1px solid #bda79e;
-  width: 100%;
-  height: 100%;
+.block_color:after {
+  content: "";
   position: absolute;
-  top: 2%;
-  left: 2%;
-  z-index: -1;
+  background: #865454;
+  width: 30%;
+  height: 0.5rem;
+  bottom: 0;
+  left: 35%;
 }
 
-div#JN .d_pic {
+.d_pic {
   border: 1px solid darkblue;
   margin-top: 6%;
 }
 
-div#JN .pics {
+.pics {
   border: 1px solid brown;
   display: flex;
   width: 300px;
@@ -1147,7 +1159,7 @@ div#JN .pics {
   position: relative;
 }
 
-div#JN .pics:after {
+.pics:after {
   content: '';
   display: inline-block;
   border: 1px solid #bda79e;
@@ -1159,13 +1171,13 @@ div#JN .pics:after {
   z-index: -1;
 }
 
-div#JN .d_pic_flex {
+.d_pic_flex {
   border: 6px solid yellow;
   width: 100%;
   margin-top: 5%;
 }
 
-div#JN .interior_one, div#JN .interior_two, div#JN .interior_three {
+.interior_one, .interior_two, .interior_three {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1173,32 +1185,32 @@ div#JN .interior_one, div#JN .interior_two, div#JN .interior_three {
   width: 100%;
 }
 
-div#JN .interior_two {
+.interior_two {
   display: none;
 }
 
-div#JN .interior_pics {
+.interior_pics {
   width: 100%;
   height: 100%;
 }
 
-div#JN .d_pic_word {
+.d_pic_word {
   width: 100%;
 }
 
-div#JN .inter_one {
+.inter_one {
   width: 250px;
   padding: 2%;
 }
 
-div#JN .more_detail {
+.more_detail {
   border: 1px solid darkblue;
   margin-top: 15%;
   position: relative;
   margin-bottom: 20%;
 }
 
-div#JN .more_detail .contact {
+.more_detail .contact {
   border: 1px solid red;
   position: absolute;
   display: inline-block;
@@ -1211,23 +1223,23 @@ div#JN .more_detail .contact {
   font-size: 30px;
 }
 
-div#JN .more_detail .contact .titleFont3 {
+.more_detail .contact .titleFont3 {
   border: 1px solid greenyellow;
 }
 
-div#JN .more_detail .contact .more_details {
+.more_detail .contact .more_details {
   border: 1px solid #865454 !important;
   display: inline-block;
   width: 20%;
 }
 
-div#JN .more_detail .contact .more_details:hover {
+.more_detail .contact .more_details:hover {
   cursor: pointer;
   background-color: #865454;
   color: white;
 }
 
-div#JN .deatil_contact {
+.deatil_contact {
   border: 1px solid rebeccapurple;
   max-width: 100%;
   margin-top: 5%;
@@ -1238,12 +1250,12 @@ div#JN .deatil_contact {
   opacity: 0.5;
 }
 
-div#JN .inter_one_pack {
+.inter_one_pack {
   border: 2px solid steelblue;
   display: flex;
 }
 
-div#JN #picsLightBox {
+#picsLightBox {
   position: fixed;
   width: 100%;
   max-width: 100vw;
@@ -1256,7 +1268,7 @@ div#JN #picsLightBox {
   transition: opacity 1s;
 }
 
-div#JN #picsLightBox > div {
+#picsLightBox > div {
   width: 70%;
   border: 1px solid #9b9b9b;
   background-color: #fffaf4;
@@ -1266,7 +1278,7 @@ div#JN #picsLightBox > div {
   transform: translate(-50%, -50%);
 }
 
-div#JN #picsLightBox > div > div {
+#picsLightBox > div > div {
   width: 90%;
   height: 90%;
   border: 1px solid #644646 !important;
@@ -1276,12 +1288,12 @@ div#JN #picsLightBox > div > div {
   overflow: hidden;
 }
 
-div#JN #picsLightBox > div > div img {
+#picsLightBox > div > div img {
   width: 100%;
   max-width: 100%;
 }
 
-div#JN #picsLightBox > div > div .pics_lightbox {
+#picsLightBox > div > div .pics_lightbox {
   width: 36px;
   height: 36px;
   cursor: pointer;

@@ -9,7 +9,6 @@ $(document).ready(function () {
         success: function (res) {
             // console.log(res);
             // console.log(res[0].CASE_IMG)
-
             // console.log($(".stylebox_right").find('img'))
             $(".stylebox_right").find('img').attr('src', '')
             for (i = 0; i < res.length; i++) {
@@ -31,6 +30,10 @@ $.ajax({
         $(".st")
     }
 })
+
+
+
+
 
 
 

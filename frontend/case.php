@@ -210,7 +210,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/rezo/1493275936.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">大安</span>
                                 <span class="contentFont">侯公館</span>
                             </a>
@@ -219,7 +219,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/yang/C1569225124301.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">中山</span>
                                 <span class="contentFont">鄭公館</span>
                             </a>
@@ -237,7 +237,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/love/mNkEs164hN.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">台北</span>
                                 <span class="contentFont">Brun不然</span>
@@ -248,7 +248,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/chi/ZJXzuMkUTc.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">首爾</span>
                                 <span class="contentFont">Sanet lind</span>
@@ -258,7 +258,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/coffee/_SKA6416_resize.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">紐約</span>
                                 <span class="contentFont">FABULOUS</span>
@@ -269,7 +269,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/da chiu/9xcvSYpQ6c.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">曼谷</span>
                                 <span class="contentFont">Ihoeb Wgd</span>
@@ -279,7 +279,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/hung/8WiXIDl3nR.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">東京</span>
                                 <span class="contentFont">Owf Sbwr Knn</span>
@@ -289,7 +289,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/xin/Q6V7nNahbr.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">澳門</span>
                                 <span class="contentFont">Jofe Qfen</span>
@@ -306,7 +306,7 @@
                         <div class="jpgbox">
                             <div class="inter_pic">
                                 <a href="./case4.html" class="img_inter">
-                                    <img src="../img/interiordesign/office/example/chia/10-Scandinavian-iDiD-taoyuan 8_aef73.jpg"
+                                    <img src=""
                                         class="office_pic">
                                     <span class="contentFont">南京復興</span>
                                     <span class="contentFont">TIBAME</span></a>
@@ -315,7 +315,7 @@
                         <div class="jpgbox">
                             <div class="inter_pic">
                                 <a href="./case4.html" class="img_inter">
-                                    <img src="../img/interiordesign/office/example/ren/12Modern-iDiD-ntc 2_fe819.jpg"
+                                    <img src=""
                                         class="office_pic">
                                     <span class="contentFont">忠孝復興</span>
                                     <span class="contentFont">法華香水</span></a>
