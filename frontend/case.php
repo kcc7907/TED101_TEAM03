@@ -1,10 +1,4 @@
-<?php
-    include("../php/14/conn14.php");
-    $sql = "SELECT * from `CASE`";
-    $statement = $pdo->query($sql);
-    $data = $statement->fetchAll();
-    // print_r($data);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +11,16 @@
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="../js/14/14.js"></script>
-    <link rel="stylesheet" href="css/uikit.min.css" />
+    <!-- <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script> -->
+    <script src="../js/14/photoPathAjax.js"></script>
+
+    <script src="../lib/js/vue.js"></script>
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
+
 </head>
 
 <body>
@@ -134,7 +135,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/chang/C1569228155031.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">信義</span>
                                 <span class="contentFont">徐公館</span>
                             </a>
@@ -143,8 +144,9 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/chu bai/C1569288447471.jpg"
+                                <img src=""
                                     class="homepic">
+                                    
                                 <span class="contentFont">北投</span>
                                 <span class="contentFont">李公館</span>
                             </a>
@@ -154,7 +156,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/dan chang/C1569228045371.jpg"
+                                <img src=""
                                     class="homepic">
                                 <span class="contentFont">南港</span>
                                 <span class="contentFont">王公館</span>
@@ -167,7 +169,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/fu/C1569288783975.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">松山</span>
                                 <span class="contentFont">林公館</span>
                             </a>
@@ -177,7 +179,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/lin/C1582619597131.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">文山</span>
                                 <span class="contentFont">何公館</span>
                             </a>
@@ -187,7 +189,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/yo/C1569288522107.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">內湖</span>
                                 <span class="contentFont">黃公館</span>
                             </a>
@@ -199,7 +201,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/kuo/C1594346104631.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">中正</span>
                                 <span class="contentFont">紀公館</span>
                             </a>
@@ -208,7 +210,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/rezo/1493275936.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">大安</span>
                                 <span class="contentFont">侯公館</span>
                             </a>
@@ -217,7 +219,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/yang/C1569225124301.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">中山</span>
                                 <span class="contentFont">鄭公館</span>
                             </a>
@@ -235,7 +237,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/love/mNkEs164hN.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">台北</span>
                                 <span class="contentFont">Brun不然</span>
@@ -246,7 +248,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/chi/ZJXzuMkUTc.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">首爾</span>
                                 <span class="contentFont">Sanet lind</span>
@@ -256,7 +258,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/coffee/_SKA6416_resize.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">紐約</span>
                                 <span class="contentFont">FABULOUS</span>
@@ -267,7 +269,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/da chiu/9xcvSYpQ6c.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">曼谷</span>
                                 <span class="contentFont">Ihoeb Wgd</span>
@@ -277,7 +279,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/hung/8WiXIDl3nR.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">東京</span>
                                 <span class="contentFont">Owf Sbwr Knn</span>
@@ -287,7 +289,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case3.html" class="img_inter">
-                                <img src="../img/interiordesign/commercial/example/xin/Q6V7nNahbr.jpg"
+                                <img src=""
                                     class="commercial_pic">
                                 <span class="contentFont">澳門</span>
                                 <span class="contentFont">Jofe Qfen</span>
@@ -304,7 +306,7 @@
                         <div class="jpgbox">
                             <div class="inter_pic">
                                 <a href="./case4.html" class="img_inter">
-                                    <img src="../img/interiordesign/office/example/chia/10-Scandinavian-iDiD-taoyuan 8_aef73.jpg"
+                                    <img src=""
                                         class="office_pic">
                                     <span class="contentFont">南京復興</span>
                                     <span class="contentFont">TIBAME</span></a>
@@ -313,7 +315,7 @@
                         <div class="jpgbox">
                             <div class="inter_pic">
                                 <a href="./case4.html" class="img_inter">
-                                    <img src="../img/interiordesign/office/example/ren/12Modern-iDiD-ntc 2_fe819.jpg"
+                                    <img src=""
                                         class="office_pic">
                                     <span class="contentFont">忠孝復興</span>
                                     <span class="contentFont">法華香水</span></a>
@@ -358,6 +360,9 @@
     <!-- <script>
         document.addEventListener('click', e => console.log(e.target))
     </script> -->
+    <?php include("../lib/login/loginInclude.html"); ?>
+
+    
 </body>
 
 </html>
