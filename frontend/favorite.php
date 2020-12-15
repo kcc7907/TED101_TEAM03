@@ -104,7 +104,9 @@
                             <?=$row["PRD_PRICE"]?> 元
                         </li>
                         <li class="btn">
-                            <button class="add"><span>加入購物車</span><i class="fas fa-cart-arrow-down"></i></button>
+                            <a class="seeProduct" href="">
+                                <button class="add"><span>查看詳情</span><i class="fas fa-cart-arrow-down"></i></button>
+                            </a>
                             <button class="remove" data-name="<?=$row["PRD_ID"]?>"><span>移除</span><i class="far fa-trash-alt"></i></button>
                         </li>
                     </ul>

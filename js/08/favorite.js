@@ -11,7 +11,7 @@ $(document).ready(function(){
         //資料庫移除
         let removeItem = $(this).data("name");
         $.ajax({
-            url: '../../../ted10103/php/08/jk_favoriteDlete.php',   //檔案位置奇怪       
+            url: '../php/08/jk_favoriteDlete.php',   //檔案位置奇怪       
             type: 'POST',
             data: {
                 removeItem,

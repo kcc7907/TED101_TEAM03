@@ -304,6 +304,11 @@ body{
                             }
                         }
 
+                        .seeProduct{
+                            text-decoration: none;
+                            margin: 10px;
+                        }
+
                         button{
                             border: 1px solid #465D4C;
                             border-radius: 4px;
@@ -314,7 +319,6 @@ body{
 
                             width: 110px;
                             padding: 7px;
-                            margin: 10px;
                             cursor: pointer;
 
                             @include r1440{
@@ -355,8 +359,8 @@ body{
 
                         .remove{
                             border: 1px solid #aaa;
+                            margin: 10px;
                             color: #aaa;
-
                         }
                     }
 
