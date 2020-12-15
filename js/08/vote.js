@@ -63,8 +63,7 @@ $(document).ready(function () {
         $('.jk_vote .backGround').css('display', 'none');
     });
 
-    //點擊投票
-    // $('.jk_vote .clickVote button').click(function () {
+    //點擊投票    
     $('.jk_vote').on('click', '.clickVote button', function () {
         let voteId = $(this).closest('.clickVote').find('.content p:first-child span').text();
         let voteNum = $(this).closest('.clickVote').find('.content p:nth-child(2) input').val();
@@ -81,6 +80,7 @@ $(document).ready(function () {
             },
         });
         $('.jk_vote .backGround').css('display', 'none');
+        
     });
 
     //搜尋作品

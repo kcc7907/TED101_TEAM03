@@ -4,19 +4,44 @@ $(document).ready(function(){
         
     $('.jk_favorite .remove').click(function(e){
 
-        $(this).closest('ul.item').remove();
+        let removeItem = $(this).data("name");
+        $('#dropCheck').css('display', 'flex');
+        $('#dropCheck .check').click(function(){
 
-        mainText();
+            //移除網頁資料
+            $(`.remove[data-name=${removeItem}]`).closest('ul.item').remove();
+
+
+            //移除資料庫資料
+            $.ajax({
+                url: '../php/08/jk_favoriteDlete.php',
+                type: 'POST',
+                data: {
+                    removeItem,
+                },            
+            });
+
+            mainText();
+            $('#dropCheck').css('display', 'none');
+        });
+
+        $('#dropCheck .cancel').click(function(){
+            $('#dropCheck').css('display', 'none');
+        });
+
+
+
+        // $(this).closest('ul.item').remove();
+
 
         //資料庫移除
-        let removeItem = $(this).data("name");
-        $.ajax({
-            url: '../php/08/jk_favoriteDlete.php',   //檔案位置奇怪       
-            type: 'POST',
-            data: {
-                removeItem,
-            },            
-        });
+        // $.ajax({
+        //     url: '../php/08/jk_favoriteDlete.php',   //檔案位置奇怪       
+        //     type: 'POST',
+        //     data: {
+        //         removeItem,
+        //     },            
+        // });
         
     });
 });

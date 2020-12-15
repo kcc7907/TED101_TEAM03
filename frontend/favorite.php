@@ -104,7 +104,7 @@
                             <?=$row["PRD_PRICE"]?> 元
                         </li>
                         <li class="btn">
-                            <a class="seeProduct" href="">
+                            <a class="seeProduct" href="product/productInner-<?=$row["PRD_ID"]?>.html">
                                 <button class="add"><span>查看詳情</span><i class="fas fa-cart-arrow-down"></i></button>
                             </a>
                             <button class="remove" data-name="<?=$row["PRD_ID"]?>"><span>移除</span><i class="far fa-trash-alt"></i></button>
@@ -119,6 +119,17 @@
                 
             </main>
         </div>
+
+        <div id="dropCheck">
+            <div>
+                <p>您是否確定要移除該項收藏?</p>
+                <div class="dropBtn">
+                    <button class="check">確認</button>
+                    <button class="cancel">取消</button>
+                </div>            
+            </div>
+        </div>
+
     </div>
 
     <script src="../lib/header/header.js"></script>
