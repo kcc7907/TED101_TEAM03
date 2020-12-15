@@ -260,3 +260,38 @@ box[1].addEventListener('click', setLocal);
 /////////////////////////  收藏 綁定////////////////////////////////
 let loveBtn = document.querySelectorAll('button.love');
 // console.log(loveBtn);
+
+function loveItem() {
+    // document.cookie = 'loging=".$memberID."';
+    if (checkCookie('loging')) {
+        // console.log(123);
+        var memberObject = {
+            memberId: getCookie('loging'),
+            productId: productId,
+        };
+        let cat = JSON.stringify(memberObject);
+        $.ajax({
+            url: '../../php/13/addlove.php',
+            type: 'POST',
+            data: {
+                // memberObject
+                // cat,
+                memberId: getCookie('loging'),
+                productId: productId,
+            },
+            error: function (xhr) {
+                alert('Ajax request 發生錯誤');
+            },
+            success: function (res) {
+                console.log(res);
+            },
+            // dataType: "JSON",
+        });
+    } else {
+        alert('請登入喔~~~');
+        // console.log(46);
+    }
+    // console.log(memberObject);
+};
+
+loveBtn[0].addEventListener('click', loveItem);
