@@ -1,5 +1,5 @@
 <?php
-    include("../../php/utilClassJH.php");
+    include("../../php/connect.php");
 	// $Util = new UtilClass();	
 
     //建立SQL
