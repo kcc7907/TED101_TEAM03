@@ -1,5 +1,5 @@
 <?php
-    include("../../php/utilClassJH.php");
+    include("../../php/connect.php");
     // $Util = new UtilClass();
     $sql="SELECT MEM_ID FROM MEMBER WHERE BINARY MEM_ID = ?";
     $statement = $pdo->prepare($sql);
