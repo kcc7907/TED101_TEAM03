@@ -277,6 +277,7 @@ div.sam_pi{
                     border:1px solid #BDA79E;
                     margin-top:10%;
                     transition: all .5s;
+                    outline:none;
                     cursor:pointer;
                     &:hover{
                         color:#fff;
@@ -535,6 +536,7 @@ div.sam_pi{
                 margin:0 40px;
                 margin-top:10%;
                 transition:all .5s;
+                outline:none;
                 cursor:pointer;
                 &:hover{
                     background-color: #BDA79E;
@@ -1268,6 +1270,31 @@ div.sam_pi{
             }
         }
     }
+    @media (max-width:800px){
+        div.deskTopBox{
+            div.rightWrap{
+                div.productWord{
+                    h1.productTitle{
+                        margin-top:0px;
+                    }
+                    span.smallWord{
+                        margin-top:10px;
+                    }
+                    p.word{
+                        margin-top:5px;
+                    }
+                }
+                div.moneyBox{
+                    margin-top:10px;
+                }
+                div.productMessage{
+                    p.ppp{
+                        margin-top:15px;
+                    }
+                }
+            }
+        }
+    }
 
 
 }
@@ -1304,6 +1331,7 @@ div.sam_pi{
             width:86%;
             margin:0 auto;
             overflow: hidden;
+            // border:1px solid red;
             div.slider{
                 display:flex;
                 width: 100%;
