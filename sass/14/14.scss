@@ -281,7 +281,7 @@ div#JN{
                 left: 0;                
             }
         }
-    }
+    
 
         .first{
             border: 1px solid palevioletred;
@@ -920,6 +920,7 @@ div#JN{
             width: 1000px;
             height: 800px;
         }
+    }
     // }
 
     
@@ -937,9 +938,6 @@ div#JN{
         .designer_intro{
             margin-top: 0%;
         }
-        // .interior_one{
-        //     // display: block;
-        // }
         #intro_sliderBoard{
             margin: 50px auto;
         }
@@ -947,13 +945,8 @@ div#JN{
             width: 100%;
             margin: 0%;
         }
-        div.other_text{
-            width: 27%;
-            left: 50%;
-            height: 540px;
-        }
         .image{
-            width: 26%;
+            width: 35%;
         }
         #content li{	/*li*/
             float: left;
@@ -966,9 +959,6 @@ div#JN{
 
 
         // 第二頁
-        // .interior_pics{
-        //     // width: auto;
-        // }
         .d_pic_flex{
             display: flex;
             justify-content: center;
@@ -1028,16 +1018,10 @@ div#JN{
             margin: 0 auto;
             font-size: 24px;
             .photo{
-                background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
                 width: 100%;
                 height: 350px;
-                // background-attachment: fixed;
                 background-position: center center;
-                // display: inline-block;
                 background-size: cover;
-                // background-repeat: no-repeat;
-                // display: flex;
-                // flex-direction: column;
                 justify-content: center;
             }
             .introduce_detail{
@@ -1100,8 +1084,6 @@ div#JN{
             .interior_one{
                 display: flex;
                 background: #fff;
-                // margin: 10px;
-                // padding: 2%;
                 position: relative;
                 text-align: center;
             }
@@ -1109,8 +1091,6 @@ div#JN{
             .interior_two{
                 display: flex;
                 background: #fff;
-                // margin: 10px;
-                // padding: 2%;
                 position: relative;
                 text-align: center;
                 flex-wrap: nowrap;
@@ -1160,7 +1140,6 @@ div#JN{
                 }
                     span{
                         display: inline-block;
-                        // display: none;
                         opacity: 0;
                         width: 100%;
                         height: 120px;
@@ -1209,9 +1188,9 @@ div#JN{
         width:0px;
         cursor: pointer;
         margin: auto;
-      }
+    }
 
-      span.triangle2{
+    span.triangle2{
         display: inline-block;        
         border-left: 25px solid transparent !important;
         border-right: 25px solid transparent !important;
@@ -1221,11 +1200,11 @@ div#JN{
         width:0px;
         cursor: pointer;
         margin: auto;
-      }
+    }
     
-      #picsLightBox{
-          display: none;
-      }
+    #picsLightBox{
+        display: none;
+    }
 };
 
 @include rwdmF(768){
@@ -1297,13 +1276,14 @@ div#JN{
         .exhibit_pic2{
             width: 400px;
         }
-        div.other_text{
-            width: 75%;
+
+        .image{
+            width: 34%;
         }
 
-        
-   
-      
+        #content li{
+            align-items: center;
+        }
     }
 }
 
@@ -1376,13 +1356,7 @@ div#JN{
         background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
         width: 100%;
         height: 550px;
-        // background-attachment: fixed;
         background-position: center center;
-        // display: inline-block;
-        // background-size: cover;
-        // background-repeat: no-repeat;
-        // display: flex;
-        // flex-direction: column;
         justify-content: center;
     }
 }
@@ -1391,44 +1365,3 @@ div#JN{
 };
 
 
-//jquery輪播圖
-// .image{
-// 	/* border: 1px solid #ccc; */
-// 	width: 100%;
-//     height: 450px;
-//     margin-top: 100px;
-// }
-
-// #sliderBoard{  /*div*/
-// 	border: 1px solid #ccc;
-// 	width: 60%;
-// 	height: 500px;
-// 	margin: 0px auto;
-// 	overflow: hidden;
-// }
-
-// #content{		/*ul*/
-// 	position: relative;
-// }
-
-// #content li{	/*li*/
-// 	float: left;
-// }
-
-// /* button */
-// #contentButton{
-// 	/* border: 1px solid red; */
-// 	text-align: center;
-// 	width: 100%;
-// 	height: 50px;
-// }
-
-// #contentButton li{
-// 	width: 20px;
-// 	height: 20px;
-// 	border-radius: 50%;
-// 	background: #ccc;
-
-// 	display: inline-block;
-// 	margin: 5px;
-// 

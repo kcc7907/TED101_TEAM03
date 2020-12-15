@@ -654,16 +654,13 @@ body {
   font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
 }
 
-div#JN {
-  /* button */
-}
-
 div#JN > div {
   border: 1px solid red;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   font-size: 24px;
+  /* button */
 }
 
 div#JN > div h1 {
@@ -723,7 +720,7 @@ div#JN > div .designer::after {
   left: 0;
 }
 
-div#JN .first {
+div#JN > div .first {
   border: 1px solid palevioletred;
   width: auto;
   background-color: rgba(189, 167, 156, 0.1);
@@ -731,7 +728,7 @@ div#JN .first {
   position: relative;
 }
 
-div#JN .first:after {
+div#JN > div .first:after {
   content: '';
   display: inline-block;
   border: 1px solid #bda79e;
@@ -743,12 +740,12 @@ div#JN .first:after {
   z-index: -1;
 }
 
-div#JN .designer_say {
+div#JN > div .designer_say {
   border: 1px solid navy;
   display: inline-flex;
 }
 
-div#JN .second {
+div#JN > div .second {
   border: 1px solid palevioletred;
   width: auto;
   background-color: rgba(189, 167, 156, 0.1);
@@ -758,7 +755,7 @@ div#JN .second {
   line-height: 2;
 }
 
-div#JN .second:after {
+div#JN > div .second:after {
   content: '';
   display: inline-block;
   border: 1px solid #bda79e;
@@ -770,28 +767,28 @@ div#JN .second:after {
   z-index: -1;
 }
 
-div#JN .series {
+div#JN > div .series {
   border: 1px solid gray;
 }
 
-div#JN .title {
+div#JN > div .title {
   border: 1px solid purple;
   display: inline-flex;
   text-align: center;
   width: 50%;
 }
 
-div#JN .stylelist {
+div#JN > div .stylelist {
   border: 1px solid blue;
   padding: 10px;
 }
 
-div#JN .style {
+div#JN > div .style {
   border: 1px solid blue;
   padding: 10px;
 }
 
-div#JN .pic {
+div#JN > div .pic {
   border: 1px solid cadetblue;
   text-align: center;
   width: 300px;
@@ -799,7 +796,7 @@ div#JN .pic {
   margin: auto;
 }
 
-div#JN #intro_sliderBoard {
+div#JN > div #intro_sliderBoard {
   /*div*/
   border: 3px solid firebrick;
   width: 300px;
@@ -807,14 +804,14 @@ div#JN #intro_sliderBoard {
   overflow: hidden;
 }
 
-div#JN #intro_sliderBoard ul {
+div#JN > div #intro_sliderBoard ul {
   /*ul*/
   width: 1200px;
   position: relative;
   animation: slider 10s infinite;
 }
 
-div#JN #intro_sliderBoard li {
+div#JN > div #intro_sliderBoard li {
   /*li*/
   width: 300px;
   height: 400px;
@@ -840,23 +837,23 @@ div#JN #intro_sliderBoard li {
   }
 }
 
-div#JN .tab_list_block {
+div#JN > div .tab_list_block {
   max-width: 1200px;
   width: 100%;
 }
 
-div#JN .tab_list_block .tab_list {
+div#JN > div .tab_list_block .tab_list {
   border: 1px solid rebeccapurple;
   width: 80%;
   font-size: 0;
 }
 
-div#JN .tab_list_block .tab_list li {
+div#JN > div .tab_list_block .tab_list li {
   display: inline-block;
   border: 1px solid black !important;
 }
 
-div#JN .tab_list_block .tab_list li a {
+div#JN > div .tab_list_block .tab_list li a {
   font-size: 30px;
   display: inline-block;
   padding: 5px 60px;
@@ -865,26 +862,26 @@ div#JN .tab_list_block .tab_list li a {
   padding: 15px 60px;
 }
 
-div#JN .tab_list_block .tab_list li a:hover {
+div#JN > div .tab_list_block .tab_list li a:hover {
   cursor: pointer;
   background-color: #865454;
   color: white;
 }
 
-div#JN .tab_list_block .tab_list li a.-on {
+div#JN > div .tab_list_block .tab_list li a.-on {
   color: white;
   background-color: #865454;
 }
 
-div#JN div.tab {
+div#JN > div div.tab {
   display: none;
 }
 
-div#JN div.tab.-on {
+div#JN > div div.tab.-on {
   display: block;
 }
 
-div#JN .jpgbox {
+div#JN > div .jpgbox {
   width: 33.1%;
   height: 240px;
   border: 1px solid red;
@@ -892,11 +889,11 @@ div#JN .jpgbox {
   overflow: hidden;
 }
 
-div#JN .jpgbox:hover span {
+div#JN > div .jpgbox:hover span {
   opacity: 100%;
 }
 
-div#JN .jpgbox span {
+div#JN > div .jpgbox span {
   display: inline-block;
   opacity: 0;
   width: 100%;
@@ -912,22 +909,22 @@ div#JN .jpgbox span {
   transition: all .5s;
 }
 
-div#JN .jpgbox span:last-child {
+div#JN > div .jpgbox span:last-child {
   top: 120px;
 }
 
-div#JN .inter_pic {
+div#JN > div .inter_pic {
   width: 100%;
   height: 100%;
 }
 
-div#JN .img_inter {
+div#JN > div .img_inter {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-div#JN img.homepic, div#JN img.commercial_pic, div#JN img.office_pic {
+div#JN > div img.homepic, div#JN > div img.commercial_pic, div#JN > div img.office_pic {
   border: 1px solid green;
   max-height: 100%;
   position: absolute;
@@ -937,7 +934,7 @@ div#JN img.homepic, div#JN img.commercial_pic, div#JN img.office_pic {
   height: fit-content;
 }
 
-div#JN .stylebox_right {
+div#JN > div .stylebox_right {
   border: 1px solid pink;
   max-width: 1200px;
   width: 100%;
@@ -947,39 +944,39 @@ div#JN .stylebox_right {
   justify-content: flex-start;
 }
 
-div#JN .style_one_one, div#JN .style_one_two, div#JN .style_one_three, div#JN .style_two_one,
-div#JN .style_two_two, div#JN .style_three_one {
+div#JN > div .style_one_one, div#JN > div .style_one_two, div#JN > div .style_one_three, div#JN > div .style_two_one,
+div#JN > div .style_two_two, div#JN > div .style_three_one {
   display: inline-flex;
   max-width: 1200px;
   width: 100%;
   justify-content: space-around;
 }
 
-div#JN .style_one_one div:nth-child(2) img {
+div#JN > div .style_one_one div:nth-child(2) img {
   max-width: 120%;
   max-height: 120%;
   top: -10px;
   left: -10px;
 }
 
-div#JN .style_one_three div:nth-child(2) img, div#JN .style_two_one div:nth-child(2) img {
+div#JN > div .style_one_three div:nth-child(2) img, div#JN > div .style_two_one div:nth-child(2) img {
   max-width: 100%;
   max-height: 150%;
 }
 
-div#JN .style_two_two div:nth-child(3) img {
+div#JN > div .style_two_two div:nth-child(3) img {
   max-width: 100%;
   max-height: 150%;
 }
 
-div#JN .image {
+div#JN > div .image {
   border: 1px solid #ccc;
   width: 35%;
   position: absolute;
   margin-bottom: 0px;
 }
 
-div#JN #sliderBoard {
+div#JN > div #sliderBoard {
   /*div*/
   border: 1px solid #ccc;
   width: 90%;
@@ -989,17 +986,17 @@ div#JN #sliderBoard {
   position: relative;
 }
 
-div#JN #content {
+div#JN > div #content {
   /*ul*/
   position: relative;
 }
 
-div#JN #content li {
+div#JN > div #content li {
   /*li*/
   float: left;
 }
 
-div#JN #contentButton {
+div#JN > div #contentButton {
   /* border: 1px solid red; */
   text-align: center;
   width: 100%;
@@ -1008,7 +1005,7 @@ div#JN #contentButton {
   bottom: 0;
 }
 
-div#JN #contentButton li {
+div#JN > div #contentButton li {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -1017,18 +1014,18 @@ div#JN #contentButton li {
   margin: 30px 5px;
 }
 
-div#JN #contentButton li.clickMe {
+div#JN > div #contentButton li.clickMe {
   background: #888;
 }
 
-div#JN div.award_list {
+div#JN > div div.award_list {
   border: 3px solid brown;
   width: 600px;
   height: 450px;
   background-color: #fff;
 }
 
-div#JN div.other_text {
+div#JN > div div.other_text {
   border: 5px solid rebeccapurple;
   position: relative;
   right: 0px;
@@ -1043,16 +1040,16 @@ div#JN div.other_text {
   box-sizing: border-box;
 }
 
-div#JN .intro_sliderBoard {
+div#JN > div .intro_sliderBoard {
   border: 3px solid darkblue;
 }
 
-div#JN .intro_image {
+div#JN > div .intro_image {
   width: 100%;
   margin-top: 30%;
 }
 
-div#JN .other_text_award {
+div#JN > div .other_text_award {
   font-size: 36px;
 }
 
@@ -1065,7 +1062,7 @@ div#JN .other_text_award {
   }
 }
 
-.select_click {
+div#JN .select_click {
   border: 1px solid rebeccapurple;
   display: inline-flex;
   max-width: 1200px;
@@ -1076,22 +1073,22 @@ div#JN .other_text_award {
   background-color: #BDA79E;
 }
 
-.icon_border {
+div#JN .icon_border {
   width: 30px;
   height: 30px;
 }
 
-.icon_left {
+div#JN .icon_left {
   width: 30px;
   height: 30px;
 }
 
-.icon_right {
+div#JN .icon_right {
   width: 30px;
   height: 30px;
 }
 
-.click {
+div#JN .click {
   border: 1px solid green;
   margin-top: 2.5%;
   padding: 5px 20px;
@@ -1100,7 +1097,7 @@ div#JN .other_text_award {
   justify-content: center;
 }
 
-.show_pic {
+div#JN .show_pic {
   border: 1px solid darkblue;
   display: flex;
   align-items: center;
@@ -1109,19 +1106,19 @@ div#JN .other_text_award {
   line-height: 60px;
 }
 
-.exhibit_pic {
+div#JN .exhibit_pic {
   display: flex;
   justify-content: center;
   margin-top: 15%;
 }
 
-.designer_intro {
+div#JN .designer_intro {
   border: 1px solid indianred;
   text-align: center;
   margin-top: 35%;
 }
 
-.block_color {
+div#JN .block_color {
   border: 1px solid palevioletred;
   width: 100%;
   background-color: rgba(189, 167, 156, 0.1);
@@ -1130,7 +1127,7 @@ div#JN .other_text_award {
   line-height: 2;
 }
 
-.block_color:after {
+div#JN .block_color:after {
   content: "";
   position: absolute;
   background: #865454;
@@ -1140,12 +1137,12 @@ div#JN .other_text_award {
   left: 35%;
 }
 
-.d_pic {
+div#JN .d_pic {
   border: 1px solid darkblue;
   margin-top: 6%;
 }
 
-.pics {
+div#JN .pics {
   border: 1px solid brown;
   display: flex;
   width: 300px;
@@ -1159,7 +1156,7 @@ div#JN .other_text_award {
   position: relative;
 }
 
-.pics:after {
+div#JN .pics:after {
   content: '';
   display: inline-block;
   border: 1px solid #bda79e;
@@ -1171,13 +1168,13 @@ div#JN .other_text_award {
   z-index: -1;
 }
 
-.d_pic_flex {
+div#JN .d_pic_flex {
   border: 6px solid yellow;
   width: 100%;
   margin-top: 5%;
 }
 
-.interior_one, .interior_two, .interior_three {
+div#JN .interior_one, div#JN .interior_two, div#JN .interior_three {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1185,32 +1182,32 @@ div#JN .other_text_award {
   width: 100%;
 }
 
-.interior_two {
+div#JN .interior_two {
   display: none;
 }
 
-.interior_pics {
+div#JN .interior_pics {
   width: 100%;
   height: 100%;
 }
 
-.d_pic_word {
+div#JN .d_pic_word {
   width: 100%;
 }
 
-.inter_one {
+div#JN .inter_one {
   width: 250px;
   padding: 2%;
 }
 
-.more_detail {
+div#JN .more_detail {
   border: 1px solid darkblue;
   margin-top: 15%;
   position: relative;
   margin-bottom: 20%;
 }
 
-.more_detail .contact {
+div#JN .more_detail .contact {
   border: 1px solid red;
   position: absolute;
   display: inline-block;
@@ -1223,23 +1220,23 @@ div#JN .other_text_award {
   font-size: 30px;
 }
 
-.more_detail .contact .titleFont3 {
+div#JN .more_detail .contact .titleFont3 {
   border: 1px solid greenyellow;
 }
 
-.more_detail .contact .more_details {
+div#JN .more_detail .contact .more_details {
   border: 1px solid #865454 !important;
   display: inline-block;
   width: 20%;
 }
 
-.more_detail .contact .more_details:hover {
+div#JN .more_detail .contact .more_details:hover {
   cursor: pointer;
   background-color: #865454;
   color: white;
 }
 
-.deatil_contact {
+div#JN .deatil_contact {
   border: 1px solid rebeccapurple;
   max-width: 100%;
   margin-top: 5%;
@@ -1250,12 +1247,12 @@ div#JN .other_text_award {
   opacity: 0.5;
 }
 
-.inter_one_pack {
+div#JN .inter_one_pack {
   border: 2px solid steelblue;
   display: flex;
 }
 
-#picsLightBox {
+div#JN #picsLightBox {
   position: fixed;
   width: 100%;
   max-width: 100vw;
@@ -1268,7 +1265,7 @@ div#JN .other_text_award {
   transition: opacity 1s;
 }
 
-#picsLightBox > div {
+div#JN #picsLightBox > div {
   width: 70%;
   border: 1px solid #9b9b9b;
   background-color: #fffaf4;
@@ -1278,7 +1275,7 @@ div#JN .other_text_award {
   transform: translate(-50%, -50%);
 }
 
-#picsLightBox > div > div {
+div#JN #picsLightBox > div > div {
   width: 90%;
   height: 90%;
   border: 1px solid #644646 !important;
@@ -1288,12 +1285,12 @@ div#JN .other_text_award {
   overflow: hidden;
 }
 
-#picsLightBox > div > div img {
+div#JN #picsLightBox > div > div img {
   width: 100%;
   max-width: 100%;
 }
 
-#picsLightBox > div > div .pics_lightbox {
+div#JN #picsLightBox > div > div .pics_lightbox {
   width: 36px;
   height: 36px;
   cursor: pointer;
@@ -1302,15 +1299,15 @@ div#JN .other_text_award {
   top: 5px;
 }
 
-.example_exhibit {
+div#JN .example_exhibit {
   width: 900px;
 }
 
-.exhibit_pic2 {
+div#JN .exhibit_pic2 {
   width: 600px;
 }
 
-.contact_detail {
+div#JN .contact_detail {
   width: 1000px;
   height: 800px;
 }
@@ -1348,13 +1345,8 @@ div#JN .other_text_award {
     width: 100%;
     margin: 0%;
   }
-  div#JN > div div.other_text {
-    width: 27%;
-    left: 50%;
-    height: 540px;
-  }
   div#JN > div .image {
-    width: 26%;
+    width: 35%;
   }
   div#JN > div #content li {
     /*li*/
@@ -1666,8 +1658,11 @@ div#JN .other_text_award {
   div#JN > div .exhibit_pic2 {
     width: 400px;
   }
-  div#JN > div div.other_text {
-    width: 75%;
+  div#JN > div .image {
+    width: 34%;
+  }
+  div#JN > div #content li {
+    align-items: center;
   }
 }
 
