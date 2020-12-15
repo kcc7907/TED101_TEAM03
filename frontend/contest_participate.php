@@ -13,6 +13,8 @@
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
+
 
 
 </head>
@@ -200,7 +202,7 @@
             </div>
         </div>
         <!-- confirm燈箱 -->
-        <div class="confirmDiv">
+        <div class="confirmDivC">
             <div>
                 <p class="contentFont lineHeight"></p>
                 <input type="button" class="detailFont" id="sureGoContest" value="確認">
@@ -247,10 +249,9 @@
             <p>Copy right 2020,All Right Reserved | By 救世宅</p>
         </section>
     </footer>
-    <script src="../js/15/contest_participate.js"></script>
-    <script defer src="../lib/login/logSign.js"></script>
     <script src="../lib/header/header.js"></script>
     <script src="../js/15/contest_nav_footer.js"></script>
+    <script defer src="../js/15/contest_participate.js"></script>
 
 </body>
 

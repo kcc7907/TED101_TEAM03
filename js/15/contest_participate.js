@@ -4,93 +4,117 @@ $(document).ready(function () {
     $('#JHC #formStep3').hide();
     $('#JHC form#preview').hide();
     $('#JHC .lastP').hide();
-
-    // ======== 同意鈕 ========
-    $('#JHC #submitStep1').change(function(){
-        if($(this).prop("checked")){
-            $(this).prop( "checked", true).val('1');
-        }
-    });
-
-
-    // ======== 下一步 ========
-    $('#JHC button.nextBtn').click(function (e){
-        checkRequired(e.target);
-    });
-
-    // ======== 上一步 ========
-    $('#JHC .backBtn').click(function(){
-        $(this).closest('form').hide();
-        $(this).closest('form').prev('form').show();
-    });
-
-    // ======== 最後一步確認 =========
-    
-    $('button.viewThis').click(function(e){
-        // checkRequired(e.target);
-        $('form#preview').show();
-        $('#preview .clickVote').css('opacity', '1');
-        $('#preview').click(()=>{
-            $('#preview').hide();
-            $('#preview .clickVote').css('opacity', '0')
-        });
-    });
-    
-
-    $('.sureThis').click((e)=>{
-        let needWrite = $(e.target).closest('form.formStep').find('[required="required"]');
-        let need = true;
-
-        $(needWrite).each(function (index, value) {
-            if ($(value).val() == '' || $(value).val() == 0) {
-                need = false;
-            }else{
-                need = true;
+    if(checkCookie('loging')){
+        // ======== 同意鈕 ========
+        $('#JHC #submitStep1').change(function(){
+            if($(this).prop("checked")){
+                $(this).prop( "checked", true).val('1');
             }
         });
+        // ======== 下一步 ========
+        $('#JHC button.nextBtn').click(function (e){
+            checkRequired(e.target);
+        });
 
-        if(need == true){
-            // 點擊「送出時」，出現confirm視窗
-            // 1.先隱藏
-            $('#JHC div.confirmDiv').hide();
-            $('#JHC div.confirmDiv').find('p.contentFont').text(`確認是否送出？`);
+        // ======== 上一步 ========
+        $('#JHC .backBtn').click(function(){
+            $(this).closest('form').hide();
+            $(this).closest('form').prev('form').show();
+        });
 
-            // 2.點擊出現confirm視窗
-            // $('.sureThis').click(function(){
-                $('div.confirmDiv').show().css({
-                    'zIndex': '99',
-                    'opacity': '1',
+        // ======== 最後一步確認 =========
+
+        $('button.viewThis').click(function(e){
+            // checkRequired(e.target);
+            $('form#preview').show();
+            $('#preview .clickVote').css('opacity', '1');
+            $('#preview').click(()=>{
+                $('#preview').hide();
+                $('#preview .clickVote').css('opacity', '0')
+            });
+        });
+
+
+        $('.sureThis').click((e)=>{
+            let needWrite = $(e.target).closest('form.formStep').find('[required="required"]');
+            let need = true;
+            $(needWrite).each(function (index, value) {
+                if ($(value).val() == '' || $(value).val() == 0) {
+                    need = false;
+                }else{
+                    need = true;
+                }
+            });
+
+            // if(need == true){
+                // 點擊「送出時」，出現confirm視窗
+                // 1.先隱藏
+                $('#JHC div.confirmDivC').hide();
+                $('#JHC div.confirmDivC').find('p.contentFont').text(`確認是否送出？`);
+
+                // 2.點擊出現confirm視窗
+                // $('.sureThis').click(function(){
+                    $('div.confirmDivC').show().css({
+                        'zIndex': '99',
+                        'opacity': '1',
+                    });
+                // });
+
+                // 3.點擊確認鈕
+                $('#JHC #sureGoContest').click(function(){
+                    // let 
+                    // $.ajax({
+                    //     type: "POST",
+                    //     url: "contestR.php",
+                    //     data: {
+                            
+                    //     },
+                    //     success: function (response) {
+                    //         $('#JHC .step form').hide();
+                    //         $('#JHC .lastP').show();
+                    //         $('div.confirmDivC').css({
+                    //             'zIndex': '-99',
+                    //             'opacity': '0',
+                    //         }).hide();
+                    //     }
+                    // });
+
+
+                    let pId = $('input#pId').prop('files')[0];
+                    let form_data = new FormData();
+                    form_data.append('file', pId);
+
+                    $.ajax({
+                        url: "contestR.php",
+                        type: "POST",
+                        data:  form_data,
+                        contentType: false,
+                        cache: false,
+                        processData:false,
+                        success: function(res){
+                            console.log(res);;
+                        },
+                        error: function(){
+                            console.log(no);
+                        }               
+                    });
                 });
-            // });
 
-            // 3.點擊確認鈕
-            $('#JHC #sureGoContest').click(function(){
-                // TODO:寫AJAX
-                $('#JHC .step form').hide();
-                $('#JHC .lastP').show();
-                $('div.confirmDiv').css({
-                    'zIndex': '-99',
-                    'opacity': '0',
-                }).hide();
-            });
-
-            // 4.點擊取消鈕
-            $('#notsureGoContest').click(function(){
-                $('div.confirmDiv').css({
-                    'zIndex': '-99',
-                    'opacity': '0',
-                }).hide();
-            });
-        }else{
-            alert('所有欄位為必填，請輸入完整資訊。');
-        }
-    });
-        
-
-
-
-    
-
+                // 4.點擊取消鈕
+                $('#notsureGoContest').click(function(){
+                    $('div.confirmDivC').css({
+                        'zIndex': '-99',
+                        'opacity': '0',
+                    }).hide();
+                });
+            // }else{
+                // alert('所有欄位為必填，請輸入完整資訊。');
+            // }
+        });
+    }else{
+        logBox();
+        memBox();
+    }
 });
 
 // ======== vue =========
@@ -160,12 +184,12 @@ function checkRequired(theNextBtn) {
     // });
 
 
-    if(need == true){
+    // if(need == true){
         $(theNextBtn).closest('form').hide();
         $(theNextBtn).closest('form').next('form').show();
-    }else{
-        alert('所有欄位為必填，請輸入完整資訊。');
-    }
+    // }else{
+    //     alert('所有欄位為必填，請輸入完整資訊。');
+    // }
 }
 
 
