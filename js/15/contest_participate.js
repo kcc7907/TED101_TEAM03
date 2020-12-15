@@ -1,11 +1,12 @@
 $(document).ready(function () {
     // ======== 隱藏其他form，僅顯現第一個form ========
-    $('#formStep2').hide();
-    $('#formStep3').hide();
-    $('.lastP').hide();
+    $('#JHC #formStep2').hide();
+    $('#JHC #formStep3').hide();
+    $('#JHC form#preview').hide();
+    $('#JHC .lastP').hide();
 
     // ======== 同意鈕 ========
-    $('#submitStep1').change(function(){
+    $('#JHC #submitStep1').change(function(){
         if($(this).prop("checked")){
             $(this).prop( "checked", true).val('1');
         }
@@ -13,29 +14,82 @@ $(document).ready(function () {
 
 
     // ======== 下一步 ========
-    $('.nextBtn').click(function (e){
+    $('#JHC button.nextBtn').click(function (e){
         checkRequired(e.target);
     });
 
     // ======== 上一步 ========
-    $('.backBtn').click(function(){
+    $('#JHC .backBtn').click(function(){
         $(this).closest('form').hide();
         $(this).closest('form').prev('form').show();
     });
 
     // ======== 最後一步確認 =========
-    $('.sureThis').closest('div').next('div').hide();
-    $('.sureThis').click(function(e){
+    
+    $('button.viewThis').click(function(e){
         // checkRequired(e.target);
-        alert('hi');
+        $('form#preview').show();
+        $('#preview .clickVote').css('opacity', '1');
+        $('#preview').click(()=>{
+            $('#preview').hide();
+            $('#preview .clickVote').css('opacity', '0')
+        });
     });
-    $('#sureGoContest').click(function(){
-        $('form').hide();
-        $(this).closest('form').next('form').show();
+    
+
+    $('.sureThis').click((e)=>{
+        let needWrite = $(e.target).closest('form.formStep').find('[required="required"]');
+        let need = true;
+
+        $(needWrite).each(function (index, value) {
+            if ($(value).val() == '' || $(value).val() == 0) {
+                need = false;
+            }else{
+                need = true;
+            }
+        });
+
+        if(need == true){
+            // 點擊「送出時」，出現confirm視窗
+            // 1.先隱藏
+            $('#JHC div.confirmDiv').hide();
+            $('#JHC div.confirmDiv').find('p.contentFont').text(`確認是否送出？`);
+
+            // 2.點擊出現confirm視窗
+            // $('.sureThis').click(function(){
+                $('div.confirmDiv').show().css({
+                    'zIndex': '99',
+                    'opacity': '1',
+                });
+            // });
+
+            // 3.點擊確認鈕
+            $('#JHC #sureGoContest').click(function(){
+                // TODO:寫AJAX
+                $('#JHC .step form').hide();
+                $('#JHC .lastP').show();
+                $('div.confirmDiv').css({
+                    'zIndex': '-99',
+                    'opacity': '0',
+                }).hide();
+            });
+
+            // 4.點擊取消鈕
+            $('#notsureGoContest').click(function(){
+                $('div.confirmDiv').css({
+                    'zIndex': '-99',
+                    'opacity': '0',
+                }).hide();
+            });
+        }else{
+            alert('所有欄位為必填，請輸入完整資訊。');
+        }
     });
-    $('#notsureGoContest').click(function(){
-        $(this).closest('div').hide();
-    });
+        
+
+
+
+    
 
 });
 
@@ -44,12 +98,10 @@ let vueJH = new Vue({
     el: '#JHC',
     data: { 
         pImgName: ['請選擇上傳檔案','請選擇上傳檔案','請選擇上傳檔案'],
-        pImgUrl: {
-            url1: '',
-            url2: '',
-            url3: '',
-        },
+        pImgUrl: [],
         workTypes:['沙發', '桌子', '床', '椅子', '書櫃', '訂製櫃'],
+        fName: '',
+        fConcept: '',
     },
     methods: {
         file1(){
@@ -59,7 +111,7 @@ let vueJH = new Vue({
             let readFile1 = new FileReader();
             readFile1.readAsDataURL(file1);
             readFile1.addEventListener('load', function (e) {
-                self1.pImgUrl.url1 = e.target.result;
+                self1.pImgUrl.push(e.target.result);
             });
         },
         file2(){
@@ -69,7 +121,7 @@ let vueJH = new Vue({
             let readFile2 = new FileReader();
             readFile2.readAsDataURL(file2);
             readFile2.addEventListener('load', function (e) {
-                self2.pImgUrl.url2 = e.target.result;
+                self2.pImgUrl.push(e.target.result);
             });
         },
         file3(){
@@ -79,22 +131,12 @@ let vueJH = new Vue({
             let readFile3 = new FileReader();
             readFile3.readAsDataURL(file3);
             readFile3.addEventListener('load', function (e) {
-                self3.pImgUrl.url3 = e.target.result;
+                self3.pImgUrl.push(e.target.result);
             });
         },
     },
     computed: {
         
-    },
-    watch: {
-        pImgUrl: {
-            handler(newNum) {
-                this.pImgUrl.url1 = newNum.url1;
-                this.pImgUrl.url2 = newNum.url2;
-                this.pImgUrl.url3 = newNum.url3;
-            },
-            deep: true,
-        },
     },
 });
 
@@ -116,6 +158,8 @@ function checkRequired(theNextBtn) {
         need = true;
     }
     // });
+
+
     if(need == true){
         $(theNextBtn).closest('form').hide();
         $(theNextBtn).closest('form').next('form').show();
@@ -123,3 +167,6 @@ function checkRequired(theNextBtn) {
         alert('所有欄位為必填，請輸入完整資訊。');
     }
 }
+
+
+// document.addEventListener('click',e=>console.log(e.target));

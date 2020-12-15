@@ -7,9 +7,12 @@
     <title>救世宅 | 首頁</title>
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
+    <link rel="stylesheet" href="../lib/reset.css">
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
+    <script src="../js/15/home2D.js"></script>
+    <script src="../js/15/logSign.js"></script>
 </head>
 
 <body>
@@ -220,7 +223,7 @@
             <div class="newsDiv">
                 <div class="newsSection">
                     <div>
-                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         <time class="titleFont2">01 / 29 / 2021</time>
                         <div>
                             <img src="../img/news/news01.jpg" alt="news">
@@ -273,7 +276,7 @@
                 </div>
                 <div class="newsSection">
                     <div>
-                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         <time class="titleFont2">01 / 29 / 2021</time>
                         <div>
                             <img src="../img/news/news01.jpg" alt="news">
@@ -380,7 +383,7 @@
     <!-- 登入燈箱 -->
     <div id="login">
         <div class="login">
-            <h1>歡迎回來</h1>
+            <h1 class="titleFont2">歡迎回來</h1>
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
@@ -473,8 +476,7 @@
     </div>
 
 
-    <script src="../js/15/home2D.js"></script>
-    <script src="../js/15/logSign.js"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,5 @@
 <?php
-    include("../php/utilClassJH.php");
-    // $Util = new UtilClass();
+    include("../php/connect.php");
     $sql="SELECT MEM_ID FROM MEMBER WHERE BINARY MEM_ID = ?";
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $_POST["memAccount"]);
@@ -15,8 +14,6 @@
         //建立SQL
         $sql = "INSERT INTO MEMBER(MEM_ID, MEM_PWD, MEM_NAME, MEM_PHONE, MEM_EMAIL, MEM_CITY, MEM_ADDRESS, MEM_DATE) VALUES (?,?,?,?,?,?,?,NOW())";
 
-        //執行
-        // $statement = $Util->getPDO()->prepare($sql);
         //執行
         $statement = $pdo->prepare($sql);
 
