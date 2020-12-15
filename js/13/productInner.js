@@ -229,32 +229,34 @@ down[1].addEventListener('click', todoless);
 
 let btns = document.querySelectorAll('button.buy');
 // console.log(btns);
-let productId = btns[0].getAttribute('data-id');
+let box = document.querySelectorAll('div.shoppingBtn')
+
+let productId = box[0].getAttribute('data-id');
 // console.log(productId);
 
 function setLocal() {
     let list = JSON.parse(localStorage.getItem("lists"));
-    let lists = [];
+    let apple = [];
     if (list) {
         list.forEach((item, index) => {
             if (item.prd_id === productId) {
                 item.num = parseInt(item.num) + parseInt(quantity[0].innerText);
             }
         });
-        lists = list;
+        apple = list;
     } else {
         let object = {
             prd_id: productId,
             num: parseInt(quantity[0].innerText),
 
         };
-        lists.push(object);
+        apple.push(object);
     }
-    localStorage.setItem("lists", JSON.stringify(lists));
+    localStorage.setItem("lists", JSON.stringify(apple));
 }
-btns[0].addEventListener('click', setLocal);
-btns[1].addEventListener('click', setLocal);
+box[0].addEventListener('click', setLocal);
+box[1].addEventListener('click', setLocal);
 
 /////////////////////////  收藏 綁定////////////////////////////////
 let loveBtn = document.querySelectorAll('button.love');
-console.log(loveBtn);
+// console.log(loveBtn);
