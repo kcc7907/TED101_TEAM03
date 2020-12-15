@@ -62,17 +62,46 @@ $(document).ready(function () {
 
                 // 3.點擊確認鈕 -> 送出資料
                 $('#JHC #sureGoContest').click(function(){
-                    let pId = $('input#pId').prop('files')[0];
-                    let draft = $('input#draft').prop('files')[0];
-                    let draw = $('input#draw').prop('files')[0];
+                    let fType = $('#JHC #fType').val(); // 作品種類
+                    let fName = $('#JHC #fName').val().trim(); // 作品名稱
+                    let fConcept = $('#JHC #fConcept').val().trim(); // 設計理念
+                    // // let workDetail = {
+                    // //     fType,
+                    // //     fName,
+                    // //     fConcept,
+                    // // };
+                    $.ajax({
+                        url: "contestDetailR.php",
+                        // url: "contestImgR.php",
+                        type: "POST",
+                        data: {
+                            fType,
+                            fName,
+                            fConcept,
+                        },
+                        success: function(res){
+                            console.log('hi');
+                        },
+                    });
+
+                    let pId = $('#JHC input#pId').prop('files')[0]; // 上傳身分證
+                    let draft = $('#JHC input#draft').prop('files')[0]; // 上傳草稿
+                    let draw = $('#JHC input#draw').prop('files')[0]; // 上傳完稿
                     let form_data = new FormData();
                     form_data.append('file1', pId);
                     form_data.append('file2', draft);
                     form_data.append('file3', draw);
+
                     $.ajax({
-                        url: "contestR.php",
+                        url: "contestImgR.php",
                         type: "POST",
                         data: form_data,
+                        // data: {
+                        //     form_data,
+                        //     fType,
+                        //     fName,
+                        //     fConcept,
+                        // },
                         contentType: false,
                         cache: false,
                         processData:false,

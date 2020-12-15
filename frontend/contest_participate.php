@@ -108,7 +108,7 @@
                         <label class="contentFont" for="fType">作品種類：</label>
                         <select class="detailFont" id="fType" name="fType" required="required" data-id="fType">
                             <option disabled selected>請選擇作品種類</option>
-                            <option v-for="type in workTypes" class="detailFont" value="type">{{type}}</option>
+                            <option v-for="type in workTypes" class="detailFont" :value="type">{{type}}</option>
                         </select>
                         <br>
                         <label class="contentFont" for="fName">作品名稱：</label>
