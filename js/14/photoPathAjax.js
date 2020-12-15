@@ -22,22 +22,31 @@ $(document).ready(function () {
     });
 })
 
+$.ajax({
+
+    url: '../php/14/photoPath.php',
+    dataType: 'JSON',
+    success: function (res) {
+
+        $(".st")
+    }
+})
+
 
 
 
 
 // let ?? =`
-//                         <div class="jpgbox">
-//                             <div class="inter_pic">
-//                                 <a href="./case4.html" class="img_inter">
-//                                     <img src="../img/interiordesign/office/example/ren/12Modern-iDiD-ntc 2_fe819.jpg"
-//                                         class="office_pic">
-//                                     <span class="contentFont">士林</span>
-//                                     <span class="contentFont">紀公館</span></a>
-//                             </div>
-//                         </div>
+//           <div class="jpgbox">
+//               <div class="inter_pic">
+//                   <a href="./case4.html" class="img_inter">
+//                       <img src="../img/interiordesign/office/example/ren/12Modern-iDiD-ntc 2_fe819.jpg"
+//                           class="office_pic">
+//                       <span class="contentFont">士林</span>
+//                       <span class="contentFont">紀公館</span></a>
+//               </div>
+//           </div>
 
-// `
 
 
 

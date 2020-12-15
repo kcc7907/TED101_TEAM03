@@ -1,5 +1,5 @@
 <?php
-    include("conn14.php");//連線
+    include("../connect.php");//連線
     $sql = "SELECT *  from `CASE`";//sql語法
     // $sql = "SELECT *  from `CASE`";//sql語法
     $statement = $pdo->query($sql);//執行sql語法

@@ -1,5 +1,5 @@
 <?php
-    include("../php/14/conn14.php");
+    include("../php/14/connect.php");
     $sql = "SELECT * from `CASE`";
     $statement = $pdo->query($sql);
     $data = $statement->fetchAll();

@@ -15,6 +15,12 @@
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script> -->
     <script src="../js/14/photoPathAjax.js"></script>
+
+    <script src="../lib/js/vue.js"></script>
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
+
 </head>
 
 <body>
@@ -150,7 +156,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/dan chang/C1569228045371.jpg"
+                                <img src=""
                                     class="homepic">
                                 <span class="contentFont">南港</span>
                                 <span class="contentFont">王公館</span>
@@ -163,7 +169,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/fu/C1569288783975.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">松山</span>
                                 <span class="contentFont">林公館</span>
                             </a>
@@ -173,7 +179,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/lin/C1582619597131.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">文山</span>
                                 <span class="contentFont">何公館</span>
                             </a>
@@ -183,7 +189,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/yo/C1569288522107.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">內湖</span>
                                 <span class="contentFont">黃公館</span>
                             </a>
@@ -195,7 +201,7 @@
                     <div class="jpgbox">
                         <div class="inter_pic">
                             <a href="./case2.html" class="img_inter">
-                                <img src="../img/interiordesign/home/example/kuo/C1594346104631.jpg" class="homepic">
+                                <img src="" class="homepic">
                                 <span class="contentFont">中正</span>
                                 <span class="contentFont">紀公館</span>
                             </a>
@@ -354,6 +360,9 @@
     <!-- <script>
         document.addEventListener('click', e => console.log(e.target))
     </script> -->
+    <?php include("../lib/login/loginInclude.html"); ?>
+
+    
 </body>
 
 </html>
