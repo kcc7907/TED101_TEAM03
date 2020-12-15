@@ -1,5 +1,18 @@
 $(document).ready(function(){
     
+    if(sessionStorage.getItem('reset')){
+
+        sessionStorage.removeItem('reset');
+        $('#jk_point').css('display','flex');
+
+        setTimeout(function(){
+            $('#jk_point').fadeOut(2000,function(){
+                $('#jk_point').hide();
+            });
+        }, 1000);        
+    }
+
+
     memSetStyle();
 
     $(window).resize(function(){

@@ -56,6 +56,11 @@
     
     <div class="jk_meminfo">        
         
+        <!-- 修改提示 -->
+        <div id="jk_point">
+            <p>已成功修改會員資料</p>
+        </div>
+
         <div class="container">
             <div class="sideMenu">
                 <ul>

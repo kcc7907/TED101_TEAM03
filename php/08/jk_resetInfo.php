@@ -84,8 +84,12 @@
     // ";
 
     echo "
-    <script>sessionStorage.setItem('reset', 'true');
-    location.href = '../../frontend/meminfo.php';</script>
+    <script>    
+
+    sessionStorage.setItem('reset', 'true');
+    location.href = '../../frontend/meminfo.php';
+
+    </script>
     ";
     
     
