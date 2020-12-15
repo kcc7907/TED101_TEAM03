@@ -1269,7 +1269,35 @@ div.sam_pi{
             }
         }
     }
-
+    @media (max-width:800px){
+        div.deskTopBox{
+            div.rightWrap{
+                div.productWord{
+                    h1.productTitle{
+                        margin-top:0px;
+                    }
+                    span.smallWord{
+                        margin-top:10px;
+                    }
+                    p.word{
+                        margin-top:5px;
+                    }
+                    p.champion{
+                        margin:10px 0px;
+                    }
+                }
+                div.moneyBox{
+                    margin-top:15px;
+                }
+                div.productMessage{
+                    p.ppp{
+                        margin-top:15px;
+                    }
+                }
+                
+            }
+        }
+    }
 
 }
     
