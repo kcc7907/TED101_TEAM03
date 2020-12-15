@@ -14,9 +14,6 @@
     <script src="../lib/js/vue.js"></script>
     <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
     <script defer src="../lib/login/logSign.js"></script>
-
-
-
 </head>
 
 <body>

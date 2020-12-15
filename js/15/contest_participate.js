@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('#JHC #formStep3').hide();
     $('#JHC form#preview').hide();
     $('#JHC .lastP').hide();
-    if(checkCookie('loging')){
+    // if(checkCookie('loging')){
         // ======== 同意鈕 ========
         $('#JHC #submitStep1').change(function(){
             if($(this).prop("checked")){
@@ -60,43 +60,31 @@ $(document).ready(function () {
                     });
                 // });
 
-                // 3.點擊確認鈕
+                // 3.點擊確認鈕 -> 送出資料
                 $('#JHC #sureGoContest').click(function(){
-                    // let 
-                    // $.ajax({
-                    //     type: "POST",
-                    //     url: "contestR.php",
-                    //     data: {
-                            
-                    //     },
-                    //     success: function (response) {
-                    //         $('#JHC .step form').hide();
-                    //         $('#JHC .lastP').show();
-                    //         $('div.confirmDivC').css({
-                    //             'zIndex': '-99',
-                    //             'opacity': '0',
-                    //         }).hide();
-                    //     }
-                    // });
-
-
                     let pId = $('input#pId').prop('files')[0];
+                    let draft = $('input#draft').prop('files')[0];
+                    let draw = $('input#draw').prop('files')[0];
                     let form_data = new FormData();
-                    form_data.append('file', pId);
-
+                    form_data.append('file1', pId);
+                    form_data.append('file2', draft);
+                    form_data.append('file3', draw);
                     $.ajax({
                         url: "contestR.php",
                         type: "POST",
-                        data:  form_data,
+                        data: form_data,
                         contentType: false,
                         cache: false,
                         processData:false,
                         success: function(res){
-                            console.log(res);;
+                            console.log(res);
+                            $('#JHC .step form').hide();
+                            $('#JHC .lastP').show();
+                            $('div.confirmDivC').css({
+                                'zIndex': '-99',
+                                'opacity': '0',
+                            }).hide();
                         },
-                        error: function(){
-                            console.log(no);
-                        }               
                     });
                 });
 
@@ -111,10 +99,10 @@ $(document).ready(function () {
                 // alert('所有欄位為必填，請輸入完整資訊。');
             // }
         });
-    }else{
-        logBox();
-        memBox();
-    }
+    // }else{
+    //     logBox();
+    //     memBox();
+    // }
 });
 
 // ======== vue =========
@@ -135,7 +123,7 @@ let vueJH = new Vue({
             let readFile1 = new FileReader();
             readFile1.readAsDataURL(file1);
             readFile1.addEventListener('load', function (e) {
-                self1.pImgUrl.push(e.target.result);
+                self1.pImgUrl.splice(0, 1, e.target.result);
             });
         },
         file2(){
@@ -145,7 +133,8 @@ let vueJH = new Vue({
             let readFile2 = new FileReader();
             readFile2.readAsDataURL(file2);
             readFile2.addEventListener('load', function (e) {
-                self2.pImgUrl.push(e.target.result);
+                // self2.pImgUrl.push(e.target.result);
+                self2.pImgUrl.splice(1, 1, e.target.result);
             });
         },
         file3(){
@@ -155,7 +144,8 @@ let vueJH = new Vue({
             let readFile3 = new FileReader();
             readFile3.readAsDataURL(file3);
             readFile3.addEventListener('load', function (e) {
-                self3.pImgUrl.push(e.target.result);
+                // self3.pImgUrl.push(e.target.result);
+                self3.pImgUrl.splice(2, 1, e.target.result);
             });
         },
     },
