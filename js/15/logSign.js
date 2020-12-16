@@ -82,6 +82,7 @@ $(document).ready(function () {
 
     // =================================== 登入hover ===================================
     $('button.login').mouseenter(function () {
+        $('#logInDoor').show();
         $('#Path_18').hide();
         logDoorAni();
     });
@@ -286,7 +287,9 @@ function signAni(){
 }
 
 // ===== log in lightbox =====
-function logBox() {  
+function logBox() {
+    $('#logInDoor').hide();
+    $('#Path_18').show();
     $('div#login').show().css('zIndex', '3');
     $('div#login div.login').css({
         'opacity':'1',
