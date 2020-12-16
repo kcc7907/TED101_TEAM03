@@ -4,9 +4,8 @@ body {
   background-color: #FFFAF4;
 }
 
-body * {
+body > .jk_authority * {
   box-sizing: border-box;
-  outline: red;
 }
 
 body > .jk_authority > .container {
@@ -103,7 +102,7 @@ body > .jk_authority > .container > .sideMenu.-close {
   transform: translateX(-100%);
 }
 
-body > .jk_authority > .container > main.jane_class {
+body > .jk_authority > .container > main.sam_class {
   display: none;
   font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
   width: 79.1%;
@@ -111,7 +110,7 @@ body > .jk_authority > .container > main.jane_class {
   font-size: 24px;
 }
 
-body > .jk_authority > .container > main.jane_class > .top {
+body > .jk_authority > .container > main.sam_class > .top {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #707070;
@@ -119,23 +118,23 @@ body > .jk_authority > .container > main.jane_class > .top {
   padding: 15px 0;
 }
 
-body > .jk_authority > .container > main.jane_class > table.jane_authorityChange {
+body > .jk_authority > .container > main.sam_class > table.sam_authorityChange {
   margin: 60px auto 0;
   border-top: 1px solid #707070;
   border-right: 1px solid #707070;
   border-left: 1px solid #707070;
 }
 
-body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr {
+body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr {
   border-bottom: 1px solid #707070;
 }
 
-body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr > th {
+body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr > th {
   background-color: #CAC3BB;
   font-weight: bold;
 }
 
-body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr > td > button.cancel {
+body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr > td > button.cancel {
   width: 70px;
   height: 25px;
   border: 2px solid #707070;
@@ -147,21 +146,21 @@ body > .jk_authority > .container > main.jane_class > table.jane_authorityChange
   box-shadow: 1px 1px 1px #474747;
 }
 
-body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr > td > button.cancel:hover {
+body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr > td > button.cancel:hover {
   background-color: #865454;
   color: #e7e7e7;
 }
 
-body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr > th, body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr > td {
+body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr > th, body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr > td {
   padding: 15px;
   text-align: center;
 }
 
-body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr > th + th, body > .jk_authority > .container > main.jane_class > table.jane_authorityChange tr > td + td {
+body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr > th + th, body > .jk_authority > .container > main.sam_class > table.sam_authorityChange tr > td + td {
   border-left: 1px solid #707070;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump {
+body > .jk_authority > .container > main.sam_class div.sam_jump {
   border: 1px solid red;
   position: fixed;
   width: 100%;
@@ -174,7 +173,7 @@ body > .jk_authority > .container > main.jane_class div.jane_jump {
   transition: opacity 1s;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack {
   width: 60%;
   margin: 0 auto;
   border: 1px solid #9b9b9b;
@@ -183,7 +182,7 @@ body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack
   position: relative;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack img.cancel-icon {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack img.cancel-icon {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -192,7 +191,7 @@ body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack
   cursor: pointer;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack form {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack form {
   border: 1px solid #865454;
   width: 50%;
   margin: 60px auto 60px;
@@ -200,7 +199,7 @@ body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack
   z-index: 2;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack form:after {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack form:after {
   content: '';
   display: block;
   width: 100%;
@@ -212,12 +211,12 @@ body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack
   z-index: -1;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack label {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack label {
   display: inline-block;
   margin: 2% 20px 0px 2%;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack input {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack input {
   display: inline-block;
   background: none;
   border: none;
@@ -226,7 +225,7 @@ body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack
   margin-bottom: 6%;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack button#product_submit {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack button#product_submit {
   display: block;
   margin: 30px auto;
   width: 150px;
@@ -240,17 +239,17 @@ body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack
   transition: all .5s;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump div.secondBack button#product_submit:hover {
+body > .jk_authority > .container > main.sam_class div.sam_jump div.secondBack button#product_submit:hover {
   background-color: #BDA79E;
   color: #f8f8f8;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump.-on {
+body > .jk_authority > .container > main.sam_class div.sam_jump.-on {
   opacity: 1;
   z-index: 2;
 }
 
-body > .jk_authority > .container > main.jane_class div.jane_jump.-opacity-zero {
+body > .jk_authority > .container > main.sam_class div.sam_jump.-opacity-zero {
   opacity: 0;
 }
 
@@ -404,4 +403,4 @@ body > .jk_authority > .container > main.kcc_class div.kcc_jump.-on {
 body > .jk_authority > .container > main.kcc_class div.kcc_jump.-opacity-zero {
   opacity: 0;
 }
-/*# sourceMappingURL=order_authority.css.map */
+/*# sourceMappingURL=product_authority.css.map */

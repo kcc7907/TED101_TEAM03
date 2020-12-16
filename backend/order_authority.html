@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品管理</title>
-
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/order_authority.css">
 
@@ -15,8 +14,6 @@
     <script src="../lib/js/jquery.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
     <script defer src="../js/14/order_authority.js"></script>
-
-
 </head>
 
 <body>
@@ -41,7 +38,7 @@
                         <li>
                             <ul>
                                 <li class="item">訂單管理<i class="fas fa-chevron-left"></i></li>
-                                <li id="jn_authorityChange">訂單總覽</li>
+                                <li id="jane_authorityChange1">訂單總覽</li>
                             </ul>
                         </li>
 
@@ -52,16 +49,14 @@
                                     <i class="fas fa-chevron-left"></i>
                                 </li>
                                 <!-- <li id="jk_newManager">新增管理員</li> -->
-                                <li id="jn_authorityChange">權限異動</li>
+                                <li id="jk_authorityChange">權限異動</li>
                             </ul>
                         </li>
-
                         <li>
                             <ul>
                                 <li class="item">消息管理<i class="fas fa-chevron-left"></i></li>
                             </ul>
                         </li>
-
                         <li>
                             <ul>
                                 <li class="item">商品管理<i class="fas fa-chevron-left"></i></li>
@@ -75,6 +70,8 @@
                                 <li class="item">客服管理<i class="fas fa-chevron-left"></i></li>
                             </ul>
                         </li>
+
+
                     </ul>
                 </div>
 
@@ -87,7 +84,7 @@
                 <!-- 頂部資訊 -->
                 <div class="top">
                     <div class="path">
-                        訂單管理 / 訂單總覽
+                        商品管理 / 商品總覽
                     </div>
                     <div>
                         管理者: <span>Root</span>
@@ -98,7 +95,7 @@
                 <table class="jane_authorityChange">
 
                     <!-- 表格標頭 -->
-                    <!-- <tr>
+                    <tr>
                         <th>訂單編號</th>
                         <th>訂單數量</th>
                         <th>訂單狀態</th>
@@ -106,7 +103,7 @@
                         <th>訂單日期</th>
                         <th>會員編號</th>
                         <th>訂單編號</th>
-                    </tr> -->
+                    </tr>
                     <!-- 表格內容 -->
                     <!-- <tr>
                         <td></td>
@@ -119,20 +116,20 @@
                     </tr> -->
 
                     <!--  -->
-                    <!-- <tr v-for="rp in rp">
-                        <td>{{rp.PRD_ID}}</td>
-                        <td>{{rp.PRD_SPECIES}}</td>
-                        <td>{{rp.PRD_NAME}}</td>
-                        <td>{{rp.PRD_PRICE}}</td>
-                        <td>{{rp.PRD_MATERIAL}}</td>
-                        <td>{{rp.PRD_DATE}}</td>
-                        <td>{{rp.DISCOUNT_ID}}</td>
-                        <td><button class="cancel">下架</button></td>
-                    </tr> -->
+                    <tr v-for="rp in rp">
+                        <td>{{rp.ORD_ID}}</td>
+                        <td>{{rp.ORD_QUANTITY}}</td>
+                        <td>{{rp.ORD_STATUS}}</td>
+                        <td>{{rp.ORD_PAYMENT}}</td>
+                        <td>{{rp.ORD_DATE}}</td>
+                        <td>{{rp.MEMBER_ID}}</td>
+                        <td>{{rp.DELIVERY_ID}}</td>
+                        <!-- <td><button class="cancel">下架</button></td> -->
+                    </tr>
                 </table>
 
                 <!-- 跳窗 -->
-                <!-- <div class="jane_jump">
+                <!-- <div class="sam_jump">
                     <div class="secondBack">
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form action="" method="">
@@ -180,7 +177,7 @@
 
             },
             mounted() {
-                axios.post('../php/13/product.php').then(res => {
+                axios.post('../php/14/conn14.php').then(res => {
                     this.rp = res.data;
                 })
             },

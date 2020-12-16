@@ -87,7 +87,7 @@ $(document).ready(function () {
 
     /////////////////////////jane start ////////////////////////////
 
-    $('#jn_authorityChange').click(function () {
+    $('#jane_authorityChange1').click(function () {
         $('main.jane_class').css('display', 'block');
     });
 
