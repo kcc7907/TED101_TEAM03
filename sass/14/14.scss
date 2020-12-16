@@ -560,11 +560,13 @@ div#JN{
             overflow: hidden;
             position: relative;
         }
+        
         #content{		/*ul*/
             position: relative;
             height: 100%;
         }
-        #content li{	/*li*/
+
+        #content li{	/*li*/ 
             float: left;
             height: 100%;
         }
