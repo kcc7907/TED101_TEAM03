@@ -678,7 +678,6 @@ div#JN > div .photo {
   background-position: center center;
   display: inline-block;
   background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -989,11 +988,13 @@ div#JN > div #sliderBoard {
 div#JN > div #content {
   /*ul*/
   position: relative;
+  height: 100%;
 }
 
 div#JN > div #content li {
   /*li*/
   float: left;
+  height: 100%;
 }
 
 div#JN > div #contentButton {
@@ -1070,7 +1071,7 @@ div#JN .select_click {
   text-align: center;
   height: 100%;
   justify-content: center;
-  background-color: #BDA79E;
+  background-color: #F8F2EB;
 }
 
 div#JN .icon_border {
@@ -1385,7 +1386,7 @@ div#JN .contact_detail {
     text-align: center;
     height: 80px;
     justify-content: center;
-    background-color: #BDA79E;
+    background-color: #F8F2EB;
     margin: auto;
   }
   div#JN > div .click {
@@ -1419,14 +1420,6 @@ div#JN .contact_detail {
     width: 100%;
     margin: 0 auto;
     font-size: 24px;
-  }
-  div#JN > div .photo {
-    background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
-    width: 100%;
-    height: 350px;
-    background-position: center center;
-    background-size: cover;
-    justify-content: center;
   }
   div#JN > div .introduce_detail {
     border: 1px solid darkgoldenrod;
@@ -1477,7 +1470,6 @@ div#JN .contact_detail {
   div#JN > div .d_pic_flex {
     font-family: Arial;
     display: block;
-    margin: 0 auto;
   }
   div#JN > div .interior_one {
     display: flex;
@@ -1646,7 +1638,6 @@ div#JN .contact_detail {
     text-align: center;
     height: 30%;
     justify-content: center;
-    background-color: #BDA79E;
     margin: auto;
   }
   div#JN > div .click {
@@ -1754,7 +1745,6 @@ div#JN .contact_detail {
     padding: 5px 15px;
   }
   div#JN div .photo {
-    background-image: url(../../img/interiordesign/excellent/BLK_IW_VARANDA_40_PAV_13_ESTAR_4K.jpg);
     width: 100%;
     height: 550px;
     background-position: center center;
