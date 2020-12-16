@@ -86,7 +86,10 @@
                 <form action="#" name="formStep2" class="formStep contentFont" id="formStep2">
                     <p class="contentFont">&frasl;&frasl;&emsp;參賽者資料&emsp;&frasl;&frasl;</p>
                     <div class="view">
-                        <label for="pId" class="contentFont">身分證正面：</label>
+                        <label class="contentFont" for="pIdNum">身分證號碼：</label>
+                        <input type="text" class="contentFont" id="pIdNum" required="required" autocomplete="off" data-id="pIdNum">
+                        <br>
+                        <label for="pId" class="contentFont">上傳身分證：</label>
                         <label for="pId" class="fileUpload detailFont" data-id="pId">上傳檔案</label>
                         <input type="file" id="pId" name="pId" class="fileUpload" required="required" @change="file1">
                         <br>
@@ -106,16 +109,16 @@
                     <p class="contentFont">&frasl;&frasl;&emsp;作品資料&emsp;&frasl;&frasl;</p>
                     <div class="view">
                         <label class="contentFont" for="fType">作品種類：</label>
-                        <select class="detailFont" id="fType" name="fType" required="required" data-id="fType">
+                        <select class="contentFont" id="fType" name="fType" required="required" data-id="fType">
                             <option disabled selected>請選擇作品種類</option>
-                            <option v-for="type in workTypes" class="detailFont" :value="type">{{type}}</option>
+                            <option v-for="type in workTypes" class="contentFont" :value="type">{{type}}</option>
                         </select>
                         <br>
                         <label class="contentFont" for="fName">作品名稱：</label>
-                        <input type="text" class="detailFont" id="fName" required="required" autocomplete="off" data-id="fName" v-model="fName">
+                        <input type="text" class="contentFont" id="fName" required="required" autocomplete="off" data-id="fName" v-model="fName">
                         <br>
                         <label for="fConcept" class="fConcept contentFont">設計理念：</label>
-                        <textarea name="fConcept" class="detailFont" id="fConcept" required="required" autocomplete="off" data-id="fConcept">{{fConcept}}</textarea>
+                        <textarea name="fConcept" class="contentFont" id="fConcept" required="required" autocomplete="off" data-id="fConcept">{{fConcept}}</textarea>
                         <br>
                         <div>
                             <div>

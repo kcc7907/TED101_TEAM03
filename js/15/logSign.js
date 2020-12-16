@@ -140,7 +140,7 @@ $(document).ready(function () {
         let thePhone = $(this).val();
         let testP = /^[0-9]{2}[0-9]{8}$/g;
         if(!testP.test(thePhone)){
-            alert('請輸入正確手機格式');
+            alert('請輸入正確手機格式。');
         }
     });
 

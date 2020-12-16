@@ -4,7 +4,9 @@ $(document).ready(function () {
     $('#JHC #formStep3').hide();
     $('#JHC form#preview').hide();
     $('#JHC .lastP').hide();
-    // if(checkCookie('loging')){
+
+    
+    if(checkCookie('loging')){
         // ======== 同意鈕 ========
         $('#JHC #submitStep1').change(function(){
             if($(this).prop("checked")){
@@ -46,7 +48,7 @@ $(document).ready(function () {
                 }
             });
 
-            // if(need == true){
+            if(need == true){
                 // 點擊「送出時」，出現confirm視窗
                 // 1.先隱藏
                 $('#JHC div.confirmDivC').hide();
@@ -62,46 +64,27 @@ $(document).ready(function () {
 
                 // 3.點擊確認鈕 -> 送出資料
                 $('#JHC #sureGoContest').click(function(){
+                    let contestant = getCookie('loging');
+                    let pIdNum = $('#JHC #pIdNum').val().trim(); // 身分證號碼
                     let fType = $('#JHC #fType').val(); // 作品種類
                     let fName = $('#JHC #fName').val().trim(); // 作品名稱
                     let fConcept = $('#JHC #fConcept').val().trim(); // 設計理念
-                    // // let workDetail = {
-                    // //     fType,
-                    // //     fName,
-                    // //     fConcept,
-                    // // };
-                    $.ajax({
-                        url: "contestDetailR.php",
-                        // url: "contestImgR.php",
-                        type: "POST",
-                        data: {
-                            fType,
-                            fName,
-                            fConcept,
-                        },
-                        success: function(res){
-                            console.log('hi');
-                        },
-                    });
-
                     let pId = $('#JHC input#pId').prop('files')[0]; // 上傳身分證
                     let draft = $('#JHC input#draft').prop('files')[0]; // 上傳草稿
                     let draw = $('#JHC input#draw').prop('files')[0]; // 上傳完稿
                     let form_data = new FormData();
+                    form_data.append('contestant', contestant);
+                    form_data.append('pIdNum', pIdNum);
+                    form_data.append('type', fType);
+                    form_data.append('name', fName);
+                    form_data.append('concept', fConcept);
                     form_data.append('file1', pId);
                     form_data.append('file2', draft);
                     form_data.append('file3', draw);
-
                     $.ajax({
-                        url: "contestImgR.php",
+                        url: "contestR.php",
                         type: "POST",
                         data: form_data,
-                        // data: {
-                        //     form_data,
-                        //     fType,
-                        //     fName,
-                        //     fConcept,
-                        // },
                         contentType: false,
                         cache: false,
                         processData:false,
@@ -124,14 +107,12 @@ $(document).ready(function () {
                         'opacity': '0',
                     }).hide();
                 });
-            // }else{
-                // alert('所有欄位為必填，請輸入完整資訊。');
-            // }
+            }
         });
-    // }else{
-    //     logBox();
-    //     memBox();
-    // }
+    }else{
+        logBox();
+        memBox();
+    }
 });
 
 // ======== vue =========
@@ -184,31 +165,68 @@ let vueJH = new Vue({
 });
 
 
-function checkRequired(theNextBtn) {  
+function checkRequired(theNextBtn) {
     let needWrite = $(theNextBtn).closest('form.formStep').find('[required="required"]');
-    let need = true;
-    // $(needWrite).each(function () {
-    if ($(needWrite).val() == '' || $(needWrite).val() == 0) {
-        need = false;
-    //         let needName = $(this).attr('id');
-    //         let needDataId = '[data-id="' + needName + '"]';
-    //         let needInput = $(`'${needDataId}'`);
-    //         console.log(needDataId);
-    //         console.log(`needName = ${needName}`);
-    //         console.log(`needInput = ${needInput}`);
-    //         $(this).css('border','1px solid red');
+    // let needFile = $(theNextBtn).closest('form.formStep').find('[type="file"]');
+    need = true;
+    checkPID = true;
+
+    if($(theNextBtn).closest('form.formStep').find('#pIdNum').length !== 0){
+        $(needWrite).each(function (index, value) {
+            if ($(value).val() == '' || $(value).val() == 0) {
+                need = false;
+            }else{
+                need = true;
+            }
+        });
+
+
+        let PID = $('#pIdNum').val().trim();
+        let testPID = /^[A-Z][12]\d{8}$/;
+        if(!testPID.test(PID)){
+            checkPID = false;
+        }else{
+            checkPID = true;
+        }
+        
+        if(need == true && checkPID == true){
+            $(theNextBtn).closest('form').hide();
+            $(theNextBtn).closest('form').next('form').show();
+        }else if (need == true && checkPID !== true){
+            alert('請輸入正確身分證號碼。');
+        }else{
+            alert(`所有欄位為必填，請輸入完整資訊。`);
+        }
+
+
+        // if( $('#pIdNum').val().trim() !== ""){
+
+        // }else{
+        //     alert(`所有欄位為必填，請輸入完整資訊。`);
+        // }
+
     }else{
-        need = true;
+
+        $(needWrite).each(function (index, value) {
+            if ($(value).val() == '' || $(value).val() == 0) {
+                need = false;
+            }else{
+                need = true;
+            }
+        });
+
+        if(need == true){
+            $(theNextBtn).closest('form').hide();
+            $(theNextBtn).closest('form').next('form').show();
+        }else{
+            alert(`所有欄位為必填，請輸入完整資訊。`);
+        }
+
     }
-    // });
 
 
-    // if(need == true){
-        $(theNextBtn).closest('form').hide();
-        $(theNextBtn).closest('form').next('form').show();
-    // }else{
-    //     alert('所有欄位為必填，請輸入完整資訊。');
-    // }
+        console.log('need = ' + need);
+        console.log('checkPID = ' + checkPID);
 }
 
 

@@ -177,6 +177,18 @@ div.JHC {
                     margin: 10px 0;
                 }
 
+                label {
+                    display: inline-block;
+                    margin: 10px 0;
+                }
+
+                >input {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid;
+                }
+
 
 
                 >div {
@@ -184,6 +196,8 @@ div.JHC {
                     width: 100%;
                     height: 400px;
                     position: relative;
+
+
 
                     &:hover {
                         cursor: pointer;
@@ -225,12 +239,19 @@ div.JHC {
                 }
 
                 select,
-                option,
-                input {
+                option{
                     background-color: transparent;
                     border: none;
                     outline: none;
                     border: 1px solid;
+                }
+
+                input{
+                    margin: 10px 0;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid;
                 }
 
                 label.fConcept,
@@ -246,6 +267,7 @@ div.JHC {
                     background-color: transparent;
                     outline: none;
                     border: 1px solid;
+                    margin-top: 10px;
                 }
 
                 >div {
@@ -313,6 +335,7 @@ div.JHC {
 
         form#preview {
             z-index: -99;
+
             div.backGround {
                 display: flex;
                 align-items: center;
@@ -338,7 +361,7 @@ div.JHC {
                     font-size: 24px;
                     color: #465D4C;
 
-                    &::after{
+                    &::after {
                         content: "點擊任意位置結束預覽模式。";
                         display: inline-block;
                         padding: 15px 20px;
@@ -390,7 +413,8 @@ div.JHC {
                             line-height: 70px;
                             color: #465D4C;
                             cursor: pointer;
-                            &:hover{
+
+                            &:hover {
                                 background-color: #465D4C;
                                 color: #fff;
                             }
@@ -440,6 +464,7 @@ div.JHC {
                 top: 45%;
                 left: 0;
                 text-align: none;
+
                 &:hover {
                     cursor: pointer;
                 }
@@ -538,6 +563,38 @@ div.JHC {
             width: 60%;
 
         }
+
+        form#preview {
+
+            div.backGround {
+                div.clickVote {
+                    &::after {
+                    }
+                    div.content {
+                        .img {
+                        }
+                        >div.text {
+                            >p {
+                                >span {
+                                }
+                            }
+                        }
+                    }
+
+                    .preViewBtn {
+                        p {
+                            &:hover {
+                            }
+                        }
+                    }
+
+                    .close {
+                        i {
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -555,6 +612,42 @@ div.JHC {
                     }
                 }
             }
+
+            form#preview {
+    
+                div.backGround {
+                    div.clickVote {
+                        &::after {
+                        }
+                        div.content {
+
+                            .img {
+                                margin-left: 0px;
+                                padding-left: 0px;
+                            }
+                            >div.text {
+
+                                >p {
+                                    >span {
+                                    }
+                                }
+                            }
+                        }
+    
+                        .preViewBtn {
+                            p {
+                                &:hover {
+                                }
+                            }
+                        }
+    
+                        .close {
+                            i {
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -565,7 +658,41 @@ div.JHC {
     div.JHC {
         .container div.step {
             width: 80%;
-
+            form#preview {
+    
+                div.backGround {
+                    div.clickVote {
+                        &::after {
+                        }
+                        div.content {
+                            .img {
+                                padding: 10px 10px 10px 0;
+                            }
+                            >div.text {
+                                margin: 10px;
+                                >p {
+                                    >span {
+                                    }
+                                }
+                            }
+                        }
+    
+                        .preViewBtn {
+                            p {
+                                margin: 20px 10px;
+                                &:hover {
+                                }
+                            }
+                        }
+    
+                        .close {
+                            padding: 15px 15px 0 0;
+                            i {
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -592,9 +719,45 @@ div.JHC {
             form#formStep3 {
                 >div {
                     &:last-child {
-                        width: 400px;
+                        // width: 400px;
                         left: calc((100% - 400px) / 2);
 
+                    }
+                }
+            }
+
+            form#preview {
+    
+                div.backGround {
+                    div.clickVote {
+                        &::after {
+                        }
+                        div.content {
+                        flex-direction: column;
+                            .img {
+                                margin: 10px;
+                                padding: 10px;
+                            }
+                            >div.text {
+                                order: 1;
+                                >p {
+                                    >span {
+                                    }
+                                }
+                            }
+                        }
+    
+                        .preViewBtn {
+                            p {
+                                &:hover {
+                                }
+                            }
+                        }
+    
+                        .close {
+                            i {
+                            }
+                        }
                     }
                 }
             }
@@ -627,9 +790,48 @@ div.JHC {
                     }
 
                     &:last-child {
-                        width: 350px;
+                        // width: 350px;
                         left: calc((100% - 350px) / 2);
 
+                    }
+                }
+            }
+
+            form#preview {
+    
+                div.backGround {
+                    div.clickVote {
+                        min-height: 100%;
+                        justify-content: center;
+                        &::after {
+                        }
+                        div.content {
+                            .img {
+                            }
+                            >div.text {
+                                >p {
+                                    >span {
+                                    }
+                                }
+                            }
+                        }
+    
+                        .preViewBtn {
+                            p {
+                                &:hover {
+                                }
+                            }
+                        }
+    
+                        .close {
+                            align-self: center;
+                            width: 300px;
+    
+                            display: flex;
+                            justify-content: flex-end;
+                            i {
+                            }
+                        }
                     }
                 }
             }
@@ -685,9 +887,47 @@ div.JHC {
                     }
 
                     &:last-child {
-                        width: 300px;
+                        // width: 300px;
                         left: calc((100% - 300px) / 2);
 
+                    }
+                }
+            }
+
+            form#preview {
+    
+                div.backGround {
+                    div.clickVote {
+
+                        &::after {
+                        }
+                        div.content {
+                            .img {
+                                margin: 0;
+                                padding: 0;
+                            }
+                            >div.text {
+                                margin: 5px;
+                                >p {
+                                    >span {
+                                    }
+                                }
+                            }
+                        }
+    
+                        .preViewBtn {
+                            p {
+                                margin: 10px;
+                                &:hover {
+                                }
+                            }
+                        }
+    
+                        .close {
+
+                            i {
+                            }
+                        }
                     }
                 }
             }
