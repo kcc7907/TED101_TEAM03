@@ -76,7 +76,7 @@ let left2 = new Vue({
     },
     created() {
         let cookie = getCookie('loging');
-        axios.post('http://localhost:8787/php/20/getMember.php', {ID: cookie}).then(res => {
+        axios.post('../php/20/getMember.php', {ID: cookie}).then(res => {
             this.members = res.data;
             this.memLives = res.data[0].MEM_CITY + res.data[0].MEM_ADDRESS;
             this.memCity = res.data[0].MEM_CITY ;

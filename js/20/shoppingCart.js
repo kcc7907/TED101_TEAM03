@@ -27,7 +27,7 @@ let list =
     }
 ];
 
-localStorage.clear();
+// localStorage.clear();
 // localStorage.setItem("lists", JSON.stringify(list));
 
 let right = new Vue({
@@ -60,10 +60,10 @@ let right = new Vue({
             else return
         },
     },
-    created() {
-        let list = JSON.parse(localStorage.getItem("lists"));
-        if(!list)return;
-    },
+    // created() {
+    //     let list = JSON.parse(localStorage.getItem("lists"));
+    //     if(!list)return;
+    // },
     watch: {
         total(){ this.final = this.total+this.discount}
     },
@@ -79,7 +79,7 @@ let all = new Vue({
             let lists=[];
             pick.forEach((a,b) => {
                 if(a.checked===true){
-                    right.total-= a.closest('li').getAttribute('data-price')*a.closest('li').getAttribute('data-num')
+                    right.total-= a.closest('li').getAttribute('data-price')*a.closest('li').getAttribute('data-num');
                     a.closest('ul').removeChild(a.closest('li'));
                     right.proTotal -=a.closest('li').getAttribute('data-num');
                 }else{
@@ -115,20 +115,20 @@ let left = new Vue({
         disArrA:[],
         disArrB:[]
     },
-    // mounted() {
-    created() {
+    mounted() {
+    // created() {
         let list = JSON.parse(localStorage.getItem("lists"));
-        if(!list){
+        if(!list || list.length === 0){
             let list = document.querySelector('.left');
             list.style.borderBottom = '1px solid #465d4c'
-            return false;
+            return;
         }
         list.forEach((a, b) => {
             this.prdid.push(a.prd_id);
             right.proTotal += parseInt(a.num);
         });
         //product
-        axios.post('http://localhost:8787/php/20/getProduct.php', this.prdid).then(res => {
+        axios.post('../php/20/getProduct.php', this.prdid).then(res => {
             this.rp = res.data;
         }).catch(err=>{
             if (err.response) {
@@ -140,7 +140,7 @@ let left = new Vue({
             }
         });
         //discount
-        axios.post('http://localhost:8787/php/20/getDiscount.php').then(res => {
+        axios.post('../php/20/getDiscount.php').then(res => {
             this.discount_list = res.data;
             this.discount_list.forEach((a,b) => {
                 this.discount_specie.push(a.DIS_ID);
@@ -148,6 +148,8 @@ let left = new Vue({
                 this.discount_inner.push(a.DIS_PRODUCT_ID2);
             });
             let sp1,sp2;
+            // if(this.rp.length==0)return;
+            // console.log(rp.length);
             this.discount_inner.forEach((a,b) => {
                 let getc = this.rp.filter((q,w)=>{
                     return q.PRD_NAME == a;
@@ -162,6 +164,8 @@ let left = new Vue({
                     }else{ sp2 += getc[0].DISCOUNT_ID; }
                 }
             });
+            // if()
+            // if()
             if(sp1.length>1)this.disA=true;
             if(sp2.length>1)this.disB=true;
             this.disArrA=sp1;
@@ -180,17 +184,14 @@ let left = new Vue({
             right.final = right.total+right.discount;
         },
         disArrA(){
-            console.log(this.disArrA.length);
             if(this.disArrA.length<1)this.disA=false;
         },
         disArrB(){
-            console.log(this.disArrB.length);
             if(this.disArrB.length<1)this.disB=false;
         },
     },
     methods: {
         disCheck(){
-            console.log('test');
             let dis = document.querySelectorAll()
         }
     },
