@@ -1,7 +1,6 @@
-<?php
-    include("../php/08/jk_link.php");
+<?php    
 
-    $user = "A111200001";   //測試帳號
+    include("../php/08/jk_link.php");
 
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
@@ -38,41 +37,30 @@
     <script src="../lib/js/jquery.js"></script>
     <script src="../js/08/meminfo.js"></script>
 
+    
+    
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
+
+
 
 </head>
 
 <body>
     
-    <header class="common">
-        <div class="logo">
-            <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
-        </div>
-        <nav>
-            <dav class="nav1">
-                <a href="./product.html">救世傢俱</a>
-                <a href="./case.html">參考案例</a>
-            </dav>
-            <dav class="nav2">
-                <a href="./qa.html">客戶服務</a>
-                <a href="./contest_participate.html">傢聚賞</a>
-            </dav>
-        </nav>
-        <div class="icon">
-            <a class="login" href="./meminfo.html">
-                <img src="../img/headerFooter/loginIcon.svg" alt="">
-            </a>
-            <a class="shop" href="./contest_main20.html">
-                <img src="../img/headerFooter/shoppingCart.svg" alt="">
-            </a>
-            <a class="ham">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </div>
-    </header>
+    <?php
+    include ('../lib/header/header_Include.html');
+    include("../lib/login/loginInclude.html");
+    ?>
     
-    <div class="jk_meminfo">
+    <div class="jk_meminfo">        
+        
+        <!-- 修改提示 -->
+        <div id="jk_point">
+            <p>已成功修改會員資料</p>
+        </div>
+
         <div class="container">
             <div class="sideMenu">
                 <ul>

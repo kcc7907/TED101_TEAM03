@@ -11,6 +11,13 @@
     $statement->bindValue(2, "$voteId"); 
     $statement->execute();
 
+    if(!isset($_SESSION)){
+        session_start();
+        $_SESSION["vote"] = "voted";
+    }else{
+        $_SESSION["vote"] = "voted";
+    }
+
     echo $voteNum;
 
 ?>

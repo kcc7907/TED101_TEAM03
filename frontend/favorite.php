@@ -1,8 +1,6 @@
 <?php
     include("../php/08/jk_link.php");
 
-    $user = "A111200001";   //測試帳號
-
     $sql = "SELECT PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE from favorite f join(select * from product p join product_img i on i.PRODUCT_ID = p.PRD_ID)m on m.PRD_ID = f.PRODUCT_ID where MEMBER_ID = ?";
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, "$user");
@@ -106,7 +104,9 @@
                             <?=$row["PRD_PRICE"]?> 元
                         </li>
                         <li class="btn">
-                            <button class="add"><span>加入購物車</span><i class="fas fa-cart-arrow-down"></i></button>
+                            <a class="seeProduct" href="product/productInner-<?=$row["PRD_ID"]?>.html">
+                                <button class="add"><span>查看詳情</span><i class="fas fa-cart-arrow-down"></i></button>
+                            </a>
                             <button class="remove" data-name="<?=$row["PRD_ID"]?>"><span>移除</span><i class="far fa-trash-alt"></i></button>
                         </li>
                     </ul>
@@ -119,6 +119,17 @@
                 
             </main>
         </div>
+
+        <div id="dropCheck">
+            <div>
+                <p>您是否確定要移除該項收藏?</p>
+                <div class="dropBtn">
+                    <button class="check">確認</button>
+                    <button class="cancel">取消</button>
+                </div>            
+            </div>
+        </div>
+
     </div>
 
     <script src="../lib/header/header.js"></script>

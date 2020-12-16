@@ -18,6 +18,27 @@ body{
         *{            
             box-sizing: border-box;
         }
+
+        //提示訊息
+        #jk_point{
+            width: 100%;
+            position: fixed;
+            top: 200px;
+
+            // display: flex;
+            display: none;
+            justify-content: center;
+
+            p{
+                width: 250px;
+                padding: 20px 30px;
+                background-color: #bda79c2f;
+                border: 1px solid #465D4C;
+                color: #465D4C;
+                text-align: center;
+                font-size: 16px;
+            }
+        }                
         .container{
             display: flex;
             width: 100%;

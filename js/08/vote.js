@@ -28,7 +28,14 @@ $(document).ready(function () {
         // $(this).addClass('-on');
     });
 
-
+    //瀏覽人次
+    $.ajax({
+        url: '../php/08/jk_voteVisit.php',
+        dataType: 'text',
+        success(res) {
+            $('.jk_vote .visitor .num').html(`${res}`);
+        },
+    });
 
     //點擊詳細資訊
     $('.jk_vote main').on('click', '.work .img', function () {
@@ -56,8 +63,7 @@ $(document).ready(function () {
         $('.jk_vote .backGround').css('display', 'none');
     });
 
-    //點擊投票
-    // $('.jk_vote .clickVote button').click(function () {
+    //點擊投票    
     $('.jk_vote').on('click', '.clickVote button', function () {
         let voteId = $(this).closest('.clickVote').find('.content p:first-child span').text();
         let voteNum = $(this).closest('.clickVote').find('.content p:nth-child(2) input').val();
@@ -74,6 +80,7 @@ $(document).ready(function () {
             },
         });
         $('.jk_vote .backGround').css('display', 'none');
+        
     });
 
     //搜尋作品

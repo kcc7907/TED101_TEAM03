@@ -6,15 +6,21 @@
 @import 'mixin';
 
 
+
+
+
 body{
     background-color: #FFFAF4;
     
-    .jk_favorite{
+    .jk{
         background-color: #FFFAF4;
         margin-bottom: 100px;
-        *{
+        *{            
             box-sizing: border-box;
         }
+
+        //提示訊息
+        
         .container{
             display: flex;
             width: 100%;
@@ -115,7 +121,7 @@ body{
                             }
                             @include r768{
                                 font-size: 12px;
-                                font-weight: normal;
+                                // font-weight: normal;
                             }
                         }
 
@@ -187,7 +193,190 @@ body{
                 }
             }
 
-            main{
+            //帳戶資料
+            .Info{
+                font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+                margin: 0 auto;
+                padding-top: $mainPaddingTop + px;
+                width: 75%;
+                max-width: 960px; 
+                font-size: $fzp;
+                font-weight: lighter;
+
+                @include r768{
+                    padding-top: 0;
+                }
+                
+
+                form{
+                    width: 100%;
+                    max-width: $formWidth + px;
+                    margin: 0 auto;
+
+                    @include r1200{
+                        max-width: 500px;
+                    }
+                    @include r768{
+                        max-width: 360px;
+                        font-size: 20px;
+                    }
+                    @include r576{
+                        max-width: 315px;
+                    }
+
+                    input.-error{
+                        outline: 1px solid red;
+                        
+                    }
+
+                    >div{
+                        width: 100%;
+                        padding: 20px;
+                        >div{
+                            width: 100%;
+                            margin-bottom: 5px;
+                            display: flex;
+                            justify-content: space-between;
+                            label{
+                                font-size: $fzp;
+                                color: #465D4C;
+
+                                @include r576{
+                                    font-size: 20px;
+                                    
+                                }
+
+                                .pwd_warn{
+                                    margin-left: 10px;
+                                    
+                                    @include r576{
+                                        margin-left: 5px;                                       
+                                    }
+                                }
+                            }
+                            span{
+                                font-size: $fzSmall;
+                                align-self: flex-end;
+                                color: #aaa;
+
+                                @include r768{
+                                    font-size: 14px;                                    
+                                }
+
+                                @include r576{
+                                    font-size: 12px;
+                                }
+
+                                @include r360{
+                                    font-size: 8px;
+                                }
+                                
+                            }
+                            span.email, span.phone, span.name, span.address, span.btn_pwd{
+                                
+                                cursor: pointer;
+
+                                &:hover{
+                                    // font-weight: bold;
+                                    color: #465D4C;
+                                    transition: .1s;
+                                }
+                            }
+                        }
+
+                        select{
+                            outline: none;
+                            background-color: rgba(0,0,0,0);
+                            margin: 5px;
+                            padding: $inputPadding;
+                            border-radius: 1px;
+                            font-size: 20px;
+
+                            &:disabled{
+                                color: black;
+                                border: 1px solid #465D4C;
+                            }
+
+                            @include r576{
+                                font-size: 18px;
+                            }
+                        }
+
+                        input{
+                            width: 100%;
+                            padding: $inputPadding;
+                            outline: none;
+                            border: none;
+                            border-radius: 1px;                   
+                            border-bottom: 1px solid #465D4C;
+                            font-size: $fzp;
+                            background-color: rgba(0,0,0,0);
+
+                            @include r576{
+                                font-size: 20px;
+                            }
+                            
+                        }
+                        #changePassword{
+                            display: none;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            width: 100%;
+
+                            >input{
+                                width: 97%;
+                                margin: 10px 0;
+
+                                &::placeholder{
+                                    color: #aaa;
+                                }
+                                
+                            }
+                        }
+                    }
+                    >#btn{
+                        display: none;
+                        // display: flex;
+                        justify-content: space-around;                      
+
+                        >input[type="submit"], >input[type="reset"]{
+                            @extend %button;
+                            padding: 0;
+
+                            &:hover{
+                                font-weight: bold;
+                                color: #fff;
+                                background-color: #465D4C;
+                            }
+
+                            @include r768{
+                                width: 100px;
+                                height: 40px;
+                                line-height: 40px;
+                                font-size: 20px;
+                            }
+
+                            @include r576{
+                                
+                                font-size: 18px;
+                            }
+
+                            @include r360{
+                                width: 75px;
+                                height: 35px;
+                                line-height: 35px;
+                                font-size: 16px;
+                            } 
+                        }
+
+                        
+                    }
+                }
+            }
+            
+
+            //我的收藏
+            .favorite{
                 font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
                 margin: 0 auto;
                 padding-top: $mainPaddingTop + px;
@@ -304,11 +493,6 @@ body{
                             }
                         }
 
-                        .seeProduct{
-                            text-decoration: none;
-                            margin: 10px;
-                        }
-
                         button{
                             border: 1px solid #465D4C;
                             border-radius: 4px;
@@ -319,6 +503,7 @@ body{
 
                             width: 110px;
                             padding: 7px;
+                            margin: 10px;
                             cursor: pointer;
 
                             @include r1440{
@@ -359,8 +544,8 @@ body{
 
                         .remove{
                             border: 1px solid #aaa;
-                            margin: 10px;
                             color: #aaa;
+
                         }
                     }
 
@@ -379,56 +564,7 @@ body{
                 }
             }
         }
-
-        #dropCheck{
-            // display: flex;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background-color: rgba(0,0,0,.7);
-
-            z-index: 10;
-            
-            >div{
-                padding: 20px;
-                border: 1px solid  #465D4C;
-                border-radius: 3px;
-                background-color: #FFFAF4;
-                
-                >p{
-                    padding: 20px 10px;
-                    text-align: center;
-                    color: #465D4C;
-                }
-
-                .dropBtn{
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-
-                    padding: 10px;
-
-                    button{
-                        padding: 7px 14px;
-                        color: #465D4C;
-                        background-color: rgba(0, 0, 0, 0);
-                        outline: none;
-                        border: 1px solid #465D4C;
-                        font-size: 16px;   
-                        cursor: pointer;
-
-                        &:hover{
-                            color: #fff;
-                            background-color:  #465D4C;
-                        }
-                    }
-                }
-            }
-        }
     }
+    
 }
+

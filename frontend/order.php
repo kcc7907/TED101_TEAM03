@@ -1,8 +1,6 @@
 <?php
     include("../php/08/jk_link.php");
 
-    $user = "A111200001";   //測試帳號
-
     //會員擁有訂單的訂單編號
     $sql_order = "SELECT * from `ORDER` where MEMBER_ID = ?";
     $statement = $pdo->prepare($sql_order);
@@ -99,27 +97,27 @@
                         $orderDetailData = $statement->fetchAll();
 
                         //找優惠資料 需調整篩選
-                        $sql_discount = "SELECT *
-                                        from `ORDER` o
-                                        join
-                                        (select *
-                                        from `ORDER_DETAIL` od
-                                        join
-                                        (select *
-                                        from product p
-                                            join discount d
-                                            on p.PRD_ID = d.DIS_PRODUCT_ID1 
-                                                or p.PRD_ID = d.DIS_PRODUCT_ID2) pd
-                                        on pd.PRD_ID = od.PRODUCT_ID) m
-                                        on m.ORDER_ID = o.ORD_ID
+                        // $sql_discount = "SELECT *
+                        //                 from `ORDER` o
+                        //                 join
+                        //                 (select *
+                        //                 from `ORDER_DETAIL` od
+                        //                 join
+                        //                 (select *
+                        //                 from product p
+                        //                     join discount d
+                        //                     on p.PRD_ID = d.DIS_PRODUCT_ID1 
+                        //                         or p.PRD_ID = d.DIS_PRODUCT_ID2) pd
+                        //                 on pd.PRD_ID = od.PRODUCT_ID) m
+                        //                 on m.ORDER_ID = o.ORD_ID
                                         
-                                        where ORDER_ID = ?";                        
-                        $statementDis = $pdo->prepare($sql_discount);
-                        $statementDis->bindValue(1, "$item");
-                        $statementDis->execute();
-                        $discountDate = $statementDis->fetchAll();
+                        //                 where ORDER_ID = ?";                        
+                        // $statementDis = $pdo->prepare($sql_discount);
+                        // $statementDis->bindValue(1, "$item");
+                        // $statementDis->execute();
+                        // $discountDate = $statementDis->fetchAll();
 
-                        foreach($discountDate as $d => $dis){};
+                        // foreach($discountDate as $d => $dis){};
                 ?>
 
                 
@@ -176,11 +174,11 @@
                                             foreach($orderDetailData as $j => $row){
                                                 array_push($sumPrice, $row["PRD_PRICE"] * $row["ORDER_QUANTITY"]);                           
                                             };
-                                            if(isset($dis)){
-                                                echo array_sum($sumPrice) - $dis["DIS_AMOUNT"].' 元';
-                                            }else {
-                                                echo array_sum($sumPrice).' 元';
-                                            }
+                                            // if(isset($dis)){
+                                                echo array_sum($sumPrice) + $row["ORD_DISCOUNT"].' 元';
+                                            // }else {
+                                            //     echo array_sum($sumPrice).' 元';
+                                            // }
                                         ?>
                                         
                                     </li>
@@ -299,11 +297,11 @@
                                                 <ol>
                                                     <li>
                                                     <?php
-                                                    if(isset($dis)){
-                                                        echo -$dis["DIS_AMOUNT"].'元';
-                                                    }else {
-                                                        echo '-0 元';
-                                                    }
+                                                    // if(isset($dis)){
+                                                        echo $row["ORD_DISCOUNT"].'元';
+                                                    // }else {
+                                                    //     echo '-0 元';
+                                                    // }
                                                     ?>
                                                     </li>
                                                 </ol>
@@ -315,12 +313,12 @@
                                             折扣: 
                                             <span>
                                                 <?php
-                                                if(isset($dis)){
-                                                    echo -$dis["DIS_AMOUNT"];
-                                                    unset($dis);
-                                                }else {
-                                                    echo '-0';
-                                                }
+                                                // if(isset($dis)){
+                                                    echo $row["ORD_DISCOUNT"];
+                                                //     unset($dis);
+                                                // }else {
+                                                //     echo '-0';
+                                                // }
                                                 ?>
                                             </span> 元
                                         </div>
