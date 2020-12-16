@@ -57,18 +57,24 @@
             <section class="select">
                 <div class="select_one">
                     <div class="select_click">
-                        <a href="#">
-                            <!-- <img src="../img/icon/back.png" class="icon_left"> -->
-                        </a>
-                        <div class="click titleFont2">上一頁</div>
-                        <a href="#">
-                            <!-- <img src="../img/icon/043-border.png" class="icon_border"> -->
-                        </a>
-                        <div class="click titleFont2">回到選擇系列</div>
-                        <a href="#">
-                            <!-- <img src="../img/icon/next.png" class="icon_right"> -->
-                        </a>
-                        <div class="click titleFont2">下一頁</div>
+                        <div class="page_click_back">
+                            <a href="./case.html">
+                                <img src="../img/icon/back.png" class="icon_left">
+                            </a>
+                            <div class="click titleFont2">上一頁</div>
+                        </div>
+                        <div class="page_click_choice">
+                            <a href="./case.html">
+                                <img src="../img/icon/043-border.png" class="icon_border">
+                            </a>
+                            <div class="click titleFont2">回到選擇系列</div>
+                        </div>
+                        <div class="page_click_next">
+                            <a href="./case.html">
+                                <img src="../img/icon/next.png" class="icon_right">
+                            </a>
+                            <div class="click titleFont2">下一頁</div>
+                        </div>
 
                     </div>
                     <div class="exhibit_pic">
@@ -149,7 +155,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="slider slider-nav interior_two">
                             <span class="triangle1" id="to_left"></span>
                             <div class="inter_one_pack">
