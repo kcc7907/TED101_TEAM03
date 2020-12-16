@@ -1,6 +1,9 @@
-$(document).ready(function () {
-    //jQuery輪播圖
 
+$(document).ready(function () {
+    //jQuery獎項輪播圖
+    window.onresize = function () {
+        divWidth = $('#sliderBoard').width(); //90%
+    }
     let divWidth = $('#sliderBoard').width(); //90%
     let imgCount = $('#content li').length;   //3(張照片)
     // console.log(imgCount);
