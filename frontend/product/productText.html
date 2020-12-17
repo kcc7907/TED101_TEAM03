@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>救世宅 | 救世傢俱</title>
+    <link rel="Shortcut Icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" href="../../lib/reset.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/productText.css">
+    <script src="../../lib/js/vue.js"></script>
+    <script src="../../lib/js/jquery.js"></script>
+</head>
+
+<body>
+    <header class="common">
+        <div class="logo">
+            <a href="./home2D.html"><img src="../../img/headerFooter/logo.svg"></a>
+        </div>
+        <nav>
+            <dav class="nav1">
+                <a href="./product.html">救世傢俱</a>
+                <a href="./case.html">參考案例</a>
+            </dav>
+            <dav class="nav2">
+                <a href="./qa.html">客戶服務</a>
+                <a href="./contest_participate.html">傢聚賞</a>
+            </dav>
+        </nav>
+        <div class="icon">
+            <a class="login" href="./meminfo.html">
+                <img src="../../img/headerFooter/loginIcon.svg" alt="">
+            </a>
+            <a class="shop" href="./contest_main20.html">
+                <img src="../../img/headerFooter/shoppingCart.svg" alt="">
+            </a>
+            <a class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </header>
+    <div id="sam_vue">
+        <div class="productContent" v-for="product in products">
+            <div class="productTitle" >
+                <h1 class="title">{{product.title}}</h1>
+                <span class="smallword">{{product.sort}}</span>
+                <p class="word">{{product.word}}</p>
+            </div>
+            <div class="productPic">
+                <h1>3D SPACE</h1>
+            </div>
+            <div class="lightBox">
+                <img :src="product.lightbox1" alt="看三小" id="lightbox1" class="light">
+                <img :src="product.lightbox2" alt="看三小" id="lightbox2" class="light">
+                <img :src="product.lightbox3" alt="看三小" id="lightbox3" class="light">
+            </div>
+        </div>
+        
+
+
+
+
+
+
+
+    </div>
+    <footer class="libft">
+        <section class="herf">
+            <div class="logo">
+                <img src="../../img/headerFooter/logo.svg" alt="">
+            </div>
+            <div class="page">
+                <a href="./product.html">救世家具</a>
+                <a href="./case.html">優質案例</a>
+                <a href="./qa.html">客戶服務</a>
+                <a href="./qa.html">聯繫我們</a>
+                <a href="./contest_main20.html">傢俱賞</a>
+            </div>
+        </section>
+        <section class="link">
+            <div class="scb">
+                <label for="mail">訂閱電子報</label>
+                <input type="text" class="mail" placeholder="enter your email">
+            </div>
+            <div class="company">
+                <img src="../../img/headerFooter/東和鋼鐵.png">
+                <img src="../../img/headerFooter/cooperate_blum.png">
+                <img src="../../img/headerFooter/foot_logo.png">
+            </div>
+        </section>
+        <section class="copy">
+            <p>Copy right 2020,All Right Reserved | By 救世宅</p>
+        </section>
+    </footer>
+    <script src="../../lib/header/header.js"></script>
+
+    <script>
+        new Vue({
+            el:'#sam_vue',
+            data:{
+                products:[],
+                // title:'日日',
+                // sort:'書櫃',
+                // word:'木頭是我的療癒系 - 日日書櫃 。『柚』喜歡木頭，在窗邊下、在書房裡有時柔和、或是古樸的潔淨、或是療癒的色澤經常拿來放置書本與燭台的板上已被染上了日記使用的暗色痕跡不太在意，甚至更喜歡隨著日日使用不同表情不同層次的原始感我想這是只有柚木能夠給予的歷史光澤自家的窗邊與書房風景中豐富不顯雜亂。傢，在素淨裡更顯豐繞!',
+
+            },
+            mounted(){
+                $.getJSON('./productText.json').then(res => {
+                    this.products = res;
+                    console.log(res);
+                });
+            },
+        });
+    </script>
+</body>
+
+</html>
