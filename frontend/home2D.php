@@ -370,7 +370,7 @@
             </div>
         </div>
         <!-- confirm燈箱 -->
-        <div class="confirmDiv ">
+        <div class="confirmDiv">
             <div>
                 <p class="contentFont lineHeight"></p>
                 <input type="button" class="detailFont" id="sureGoHome" value="確認">

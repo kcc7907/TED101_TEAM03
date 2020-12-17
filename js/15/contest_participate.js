@@ -4,115 +4,29 @@ $(document).ready(function () {
     $('#JHC #formStep3').hide();
     $('#JHC form#preview').hide();
     $('#JHC .lastP').hide();
+    $('#JHC div.confirmDivC').hide();
+
 
     
-    if(checkCookie('loging')){
-        // ======== 同意鈕 ========
-        $('#JHC #submitStep1').change(function(){
-            if($(this).prop("checked")){
-                $(this).prop( "checked", true).val('1');
-            }
-        });
-        // ======== 下一步 ========
-        $('#JHC button.nextBtn').click(function (e){
-            checkRequired(e.target);
-        });
-
-        // ======== 上一步 ========
-        $('#JHC .backBtn').click(function(){
-            $(this).closest('form').hide();
-            $(this).closest('form').prev('form').show();
-        });
-
-        // ======== 最後一步確認 =========
-
-        $('button.viewThis').click(function(e){
-            // checkRequired(e.target);
-            $('form#preview').show();
-            $('#preview .clickVote').css('opacity', '1');
-            $('#preview').click(()=>{
-                $('#preview').hide();
-                $('#preview .clickVote').css('opacity', '0')
-            });
-        });
-
-
-        $('.sureThis').click((e)=>{
-            let needWrite = $(e.target).closest('form.formStep').find('[required="required"]');
-            let need = true;
-            $(needWrite).each(function (index, value) {
-                if ($(value).val() == '' || $(value).val() == 0) {
-                    need = false;
-                }else{
-                    need = true;
-                }
-            });
-
-            if(need == true){
-                // 點擊「送出時」，出現confirm視窗
-                // 1.先隱藏
-                $('#JHC div.confirmDivC').hide();
-                $('#JHC div.confirmDivC').find('p.contentFont').text(`確認是否送出？`);
-
-                // 2.點擊出現confirm視窗
-                // $('.sureThis').click(function(){
-                    $('div.confirmDivC').show().css({
-                        'zIndex': '99',
-                        'opacity': '1',
-                    });
-                // });
-
-                // 3.點擊確認鈕 -> 送出資料
-                $('#JHC #sureGoContest').click(function(){
-                    let contestant = getCookie('loging');
-                    let pIdNum = $('#JHC #pIdNum').val().trim(); // 身分證號碼
-                    let fType = $('#JHC #fType').val(); // 作品種類
-                    let fName = $('#JHC #fName').val().trim(); // 作品名稱
-                    let fConcept = $('#JHC #fConcept').val().trim(); // 設計理念
-                    let pId = $('#JHC input#pId').prop('files')[0]; // 上傳身分證
-                    let draft = $('#JHC input#draft').prop('files')[0]; // 上傳草稿
-                    let draw = $('#JHC input#draw').prop('files')[0]; // 上傳完稿
-                    let form_data = new FormData();
-                    form_data.append('contestant', contestant);
-                    form_data.append('pIdNum', pIdNum);
-                    form_data.append('type', fType);
-                    form_data.append('name', fName);
-                    form_data.append('concept', fConcept);
-                    form_data.append('file1', pId);
-                    form_data.append('file2', draft);
-                    form_data.append('file3', draw);
-                    $.ajax({
-                        url: "contestR.php",
-                        type: "POST",
-                        data: form_data,
-                        contentType: false,
-                        cache: false,
-                        processData:false,
-                        success: function(res){
-                            console.log(res);
-                            $('#JHC .step form').hide();
-                            $('#JHC .lastP').show();
-                            $('div.confirmDivC').css({
-                                'zIndex': '-99',
-                                'opacity': '0',
-                            }).hide();
-                        },
-                    });
-                });
-
-                // 4.點擊取消鈕
-                $('#notsureGoContest').click(function(){
-                    $('div.confirmDivC').css({
-                        'zIndex': '-99',
-                        'opacity': '0',
-                    }).hide();
-                });
-            }
-        });
-    }else{
+    if(!checkCookie('loging')){
+        $('#login div.closebtn').hide();
+        $('#signUp div.closebtn').hide();
         logBox();
         memBox();
     }
+    
+    goStep();
+
+    $('#formStep1 button.nextBtn').click(goStep);
+
+
+
+    // $('登出').click(()=>{
+    //     $('#login div.closebtn').hide();
+    //     $('#signUp div.closebtn').hide();
+    //     logBox();
+    //     memBox();
+    // });
 });
 
 // ======== vue =========
@@ -164,14 +78,14 @@ let vueJH = new Vue({
     },
 });
 
-
+// ======== 按鈕事件 ========
 function checkRequired(theNextBtn) {
     let needWrite = $(theNextBtn).closest('form.formStep').find('[required="required"]');
-    // let needFile = $(theNextBtn).closest('form.formStep').find('[type="file"]');
     need = true;
     checkPID = true;
 
     if($(theNextBtn).closest('form.formStep').find('#pIdNum').length !== 0){
+        // #form2判斷
         $(needWrite).each(function (index, value) {
             if ($(value).val() == '' || $(value).val() == 0) {
                 need = false;
@@ -193,20 +107,15 @@ function checkRequired(theNextBtn) {
             $(theNextBtn).closest('form').hide();
             $(theNextBtn).closest('form').next('form').show();
         }else if (need == true && checkPID !== true){
-            alert('請輸入正確身分證號碼。');
+            let str = `請輸入正確身分證號碼。`;
+            confirmContest(str);
         }else{
-            alert(`所有欄位為必填，請輸入完整資訊。`);
+            let str = `所有欄位為必填，請輸入完整資訊。`;
+            confirmContest(str);
         }
 
-
-        // if( $('#pIdNum').val().trim() !== ""){
-
-        // }else{
-        //     alert(`所有欄位為必填，請輸入完整資訊。`);
-        // }
-
     }else{
-
+        // #form1判斷
         $(needWrite).each(function (index, value) {
             if ($(value).val() == '' || $(value).val() == 0) {
                 need = false;
@@ -219,15 +128,148 @@ function checkRequired(theNextBtn) {
             $(theNextBtn).closest('form').hide();
             $(theNextBtn).closest('form').next('form').show();
         }else{
-            alert(`所有欄位為必填，請輸入完整資訊。`);
+            // confirm視窗
+            let str = `所有欄位為必填，請輸入完整資訊。`;
+            confirmContest(str);
         }
-
     }
-
-
-        console.log('need = ' + need);
-        console.log('checkPID = ' + checkPID);
 }
 
+
+// ======== 投稿步驟 ========
+function goStep() {
+    // **************** 同意鈕 
+    $('#JHC #submitStep1').change(function(){
+        if($(this).prop("checked")){
+            $(this).prop( "checked", true).val('1');
+        }
+    });
+
+    // **************** 下一步
+    if(checkCookie('loging')){
+        $('#JHC button.nextBtn').click(function (e){
+            checkRequired(e.target);
+        });
+    }else{
+        $('#login div.closebtn').hide();
+        $('#signUp div.closebtn').hide();
+        logBox();
+        memBox();
+    }
+    
+    // **************** 上一步
+    $('#JHC .backBtn').click(function(){
+        $(this).closest('form').hide();
+        $(this).closest('form').prev('form').show();
+    });
+    
+    // **************** 預覽投稿
+    $('button.viewThis').click(function(e){
+        // checkRequired(e.target);
+        $('form#preview').show();
+        $('#preview .clickVote').css('opacity', '1');
+        $('#preview').click(()=>{
+            $('#preview').hide();
+            $('#preview .clickVote').css('opacity', '0')
+        });
+    });
+    
+    
+    // **************** 送出確認
+    $('.sureThis').click((e)=>{
+        // #form3判斷
+        // 確認必填
+        let needWrite = $(e.target).closest('form.formStep').find('[required="required"]');
+        let need = true;
+        $(needWrite).each(function (index, value) {
+            if ($(value).val() == '' || $(value).val() == 0) {
+                need = false;
+            }else{
+                need = true;
+            }
+        });
+        
+        if(need == true){
+            // confirm視窗
+            // 1.改變文字
+            $('#JHC div.confirmDivC').find('p.contentFont').text(`確認是否送出？`);
+            // 2.出現confirm視窗
+            $('div.confirmDivC').show().css({
+                'zIndex': '99',
+                'opacity': '1',
+            });
+            // 3.點擊確認鈕 -> 送出資料
+            $('#JHC #sureGoContest').click(function(){
+                let contestant = getCookie('loging');
+                let pIdNum = $('#JHC #pIdNum').val().trim(); // 身分證號碼
+                let fType = $('#JHC #fType').val(); // 作品種類
+                let fName = $('#JHC #fName').val().trim(); // 作品名稱
+                let fConcept = $('#JHC #fConcept').val().trim(); // 設計理念
+                let pId = $('#JHC input#pId').prop('files')[0]; // 上傳身分證
+                let draft = $('#JHC input#draft').prop('files')[0]; // 上傳草稿
+                let draw = $('#JHC input#draw').prop('files')[0]; // 上傳完稿
+                let form_data = new FormData();
+                form_data.append('contestant', contestant);
+                form_data.append('pIdNum', pIdNum);
+                form_data.append('type', fType);
+                form_data.append('name', fName);
+                form_data.append('concept', fConcept);
+                form_data.append('file1', pId);
+                form_data.append('file2', draft);
+                form_data.append('file3', draw);
+                $.ajax({
+                    url: "contestR.php",
+                    type: "POST",
+                    data: form_data,
+                    contentType: false,
+                    cache: false,
+                    processData:false,
+                    success: function(res){
+                        console.log(res);
+                        $('#JHC .step form').hide();
+                        $('#JHC .lastP').show();
+                        $('div.confirmDivC').css({
+                            'zIndex': '-99',
+                            'opacity': '0',
+                        }).hide();
+                    },
+                });
+            });
+            // 4.點擊取消鈕
+            $('#notsureGoContest').click(function(){
+                $('div.confirmDivC').css({
+                    'zIndex': '-99',
+                    'opacity': '0',
+                }).hide();
+            });
+
+            console.log();
+        }else{
+            let str = `所有欄位為必填，請輸入完整資訊。`;
+            confirmContest(str);
+        }
+    });
+}
+
+// ======== confirm燈箱 ========
+function confirmContest(text) {  
+    // 1.隱藏取消鈕 
+    $('#notsureGoContest').hide();
+    // 2.改變文字
+    $('#JHC div.confirmDivC').find('p.contentFont').text(text);
+    // 3.出現confirm視窗
+    $('div.confirmDivC').show().css({
+        'zIndex': '99',
+        'opacity': '1',
+    });
+    // 4.點擊確認鈕
+    $('#JHC #sureGoContest').click(function(){
+        $('div.confirmDivC').css({
+            'zIndex': '-99',
+            'opacity': '0',
+        }).hide();
+        $('#notsureGoContest').show();
+    });
+}
 
 // document.addEventListener('click',e=>console.log(e.target));
