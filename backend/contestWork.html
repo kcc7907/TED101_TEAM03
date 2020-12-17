@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品管理</title>
+    <title>比賽管理</title>
 
     <link rel="stylesheet" href="../lib/reset.css">
-    <link rel="stylesheet" href="../css/product_authority.css">
+    <link rel="stylesheet" href="../css/contestWork_backend.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="../lib/js/vue.js"></script>
     <script src="../lib/js/jquery.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
-    <script defer src="../js/13/product_authority.js"></script>
+    <script defer src="../js/15/contestWork_backend.js"></script>
 
 
 </head>
@@ -75,6 +75,14 @@
                             </ul>
                         </li>
 
+                        <li>
+                            <ul>
+                                <li class="item">比賽管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="jh_authorityChange1">作品總攬</li>
+                                <li id="jh_authorityChange2">作品審核</li>
+                            </ul>
+                        </li>
+
 
                     </ul>
                 </div>
@@ -84,7 +92,7 @@
 
             <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
 
-            <main class="sam_class" id="app">
+            <main class="jh_class" id="app">
                 <!-- 頂部資訊 -->
                 <div class="top">
                     <div class="path">
@@ -96,7 +104,7 @@
                 </div>
 
                 <!-- 表格資訊 -->
-                <table class="sam_authorityChange">
+                <table class="jh_authorityChange">
 
                     <!-- 表格標頭 -->
                     <tr>
@@ -124,7 +132,7 @@
                 </table>
 
                 <!-- 跳窗 -->
-                <div class="sam_jump">
+                <div class="jh_jump">
                     <div class="secondBack">
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form action="" method="">
