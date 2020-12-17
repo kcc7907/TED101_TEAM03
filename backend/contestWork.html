@@ -78,7 +78,7 @@
                         <li>
                             <ul>
                                 <li class="item">比賽管理<i class="fas fa-chevron-left"></i></li>
-                                <li id="jh_authorityChange1">作品總攬</li>
+                                <li id="jh_authorityChange1">作品總覽</li>
                                 <li id="jh_authorityChange2">作品審核</li>
                             </ul>
                         </li>
@@ -92,7 +92,7 @@
 
             <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
 
-            <main class="jh_class" id="app">
+            <main class="jh_class" id="jhApp">
                 <!-- 頂部資訊 -->
                 <div class="top">
                     <div class="path">
@@ -119,7 +119,7 @@
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr v-for="rp in rp">
+                    <tr v-for="wk in work">
                         <td>{{rp.PRD_ID}}</td>
                         <td>{{rp.PRD_SPECIES}}</td>
                         <td>{{rp.PRD_NAME}}</td>
@@ -172,17 +172,24 @@
     </div>
     <script>
         let app = new Vue({
-            el: '#app',
+            el: '#jhApp',
             data: {
-                rp: '',
+                work: '',
             },
             methods: {
 
             },
             mounted() {
-                axios.post('../php/13/product.php').then(res => {
-                    this.rp = res.data;
-                })
+                $.ajax({
+                    type: "POST",
+                    url: "./contestWorkR.php",
+                    // data: "data",
+                    dataType: "text",
+                    success: function (res) {
+                        // console.log(res);
+                        console.log(res);
+                    }
+                });
             },
         });
     </script>
