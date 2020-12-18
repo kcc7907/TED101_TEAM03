@@ -129,33 +129,40 @@
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form action="" method="">
                             <label for="product_number">商品編號</label>
-                            <input type="text" name="product_number" id="product_number" placeholder="安安">
+                            <input type="text" name="product_number" id="product_number" placeholder="安安"
+                                v-model="formData.product_num">
                             <br>
 
                             <label for="product_kind">商品種類</label>
-                            <input type="text" name="product_kind" id="product_kind" placeholder="安安">
+                            <input type="text" name="product_kind" id="product_kind" placeholder="安安"
+                                v-model="formData.product_kind">
                             <br>
 
                             <label for="product_name">商品名稱</label>
-                            <input type="text" name="product_name" id="product_name" placeholder="安安">
+                            <input type="text" name="product_name" id="product_name" placeholder="安安"
+                                v-model="formData.product_name">
                             <br>
 
                             <label for="product_price">商品價格</label>
-                            <input type="text" name="product_price" id="product_price" placeholder="安安">
+                            <input type="text" name="product_price" id="product_price" placeholder="安安"
+                                v-model="formData.product_price">
                             <br>
 
                             <label for="product_material">材質 / 庫存</label>
-                            <input type="text" name="product_material" id="product_material" placeholder="安安">
+                            <input type="text" name="product_material" id="product_material" placeholder="安安"
+                                v-model="formData.product_material">
                             <br>
 
                             <label for="product_update">上架日期</label>
-                            <input type="text" name="product_update" id="product_update" placeholder="安安">
+                            <input type="text" name="product_update" id="product_update" placeholder="安安"
+                                v-model="formData.product_update">
                             <br>
 
                             <label for="product_discount">優惠折扣</label>
-                            <input type="text" name="product_discount" id="product_discount" placeholder="安安">
+                            <input type="text" name="product_discount" id="product_discount" placeholder="安安"
+                                v-model="formData.product_discount">
 
-                            <button id="product_submit" type="button">上架</button>
+                            <button id="product_submit" type="button" @click="send">上架</button>
                         </form>
                     </div>
                 </div>
@@ -167,9 +174,24 @@
             el: '#app',
             data: {
                 rp: '',
+                formData: {
+                    product_num: '',
+                    product_kind: '',
+                    product_name: '',
+                    product_price: '',
+                    product_material: '',
+                    product_update: '',
+                    product_discount: ''
+                }
             },
             methods: {
-
+                send() {
+                    console.log(this.formData);
+                    axios.post('../php/13/productInsert.php', this.formData).then(res => {
+                        this.rp = res.data;
+                    });
+                    $('div.sam_jump').addClass('-opacity-zero');
+                }
             },
             mounted() {
                 axios.post('../php/13/product.php').then(res => {
