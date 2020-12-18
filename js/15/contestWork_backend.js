@@ -91,17 +91,15 @@ $(document).ready(function () {
         $('main.jh_class').css('display', 'block');
     });
 
-    $('#jh_authorityChange2').click(function () {
-        $('div.jh_jump').addClass('-on');
-    });
+
 
     $('img.cancel-icon').click(function () {
         $('div.jh_jump').addClass('-opacity-zero');
-
         setTimeout(function () {
             $('div.jh_jump').removeClass('-on -opacity-zero');
         }, 1000);
     });
+
 
 
 

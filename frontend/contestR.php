@@ -6,7 +6,7 @@ function getFilePath()
 {
     //Web根目錄真實路徑
     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
-    return $ServerRoot . "/TED101_TEAM03/donotupload/contestWorkImg/pId/";
+    return $ServerRoot . "/TED101_TEAM03/donotupload/contestWorkImg/";
 }
 
 //先判斷圖片是否上傳成功?
@@ -43,19 +43,20 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
     $filePath_Temp2 = $_FILES["file2"]["tmp_name"];
     $filePath_Temp3 = $_FILES["file3"]["tmp_name"];
 
-    $rand = rand(100,999);
+    $now = date_create('now', new DateTimeZone('Asia/Taipei'));
+    $date = date_format($now, 'YmdHis');
 
     // FILE欲搬移的正確位置
-    $filePath1 = getFilePath() . $data[0]['MEM_ID'] . rand(100,999) . $file1;
-    $filePath2 = getFilePath() . $data[0]['MEM_ID'] . rand(100,999) . $file2;
-    $filePath3 = getFilePath() . $data[0]['MEM_ID'] . rand(100,999) . $file3;
+    $filePath1 = "pId/" . $data[0]['MEM_ID'] . $date . $file1;
+    $filePath2 = "draft/" . $data[0]['MEM_ID'] . $date . $file2;
+    $filePath3 = "draw/" . $data[0]['MEM_ID'] . $date . $file3;
 
-    $Array = array($filePath_Temp1 => $filePath1, $filePath_Temp2 => $filePath2, $filePath_Temp3 => $filePath3);
+    $Array = array($filePath_Temp1 => getFilePath() . $filePath1, $filePath_Temp2 => getFilePath() . $filePath2, $filePath_Temp3 => getFilePath() . $filePath3);
 
     // 資料庫儲存的檔案路徑
-    $usePath1 = '../donotupload/contestWorkImg/pId/' . $data[0]['MEM_ID'] . rand(100,999) . $file1;
-    $usePath2 = '../donotupload/contestWorkImg/pId/' . $data[0]['MEM_ID'] . rand(100,999) . $file2;
-    $usePath3 = '../donotupload/contestWorkImg/pId/' . $data[0]['MEM_ID'] . rand(100,999) . $file3;
+    $usePath1 = '../donotupload/contestWorkImg/' . $filePath1;
+    $usePath2 = '../donotupload/contestWorkImg/' . $filePath2;
+    $usePath3 = '../donotupload/contestWorkImg/' . $filePath3;
 
     // 確認暫存檔搬移到正確位置
     foreach ($Array as $key => $value) {
@@ -72,7 +73,7 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
 
     if ($checkN == 1) {
         // 建立SQL
-        $sql = "INSERT INTO `WORK` (`WK_ID`, `WK_SESSION`, `WK_SPECIES`, `WK_NAME`, `WK_CONCEPT`, `WK_DRAW`, `WK_DRAFT`, `WK_VOTES`, `WK_STATUS`, `WK_DATE`) VALUES (NOW(), 2, ?, ?, ?, ?, ?, 0, '審核中', NOW());";
+        $sql = "INSERT INTO `WORK` (`WK_ID`, `WK_SESSION`, `WK_SPECIES`, `WK_NAME`, `WK_CONCEPT`, `WK_DRAFT`, `WK_DRAW`, `WK_VOTES`, `WK_STATUS`, `WK_DATE`) VALUES (NOW(), 2, ?, ?, ?, ?, ?, 0, '待收件', NOW());";
         // 執行
         $statement = $pdo->prepare($sql);
 

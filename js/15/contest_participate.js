@@ -205,7 +205,7 @@ function goStep() {
                 let fType = $('#JHC #fType').val(); // 作品種類
                 let fName = $('#JHC #fName').val().trim(); // 作品名稱
                 let fConcept = $('#JHC #fConcept').val().trim(); // 設計理念
-                let pId = $('#JHC input#pId').prop('files')[0]; // 上傳身分證
+                let pId = $(b'#JHC input#pId').prop('files')[0]; // 上傳身分證
                 let draft = $('#JHC input#draft').prop('files')[0]; // 上傳草稿
                 let draw = $('#JHC input#draw').prop('files')[0]; // 上傳完稿
                 let form_data = new FormData();

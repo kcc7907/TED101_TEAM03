@@ -409,7 +409,7 @@
             </svg>
 
             <div class="closebtn">
-                <span class="closebtn">&times;</span>
+                <img class="closebtn" src="../img/homepage/Iconcancel.png">
             </div>
         </div>
     </div>
@@ -470,7 +470,7 @@
                 </div>
             </form>
             <div class="closebtn">
-                <span>&times;</span>
+                <img class="closebtn" src="../img/homepage/Iconcancel.png">
             </div>
         </div>
     </div>

@@ -405,24 +405,27 @@
 
 
 @mixin closeBtn($top, $right, $w, $h, $font, $content, $c_w, $c_font, $c_top, $c_left, $lineH) {
+    width: $w + px;
+    height: $h + px;
     position: absolute;
     top: $top + px;
     right: $right + px;
-
-    span {
+    img {
         display: inline-block;
-        width: $w + px;
-        height: $h + px;
-        font-size: $font + px;
-        text-align: center;
-        line-height: $lineH + px;
-        border: 1px solid;
-        border-radius: 50%;
-        position: relative;
-
+        width: 100%;
+        max-width: 100%;
+        // width: $w + px;
+        // height: $h + px;
+        // font-size: $font + px;
+        // text-align: center;
+        // line-height: $lineH + px;
+        // border: 1px solid;
+        // border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
         &:hover {
             cursor: pointer;
-
             &::after {
                 content: $content;
                 display: inline-block;
@@ -431,6 +434,7 @@
                 position: absolute;
                 top: $c_top + px;
                 left: $c_left + px;
+                z-index: 10;
             }
         }
     }
