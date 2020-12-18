@@ -111,11 +111,9 @@ body{
                     >i{
                         font-size: 50px;
                         cursor: pointer;
-
                         transition: .5s;
-                        
                     }
-
+                    
                     >i.-rotate{
 
                         transform: translateX(100px) rotate(180deg);
@@ -152,6 +150,7 @@ body{
                     border-top: 1px solid #707070;
                     border-right: 1px solid #707070;
                     border-left: 1px solid #707070;
+                    flex-wrap: nowrap;
 
                     tr{
                         border-bottom: 1px solid #707070;
@@ -187,92 +186,90 @@ body{
                         >th + th, >td + td{
                             border-left: 1px solid #707070;
                         }
-
-                        
                     }
                 }
-                // div.sam_jump{
-                //     border:1px solid red;
-                //     position: fixed;
-                //     width:100%;
-                //     height: 100vh;
-                //     background-color: rgba(97,97,97,.8);
-                //     top:0;
-                //     left:0;
-                //     opacity: 0;
-                //     z-index: -1;
-                //     transition: opacity 1s;
-                //     div.secondBack{
-                //         width:60%;
-                //         margin:0 auto;
-                //         border:1px solid rgb(155, 155, 155);
-                //         background-color: #fffaf4;
-                //         margin-top: 4.5%;
-                //         position: relative;
-                //         img.cancel-icon{
-                //             position: absolute;
-                //             width: 40px;
-                //             height: 40px;
-                //             top:1%;
-                //             right:1%;
-                //             cursor:pointer;
-                //         }
-                //         form{
-                //             border:1px solid #865454;
-                //             width:50%;
-                //             margin:60px auto 60px;
-                //             position: relative;
-                //             z-index:2;
-                //             &:after{
-                //                 content:'';
-                //                 display:block;
-                //                 width:100%;
-                //                 height: 100%;
-                //                 background-color: rgba(189,167,156,0.1);
-                //                 position: absolute;
-                //                 top:1%;
-                //                 right:-1%;
-                //                 z-index:-1;
-                //             }
-                //         }
-                //         label{
-                //             display:inline-block;
-                //             margin:2% 20px 0px 2%;
-                //         }
-                //         input{
-                //             display:inline-block;
-                //             background:none;
-                //             border:none;
-                //             outline:none;
-                //             border-bottom:1px solid #865454;
-                //             margin-bottom:6%;
-                //         }
-                //         button#product_submit{
-                //             display:block;
-                //             margin:30px auto;
-                //             width:150px;
-                //             height: 50px;
-                //             border:2px solid #BDA79E;
-                //             color:#865454;
-                //             outline:none;
-                //             cursor:pointer;
-                //             background:none;
-                //             font-size:24px;
-                //             transition:all .5s;
-                //             &:hover{
-                //                 background-color: #BDA79E;
-                //                 color:#f8f8f8;
-                //             }
-                //         }
-                //     }
-                // }
-                // div.sam_jump.-on{
-                //     opacity: 1;
-                //     z-index: 2;
-                // }
-                // div.sam_jump.-opacity-zero{
-                //     opacity: 0;
-                // }
+                div.jane_jump{
+                    border:1px solid red;
+                    position: fixed;
+                    width:100%;
+                    height: 100vh;
+                    background-color: rgba(97,97,97,.8);
+                    top:0;
+                    left:0;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: opacity 1s;
+                    div.secondBack{
+                        width:60%;
+                        margin:0 auto;
+                        border:1px solid rgb(155, 155, 155);
+                        background-color: #fffaf4;
+                        margin-top: 4.5%;
+                        position: relative;
+                        img.cancel-icon{
+                            position: absolute;
+                            width: 40px;
+                            height: 40px;
+                            top:1%;
+                            right:1%;
+                            cursor:pointer;
+                        }
+                        form{
+                            border:1px solid #865454;
+                            width:50%;
+                            margin:60px auto 60px;
+                            position: relative;
+                            z-index:2;
+                            &:after{
+                                content:'';
+                                display:block;
+                                width:100%;
+                                height: 100%;
+                                background-color: rgba(189,167,156,0.1);
+                                position: absolute;
+                                top:1%;
+                                right:-1%;
+                                z-index:-1;
+                            }
+                        }
+                        label{
+                            display:inline-block;
+                            margin:2% 20px 0px 2%;
+                        }
+                        input{
+                            display:inline-block;
+                            background:none;
+                            border:none;
+                            outline:none;
+                            border-bottom:1px solid #865454;
+                            margin-bottom:6%;
+                        }
+                        button#case_submit{
+                            display:block;
+                            margin:30px auto;
+                            width:150px;
+                            height: 50px;
+                            border:2px solid #BDA79E;
+                            color:#865454;
+                            outline:none;
+                            cursor:pointer;
+                            background:none;
+                            font-size:24px;
+                            transition:all .5s;
+                            &:hover{
+                                background-color: #BDA79E;
+                                color:#f8f8f8;
+                            }
+                        }
+                    }
+                }
+                div.jane_jump.-on{
+                    opacity: 1;
+                    z-index: 2;
+                }
+                div.jane_jump.-opacity-zero{
+                    opacity: 0;
+                }
             }
 
 
@@ -394,7 +391,7 @@ body{
                             border-bottom:1px solid #865454;
                             margin-bottom:6%;
                         }
-                        button#product_submit{
+                        button#case_submit{
                             display:block;
                             margin:30px auto;
                             width:150px;

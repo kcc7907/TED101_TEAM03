@@ -50,6 +50,7 @@
                                 <!-- <li id="jk_newManager">新增管理員</li> -->
                                 <!-- <a href="./case_authority.html"> -->
                                 <li id="jane_authorityChange">案例異動</li>
+                                <li id="jane_authorityChange2">案例上架</li>
                                 <!-- </a> -->
                             </ul>
                         </li>
@@ -111,6 +112,36 @@
                         <td>{{rp.CASE_IMG}}</td>
                     </tr>
                 </table>
+
+                <!-- 跳窗 -->
+                <div class="jane_jump">
+                    <div class="secondBack">
+                        <img src="../img/icon/icons8-cancel-64.png" alt="" class="cancel-icon">
+                        <form action="" method="">
+                            <label for="case_number">案例編號</label>
+                            <input type="text" name="case_number" id="case_number" placeholder="安安">
+                            <br>
+
+                            <label for="case_name">案例名稱</label>
+                            <input type="text" name="case_name" id="case_name" placeholder="安安">
+                            <br>
+
+                            <label for="case_date">案例日期</label>
+                            <input type="text" name="case_date" id="case_date" placeholder="安安">
+                            <br>
+
+                            <label for="case_type">案例型態</label>
+                            <input type="text" name="case_type" id="case_type" placeholder="安安">
+                            <br>
+
+                            <label for="case_path">圖片路徑</label>
+                            <input type="text" name="case_path" id="case_path" placeholder="安安">
+                            <br>
+
+                            <button id="case_submit" type="button">上架</button>
+                        </form>
+                    </div>
+                </div>
             </main>
         </div>
     </div>

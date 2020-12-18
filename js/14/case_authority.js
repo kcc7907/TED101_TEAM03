@@ -91,4 +91,16 @@ $(document).ready(function () {
         $('main.jane_class').css('display', 'block');
     });
 
+    $('#jane_authorityChange2').click(function () {
+        $('div.jane_jump').addClass('-on');
+    });
+
+    $('img.cancel-icon').click(function () {
+        $('div.jane_jump').addClass('-opacity-zero');
+
+        setTimeout(function () {
+            $('div.jane_jump').removeClass('-on -opacity-zero');
+        }, 1000);
+    });
+
 });
