@@ -100,6 +100,7 @@ $cf :#CAC3BB;
 
 body{
     background: $cbg;
+    position: relative;
 }
 
 .kcc_shoppingcat{
@@ -625,6 +626,8 @@ body{
             }
         }
     }
+
+
 
 
     //paragraph
@@ -1370,5 +1373,36 @@ body{
         }
     }
     @include rwd(1700){
+    }
+}
+
+.kc_popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    border: 5px solid #BDA79E;
+    background-color: rgb(240, 235, 229);
+    padding: 15px 50px 30px;
+    white-space: nowrap;
+    color: $csg;
+    font-family: 'Noto Sans TC thin', '微軟正黑體', sans-serif;;
+    .btnbox{
+        display: flex;
+        justify-content: space-around;
+        p{
+            margin: 15px 30px 0;
+            padding: 10px 30px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #BDA79E;
+            background-color: rgb(240, 235, 229);
+            &:hover {
+            cursor: pointer;
+            background-color: #BDA79E;
+            color: white;
+            }
+        }
     }
 }
