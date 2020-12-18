@@ -119,26 +119,31 @@
                         <img src="../img/icon/icons8-cancel-64.png" alt="" class="cancel-icon">
                         <form action="" method="">
                             <label for="case_number">案例編號</label>
-                            <input type="text" name="case_number" id="case_number" placeholder="安安">
+                            <input type="text" name="case_number" id="case_number" placeholder="安安"
+                                v-model="formData.case_num">
                             <br>
 
                             <label for="case_name">案例名稱</label>
-                            <input type="text" name="case_name" id="case_name" placeholder="安安">
+                            <input type="text" name="case_name" id="case_name" placeholder="安安"
+                                v-model="formData.case_name">
                             <br>
 
                             <label for="case_date">案例日期</label>
-                            <input type="text" name="case_date" id="case_date" placeholder="安安">
+                            <input type="text" name="case_date" id="case_date" placeholder="安安"
+                                v-model="formData.case_date">
                             <br>
 
                             <label for="case_type">案例型態</label>
-                            <input type="text" name="case_type" id="case_type" placeholder="安安">
+                            <input type="text" name="case_type" id="case_type" placeholder="安安"
+                                v-model="formData.case_type">
                             <br>
 
                             <label for="case_path">圖片路徑</label>
-                            <input type="text" name="case_path" id="case_path" placeholder="安安">
+                            <input type="text" name="case_path" id="case_path" placeholder="安安"
+                                v-model="formData.case_path">
                             <br>
 
-                            <button id="case_submit" type="button">上架</button>
+                            <button id="case_submit" type="button" @click="send">上架</button>
                         </form>
                     </div>
                 </div>
@@ -150,9 +155,21 @@
             el: '#app',
             data: {
                 rp: '',
+                formData: {
+                    case_num: '',
+                    case_name: '',
+                    case_date: '',
+                    case_type: '',
+                    case_path: ''
+                }
             },
             methods: {
-
+                send() {
+                    console.log(this.formData);
+                    axios.post('../php/14/case.php', this.formData).then(res => {
+                    });
+                    $('div.jane_jump').addClass('-opacity-zero');
+                }
             },
             mounted() {
                 const self = this;
