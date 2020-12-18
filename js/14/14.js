@@ -32,7 +32,6 @@ $(document).ready(function () {
             $('.other_text').height(divHeight)
         }
 
-
         image = $('#content img').height();
         console.log(image);
         $('.other_text').height(image)
