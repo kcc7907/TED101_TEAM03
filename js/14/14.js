@@ -10,6 +10,7 @@ $(document).ready(function () {
     window.onresize = function () {
         resizeWidth(); //90%
     }
+
     function resizeWidth() {
         divWidth = $('#sliderBoard').width();
         $('#content').width(divWidth * imgCount);    //ul的寬度
@@ -17,9 +18,9 @@ $(document).ready(function () {
         $('#contentButton li').click(function () {
             index = $(this).index();
 
-            $('#content').animate({
+            $('#content').stop(true).animate({
                 left: divWidth * index * -1,
-            });
+            }, 700);
 
             $(this).addClass('clickMe');
             $('#contentButton li').not(this).removeClass('clickMe');
@@ -30,6 +31,18 @@ $(document).ready(function () {
             // console.log(divHeight);
             $('.other_text').height(divHeight)
         }
+
+
+        image = $('#content img').height();
+        console.log(image);
+        $('.other_text').height(image)
+
+        $(window).scroll(function () {
+            image = $('#content img').height();
+            console.log(image);
+            $('.other_text').height(image)
+        })
+
     }
 
 
@@ -55,7 +68,7 @@ $(document).ready(function () {
             });
         }
     }
-    setInterval(movemove, 2000);
+    setInterval(movemove, 2100);
 
 
     // 360平面圖燈箱
