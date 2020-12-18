@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
     include("../connect.php");
 
     $sql="INSERT INTO `MEMBER` (`MEM_ID`, `MEM_PWD`, `MEM_NAME`, `MEM_PHONE`, `MEM_EMAIL`, `MEM_CITY`, `MEM_ADDRESS`, `MEM_DATE`) VALUES (?,?,?,?,?,?,?,?)";
@@ -25,4 +25,4 @@
     $statement->bindValue(8,$rp['mem_date']);
     $statement->execute();
 
-?> -->
+?>
