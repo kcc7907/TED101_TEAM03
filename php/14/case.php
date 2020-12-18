@@ -18,4 +18,9 @@
     $statement->bindValue(3,$rp['case_date']);
     $statement->bindValue(4,$rp['case_type']);
     $statement->execute();
+
+    $sql="SELECT * FROM `CASE`";
+    $statement = $pdo->prepare($sql);
+    $statement->execute();
+    $statement->fetchAll(PDO::FETCH_ASSOC);
 ?> 
