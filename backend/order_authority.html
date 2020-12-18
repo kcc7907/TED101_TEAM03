@@ -7,7 +7,6 @@
     <title>商品管理</title>
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/order_authority.css">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="../lib/js/vue.js"></script>
@@ -45,11 +44,13 @@
                         <li>
                             <ul>
                                 <li class="item">
-                                    權限管理
+                                    案例管理
                                     <i class="fas fa-chevron-left"></i>
                                 </li>
                                 <!-- <li id="jk_newManager">新增管理員</li> -->
-                                <li id="jk_authorityChange">權限異動</li>
+                                <!-- <a href="./case_authority.html"> -->
+                                <li id="jk_authorityChange">案例異動</li>
+                                <!-- </a> -->
                             </ul>
                         </li>
                         <li>
@@ -70,8 +71,6 @@
                                 <li class="item">客服管理<i class="fas fa-chevron-left"></i></li>
                             </ul>
                         </li>
-
-
                     </ul>
                 </div>
 
@@ -104,6 +103,7 @@
                         <th>會員編號</th>
                         <th>訂單編號</th>
                     </tr>
+
                     <!-- 表格內容 -->
                     <!-- <tr>
                         <td></td>
@@ -114,8 +114,8 @@
                         <td></td>
                         <td></td>
                     </tr> -->
-
                     <!--  -->
+
                     <tr v-for="rp in rp">
                         <td>{{rp.ORD_ID}}</td>
                         <td>{{rp.ORD_QUANTITY}}</td>
@@ -124,46 +124,8 @@
                         <td>{{rp.ORD_DATE}}</td>
                         <td>{{rp.MEMBER_ID}}</td>
                         <td>{{rp.DELIVERY_ID}}</td>
-                        <!-- <td><button class="cancel">下架</button></td> -->
                     </tr>
                 </table>
-
-                <!-- 跳窗 -->
-                <!-- <div class="sam_jump">
-                    <div class="secondBack">
-                        <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
-                        <form action="" method="">
-                            <label for="product_number">商品編號</label>
-                            <input type="text" name="product_number" id="product_number" placeholder="安安">
-                            <br>
-
-                            <label for="product_kind">商品種類</label>
-                            <input type="text" name="product_kind" id="product_kind" placeholder="安安">
-                            <br>
-
-                            <label for="product_name">商品名稱</label>
-                            <input type="text" name="product_name" id="product_name" placeholder="安安">
-                            <br>
-
-                            <label for="product_price">商品價格</label>
-                            <input type="text" name="product_price" id="product_price" placeholder="安安">
-                            <br>
-
-                            <label for="product_material">材質 / 庫存</label>
-                            <input type="text" name="product_material" id="product_material" placeholder="安安">
-                            <br>
-
-                            <label for="product_update">上架日期</label>
-                            <input type="text" name="product_update" id="product_update" placeholder="安安">
-                            <br>
-
-                            <label for="product_discount">優惠折扣</label>
-                            <input type="text" name="product_discount" id="product_discount" placeholder="安安">
-
-                            <button id="product_submit" type="button">上架</button>
-                        </form>
-                    </div>
-                </div> -->
             </main>
         </div>
     </div>
@@ -177,8 +139,18 @@
 
             },
             mounted() {
-                axios.post('../php/14/conn14.php').then(res => {
-                    this.rp = res.data;
+                const self = this;
+                // axios.post('../php/14/conn14.php').then(res => {
+                //     console.log(res);
+                //     this.rp = res.data;
+                // })
+                $.ajax({
+                    url: '../php/14/conn14.php',
+                    dataType: 'JSON',
+                    success: function (res) {
+                        console.log(res.order);
+                        self.rp = res.order;
+                    }
                 })
             },
         });
