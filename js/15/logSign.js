@@ -9,6 +9,12 @@ $(document).ready(function () {
     });
 
     // =================================== 登入/註冊燈箱 ===================================
+    // 宣告文字
+    str1 = '加入成功，請重新登入！';
+    // str2 = `，歡迎回來！`;
+    str3 = '帳號或密碼錯誤。';
+    str4 = '此帳號已註冊，請重新輸入。';
+
     // 隱藏註冊/登入表單
     $('div#login , div#signUp').hide();
 
@@ -46,39 +52,44 @@ $(document).ready(function () {
     });
 
     // 點擊「登出時」，出現confirm視窗
-    // 1.先隱藏
-    $('div.confirmDiv').hide();
-    $('div.confirmDiv').find('p.contentFont').text(`確認是否登出？`);
-    
-    // 2.點擊出現confirm視窗
     $('.logout').click(function(){
+        // 1.先隱藏
+        $('div.confirmDiv').hide();
+        $('div.confirmDiv').find('p.contentFont').text(`確認是否登出？`);
+        
+        // 2.出現confirm視窗
         $('div.confirmDiv').show().css({
             'zIndex': '99',
             'opacity': '1',
         });
+        // 3.點擊確認鈕
+        $('#sureGoHome').click(function(){
+            let time = new Date(Date.now());
+            // let time = Date.now();
+            let timeE = time.toUTCString();
+            document.cookie = `loging=; expires=${timeE}`;
+            $('span.logMem').hide();
+            $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+            $('div.confirmDiv').css({
+                'zIndex': '-99',
+                'opacity': '0',
+            }).hide();
+
+            $.ajax({
+                type: "POST",
+                url: "./clearSession.php",
+            });
+        });
+        
+        // 4.點擊取消鈕
+        $('#notsureGoHome').click(function(){
+            $('div.confirmDiv').css({
+                'zIndex': '-99',
+                'opacity': '0',
+            }).hide();
+        });
     });
 
-    // 3.點擊確認鈕
-    $('#sureGoHome').click(function(){
-        let time = new Date(Date.now());
-        // let time = Date.now();
-        let timeE = time.toUTCString();
-        document.cookie = `loging=; expires=${timeE}`;
-        $('span.logMem').hide();
-        $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
-        $('div.confirmDiv').css({
-            'zIndex': '-99',
-            'opacity': '0',
-        }).hide();
-    });
-    
-    // 4.點擊取消鈕
-    $('#notsureGoHome').click(function(){
-        $('div.confirmDiv').css({
-            'zIndex': '-99',
-            'opacity': '0',
-        }).hide();
-    });
 
     // =================================== 登入hover ===================================
     $('button.login').mouseenter(function () {
@@ -94,16 +105,19 @@ $(document).ready(function () {
     // =================================== 登入判斷 ===================================
     $('button.login').click(function () {
         if($('input#account').val() == '' && $('input#pwd').val() !== ''){
-            alert('請輸入帳號');
+            let str = '請輸入帳號。';
+            confirmLogSign(str);
             $('input#account').css('border', '1px solid red');
         }else if($('input#account').val() !== '' && $('input#pwd').val() == ''){
-            alert('請輸入密碼');
+            let str = '請輸入密碼。';
+            confirmLogSign(str);
             $('input#pwd').css('border', '1px solid red');
         }else if($('input#account').val() == '' && $('input#pwd').val() == ''){
-            alert('請輸入帳號密碼');
+            let str = '請輸入帳號、密碼。';
+            confirmLogSign(str);
             $('input#account').css('border', '1px solid red');
             $('input#pwd').css('border', '1px solid red');
-        }else{
+        }else if($('input#account').val() !== '' && $('input#pwd').val() !== ''){
             let account = $('#account').val();
             let pwd = $('#pwd').val();
                 $.ajax({  
@@ -116,8 +130,31 @@ $(document).ready(function () {
                     dataType: 'text',
                     success(res) {
                         $('body').append(res);
+                        if(res == 0){
+                            document.cookie='loging=".$memberID."';
+                            $('div#login').css('z-index','-3').hide();
+                            $('div.login').css({'opacity':'0','top':'-30vh',});
+                            $('form input').val('');
+                            $('form select').val('0');
+                            $('img.logMem').attr('src','../img/homepage/logInMemHome.png');
+                            setTimeout(()=>{
+                                $.ajax({
+                                    url: './getSession.php',
+                                    type: 'POST',
+                                    dataType: 'text',
+                                    success(res) {
+                                        let str2 = `${res}，歡迎回來！`;
+                                        confirmLogSign(str2);
+                                    },
+                                });
+                            }, 100);
+                        }else{
+                            confirmLogSign(str3);
+                        }
                     },
                 });
+                
+
         }
     });
 
@@ -140,7 +177,8 @@ $(document).ready(function () {
         let thePhone = $(this).val();
         let testP = /^[0-9]{2}[0-9]{8}$/g;
         if(!testP.test(thePhone)){
-            alert('請輸入正確手機格式');
+            let str = '請輸入正確手機格式。';
+            confirmLogSign(str);
         }
     });
 
@@ -155,7 +193,8 @@ $(document).ready(function () {
         let theEmail = $(this).val();
         let testE = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
         if(!testE.test(theEmail)){
-            alert('請輸入正確EMAIL格式');
+            let str = '請輸入正確EMAIL格式。';
+            confirmLogSign(str);
         }
     });
 
@@ -190,7 +229,8 @@ $(document).ready(function () {
 
         switch(theCheck){
             case 0:
-                alert('紅色方框為必填欄位，請輸入完整資訊。');
+                let str = '紅色方框為必填欄位，請輸入完整資訊。';
+                confirmLogSign(str);
                 break;
             case 1:
                 // 判斷帳號密碼輸入字元
@@ -199,11 +239,14 @@ $(document).ready(function () {
                 let accNum = memAccount.length;
                 let pwdNum = memPwd.length;
                 if(accNum < 6 || accNum > 12 ){
-                    alert('帳號請輸入 6 - 12 字元');
+                    let str = '帳號請輸入 6 - 12 字元。';
+                    confirmLogSign(str);
                 }else if(pwdNum < 6 || pwdNum > 12){
-                    alert('密碼請輸入 6 - 12 字元');
+                    let str = '密碼請輸入 6 - 12 字元。';
+                    confirmLogSign(str);
                 }else if((accNum < 6 && accNum > 12) || (pwdNum < 8 && pwdNum > 12)){
-                    alert('帳號及密碼請輸入 6 - 12 字元');
+                    let str = '帳號及密碼請輸入 6 - 12 字元。';
+                    confirmLogSign(str);
                 }else{
                     let memName = $('#memNameJH').val().trim();
                     let memPhone = $('#memPhoneJH').val().trim();
@@ -212,16 +255,19 @@ $(document).ready(function () {
                     let memAddress = $('#memAddressJH').val().trim();
                     let memCheckPwd = $('#memCheckPJH').val().trim();
                     if(memPwd !== memCheckPwd){
-                        alert('確認密碼有誤');
+                        let str = '確認密碼有誤。';
+                        confirmLogSign(str);
                     }else{
                         let testE = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
                         let testP = /^[0-9]{2}[0-9]{8}$/g;
                         if(!testP.test(memPhone)){
-                            alert('請輸入正確手機格式');
+                            let str = '請輸入正確手機格式。';
+                            confirmLogSign(str);
                             $('#memPhoneJH').css('border' , '1px solid red');
                         }else{
                             if(!testE.test(memEmail)){
-                                alert('請輸入正確EMAIL格式');
+                                let str = '請輸入正確EMAIL格式。';
+                                confirmLogSign(str);
                             }else{
                                 $.ajax({  
                                     url: './SignR.php',
@@ -349,7 +395,6 @@ function backToLog() {
 
 // ===== close lightbox =====
 function closeLB(theB) {
-    // console.log(theB);
     $('div.confirmDiv').hide();
     $('div.confirmDiv').find('p.contentFont').text(`關閉後將清空您所輸入的資料，請確認是否關閉？`);
 
@@ -374,6 +419,11 @@ function closeLB(theB) {
         });
         $(theB).parent('div').parent('div').find('form').find('select').val('0').css('border', '1px solid #BDA79E');
         $('#alivebox').removeClass('bcgColor');
+
+        $('div.confirmDiv').css({
+            'zIndex': '-99',
+            'opacity': '0',
+        }).hide();
     });
 
     $('#notsureGoHome').click(function(){
@@ -382,7 +432,6 @@ function closeLB(theB) {
             'opacity': '0',
         }).hide();
     });
-
     $('#logInDoor').hide();
 }
 
@@ -460,4 +509,27 @@ function checkCookie(cname) {
     } else {
         return false;
     }
+}
+
+
+function confirmLogSign(text) {
+    // 1.隱藏登出鈕+改寫隱藏鈕
+    $('#sureGoHome').hide();
+    $('#notsureGoHome').attr('value' , '確認');
+    // 2.改變文字
+    $('div.confirmDiv').find('p.contentFont').text(text);
+    // 3.出現confirm視窗
+    $('div.confirmDiv').show().css({
+        'zIndex': '99',
+        'opacity': '1',
+    });
+    // 4.點擊取消鈕
+    $('#notsureGoHome').click(function(){
+        $('div.confirmDiv').css({
+            'zIndex': '-99',
+            'opacity': '0',
+        }).hide();
+        $('#sureGoHome').show();
+        $('#notsureGoHome').attr('value' , '取消');
+    });
 }

@@ -135,37 +135,37 @@
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form >
                             <label for="mem_num">會員編號</label>
-                            <input type="text" name="mem_num" id="mem_num" placeholder="安安">
+                            <input type="text" name="mem_num" id="mem_num" placeholder="安安" v-model="formData.mem_num">
                             <br>
 
                             <label for="mem_pwd">會員密碼</label>
-                            <input type="text" name="mem_pwd" id="mem_pwd" placeholder="安安">
+                            <input type="text" name="mem_pwd" id="mem_pwd" placeholder="安安" v-model="formData.mem_pwd">
                             <br>
 
                             <label for="mem_name">會員名稱</label>
-                            <input type="text" name="mem_name" id="mem_name" placeholder="安安">
+                            <input type="text" name="mem_name" id="mem_name" placeholder="安安" v-model="formData.mem_name">
                             <br>
 
                             <label for="mem_phone">會員電話</label>
-                            <input type="text" name="mem_phone" id="mem_phone" placeholder="安安">
+                            <input type="text" name="mem_phone" id="mem_phone" placeholder="安安"v-model="formData.mem_phone">
                             <br>
 
                             <label for="mem_email">會員伊媚兒</label>
-                            <input type="text" name="mem_email" id="mem_email" placeholder="安安">
+                            <input type="text" name="mem_email" id="mem_email" placeholder="安安" v-model="formData.mem_email">
                             <br>
 
                             <label for="mem_city">居住城市</label>
-                            <input type="text" name="mem_city" id="mem_city" placeholder="安安">
+                            <input type="text" name="mem_city" id="mem_city" placeholder="安安" v-model="formData.mem_city">
                             <br>
 
                             <label for="mem_addr">地址</label>
-                            <input type="text" name="mem_addr" id="mem_addr" placeholder="安安">
+                            <input type="text" name="mem_addr" id="mem_addr" placeholder="安安" v-model="formData.mem_addr">
                             <br>
 
                             <label for="mem_date">建立日期</label>
-                            <input type="text" name="mem_date" id="mem_date" placeholder="安安">
+                            <input type="text" name="mem_date" id="mem_date" placeholder="安安" v-model="formData.mem_date">
 
-                            <button id="product_submit" type="button">上架</button>
+                            <button id="product_submit" type="button" @click="send">上架</button>
                         </form>
                     </div>
                 </div>

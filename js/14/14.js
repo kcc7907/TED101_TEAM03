@@ -1,49 +1,54 @@
-
+console.log(123);
 $(document).ready(function () {
     //jQuery獎項輪播圖
-    window.onresize = function () {
-        divWidth = $('#sliderBoard').width(); //90%
-    }
+
     let divWidth = $('#sliderBoard').width(); //90%
     let imgCount = $('#content li').length;   //3(張照片)
-    // console.log(imgCount);
+    let index;
 
-    $('#content').width(divWidth * imgCount);    //ul的寬度
-    $('#content li').width(divWidth);            //li的寬度
+    resizeWidth();
+    window.onresize = function () {
+        resizeWidth(); //90%
+    }
+
+    function resizeWidth() {
+        divWidth = $('#sliderBoard').width();
+        $('#content').width(divWidth * imgCount);    //ul的寬度
+        $('#content li').width(divWidth);            //li的寬度
+        $('#contentButton li').click(function () {
+            index = $(this).index();
+
+            $('#content').stop(true).animate({
+                left: divWidth * index * -1,
+            }, 700);
+
+            $(this).addClass('clickMe');
+            $('#contentButton li').not(this).removeClass('clickMe');
+        });
+
+        if (window.innerWidth <= 768) {
+            divHeight = $('#content img').height();
+            // console.log(divHeight);
+            $('.other_text').height(divHeight)
+        }
+
+        image = $('#content img').height();
+        console.log(image);
+        $('.other_text').height(image)
+
+        $(window).scroll(function () {
+            image = $('#content img').height();
+            console.log(image);
+            $('.other_text').height(image)
+        })
+
+    }
+
 
     for (let i = 0; i < imgCount; i++) {
         $('#contentButton').append('<li></li>');
     }
     $('#contentButton li:nth-child(1)').addClass('clickMe');
-
-    let index;
-    $('#contentButton li').click(function () {
-        index = $(this).index();
-
-        $('#content').animate({
-            left: divWidth * index * -1,
-        });
-
-        $(this).addClass('clickMe');
-        $('#contentButton li').not(this).removeClass('clickMe');
-    });
-
-    // function change() {
-    //     let winWidth = $(window).width();
-    //     $('#sliderBoard').css({
-    //         left: (winWidth - divWidth) / 2,
-    //     });
-    //     // console.log(divWidth);
-    // }
-    // change();
-
-    // $(window).resize(function () {
-    //     divWidth = $('#sliderBoard').width(); //60% 不用let
-    //     // console.log(divWidth);
-    //     $('#content').width(divWidth * imgCount);    //ul的寬度
-    //     $('#content li').width(divWidth);            //li的寬度
-    //     change();
-    // });
 
     function movemove() {
         $('#contentButton li.clickMe').removeClass('clickMe').next().addClass('clickMe');
@@ -62,7 +67,7 @@ $(document).ready(function () {
             });
         }
     }
-    setInterval(movemove, 2000);
+    setInterval(movemove, 2100);
 
 
     // 360平面圖燈箱
@@ -89,11 +94,11 @@ $(document).ready(function () {
 
     //RWD輪播圖
     let S_photo = $('.small');
-    console.log(S_photo);
+    // console.log(S_photo);
     for (let i = 0; i < S_photo.length; i++) {
         S_photo[i].addEventListener('click', function (e) {
             document.getElementById('big').src = e.target.src;
-            console.log(document.getElementById('big').src);
+            // console.log(document.getElementById('big').src);
         });
     };
 
@@ -110,7 +115,6 @@ $(document).ready(function () {
             for (let i = 0; i < smallP.length; i++) {
                 if (smallP[i].src == now_Src) {
                     let bbb = smallP[i].closest('div.inter_one').previousElementSibling.querySelector('img.small').src;
-                    console.log(bbb);
                     document.getElementById('big').src = bbb;
                 }
             }
@@ -126,8 +130,6 @@ $(document).ready(function () {
             //從第一張找
             document.getElementById('big').src = sphoto[0].src;
         }
-        // console.log(backToLeft[(backToLeft.length - 1)].src);
-        // console.log(backToLeft.length);
         else {
             let smallPic = $('.small');
             for (let i = 0; i < smallPic.length; i++) {
@@ -162,8 +164,6 @@ $(function () {
         /* 找到對應的頁籤內容，加上 -on 來顯示 */
         $("div.tab").removeClass("-on");
         $("div.tab." + $(this).attr("data-target")).addClass("-on");
-        console.log($("div.tab." + $(this).attr("data-target")));
+        // console.log($("div.tab." + $(this).attr("data-target")));
     });
 });
-
-
