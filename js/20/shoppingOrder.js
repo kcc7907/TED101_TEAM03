@@ -49,14 +49,19 @@ let left2 = new Vue({
         cardNum(e){
             let v= this.$refs;
             if (e.which >= 48 && e.which <= 57 || e.which == 8 || e.which == 37 || e.which == 39) {
+                if (v.cardnum1.value.length === 4) v.cardnum2.focus();
+                if (v.cardnum2.value.length === 4) v.cardnum3.focus();
+                if (v.cardnum3.value.length === 4) v.cardnum4.focus();
+                if (v.cardnum4.value.length === 4) e.preventDefault();
+                this.cardmix = v.cardnum1.value + v.cardnum2.value + v.cardnum3.value + v.cardnum4.value;
             }else{
                 e.preventDefault();
             }
-            if(v.cardnum1.value.length===4)v.cardnum2.focus();
-            if(v.cardnum2.value.length===4)v.cardnum3.focus();
-            if(v.cardnum3.value.length===4)v.cardnum4.focus();
-            if(v.cardnum4.value.length===4)e.preventDefault();
-            this.cardmix = v.cardnum1.value+ v.cardnum2.value+v.cardnum3.value+v.cardnum4.value;
+            // if(v.cardnum1.value.length===4)v.cardnum2.focus();
+            // if(v.cardnum2.value.length===4)v.cardnum3.focus();
+            // if(v.cardnum3.value.length===4)v.cardnum4.focus();
+            // if(v.cardnum4.value.length===4)e.preventDefault();
+            // this.cardmix = v.cardnum1.value+ v.cardnum2.value+v.cardnum3.value+v.cardnum4.value;
         },
         cardDate(e){
             if(e.target.value.length>3 &&e.which !== 8)e.preventDefault();
