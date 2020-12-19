@@ -144,7 +144,7 @@
                 </table>
 
                 <!-- 跳窗 -->
-                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID" :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT" :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT" :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID" @new-draft="changeDraft" @new-draw="changeDraw" @update-btn="updateInfo"></check-component>
+                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID" :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT" :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT" :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID" @new-draft="changeDraft" @new-draw="changeDraw" @update-btn="updateInfo" @new-idnum="changeIDnum" @new-status="changeStatus"></check-component>
             </main>
 
         </div>
@@ -177,7 +177,7 @@
                         <br>
 
                         <label for="CT_PERSONAL_ID">身分證號碼</label>
-                        <input type="text" name="CT_PERSONAL_ID" id="CT_PERSONAL_ID" :value="memid">
+                        <input type="text" name="CT_PERSONAL_ID" id="CT_PERSONAL_ID" :value="memid" @change="goChangeID">
                         <br>
 
                         <label for="CT_IMG_FRONT">身分證圖片</label>
@@ -221,7 +221,7 @@
                         <br>
 
                         <label for="WK_STATUS" class="theStatus">作品狀態</label>
-                        <select name="newStatus" id="newStatus" class="theStatus">
+                        <select name="newStatus" id="newStatus" class="theStatus" @change="goChangeStatus">
                             <option value="0" selected disabled>審核狀態</option>
                             <option v-for="status in workStatus" :value="status">{{status}}</option>
                         </select>
@@ -236,6 +236,12 @@
             </div>
             `,
             methods: {
+                goChangeID(e){
+                    let theIndex = parseInt(this.i);
+                    let newID = $(e.target).val().trim();
+                    this.$emit('new-idnum', theIndex, newID);
+                },
+
                 goChange1(e){
                     let self1 = this;
                     let file1 = e.target.files[0];
@@ -275,6 +281,13 @@
                     });
                 },
 
+                goChangeStatus(e){
+                    let theIndex = parseInt(this.i);
+                    let newstatus = $(e.target).val();
+                    // console.log(newstatus);
+                    this.$emit('new-status', theIndex, newstatus);
+                },
+
                 closeIcon(index){
                     $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
                     setTimeout(function () {
@@ -285,7 +298,9 @@
                 updateBtn(){
                     let theIndex = parseInt(this.i);
                     let newpid = $('.jh_jump input#newPID').prop('files')[0];
-                    this.$emit('update-btn', theIndex, newpid);
+                    let newdraft = $('.jh_jump input#newDraft').prop('files')[0];
+                    let newdraw = $('.jh_jump input#newDraw').prop('files')[0];
+                    this.$emit('update-btn', theIndex, newpid, newdraft, newdraw);
 
                 },
             },
@@ -305,8 +320,12 @@
                     $(`div.jh_jump`).eq(i).addClass('-on');
                 },
 
-
                 // 修改root.身分證
+                changeIDnum(theIndex, newidnum){
+                    this.work[theIndex].CT_PERSONAL_ID = newidnum;
+                },
+
+                // 修改root.身分證圖
                 changePID(newUrl) {
                     let temIndex = parseInt($('div.jh_jump.-on').attr('data-id'));
                     this.work[temIndex].CT_IMG_FRONT = newUrl;
@@ -324,43 +343,65 @@
                     this.work[temIndex].WK_DRAW = newUrl;
                 },
 
-                // 保存
-                updateInfo(index, newpid){
-                    let newPIdNum = this.work[index].CT_PERSONAL_ID; // 身分證號碼
-                    console.log(newpid);
-                    // let pId = newpid.prop('files')[0]; // 上傳身分證
-                    // let draft = $('.jh_jump input#draft').prop('files')[0]; // 上傳草稿
-                    // let draw = $('.jh_jump input#draw').prop('files')[0]; // 上傳完稿
-                    // let pIdNum = $('.jh_jump #pIdNum').val().trim(); // 身分證號碼
-                    // let pId = $('.jh_jump input#pId').prop('files')[0]; // 上傳身分證
-                    // let draft = $('.jh_jump input#draft').prop('files')[0]; // 上傳草稿
-                    // let draw = $('.jh_jump input#draw').prop('files')[0]; // 上傳完稿
-                    // let form_data = new FormData();
-                    // form_data.append('contestant', contestant);
-                    // form_data.append('pIdNum', pIdNum);
-                    // form_data.append('type', fType);
-                    // form_data.append('name', fName);
-                    // form_data.append('concept', fConcept);
-                    // form_data.append('file1', pId);
-                    // form_data.append('file2', draft);
-                    // form_data.append('file3', draw);
-                    // $.ajax({
-                    //     type: "POST",
-                    //     url: "contestUpdateR.php",
-                    //     data: {
+                // 修改root.狀態
+                changeStatus(theIndex, newstatus){
+                    this.work[theIndex].WK_STATUS = newstatus;
+                },
 
-                    //     },
-                    //     data: form_data,
-                    //     contentType: false,
-                    //     cache: false,
-                    //     processData:false,
-                    //     success: function (res) {
-                    //         // $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
-                    //         // setTimeout(function () {
-                    //         //     $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
-                    //         // }, 1000);
-                    //     }
-                    // });
+                // 保存
+                updateInfo(index, newpid , newdraft, newdraw){
+                    let form_data = new FormData();
+                    let newPIdNum = this.work[index].CT_PERSONAL_ID; // 身分證號碼
+                    let newStatus = this.work[index].WK_STATUS; // 狀態
+                    let WK_ID = this.work[index].WK_ID;
+                    let MEM_ID = this.work[index].MEM_ID;
+                    form_data.append('newPIdNum', newPIdNum);
+                    form_data.append('newStatus', newStatus);
+                    form_data.append('WK_ID', WK_ID);
+                    form_data.append('MEM_ID', MEM_ID);
+
+                    let that = this;
+                    if(!Boolean(newpid) == false){ // 身分證圖片
+                        form_data.append('newFile1', newpid);
+                        // console.log(newpid);
+                    }else{
+                        form_data.append('newFile2', that.work[index].CT_IMG_FRONT);
+                        // console.log(that.work[index].CT_IMG_FRONT);
+                    }
+
+                    if(!Boolean(newdraft) == false){ // 草稿
+                        form_data.append('newFile3', newdraft);
+                        // console.log(newdraft);
+                    }else{
+                        form_data.append('newFile4', that.work[index].WK_DRAFT);
+                        // console.log(that.work[index].WK_DRAFT);
+                    }
+
+                    if(!Boolean(newdraw) == false){ // 完稿
+                        form_data.append('newFile5', newdraw);
+                        // console.log(newdraw);
+                    }else{
+                        form_data.append('newFile6', that.work[index].WK_DRAW);
+                        // console.log(that.work[index].WK_DRAW);
+                    }
+
+                    // console.log(form_data);
+
+                    $.ajax({
+                        url: "contestUpdateR.php",
+                        type: "POST",
+                        data: form_data,
+                        contentType: false,
+                        cache: false,
+                        processData:false,
+                        success: function (res) {
+                            console.log(res);
+                            // $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
+                            // setTimeout(function () {
+                            //     $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
+                            // }, 1000);
+                        }
+                    });
                 }
 
 
