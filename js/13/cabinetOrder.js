@@ -34,4 +34,41 @@ $(document).ready(function () {
             $('div.blackBack3').removeClass('-on -opacity-zero');
         }, 1000);
     });
+
+
+    ///////////////////表單驗證-focus blur 效果///////////////////////
+    $('#username').focus(function () {
+        $(this).css("borderBottom", "3px solid #865454");
+    });
+    $('#username').blur(function () {
+        if () {
+
+        } else {
+
+        }
+    });
+    $('#useremail').focus(function () {
+        $(this).css("borderBottom", "3px solid #865454");
+    });
+    $('#useremail').blur(function () {
+        $(this).css("borderBottom", "1px solid #BDA79E");
+    });
+    $('#userphone').focus(function () {
+        $(this).css("borderBottom", "3px solid #865454");
+    });
+    $('#userphone').blur(function () {
+        $(this).css("borderBottom", "1px solid #BDA79E");
+    });
+    $('#useraddress').focus(function () {
+        $(this).css("borderBottom", "3px solid #865454");
+    });
+    $('#useraddress').blur(function () {
+        $(this).css("borderBottom", "1px solid #BDA79E");
+    });
+    ///////////////////表單驗證 效果///////////////////////
+
+
+
+
+
 });
