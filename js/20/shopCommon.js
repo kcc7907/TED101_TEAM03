@@ -20,3 +20,33 @@ function checkCookie(cname) {
         return false;
     }
 }
+
+let pop = new Vue({
+    el:'.kc_popup',
+    data:{
+        show:false,
+        text:'',
+        confirm:''
+    },
+    methods: {
+        close(){
+            this.show = false;
+        },
+        popSwitch(){
+            switch (this.confirm) {
+                case 'deleteChecked':
+                    all.deleteAll();
+                    break;
+                case 'buy':
+                    right.buy();
+                    break;
+                case 'sendData':
+                    right.sendData();
+                    break;
+                default:
+                    break;
+            }
+            this.show = false;
+        }
+    },
+});

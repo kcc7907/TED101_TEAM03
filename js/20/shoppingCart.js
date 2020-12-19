@@ -26,7 +26,7 @@ let list =
         num : '1'
     }
 ];
-
+document.cookie = 'loging=A111200001';
 localStorage.clear();
 localStorage.setItem("lists", JSON.stringify(list));
 
@@ -40,6 +40,50 @@ let right = new Vue({
         proTotal:0
     },
     methods: {
+        loginCheck(){
+            if(checkCookie('loging')){
+                pop.text = '是否確定購買';
+                pop.show = true;
+                pop.confirm = 'buy';
+            }else{
+                $('div#login').show().css('zIndex', '4');
+                    $('div#login div.login').css({
+                    'opacity':'1',
+                    'top': '0',
+                });
+                setTimeout(() => {
+                    logAni();
+                }, 500);
+                (function memBox() {
+                    $('.icon >a , a.signLink').click(function (e) {
+                        e.preventDefault();
+                    });
+                    $('a.signLink').click(function(){
+                        signBox();
+                        $('form input').css({
+                            'backgroundColor': 'rgba(0, 0, 0, 0)',
+                            'border': 'none',
+                            'borderBottom': '1px solid #BDA79E',
+                        });
+                        $('form select').css('border' , '1px solid #BDA79E');
+                        $('#alivebox').removeClass('bcgColor');
+                    });
+                    $('a.logLink').click(function(e){
+                        backToLog();
+                        $('form input').css({
+                            'backgroundColor': 'rgba(0, 0, 0, 0)',
+                            'border': 'none',
+                            'borderBottom': '1px solid #BDA79E',
+                        });
+                        $('form select').css('border' , '1px solid #BDA79E');
+                    });
+                    $('div.closebtn').click(function(e){
+                        let thisBtn = e.target;
+                        closeLB(thisBtn);
+                    });
+                })();
+            }
+        },
         buy(){
             localStorage.removeItem("lists");
             let buy = document.querySelectorAll('.product li');
@@ -54,16 +98,12 @@ let right = new Vue({
             });
             localStorage.setItem("lists", JSON.stringify(lists));
             localStorage.setItem("discount", this.discount);
-
-            let x =confirm();
-            if(x)location.href ="shoppingorder.html";
-            else return
+            // let x =confirm();
+            // if(x)location.href ="shoppingorder.html";
+            // else return
+            location.href ="shoppingorder.php";
         },
     },
-    // created() {
-    //     let list = JSON.parse(localStorage.getItem("lists"));
-    //     if(!list)return;
-    // },
     watch: {
         total(){ this.final = this.total+this.discount}
     },
@@ -74,6 +114,11 @@ let all = new Vue({
     data:{
     },
     methods: {
+        delCheck(){
+            pop.text = '是否刪除全部商品';
+            pop.show = true;
+            pop.confirm = 'deleteChecked';
+        },
         deleteAll(e){
             let pick = document.querySelectorAll('.pick');
             let lists=[];
@@ -189,11 +234,6 @@ let left = new Vue({
         disArrB(){
             if(this.disArrB.length<1)this.disB=false;
         },
-    },
-    methods: {
-        disCheck(){
-            let dis = document.querySelectorAll()
-        }
     },
 });
 

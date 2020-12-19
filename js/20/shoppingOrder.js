@@ -190,18 +190,19 @@ let right = new Vue({
         totalPrice() {
             this.final = this.total + this.discount + this.Shipping;
         },
-        gotest() {
-            let x = confirm();
-            if (x) location.href = "shoppingdone.html"
-            else return
+        sendCheck() {
+            pop.text = '是否確認完成訂單';
+            pop.show = true;
+            pop.confirm = 'sendData';
         },
         sendData(){
             let that = this;
             let list = JSON.parse(localStorage.getItem("lists"));
             left2.formData.products = list;
-            axios.post('http://localhost:8787/php/20/sendData.php',left2.formData).then(res => {
+            axios.post('../php/20/sendData.php',left2.formData).then(res => {
                 console.log(res.data);
-        })
+            })
+            location.href ="shoppingdone.php";
         },
     },
     mounted() {

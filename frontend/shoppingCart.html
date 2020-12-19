@@ -43,7 +43,7 @@
         <div class="all" id="all">
             <input id="checkAll" class="checkAll" type="checkbox" @click='checkAll'>
             <label for="checkAll"><span></span></label>
-            <button class="delAll" @click='deleteAll'>刪除勾選商品</button>
+            <button class="delAll" @click='delCheck'>刪除勾選商品</button>
         </div>
         <main>
             <div class="left" id="list">
@@ -68,46 +68,7 @@
                                 <p class="tatal_list_price">1000元</p>
                                 <p class="tatal_list_num">X1</p>
                             </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li> -->
-                            <!--<li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li> -->
+                            -->
                         </ul>
                     </div>
                     <div class="totalconut">
@@ -140,19 +101,20 @@
                 <div class="cart_btn">
                     <button class="backstep" type="button"><img src="../img/shoppincart/cart_left.svg"
                             class="backimg">返回商城</button>
-                    <button class="buy" type="button" @click='buy'>前往結帳</button>
+                    <button class="buy" type="button" @click='loginCheck'>前往結帳</button>
+                </div>
+            </div>
+            <div class="kc_popup" v-if="show">
+                <h2>{{text}}?</h2>
+                <div class="btnbox">
+                    <p class="return" @click="close">返回</p>
+                    <p class="checkok" @click="popSwitch">確認</p>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- <div class="kc_popup">
-        <h2>是否刪除全部商品?</h2>
-        <div class="btnbox">
-            <p class="return">返回</p>
-            <p class="checkok">確認</p>
-        </div>
-    </div> -->
+
     <?php include("../lib/header/footerInclude.html"); ?>
 </body>
 
