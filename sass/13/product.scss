@@ -222,6 +222,15 @@ div.sam{
             margin-bottom:60px;
             margin-left:5px;
             margin-right:5px;
+            span.discount{
+                position: absolute;
+                color:#865454;
+                font-size:24px;
+                border:1px solid #865454;
+                padding:2px 6px;
+                top:1%;
+                right:2%;
+            }
             img.threed{
                 position: absolute;
                 width: 10%;
@@ -333,6 +342,9 @@ div.sam{
                 width: 45%;
                 margin-left:5px;
                 margin-right:5px;
+                span.discount{
+                    font-size:1
+                }
             }
         }
         div.orderBox{
@@ -361,6 +373,7 @@ div.sam{
     @media (max-width:360px){
         div.productBox{
             div.product{
+                width:44%;
                 h2.productWord01{
                     margin-left:10px;
                 }
