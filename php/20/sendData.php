@@ -1,11 +1,6 @@
 <?php
-        $db_host = "localhost";
-        $db_user = "team03";
-        $db_pass = "ted101g3";
-        $db_select = "team03";
-        $dbconnect = "mysql:host=".$db_host.";dbname=".$db_select;
-        $pdo = new PDO($dbconnect, $db_user, $db_pass);
-
+        include("../connect.php");
+        date_default_timezone_set("Asia/Taipei");
         $rp = json_decode(file_get_contents('php://input'), true);
         // $rp[fname] => 柏美玲
         // $rp[memid] => A111200001
@@ -32,7 +27,7 @@
         $result -> execute();
         $order_total = $result->fetchColumn();
         $ymd = date("Y/m/d");
-        $date = date("Y/m/d H:i:s");
+        $date = date("Y/m/d H:i");
         if($rp['payment'] == '未付款'){
             $order_buy =$date;
             $order_pay = null;

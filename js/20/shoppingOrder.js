@@ -49,14 +49,19 @@ let left2 = new Vue({
         cardNum(e){
             let v= this.$refs;
             if (e.which >= 48 && e.which <= 57 || e.which == 8 || e.which == 37 || e.which == 39) {
+                if (v.cardnum1.value.length === 4) v.cardnum2.focus();
+                if (v.cardnum2.value.length === 4) v.cardnum3.focus();
+                if (v.cardnum3.value.length === 4) v.cardnum4.focus();
+                if (v.cardnum4.value.length === 4) e.preventDefault();
+                this.cardmix = v.cardnum1.value + v.cardnum2.value + v.cardnum3.value + v.cardnum4.value;
             }else{
                 e.preventDefault();
             }
-            if(v.cardnum1.value.length===4)v.cardnum2.focus();
-            if(v.cardnum2.value.length===4)v.cardnum3.focus();
-            if(v.cardnum3.value.length===4)v.cardnum4.focus();
-            if(v.cardnum4.value.length===4)e.preventDefault();
-            this.cardmix = v.cardnum1.value+ v.cardnum2.value+v.cardnum3.value+v.cardnum4.value;
+            // if(v.cardnum1.value.length===4)v.cardnum2.focus();
+            // if(v.cardnum2.value.length===4)v.cardnum3.focus();
+            // if(v.cardnum3.value.length===4)v.cardnum4.focus();
+            // if(v.cardnum4.value.length===4)e.preventDefault();
+            // this.cardmix = v.cardnum1.value+ v.cardnum2.value+v.cardnum3.value+v.cardnum4.value;
         },
         cardDate(e){
             if(e.target.value.length>3 &&e.which !== 8)e.preventDefault();
@@ -76,7 +81,7 @@ let left2 = new Vue({
     },
     created() {
         let cookie = getCookie('loging');
-        axios.post('http://localhost:8787/php/20/getMember.php', {ID: cookie}).then(res => {
+        axios.post('../php/20/getMember.php', {ID: cookie}).then(res => {
             this.members = res.data;
             this.memLives = res.data[0].MEM_CITY + res.data[0].MEM_ADDRESS;
             this.memCity = res.data[0].MEM_CITY ;
@@ -190,18 +195,19 @@ let right = new Vue({
         totalPrice() {
             this.final = this.total + this.discount + this.Shipping;
         },
-        gotest() {
-            let x = confirm();
-            if (x) location.href = "shoppingdone.html"
-            else return
+        sendCheck() {
+            pop.text = '是否確認完成訂單';
+            pop.show = true;
+            pop.confirm = 'sendData';
         },
         sendData(){
             let that = this;
             let list = JSON.parse(localStorage.getItem("lists"));
             left2.formData.products = list;
-            axios.post('http://localhost:8787/php/20/sendData.php',left2.formData).then(res => {
+            axios.post('../php/20/sendData.php',left2.formData).then(res => {
                 console.log(res.data);
-        })
+            })
+            location.href ="shoppingdone.php";
         },
     },
     mounted() {

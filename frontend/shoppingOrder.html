@@ -16,9 +16,14 @@
     <script defer src="../js/20/shopCommon.js"></script>
     <script defer src="../js/20/shoppingOrder.js"></script>
     <script defer src="../lib/header/header.js"></script>
+
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
 </head>
 
 <body class="kcc_cartbody">
+    <?php include("../lib/login/loginInclude.html"); ?>
     <?php include("../lib/header/header_Include.html"); ?>
     <div class="kcc_shoppingcat">
         <div class="top">
@@ -168,46 +173,6 @@
                                 <p class="tatal_list_price">1000元</p>
                                 <p class="tatal_list_num">X1</p>
                             </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
-                            <li class="tatal_li">
-                                <p class="tatal_list_name">商品名商</p>
-                                <p class="tatal_list_price">1000元</p>
-                                <p class="tatal_list_num">X1</p>
-                            </li>
                         </ul>
                     </div>
                     <div class="totalconut">
@@ -241,6 +206,14 @@
                     <button class="backstep" type="button"><img src="../img/shoppincart/cart_left.svg"
                             class="backimg">返回購物車</button>
                     <button class="buy" type="button" @click='sendData'>完成訂購</button>
+                </div>
+            </div>
+
+            <div class="kc_popup" v-if="show">
+                <h2>{{text}}?</h2>
+                <div class="btnbox">
+                    <p class="return" @click="close">返回</p>
+                    <p class="checkok" @click="popSwitch">確認</p>
                 </div>
             </div>
         </main>
