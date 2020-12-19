@@ -40,6 +40,7 @@ body{
                 width: 50%;
     
                 background-color:#F0EBE5;
+                border-radius: 5px;
                 font-size: 24px;
                 color: #465D4C;
                 
@@ -101,7 +102,23 @@ body{
                     }
                 }
 
-                
+                .content.warn{
+                    padding: 30px;
+                    margin-bottom: 20px;
+                    font-size: 24px;
+
+                    @include r1600{
+                        font-size: 20px;
+                    }
+    
+                    @include r1440{
+                        font-size: 18px;
+                    }
+    
+                    @include r1200{
+                        font-size: 16px;
+                    }
+                }
                 .content{
                     display: flex;
 
@@ -307,7 +324,7 @@ body{
 
             >.vote_page{
                 display: none;
-                justify-content: space-between;
+                justify-content: center;
 
                 width: 250px;
                 margin: 30px auto;
@@ -324,6 +341,7 @@ body{
                 }
 
                 >span{
+                    margin: 0 12px;
                     padding: 5px 5px;
                     cursor: pointer;
                 }
@@ -347,6 +365,9 @@ body{
 
                 >.side{
                     width: 220px;
+                    min-height: 616px;
+
+                    position: relative;
 
                     @include r1440{
                         width: 200px;
@@ -358,6 +379,7 @@ body{
 
                     @include r768{
                         width: 0;
+                        min-height: 0px;
                     }
                     
 
@@ -383,19 +405,19 @@ body{
                             height: 60px;
 
                             position: absolute;
-                            left: 20px;
+                            right: 200px;
                         }
 
                         @include r576{
                             width: 50px;
                             height: 50px;
 
-                            left: 10px;
+                            right: 130px;
                             font-size: 8px;
                         }
 
                         @include r360{
-                            left: 5px;
+                            display: none;
                         }
 
                         &::after{
@@ -416,12 +438,12 @@ body{
                         }
                     }
 
-                    >#vote_page{
+                    >.vote_page{                        
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         
-                        margin: 100px auto 100px;
+                        margin: 100px auto 200px;
 
                         color: #BDA79E;
 
@@ -442,15 +464,20 @@ body{
                     }
                     
                     >.visitor{
+                        min-width: 100px;
                         text-align: center;
                         color: #BDA79C;
                     
-                        position: relative;
+                        position: absolute;
+                        left: 50%;
+                        bottom: 100px;
+                        transform: translateX(-50%);
 
                         @include r768{
                             position: fixed;
                             left: 20px;
                             bottom: 5px;
+                            transform: translateX(0);
 
                             z-index: 2;
                         }
@@ -528,6 +555,22 @@ body{
                             margin-right: 0px;
                         }
                         
+                        
+                        &:nth-child(3n){
+                            
+                            @include r1200{
+                                margin-right: 0;
+                            }
+                            
+                            @include r992{
+                                margin-right: 80px;
+                            }
+                            
+                            @include r768{
+                                margin-right: 0px;
+                            }
+                        }
+                        
                         &:nth-child(2n){
                             
                             @include r992{
@@ -539,22 +582,6 @@ body{
                             }
                         }
 
-                        &:nth-child(3n){
-                            
-                            @include r1200{
-                                margin-right: 0;
-                            }
-
-                            @include r992{
-                                margin-right: 80px;
-                            }
-
-                            @include r768{
-                                margin-right: 0px;
-                            }
-                        }
-
-
                         &:nth-child(4n){
                             margin-right: 0;
                             
@@ -565,6 +592,11 @@ body{
                             @include r992{
                                 margin-right: 0px;
                             }
+                        }
+
+                        &:last-child{
+                                margin-bottom: 50px;
+                            
                         }
 
                         >.img{

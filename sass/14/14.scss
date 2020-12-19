@@ -269,7 +269,19 @@ div#JN{
         .designer{
             border: 1px solid purple;
             width: auto;
+            position: relative;
+            &::after{
+                // transition: all .35s;
+                content: "";
+                position: absolute;
+                background: #865454;
+                width: 50%;
+                height: 10px;
+                bottom: 0;
+                left: 0;                
+            }
         }
+    }
 
         .first{
             border: 1px solid palevioletred;
@@ -660,8 +672,9 @@ div#JN{
     height: 30px;    
     }
     .click{
+        // width: 100%;
         border: 1px solid green;
-        margin-top: 5%;
+        margin-top: 2.5%;
         padding: 5px 20px;
         font-size: 32px;
         display: flex;
@@ -676,6 +689,8 @@ div#JN{
         margin-top: 3%;
         line-height: 60px;
     }
+
+
 
 
     .exhibit_pic{
@@ -698,26 +713,24 @@ div#JN{
     width: 100%;
     background-color: rgba(189, 167, 156, 0.1);
     // z-index: 1;
-    padding: 5%;
+    padding: 0%;
     position: relative;
     // margin: auto 50px;
     line-height: 2;
     &:after{
-        content: '';
-        display: inline-block;
-        border: 1px solid #bda79e;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 3%;
-        left: 3%;
-        z-index: -1;
-    }
+            content: "";
+            position: absolute;
+            background: #865454;
+            width: 30%;
+            height: 0.5rem;
+            bottom: 0;
+            left: 35%;           
+        }
     }
 
    .d_pic{
        border: 1px solid darkblue;
-       margin-top: 100px;
+       margin-top: 6%;
     }
 
     .pics{
@@ -763,6 +776,7 @@ div#JN{
         flex-wrap: wrap;
         justify-content: center;
         border: 1px solid rebeccapurple;
+        width: 100%;
     }
 
     .interior_two{
@@ -781,7 +795,7 @@ div#JN{
 
     .inter_one{
         // border: 1px solid brown;   
-        width: 290px;
+        width: 250px;
         // height: 200px; 
         padding: 2%;
     }
@@ -800,7 +814,7 @@ div#JN{
             width: 100%;
             text-align: center;
             z-index: 1;
-            line-height: 90px;
+            line-height: 2.5;
             font-size: 30px;
             .titleFont3{
                 border: 1px solid greenyellow;
@@ -834,7 +848,12 @@ div#JN{
 
     }
 
-    div#picsLightBox{
+    .inter_one_pack{
+        border: 2px solid steelblue;
+        display: flex;
+    }
+
+    #picsLightBox{
         position: fixed;
         width: 100%;
         max-width: 100vw;
@@ -848,13 +867,15 @@ div#JN{
         transition: opacity 1s;
         >div{
             width: 70%;
-            height: 90%;
             // min-height: 878px;
-            margin: 0 auto;
+            // margin: 0 auto;
             border: 1px solid #9b9b9b;
             background-color: #fffaf4;
-            margin-top: 2%;
+            // margin-top: 2%;
             position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
             >div{
                 width: 90%;
                 height: 90%;
@@ -863,19 +884,28 @@ div#JN{
                 font-size: 0;
                 margin: 3% auto;
                 overflow: hidden;
-                position: relative;
-                top: 5%;
                 img{
                     width: 100%;
                     max-width: 100%;
+                    // position: absolute;
+                    // left: 0;
+                    // top: 0;
+                }
+                .pics_lightbox{
+                    width: 36px; 
+                    height: 36px; 
+                    // left: 82%; 
+                    cursor:pointer; 
+                    // top: 5%;
                     position: absolute;
-                    left: 0;
-                    top: 0;
+                    right: 5px;
+                    top: 5px;
                 }
             }
         }
     }
-}
+
+
 
 
     // img{
@@ -892,6 +922,8 @@ div#JN{
         }
     // }
 
+    
+
 
 // @include rwdmF(1920);
 // @include rwdmF(1700);
@@ -905,9 +937,9 @@ div#JN{
         .designer_intro{
             margin-top: 0%;
         }
-        .interior_one{
-            display: block;
-        }
+        // .interior_one{
+        //     // display: block;
+        // }
         #intro_sliderBoard{
             margin: 50px auto;
         }
@@ -978,6 +1010,7 @@ div#JN{
         }
         .click{
             padding: 5px 90px;
+            // width: 100%;
         }
 }
 }
@@ -1059,25 +1092,35 @@ div#JN{
 
             .d_pic_flex{
                 font-family:Arial;
-                width:700px;
+                // width:700px;
                 display:block;
                 margin:0 auto;
             }
 
-            // .interior_one, .interior_two{
-            //     display: block;
-            //     background: #fff;
-            //     color: #3498db;
-            //     font-size: 36px;
-            //     line-height: 100px;
-            //     margin: 10px;
-            //     padding: 2%;
-            //     position: relative;
-            //     text-align: center;
-            // }
+            .interior_one{
+                display: flex;
+                background: #fff;
+                // margin: 10px;
+                // padding: 2%;
+                position: relative;
+                text-align: center;
+            }
 
+            .interior_two{
+                display: flex;
+                background: #fff;
+                // margin: 10px;
+                // padding: 2%;
+                position: relative;
+                text-align: center;
+                flex-wrap: nowrap;
+                margin-top: 5%;
+            }
 
-         
+            .inter_one_pack{
+                border: 2px solid steelblue;
+                display: block;
+            }
 
             .tab_list_block{
                 .tab_list{
@@ -1087,6 +1130,22 @@ div#JN{
                         }
                     }
                 }
+            }
+
+            .inter_one{
+                width: 100%;
+                display: contents;
+            }
+
+            .small{
+                border: 1px solid rebeccapurple;
+                height: auto;
+                width: 20%;
+                margin: auto;
+            }
+
+            .aa{
+                display: none;
             }
         
         
@@ -1139,8 +1198,34 @@ div#JN{
                 width: 500px;
                 height: 300px;
             }     
-    
     }
+    span.triangle1{
+        display: inline-block;        
+        border-left: 25px solid transparent !important;
+        border-right: 25px solid transparent !important;
+        // border-top: 0px solid yellow !important;
+        border-bottom: 25px solid #BDA79E !important;
+        transform: rotate(270deg);
+        width:0px;
+        cursor: pointer;
+        margin: auto;
+      }
+
+      span.triangle2{
+        display: inline-block;        
+        border-left: 25px solid transparent !important;
+        border-right: 25px solid transparent !important;
+        // border-top: 0px solid yellow !important;
+        border-bottom: 25px solid #BDA79E !important;
+        transform: rotate(90deg);
+        width:0px;
+        cursor: pointer;
+        margin: auto;
+      }
+    
+      #picsLightBox{
+          display: none;
+      }
 };
 
 @include rwdmF(768){
@@ -1215,6 +1300,8 @@ div#JN{
         div.other_text{
             width: 75%;
         }
+
+        
    
       
     }

@@ -13,7 +13,11 @@
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
     <script src="../lib/js/jquery.js"></script>
-    <script src="../js/13/product_authority.js"></script>
+    <script src="../lib/js/vue.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
+    <script defer src="../js/13/13.js"></script>
+    <script dfer src="../js/13/product_authority.js"></script>
+
 
 </head>
 
@@ -84,7 +88,7 @@
 
             <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
 
-            <main class="kcc_class">
+            <main class="kcc_class" id="app">
                 <!-- 頂部資訊 -->
                 <div class="top">
                     <div class="path">
@@ -112,56 +116,56 @@
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr>
-                        <td>A201125001</td>
-                        <td>231654</td>
-                        <td>鎮冠群</td>
-                        <td>0912345678</td>
-                        <td>kcc@gmail.com</td>
-                        <td>台北</td>
-                        <td>早安區安安路50號2F之3</td>
-                        <td>2020/12/08</td>
+                    <tr v-for="(item, index) in rp" :key="index">
+                        <td>{{item.MEM_ID}}</td>MEM_ADDRESS
+                        <td>{{item.MEM_PWD}}</td>
+                        <td>{{item.MEM_NAME}}</td>
+                        <td>{{item.MEM_PHONE}}</td>
+                        <td>{{item.MEM_EMAIL}}</td>
+                        <td>{{item.MEM_CITY}}</td>
+                        <td>{{item.MEM_ADDRESS}}</td>
+                        <td>{{item.MEM_DATE}}</td>
                         <td><button class="cancel">刪除</button></td>
                     </tr>
                 </table>
 
                 <!-- 跳窗 -->
-                <div class="kcc_jump">
+                <div class="kcc_jump" >
                     <div class="secondBack">
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
-                        <form action="" method="">
-                            <label for="product_number">會員編號</label>
-                            <input type="text" name="product_number" id="product_number" placeholder="安安">
+                        <form >
+                            <label for="mem_num">會員編號</label>
+                            <input type="text" name="mem_num" id="mem_num" placeholder="安安">
                             <br>
 
-                            <label for="product_kind">會員密碼</label>
-                            <input type="text" name="product_kind" id="product_kind" placeholder="安安">
+                            <label for="mem_pwd">會員密碼</label>
+                            <input type="text" name="mem_pwd" id="mem_pwd" placeholder="安安">
                             <br>
 
-                            <label for="product_name">會員名稱</label>
-                            <input type="text" name="product_name" id="product_name" placeholder="安安">
+                            <label for="mem_name">會員名稱</label>
+                            <input type="text" name="mem_name" id="mem_name" placeholder="安安">
                             <br>
 
-                            <label for="product_price">會員電話</label>
-                            <input type="text" name="product_price" id="product_price" placeholder="安安">
+                            <label for="mem_phone">會員電話</label>
+                            <input type="text" name="mem_phone" id="mem_phone" placeholder="安安">
                             <br>
 
-                            <label for="product_material">會員伊媚兒</label>
-                            <input type="text" name="product_material" id="product_material" placeholder="安安">
+                            <label for="mem_email">會員伊媚兒</label>
+                            <input type="text" name="mem_email" id="mem_email" placeholder="安安">
                             <br>
 
-                            <label for="product_update">居住城市</label>
-                            <input type="text" name="product_update" id="product_update" placeholder="安安">
+                            <label for="mem_city">居住城市</label>
+                            <input type="text" name="mem_city" id="mem_city" placeholder="安安">
                             <br>
 
-                            <label for="product_discount">地址</label>
-                            <input type="text" name="product_discount" id="product_discount" placeholder="安安">
+                            <label for="mem_addr">地址</label>
+                            <input type="text" name="mem_addr" id="mem_addr" placeholder="安安">
                             <br>
 
-                            <label for="product_discount">建立日期</label>
-                            <input type="text" name="product_discount" id="product_discount" placeholder="安安">
+                            <label for="mem_date">建立日期</label>
+                            <input type="text" name="mem_date" id="mem_date" placeholder="安安">
 
-                            <button id="product_submit" type="submit">上架</button>
+                            <button id="product_submit" type="button">上架</button>
                         </form>
                     </div>
                 </div>

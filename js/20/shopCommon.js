@@ -1,30 +1,22 @@
-
-// buy.addEventListener('mouseenter',()=>{
-//     buy.classList.add('-hover');
-// })
-
-
-let right = new Vue({
-    el:'#right',
-    data:{
-        total:0,
-        discount:0,
-        Shipping:0,
-        final:0,
-        proTotal:0
-    },
-    methods: {
-        buy(){
-            let x =confirm();
-            if(x)location.href ="shoppingorder.html"
-            else return
-        },
-        totalPrice(){
-            this.final =this.total+this.discount+this.Shipping;
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
         }
-    },
-    mounted() {
-        let list = JSON.parse(localStorage.getItem("lists"));
-        this.proTotal = list.length;
-    },
-});
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+function checkCookie(cname) {
+    var cookie_value = getCookie(cname);
+    if (cookie_value != "") {
+        return true;
+    } else {
+        return false;
+    }
+}

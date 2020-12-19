@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>參考案例2</title>
+    <title>居家住宅</title>
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/14.css">
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
+
+    <!-- <link rel="stylesheet" href="../css/slick.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="../js/14/14.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script> -->
 </head>
 
 <body>
@@ -46,18 +49,24 @@
             <section class="select">
                 <div class="select_one">
                     <div class="select_click">
-                        <a href="#">
-                            <!-- <img src="../img/icon/back.png" class="icon_left"> -->
-                        </a>
-                        <div class="click titleFont2">上一頁</div>
-                        <a href="#">
-                            <!-- <img src="../img/icon/043-border.png" class="icon_border"> -->
-                        </a>
-                        <div class="click titleFont2">回到選擇系列</div>
-                        <a href="#">
-                            <!-- <img src="../img/icon/next.png" class="icon_right"> -->
-                        </a>
-                        <div class="click titleFont2">下一頁</div>
+                        <div class="page_click_back">
+                            <a href="#">
+                                <img src="../img/icon/back.png" class="icon_left">
+                            </a>
+                            <div class="click titleFont2">上一頁</div>
+                        </div>
+                        <div class="page_click_choice">
+                            <a href="#">
+                                <img src="../img/icon/043-border.png" class="icon_border">
+                            </a>
+                            <div class="click titleFont2">回到選擇系列</div>
+                        </div>
+                        <div class="page_click_next">
+                            <a href="#">
+                                <img src="../img/icon/next.png" class="icon_right">
+                            </a>
+                            <div class="click titleFont2">下一頁</div>
+                        </div>
 
                     </div>
                     <div class="exhibit_pic">
@@ -91,107 +100,112 @@
                         <div class="slider slider-for interior_one">
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288447471.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288521171.jpg"
+                                        class="interior_pics" id="big">
                                 </a>
                             </div>
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288447652.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288521483.jpg"
+                                        class="interior_pics aa">
                                 </a>
                             </div>
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288447863.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288521956.jpg"
+                                        class="interior_pics aa">
                                 </a>
                             </div>
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448034.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288544561.jpg"
+                                        class="interior_pics aa">
                                 </a>
                             </div>
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448386.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288544722.jpg"
+                                        class="interior_pics aa">
                                 </a>
                             </div>
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448567.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288522107.jpg"
+                                        class="interior_pics aa">
                                 </a>
                             </div>
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448738.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288569316.jpg"
+                                        class="interior_pics aa">
                                 </a>
                             </div>
                             <div class="inter_one">
                                 <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288474271.jpg"
-                                        class="interior_pics">
+                                    <img src="../img/interiordesign/home/example/yo/C1569288583834.jpg"
+                                        class="interior_pics aa">
                                 </a>
                             </div>
                         </div>
 
                         <div class="slider slider-nav interior_two">
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288447471.jpg"
-                                        class="interior_pics">
-                                </a>
+                            <span class="triangle1" id="to_left"></span>
+                            <div class="inter_one_pack">
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288447471.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288447652.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288447863.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288448034.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288448386.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288448567.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288448738.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
+                                <div class="inter_one">
+                                    <a href="#">
+                                        <img src="../img/interiordesign/home/example/chu bai/C1569288474271.jpg"
+                                            class="interior_pics small">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288447652.jpg"
-                                        class="interior_pics">
-                                </a>
-                            </div>
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288447863.jpg"
-                                        class="interior_pics">
-                                </a>
-                            </div>
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448034.jpg"
-                                        class="interior_pics">
-                                </a>
-                            </div>
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448386.jpg"
-                                        class="interior_pics">
-                                </a>
-                            </div>
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448567.jpg"
-                                        class="interior_pics">
-                                </a>
-                            </div>
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288448738.jpg"
-                                        class="interior_pics">
-                                </a>
-                            </div>
-                            <div class="inter_one">
-                                <a href="#">
-                                    <img src="../img/interiordesign/home/example/chu bai/C1569288474271.jpg"
-                                        class="interior_pics">
-                                </a>
-                            </div>
+                            <span class="triangle2" id="to_right"></span>
                         </div>
                     </div>
 
                 </div>
+
         </div>
 
         <div class="more_detail">
@@ -207,17 +221,17 @@
             </div>
         </div>
         </section>
-    </div>
-    <div id="picsLightBox">
-        <div>
+
+        <div id="picsLightBox">
             <div>
-                <img>
-                <img src="../img/icon/icons8-cancel-64.png"
-                    style="width: 36px; height: 36px; position: fixed; left: 82%; cursor:pointer; top: 5%;">
+                <div>
+                    <img>
+                    <img src="../img/icon/icons8-cancel-64.png" class="pics_lightbox">
+                </div>
             </div>
         </div>
     </div>
-    </div>
+
 
     <footer class="libft">
         <section class="herf">

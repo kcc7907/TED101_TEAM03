@@ -4,56 +4,29 @@ title[1].classList.add('-onColor');
 
 document.cookie = 'loging=A111200001';
 
-// 取得 cookie 的值
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-// 檢查某 cookie 是否存在
-function checkCookie(cname) {
-    var cookie_value = getCookie(cname);
-    if (cookie_value != "") {
-        return true;
-    } else {
-        return false;
-    }
-}
-Vue.config.keyCodes = {
-    f1: 112,
-    up: [38, 87],
-    "insert-mode": [],
-};
 let left2 = new Vue({
     el:'#left2',
     data:{
         members:[],
         memName: '',
-        addrs:'',
+        memLives:'',
+        memCity:'',
         cardBox:false,
         remit:false,
         addressBox:false,
+        freight:false,
         selected:'居住縣市',
-        area:'',
-        // modified:{
-        //     namebtn:'',
-        // },
+        cardmix:'',
         formData:{
             fname:'',
+            memid:'',
             fphone:'',
+            fcity:'',
             fadd:'',
             payment:'',
-            products:[],
             total:0,
+            discount:0,
+            products:[]
         }
     },
     methods: {
@@ -79,10 +52,11 @@ let left2 = new Vue({
             }else{
                 e.preventDefault();
             }
-            if(v.cardnum1.value.length===4)v.cardnum2.focus()
-            if(v.cardnum2.value.length===4)v.cardnum3.focus()
-            if(v.cardnum3.value.length===4)v.cardnum4.focus()
+            if(v.cardnum1.value.length===4)v.cardnum2.focus();
+            if(v.cardnum2.value.length===4)v.cardnum3.focus();
+            if(v.cardnum3.value.length===4)v.cardnum4.focus();
             if(v.cardnum4.value.length===4)e.preventDefault();
+            this.cardmix = v.cardnum1.value+ v.cardnum2.value+v.cardnum3.value+v.cardnum4.value;
         },
         cardDate(e){
             if(e.target.value.length>3 &&e.which !== 8)e.preventDefault();
@@ -91,14 +65,24 @@ let left2 = new Vue({
                 e.preventDefault();
             }
         },
+        phoneInput(e){
+            if(e.target.value.length==10 &&e.which !== 8)e.preventDefault();
+            if (e.which >= 48 && e.which <= 57 || e.which == 8 || e.which == 37 || e.which == 39) {}else{
+                e.preventDefault();
+            }
+        },
+        changAddr(){
+        },
     },
     created() {
         let cookie = getCookie('loging');
         axios.post('http://localhost:8787/php/20/getMember.php', {ID: cookie}).then(res => {
             this.members = res.data;
-            this.formData.fadd = res.data[0].MEM_CITY + res.data[0].MEM_ADDRESS;
+            this.memLives = res.data[0].MEM_CITY + res.data[0].MEM_ADDRESS;
+            this.memCity = res.data[0].MEM_CITY ;
             this.formData.fphone = res.data[0].MEM_PHONE;
             this.formData.fname = res.data[0].MEM_NAME;
+            this.formData.memid = getCookie('loging');
         });
     },
     watch: {
@@ -106,15 +90,90 @@ let left2 = new Vue({
             if (this.cardBox === true) {
                 this.remit=false;
                 this.area = '已付款';
+                this.formData.payment = '已付款';
             }
         },
         remit(){
             if (this.remit === true) {
                 this.cardBox=false;
-                this.area = '未付款';
+                this.formData.payment = '未付款';
             }
         },
-        
+        freight(){
+            if (this.freight === true) {
+                this.addressBox=false;
+                this.formData.fcity = this.members[0].MEM_CITY;
+                this.formData.fadd = this.members[0].MEM_ADDRESS;
+                switch (this.memCity) {
+                    case '台北市':
+                    case '新北市':
+                    case '桃園市':
+                        right.Shipping = 2000;
+                        break;
+                    case '基隆市':
+                    case '新竹市':
+                    case '新竹縣':
+                    case '宜蘭縣':
+                        right.Shipping = 3000;
+                        break;
+                    case '苗栗縣':
+                    case '台中市':
+                    case '彰化縣':
+                    case '南投縣':
+                    case '雲林縣':
+                    case '嘉義市':
+                    case '嘉義縣':
+                    case '花蓮縣':
+                        right.Shipping = 4000;
+                        break;
+                    case '台南市':
+                    case '高雄市':
+                    case '屏東縣':
+                    case '台東縣':
+                        right.Shipping = 5000;
+                        break;
+                }
+            }else right.Shipping = 0;
+        },
+        addressBox(){
+            if (this.addressBox === true) {
+                this.freight=false;
+                right.Shipping =0;
+                this.formData.fadd='';
+            }else right.Shipping = 0;
+        },
+        selected(){
+            this.formData.fcity = this.selected;
+            switch (this.selected) {
+                    case '台北市':
+                    case '新北市':
+                    case '桃園市':
+                        right.Shipping = 2000;
+                        break;
+                    case '基隆市':
+                    case '新竹市':
+                    case '新竹縣':
+                    case '宜蘭縣':
+                        right.Shipping = 3000;
+                        break;
+                    case '苗栗縣':
+                    case '台中市':
+                    case '彰化縣':
+                    case '南投縣':
+                    case '雲林縣':
+                    case '嘉義市':
+                    case '嘉義縣':
+                    case '花蓮縣':
+                        right.Shipping = 4000;
+                        break;
+                    case '台南市':
+                    case '高雄市':
+                    case '屏東縣':
+                    case '台東縣':
+                        right.Shipping = 5000;
+                        break;
+                }
+        }
     },
 });
 
@@ -136,9 +195,37 @@ let right = new Vue({
             if (x) location.href = "shoppingdone.html"
             else return
         },
+        sendData(){
+            let that = this;
+            let list = JSON.parse(localStorage.getItem("lists"));
+            left2.formData.products = list;
+            axios.post('http://localhost:8787/php/20/sendData.php',left2.formData).then(res => {
+                console.log(res.data);
+        })
+        },
     },
     mounted() {
         let list = JSON.parse(localStorage.getItem("lists"));
-        this.proTotal = list.length;
+        if(!list)this.proTotal = list.length;
+        this.discount = parseInt(localStorage.getItem("discount"));
+        list.forEach((a,b) => {
+            this.total+=parseInt(a.prd_price);
+        });
+        this.final = this.total+this.discount;
+        left2.formData.discount = this.discount;
+    },
+    watch: {
+        Shipping(){
+            this.final= this.total+this.discount+this.Shipping;
+        },
+        final(){
+            left2.formData.total = this.final;
+        }
     },
 });
+
+// window.addEventListener('beforeunload',()=>{
+//     localStorage.removeItem("lists");
+// });
+
+

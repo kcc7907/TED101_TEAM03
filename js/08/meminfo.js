@@ -1,10 +1,25 @@
 $(document).ready(function(){
     
+    if(sessionStorage.getItem('reset')){
+
+        sessionStorage.removeItem('reset');
+        $('#jk_point').css('display','flex');
+
+        setTimeout(function(){
+            $('#jk_point').fadeOut(1500,function(){
+                $('#jk_point').hide();
+            });
+        }, 1000);        
+    }
+
+
     memSetStyle();
 
     $(window).resize(function(){
         memSetStyle();
     });
+
+    
     
     //點擊修改會員資料================================================
     $('.jk_meminfo form>div>div>span').click(function(e){
@@ -212,12 +227,13 @@ $(document).ready(function(){
         $('.jk_meminfo input[className="able"]').attr({                     //資料顯示欄位不可更新
             disabled: true,
             className: '',
-        });   
+        });
+
+    });
+    
 
 
-
-
-    })
+    
 
 });
 

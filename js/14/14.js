@@ -1,6 +1,9 @@
-$(document).ready(function () {
-    //jQuery輪播圖
 
+$(document).ready(function () {
+    //jQuery獎項輪播圖
+    window.onresize = function () {
+        divWidth = $('#sliderBoard').width(); //90%
+    }
     let divWidth = $('#sliderBoard').width(); //90%
     let imgCount = $('#content li').length;   //3(張照片)
     // console.log(imgCount);
@@ -62,26 +65,6 @@ $(document).ready(function () {
     setInterval(movemove, 2000);
 
 
-    //RWD輪播圖
-    // if (windows.ineerwidth < 993) {
-    // $('.slider-for').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     arrows: false,
-    //     fade: true,
-    //     asNavFor: '.interior_two'
-    // });
-    // $('.slider-nav').slick({
-    //     slidesToShow: 3,
-    //     slidesToScroll: 2,
-    //     asNavFor: '.interior_one',
-    //     dots: true,
-    //     focusOnSelect: true
-    // });
-    // }
-
-
-
     // 360平面圖燈箱
     $('div.inter_one a').click(function (e) {
         // <a>連結不作用
@@ -101,27 +84,71 @@ $(document).ready(function () {
             });
         });
     });
+
+
+
+    //RWD輪播圖
+    let S_photo = $('.small');
+    console.log(S_photo);
+    for (let i = 0; i < S_photo.length; i++) {
+        S_photo[i].addEventListener('click', function (e) {
+            document.getElementById('big').src = e.target.src;
+            console.log(document.getElementById('big').src);
+        });
+    };
+
+    //箭頭綁定
+    $('#to_left').click(function () {
+        let now_Src = document.getElementById('big').src;
+        let smallP = $('.small');
+        var sphoto = document.querySelectorAll('img.small');
+
+        if (sphoto[0].src == now_Src) {
+            //sphoto.length - 1是取得總共的張數，動態去抓取
+            document.getElementById('big').src = sphoto[(sphoto.length - 1)].src;
+        } else {
+            for (let i = 0; i < smallP.length; i++) {
+                if (smallP[i].src == now_Src) {
+                    let bbb = smallP[i].closest('div.inter_one').previousElementSibling.querySelector('img.small').src;
+                    console.log(bbb);
+                    document.getElementById('big').src = bbb;
+                }
+            }
+        }
+    });
+
+    $('#to_right').click(function () {
+        //宣告抓出id="big"(大圖片)
+        let now_Src = document.getElementById('big').src;
+        var sphoto = document.querySelectorAll('img.small');
+        //最後一張才會到這裡判斷，長度判斷要減一
+        if (sphoto[(sphoto.length - 1)].src == now_Src) {
+            //從第一張找
+            document.getElementById('big').src = sphoto[0].src;
+        }
+        // console.log(backToLeft[(backToLeft.length - 1)].src);
+        // console.log(backToLeft.length);
+        else {
+            let smallPic = $('.small');
+            for (let i = 0; i < smallPic.length; i++) {
+                if (smallPic[i].src == now_Src) {
+                    let bbb = smallPic[i].parentElement.parentElement.nextElementSibling.querySelector('img.small').src
+                    document.getElementById('big').src = bbb;
+                }
+            }
+        }
+
+        // let now_Src = $('#big');
+        // let S_photo = document.getElementsByClassName('small').src;
+        //宣告小張圖片
+
+        // for (let i = 0; i < smallP.length; i++) {
+        //     if (smallP[i] == now_Src) {
+        //         console.log(smallP[i]);
+        //     }
+        // }
+    });
 });
-
-
-
-
-// 風格切換
-// let spanbtn = document.querySelectorAll('.stylelist li');
-
-// let flexjpg = document.getElementsByClassName('stylebox_right');
-
-// for (let x = 0; x < spanbtn.length; x++) {
-//     spanbtn[x].addEventListener('click', function () {
-//         for (let y = 0; y < flexjpg.length; y++) {
-
-//             flexjpg[y].style.display = 'none';
-//             spanbtn[y].style.border = 'none';
-//         }
-//         flexjpg[x].style.display = 'inline-flex';
-//         spanbtn[x].style.border = '1px solid #aca8a4';
-//     });
-// }
 
 // 頁籤
 $(function () {
@@ -138,3 +165,5 @@ $(function () {
         console.log($("div.tab." + $(this).attr("data-target")));
     });
 });
+
+

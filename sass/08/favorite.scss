@@ -304,6 +304,11 @@ body{
                             }
                         }
 
+                        .seeProduct{
+                            text-decoration: none;
+                            margin: 10px;
+                        }
+
                         button{
                             border: 1px solid #465D4C;
                             border-radius: 4px;
@@ -314,7 +319,6 @@ body{
 
                             width: 110px;
                             padding: 7px;
-                            margin: 10px;
                             cursor: pointer;
 
                             @include r1440{
@@ -355,8 +359,8 @@ body{
 
                         .remove{
                             border: 1px solid #aaa;
+                            margin: 10px;
                             color: #aaa;
-
                         }
                     }
 
@@ -371,6 +375,57 @@ body{
                     }
                     .btn{
                         width: 20%;
+                    }
+                }
+            }
+        }
+
+        #dropCheck{
+            // display: flex;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(0,0,0,.7);
+
+            z-index: 10;
+            
+            >div{
+                padding: 20px;
+                border: 1px solid  #465D4C;
+                border-radius: 3px;
+                background-color: #FFFAF4;
+                
+                >p{
+                    padding: 20px 10px;
+                    text-align: center;
+                    color: #465D4C;
+                }
+
+                .dropBtn{
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    padding: 10px;
+
+                    button{
+                        padding: 7px 14px;
+                        color: #465D4C;
+                        background-color: rgba(0, 0, 0, 0);
+                        outline: none;
+                        border: 1px solid #465D4C;
+                        font-size: 16px;   
+                        cursor: pointer;
+
+                        &:hover{
+                            color: #fff;
+                            background-color:  #465D4C;
+                        }
                     }
                 }
             }

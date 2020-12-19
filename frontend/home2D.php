@@ -7,16 +7,19 @@
     <title>救世宅 | 首頁</title>
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
+    <link rel="stylesheet" href="../lib/reset.css">
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
+    <script src="../js/15/home2D.js"></script>
+    <script src="../js/15/logSign.js"></script>
 </head>
 
 <body>
     <div class="JHH">
         <header class="common">
             <div class="logo">
-                <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+                <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
             </div>
             <nav>
                 <dav class="nav1">
@@ -25,13 +28,17 @@
                 </dav>
                 <dav class="nav2">
                     <a href="./qa.html">客戶服務</a>
-                    <a href="./contest_participate.html">傢聚賞</a>
+                    <a href="./contest_participate.php">傢聚賞</a>
                 </dav>
             </nav>
             <div class="icon">
-                <a class="login" href="./meminfo.html">
-                    <img src="../img/headerFooter/loginIcon.svg" alt="">
-                </a>
+                <span class="login">
+                    <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
+                    <span class="logMem">
+                        <a href="./meminfo.php">會員中心</a>
+                        <span href="" class="logout">登出</span>
+                    </span>
+                </span>
                 <a class="shop" href="./contest_main20.html">
                     <img src="../img/headerFooter/shoppingCart.svg" alt="">
                 </a>
@@ -46,7 +53,7 @@
             <div>
                 <header class="common">
                     <div class="logo">
-                        <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+                        <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
                     </div>
                     <nav>
                         <dav class="nav1">
@@ -55,13 +62,17 @@
                         </dav>
                         <dav class="nav2">
                             <a href="./qa.html">客戶服務</a>
-                            <a href="./contest_participate.html">傢聚賞</a>
+                            <a href="./contest_participate.php">傢聚賞</a>
                         </dav>
                     </nav>
                     <div class="icon">
-                        <a class="login" href="./meminfo.html">
-                            <img src="../img/headerFooter/loginIcon.svg" alt="">
-                        </a>
+                        <span class="login">
+                            <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
+                            <span class="logMem">
+                                <a href="./meminfo.php">會員中心</a>
+                                <span href="" class="logout">登出</span>
+                            </span>
+                        </span>
                         <a class="shop" href="./contest_main20.html">
                             <img src="../img/headerFooter/shoppingCart.svg" alt="">
                         </a>
@@ -73,7 +84,7 @@
                     </div>
                 </header>
             </div>
-            <div>
+            <div id="goScroll">
                 <div>
                     <div>
                         <h2 class="contentFont lineHeight">關於我們</h2>
@@ -137,12 +148,12 @@
             </div>
         </div>
         <div id="homeRight">
-            <div class="into" style="display:none;">
+            <div class="into">
                 <a href="./home3D.html" class="titleFont3">點此進入3D模式</a>
             </div>
             <div>
             </div>
-            <div style="display:none;">
+            <div class="aboutDiv">
                 <div>
                     <div>
                         <span></span>
@@ -209,64 +220,124 @@
                 <span id="frtButton"></span>
                 <span id="bckButton"></span>
             </div>
-            <div>
-                <div>
+            <div class="newsDiv">
+                <div class="newsSection">
                     <div>
+                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <time class="titleFont2">01 / 29 / 2021</time>
                         <div>
                             <img src="../img/news/news01.jpg" alt="news">
                         </div>
-                        <time class="titleFont2">01 / 29 / 2021</time>
-                        <a href="" class="titleFont2">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                     </div>
                     <div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news02.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news03.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news04.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news05.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news06.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                         <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
                             <div>
                                 <img src="../img/news/news07.jpg" alt="news">
                             </div>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="newsSection">
                     <div>
-                        <button class="left"></button>
-                        <button class="right"></button>
+                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                        <time class="titleFont2">01 / 29 / 2021</time>
+                        <div>
+                            <img src="../img/news/news01.jpg" alt="news">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news02.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news03.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news04.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news05.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news06.jpg" alt="news">
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
+                            <time class="detailFont">01 / 29 / 2021</time>
+                            <div>
+                                <img src="../img/news/news07.jpg" alt="news">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnSection">
+                    <div>
+                        <!-- <span class="rotateSpan" id="rotateSpan1"></span> -->
+                        <span class="titleFont1">
+                            最新消息
+                        </span>
+                        <!-- <span class="rotateSpan" id="rotateSpan2"></span> -->
+                    </div>
+                    <div>
+                        <button class="left pageLeftBtn"></button>
+                        <button class="right pageRightBtn"></button>
                         <span class="hugeP pageBtn">第一頁</span>
                     </div>
                 </div>
@@ -298,13 +369,21 @@
                 </div>
             </div>
         </div>
+        <!-- confirm燈箱 -->
+        <div class="confirmDiv ">
+            <div>
+                <p class="contentFont lineHeight"></p>
+                <input type="button" class="detailFont" id="sureGoHome" value="確認">
+                <input type="button" class="detailFont" id="notsureGoHome" value="取消">
+            </div>
+        </div>
     </div>
 
 
     <!-- 登入燈箱 -->
     <div id="login">
         <div class="login">
-            <h1>歡迎回來</h1>
+            <h1 class="titleFont2">歡迎回來</h1>
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
                     <label for="account" class="titleFont3">帳號</label>
@@ -318,15 +397,19 @@
                 <div>
                     <p class="detailFont"><a>忘記密碼</a></p>
                     <button type="button" class="login titleFont2">登入</button>
-                    <p class="detailFont"><a href="./signUp.html" class="signLink">註冊新會員</a></p>
+                    <p class="detailFont"><a href="javascript: void(0)" class="signLink">註冊新會員</a></p>
                 </div>
             </form>
             <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true" id="logIn" class="lazy-line-painter">
                 <path id="Path_17" data-name="Path 17" d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z" transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
                 <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)" fill="none" data-llp-id="logIn-1" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
             </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true" id="logInDoor" class="lazy-line-painter">
+                <path id="Path_19" data-name="Path 19" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)" fill="none" data-llp-id="logIn-2" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />
+            </svg>
+
             <div class="closebtn">
-                <span>&times;</span>
+                <span class="closebtn">&times;</span>
             </div>
         </div>
     </div>
@@ -383,7 +466,7 @@
                     <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a class="detailFont">會員責任規範及個資聲明</a>。</span>
                 </div>
                 <div>
-                    <a href="./login.html" class="detailFont logLink">回登入頁面</a>
+                    <a href="javascript: void(0)" class="detailFont logLink">回登入頁面</a>
                 </div>
             </form>
             <div class="closebtn">
@@ -391,7 +474,9 @@
             </div>
         </div>
     </div>
-    <script src="../js/15/home2D.js"></script>
+
+
+
 </body>
 
 </html>
