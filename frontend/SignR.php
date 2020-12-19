@@ -8,7 +8,10 @@
 
     //判斷是否有會員資料?
     if(count($data) > 0){
-        echo "<script>alert('此帳號已註冊，請重新輸入。');</script>"; 
+        // echo "<script>let str4 = '此帳號已註冊，請重新輸入。'</script>";
+        // echo "<br/>";
+        echo "<script>confirmLogSign(str4);</script>";
+        echo "<br/>";
         echo "<script>$('form input#memAccountJH').css('border','1px solid red');</script>";
     }else{
         //建立SQL
@@ -27,8 +30,9 @@
         $statement->bindValue(7, $_POST["memAddress"]);
 
         $statement->execute();
-
-        echo "<script>alert('加入成功，請重新登入!');</script>"; 
+        // echo "<script>let str1 = '加入成功，請重新登入！'</script>";
+        // echo "<br/>";
+        echo "<script>confirmLogSign(str1);</script>";
         echo "<br/>";
         echo "<script>$('div#signUp').css('z-index','-3').hide();</script>";
         echo "<br/>";

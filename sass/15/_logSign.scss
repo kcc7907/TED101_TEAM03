@@ -177,8 +177,13 @@ div#login {
         }
 
         div.closebtn {
-            @include closeBtn(0, 0, 20, 20, 14, "取消登入", 100, 16, 0, -90, 20);
-            line-height: 17px;
+            // position: relative;
+            // img{
+            //     width: 100%;
+            //     max-width: 100%;
+            // }
+            @include closeBtn(0, 0, 25, 25, 14, "取消登入", 100, 16, 0, -90, 20);
+            // line-height: 17px;
         }
     }
 }
@@ -187,6 +192,7 @@ div#login {
 div#signUp {
     * {
         color: $csdr;
+        font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
         box-sizing: border-box;
     }
 
@@ -216,7 +222,7 @@ div#signUp {
         transition: all 1s;
 
         >h1 {
-            margin: 8% 0; // ******** 12/14新增
+            margin: 5% 0; // ******** 12/14新增
         }
 
         svg {
@@ -394,6 +400,11 @@ div#signUp {
         }
 
         div.closebtn {
+            // position: relative;
+            // img{
+            //     width: 100%;
+            //     max-width: 100%;
+            // }
             @include closeBtn(30, 30, 25, 25, 25, "取消註冊會員", 100, 16, 0, -110, 25);
         }
     }
@@ -417,7 +428,7 @@ div.confirmDiv {
         text-align: center;
         background-color: rgb(240, 235, 229);
         position: absolute;
-        top: 30%;
+        top: 40%;
         transition: all .3s;
         border: 5px solid #BDA79E;
         // p{
@@ -494,6 +505,10 @@ div.confirmDiv {
                 height: 650px;
             }
 
+            div.closebtn {
+                @include closeBtn(30, 30, 20, 20, 24, "取消註冊會員", 100, 16, 0, -105, 20)
+            }
+
 
         }
     }
@@ -546,11 +561,13 @@ div.confirmDiv {
                                 input {
                                     width: 130px;
                                     margin-left: 5px;
+
                                 }
 
                                 label {
                                     margin-right: 5px;
-                                    
+                                    margin-bottom: 0;
+                                    min-width: 42px;
                                 }
                             }
 
@@ -558,10 +575,11 @@ div.confirmDiv {
                             &:last-child {
                                 flex-direction: row;
                                 align-items: center; // ******** 12/14新增
+                                overflow: hidden;
 
                                 input {
                                     flex-grow: 1;
-                                    width: 180px;
+                                    // width: 180px;
                                     margin-left: 5px;
                                     vertical-align: center; // ******** 12/14新增
                                 }
@@ -570,6 +588,8 @@ div.confirmDiv {
                                     margin-right: 5px;
                                     vertical-align: center; // ******** 12/14新增
                                     margin-bottom: 0; // ******** 12/14新增
+                                    min-width: 42px;
+
                                 }
                             }
 
@@ -597,7 +617,7 @@ div.confirmDiv {
                             // 200:80 5:2
                             width: 160px;
                             height: 40px;
-                            margin: 30px auto;
+                            margin: 15px auto;
                         }
                     }
 
@@ -645,6 +665,36 @@ div.confirmDiv {
             }
         }
     }
+
+    div#signUp {
+        div.signUp {
+            form.signUp {
+                >div {
+
+                    // 姓名&手機
+                    &:first-child {
+                        >div {
+
+                            // 姓名
+                            &:first-child {
+                                label {
+                                    min-width: 39px;
+                                }
+                            }
+
+                            // 手機
+                            &:last-child {
+                                label {
+                                    min-width: 39px;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 ;
@@ -685,6 +735,18 @@ div.confirmDiv {
             form.signUp {
                 >div {
                     margin-bottom: 20px;
+
+                    // 姓名&手機
+                    &:first-child {
+                        >div {
+                            // 姓名
+                            &:first-child {
+                                label {
+                                    min-width: 35px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -714,6 +776,34 @@ div.confirmDiv {
             svg {
                 width: 550px;
                 height: 550px;
+            }
+        }
+    }
+
+    div#signUp {
+        // margin: 40px auto 0;
+
+        div.signUp {
+            >h1 {
+                margin: 5% 0; // ******** 12/14新增
+            }
+
+            form.signUp {
+                >div {
+                    margin-bottom: 20px;
+
+                    // 姓名&手機
+                    &:first-child {
+                        >div {
+                            // 姓名
+                            &:first-child {
+                                label {
+                                    min-width: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -778,6 +868,10 @@ div.confirmDiv {
             height: 480px;
             padding: 30px 10px;
 
+            >h1 {
+                margin: 3% 0; // ******** 12/14新增
+            }
+
             svg {
                 width: 0;
                 height: 0;
@@ -800,14 +894,28 @@ div.confirmDiv {
 
                             // 姓名
                             &:first-child {
+                                width: 40%;
+                                overflow: hidden;
+
                                 input {
                                     flex-grow: 1;
                                 }
+
+                                label {
+                                    min-width: 27px;
+                                }
+
                             }
 
                             // 手機
                             &:last-child {
                                 margin-left: 0;
+                                overflow: hidden;
+
+                                label {
+                                    min-width: 27px;
+                                }
+
                                 // margin-bottom: 0; // ******** 12/14新增
                             }
                         }
@@ -861,7 +969,7 @@ div.confirmDiv {
             }
 
             div.closebtn {
-                @include closeBtn(20, 20, 12, 12, 12, "取消註冊會員", 100, 10, 0, -90, 12)
+                @include closeBtn(20, 20, 15, 15, 12, "取消註冊會員", 100, 10, 0, -90, 12)
             }
         }
     }
