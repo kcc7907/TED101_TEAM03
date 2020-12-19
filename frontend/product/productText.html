@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>救世宅 | 救世傢俱</title>
+    <link rel="Shortcut Icon" href="../../img/favicon.ico">
+    <link rel="stylesheet" href="../../lib/reset.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/productText.css">
+    <script src="../../lib/js/vue.js"></script>
+    <script src="../../lib/js/jquery.js"></script>
+
+
+</head>
+
+<body>
+    <header class="common">
+        <div class="logo">
+            <a href="./home2D.html"><img src="../../img/headerFooter/logo.svg"></a>
+        </div>
+        <nav>
+            <dav class="nav1">
+                <a href="./product.html">救世傢俱</a>
+                <a href="./case.html">參考案例</a>
+            </dav>
+            <dav class="nav2">
+                <a href="./qa.html">客戶服務</a>
+                <a href="./contest_participate.html">傢聚賞</a>
+            </dav>
+        </nav>
+        <div class="icon">
+            <a class="login" href="./meminfo.html">
+                <img src="../../img/headerFooter/loginIcon.svg" alt="">
+            </a>
+            <a class="shop" href="./contest_main20.html">
+                <img src="../../img/headerFooter/shoppingCart.svg" alt="">
+            </a>
+            <a class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </header>
+    <div id="sam_vue">
+        <div class="productContent">
+            <div class="productTitle">
+                <h1 class="title">{{products[0].title}}</h1>
+                <span class="smallword">{{products[0].sort}}</span>
+                <p class="word">{{products[0].word}}</p>
+            </div>
+            <div class="productPic">
+                <h1>3D SPACE</h1>
+                <img src="../../img/product/icon/rotateleft.svg" class="threed" id="three1">
+                <img src="../../img/product/icon/rotateright.svg" class="threed" id="three2">
+            </div>
+            <div class="material">
+                <p>材質選擇</p>
+                <div class="buttonBox">
+                    <div class="woodwood"><img :src="products[0].material1" class="wood"><span class="tip">胡桃木</span>
+                    </div>
+                    <div class="woodwood"><img :src="products[0].material2" class="wood"><span class="tip">柚木</span>
+                    </div>
+                    <div class="woodwood"><img :src="products[0].material3" class="wood"><span class="tip">楓木</span>
+                    </div>
+                    <div class="woodwood"><img :src="products[0].material4" class="wood"><span class="tip">橡木</span>
+                    </div>
+                </div>
+            </div>
+            <div class="moneyBox">
+                <h1 class="money" data-price="4500">$4,500</h1>
+                <h1 class="quantity">1</h1>
+                <div class="topdown">
+                    <img class="up" src="../../img/product/icon/Icon-top.svg" alt="">
+                    <img class="down" src="../../img/product/icon/Icon-down.svg" alt="">
+                </div>
+            </div>
+            <div class="shoppingBtn">
+                <button class="love shbtn">
+                    <h2>收藏</h2>
+                </button>
+                <button class="buy shbtn">
+                    <h2>購買</h2>
+                </button>
+            </div>
+            <div class="productMessage">
+                <h4>請注意，材質的自然顏色變化使每件作品都與眾不同。</h4>
+                <h4>我們所有傢俱都是訂製的，將需要4-6週的交貨時間。</h4>
+                <h4>如有任何問題，歡迎來信詢問。</h4>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="topBox">
+                <h2 class="title" id="size">商品尺寸</h2>
+                <h2 class="title" id="delivery">送貨相關</h2>
+            </div>
+            <div class="bottomBox" id="bottomCad">
+                <div class="cadBox">
+                    <img :src="products[0].cad1" alt="" class="cad">
+                </div>
+            </div>
+            <div class="bottomBox" id="bottomDelivery">
+                <div class="taiwanBox">
+                    <img src="../../img/product/taiwan-400800.png" alt="" class="taiwan">
+                </div>
+                <div class="truckBox">
+                    <div class="truck">
+                        <div class="word">
+                            <span class="color color1"></span>
+                            <h2>區域</h2>
+                            <h2>運費2000</h2>
+                        </div>
+                        <span class="middleLine"></span>
+                        <div class="icon">
+                            <img src="../../img/product/icon/Icon-truck.svg" alt="">
+                            <h2>滿10000免運</h2>
+                        </div>
+                    </div>
+                    <div class="truck">
+                        <div class="word">
+                            <span class="color color2"></span>
+                            <h2>區域</h2>
+                            <h2>運費3000</h2>
+                        </div>
+                        <span class="middleLine"></span>
+                        <div class="icon">
+                            <img src="../../img/product/icon/Icon-truck.svg" alt="">
+                            <h2>滿15000免運</h2>
+                        </div>
+                    </div>
+                    <div class="truck">
+                        <div class="word">
+                            <span class="color color3"></span>
+                            <h2>區域</h2>
+                            <h2>運費4000</h2>
+                        </div>
+                        <span class="middleLine"></span>
+                        <div class="icon">
+                            <img src="../../img/product/icon/Icon-truck.svg" alt="">
+                            <h2>滿20000免運</h2>
+                        </div>
+                    </div>
+                    <div class="truck">
+                        <div class="word">
+                            <span class="color color4"></span>
+                            <h2>區域</h2>
+                            <h2>運費5000</h2>
+                        </div>
+                        <span class="middleLine"></span>
+                        <div class="icon">
+                            <img src="../../img/product/icon/Icon-truck.svg" alt="">
+                            <h2>滿25000免運</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <h2>推薦產品</h2>
+    </div>
+    <div class="container">
+        <div class="leftIcon">
+            <img src="../../img/product/icon/Icon-left.svg" alt="" id="left">
+        </div>
+        <div class="sliderBox">
+            <div class="slider">
+                <a href="#"><img src="../../img/product/sofa03/sofa03-500400.jpg" alt="" id="lastClone"></a>
+                <a href="#"><img src="../../img/product/sofa01/sofa01-500400.jpg" alt=""></a>
+                <a href="#"><img src="../../img/product/table05/table05-500400.jpg" alt=""></a>
+                <a href="#"><img src="../../img/product/table01/table01-500400.jpg" alt=""></a>
+                <a href="#"><img src="../../img/product/chair01/chair01_01-500400.jpg" alt=""></a>
+                <a href="#"><img src="../../img/product/sofa03/sofa03-500400.jpg" alt=""></a>
+                <a href="#"><img src="../../img/product/table01/table01-500400.jpg" alt=""></a>
+                <a href="#"><img src="../../img/product/sofa01/sofa01-500400.jpg" alt="" id="firstClone"></a>
+            </div>
+        </div>
+        <div class="rightIcon">
+            <img src="../../img/product/icon/Icon-right.svg" alt="" id="right">
+        </div>
+    </div>
+    <footer class="libft">
+        <section class="herf">
+            <div class="logo">
+                <img src="../../img/headerFooter/logo.svg" alt="">
+            </div>
+            <div class="page">
+                <a href="./product.html">救世家具</a>
+                <a href="./case.html">優質案例</a>
+                <a href="./qa.html">客戶服務</a>
+                <a href="./qa.html">聯繫我們</a>
+                <a href="./contest_main20.html">傢俱賞</a>
+            </div>
+        </section>
+        <section class="link">
+            <div class="scb">
+                <label for="mail">訂閱電子報</label>
+                <input type="text" class="mail" placeholder="enter your email">
+            </div>
+            <div class="company">
+                <img src="../../img/headerFooter/東和鋼鐵.png">
+                <img src="../../img/headerFooter/cooperate_blum.png">
+                <img src="../../img/headerFooter/foot_logo.png">
+            </div>
+        </section>
+        <section class="copy">
+            <p>Copy right 2020,All Right Reserved | By 救世宅</p>
+        </section>
+    </footer>
+    <script src="../../lib/header/header.js"></script>
+
+    <script>
+        new Vue({
+            el: '.productTitle',
+            data: {
+                products: [],
+            },
+            mounted() {
+                $.getJSON('./productText.json').then(res => {
+                    this.products = res;
+                    // console.log(this.products[0].title);
+                });
+
+            },
+        });
+        new Vue({
+            el: '.material',
+            data: {
+                products: [],
+            },
+            mounted() {
+                $.getJSON('./productText.json').then(res => {
+                    this.products = res;
+                    // console.log(this.products[0].title);
+                });
+            },
+        });
+        new Vue({
+            el: '.bottomBox',
+            data: {
+                products: [],
+            },
+            mounted() {
+                $.getJSON('./productText.json').then(res => {
+                    this.products = res;
+                    // console.log(this.products[0].title);
+                });
+
+            },
+        });
+    </script>
+    <script defer src="../../js/13/productText.js"></script>
+</body>
+
+</html>
