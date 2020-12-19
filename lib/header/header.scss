@@ -17,7 +17,7 @@ header.common {
     .logo {
         height: 60px;
         position: relative;
-        z-index: 3;
+        z-index: 2;
     }
     nav {
         position: fixed;
@@ -40,10 +40,17 @@ header.common {
         top: 50%;
         transform: translateY(-50%);
         display: flex;
-        z-index: 3;
+        z-index: 2;
         a {
             height: 20px;
             margin-left: 10px;
+        }
+        img{
+            cursor: pointer;
+            transition: 1s;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
         .logMembox{
             position: absolute;
@@ -58,7 +65,7 @@ header.common {
             background-color: #F1EADE;
             border: 1px solid #BDA79E;
             display: none;
-            z-index: 3;
+            z-index: 2;
             a{
                 display: block;
                 color: $c_font_strong;
@@ -101,6 +108,43 @@ header.common {
                     transform-origin: top right;
                     transition: all .5s;
                 }
+            }
+        }
+        .login,.shop{
+            position: relative;
+        }
+        .loginnum{
+            &::before{
+                position: absolute;
+                content: attr(data-content)'';
+                right: 0;
+                top: 0;
+                width: 15px;
+                height: 15px;
+                background-color: $c_font_strong;
+                display: block;
+                border-radius: 50%;
+                transform: translate(60%,-70%);
+                color: white;
+                font-size: 10px;
+                text-align: center;
+            }
+        }
+        .shopnum{
+            &::before{
+                position: absolute;
+                content: attr(data-content)'';
+                right: 0;
+                top: 0;
+                width: 15px;
+                height: 15px;
+                background-color: $c_font_strong;
+                display: block;
+                border-radius: 50%;
+                transform: translate(60%,-70%);
+                color: white;
+                font-size: 10px;
+                text-align: center;
             }
         }
     }
@@ -328,3 +372,15 @@ header.common {
         }
     }
 }
+// .common .product{
+//     font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+// }
+// .common .case{
+//     font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+// }
+// .common .qa{
+//     font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+// }
+// .common .contest{
+//     font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+// }
