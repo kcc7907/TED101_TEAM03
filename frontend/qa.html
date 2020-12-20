@@ -6,15 +6,47 @@
     <link rel="stylesheet" href="../css/qa.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Shortcut Icon" href="../img/favicon.ico">
-    <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../lib/reset.css">
+
 
   </head>
   <body class="bodykm">
       
-
-
-
+    <header class="common">
+        <div class="logo">
+            <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+        </div>
+        <nav>
+            <div class="nav1">
+                <a href="./product.html">救世傢俱</a>
+                <a href="./case.html">參考案例</a>
+            </div>
+            <div class="nav2">
+                <a href="./qa.html">客戶服務</a>
+                <a href="./contest_participate.html">傢聚賞</a>
+            </div>
+        </nav>
+        <div class="icon">
+            <a class="login">
+                <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
+            </a>
+            <a class="shop" href="shoppingCart.html">
+                <img src="../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.html'">
+            </a>
+            <a class="ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <div class="logMembox">
+                <a href="./meminfo.php">會員中心</a>
+                <span class="logout">登出</span>
+            </div>
+        </div>
+    </header>
+    
     <div class="km">
         <div class="bigbox">
             <div class="contain">
@@ -331,29 +363,38 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="chatbox">
-                <div class="name">
-                    <p class="name">救世宅</p>
-                </div>
-                <p class="me">有人在嗎?</p>
-                <p class="boss">您好，請說</p>
-                <p class="me">我想請問到貨大概需要幾天</p>
-                <p class="boss">5天左右</p>
-
-                <label class="chatbar">
-                    <input class="chat" type="text" cols="30" placeholder="">    
-                </label>
-            </div> -->
-
-
-
         </div>
     </div>
 
+    <footer class="libft">
+        <section class="herf">
+            <div class="logo">
+                <img src="../img/headerFooter/logo.svg" alt="">
+            </div>
+            <div class="page">
+                <a href="./product.html">救世家具</a>
+                <a href="./case.html">優質案例</a>
+                <a href="./qa.html">客戶服務</a>
+                <a href="./qa.html">聯繫我們</a>
+                <a href="./contest_main20.html">傢俱賞</a>
+            </div>
+        </section>
+        <section class="link">
+            <div class="scb">
+                <label for="mail">訂閱電子報</label>
+                <input type="text" class="mail" placeholder="enter your email">
+            </div>
+            <div class="company">
+                <img src="../img/headerFooter/東和鋼鐵.png">
+                <img src="../img/headerFooter/cooperate_blum.png">
+                <img src="../img/headerFooter/foot_logo.png">
+            </div>
+        </section>
+        <section class="copy">
+            <p>Copy right 2020,All Right Reserved | By 救世宅</p>
+        </section>
+    </footer>
 
-
-
-     
     <script src='../js/jquery.js'></script>
     <script src='../js/19/19.js'></script>
   </body>
