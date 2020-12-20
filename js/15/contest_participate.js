@@ -9,17 +9,16 @@ $(document).ready(function () {
 
     
     if(!checkCookie('loging')){
-        $('#login div.closebtn').hide();
-        $('#signUp div.closebtn').hide();
+        // $('#login div.closebtn').hide();
+        // $('#signUp div.closebtn').hide();
         logBox();
         memBox();
+    }else{
+        goStep();
     }
     
-    goStep();
 
     $('#formStep1 button.nextBtn').click(goStep);
-
-
 
     // $('登出').click(()=>{
     //     $('#login div.closebtn').hide();
@@ -151,8 +150,8 @@ function goStep() {
             checkRequired(e.target);
         });
     }else{
-        $('#login div.closebtn').hide();
-        $('#signUp div.closebtn').hide();
+        // $('#login div.closebtn').hide();
+        // $('#signUp div.closebtn').hide();
         logBox();
         memBox();
     }

@@ -26,7 +26,6 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
 
 
     // SELECT & INPUT & TEXTAREA
-    // $type = trim($_POST['type'], "<br>");
     $pIdNum = $_POST['pIdNum'];
     $type = $_POST['type'];
     $name = $_POST["name"];
@@ -43,10 +42,12 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
     $filePath_Temp2 = $_FILES["file2"]["tmp_name"];
     $filePath_Temp3 = $_FILES["file3"]["tmp_name"];
 
-    $now = date_create('now', new DateTimeZone('Asia/Taipei'));
-    $date = date_format($now, 'YmdHis');
+
 
     // FILE欲搬移的正確位置
+    $now = date_create('now', new DateTimeZone('Asia/Taipei'));
+    $date = date_format($now, 'YmdHis');
+    
     $filePath1 = "pId/" . $data[0]['MEM_ID'] . $date . $file1;
     $filePath2 = "draft/" . $data[0]['MEM_ID'] . $date . $file2;
     $filePath3 = "draw/" . $data[0]['MEM_ID'] . $date . $file3;

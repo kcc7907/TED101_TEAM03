@@ -9,14 +9,14 @@
 
     //判斷是否有會員資料?
     if(count($data) > 0){
-        echo "<script>alert('此帳號已註冊，請重新輸入。');</script>"; 
+        // echo "<script>alert('此帳號已註冊，請重新輸入。');</script>"; 
+        echo "<script>confirmLogSign(str4);</script>";
+        echo "<br/>";
         echo "<script>$('form input#memAccountJH').css('border','1px solid red');</script>";
     }else{
         //建立SQL
         $sql = "INSERT INTO MEMBER(MEM_ID, MEM_PWD, MEM_NAME, MEM_PHONE, MEM_EMAIL, MEM_CITY, MEM_ADDRESS, MEM_DATE) VALUES (?,?,?,?,?,?,?,NOW())";
 
-        //執行
-        // $statement = $Util->getPDO()->prepare($sql);
         //執行
         $statement = $pdo->prepare($sql);
 
@@ -31,7 +31,8 @@
 
         $statement->execute();
 
-        echo "<script>alert('加入成功，請重新登入!');</script>"; 
+        // echo "<script>alert('加入成功，請重新登入!');</script>";
+        echo "<script>confirmLogSign(str1);</script>";
         echo "<br/>";
         echo "<script>$('div#signUp').css('z-index','-3').hide();</script>";
         echo "<br/>";
