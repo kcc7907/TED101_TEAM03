@@ -505,52 +505,68 @@ select5.addEventListener("click",function(){
 //         }
 //     });
 // }
+let first = document.getElementsByClassName("first")[0];
+let second = document.getElementsByClassName("second")[0];
+let third = document.getElementsByClassName("third")[0];
+let fourth = document.getElementsByClassName("fourth")[0];
+let fifth = document.getElementsByClassName("fifth")[0];
+let part1 = document.getElementsByClassName("part1")[0];
+let part2 = document.getElementsByClassName("part2")[0];
+let part3 = document.getElementsByClassName("part3")[0];
+let part4 = document.getElementsByClassName("part4")[0];
+let paper1 = document.getElementsByClassName("paper1")[0];
+let paper2 = document.getElementsByClassName("paper2")[0];
+let paper3 = document.getElementsByClassName("paper3")[0];
 
 
 
-// if(window.innerWidth<=768){
-// let first = document.getElementsByClassName("first")[0];
-// let second = document.getElementsByClassName("second")[0];
-// let third = document.getElementsByClassName("third")[0];
-// let fourth = document.getElementsByClassName("fourth")[0];
-// let paper1 = document.getElementsByClassName("paper1")[0];
-// first.addEventListener("click",function(){
-//     if(part1.classList.contains("on")){
-//         part1.classList.remove("on");
-//     }else{
-//         part1.classList.add("on");
-//     }
-// });
+if(window.innerWidth<=768){
+first.addEventListener("click",function(){
+    if(part1.classList.contains("on")){
+        part1.classList.remove("on");
+    }else{
+        part1.classList.add("on");
+    }
+    console.log(123);
+});
 
-// second.addEventListener("click",function(){
-//     if(part2.classList.contains("on")){
-//         part2.classList.remove("on");
-//     }else{
-//         part2.classList.add("on");
-//     }
-// });
+second.addEventListener("click",function(){
+    if(part2.classList.contains("on")){
+        part2.classList.remove("on");
+    }else{
+        part2.classList.add("on");
+    }
+});
 
-// third.addEventListener("click",function(){
-//     if(part3.classList.contains("on")){
-//         part3.classList.remove("on");
-//     }else{
-//         part3.classList.add("on");
-//     }
-// });
+third.addEventListener("click",function(){
+    if(part3.classList.contains("on")){
+        part3.classList.remove("on");
+    }else{
+        part3.classList.add("on");
+    }
+});
 
-// fourth.addEventListener("click",function(){
-//     if(part4.classList.contains("on")){
-//         part4.classList.remove("on");
-//     }else{
-//         part4.classList.add("on");
-//     }
-// });
+fourth.addEventListener("click",function(){
+    if(part4.classList.contains("on")){
+        part4.classList.remove("on");
+    }else{
+        part4.classList.add("on");
+    }
+});
 
-// fifth.addEventListener("click",function(){
-//     if(paper1.classList.contains("on")){
-//         paper1.classList.remove("on");
-//     }else{
-//         paper1.classList.add("on");
-//     }
-// });
-// }
+fifth.addEventListener("click",function(){
+    if(paper2.classList.contains("on")){
+        paper2.classList.remove("on");
+    }else{
+        paper2.classList.add("on");
+    }
+});
+
+fifth.addEventListener("click",function(){
+    if(paper3.classList.contains("on")){
+        paper3.classList.remove("on");
+    }else{
+        paper3.classList.add("on");
+    }
+});
+}
