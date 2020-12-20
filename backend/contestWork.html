@@ -130,7 +130,7 @@
                         <td>{{wk.MEM_ID}}</td>
                         <td>{{wk.MEM_NAME}}</td>
                         <td>{{wk.CT_PERSONAL_ID}}</td>
-                        <td ><img :src="wk.CT_IMG_FRONT"></td>
+                        <td><img :src="wk.CT_IMG_FRONT"></td>
                         <td>{{wk.WK_ID}}</td>
                         <td>{{wk.WK_NAME}}</td>
                         <td>{{wk.WK_CONCEPT}}</td>
@@ -144,7 +144,12 @@
                 </table>
 
                 <!-- 跳窗 -->
-                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID" :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT" :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT" :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID" @new-draft="changeDraft" @new-draw="changeDraw" @update-btn="updateInfo" @new-idnum="changeIDnum" @new-status="changeStatus"></check-component>
+                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID"
+                    :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT"
+                    :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT"
+                    :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID"
+                    @new-draft="changeDraft" @new-draw="changeDraw" @update-btn="updateInfo" @new-idnum="changeIDnum"
+                    @new-status="changeStatus"></check-component>
             </main>
 
         </div>
@@ -154,11 +159,11 @@
             data() {
                 return {
                     newImgUrls: ["", "", ""],
-                    newImgNames: ["","",""],
-                    workStatus: ['審核中', '投稿失敗','投稿成功'],
+                    newImgNames: ["", "", ""],
+                    workStatus: ['審核中', '投稿失敗', '投稿成功'],
                 };
             },
-            props: ['session','account','name', 'worknum', 'workname', 'concept', 'vote', 'status', 'date', 'frontimg', 'draft','draw', 'memid', 'i'],
+            props: ['session', 'account', 'name', 'worknum', 'workname', 'concept', 'vote', 'status', 'date', 'frontimg', 'draft', 'draw', 'memid', 'i'],
             template: `
             <div class="jh_jump" :data-id=i>
                 <div class="secondBack">
@@ -236,13 +241,13 @@
             </div>
             `,
             methods: {
-                goChangeID(e){
+                goChangeID(e) {
                     let theIndex = parseInt(this.i);
                     let newID = $(e.target).val().trim();
                     this.$emit('new-idnum', theIndex, newID);
                 },
 
-                goChange1(e){
+                goChange1(e) {
                     let self1 = this;
                     let file1 = e.target.files[0];
                     self1.newImgNames.splice(0, 1, file1.name);
@@ -255,7 +260,7 @@
                     });
                 },
 
-                goChange2(e){
+                goChange2(e) {
                     let self2 = this;
                     let file2 = e.target.files[0];
                     self2.newImgNames.splice(1, 1, file2.name);
@@ -268,7 +273,7 @@
                     });
                 },
 
-                goChange3(e){
+                goChange3(e) {
                     let self3 = this;
                     let file3 = e.target.files[0];
                     self3.newImgNames.splice(2, 1, file3.name);
@@ -281,21 +286,21 @@
                     });
                 },
 
-                goChangeStatus(e){
+                goChangeStatus(e) {
                     let theIndex = parseInt(this.i);
                     let newstatus = $(e.target).val();
                     // console.log(newstatus);
                     this.$emit('new-status', theIndex, newstatus);
                 },
 
-                closeIcon(index){
+                closeIcon(index) {
                     $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
                     setTimeout(function () {
                         $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
                     }, 1000);
                 },
 
-                updateBtn(){
+                updateBtn() {
                     let theIndex = parseInt(this.i);
                     let newpid = $('.jh_jump input#newPID').prop('files')[0];
                     let newdraft = $('.jh_jump input#newDraft').prop('files')[0];
@@ -316,12 +321,12 @@
             },
             methods: {
                 // 點擊審核出現彈窗
-                checkWork(i){
+                checkWork(i) {
                     $(`div.jh_jump`).eq(i).addClass('-on');
                 },
 
                 // 修改root.身分證
-                changeIDnum(theIndex, newidnum){
+                changeIDnum(theIndex, newidnum) {
                     this.work[theIndex].CT_PERSONAL_ID = newidnum;
                 },
 
@@ -332,24 +337,24 @@
                 },
 
                 // 修改root.草稿
-                changeDraft(newUrl){
+                changeDraft(newUrl) {
                     let temIndex = parseInt($('div.jh_jump.-on').attr('data-id'));
                     this.work[temIndex].WK_DRAFT = newUrl;
                 },
 
                 // 修改root.完稿
-                changeDraw(newUrl){
+                changeDraw(newUrl) {
                     let temIndex = parseInt($('div.jh_jump.-on').attr('data-id'));
                     this.work[temIndex].WK_DRAW = newUrl;
                 },
 
                 // 修改root.狀態
-                changeStatus(theIndex, newstatus){
+                changeStatus(theIndex, newstatus) {
                     this.work[theIndex].WK_STATUS = newstatus;
                 },
 
                 // 保存
-                updateInfo(index, newpid , newdraft, newdraw){
+                updateInfo(index, newpid, newdraft, newdraw) {
                     let form_data = new FormData();
                     let newPIdNum = this.work[index].CT_PERSONAL_ID; // 身分證號碼
                     let newStatus = this.work[index].WK_STATUS; // 狀態
@@ -361,26 +366,26 @@
                     form_data.append('MEM_ID', MEM_ID);
 
                     let that = this;
-                    if(!Boolean(newpid) == false){ // 身分證圖片
+                    if (!Boolean(newpid) == false) { // 身分證圖片
                         form_data.append('newFile1', newpid);
                         // console.log(newpid);
-                    }else{
+                    } else {
                         form_data.append('newFile2', that.work[index].CT_IMG_FRONT);
                         // console.log(that.work[index].CT_IMG_FRONT);
                     }
 
-                    if(!Boolean(newdraft) == false){ // 草稿
+                    if (!Boolean(newdraft) == false) { // 草稿
                         form_data.append('newFile3', newdraft);
                         // console.log(newdraft);
-                    }else{
+                    } else {
                         form_data.append('newFile4', that.work[index].WK_DRAFT);
                         // console.log(that.work[index].WK_DRAFT);
                     }
 
-                    if(!Boolean(newdraw) == false){ // 完稿
+                    if (!Boolean(newdraw) == false) { // 完稿
                         form_data.append('newFile5', newdraw);
                         // console.log(newdraw);
-                    }else{
+                    } else {
                         form_data.append('newFile6', that.work[index].WK_DRAW);
                         // console.log(that.work[index].WK_DRAW);
                     }
@@ -393,13 +398,13 @@
                         data: form_data,
                         contentType: false,
                         cache: false,
-                        processData:false,
+                        processData: false,
                         success: function (res) {
-                            console.log(res);
-                            // $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
-                            // setTimeout(function () {
-                            //     $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
-                            // }, 1000);
+                            // console.log(res);
+                            $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
+                            setTimeout(function () {
+                                $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
+                            }, 500);
                         }
                     });
                 }
@@ -415,7 +420,7 @@
                     dataType: "json",
                     success: function (res) {
                         let allWork = [];
-                        $(res).each((index, value)=>{
+                        $(res).each((index, value) => {
                             that.work.push(value);
                         });
                     }
