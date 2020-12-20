@@ -1,5 +1,5 @@
 <?php    
-    setcookie("loging", "A111200001");      //測試
+    setcookie("loging", "A111200001", time()+3600*24*365, '/');      //測試
     include("../php/08/jk_link.php");
 
         $sql = "SELECT * FROM member WHERE MEM_ID =?";
@@ -39,7 +39,7 @@
     <script src="../js/08/meminfo.js"></script>
 
     
-    
+    <!-- 通用設定 -->
     <link rel="stylesheet" href="../css/logSign.css">
     <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
     <script defer src="../lib/login/logSign.js"></script>
