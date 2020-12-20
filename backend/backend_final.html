@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品管理</title>
+
+    <link rel="stylesheet" href="../lib/reset.css">
+    <link rel="stylesheet" href="../css/product_authority.css">
+    <link rel="stylesheet" href="../css/backend_final.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <script src="../lib/js/vue.js"></script>
+    <script src="../lib/js/jquery.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
+    <script defer src="backend_final.js"></script>
+    <script defer src="../js/13/13.js"></script>
+    <script defer src="backend_final_vue.js"></script>
+
+</head>
+
+<body>
+    <div class="jk_authority">
+        <div class="container">
+            <div class="sideMenu">
+                <div class="title">救世宅後台管理</div>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <ul>
+                                <li class="item">會員管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="kcc_authorityChange1">會員總覽</li>
+                                <li id="kcc_authorityChange2">新增會員</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">訂單管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="jane_authorityChange1">訂單總覽</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">
+                                    案例管理
+                                    <i class="fas fa-chevron-left"></i>
+                                </li>
+                                <!-- <li id="jk_newManager">新增管理員</li> -->
+                                <!-- <a href="./case_authority.html"> -->
+                                <li id="jane_authorityChange">案例異動</li>
+                                <li id="jane_authorityChange2">案例上架</li>
+                                <!-- </a> -->
+                            </ul>
+                        </li>
+
+                        <!-- <li>
+                            <ul>
+                                <li class="item">消息管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li> -->
+
+                        <li>
+                            <ul>
+                                <li class="item">商品管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="sam_authorityChange1">商品總覽</li>
+                                <li id="sam_authorityChange2">產品上架</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">客服管理<i class="fas fa-chevron-left"></i></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="item">比賽管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="jh_authorityChange1">作品總覽</li>
+                                <!-- <li id="jh_authorityChange2">作品審核</li> -->
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- <div class="arrow"><i class="far fa-arrow-alt-circle-left"></i></div> -->
+            </div>
+
+            <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
+
+            <main class="sam_class" id="app">
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        商品管理 / 商品總覽
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="sam_authorityChange">
+
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>商品編號</th>
+                        <th>商品種類</th>
+                        <th>商品名稱</th>
+                        <th>商品價格</th>
+                        <th>材質/庫存</th>
+                        <th>上架日期</th>
+                        <th>優惠折扣</th>
+                        <th></th>
+                    </tr>
+
+                    <!-- 表格內容 -->
+                    <tr v-for="rp in rp">
+                        <td>{{rp.PRD_ID}}</td>
+                        <td>{{rp.PRD_SPECIES}}</td>
+                        <td>{{rp.PRD_NAME}}</td>
+                        <td>{{rp.PRD_PRICE}}</td>
+                        <td>{{rp.PRD_MATERIAL}}</td>
+                        <td>{{rp.PRD_DATE}}</td>
+                        <td>{{rp.DISCOUNT_ID}}</td>
+                        <td><button class="cancel">下架</button></td>
+                    </tr>
+                </table>
+
+                <!-- 跳窗 -->
+                <div class="sam_jump">
+                    <div class="secondBack">
+                        <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
+                        <form action="" method="">
+                            <label for="product_number">商品編號</label>
+                            <input type="text" name="product_number" id="product_number" placeholder="安安"
+                                v-model="formData.product_num">
+                            <br>
+
+                            <label for="product_kind">商品種類</label>
+                            <input type="text" name="product_kind" id="product_kind" placeholder="安安"
+                                v-model="formData.product_kind">
+                            <br>
+
+                            <label for="product_name">商品名稱</label>
+                            <input type="text" name="product_name" id="product_name" placeholder="安安"
+                                v-model="formData.product_name">
+                            <br>
+
+                            <label for="product_price">商品價格</label>
+                            <input type="text" name="product_price" id="product_price" placeholder="安安"
+                                v-model="formData.product_price">
+                            <br>
+
+                            <label for="product_material">材質 / 庫存</label>
+                            <input type="text" name="product_material" id="product_material" placeholder="安安"
+                                v-model="formData.product_material">
+                            <br>
+
+                            <label for="product_update">上架日期</label>
+                            <input type="text" name="product_update" id="product_update" placeholder="安安"
+                                v-model="formData.product_update">
+                            <br>
+
+                            <label for="product_discount">優惠折扣</label>
+                            <input type="text" name="product_discount" id="product_discount" placeholder="安安"
+                                v-model="formData.product_discount">
+
+                            <button id="product_submit" type="button" @click="send">上架</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <main class="kcc_class" id="app2">
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        會員管理 / 會員總覽
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="kcc_authorityChange">
+
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>會員編號</th>
+                        <th>會員密碼</th>
+                        <th>會員名稱</th>
+                        <th>會員電話</th>
+                        <th>會員伊媚兒</th>
+                        <th>居住城市</th>
+                        <th>地址</th>
+                        <th>建立日期</th>
+                        <th></th>
+                    </tr>
+
+                    <!-- 表格內容 -->
+                    <tr v-for="(item, index) in rp" :key="index">
+                        <td>{{item.MEM_ID}}</td>MEM_ADDRESS
+                        <td>{{item.MEM_PWD}}</td>
+                        <td>{{item.MEM_NAME}}</td>
+                        <td>{{item.MEM_PHONE}}</td>
+                        <td>{{item.MEM_EMAIL}}</td>
+                        <td>{{item.MEM_CITY}}</td>
+                        <td>{{item.MEM_ADDRESS}}</td>
+                        <td>{{item.MEM_DATE}}</td>
+                        <td><button class="cancel">刪除</button></td>
+                    </tr>
+                </table>
+
+                <!-- 跳窗 -->
+                <div class="kcc_jump">
+                    <div class="secondBack">
+                        <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
+                        <form>
+                            <label for="mem_num">會員編號</label>
+                            <input type="text" name="mem_num" id="mem_num" placeholder="安安" v-model="formData.mem_num">
+                            <br>
+
+                            <label for="mem_pwd">會員密碼</label>
+                            <input type="text" name="mem_pwd" id="mem_pwd" placeholder="安安" v-model="formData.mem_pwd">
+                            <br>
+
+                            <label for="mem_name">會員名稱</label>
+                            <input type="text" name="mem_name" id="mem_name" placeholder="安安"
+                                v-model="formData.mem_name">
+                            <br>
+
+                            <label for="mem_phone">會員電話</label>
+                            <input type="text" name="mem_phone" id="mem_phone" placeholder="安安"
+                                v-model="formData.mem_phone">
+                            <br>
+
+                            <label for="mem_email">會員伊媚兒</label>
+                            <input type="text" name="mem_email" id="mem_email" placeholder="安安"
+                                v-model="formData.mem_email">
+                            <br>
+
+                            <label for="mem_city">居住城市</label>
+                            <input type="text" name="mem_city" id="mem_city" placeholder="安安"
+                                v-model="formData.mem_city">
+                            <br>
+
+                            <label for="mem_addr">地址</label>
+                            <input type="text" name="mem_addr" id="mem_addr" placeholder="安安"
+                                v-model="formData.mem_addr">
+                            <br>
+
+                            <label for="mem_date">建立日期</label>
+                            <input type="text" name="mem_date" id="mem_date" placeholder="安安"
+                                v-model="formData.mem_date">
+
+                            <button id="product_submit" type="button" @click="send">上架</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <main class="jane_class jane_case" id="app3">
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        案例管理 / 案例總覽
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="jane_authorityChange">
+
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>案例編號</th>
+                        <th>案例名稱</th>
+                        <th>案例日期</th>
+                        <th>案例型態</th>
+                        <th>圖片路徑</th>
+                    </tr>
+
+                    <!-- 表格內容 -->
+                    <tr v-for="rp in rp">
+                        <td>{{rp.CASE_ID}}</td>
+                        <td>{{rp.CASE_INTRO}}</td>
+                        <td>{{rp.CASE_DATE}}</td>
+                        <td>{{rp.CASE_TYPE}}</td>
+                        <td>{{rp.CASE_IMG}}</td>
+                    </tr>
+                </table>
+
+                <!-- 跳窗 -->
+                <div class="jane_jump">
+                    <div class="secondBack">
+                        <img src="../img/icon/icons8-cancel-64.png" alt="" class="cancel-icon">
+                        <form action="" method="">
+                            <label for="case_number">案例編號</label>
+                            <input type="text" name="case_number" id="case_number" placeholder="安安"
+                                v-model="formData.case_num">
+                            <br>
+
+                            <label for="case_name">案例名稱</label>
+                            <input type="text" name="case_name" id="case_name" placeholder="安安"
+                                v-model="formData.case_name">
+                            <br>
+
+                            <label for="case_date">案例日期</label>
+                            <input type="text" name="case_date" id="case_date" placeholder="安安"
+                                v-model="formData.case_date">
+                            <br>
+
+                            <label for="case_type">案例型態</label>
+                            <input type="text" name="case_type" id="case_type" placeholder="安安"
+                                v-model="formData.case_type">
+                            <br>
+
+                            <label for="case_path">圖片路徑</label>
+                            <input type="text" name="case_path" id="case_path" placeholder="安安"
+                                v-model="formData.case_path">
+                            <br>
+
+                            <button id="case_submit" type="button" @click="send">上架</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <main class="jane_class jane_order" id="app4">
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        訂單管理 / 訂單總覽
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="jane_authorityChange">
+
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>訂單編號</th>
+                        <th>訂單數量</th>
+                        <th>訂單狀態</th>
+                        <th>訂單付款狀態</th>
+                        <th>訂單日期</th>
+                        <th>會員編號</th>
+                        <th>訂單編號</th>
+                    </tr>
+
+                    <tr v-for="rp in rp">
+                        <td>{{rp.ORD_ID}}</td>
+                        <td>{{rp.ORD_QUANTITY}}</td>
+                        <td>{{rp.ORD_STATUS}}</td>
+                        <td>{{rp.ORD_PAYMENT}}</td>
+                        <td>{{rp.ORD_DATE}}</td>
+                        <td>{{rp.MEMBER_ID}}</td>
+                        <td>{{rp.DELIVERY_ID}}</td>
+                    </tr>
+                </table>
+            </main>
+
+            <main class="jh_class" id="jhApp">
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        比賽管理 / 作品總覽
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="jh_authorityChange">
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>比賽屆數</th>
+                        <th>會員帳號</th>
+                        <th>會員姓名</th>
+                        <th>身分證號碼</th>
+                        <th>身分證圖片</th>
+                        <th>作品編號</th>
+                        <th>作品名稱</th>
+                        <th>作品理念</th>
+                        <th>作品草稿</th>
+                        <th>作品完稿</th>
+                        <th>投票數</th>
+                        <th>作品狀態</th>
+                        <th>投稿日期</th>
+                        <th>作品審核</th>
+                    </tr>
+
+                    <!-- 表格內容 -->
+                    <tr v-for="wk in work">
+                        <td>第{{wk.WK_SESSION}}屆</td>
+                        <td>{{wk.MEM_ID}}</td>
+                        <td>{{wk.MEM_NAME}}</td>
+                        <td>{{wk.CT_PERSONAL_ID}}</td>
+                        <td><img :src="wk.CT_IMG_FRONT"></td>
+                        <td>{{wk.WK_ID}}</td>
+                        <td>{{wk.WK_NAME}}</td>
+                        <td>{{wk.WK_CONCEPT}}</td>
+                        <td><img :src="wk.WK_DRAFT"></td>
+                        <td><img :src="wk.WK_DRAW"></td>
+                        <td>{{wk.WK_VOTES}}</td>
+                        <td>{{wk.WK_STATUS}}</td>
+                        <td>{{wk.WK_DATE}}</td>
+                        <td><button id="jh_authorityChange2" @click="checkWork">審核</button></td>
+                    </tr>
+                </table>
+
+                <!-- 跳窗 -->
+                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID"
+                    :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT"
+                    :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT"
+                    :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" @my-emit="emitCount">
+                </check-component>
+            </main>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
