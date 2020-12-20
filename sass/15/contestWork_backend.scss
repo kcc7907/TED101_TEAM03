@@ -546,8 +546,8 @@ body {
                     background-color: rgba(97, 97, 97, .8);
                     top: 0;
                     left: 0;
-                    // opacity: 0;
-                    // z-index: -1;
+                    opacity: 0;
+                    z-index: -1;
                     transition: opacity 1s;
                     display: flex;
                     flex-direction: center;
@@ -573,7 +573,7 @@ body {
 
                         form {
                             border: 1px solid #865454;
-                            width: 60%;
+                            width: 70%;
                             margin: 60px auto 60px;
                             position: relative;
                             z-index: 2;

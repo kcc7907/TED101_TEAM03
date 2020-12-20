@@ -125,12 +125,12 @@
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr v-for="wk in work">
+                    <tr v-for="(wk,index) in work">
                         <td>第{{wk.WK_SESSION}}屆</td>
                         <td>{{wk.MEM_ID}}</td>
                         <td>{{wk.MEM_NAME}}</td>
                         <td>{{wk.CT_PERSONAL_ID}}</td>
-                        <td ><img :src="wk.CT_IMG_FRONT"></td>
+                        <td><img :src="wk.CT_IMG_FRONT"></td>
                         <td>{{wk.WK_ID}}</td>
                         <td>{{wk.WK_NAME}}</td>
                         <td>{{wk.WK_CONCEPT}}</td>
@@ -139,12 +139,17 @@
                         <td>{{wk.WK_VOTES}}</td>
                         <td>{{wk.WK_STATUS}}</td>
                         <td>{{wk.WK_DATE}}</td>
-                        <td><button id="jh_authorityChange2" @click="checkWork">審核</button></td>
+                        <td><button id="jh_authorityChange2" @click="checkWork(index)">審核</button></td>
                     </tr>
                 </table>
 
                 <!-- 跳窗 -->
-                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID" :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT" :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT" :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" @my-emit="emitCount"></check-component>
+                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID"
+                    :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT"
+                    :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT"
+                    :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID"
+                    @new-draft="changeDraft" @new-draw="changeDraw" @update-btn="updateInfo" @new-idnum="changeIDnum"
+                    @new-status="changeStatus"></check-component>
             </main>
 
         </div>
@@ -153,15 +158,16 @@
         Vue.component('checkComponent', {
             data() {
                 return {
-                    newImgs: [],
-                    newImgNames: [],
+                    newImgUrls: ["", "", ""],
+                    newImgNames: ["", "", ""],
+                    workStatus: ['審核中', '投稿失敗', '投稿成功'],
                 };
             },
-            props: ['session','account','name', 'worknum', 'workname', 'concept', 'vote', 'status', 'date', 'frontimg', 'draft','draw', 'memid'],
+            props: ['session', 'account', 'name', 'worknum', 'workname', 'concept', 'vote', 'status', 'date', 'frontimg', 'draft', 'draw', 'memid', 'i'],
             template: `
-            <div class="jh_jump">
+            <div class="jh_jump" :data-id=i>
                 <div class="secondBack">
-                    <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
+                    <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon" @click="closeIcon(i)">
                     <form action="" method="">
                         <label for="WK_SESSION">比賽屆數</label>
                         <p id="WK_SESSION">第{{session}}屆</p>
@@ -176,7 +182,7 @@
                         <br>
 
                         <label for="CT_PERSONAL_ID">身分證號碼</label>
-                        <input type="text" name="CT_PERSONAL_ID" id="CT_PERSONAL_ID" :value="memid">
+                        <input type="text" name="CT_PERSONAL_ID" id="CT_PERSONAL_ID" :value="memid" @change="goChangeID">
                         <br>
 
                         <label for="CT_IMG_FRONT">身分證圖片</label>
@@ -204,7 +210,7 @@
                         <div class="uploadImg">
                             <img :src="draft" id="WK_DRAFT" class="file">
                         </div>
-                        <input type="file" name="newDraft" id="newDraft">
+                        <input type="file" name="newDraft" id="newDraft"  @change="goChange2">
                         <br>
                         
                         <label for="WK_DRAW">作品完稿</label>
@@ -212,7 +218,7 @@
                         <div class="uploadImg">
                             <img :src="draw" id="WK_DRAW" class="file">
                         </div>
-                        <input type="file" name="newDraw" id="newDraw">
+                        <input type="file" name="newDraw" id="newDraw"  @change="goChange3">
                         <br>
 
                         <label for="WK_VOTES">投票數</label>
@@ -220,61 +226,190 @@
                         <br>
 
                         <label for="WK_STATUS" class="theStatus">作品狀態</label>
-                        <select name="newStatus" id="newStatus" class="theStatus">
+                        <select name="newStatus" id="newStatus" class="theStatus" @change="goChangeStatus">
                             <option value="0" selected disabled>審核狀態</option>
-
+                            <option v-for="status in workStatus" :value="status">{{status}}</option>
                         </select>
                         <br>
 
                         <label for="WK_DATE">投稿日期</label>
                         <p id="WK_DATE">{{date}}</p>
                         <br>
-                        <button id="work_submit" type="button">保存</button>
+                        <button id="work_submit" type="button" @click="updateBtn">保存</button>
                     </form>
                 </div>
             </div>
             `,
             methods: {
-                goChange1(e){
+                goChangeID(e) {
+                    let theIndex = parseInt(this.i);
+                    let newID = $(e.target).val().trim();
+                    this.$emit('new-idnum', theIndex, newID);
+                },
+
+                goChange1(e) {
                     let self1 = this;
-                    // let file1 = document.getElementById('newPID').files[0];
                     let file1 = e.target.files[0];
-                    // console.log(file1);
-                    // console.log(self1.frontimg);
-                    // self1.newImg[0] = file1.name;
                     self1.newImgNames.splice(0, 1, file1.name);
-                    console.log(self1.newImgNames);
 
                     let readFile1 = new FileReader();
                     readFile1.readAsDataURL(file1);
                     readFile1.addEventListener('load', function (e) {
-                        self1.newImgs.splice(0, 1, e.target.result);
-                        console.log(self1.newImgs);
-                        // self1.frontimg = e.target.result;
+                        self1.newImgUrls.splice(0, 1, e.target.result);
+                        self1.$emit('new-pid', self1.newImgUrls[0]);
                     });
+                },
 
-                    this.$emit('my-emit', this.newImgs[0]);
+                goChange2(e) {
+                    let self2 = this;
+                    let file2 = e.target.files[0];
+                    self2.newImgNames.splice(1, 1, file2.name);
+
+                    let readFile2 = new FileReader();
+                    readFile2.readAsDataURL(file2);
+                    readFile2.addEventListener('load', function (e) {
+                        self2.newImgUrls.splice(1, 1, e.target.result);
+                        self2.$emit('new-draft', self2.newImgUrls[1]);
+                    });
+                },
+
+                goChange3(e) {
+                    let self3 = this;
+                    let file3 = e.target.files[0];
+                    self3.newImgNames.splice(2, 1, file3.name);
+
+                    let readFile3 = new FileReader();
+                    readFile3.readAsDataURL(file3);
+                    readFile3.addEventListener('load', function (e) {
+                        self3.newImgUrls.splice(2, 1, e.target.result);
+                        self3.$emit('new-draw', self3.newImgUrls[2]);
+                    });
+                },
+
+                goChangeStatus(e) {
+                    let theIndex = parseInt(this.i);
+                    let newstatus = $(e.target).val();
+                    // console.log(newstatus);
+                    this.$emit('new-status', theIndex, newstatus);
+                },
+
+                closeIcon(index) {
+                    $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
+                    setTimeout(function () {
+                        $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
+                    }, 1000);
+                },
+
+                updateBtn() {
+                    let theIndex = parseInt(this.i);
+                    let newpid = $('.jh_jump input#newPID').prop('files')[0];
+                    let newdraft = $('.jh_jump input#newDraft').prop('files')[0];
+                    let newdraw = $('.jh_jump input#newDraw').prop('files')[0];
+                    this.$emit('update-btn', theIndex, newpid, newdraft, newdraw);
+
                 },
             },
         });
-
-        // <option v-for="status in workStatus" :value="status">{{status}}</option>
 
         let JHApp = new Vue({
             el: '#jhApp',
             data: {
                 work: [],
-                workStatus: ['審核中', '投稿失敗','投稿成功'],
                 newPID: "",
+                temIndex: 0,
+                // photos: ['CT_IMG_FRONT', 'WK_DRAFT', 'WK_DRAW'],
             },
             methods: {
-                checkWork(){
-                    $('div.jh_jump').addClass('-on');
+                // 點擊審核出現彈窗
+                checkWork(i) {
+                    $(`div.jh_jump`).eq(i).addClass('-on');
                 },
 
-                emitCount(count) {
-                    this.work[0].CT_IMG_FRONT = count;
+                // 修改root.身分證
+                changeIDnum(theIndex, newidnum) {
+                    this.work[theIndex].CT_PERSONAL_ID = newidnum;
+                },
+
+                // 修改root.身分證圖
+                changePID(newUrl) {
+                    let temIndex = parseInt($('div.jh_jump.-on').attr('data-id'));
+                    this.work[temIndex].CT_IMG_FRONT = newUrl;
+                },
+
+                // 修改root.草稿
+                changeDraft(newUrl) {
+                    let temIndex = parseInt($('div.jh_jump.-on').attr('data-id'));
+                    this.work[temIndex].WK_DRAFT = newUrl;
+                },
+
+                // 修改root.完稿
+                changeDraw(newUrl) {
+                    let temIndex = parseInt($('div.jh_jump.-on').attr('data-id'));
+                    this.work[temIndex].WK_DRAW = newUrl;
+                },
+
+                // 修改root.狀態
+                changeStatus(theIndex, newstatus) {
+                    this.work[theIndex].WK_STATUS = newstatus;
+                },
+
+                // 保存
+                updateInfo(index, newpid, newdraft, newdraw) {
+                    let form_data = new FormData();
+                    let newPIdNum = this.work[index].CT_PERSONAL_ID; // 身分證號碼
+                    let newStatus = this.work[index].WK_STATUS; // 狀態
+                    let WK_ID = this.work[index].WK_ID;
+                    let MEM_ID = this.work[index].MEM_ID;
+                    form_data.append('newPIdNum', newPIdNum);
+                    form_data.append('newStatus', newStatus);
+                    form_data.append('WK_ID', WK_ID);
+                    form_data.append('MEM_ID', MEM_ID);
+
+                    let that = this;
+                    if (!Boolean(newpid) == false) { // 身分證圖片
+                        form_data.append('newFile1', newpid);
+                        // console.log(newpid);
+                    } else {
+                        form_data.append('newFile2', that.work[index].CT_IMG_FRONT);
+                        // console.log(that.work[index].CT_IMG_FRONT);
+                    }
+
+                    if (!Boolean(newdraft) == false) { // 草稿
+                        form_data.append('newFile3', newdraft);
+                        // console.log(newdraft);
+                    } else {
+                        form_data.append('newFile4', that.work[index].WK_DRAFT);
+                        // console.log(that.work[index].WK_DRAFT);
+                    }
+
+                    if (!Boolean(newdraw) == false) { // 完稿
+                        form_data.append('newFile5', newdraw);
+                        // console.log(newdraw);
+                    } else {
+                        form_data.append('newFile6', that.work[index].WK_DRAW);
+                        // console.log(that.work[index].WK_DRAW);
+                    }
+
+                    // console.log(form_data);
+
+                    $.ajax({
+                        url: "contestUpdateR.php",
+                        type: "POST",
+                        data: form_data,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (res) {
+                            // console.log(res);
+                            $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
+                            setTimeout(function () {
+                                $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
+                            }, 500);
+                        }
+                    });
                 }
+
+
             },
             mounted() {
                 const that = this;
@@ -285,13 +420,11 @@
                     dataType: "json",
                     success: function (res) {
                         let allWork = [];
-                        $(res).each((index, value)=>{
+                        $(res).each((index, value) => {
                             that.work.push(value);
                         });
-                        // console.log(res);
                     }
                 });
-                // console.log(allWork);
             },
         });
     </script>

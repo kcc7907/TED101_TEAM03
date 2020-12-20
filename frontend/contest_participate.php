@@ -23,27 +23,31 @@
             <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
         </div>
         <nav>
-            <dav class="nav1">
-                <a href="./product.html">救世傢俱</a>
-                <a href="./case.html">參考案例</a>
-            </dav>
-            <dav class="nav2">
-                <a href="./qa.html">客戶服務</a>
-                <a href="./contest_participate.php">傢聚賞</a>
-            </dav>
+            <div class="nav1">
+                <a class="product" href="product/product.html">救世傢俱</a>
+                <a class="case" href="./case.html">參考案例</a>
+            </div>
+            <div class="nav2">
+                <a class="qa" href="./qa.html">客戶服務</a>
+                <a class="contest" href="./contest_main20.php">傢聚賞</a>
+            </div>
         </nav>
         <div class="icon">
-            <a class="login" href="./meminfo.html">
-                <img src="../img/headerFooter/loginIcon.svg" alt="">
+            <a class="login ">
+                <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
             </a>
-            <a class="shop" href="./contest_main20.html">
-                <img src="../img/headerFooter/shoppingCart.svg" alt="">
+            <a class="shop " href="shoppingCart.php">
+                <img src="../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.php'">
             </a>
             <a class="ham">
                 <span></span>
                 <span></span>
                 <span></span>
             </a>
+            <div class="logMembox">
+                <a href="./meminfo.php">會員中心</a>
+                <span class="logout">登出</span>
+            </div>
         </div>
     </header>
     <nav class="topNav">
@@ -197,6 +201,7 @@
                     <p class="contentFont">恭喜您完成此次投稿!</p>
                     <a href="./product.html">
                         <h2 class="titleFont2">前往參觀其他作品</h2>
+                        <h2 class="titleFont2">再次投稿</h2>
                     </a>
                 </form>
             </div>

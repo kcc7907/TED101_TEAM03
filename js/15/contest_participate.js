@@ -13,13 +13,12 @@ $(document).ready(function () {
         $('#signUp div.closebtn').hide();
         logBox();
         memBox();
+    }else{
+        goStep();
     }
     
-    goStep();
 
     $('#formStep1 button.nextBtn').click(goStep);
-
-
 
     // $('登出').click(()=>{
     //     $('#login div.closebtn').hide();
@@ -35,7 +34,7 @@ let vueJH = new Vue({
     data: { 
         pImgName: ['請選擇上傳檔案','請選擇上傳檔案','請選擇上傳檔案'],
         pImgUrl: [],
-        workTypes:['沙發', '桌子', '床', '椅子', '書櫃', '訂製櫃'],
+        workTypes:['沙發', '桌子', '床', '椅子', '書櫃'],
         fName: '',
         fConcept: '',
     },
@@ -139,11 +138,16 @@ function checkRequired(theNextBtn) {
 // ======== 投稿步驟 ========
 function goStep() {
     // **************** 同意鈕 
-    $('#JHC #submitStep1').change(function(){
-        if($(this).prop("checked")){
-            $(this).prop( "checked", true).val('1');
+    $('#JHC label[for="submitStep1"]').click(()=>{
+        if($('#JHC #submitStep1').prop( "checked", true)){
+            $('#JHC #submitStep1').val('1');
         }
     });
+
+    if($('#JHC #submitStep1').prop( "checked", true)){
+        $('#JHC #submitStep1').val('1');
+    }
+
 
     // **************** 下一步
     if(checkCookie('loging')){
@@ -217,6 +221,7 @@ function goStep() {
                 form_data.append('file1', pId);
                 form_data.append('file2', draft);
                 form_data.append('file3', draw);
+                
                 $.ajax({
                     url: "contestR.php",
                     type: "POST",
