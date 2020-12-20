@@ -68,13 +68,13 @@
                     <a class="contest_title1" href="#">
                         <h2>賽制說明</h2>
                     </a>
-                    <a class="contest_title2" href="./vote.html">
+                    <a class="contest_title2" href="./vote.php">
                         <h2>人氣票選</h2>
                     </a>
-                    <a class="contest_title3" href="./navbarChampion.html">
+                    <a class="contest_title3" href="./product/navbarChampion.html">
                         <h2>歷屆冠軍</h2>
                     </a>
-                    <a class="contest_title4" href="./contest_participate.html">
+                    <a class="contest_title4" href="./contest_participate.php">
                         <h2>我要投稿</h2>
                     </a>
                 </div>
