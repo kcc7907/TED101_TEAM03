@@ -48,9 +48,11 @@
         <main>
             <div class="left" id="list">
                 <ul class="product">
-                    <my-list v-for='(key,index) in rp' :myindex="index" :mycheck='check' :prd-id="key.PRD_ID"
+                    <!-- <transition-group name="slide-fade" tag="li"> -->
+                    <my-list v-for='(key,index) in rp' :key="index" :myindex="index" :mycheck='check' :prd-id="key.PRD_ID"
                         :url="key.PIMG_URL" :prd-name='key.PRD_NAME' :prd-price='key.PRD_PRICE'
                         :discount-id='key.DISCOUNT_ID' :prd-mtl='key.PRD_MATERIAL'></my-list>
+                    <!-- </transition-group> -->
             </div>
             <div class="right" id="right">
                 <h2 class="titlenum">合計商品{{proTotal}}項</h2>
@@ -99,13 +101,13 @@
                     </div>
                 </div>
                 <div class="cart_btn">
-                    <button class="backstep" type="button"><img src="../img/shoppincart/cart_left.svg"
-                            class="backimg">返回商城</button>
+                    <button class="backstep" type="button"  @click="backShop"><img src="../img/shoppincart/cart_left.svg"
+                            class="backimg" @click="backShop">返回商城</button>
                     <button class="buy" type="button" @click='loginCheck'>前往結帳</button>
                 </div>
             </div>
             <div class="kc_popup" v-if="show">
-                <h2>{{text}}?</h2>
+                <h2>{{text}}</h2>
                 <div class="btnbox">
                     <p class="return" @click="close">返回</p>
                     <p class="checkok" @click="popSwitch">確認</p>

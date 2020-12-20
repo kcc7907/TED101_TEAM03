@@ -43,7 +43,11 @@ let pop = new Vue({
                 case 'sendData':
                     right.sendData();
                     break;
-                default:
+                case 'backShop':
+                    location.href ="product/product.html";
+                    break;
+                case 'backCart':
+                    location.href ="shoppingCart.php";
                     break;
             }
             this.show = false;
