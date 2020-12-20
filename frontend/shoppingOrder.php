@@ -47,17 +47,17 @@
                     <div class="name df">
                         <p class="innerT lh">姓名</p>
                         <input type="text" class="name_input" v-model="formData.fname" disabled @blur="blur"
-                            @keyup.13="blur">
+                            @keyup.13="blur" ref="rname">
                         <button class="modified" @click="focus">修改</button>
                     </div>
                     <div class="phone df">
                         <p class="innerT lh">電話</p>
-                        <input type="text" class="phone_input" v-model="formData.fphone" disabled @blur="blur"
+                        <input type="text" ref="rphone" class="phone_input" v-model="formData.fphone" disabled @blur="blur"
                             @keyup.13="blur" @keydown="phoneInput"><button class="modified" @click="focus">修改</button>
                     </div>
                     <div class="lives df">
                         <p class="innerT lh">住址</p>
-                        <input type="text" class="live_input" v-model="memLives" disabled @blur="blur"
+                        <input type="text" ref="raddr" class="live_input" v-model="memLives" disabled @blur="blur"
                             @keyup.13="blur"><button class="modified" @click="focus">修改</button>
                     </div>
                 </div>
@@ -67,6 +67,7 @@
                         <input type="checkbox" class="credit_check" v-model="cardBox">
                         <p class="lh">信用卡</p>
                     </div>
+                    <transition name="bounce">
                     <div class="card_box" v-show="cardBox">
                         <div class="cardnum_box">
                             <p class="card_num">信用卡號碼</p>
@@ -79,23 +80,25 @@
                         </div>
                         <div class="carddate_box">
                             <p class="card_date">有效日期</p>
-                            <input type="text" class="card_date1" @keydown="cardDate">
+                            <input ref="rcdate" type="text" class="card_date1" @keydown="cardDate">
                             <input type="text" class="card_date2" style="display: none;">
                         </div>
                         <div class="cardcode_box">
                             <p class="card_code">安全碼</p>
-                            <input type="text" class="card_code1" @keydown="cardCode">
+                            <input ref="rccode" type="text" class="card_code1" @keydown="cardCode">
                         </div>
                         <div class="cardicon_box">
-                            <img src="../img/shoppincart/visa.svg" alt="">
-                            <img src="../img/shoppincart/mastercard.svg" alt="">
-                            <img src="../img/shoppincart/jcb.svg" alt="">
+                            <img src="../img/shoppincart/visa.svg" alt="" ref="imgV">
+                            <img src="../img/shoppincart/mastercard.svg" alt="" ref="imgM">
+                            <img src="../img/shoppincart/jcb.svg" alt="" ref="imgJ">
                         </div>
                     </div>
+                    </transition>
                     <div class="checkT">
                         <input type="checkbox" class="remit_input" v-model="remit">
                         <p class="remit lh">匯款</p>
                     </div>
+                    <transition name="bounce">
                     <div class="remit_box" v-show="remit">
                         <div class="remitbank_box df">
                             <p>銀行</p>
@@ -110,6 +113,7 @@
                             <p class="gary">救世宅</p>
                         </div>
                     </div>
+                    </transition>
                 </div>
                 <h2 class="adds">運送地址</h2>
                 <div class="outer addsbox">
@@ -121,6 +125,7 @@
                         <input type="checkbox" class="adds_input" v-model="addressBox">
                         <p class="lh">新增寄送地址</p>
                     </div>
+                    <transition name="slide-fade">
                     <div class="address_box" v-show="addressBox">
                         <select class="freight_city" v-model="selected">
                             <option selected disabled>居住縣市</option>
@@ -152,13 +157,14 @@
                                 <option>台東縣</option>
                             </optgroup>
                         </select>
-                        <input type="text" v-model="formData.fadd">
+                        <input type="text" ref="rfaddr" v-model="formData.fadd">
                         <p class="onlytw">*僅提供本島寄送</p>
                     </div>
+                    </transition>
                 </div>
             </div>
             <div class="right" id="right">
-                <h2 class="titlenum">合計商品3項</h2>
+                <h2 class="titlenum">合計商品{{proTotal}}項</h2>
                 <div class="cart_top">
                     <div class="cart_top_list">
                         <span class="unflod">展開清單<img src="../img/shoppincart/cart_down.svg" class="openimg"></span>
@@ -203,14 +209,14 @@
                     </div>
                 </div>
                 <div class="cart_btn">
-                    <button class="backstep" type="button"><img src="../img/shoppincart/cart_left.svg"
-                            class="backimg">返回購物車</button>
-                    <button class="buy" type="button" @click='sendData'>完成訂購</button>
+                    <button class="backstep" type="button" @click="backCart"><img src="../img/shoppincart/cart_left.svg"
+                            class="backimg" @click="backCart">返回購物車</button>
+                    <button class="buy" type="button" @click='sendCheck'>完成訂購</button>
                 </div>
             </div>
 
             <div class="kc_popup" v-if="show">
-                <h2>{{text}}?</h2>
+                <h2>{{text}}</h2>
                 <div class="btnbox">
                     <p class="return" @click="close">返回</p>
                     <p class="checkok" @click="popSwitch">確認</p>

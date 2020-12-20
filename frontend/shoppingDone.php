@@ -13,7 +13,7 @@
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js'></script>
-    <script defer src="../js/20/shopCommon.js"></script>
+    <!-- <script defer src="../js/20/shopCommon.js"></script> -->
     <script defer src="../js/20/shoppingDone.js"></script>
     <script defer src="../lib/header/header.js"></script>
 
@@ -43,31 +43,33 @@
         <div class="done_wrap">
             <div class="icon"><img src="../img/shoppincart/done.svg"></div>
             <h2 class="tks">感謝您!已經收到您的訂單!</h2>
-            <p class="done_payment_text">本次訂單已經完成，詳細訂單流程請至『會員中心』查詢。</p>
+            <p class="done_payment_text">{{content}}</p>
             <h2 class="done_detail">本次交易明細如下:</h2>
             <table>
                 <tr>
                     <th>訂單明細</td>
-                    <td>202012011611</td>
+                    <td>{{orderNum}}</td>
                 </tr>
                 <tr>
                     <th>商品明細</td>
-                    <td>書桌 1000元 X1</td>
+                    <td class="done_list" >
+                        <pre v-for="item in done_list" :key="item.prd_id">{{item.prd_name}}  {{item.prd_price}}元  X{{item.num}}</pre>
+                    </td>
                 </tr>
                 <tr>
                     <th>訂單金額</td>
-                    <td>3000元</td>
+                    <td>{{total}}元</td>
                 </tr>
                 <tr>
                     <th>付款方式</td>
-                    <td>信用卡</td>
+                    <td>{{payment}}</td>
                 </tr>
                 <tr>
                     <th>交易狀態</td>
-                    <td>付款完成</td>
+                    <td>{{pay}}</td>
                 </tr>
             </table>
-            <button class="backshop">返回商城</button>
+            <button class="backshop" @click='backShop'>返回商城</button>
         </div>
     </div>
     <?php include("../lib/header/footerInclude.html"); ?>
