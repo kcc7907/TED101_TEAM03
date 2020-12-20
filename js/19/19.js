@@ -402,14 +402,37 @@ let bbb = document.getElementsByClassName("bbb")[0];
 let ccc = document.getElementsByClassName("ccc")[0];
 let ddd = document.getElementsByClassName("ddd")[0];
 let eee = document.getElementsByClassName("eee")[0];
+
+function reset(){
+    aaa.classList.remove("on");
+    bbb.classList.remove("on");
+    ccc.classList.remove("on");
+    ddd.classList.remove("on");
+    eee.classList.remove("on");
+    select1.classList.remove("on");
+    select2.classList.remove("on");
+    select3.classList.remove("on");
+    select4.classList.remove("on");
+    select5.classList.remove("on");
+    select1.classList.remove("color");
+    select2.classList.remove("color");
+    select3.classList.remove("color");
+    select4.classList.remove("color");
+    select5.classList.remove("color");
+}
+
 select1.addEventListener("click",function(){
+
     if(!(select1.classList.contains("on"))){
+    reset();
+        select1.classList.add("color");
         select1.classList.add("on");
         bbb.classList.add("on");
         ccc.classList.add("on");
         ddd.classList.add("on");
         eee.classList.add("on");
     }else{
+        select1.classList.remove("color");
         select1.classList.remove("on");
         bbb.classList.remove("on");
         ccc.classList.remove("on");
@@ -419,13 +442,17 @@ select1.addEventListener("click",function(){
 });
 
 select2.addEventListener("click",function(){
+
     if(!(select2.classList.contains("on"))){
+    reset();
+        select2.classList.add("color");
         select2.classList.add("on");
         aaa.classList.add("on");
         ccc.classList.add("on");
         ddd.classList.add("on");
         eee.classList.add("on");
     }else{
+        select2.classList.remove("color");
         select2.classList.remove("on");
         aaa.classList.remove("on");
         ccc.classList.remove("on");
@@ -435,14 +462,18 @@ select2.addEventListener("click",function(){
 });
 
 select3.addEventListener("click",function(){
+
     if(!(select3.classList.contains("on"))){
+    reset();
+        select3.classList.add("color");
         select3.classList.add("on");
         aaa.classList.add("on");
         bbb.classList.add("on");
         ddd.classList.add("on");
         eee.classList.add("on");
     }else{
-        select2.classList.remove("on");
+        select3.classList.remove("color");
+        select3.classList.remove("on");
         aaa.classList.remove("on");
         bbb.classList.remove("on");
         ddd.classList.remove("on");
@@ -451,13 +482,17 @@ select3.addEventListener("click",function(){
 });
 
 select4.addEventListener("click",function(){
+
     if(!(select4.classList.contains("on"))){
+    reset();
+        select4.classList.add("color");
         select4.classList.add("on");
         aaa.classList.add("on");
         bbb.classList.add("on");
         ccc.classList.add("on");
         eee.classList.add("on");
     }else{
+        select4.classList.remove("color");
         select4.classList.remove("on");
         aaa.classList.remove("on");
         bbb.classList.remove("on");
@@ -467,14 +502,18 @@ select4.addEventListener("click",function(){
 });
 
 select5.addEventListener("click",function(){
+
     if(!(select5.classList.contains("on"))){
+        reset();
+        select5.classList.add("color");
         select5.classList.add("on");
         aaa.classList.add("on");
         bbb.classList.add("on");
         ddd.classList.add("on");
         ccc.classList.add("on");
     }else{
-        select2.classList.remove("on");
+        select5.classList.remove("color");
+        select5.classList.remove("on");
         aaa.classList.remove("on");
         bbb.classList.remove("on");
         ddd.classList.remove("on");
@@ -522,6 +561,7 @@ let paper3 = document.getElementsByClassName("paper3")[0];
 
 if(window.innerWidth<=768){
 first.addEventListener("click",function(){
+
     if(part1.classList.contains("on")){
         part1.classList.remove("on");
     }else{
@@ -531,6 +571,7 @@ first.addEventListener("click",function(){
 });
 
 second.addEventListener("click",function(){
+
     if(part2.classList.contains("on")){
         part2.classList.remove("on");
     }else{
@@ -539,6 +580,7 @@ second.addEventListener("click",function(){
 });
 
 third.addEventListener("click",function(){
+
     if(part3.classList.contains("on")){
         part3.classList.remove("on");
     }else{
@@ -547,6 +589,7 @@ third.addEventListener("click",function(){
 });
 
 fourth.addEventListener("click",function(){
+
     if(part4.classList.contains("on")){
         part4.classList.remove("on");
     }else{
@@ -555,6 +598,7 @@ fourth.addEventListener("click",function(){
 });
 
 fifth.addEventListener("click",function(){
+
     if(paper2.classList.contains("on")){
         paper2.classList.remove("on");
     }else{
@@ -563,8 +607,10 @@ fifth.addEventListener("click",function(){
 });
 
 fifth.addEventListener("click",function(){
+
     if(paper3.classList.contains("on")){
         paper3.classList.remove("on");
+
     }else{
         paper3.classList.add("on");
     }
