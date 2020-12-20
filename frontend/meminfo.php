@@ -1,5 +1,4 @@
-<?php    
-    setcookie("loging", "A111200001", time()+3600*24*365, '/');      //測試
+<?php        
     include("../php/08/jk_link.php");
 
         $sql = "SELECT * FROM member WHERE MEM_ID =?";
