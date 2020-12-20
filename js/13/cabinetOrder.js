@@ -41,11 +41,7 @@ $(document).ready(function () {
         $(this).css("borderBottom", "3px solid #865454");
     });
     $('#username').blur(function () {
-        if () {
-
-        } else {
-
-        }
+        $(this).css("borderBottom", "1px solid #BDA79E");
     });
     $('#useremail').focus(function () {
         $(this).css("borderBottom", "3px solid #865454");
@@ -72,3 +68,27 @@ $(document).ready(function () {
 
 
 });
+
+function validate(){
+
+    if( document.myForm.username.value == "" ){
+        alert( "請輸入姓名!" );
+        document.myForm.username.focus() ;
+        return false;
+    }
+    if( document.myForm.useremail.value == "" ){
+        alert( "請輸入信箱!" );
+        document.myForm.useremail.focus() ;
+        return false;
+    }
+    if( document.myForm.userphone.value == "" ){
+        alert( "請輸入電話!" );
+        document.myForm.userphone.focus() ;
+        return false;
+    }
+    if( document.myForm.useraddress.value == "" ){
+        alert( "請輸入地址!" );
+        document.myForm.useraddress.focus() ;
+        return false;
+    }
+};
