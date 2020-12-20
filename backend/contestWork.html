@@ -395,11 +395,11 @@
                         cache: false,
                         processData:false,
                         success: function (res) {
-                            console.log(res);
-                            // $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
-                            // setTimeout(function () {
-                            //     $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
-                            // }, 1000);
+                            // console.log(res);
+                            $(`div.jh_jump`).eq(index).addClass('-opacity-zero');
+                            setTimeout(function () {
+                                $(`div.jh_jump`).eq(index).removeClass('-on -opacity-zero');
+                            }, 500);
                         }
                     });
                 }
