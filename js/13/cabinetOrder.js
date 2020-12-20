@@ -41,11 +41,7 @@ $(document).ready(function () {
         $(this).css("borderBottom", "3px solid #865454");
     });
     $('#username').blur(function () {
-        if () {
-
-        } else {
-
-        }
+        $(this).css("borderBottom", "1px solid #BDA79E");
     });
     $('#useremail').focus(function () {
         $(this).css("borderBottom", "3px solid #865454");
@@ -72,3 +68,45 @@ $(document).ready(function () {
 
 
 });
+
+function validate(){
+
+    let emailId = document.myForm.useremail.value;
+        atpos = emailId.indexOf('@');
+        dotpos = emailId.lastIndexOf('.');
+    let phoneId = document.myForm.userphone.value;
+    let phoneConfirm = /^[09]{2}\d{8}$/ ;
+    // let phoneConfirm = /^09\d{2}-\d{6}$/;
+
+    if( document.myForm.username.value == "" ){
+        alert( "請輸入姓名!" );
+        document.myForm.username.focus() ;
+        return false;
+    }
+    if( document.myForm.useremail.value == "" ){
+        alert( "請輸入信箱!" );
+        document.myForm.useremail.focus() ;
+        return false;
+    }
+    if( document.myForm.userphone.value == "" ){
+        alert( "請輸入電話!" );
+        document.myForm.userphone.focus() ;
+        return false;
+    }
+    if( document.myForm.useraddress.value == "" ){
+        alert( "請輸入地址!" );
+        document.myForm.useraddress.focus() ;
+        return false;
+    }
+    if(atpos <1 || (dotpos - atpos <2)){
+        alert('請輸入正確信箱格式- XXXXXX@XXXXX.com');
+        document.myForm.useremail.focus();
+        return false;
+    }
+    if(!phoneConfirm.test(phoneId)){
+        alert('請輸入正確電話格式- 09XXXXXXXX');
+        document.myForm.userphone.focus();
+        return false;
+    }
+};
+

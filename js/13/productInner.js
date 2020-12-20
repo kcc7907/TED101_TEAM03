@@ -249,6 +249,13 @@ function setLocal() {
                 list.push(object);
             }
         });
+        if(list.length ===0){
+                let object = {
+                prd_id: productId,
+                num: parseInt(quantity[0].innerText),
+            };
+            list.push(object);
+        }
         apple = list;
     } else {
         let object = {

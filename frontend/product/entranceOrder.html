@@ -18,30 +18,34 @@
 <body>
     <header class="common">
         <div class="logo">
-            <a href="./home2D.html"><img src="../../img/headerFooter/logo.svg"></a>
+            <a href="./home2D.php"><img src="../../img/headerFooter/logo.svg"></a>
         </div>
         <nav>
-            <dav class="nav1">
-                <a href="./product.html">救世傢俱</a>
-                <a href="./case.html">參考案例</a>
-            </dav>
-            <dav class="nav2">
-                <a href="./qa.html">客戶服務</a>
-                <a href="./contest_participate.html">傢聚賞</a>
-            </dav>
+            <div class="nav1">
+                <a class="product" href="./product.html">救世傢俱</a>
+                <a class="case" href="../case.html">參考案例</a>
+            </div>
+            <div class="nav2">
+                <a class="qa" href="../qa.html">客戶服務</a>
+                <a class="contest" href="../contest_main20.php">傢聚賞</a>
+            </div>
         </nav>
         <div class="icon">
-            <a class="login" href="./meminfo.html">
-                <img src="../../img/headerFooter/loginIcon.svg" alt="">
+            <a class="login ">
+                <img src="../../img/headerFooter/loginIcon.svg" class="logMem" alt="">
             </a>
-            <a class="shop" href="./contest_main20.html">
-                <img src="../../img/headerFooter/shoppingCart.svg" alt="">
+            <a class="shop " href="shoppingCart.php">
+                <img src="../../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.php'">
             </a>
             <a class="ham">
                 <span></span>
                 <span></span>
                 <span></span>
             </a>
+            <div class="logMembox">
+                <a href="./meminfo.php">會員中心</a>
+                <span class="logout">登出</span>
+            </div>
         </div>
     </header>
     <div class="sam_co">
@@ -88,15 +92,15 @@
                 <p>如有客製需求，請來信</p>
                 <p>將有專人聯繫到府丈量</p>
                 <div class="form">
-                    <form action="#" method="#" enctype="multipart/form-data">
+                    <form action="#" method="#" enctype="multipart/form-data" name="myForm" onsubmit="return(validate());">
                         <label for="username">姓名</label>
-                        <input type="text" value="" id="username"><span class="error"></span>
+                        <input type="text" value="" id="username" name="username"><span class="error"></span>
                         <label for="useremail">Email</label>
-                        <input type="text" value="" id="useremail">
+                        <input type="text" value="" id="useremail" name="useremail">
                         <label for="userphone">電話</label>
-                        <input type="text" value="" id="userphone">
+                        <input type="text" value="" id="userphone" name="userphone">
                         <label for="useraddress">地址</label>
-                        <input type="text" value="" id="useraddress">
+                        <input type="text" value="" id="useraddress" name="useraddress">
                         <button type="submit">送出</button>
                     </form>
                 </div>
