@@ -149,7 +149,7 @@
         </div>
         <div id="homeRight">
             <div class="into">
-                <a href="./home3D.html" class="titleFont3">點此進入3D模式</a>
+                <a href="./home3D.html" class="titleFont3">歡迎來到救世宅</a>
             </div>
             <div>
             </div>
