@@ -384,6 +384,7 @@
 
                 <!-- 表格資訊 -->
                 <table class="jh_authorityChange">
+
                     <!-- 表格標頭 -->
                     <tr>
                         <th>比賽屆數</th>
@@ -403,7 +404,7 @@
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr v-for="wk in work">
+                    <tr v-for="(wk,index) in work">
                         <td>第{{wk.WK_SESSION}}屆</td>
                         <td>{{wk.MEM_ID}}</td>
                         <td>{{wk.MEM_NAME}}</td>
@@ -417,7 +418,7 @@
                         <td>{{wk.WK_VOTES}}</td>
                         <td>{{wk.WK_STATUS}}</td>
                         <td>{{wk.WK_DATE}}</td>
-                        <td><button id="jh_authorityChange2" @click="checkWork">審核</button></td>
+                        <td><button id="jh_authorityChange2" @click="checkWork(index)">審核</button></td>
                     </tr>
                 </table>
 
@@ -425,8 +426,9 @@
                 <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID"
                     :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT"
                     :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT"
-                    :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" @my-emit="emitCount">
-                </check-component>
+                    :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID"
+                    @new-draft="changeDraft" @new-draw="changeDraw" @update-btn="updateInfo" @new-idnum="changeIDnum"
+                    @new-status="changeStatus"></check-component>
             </main>
 
         </div>
