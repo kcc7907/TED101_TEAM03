@@ -4,6 +4,7 @@
 
     $work = $_POST["work"];
 
+    //作品詳細資訊
     $sql = "SELECT * from `work` w
     join 
     (select * from `member`
@@ -14,6 +15,16 @@
     $statement->bindValue(1, "$work");    
     $statement->execute();
     $data = $statement->fetchAll();
+    //
+
+    //投票判斷
+    $sql_voted = "SELECT MEM_VOTED from `member` where MEM_ID = ?";
+    $statement_voted = $pdo->prepare($sql_voted);
+    $statement_voted->bindValue(1, "$user");    
+    $statement_voted->execute();
+    $data_voted = $statement_voted->fetchAll();
+    $voted = $data_voted[0]["MEM_VOTED"];
+    //
 
     foreach($data as $index => $row){
 
@@ -56,7 +67,19 @@
     </div>
 
     <div class="btn">
-        <button>投他一票</button>
+    
+    '?>
+
+    <?php
+        if($voted == 0){
+            echo '<button>投他一票</button>';
+
+        }else{
+            echo '<button class="voted" disabled>您已投票</button>';
+        }
+    
+    ?>
+    <?='
     </div>
     
 </div>
