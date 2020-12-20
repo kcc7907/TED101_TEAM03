@@ -8,6 +8,8 @@
     <link rel="Shortcut Icon" href="./img/favicon.ico">
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="../lib/js/vue.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
 </head>
 
 <body>
@@ -16,7 +18,7 @@
             <div class="left">
                 <div class="box">
                     <div class="front">
-                        <a href="./frontend/home2D.html">
+                        <a href="./frontend/home2D.php">
                             <h2>前台</h2>
                         </a>
                     </div>
@@ -24,15 +26,77 @@
                 </div>
             </div>
             <div class="right">
-                <div class="back">
-                    <a href="#">
-                        <h2>後台</h2>
+                <div class="back" @click="toggle">
+                    <a @click="toggle">
+                        <h2 @click="toggle">後台</h2>
                     </a>
                 </div>
             </div>
             <span class="house"><img src="./img/product/icon/house.svg" alt=""></span>
         </div>
     </div>
+
+    <div class="backendlogin" v-if="turn">
+        <h2>後台登入</h2>
+        <div class="user">
+            <label for="user">帳號</label><input type="text" id="user" v-model="all.user">
+        </div>
+        <div class="user">
+            <label for="pwd">密碼</label><input type="password" id="pwd" v-model="all.pwd">
+        </div>
+        <div class="btnbox">
+            <button class="bk" @click="toggle">返回</button>
+            <button class="login" @click="bkloging">登入</button>
+        </div>
+    </div>
+
+    <script>
+        let bk = new Vue({
+            el:'.backendlogin',
+            data:{
+                turn:false,
+                all:{
+                    user:'',
+                    pwd:''
+                }
+            },
+            methods: {
+                toggle(){
+                    console.log(123);
+                    if(this.turn === false){
+                        this.turn = ture;
+                    }else{
+                        this.turn = false;
+                    }
+                },
+                bkloging(){
+                    axios.post('../php/13/kc_bk.php', this.all).then(res => {
+                        // this.rp = res.data;
+                        console.log(res.data);
+                        if(res.data==='empty'){
+                            alert('查無此帳號');
+                        }else if(res.data === 'no'){
+                            alert('密碼錯誤');
+                        } else if (res.data === 'ok'){
+                            location.href = "backend/backend_final.html";
+                        }
+                    });
+                }
+            },
+        });
+        let index =new Vue({
+            el: '.sam_index',
+            methods: {
+                toggle() {
+                    if (bk.turn === false) {
+                        bk.turn = true;
+                    } else {
+                        bk.turn = false;
+                    }
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>
