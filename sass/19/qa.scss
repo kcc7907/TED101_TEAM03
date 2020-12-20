@@ -1129,6 +1129,14 @@ label{
 // 577px~768px
 @media (max-width:768px){
 
+  // .bigbox{
+  //   width: 577px;
+  // }
+
+  // .bigbox .contain .aaa{
+  //   width: 577px;
+  // }
+
   .part1{
     display: none;
     // display: block;
@@ -1292,6 +1300,7 @@ label{
   .bigbox .eee .paper1{
     font-size: 20px;
     margin-top: 30px;
+    width: 577px;
   }
 
   .bigbox .eee .paper1 .paper3 .paper2{
@@ -1500,6 +1509,7 @@ label{
   .bigbox .eee .paper1{
     font-size: 18px;
     margin-top: 20px;
+    width: 361px;
   }
 
   .bigbox .eee .paper1 .paper3 .paper2{
