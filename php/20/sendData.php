@@ -2,15 +2,6 @@
         include("../connect.php");
         date_default_timezone_set("Asia/Taipei");
         $rp = json_decode(file_get_contents('php://input'), true);
-        // $rp[fname] => 柏美玲
-        // $rp[memid] => A111200001
-        // $rp[fphone] => 0911111222
-        // $rp[fcity] => 高雄市
-        // $rp[fadd] => 中正路10號
-        // $rp[payment] => 未付款
-        // $rp[total] => 97300
-        // $rp[discount] => -3000
-        // $rp[products] => Array
 
         //part1 insert delivery
         $insert_delivery="INSERT INTO `delivery` ( `DEL_RECEIVER`, `DEL_CITY`, `DEL_ADDRESS`) VALUES (?,?,?)";
@@ -56,4 +47,6 @@
             $statement->execute();
         }
 
+        $orderNum = "A000".($order_total+1);
+        echo $orderNum;
 ?>
