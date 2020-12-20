@@ -1,9 +1,9 @@
 <?php
 
     include("jk_link.php");
-
-    $user = "A111200001";   //測試帳號
-
+    
+    $user = $_POST['account'];
+        
     //資料庫資料
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
@@ -73,16 +73,6 @@
         }
     }
 
-
-    // session_start();
-    // $_SESSION["key"]= "value";
-    // header("Location: ../../frontend/meminfo.php");
-
-    // echo "
-    // <script>alert('已成功修改會員資料');
-    // location.href = '../../frontend/meminfo.php';</script>
-    // ";
-
     echo "
     <script>    
 
@@ -92,19 +82,4 @@
     </script>
     ";
     
-    
-    // echo "
-    // <script>
-    // location.href = '../../frontend/meminfo.php';
-    
-    // let noticeDiv = createElement('div');
-    // noticeDiv.innerHTML = '<p>已成功修改會員資料</p>';
-    // document.getElementsByClassName('body')[0].appendChild(childNode);
-
-
-    // </script>
-    
-    // ";
-
-
 ?>

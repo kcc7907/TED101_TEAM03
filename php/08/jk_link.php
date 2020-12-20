@@ -14,7 +14,8 @@
        //建立PDO物件，並放入指定的相關資料
         $pdo = new PDO($dsn, $db_user, $db_pass);
 
-        //登入帳號
-        setcookie("loging", "A111200001");      //測試
-        $user = $_COOKIE["loging"];
+        //登入帳號   
+        if(isset($_COOKIE["loging"])){
+                $user = $_COOKIE["loging"];
+        }
 ?>
