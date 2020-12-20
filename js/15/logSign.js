@@ -130,8 +130,10 @@ $(document).ready(function () {
                     dataType: 'text',
                     success(res) {
                         $('body').append(res);
-                        if(res == 0){
-                            document.cookie='loging=".$memberID."';
+                        if(res == 1){
+                            confirmLogSign(str3);
+                        }else{
+                            // document.cookie='loging=".$memberID."';
                             $('div#login').css('z-index','-3').hide();
                             $('div.login').css({'opacity':'0','top':'-30vh',});
                             $('form input').val('');
@@ -148,8 +150,6 @@ $(document).ready(function () {
                                     },
                                 });
                             }, 100);
-                        }else{
-                            confirmLogSign(str3);
                         }
                     },
                 });

@@ -201,6 +201,7 @@
                     <p class="contentFont">恭喜您完成此次投稿!</p>
                     <a href="./product.html">
                         <h2 class="titleFont2">前往參觀其他作品</h2>
+                        <h2 class="titleFont2">再次投稿</h2>
                     </a>
                 </form>
             </div>
