@@ -1,10 +1,12 @@
 .bodykm{
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   background-color: #FFFAF4;
 }
 
 .km{
+  display: flex;
+  justify-content: center;
 
   *{
     box-sizing: border-box;
@@ -257,7 +259,7 @@
 
 /* 大背景 */
 .bigbox{
-    width: 100%;
+    width: 1200px;
     background-color:#FFFAF4;
 }
 
@@ -272,7 +274,8 @@
     color: #865454;
     text-align: center;
     width: 1200px;
-}
+    margin: 20px 0;
+  }
 
 /* 篩選鈕 */
 .list{
@@ -305,12 +308,14 @@
     background-color: #865454;
     color: white;
     font-size: 30px;
-    padding: 1px 30px;
+    padding: 30px 30px;
     display: flex;
   }
 
   .about{
     width: 50%;
+    display: flex;
+    align-items: center;
   }
 
   .icon{
@@ -760,17 +765,21 @@ label{
 @media (max-width:1200px){
   .bigbox .contain .title{
     font-size: 34px;
-    width: 993px;
+    width: 100%;
+   
   }
   .bigbox .contain .list {
-    width: 100%;
-    margin: 0 auto;
-    font-size: 24px;}
+    width: 993px;
+    margin: 20px auto;
+    font-size: 24px;
+
+  }
 
   .bigbox .aaa .title2{
     font-size: 24px;
     width: 993px;
     margin:10px auto;
+    padding: 20px 30px;
   }
   .bigbox .aaa .title3{font-size: 24px;}
   .bigbox .aaa .title4{
@@ -793,6 +802,7 @@ label{
     font-size: 24px;
     width: 993px;
     margin:10px auto;
+    padding: 20px 30px;
   }
   .bigbox .bbb .title3{font-size: 24px;}
   .bigbox .bbb .title4{
@@ -815,6 +825,7 @@ label{
     font-size: 24px;
     width: 993px;
     margin:10px auto;
+    padding: 20px 30px;
   }
   .bigbox .ccc .title3{font-size: 24px;}
   .bigbox .ccc .title4{
@@ -837,6 +848,7 @@ label{
     font-size: 24px;
     width: 993px;
     margin:10px auto;
+    padding: 20px 30px;
   }
   .bigbox .ddd .title3{font-size: 24px;}
   .bigbox .ddd .title4{
@@ -859,6 +871,7 @@ label{
     font-size: 24px;
     width: 993px;
     margin:10px auto;
+    padding: 20px 30px;
   }
 
   .bigbox .eee .paper1{
@@ -940,10 +953,10 @@ label{
 @media (max-width:992px){
   .bigbox .contain .title{
     font-size: 32px;
-    width: 769px;
+    width: 100%;
   }
   .bigbox .contain .list {
-    width: 100%;
+    width: 769px;
     margin: 0 auto;
     font-size: 22px;
   }
@@ -951,6 +964,7 @@ label{
     font-size: 22px;
     width: 769px;
     margin:10px auto;
+    padding: 15px 20px;
   }
   .bigbox .aaa .title3{font-size: 22px;}
   .bigbox .aaa .title4{
@@ -1110,10 +1124,62 @@ label{
     width: 769px;
     margin: 0 auto;
   }
-
+}
 
 // 577px~768px
 @media (max-width:768px){
+
+  .part1{
+    display: none;
+    // display: block;
+  }
+  .part1.on{
+    display: block;
+  //  display: none;
+  }
+
+  .part2{
+    display: none;
+  }
+  .part2.on{
+    display: block;
+  }
+
+  .part3{
+    display: none;
+  }
+  .part3.on{
+    display: block;
+  }
+
+  .part4{
+    display: none;
+  }
+  .part4.on{
+    display: block;
+  }
+
+  .paper1{
+    display: none;
+  }
+  .paper1.on{
+    display: block;
+  }
+
+  .paper2{
+    display: none;
+  }
+  .paper2.on{
+    display: block;
+  }
+
+  .paper3{
+    display: none;
+  }
+  .paper3.on{
+    display: block;
+  }
+
   .bigbox .contain .title{
     font-size: 30px;
     width: 100%;
@@ -1132,6 +1198,7 @@ label{
     font-size: 20px;
     width: 577px;
     margin:20px auto;
+    cursor: pointer;
   }
   .bigbox .aaa .title3{font-size: 20px;}
   .bigbox .aaa .title4{
@@ -1153,6 +1220,7 @@ label{
     font-size: 20px;
     width: 577px;
     margin:20px auto;
+    cursor: pointer;
   }
   .bigbox .bbb .title3{font-size: 20px;}
   .bigbox .bbb .title4{
@@ -1174,6 +1242,7 @@ label{
     font-size: 20px;
     width: 577px;
     margin:20px auto;
+    cursor: pointer;
   }
   .bigbox .ccc .title3{font-size: 20px;}
   .bigbox .ccc .title4{
@@ -1195,6 +1264,7 @@ label{
     font-size: 20px;
     width: 577px;
     margin:20px auto;
+    cursor: pointer;
   }
   .bigbox .ddd .title3{font-size: 20px;}
   .bigbox .ddd .title4{
@@ -1216,6 +1286,7 @@ label{
     font-size: 20px;
     width: 577px;
     margin:20px auto;
+    cursor: pointer;
   }
 
   .bigbox .eee .paper1{
@@ -1314,7 +1385,8 @@ label{
     text-align: center;
     font-size: 18px;
     width: 361px;
-    margin: 0 auto;
+    margin: 20px auto;
+    cursor: pointer;
   }
   .bigbox .aaa .title3{
     font-size: 18px;
@@ -1340,7 +1412,8 @@ label{
     text-align: center;
     font-size: 18px;
     width: 361px;
-    margin: 0 auto;
+    margin: 20px auto;
+    cursor: pointer;
   }
   .bigbox .bbb .title3{
     font-size: 18px;
@@ -1366,7 +1439,8 @@ label{
     text-align: center;
     font-size: 18px;
     width: 361px;
-    margin: 0 auto;
+    margin: 20px auto;
+    cursor: pointer;
   }
   .bigbox .ccc .title3{
     font-size: 18px;
@@ -1392,7 +1466,8 @@ label{
     text-align: center;
     font-size: 18px;
     width: 361px;
-    margin: 0 auto;
+    margin: 20px auto;
+    cursor: pointer;
   }
   .bigbox .ddd .title3{
     font-size: 18px;
@@ -1418,7 +1493,8 @@ label{
     text-align: center;
     font-size: 18px;
     width: 361px;
-    margin: 0 auto;
+    margin: 20px auto;
+    cursor: pointer;
   }
 
   .bigbox .eee .paper1{
@@ -1501,171 +1577,170 @@ label{
 }
 
 //小於360px
-@media (max-width:360px){
-  .bigbox .contain .title{
-    font-size: 20px;
-    width: 260px;
-  }
-  .bigbox .contain .list {display: none;}
-  .bigbox .aaa .icon{display: none;}
-  .bigbox .bbb .icon{display: none;}
-  .bigbox .ccc .icon{display: none;}
-  .bigbox .ddd .icon{display: none;}
-  .bigbox .eee .icon{display: none;}
+// @media (max-width:360px){
+//   .bigbox .contain .title{
+//     font-size: 20px;
+//     width: 260px;
+//   }
+//   .bigbox .contain .list {display: none;}
+//   .bigbox .aaa .icon{display: none;}
+//   .bigbox .bbb .icon{display: none;}
+//   .bigbox .ccc .icon{display: none;}
+//   .bigbox .ddd .icon{display: none;}
+//   .bigbox .eee .icon{display: none;}
 
-  .bigbox .aaa .title2{
-    text-align: center;
-    font-size: 16px;
-    width: 260px;
-    margin:20px auto;
-  }
-  .bigbox .aaa .title3{font-size: 16px;}
-  .bigbox .aaa .title4{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .aaa .title5{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .aaa .title6{
-    font-size: 12px;
-    line-height: 30px;
-  }
+//   .bigbox .aaa .title2{
+//     text-align: center;
+//     font-size: 16px;
+//     width: 260px;
+//     margin:20px auto;
+//   }
+//   .bigbox .aaa .title3{font-size: 16px;}
+//   .bigbox .aaa .title4{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .aaa .title5{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .aaa .title6{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
 
-  .bigbox .bbb .title2{
-    text-align: center;
-    font-size: 16px;
-    width: 260px;
-    margin:20px auto;
-  }
-  .bigbox .bbb .title3{font-size: 16px;}
-  .bigbox .bbb .title4{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .bbb .title5{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .bbb .title6{
-    font-size: 12px;
-    line-height: 30px;
-  }
+//   .bigbox .bbb .title2{
+//     text-align: center;
+//     font-size: 16px;
+//     width: 260px;
+//     margin:20px auto;
+//   }
+//   .bigbox .bbb .title3{font-size: 16px;}
+//   .bigbox .bbb .title4{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .bbb .title5{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .bbb .title6{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
 
-  .bigbox .ccc .title2{
-    text-align: center;
-    font-size: 16px;
-    width: 260px;
-    margin:20px auto;
-  }
-  .bigbox .ccc .title3{font-size: 16px;}
-  .bigbox .ccc .title4{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .ccc .title5{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .ccc .title6{
-    font-size: 12px;
-    line-height: 30px;
-  }
+//   .bigbox .ccc .title2{
+//     text-align: center;
+//     font-size: 16px;
+//     width: 260px;
+//     margin:20px auto;
+//   }
+//   .bigbox .ccc .title3{font-size: 16px;}
+//   .bigbox .ccc .title4{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .ccc .title5{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .ccc .title6{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
 
-  .bigbox .ddd .title2{
-    text-align: center;
-    font-size: 16px;
-    width: 260px;
-    margin:20px auto;
-  }
-  .bigbox .ddd .title3{font-size: 16px;}
-  .bigbox .ddd .title4{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .ddd .title5{
-    font-size: 12px;
-    line-height: 30px;
-  }
-  .bigbox .ddd .title6{
-    font-size: 12px;
-    line-height: 30px;
-  }
+//   .bigbox .ddd .title2{
+//     text-align: center;
+//     font-size: 16px;
+//     width: 260px;
+//     margin:20px auto;
+//   }
+//   .bigbox .ddd .title3{font-size: 16px;}
+//   .bigbox .ddd .title4{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .ddd .title5{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
+//   .bigbox .ddd .title6{
+//     font-size: 12px;
+//     line-height: 30px;
+//   }
 
-  .bigbox .eee .title2{
-    text-align: center;
-    font-size: 16px;
-    width: 260px;
-    margin:20px auto;
-  }
+//   .bigbox .eee .title2{
+//     text-align: center;
+//     font-size: 16px;
+//     width: 260px;
+//     margin:20px auto;
+//   }
 
 
-  .bigbox .eee .paper1{
-    font-size: 16px;
-    margin-top: 10px;
-  }
+//   .bigbox .eee .paper1{
+//     font-size: 16px;
+//     margin-top: 10px;
+//   }
 
-  .bigbox .eee .paper1 .paper3 .paper2{
-    padding: 5px 30px;
-    width: 260px;
-    height: 500px;
-    left: -10px;
-    top: -10px;
-  }
+//   .bigbox .eee .paper1 .paper3 .paper2{
+//     padding: 5px 30px;
+//     width: 260px;
+//     height: 500px;
+//     left: -10px;
+//     top: -10px;
+//   }
 
-  .bigbox .eee .paper1 .paper3{
-    width: 260px;
-    height: 500px;
-  }
+//   .bigbox .eee .paper1 .paper3{
+//     width: 260px;
+//     height: 500px;
+//   }
 
-  .bigbox .eee .paper1 .paper3 .paper2 .reply{
-    font-size: 16px;
-    margin: 0;
-    width: 200px;
-  }
+//   .bigbox .eee .paper1 .paper3 .paper2 .reply{
+//     font-size: 16px;
+//     margin: 0;
+//     width: 200px;
+//   }
 
-  .bigbox .eee .paper1 .paper3 .paper2 .question .txt{
-    margin: 0;
-    font-size: 16px;
-    width: 200px;
-  }
+//   .bigbox .eee .paper1 .paper3 .paper2 .question .txt{
+//     margin: 0;
+//     font-size: 16px;
+//     width: 200px;
+//   }
 
-  .bigbox .eee .paper1 .paper3 .paper2 .load img{
-    width: 15px;
-    height: 15px;
-  }
+//   .bigbox .eee .paper1 .paper3 .paper2 .load img{
+//     width: 15px;
+//     height: 15px;
+//   }
 
-  .bigbox .eee .paper1 .paper3 .paper2 .push{font-size: 16px;}
-  .bigbox .aaa .line{width: 300px;}
-  .bigbox .aaa .line2{width: 200px;}
-  .bigbox .aaa .line3{width: 300px;}
+//   .bigbox .eee .paper1 .paper3 .paper2 .push{font-size: 16px;}
+//   .bigbox .aaa .line{width: 300px;}
+//   .bigbox .aaa .line2{width: 200px;}
+//   .bigbox .aaa .line3{width: 300px;}
 
-  .bigbox .aaa .part1{
-    width: 361px;
-    margin: 0 auto;
-  }
+//   .bigbox .aaa .part1{
+//     width: 361px;
+//     margin: 0 auto;
+//   }
 
-  .bigbox .bbb .part2{
-    width: 361px;
-    margin: 0 auto;
-  }
+//   .bigbox .bbb .part2{
+//     width: 361px;
+//     margin: 0 auto;
+//   }
 
-  .bigbox .ccc .part3{
-    width: 361px;
-    margin: 0 auto;
-  }
+//   .bigbox .ccc .part3{
+//     width: 361px;
+//     margin: 0 auto;
+//   }
 
-  .bigbox .ddd .part4{
-    width: 361px;
-    margin: 0 auto;
-  }
+//   .bigbox .ddd .part4{
+//     width: 361px;
+//     margin: 0 auto;
+//   }
 
-  .bigbox .aaa .title2 .about{width: 100%;}
-  .bigbox .bbb .title2 .about{width: 100%;}
-  .bigbox .ccc .title2 .about{width: 100%;}
-  .bigbox .ddd .title2 .about{width: 100%;}
-  .bigbox .eee .title2 .about{width: 100%;}
-}
+//   .bigbox .aaa .title2 .about{width: 100%;}
+//   .bigbox .bbb .title2 .about{width: 100%;}
+//   .bigbox .ccc .title2 .about{width: 100%;}
+//   .bigbox .ddd .title2 .about{width: 100%;}
+//   .bigbox .eee .title2 .about{width: 100%;}
+// }
 
-}
