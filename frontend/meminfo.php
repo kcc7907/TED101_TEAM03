@@ -1,19 +1,19 @@
-<?php    
-
+<?php        
     include("../php/08/jk_link.php");
 
-    $sql = "SELECT * FROM member WHERE MEM_ID =?";
-    $statement = $pdo->prepare($sql);
-    $statement->bindValue(1, "$user");
-    $statement->execute();
-    $data = $statement->fetchAll();
+        $sql = "SELECT * FROM member WHERE MEM_ID =?";
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(1, "$user");
+        $statement->execute();
+        $data = $statement->fetchAll();
 
-    $account = $data[0]["MEM_ID"];
-    $name = $data[0]["MEM_NAME"];
-    $phone = $data[0]["MEM_PHONE"];
-    $email = $data[0]["MEM_EMAIL"];
-    $city = $data[0]["MEM_CITY"];
-    $address = $data[0]["MEM_ADDRESS"];
+        $account = $data[0]["MEM_ID"];
+        $name = $data[0]["MEM_NAME"];
+        $phone = $data[0]["MEM_PHONE"];
+        $email = $data[0]["MEM_EMAIL"];
+        $city = $data[0]["MEM_CITY"];
+        $address = $data[0]["MEM_ADDRESS"];
+    
     
 
 ?>
@@ -38,7 +38,7 @@
     <script src="../js/08/meminfo.js"></script>
 
     
-    
+    <!-- 通用設定 -->
     <link rel="stylesheet" href="../css/logSign.css">
     <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
     <script defer src="../lib/login/logSign.js"></script>
@@ -57,7 +57,7 @@
     <div class="jk_meminfo">        
         
         <!-- 修改提示 -->
-        <div id="jk_point">
+        <div id="jk_point" style="display:none;">
             <p>已成功修改會員資料</p>
         </div>
 
@@ -69,9 +69,7 @@
                     <li><a href="order.php"><i class="fas fa-clipboard-list"></i><span class="computer">訂單查詢</span><span class="rwd">訂單</span></a></li>
                     <li><a href="notice.php"><i class="fas fa-bullhorn"></i><span class="computer">通知總覽</span><span class="rwd">通知</span></a></li>
                 </ul>
-            </div>
-
-
+            </div>            
             <main>
                 <form id="memberInfo" action="../php/08/jk_resetInfo.php" method="post">
 
@@ -79,7 +77,8 @@
                         <div>
                             <label for="account">帳號</label>
                         </div>
-                        <input type="text" id="account" name="account" value="<?=$account?>" disabled>
+                        <input type="text" id="account" value="<?=$account?>" disabled>
+                        <input type="hidden" name="account" value="<?=$account?>">
                     </div>
 
                     <div>
@@ -140,7 +139,7 @@
                         <input type="reset" value="取消">
                     </div>
                 </form>
-            </main>
+            </main>            
         </div>
     </div>
 

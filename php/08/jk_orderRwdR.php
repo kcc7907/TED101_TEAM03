@@ -1,8 +1,7 @@
 <?php
     include("jk_link.php");
 
-    $user = "A111200001";   //測試帳號
-
+    
     //會員擁有訂單的訂單編號
     $sql_order = "SELECT * from `ORDER` where MEMBER_ID = ?";
     $statement = $pdo->prepare($sql_order);

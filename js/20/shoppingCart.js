@@ -26,9 +26,9 @@ let list =
         num : '1'
     }
 ];
-document.cookie = 'loging=A111200001';
-localStorage.clear();
-localStorage.setItem("lists", JSON.stringify(list));
+// document.cookie = 'loging=A111200001';
+// localStorage.clear();
+// localStorage.setItem("lists", JSON.stringify(list));
 
 let right = new Vue({
     el:'#right',

@@ -2,7 +2,7 @@ let buy= document.querySelector('.buy');
 let title= document.querySelectorAll('.title');
 title[1].classList.add('-onColor');
 
-document.cookie = 'loging=A111200001';
+// document.cookie = 'loging=A111200001';
 
 creditCartTypes = {
         'VI': [new RegExp('^4[0-9]{12}([0-9]{3})?$'), new RegExp('^[0-9]{3}$'), true],
@@ -294,6 +294,3 @@ let right = new Vue({
         }
     },
 });
-
-
-

@@ -235,8 +235,21 @@ function setLocal() {
         list.forEach((item, index) => {
             if (item.prd_id === productId) {
                 item.num = parseInt(item.num) + parseInt(quantity[0].innerText);
+            }else if(list.length -1 ===index){
+                let object = {
+                    prd_id: productId,
+                    num: parseInt(quantity[0].innerText),
+                };
+                list.push(object);
             }
         });
+        if(list.length ===0){
+                let object = {
+                prd_id: productId,
+                num: parseInt(quantity[0].innerText),
+            };
+            list.push(object);
+        }
         apple = list;
     } else {
         let object = {

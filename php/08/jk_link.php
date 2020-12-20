@@ -15,6 +15,8 @@
         $pdo = new PDO($dsn, $db_user, $db_pass);
 
         //登入帳號
-        setcookie("loging", "A111200001");      //測試
-        $user = $_COOKIE["loging"];
+        setcookie("loging", "A111200001", time()+3600*24*365, '/');      //測試
+        if(isset($_COOKIE["loging"])){
+                $user = $_COOKIE["loging"];
+        }
 ?>

@@ -2,8 +2,10 @@
 
     include("../php/08/jk_link.php");
 
+    //分頁判斷
     $page = isset($_POST["page"]) ? $_POST["page"] : 1;
 
+    //作品資料
     $sql = "SELECT * from `work` w
     join 
     (select * from `member`
@@ -11,7 +13,7 @@
     on m.CT_WORK_ID = w.WK_ID";
     $statement = $pdo->prepare($sql);     
     $statement->execute();
-    $data = $statement->fetchAll();    
+    $data = $statement->fetchAll();
     
 ?>
 
@@ -35,40 +37,21 @@
     <link rel="stylesheet" href="../css/navFooter.css">
     <link rel="stylesheet" href="../css/footer.css">
 
-
+    <script src="../lib/js/vue.js"></script>
     <script src="../lib/js/jquery.js"></script>
     <script src="../js/08/vote.js"></script>
+
+    <!-- 通用設定 -->
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
 </head>
 <body>
     <!-- header -->
-    <header class="common">
-        <div class="logo">
-            <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
-        </div>
-        <nav>
-            <dav class="nav1">
-                <a href="./product.html">救世傢俱</a>
-                <a href="./case.html">參考案例</a>
-            </dav>
-            <dav class="nav2">
-                <a href="./qa.html">客戶服務</a>
-                <a href="./contest_participate.html">傢聚賞</a>
-            </dav>
-        </nav>
-        <div class="icon">
-            <a class="login" href="./meminfo.html">
-                <img src="../img/headerFooter/loginIcon.svg" alt="">
-            </a>
-            <a class="shop" href="./contest_main20.html">
-                <img src="../img/headerFooter/shoppingCart.svg" alt="">
-            </a>
-            <a class="ham">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-        </div>
-    </header>
+    <?php
+    include ('../lib/header/header_Include.html');
+    include("../lib/login/loginInclude.html");
+    ?>
 
     <!-- navbar -->
     <nav class="topNav">
@@ -130,8 +113,7 @@
                         <div class="num">114352 人</div>
                     </div>
                 </div>
-                
-                <!-- 參賽作品 --><!-- 8圖換頁如何做-->
+
                 <main>
 
                 <?php

@@ -21,13 +21,13 @@ body{
 
         //提示訊息
         #jk_point{
+            // display: none;
+            justify-content: center;
+
             width: 100%;
             position: fixed;
             top: 200px;
-
-            // display: flex;
-            display: none;
-            justify-content: center;
+            
 
             p{
                 width: 250px;

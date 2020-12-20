@@ -22,5 +22,6 @@
     $sql="SELECT * FROM `CASE`";
     $statement = $pdo->prepare($sql);
     $statement->execute();
-    $statement->fetchAll(PDO::FETCH_ASSOC);
+    $data = $statement->fetchAll();
+    print json_encode($data);
 ?> 

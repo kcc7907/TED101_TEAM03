@@ -41,6 +41,6 @@ let done = new Vue({
                 this.payment = payment;
                 break;
         }
-        // localStorage.clear();
+        localStorage.clear();
     },
 });
