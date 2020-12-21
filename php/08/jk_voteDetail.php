@@ -61,7 +61,7 @@
         </div>
 
         <div class="img">
-            <img src="'?><?=$row["WK_IMG"]?><?='">
+            <img src="'?><?=$row["WK_DRAW"]?><?='">
         </div>
 
     </div>

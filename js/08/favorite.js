@@ -28,21 +28,6 @@ $(document).ready(function(){
         $('#dropCheck .cancel').click(function(){
             $('#dropCheck').css('display', 'none');
         });
-
-
-
-        // $(this).closest('ul.item').remove();
-
-
-        //資料庫移除
-        // $.ajax({
-        //     url: '../php/08/jk_favoriteDlete.php',   //檔案位置奇怪       
-        //     type: 'POST',
-        //     data: {
-        //         removeItem,
-        //     },            
-        // });
-        
     });
 });
 
