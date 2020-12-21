@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>救世宅 | INDEX</title>
     <link rel="Shortcut Icon" href="./img/favicon.ico">
-    <link rel="stylesheet" href="../lib/reset.css">
+    <link rel="stylesheet" href="./lib/reset.css">
     <link rel="stylesheet" href="./css/index.css">
-    <script src="../lib/js/vue.js"></script>
+    <script src="./lib/js/vue.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
 </head>
 
@@ -70,7 +70,7 @@
                     }
                 },
                 bkloging(){
-                    axios.post('../php/13/kc_bk.php', this.all).then(res => {
+                    axios.post('php/13/kc_bk.php', this.all).then(res => {
                         // this.rp = res.data;
                         console.log(res.data);
                         if(res.data==='empty'){
