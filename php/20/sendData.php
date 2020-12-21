@@ -34,7 +34,7 @@
         $statement->bindValue(5,$order_total+1);
         $statement->bindValue(6,$order_buy);
         $statement->bindValue(7,$order_pay);
-        $statement->bindValue(8,$rp['discount']==0?null:$rp['discount']);
+        $statement->bindValue(8,$rp['discount']==0?0:$rp['discount']);
         $statement->execute();
 
         //part3 insert order_detail

@@ -81,7 +81,7 @@
                         <div class="carddate_box">
                             <p class="card_date">有效日期</p>
                             <input ref="rcdate" type="text" class="card_date1" @keydown="cardDate">
-                            <input type="text" class="card_date2" style="display: none;">
+                            <!-- <input type="text" class="card_date2" style="display: none;"> -->
                         </div>
                         <div class="cardcode_box">
                             <p class="card_code">安全碼</p>
