@@ -15,7 +15,8 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
 } else {
     // MEMBER
     $now = date_create('now', new DateTimeZone('Asia/Taipei'));
-    $date = date_format($now, 'YmdHis');
+    $format = date_format($now, 'YmdHis');
+    $date = substr($format, 7 , 6 );
 
     $contestant = $_POST['contestant'];
 
@@ -110,6 +111,6 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
         $statement->bindValue(3, $usePath1);
         $statement->bindValue(4, $data[0]['MEM_ID']);
         $statement->execute();
-        echo  $workID .  $pIdNum  . $usePath1 . $data[0]['MEM_ID'];
+        echo  $workID .  $type . $name . $usePath2 . $usePath3 . $pIdNum  . $usePath1 . $data[0]['MEM_ID'];
     }
 }
