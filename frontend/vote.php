@@ -56,18 +56,18 @@
     <!-- navbar -->
     <nav class="topNav">
         <div>
-            <a href="./contest_main20.html">
+            <a class="contest_title1" href="./contest_main20.php">
                 <h1 class="titleFont2">賽制說明</h1>
             </a>
-            <a href="./vote.php">
+            <a class="contest_title2" href="./vote.php">
                 <h1 class="titleFont2">人氣票選</h1>
             </a>
         </div>
         <div>
-            <a href="./navbarChampion.html">
+            <a class="contest_title3" href="./product/navbarChampion.html">
                 <h1 class="titleFont2">歷屆冠軍</h1>
             </a>
-            <a href="./contest_participate.html">
+            <a class="contest_title4" href="./contest_participate.php">
                 <h1 class="titleFont2">我要投稿</h1>
             </a>
         </div>
@@ -159,9 +159,29 @@
                 </div>
                 
             </div>
-
         </div>
 
+        <div class="game">
+            <div class="bgc">
+                <div class="inner">
+                    <div class="winner"></div>
+                    <div class="items">
+                        <div class="item">
+                            <div class="work">
+                                <img src="" alt="">
+                            </div>
+                            <div class="voteNumber"></div>
+                            <div class="date"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="close">
+                    <i class="far fa-times-circle"></i>
+                </div>
+                
+            </div>
+        </div>
     </div>
 
     <!-- footer -->
