@@ -159,9 +159,29 @@
                 </div>
                 
             </div>
-
         </div>
 
+        <div class="game">
+            <div class="bgc">
+                <div class="inner">
+                    <div class="winner"></div>
+                    <div class="items">
+                        <div class="item">
+                            <div class="work">
+                                <img src="" alt="">
+                            </div>
+                            <div class="voteNumber"></div>
+                            <div class="date"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="close">
+                    <i class="far fa-times-circle"></i>
+                </div>
+                
+            </div>
+        </div>
     </div>
 
     <!-- footer -->
