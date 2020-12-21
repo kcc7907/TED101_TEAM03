@@ -28,6 +28,7 @@
 
     <script src="../lib/js/vue.js"></script>
     <script src="../lib/js/jquery.js"></script>
+    <script src="../js/08/notice.js"></script>
 
     <!-- 通用設定 -->
     <link rel="stylesheet" href="../css/logSign.css">
