@@ -73,6 +73,13 @@
   display: block;
 }
 
+.part124{
+  display: none;
+}
+.part124.on{
+  display: block;
+}
+
 
 .part13{
   display: none;
@@ -117,12 +124,12 @@
   display: block;
 }
 
-.part212{
-  display: none;
-}
-.part212.on{
-  display: block;
-}
+// .part212{
+//   display: none;
+// }
+// .part212.on{
+//   display: block;
+// }
 
 .part22{
   display: none;
@@ -138,12 +145,12 @@
   display: block;
 }
 
-.part222{
-  display: none;
-}
-.part222.on{
-  display: block;
-}
+// .part222{
+//   display: none;
+// }
+// .part222.on{
+//   display: block;
+// }
 
 .part23{
   display: none;
@@ -263,6 +270,8 @@
 .eee.on{
   display: none;
 }
+
+
 
 /* 大背景 */
 .bigbox{
@@ -493,6 +502,20 @@ label{
   align-items: center;
   justify-content: center;
 }
+
+//上傳圖片
+input[type="file"] {
+  position: fixed;
+  right: 100%;
+  bottom: 100%;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
 
 
 // 對話視窗
