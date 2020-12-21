@@ -134,8 +134,12 @@
                             <br>
 
                             <label for="case_type">案例型態</label>
-                            <input type="text" name="case_type" id="case_type" placeholder="安安"
-                                v-model="formData.case_type">
+                            <select v-model="formData.case_type" name="case_type" id="">
+                                <option value="" selected disabled hidden>請選擇案例型態</option>
+                                <option value="居家住宅">居家住宅</option>
+                                <option value="商業空間">商業空間</option>
+                                <option value="辦公空間">辦公空間</option>
+                            </select>
                             <br>
 
                             <label for="case_path">圖片路徑</label>

@@ -13,37 +13,174 @@
     <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script>
-    <script src="../js/14/photoPathAjax.js"></script>
+    <script src="../lib/js/vue.js"></script>
+    <!-- header設定 -->
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
+
+
+
+    <!-- <script src="../js/14/photoPathAjax.js"></script> -->
 
 </head>
 
 <body>
+    <!-- 登入燈箱 -->
+    <div id="login">
+        <div class="login">
+            <h1 class="titleFont2">歡迎回來</h1>
+            <form action="LoginR.php" class="login" name="login" method="POST">
+                <div>
+                    <label for="account" class="titleFont3">帳號</label>
+                    <input type="text" id="account" name="account" class="titleFont3" minlength="8" maxlength="12"
+                        required="required" autocomplete="off">
+                    <label for="pwd" class="titleFont3">密碼</label>
+                    <input type="password" class="titleFont3" id="pwd" name="pwd" minlength="8" maxlength="12"
+                        required="required" autocomplete="off">
+                    <input type="checkbox" id="alive" name="alive" class="alive detailFont">
+                    <label for="alive" class="alive" id="alivebox"></label>
+                    <label for="alive" class="alive detailFont">保持登入</label>
+                </div>
+                <div>
+                    <p class="detailFont"><a>忘記密碼</a></p>
+                    <button type="button" class="login titleFont2">登入</button>
+                    <p class="detailFont"><a href="javascript: void(0)" class="signLink">註冊新會員</a></p>
+                </div>
+            </form>
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693"
+                data-llp-composed="true" id="logIn" class="lazy-line-painter">
+                <path id="Path_17" data-name="Path 17"
+                    d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z"
+                    transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000"
+                    data-llp-delay="0" fill-opacity="0" style="" />
+                <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7"
+                    transform="translate(244 518.801)" fill="none" data-llp-id="logIn-1" data-llp-duration="5000"
+                    data-llp-delay="0" fill-opacity="0" style="" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693"
+                data-llp-composed="true" id="logInDoor" class="lazy-line-painter">
+                <path id="Path_19" data-name="Path 19" d="M13.5,162.7V18h86.819V162.7"
+                    transform="translate(244 518.801)" fill="none" data-llp-id="logIn-2" data-llp-duration="5000"
+                    data-llp-delay="0" fill-opacity="0" style="" />
+            </svg>
+
+            <div class="closebtn">
+                <span class="closebtn">&times;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 註冊燈箱 -->
+    <div id="signUp">
+        <div class="signUp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009" data-llp-composed="true" id="signUp"
+                class="lazy-line-painter">
+                <g id="Rectangle_457" data-name="Rectangle 457" fill="none" stroke="#865454" stroke-width="1">
+                    <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0"
+                        fill-opacity="0" style="" />
+                </g>
+            </svg>
+            <h1 class="titleFont1">加入會員享受輕鬆購物</h1>
+            <form action="SignR.php" class="signUp" name="signUp">
+                <div>
+                    <div>
+                        <label for="memName" class="titleFont3">姓名</label>
+                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required"
+                            autocomplete="off" placeholder="請輸入姓名">
+                    </div>
+                    <div>
+                        <label for="Phone" class="titleFont3">手機</label>
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" maxlength="10"
+                            required="required" autocomplete="off" placeholder="請輸入手機號碼">
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="titleFont3">信箱</label>
+                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required"
+                        autocomplete="off" placeholder="請輸入信箱">
+                </div>
+                <div id="addressOption">
+                    <label for="address" class="titleFont3">地址</label>
+                    <select name="memCity" id="memCityJH" class="detailFont" required="required">
+                        <option name="memCity" selected disabled value="0">請選擇縣市</option>
+                        <option v-for="city in citys" class="detailFont" name="memCity" :value="city">{{city}}</option>
+                    </select>
+                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required"
+                        autocomplete="off" placeholder="請輸入地址">
+                </div>
+                <div>
+                    <label for="account" class="titleFont3">帳號</label>
+                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="6"
+                        maxlength="12" required="required" autocomplete="off" placeholder="請輸入英文或數字(6-12字元)">
+                </div>
+                <div>
+                    <label for="pwd" class="titleFont3">密碼</label>
+                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="6" maxlength="12"
+                        required="required" autocomplete="off" placeholder="請輸入密碼(6-12字元)">
+                </div>
+                <div>
+                    <label for="checkP" class="titleFont3">密碼確認</label>
+                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required"
+                        autocomplete="off" placeholder="請重複輸入密碼">
+                </div>
+                <div>
+                    <!-- <button type="button" class="titleFont3 signup">註冊</button> -->
+                    <button type="button" class="titleFont3 signup">註冊</button>
+                </div>
+                <div>
+                    <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a
+                            class="detailFont">會員責任規範及個資聲明</a>。</span>
+                </div>
+                <div>
+                    <a href="javascript: void(0)" class="detailFont logLink">回登入頁面</a>
+                </div>
+            </form>
+            <div class="closebtn">
+                <span>&times;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 彈窗確認 -->
+    <div class="confirmDiv ">
+        <div>
+            <p class="contentFont lineHeight"></p>
+            <input type="button" class="detailFont" id="sureGoHome" value="確認">
+            <input type="button" class="detailFont" id="notsureGoHome" value="取消">
+        </div>
+    </div>
+
     <header class="common">
         <div class="logo">
-            <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+            <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
         </div>
         <nav>
-            <dav class="nav1">
-                <a href="./product.html">救世傢俱</a>
-                <a href="./case.html">參考案例</a>
-            </dav>
-            <dav class="nav2">
-                <a href="./qa.html">客戶服務</a>
-                <a href="./contest_participate.html">傢聚賞</a>
-            </dav>
+            <div class="nav1">
+                <a class="product" href="product/product.html">救世傢俱</a>
+                <a class="case" href="./case.html">參考案例</a>
+            </div>
+            <div class="nav2">
+                <a class="qa" href="./qa.html">客戶服務</a>
+                <a class="contest" href="./contest_main20.php">傢聚賞</a>
+            </div>
         </nav>
         <div class="icon">
-            <a class="login" href="./meminfo.html">
-                <img src="../img/headerFooter/loginIcon.svg" alt="">
+            <a class="login ">
+                <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
             </a>
-            <a class="shop" href="./contest_main20.html">
-                <img src="../img/headerFooter/shoppingCart.svg" alt="">
+            <a class="shop " href="shoppingCart.php">
+                <img src="../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.php'">
             </a>
             <a class="ham">
                 <span></span>
                 <span></span>
                 <span></span>
             </a>
+            <div class="logMembox">
+                <a href="./meminfo.php">會員中心</a>
+                <span class="logout">登出</span>
+            </div>
         </div>
     </header>
 
@@ -127,84 +264,12 @@
             <!-- 居家住宅 -->
             <div class="tab tab1 -on">
                 <div class="stylebox_right">
-                    <div class="jpgbox">
+                    <div class="jpgbox" v-for="src in imgsrc.box_one">
                         <div class="inter_pic">
                             <a href="./xinyi.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">信義</span>
-                                <span class="contentFont">徐公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./beitou.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">北投</span>
-                                <span class="contentFont">李公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./nangang.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">南港</span>
-                                <span class="contentFont">王公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./shongshan.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">松山</span>
-                                <span class="contentFont">林公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./wenshan.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">文山</span>
-                                <span class="contentFont">何公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./neihu.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">內湖</span>
-                                <span class="contentFont">毛公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./zhongzheng.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">中正</span>
-                                <span class="contentFont">紀公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./daan.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">大安</span>
-                                <span class="contentFont">黃公館</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./zhongshan.html" class="img_inter">
-                                <img src="" class="homepic">
-                                <span class="contentFont">中山</span>
-                                <span class="contentFont">鄭公館</span>
+                                <img :src="src.CASE_IMG" class="homepic">
+                                <span class="contentFont">{{src.CASE_INTRO}}</span>
+                                <span class="contentFont">{{src.CASE_NAME}}</span>
                             </a>
                         </div>
                     </div>
@@ -215,57 +280,12 @@
             <!-- 商業空間 -->
             <div class="tab tab2">
                 <div class="stylebox_right">
-                    <div class="jpgbox">
+                    <div class="jpgbox" v-for="src in imgsrc.box_two">
                         <div class="inter_pic">
                             <a href="./taipei.html" class="img_inter">
-                                <img src="" class="commercial_pic">
-                                <span class="contentFont">台北</span>
-                                <span class="contentFont">Brun不然</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./seoul.html" class="img_inter">
-                                <img src="" class="commercial_pic">
-                                <span class="contentFont">首爾</span>
-                                <span class="contentFont">Cafe Mula</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./taipei.html" class="img_inter">
-                                <img src="" class="commercial_pic">
-                                <span class="contentFont">紐約</span>
-                                <span class="contentFont">Maman</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./taipei.html" class="img_inter">
-                                <img src="" class="commercial_pic">
-                                <span class="contentFont">曼谷</span>
-                                <span class="contentFont">Jamie café</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./taipei.html" class="img_inter">
-                                <img src="" class="commercial_pic">
-                                <span class="contentFont">東京</span>
-                                <span class="contentFont">猿田彥咖啡</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./taipei.html" class="img_inter">
-                                <img src="" class="commercial_pic">
-                                <span class="contentFont">澳門</span>
-                                <span class="contentFont">Alves Café</span>
+                                <img :src="src.CASE_IMG" class="commercial_pic">
+                                <span class="contentFont">{{src.CASE_INTRO}}</span>
+                                <span class="contentFont">{{src.CASE_NAME}}</span>
                             </a>
                         </div>
                     </div>
@@ -275,20 +295,13 @@
             <!-- 辦公空間 -->
             <div class="tab tab3">
                 <div class="stylebox_right">
-                    <div class="jpgbox">
+                    <div class="jpgbox" v-for="src in imgsrc.box_three">
                         <div class="inter_pic">
                             <a href="./case4.html" class="img_inter">
-                                <img src="" class="office_pic">
-                                <span class="contentFont">南京復興</span>
-                                <span class="contentFont">TIBAME</span></a>
-                        </div>
-                    </div>
-                    <div class="jpgbox">
-                        <div class="inter_pic">
-                            <a href="./case4.html" class="img_inter">
-                                <img src="" class="office_pic">
-                                <span class="contentFont">南京復興</span>
-                                <span class="contentFont">TIBAME</span></a>
+                                <img :src="src.CASE_IMG" class="office_pic">
+                                <span class="contentFont">{{src.CASE_INTRO}}</span>
+                                <span class="contentFont">{{src.CASE_NAME}}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -334,10 +347,11 @@
             el: '#JN',
             data: {
                 imgsrc: {
-                    box_one: '',
-                    box_two: '',
-                    box_three: ''
-                }
+                    box_one: [],
+                    box_two: [],
+                    box_three: [],
+                    br: '<br>',
+                },
 
             },
             methods: {
@@ -349,21 +363,31 @@
                 // console.log(res);
                 //     this.rp = res.data;
                 // })
+                //1219
                 $.ajax({
-                    url: '../php/14/case.php',
+                    url: '../php/14/photoPath.php',
                     dataType: 'JSON',
                     success: function (res) {
                         console.log(res);
-                        // self.imgsrc.box_one = res.case;
-                        // self.imgsrc.box_two = res.case;
-                        // self.imgsrc.box_three = res.case;
-
-                        for (i = 0; i < 8; i++) {
-                            self.imgsrc.box_one = res[0][i].CASE_IMG;
+                        for (i = 0; i < res.length; i++) {
+                            if (res[i].CASE_TYPE == "居家住宅") {
+                                self.imgsrc.box_one.push(res[i]);
+                            } else if (res[i].CASE_TYPE == "商業空間") {
+                                self.imgsrc.box_two.push(res[i]);
+                            } else {
+                                self.imgsrc.box_three.push(res[i]);
+                            }
                         }
-                        console.log(self.imgsrc.box_one);
+                        // console.log('這是居家' + self.imgsrc.box_one);
+                        // console.log('商業空間' + self.imgsrc.box_two);
+                        // console.log('辦公空間' + self.imgsrc.box_three);
+                    },
+                    error: function (res) {
+                        console.log(res);
                     }
                 })
+                console.log(self.imgsrc.box_one);
+
             },
         });
     </script>

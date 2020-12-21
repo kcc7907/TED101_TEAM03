@@ -204,6 +204,7 @@ body{
     // overflow-x: hidden;
     // margin-top: 160px;
     border: none !important;
+    color: #54383B;
 }
 
 
@@ -230,6 +231,7 @@ div#JN{
             text-align: center;
             margin-top: 3%;
             font-weight: bold;
+            color: #54383B;
         }
 
         .photo{
@@ -272,6 +274,7 @@ div#JN{
             border: 1px solid purple;
             width: auto;
             position: relative;
+            color: #54383B;
             &::after{
                 content: "";
                 position: absolute;
@@ -290,6 +293,7 @@ div#JN{
             // z-index: 1;
             padding: 5%;
             position: relative;
+            margin-top: 5%;
             &:after{
                 content: '';
                 display: inline-block;
@@ -415,7 +419,7 @@ div#JN{
                                 display: inline-block;
                                 padding: 5px 60px;
                                 text-decoration: none;
-                                color: black;
+                                color: #54383B;
                                 padding: 15px 60px;
                                 &:hover{
                                     cursor: pointer;
@@ -696,6 +700,7 @@ div#JN{
         border: 1px solid indianred;
         text-align: center;
         margin-top: 35%;
+        margin-left: -10%;
     }
 
    .block_color{
@@ -869,7 +874,7 @@ div#JN{
             >div{
                 width: 90%;
                 height: 90%;
-                border: 1px solid #644646 !important;
+                // border: 1px solid #644646 !important;
                 background-color: #fffaf4;
                 font-size: 0;
                 margin: 3% auto;
@@ -1337,5 +1342,13 @@ div#JN{
 }
 }
 };
+
+
+
+//案例
+.common .case{
+    font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+}
+
 
 
