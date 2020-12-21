@@ -31,7 +31,7 @@
         $_SESSION["MemberID"] = $memberName;
         // $check = 0;
         // echo $check;
-        echo "<script>document.cookie='loging=".$memberID."';</script>";
+        echo "<script>document.cookie='loging=".$memberID.";path=/';</script>";
     }else{
         //跳出提示停留在登入頁
         $check = 1;

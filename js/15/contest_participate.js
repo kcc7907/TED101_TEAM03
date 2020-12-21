@@ -185,13 +185,14 @@ function goStep() {
             cache: false,
             processData:false,
             success: function(res){
-                // console.log(res);
+                console.log(res);
                 $('#JHC .step form').hide();
                 $('#JHC .lastP').show();
                 $('div.confirmDivC').css({
                     'zIndex': '-99',
                     'opacity': '0',
                 }).hide();
+
             },
         });
     });

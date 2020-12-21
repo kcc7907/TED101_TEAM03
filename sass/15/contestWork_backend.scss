@@ -525,8 +525,13 @@ body {
 
                         >th,
                         >td {
+                            max-height: 50px;
                             padding: 15px;
                             text-align: center;
+                            overflow-y: auto;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
                         }
 
                         >th+th,
@@ -645,6 +650,11 @@ body {
                             display: inline-block;
                             // border-bottom: 1px solid #865454;
                             margin-bottom: 6%;
+                        }
+
+                        p#WK_CONCEPT{
+                            margin: 2% 20px 6% 0;
+                            max-width: 60%;
                         }
 
                         button#work_submit {
