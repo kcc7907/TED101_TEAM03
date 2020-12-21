@@ -21,10 +21,10 @@ let title11 = document.getElementsByClassName("title11")[0];
 name11.addEventListener("click",function(){
     if(part11.classList.contains("on")){
         part11.classList.remove("on");
-        title11.innerText = "＋ 產品及服務";
+        title11.innerText = "＋ 關於商品";
     }else{
         part11.classList.add("on");
-        title11.innerText = "－ 產品及服務";
+        title11.innerText = "－ 關於商品";
     }
 });
 
@@ -49,10 +49,10 @@ let title112 = document.getElementsByClassName("title112")[0];
 name112.addEventListener("click",function(){
     if(part112.classList.contains("on")){
         part112.classList.remove("on");
-        title112.innerText = "＋ 我在救世宅可以買到那些商品?";
+        title112.innerText = "＋ 如何知道我想購買的商品有沒有貨?";
     }else{
         part112.classList.add("on");
-        title112.innerText = "－ 我在救世宅可以買到那些商品?";
+        title112.innerText = "－ 如何知道我想購買的商品有沒有貨?";
     }
 });
 
@@ -79,10 +79,10 @@ let title12 = document.getElementsByClassName("title12")[0];
 name12.addEventListener("click",function(){
     if(part12.classList.contains("on")){
         part12.classList.remove("on");
-        title12.innerText = "＋ 如何建立我的購物清單?";
+        title12.innerText = "＋ 商品購買後問題";
     }else{
         part12.classList.add("on");
-        title12.innerText = "－ 如何建立我的購物清單?";
+        title12.innerText = "－ 商品購買後問題";
     }
 });
 
@@ -93,10 +93,10 @@ let title121 = document.getElementsByClassName("title121")[0];
 name121.addEventListener("click",function(){
     if(part121.classList.contains("on")){
         part121.classList.remove("on");
-        title121.innerText = "＋ CCCCCC";
+        title121.innerText = "＋ 購買傢俱後可以提供組裝服務嗎?";
     }else{
         part121.classList.add("on");
-        title121.innerText = "－ CCCCCC";
+        title121.innerText = "－ 購買傢俱後可以提供組裝服務嗎?";
     }
 });
 
@@ -107,10 +107,10 @@ let title122 = document.getElementsByClassName("title122")[0];
 name122.addEventListener("click",function(){
     if(part122.classList.contains("on")){
         part122.classList.remove("on");
-        title122.innerText = "＋ EEEEEE";
+        title122.innerText = "＋ 買到的商品如果有瑕疵怎麼辦?";
     }else{
         part122.classList.add("on");
-        title122.innerText = "－ EEEEEE";
+        title122.innerText = "－ 買到的商品如果有瑕疵怎麼辦?";
     }
 });
 
@@ -121,14 +121,26 @@ let title123 = document.getElementsByClassName("title123")[0];
 name123.addEventListener("click",function(){
     if(part123.classList.contains("on")){
         part123.classList.remove("on");
-        title123.innerText = "＋ GGGGGG";
+        title123.innerText = "＋ 是否提供運送服務?";
     }else{
         part123.classList.add("on");
-        title123.innerText = "－ GGGGGG";
+        title123.innerText = "－ 是否提供運送服務?";
     }
 });
 
 
+let name124 = document.getElementsByClassName("name124")[0];
+let part124 = document.getElementsByClassName("part124")[0];
+let title124 = document.getElementsByClassName("title124")[0];
+name124.addEventListener("click",function(){
+    if(part124.classList.contains("on")){
+        part124.classList.remove("on");
+        title124.innerText = "＋ 已購買的商品是否能退貨?";
+    }else{
+        part124.classList.add("on");
+        title124.innerText = "－ 已購買的商品是否能退貨?";
+    }
+});
 
 // part1-3
 let name13 = document.getElementsByClassName("name13")[0];
@@ -137,55 +149,12 @@ let title13 = document.getElementsByClassName("title13")[0];
 name13.addEventListener("click",function(){
     if(part13.classList.contains("on")){
         part13.classList.remove("on");
-        title13.innerText = "＋ 已購買的商品是否能退貨?";
+        title13.innerText = "＋ 我們商品跟其他傢俱哪裡不同";
     }else{
         part13.classList.add("on");
-        title13.innerText = "－ 已購買的商品是否能退貨?";
+        title13.innerText = "－ 我們商品跟其他傢俱哪裡不同";
     }
 });
-
-
-let name131 = document.getElementsByClassName("name131")[0];
-let part131 = document.getElementsByClassName("part131")[0];
-let title131 = document.getElementsByClassName("title131")[0];
-name131.addEventListener("click",function(){
-    if(part131.classList.contains("on")){
-        part131.classList.remove("on");
-        title131.innerText = "＋ IIIIII";
-    }else{
-        part131.classList.add("on");
-        title131.innerText = "－ IIIIII";
-    }
-});
-
-
-let name132 = document.getElementsByClassName("name132")[0];
-let part132 = document.getElementsByClassName("part132")[0];
-let title132 = document.getElementsByClassName("title132")[0];
-name132.addEventListener("click",function(){
-    if(part132.classList.contains("on")){
-        part132.classList.remove("on");
-        title132.innerText = "＋ KKKKKK";
-    }else{
-        part132.classList.add("on");
-        title132.innerText = "－ KKKKKK";
-    }
-});
-
-
-let name133 = document.getElementsByClassName("name133")[0];
-let part133 = document.getElementsByClassName("part133")[0];
-let title133 = document.getElementsByClassName("title133")[0];
-name133.addEventListener("click",function(){
-    if(part133.classList.contains("on")){
-        part133.classList.remove("on");
-        title133.innerText = "＋ MMMMMM";
-    }else{
-        part133.classList.add("on");
-        title133.innerText = "－ MMMMMM";
-    }
-});
-
 
 
 // part2-1
@@ -199,32 +168,6 @@ name21.addEventListener("click",function(){
     }else{
         part21.classList.add("on");
         title21.innerText = "－ 救世宅是否可使用振興三倍卷?";
-    }
-});
-
-let name211 = document.getElementsByClassName("name211")[0];
-let part211 = document.getElementsByClassName("part211")[0];
-let title211 = document.getElementsByClassName("title211")[0];
-name211.addEventListener("click",function(){
-    if(part211.classList.contains("on")){
-        part211.classList.remove("on");
-        title211.innerText = "＋ OOOOOO";
-    }else{
-        part211.classList.add("on");
-        title211.innerText = "－ OOOOOO";
-    }
-});
-
-let name212 = document.getElementsByClassName("name212")[0];
-let part212 = document.getElementsByClassName("part212")[0];
-let title212 = document.getElementsByClassName("title212")[0];
-name212.addEventListener("click",function(){
-    if(part212.classList.contains("on")){
-        part212.classList.remove("on");
-        title212.innerText = "＋ QQQQQQ";
-    }else{
-        part212.classList.add("on");
-        title212.innerText = "－ QQQQQQ";
     }
 });
 
@@ -243,31 +186,6 @@ name22.addEventListener("click",function(){
     }
 });
 
-let name221 = document.getElementsByClassName("name221")[0];
-let part221 = document.getElementsByClassName("part221")[0];
-let title221 = document.getElementsByClassName("title221")[0];
-name221.addEventListener("click",function(){
-    if(part221.classList.contains("on")){
-        part221.classList.remove("on");
-        title221.innerText = "＋ SSSSSS";
-    }else{
-        part221.classList.add("on");
-        title221.innerText = "－ SSSSSS";
-    }
-});
-
-let name222 = document.getElementsByClassName("name222")[0];
-let part222 = document.getElementsByClassName("part222")[0];
-let title222 = document.getElementsByClassName("title222")[0];
-name222.addEventListener("click",function(){
-    if(part222.classList.contains("on")){
-        part222.classList.remove("on");
-        title222.innerText = "＋ UUUUUU";
-    }else{
-        part222.classList.add("on");
-        title222.innerText = "－ UUUUUU";
-    }
-});
 
 // part2-3
 let name23 = document.getElementsByClassName("name23")[0];
@@ -370,24 +288,6 @@ name42.addEventListener("click",function(){
         title42.innerText = "－ 如何報名比賽?比賽須知?";
     }
 });
-
-
-
-
-// let name231 = document.getElementsByClassName("name231");
-// let part231 = document.getElementsByClassName("part231")[0];
-// let title231 = document.getElementsByClassName("title231")[0];
-// for(let i = 0; i < name231.length; i++){
-//     name231[i].addEventListener("click",function(){
-//         if(part231.classList.contains("on")){
-//             part231.classList.remove("on");
-//             title231.innerText = "＋ 線上購物提供那些發票選擇?"
-//         }else{
-//             part231.classList.add("on");
-//             title231.innerText = "－ 線上購物提供那些發票選擇?";
-//         }
-//     });
-// }
 
 
 
@@ -567,7 +467,6 @@ first.addEventListener("click",function(){
     }else{
         part1.classList.add("on");
     }
-    console.log(123);
 });
 
 second.addEventListener("click",function(){
