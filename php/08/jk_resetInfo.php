@@ -2,7 +2,7 @@
 
     include("jk_link.php");
     
-    $user = $_POST['account'];
+    // $user = $_POST['account'];
         
     //資料庫資料
     $sql = "SELECT * FROM member WHERE MEM_ID =?";
