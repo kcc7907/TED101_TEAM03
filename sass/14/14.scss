@@ -712,6 +712,7 @@ div#JN{
     position: relative;
     // margin: auto 50px;
     line-height: 2;
+    margin-top: 20%;
     &:after{
             content: "";
             position: absolute;
@@ -828,6 +829,11 @@ div#JN{
                     
                 }
             }
+    }
+
+    .details{
+        text-decoration: none;
+        color: #fff;
     }
 
 
@@ -952,13 +958,17 @@ div#JN{
             display: flex;
             justify-content: center;
         }
+
+        .block_color{
+            margin-top: 0%;
+        }
         .inter_one{
             width: 310px;
         }
 
         .example_exhibit{
             // width: 100%;
-            width: 700px;
+            width: 600px;
         }
         .exhibit_pic2{
             width: 600px;
@@ -966,7 +976,6 @@ div#JN{
         .contact_detail{
             width: 800px;
             height: 500px;
-
         }
 
         .more_detail{
@@ -1254,7 +1263,7 @@ div#JN{
             width: 600px;
         }
         .exhibit_pic2{
-            width: 400px;
+            width: 300px;
         }
 
         .image{
@@ -1309,7 +1318,7 @@ div#JN{
         }
     .example_exhibit{
         // width: 100%;
-        width: 400px;
+        width: 300px;
     }
     .exhibit_pic2{
         width: 300px;
