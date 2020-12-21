@@ -76,30 +76,7 @@
                         $statement = $pdo->prepare($sql_orderDetail);
                         $statement->bindValue(1, "$item");
                         $statement->execute();
-                        $orderDetailData = $statement->fetchAll();
-
-                        //找優惠資料 需調整篩選
-                        // $sql_discount = "SELECT *
-                        //                 from `ORDER` o
-                        //                 join
-                        //                 (select *
-                        //                 from `ORDER_DETAIL` od
-                        //                 join
-                        //                 (select *
-                        //                 from product p
-                        //                     join discount d
-                        //                     on p.PRD_ID = d.DIS_PRODUCT_ID1 
-                        //                         or p.PRD_ID = d.DIS_PRODUCT_ID2) pd
-                        //                 on pd.PRD_ID = od.PRODUCT_ID) m
-                        //                 on m.ORDER_ID = o.ORD_ID
-                                        
-                        //                 where ORDER_ID = ?";                        
-                        // $statementDis = $pdo->prepare($sql_discount);
-                        // $statementDis->bindValue(1, "$item");
-                        // $statementDis->execute();
-                        // $discountDate = $statementDis->fetchAll();
-
-                        // foreach($discountDate as $d => $dis){};
+                        $orderDetailData = $statement->fetchAll();                        
                 ?>
 
                 
