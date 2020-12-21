@@ -1,6 +1,18 @@
 <?php
 
-    include("../php/08/jk_link.php");
+    //登入帳號
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }
+
+    //MySQL相關資訊
+
+    $db_host = "10.2.0.162";
+    $db_user = "team03";
+    $db_pass = "ted101g3";
+    $db_select = "team03";
+    $dbconnect = "mysql:host=".$db_host.";dbname=".$db_select;
+    $pdo = new PDO($dbconnect, $db_user, $db_pass);
 
     //分頁判斷
     $page = isset($_POST["page"]) ? $_POST["page"] : 1;
