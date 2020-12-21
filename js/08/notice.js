@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    mainText();
+
     //登出
     $('header .logout').click(function () {
         delCookie("loging");
@@ -8,11 +10,11 @@ $(document).ready(function () {
 });
 
 function mainText() {
-    let main = document.querySelector('.jk_favorite main');
-    let item = document.querySelector('.jk_favorite .table .item');
+    let main = document.querySelector('.jk_notice main');
+    let item = document.querySelector('.jk_notice main ol li');
 
     if (item == null) {
-        $(main).text('您目前沒有收藏任何商品');
+        $(main).text('您目前沒有任何通知');
         $(main).css('textAlign', 'center');
 
     }

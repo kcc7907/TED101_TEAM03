@@ -1,4 +1,7 @@
 $(document).ready(function (){
+
+    mainText();
+
     //登出
     $('header .logout').click(function () {
         delCookie("loging");
@@ -54,6 +57,17 @@ function orderSetStyle() {   //table RWD
         // //小計(元) --> 小計
         $('.detail_items .title .pro_total').text('小計');
         
+    }
+}
+
+function mainText() {
+    let main = document.querySelector('.jk_order main');
+    let item = document.querySelector('.jk_order main .table');
+
+    if (item == null) {
+        $(main).html('您目前沒有任何訂單，<a href="product/product.html">趕快來看看</a>有什麼喜歡的商品吧!');
+        $(main).css('textAlign', 'center');
+
     }
 }
 
