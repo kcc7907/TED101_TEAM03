@@ -176,6 +176,24 @@ function goStep() {
             $('#preview').hide();
             $('#preview .clickVote').css('opacity', '0')
         });
+
+        $.ajax({
+            url: "contestR.php",
+            type: "POST",
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(res){
+                // console.log(res);
+                $('#JHC .step form').hide();
+                $('#JHC .lastP').show();
+                $('div.confirmDivC').css({
+                    'zIndex': '-99',
+                    'opacity': '0',
+                }).hide();
+            },
+        });
     });
     
     
