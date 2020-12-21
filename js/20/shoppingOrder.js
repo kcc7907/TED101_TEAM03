@@ -97,12 +97,18 @@ let left2 = new Vue({
     },
     watch: {
         cardmix(){
-            let visa = creditCartTypes['VI'][0].test(`${this.cardmix}`);
-            let md = creditCartTypes['MC'][0].test(`${this.cardmix}`);
-            let jcb = creditCartTypes['JCB'][0].test(`${this.cardmix}`);
-            if(visa)this.$refs.imgV.style.setProperty('filter', 'grayscale(0%)');
-            if(md)this.$refs.imgM.style.setProperty('filter', 'grayscale(0%)');
-            if(jcb)this.$refs.imgJ.style.setProperty('filter', 'grayscale(0%)');
+            if (this.cardmix.length === 16){
+                let visa = creditCartTypes['VI'][0].test(`${this.cardmix}`);
+                let md = creditCartTypes['MC'][0].test(`${this.cardmix}`);
+                let jcb = creditCartTypes['JCB'][0].test(`${this.cardmix}`);
+                if(visa)this.$refs.imgV.style.setProperty('filter', 'grayscale(0%)');
+                if(md)this.$refs.imgM.style.setProperty('filter', 'grayscale(0%)');
+                if(jcb)this.$refs.imgJ.style.setProperty('filter', 'grayscale(0%)');
+            }else{
+                this.$refs.imgV.style.setProperty('filter', 'grayscale(100%)');
+                this.$refs.imgM.style.setProperty('filter', 'grayscale(100%)');
+                this.$refs.imgJ.style.setProperty('filter', 'grayscale(100%)');
+            }
         },
         cardBox(){
             if (this.cardBox === true) {
@@ -217,7 +223,14 @@ let right = new Vue({
             let v= left2.$refs;
             let check = false;
             let count =0;
+            let inputs = document.querySelectorAll('input');
             if(check===false){
+                document.querySelector('.freight_city').classList.remove('input_erro');
+                inputs.forEach(a => {
+                    if (a.classList.contains('input_erro')) {
+                        a.classList.remove('input_erro');
+                    }
+                });
                 if(v.rname.value==''){
                     v.rname.classList.add('input_erro');
                 }
@@ -242,7 +255,6 @@ let right = new Vue({
                         count++;
                     }
                 }
-                let inputs = document.querySelectorAll('input');
                 inputs.forEach(a => {
                     if(a.classList.contains('input_erro')){
                         count++;
