@@ -23,12 +23,12 @@
             </div>
             <nav>
                 <dav class="nav1">
-                    <a href="./product.html">救世傢俱</a>
+                    <a href="product/product.html">救世傢俱</a>
                     <a href="./case.html">參考案例</a>
                 </dav>
                 <dav class="nav2">
                     <a href="./qa.html">客戶服務</a>
-                    <a href="./contest_participate.php">傢聚賞</a>
+                    <a href="./contest_main20.php">傢聚賞</a>
                 </dav>
             </nav>
             <div class="icon">
@@ -39,7 +39,7 @@
                         <span href="" class="logout">登出</span>
                     </span>
                 </span>
-                <a class="shop" href="./contest_main20.html">
+                <a class="shop" href="shoppingCart.php">
                     <img src="../img/headerFooter/shoppingCart.svg" alt="">
                 </a>
                 <a class="ham">
@@ -57,12 +57,12 @@
                     </div>
                     <nav>
                         <dav class="nav1">
-                            <a href="./product.html">救世傢俱</a>
+                            <a href="product/product.html">救世傢俱</a>
                             <a href="./case.html">參考案例</a>
                         </dav>
                         <dav class="nav2">
                             <a href="./qa.html">客戶服務</a>
-                            <a href="./contest_participate.php">傢聚賞</a>
+                            <a href="./contest_main20.php">傢聚賞</a>
                         </dav>
                     </nav>
                     <div class="icon">
@@ -73,7 +73,7 @@
                                 <span href="" class="logout">登出</span>
                             </span>
                         </span>
-                        <a class="shop" href="./contest_main20.html">
+                        <a class="shop" href="shoppingCart.php">
                             <img src="../img/headerFooter/shoppingCart.svg" alt="">
                         </a>
                         <a class="ham">
