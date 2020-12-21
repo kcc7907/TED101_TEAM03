@@ -247,6 +247,7 @@ function setLocal() {
                     num: parseInt(quantity[0].innerText),
                 };
                 list.push(object);
+
             }
         });
         if (list.length === 0) {
