@@ -652,9 +652,69 @@ body{
                 
             }
         }
+
+        >.game{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0,0,0,.7);
+
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+
+            z-index: 10;
+
+            .bgc{
+                width: 60%;
+                padding: 15px;
+                border-radius: 5px;
+                background-color: #865454;
+
+                >.inner{
+                    background-color: #FFFAF4;
+                }
+
+                >.close{
+                    width: 100%;
+                    text-align: center;
+                    padding: 15px;
+
+                    @include r1200{
+                        padding: 15px 15px 0 0;
+                    }
+
+                    i{
+                        font-size: 30px;
+
+                        @include r1200{
+                            font-size: 26px;
+                        }
+
+                        @include r992{
+                            font-size: 20px;
+                        }
+                        
+                        &:hover{                    
+                            border-radius: 50%;
+                            background-color: #465D4C;
+                            color: #fff;
+                                                    
+                        }
+                    }
+
+                }
+            }
+
+        }
     
     }
-
     
+    //傢俱賞
+    .common .contest{
+        font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
+    }
 
 }
