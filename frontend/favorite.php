@@ -1,7 +1,12 @@
 <?php
     include("../php/08/jk_link.php");
 
-    $sql = "SELECT PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE from favorite f join(select * from product p join product_img i on i.PRODUCT_ID = p.PRD_ID)m on m.PRD_ID = f.PRODUCT_ID where MEMBER_ID = ? group by PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE";
+    $sql = "SELECT m.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE 
+    from favorite f 
+    join(select p.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE from product p join product_img i on i.PRD_ID = p.PRD_ID)m 
+    on m.PRD_ID = f.PRODUCT_ID 
+    where MEMBER_ID = ? 
+    group by m.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE";
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, "$user");
     $statement->execute();
