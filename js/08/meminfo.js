@@ -1,4 +1,10 @@
 $(document).ready(function(){
+    //登出
+    $('header .logout').click(function () {
+        delCookie("loging");
+        location.href = 'home2D.php';
+    }); 
+    //
     
     if(sessionStorage.getItem('reset')){
 
@@ -249,5 +255,19 @@ function memSetStyle(){
 
 }
 
-//手機09開頭 長度10
+//取cookies     
+function getCookie(name){
+    let arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+    if (arr != null) return unescape(arr[2]); 
+    return null;
+}
+//刪除cookie
+function delCookie(name){
+var exp = new Date();
+exp.setTime(exp.getTime() - 1);
+var cval = getCookie(name);
+if (cval != null) 
+    document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString()+";path=/";
+}
+
 
