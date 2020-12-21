@@ -67,7 +67,7 @@ $(document).ready(function () {
             let time = new Date(Date.now());
             // let time = Date.now();
             let timeE = time.toUTCString();
-            document.cookie = `loging=; expires=${timeE}`;
+            document.cookie = `loging=; expires=${timeE}; path=/`;
             $('span.logMem').hide();
             $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
             $('div.confirmDiv').css({
