@@ -113,7 +113,7 @@
                     <p class="contentFont">&frasl;&frasl;&emsp;作品資料&emsp;&frasl;&frasl;</p>
                     <div class="view">
                         <label class="contentFont" for="fType">作品種類：</label>
-                        <select class="contentFont" id="fType" name="fType" required="required" data-id="fType">
+                        <select class="contentFont" id="fType" name="fType" required="required" data-id="fType" v-model="selected">
                             <option disabled selected>請選擇作品種類</option>
                             <option v-for="type in workTypes" class="contentFont" :value="type">{{type}}</option>
                         </select>
@@ -122,7 +122,7 @@
                         <input type="text" class="contentFont" id="fName" required="required" autocomplete="off" data-id="fName" v-model="fName">
                         <br>
                         <label for="fConcept" class="fConcept contentFont">設計理念：</label>
-                        <textarea name="fConcept" class="contentFont" id="fConcept" required="required" autocomplete="off" data-id="fConcept">{{fConcept}}</textarea>
+                        <textarea name="fConcept" class="contentFont" id="fConcept" required="required" autocomplete="off" data-id="fConcept" v-model="fConcept"></textarea>
                         <br>
                         <div>
                             <div>
@@ -133,9 +133,14 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="draftName">{{pImgName[1]}}</span>
                                 <div>
-                                    <img :src="pImgUrl[1]">
+                                    <img :src="pImgUrl[1]" class="zoomOut">
                                     <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
+                                <!-- <div class="zoom">
+                                    <div>
+                                        <img :src="pImgUrl[1]">
+                                    </div>
+                                </div> -->
                             </div>
                             <div>
                                 <label class="contentFont" for="draw">設計圖：</label>
@@ -145,9 +150,14 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="drawName">{{pImgName[2]}}</span>
                                 <div>
-                                    <img :src="pImgUrl[2]">
+                                    <img :src="pImgUrl[2]" class="zoomOut">
                                     <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
+                                <!-- <div class="zoom">
+                                    <div>
+                                        <img :src="pImgUrl[2]">
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -168,16 +178,16 @@
                             <div class="content">
                                 <div class="text">
                                     <p class="contentFont">
-                                        # 參賽號碼：<span class="contentFont">2020-1020-1111</span>
+                                        # 參賽號碼：<span class="contentFont">A111111</span>
                                     </p>
                                     <p class="contentFont">
-                                        # 得票數：<span class="contentFont">53234票</span>
+                                        # 得票數：<span class="contentFont">0票</span>
                                     </p>
                                     <p class="contentFont">
-                                        # 參賽者：<span class="contentFont">李超超</span>
+                                        # 參賽者：<span class="contentFont"></span>
                                     </p>
                                     <p class="contentFont">
-                                        <!-- # 作品種類：<span class="contentFont">{{type}}</span> -->
+                                        # 作品種類：<span class="contentFont">{{selected}}</span>
                                     </p>
                                     <p class="contentFont">
                                         # 作品名稱：<span class="contentFont">{{fName}}</span>
@@ -188,7 +198,7 @@
                                     </p>
                                 </div>
                                 <div class="img">
-                                    <img src="https://picsum.photos/300/300?random=23">
+                                    <img :src="pImgUrl[2]">
                                 </div>
                             </div>
                             <div class="preViewBtn">

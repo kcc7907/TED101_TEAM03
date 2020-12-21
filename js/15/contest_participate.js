@@ -26,6 +26,28 @@ $(document).ready(function () {
     //     logBox();
     //     memBox();
     // });
+
+    // 投稿 img 放大
+    // $('.zoomOut').click(()=>{
+    //     // 1.隱藏取消鈕 
+    //     $('#notsureGoContest').hide();
+    //     // 2.改變文字
+    //     $('#JHC div.confirmDivC').find('p.contentFont').hide();
+    //     $('#JHC div.confirmDivC').append('img',':src="pImgUrl[2]"');
+    //     // 3.出現confirm視窗
+    //     $('div.confirmDivC').show().css({
+    //         'zIndex': '99',
+    //         'opacity': '1',
+    //     });
+    //     // 4.點擊確認鈕
+    //     $('#JHC #sureGoContest').click(function(){
+    //         $('div.confirmDivC').css({
+    //             'zIndex': '-99',
+    //             'opacity': '0',
+    //         }).hide();
+    //         $('#notsureGoContest').show();
+    //     });
+    // });
 });
 
 // ======== vue =========
@@ -33,10 +55,11 @@ let vueJH = new Vue({
     el: '#JHC',
     data: { 
         pImgName: ['請選擇上傳檔案','請選擇上傳檔案','請選擇上傳檔案'],
-        pImgUrl: [],
+        pImgUrl: ['','',''],
         workTypes:['沙發', '桌子', '床', '椅子', '書櫃'],
         fName: '',
         fConcept: '',
+        selected: '',
     },
     methods: {
         file1(){
@@ -176,25 +199,6 @@ function goStep() {
             $('#preview').hide();
             $('#preview .clickVote').css('opacity', '0')
         });
-
-        $.ajax({
-            url: "contestR.php",
-            type: "POST",
-            data: form_data,
-            contentType: false,
-            cache: false,
-            processData:false,
-            success: function(res){
-                console.log(res);
-                $('#JHC .step form').hide();
-                $('#JHC .lastP').show();
-                $('div.confirmDivC').css({
-                    'zIndex': '-99',
-                    'opacity': '0',
-                }).hide();
-
-            },
-        });
     });
     
     
@@ -249,7 +253,7 @@ function goStep() {
                     cache: false,
                     processData:false,
                     success: function(res){
-                        console.log(res);
+                        // console.log(res);
                         $('#JHC .step form').hide();
                         $('#JHC .lastP').show();
                         $('div.confirmDivC').css({
