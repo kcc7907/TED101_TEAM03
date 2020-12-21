@@ -65,7 +65,7 @@ function mainText() {
     let item = document.querySelector('.jk_order main .table');
 
     if (item == null) {
-        $(main).html('您目前沒有任何訂單，<a href="">趕快來看看</a>有什麼喜歡的商品吧!');
+        $(main).html('您目前沒有任何訂單，<a href="product/product.html">趕快來看看</a>有什麼喜歡的商品吧!');
         $(main).css('textAlign', 'center');
 
     }
