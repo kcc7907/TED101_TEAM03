@@ -19,7 +19,7 @@
 
         echo '<div class="work">';
             echo '<div class="img '.$row["WK_ID"].'" data-id="'.$row["WK_ID"].'">';
-            echo '<img src="'.$row["WK_IMG"].'">';
+            echo '<img src="'.$row["WK_DRAW"].'">';
             echo '<div class="get_num">得票數: <span>'.$row["WK_VOTES"].'</span></div>';                     
         echo '</div>
                 <p>
