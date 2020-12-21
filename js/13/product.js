@@ -5,7 +5,7 @@ $(document).ready(function () {
             $(this).css({
                 border: '4px solid #865454',
             });
-            $('.product').css({
+            $('div.product').css({
                 display: 'block',
             });
             $('.bookcase_select').css({
@@ -23,7 +23,7 @@ $(document).ready(function () {
             $('.productBox').css({
                 justifyContent: 'left',
             });
-            $('.product').css({
+            $('div.product').css({
                 marginLeft: '15px',
             });
         } else {
@@ -51,7 +51,7 @@ $(document).ready(function () {
             $(this).css({
                 border: '4px solid #865454',
             });
-            $('.product').css({
+            $('div.product').css({
                 display: 'block',
             });
             $('.bookcase_select').css({
@@ -69,7 +69,7 @@ $(document).ready(function () {
             $('.productBox').css({
                 justifyContent: 'left',
             });
-            $('.product').css({
+            $('div.product').css({
                 marginLeft: '15px',
             });
         } else {
@@ -97,7 +97,7 @@ $(document).ready(function () {
             $(this).css({
                 border: '4px solid #865454',
             });
-            $('.product').css({
+            $('div.product').css({
                 display: 'block',
             });
             $('.bookcase_select').css({
@@ -115,7 +115,7 @@ $(document).ready(function () {
             $('.productBox').css({
                 justifyContent: 'left',
             });
-            $('.product').css({
+            $('div.product').css({
                 marginLeft: '15px',
             });
         } else {
@@ -143,7 +143,7 @@ $(document).ready(function () {
             $(this).css({
                 border: '4px solid #865454',
             });
-            $('.product').css({
+            $('div.product').css({
                 display: 'block',
             });
             $('.bookcase_select').css({
@@ -161,7 +161,7 @@ $(document).ready(function () {
             $('.productBox').css({
                 justifyContent: 'left',
             });
-            $('.product').css({
+            $('div.product').css({
                 marginLeft: '15px',
             });
         } else {
@@ -189,7 +189,7 @@ $(document).ready(function () {
             $(this).css({
                 border: '4px solid #865454',
             });
-            $('.product').css({
+            $('div.product').css({
                 display: 'block',
             });
             $('.chair_select').css({
@@ -207,7 +207,7 @@ $(document).ready(function () {
             $('.productBox').css({
                 justifyContent: 'left',
             });
-            $('.product').css({
+            $('div.product').css({
                 marginLeft: '15px',
             });
         } else {
@@ -235,7 +235,7 @@ $(document).ready(function () {
             $(this).css({
                 border: '4px solid #865454',
             });
-            $('.product').css({
+            $('div.product').css({
                 display: 'none',
             });
             $('.chair_select').css({
@@ -259,7 +259,7 @@ $(document).ready(function () {
             $('.productBox').css({
                 justifyContent: 'left',
             });
-            $('.product').css({
+            $('div.product').css({
                 marginLeft: '15px',
             });
         } else {
