@@ -36,15 +36,17 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/navFooter.css">
     <link rel="stylesheet" href="../css/footer.css">
+    
+    <!-- 通用設定 -->
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
+    <!--  -->
 
     <script src="../lib/js/vue.js"></script>
     <script src="../lib/js/jquery.js"></script>
     <script src="../js/08/vote.js"></script>
 
-    <!-- 通用設定 -->
-    <link rel="stylesheet" href="../css/logSign.css">
-    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
-    <script defer src="../lib/login/logSign.js"></script>
 </head>
 <body>
     <!-- header -->
