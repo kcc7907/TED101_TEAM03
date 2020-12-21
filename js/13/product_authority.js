@@ -57,7 +57,9 @@ $(document).ready(function () {
             $('div.sam_jump').removeClass('-on -opacity-zero');
         }, 1000);
     });
+
     $('button.cancel').click(function (e) {
+        console.log(123);
         let firm1 = confirm('是否下架此商品');
         if (firm1) {
             this.innerText = '已下架';
