@@ -52,18 +52,18 @@
     </header>
     <nav class="topNav">
         <div>
-            <a href="./contest_main20.html">
+            <a href="./contest_main20.php">
                 <h1 class="titleFont2">賽制說明</h1>
             </a>
-            <a href="./vote.html">
+            <a href="./vote.php">
                 <h1 class="titleFont2">人氣票選</h1>
             </a>
         </div>
         <div>
-            <a href="./navbarChampion.html">
+            <a href="./product/navbarChampion.html">
                 <h1 class="titleFont2">歷屆冠軍</h1>
             </a>
-            <a href="./contest_participate.html">
+            <a href="./contest_participate.php">
                 <h1 class="titleFont2">我要投稿</h1>
             </a>
         </div>
