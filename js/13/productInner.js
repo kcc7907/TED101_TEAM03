@@ -267,6 +267,7 @@ function setLocal() {
         apple.push(object);
     }
     localStorage.setItem("lists", JSON.stringify(apple));
+    console.log(123);
 }
 box[0].addEventListener('click', setLocal);
 box[1].addEventListener('click', setLocal);
@@ -275,8 +276,9 @@ box[1].addEventListener('click', setLocal);
 let loveBtn = document.querySelectorAll('button.love');
 // console.log(loveBtn);
 
-function loveItem() {
+function loveItem(e) {
     // document.cookie = 'loging=".$memberID."';
+    e.stopPropagation();
     if (checkCookie('loging')) {
         // console.log(123);
         var memberObject = {
@@ -297,13 +299,13 @@ function loveItem() {
                 alert('Ajax request 發生錯誤');
             },
             success: function (res) {
-                console.log(res);
+                // console.log(res);
+                alert('已完成收藏');
             },
             // dataType: "JSON",
         });
     } else {
         alert('請登入喔~~~');
-        // console.log(46);
     }
     // console.log(memberObject);
 };
