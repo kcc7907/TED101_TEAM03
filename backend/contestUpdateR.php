@@ -6,7 +6,7 @@
     {
         //Web根目錄真實路徑
         $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
-        return $ServerRoot . "/TED101_TEAM03/donotupload/contestWorkImg/";
+        return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
     }
     $now = date_create('now', new DateTimeZone('Asia/Taipei'));
     $date = date_format($now, 'YmdHis');
@@ -21,7 +21,7 @@
         $new_file1 = $_FILES["newFile1"]["name"];
         $new_filePath_Temp1 = $_FILES["newFile1"]["tmp_name"];
         $new_filePath1 = "pId/" . $MEM_ID . $date . $new_file1;
-        $new_usePath1 = '../donotupload/contestWorkImg/' . $new_filePath1;
+        $new_usePath1 = '../img/contestWorkImg/' . $new_filePath1;
         if (copy($new_filePath_Temp1 , getFilePath() . $new_filePath1)) {
             $checkN = 1;
         } else {
@@ -55,7 +55,7 @@
         $new_file3 = $_FILES["newFile3"]["name"];
         $new_filePath_Temp3 = $_FILES["newFile3"]["tmp_name"];
         $new_filePath3 = "draft/" . $MEM_ID . $date . $new_file3;
-        $new_usePath3 = '../donotupload/contestWorkImg/' . $new_filePath3;
+        $new_usePath3 = '../img/contestWorkImg/' . $new_filePath3;
         if (copy($new_filePath_Temp3 , getFilePath() . $new_filePath3)) {
             $checkN = 1;
         } else {
@@ -84,7 +84,7 @@
         $new_file5 = $_FILES["newFile5"]["name"];
         $new_filePath_Temp5 = $_FILES["newFile5"]["tmp_name"];
         $new_filePath5 = "draw/" . $MEM_ID . $date . $new_file5;
-        $new_usePath5 = '../donotupload/contestWorkImg/' . $new_filePath5;
+        $new_usePath5 = '../img/contestWorkImg/' . $new_filePath5;
         if (copy($new_filePath_Temp5 , getFilePath() . $new_filePath5)) {
             $checkN = 1;
         } else {

@@ -6,7 +6,7 @@ function getFilePath()
 {
     //Web根目錄真實路徑
     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
-    return $ServerRoot . "/TED101_TEAM03/donotupload/contestWorkImg/";
+    return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
 }
 
 //先判斷圖片是否上傳成功?
@@ -70,9 +70,9 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
     $Array = array($filePath_Temp1 => getFilePath() . $filePath1, $filePath_Temp2 => getFilePath() . $filePath2, $filePath_Temp3 => getFilePath() . $filePath3);
 
     // 資料庫儲存的檔案路徑
-    $usePath1 = '../donotupload/contestWorkImg/' . $filePath1;
-    $usePath2 = '../donotupload/contestWorkImg/' . $filePath2;
-    $usePath3 = '../donotupload/contestWorkImg/' . $filePath3;
+    $usePath1 = '../img/contestWorkImg/' . $filePath1;
+    $usePath2 = '../img/contestWorkImg/' . $filePath2;
+    $usePath3 = '../img/contestWorkImg/' . $filePath3;
 
     // 確認暫存檔搬移到正確位置
     foreach ($Array as $key => $value) {
