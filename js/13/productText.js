@@ -235,7 +235,7 @@ function setLocal() {
         list.forEach((item, index) => {
             if (item.prd_id === productId) {
                 item.num = parseInt(item.num) + parseInt(quantity[0].innerText);
-            }else if(list.length -1 ===index){
+            } else if (list.length - 1 === index) {
                 let object = {
                     prd_id: productId,
                     num: parseInt(quantity[0].innerText),
@@ -243,8 +243,8 @@ function setLocal() {
                 list.push(object);
             }
         });
-        if(list.length ===0){
-                let object = {
+        if (list.length === 0) {
+            let object = {
                 prd_id: productId,
                 num: parseInt(quantity[0].innerText),
             };
@@ -260,6 +260,7 @@ function setLocal() {
         apple.push(object);
     }
     localStorage.setItem("lists", JSON.stringify(apple));
+    alert('已加入購物車');
 }
 box[0].addEventListener('click', setLocal);
 
@@ -267,8 +268,9 @@ box[0].addEventListener('click', setLocal);
 let loveBtn = document.querySelectorAll('button.love');
 // console.log(loveBtn);
 
-function loveItem() {
+function loveItem(e) {
     // document.cookie = 'loging=".$memberID."';
+    e.stopPropagation();
     if (checkCookie('loging')) {
         // console.log(123);
         var memberObject = {
@@ -289,7 +291,8 @@ function loveItem() {
                 alert('Ajax request 發生錯誤');
             },
             success: function (res) {
-                console.log(res);
+                // console.log(res);
+                alert('已完成收藏');
             },
             // dataType: "JSON",
         });

@@ -267,7 +267,7 @@ function setLocal() {
         apple.push(object);
     }
     localStorage.setItem("lists", JSON.stringify(apple));
-    console.log(123);
+    alert('已加入購物車');
 }
 box[0].addEventListener('click', setLocal);
 box[1].addEventListener('click', setLocal);
