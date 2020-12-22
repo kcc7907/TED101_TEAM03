@@ -4,6 +4,8 @@
 
     if(isset($_COOKIE["loging"])){
         $user = $_COOKIE["loging"];
+    }else{
+        $user = '';
     }
 
     $work = $_POST["work"];
@@ -27,7 +29,7 @@
     $statement_voted->bindValue(1, "$user");    
     $statement_voted->execute();
     $data_voted = $statement_voted->fetchAll();
-    $voted = $data_voted[0]["MEM_VOTED"];
+    $voted = isset($data_voted[0]["MEM_VOTED"]) ? $data_voted[0]["MEM_VOTED"] : '';
     //
 
     foreach($data as $index => $row){
