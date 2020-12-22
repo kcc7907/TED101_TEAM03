@@ -140,7 +140,7 @@
                                                 array_push($sumPrice, $row["PRD_PRICE"] * $row["ORDER_QUANTITY"]);                           
                                             };
                                             // if(isset($dis)){
-                                                echo array_sum($sumPrice) + $row["ORD_DISCOUNT"].' 元';
+                                                echo array_sum($sumPrice) + $row["ORD_DICOUNT"].' 元';
                                             // }else {
                                             //     echo array_sum($sumPrice).' 元';
                                             // }
@@ -263,7 +263,7 @@
                                                     <li>
                                                     <?php
                                                     // if(isset($dis)){
-                                                        echo $row["ORD_DISCOUNT"].'元';
+                                                        echo $row["ORD_DICOUNT"].'元';
                                                     // }else {
                                                     //     echo '-0 元';
                                                     // }
