@@ -2,7 +2,11 @@
 
     include("jk_link.php");
     
-    // $user = $_POST['account'];
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }else{
+        echo "<script>location.href = 'home2D.php';</script>";
+    }
         
     //資料庫資料
     $sql = "SELECT * FROM member WHERE MEM_ID =?";

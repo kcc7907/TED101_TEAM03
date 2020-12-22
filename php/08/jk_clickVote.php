@@ -2,6 +2,10 @@
 
     include("jk_link.php");
 
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }
+
     $voteId = $_POST["voteId"];
     $voteNum = $_POST["voteNum"] + 1;
 
