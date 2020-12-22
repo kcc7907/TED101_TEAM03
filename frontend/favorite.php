@@ -1,6 +1,12 @@
 <?php
     include("../php/08/jk_link.php");
 
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }else{
+        echo "<script>location.href = 'home2D.php';</script>";
+    }
+
     $sql = "SELECT m.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE 
     from favorite f 
     join(select p.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE from product p join product_img i on i.PRD_ID = p.PRD_ID)m 

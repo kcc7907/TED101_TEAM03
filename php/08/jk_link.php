@@ -3,10 +3,8 @@
         //登入帳號
         if(isset($_COOKIE["loging"])){
                 $user = $_COOKIE["loging"];
-        }else{
-                echo "<script>location.href = 'home2D.php';</script>";
         }
-
+        
         //MySQL相關資訊
         
         $db_host = "10.2.0.162";

@@ -2,6 +2,10 @@
 
     include("jk_link.php");
 
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }
+
     $work = $_POST["work"];
 
     //作品詳細資訊

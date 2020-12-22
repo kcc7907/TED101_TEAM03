@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="../../css/logSign.css">
     <script src="../../lib/login/lazy-line-painter-1.9.6.min.js"></script>
     <script defer src="./logSign.js"></script>
-    <script defer src="../../js/13/productInner.js"></script>
 
 
 
@@ -59,25 +58,55 @@
     <div id="sam_vue">
         <div class="productContent">
             <div class="productTitle">
-                <h1 class="title">{{products[0].title}}</h1>
-                <span class="smallword">{{products[0].sort}}</span>
-                <p class="word">{{products[0].word}}</p>
+                <h1 class="title">木潤</h1>
+                <span class="smallword">桌組</span>
+                <p class="word">無意識拉下走向草原的窗簾，
+
+
+                    款擺著身子來到一棵樹下，敞開衣領納涼。
+
+
+                    內心對這裡的氣息抱著期待，
+
+
+                    之起頭來望著笑嚷的朋友們，
+
+
+                    耳邊流入慵懶的蟲鳴爵士，
+
+
+                    林子裡吹起了風，
+
+
+                    金黃色的細小葉片像極了一場碎雪，紛紛飄墜。
+
+
+                    大自然強化了視覺的靈敏度，
+
+
+                    我正在欣賞著一幅畫，
+
+
+                    敘說著木頭與肌膚接觸的溫潤質感。</p>
             </div>
-            <div class="productPic">
-                <h1>3D SPACE</h1>
+            <div class="productPic" id="threejs">
                 <img src="../../img/product/icon/rotateleft.svg" class="threed" id="three1">
                 <img src="../../img/product/icon/rotateright.svg" class="threed" id="three2">
             </div>
             <div class="material">
-                <p>材質選擇</p>
+                <p class="materialWord">㊣ ——材質選擇—— ㊣</p>
                 <div class="buttonBox">
-                    <div class="woodwood"><img :src="products[0].material1" class="wood"><span class="tip">胡桃木</span>
+                    <div class="woodwood"><img src="../../img/product/material/wood01-10080.jpg" class="wood"><span
+                            class="tip">胡桃木</span>
                     </div>
-                    <div class="woodwood"><img :src="products[0].material2" class="wood"><span class="tip">柚木</span>
+                    <div class="woodwood"><img src="../../img/product/material/wood03-10080.jpg" class="wood"><span
+                            class="tip">柚木</span>
                     </div>
-                    <div class="woodwood"><img :src="products[0].material3" class="wood"><span class="tip">楓木</span>
+                    <div class="woodwood"><img src="../../img/product/material/wood02-10080.jpg" class="wood"><span
+                            class="tip">楓木</span>
                     </div>
-                    <div class="woodwood"><img :src="products[0].material4" class="wood"><span class="tip">橡木</span>
+                    <div class="woodwood"><img src="../../img/product/material/wood04-10080.jpg" class="wood"><span
+                            class="tip">橡木</span>
                     </div>
                 </div>
             </div>
@@ -110,7 +139,7 @@
             </div>
             <div class="bottomBox" id="bottomCad">
                 <div class="cadBox">
-                    <img :src="products[0].cad1" alt="" class="cad">
+                    <img src="../../img/product/cad/bookcase01-cad.jpg" alt="" class="cad">
                 </div>
             </div>
             <div class="bottomBox" id="bottomDelivery">
@@ -343,49 +372,50 @@
             <input type="button" class="detailFont" id="notsureGoHome" value="取消">
         </div>
     </div>
+    <!-- <script>
+                new Vue({
+                    el: '.productTitle',
+                    data: {
+                        products: [],
+                    },
+                    mounted() {
+                        $.getJSON('./productText.json').then(res => {
+                            this.products = res;
+                            // console.log(this.products[0].title);
+                        });
+                    },
+                });
+                new Vue({
+                    el: '.material',
+                    data: {
+                        products: [],
+                    },
+                    mounted() {
+                        $.getJSON('./productText.json').then(res => {
+                            this.products = res;
+                            // console.log(this.products[0].title);
+                        });
+                    },
+                });
+                new Vue({
+                    el: '.bottomBox',
+                    data: {
+                        products: [],
+                    },
+                    mounted() {
+                        $.getJSON('./productText.json').then(res => {
+                            this.products = res;
+                            // console.log(this.products[0].title);
+                        });
+                    },
+                });
+            </script> -->
     <script src="../../lib/header/header.js"></script>
-
-    <script>
-        new Vue({
-            el: '.productTitle',
-            data: {
-                products: [],
-            },
-            mounted() {
-                $.getJSON('./productText.json').then(res => {
-                    this.products = res;
-                    // console.log(this.products[0].title);
-                });
-
-            },
-        });
-        new Vue({
-            el: '.material',
-            data: {
-                products: [],
-            },
-            mounted() {
-                $.getJSON('./productText.json').then(res => {
-                    this.products = res;
-                    // console.log(this.products[0].title);
-                });
-            },
-        });
-        new Vue({
-            el: '.bottomBox',
-            data: {
-                products: [],
-            },
-            mounted() {
-                $.getJSON('./productText.json').then(res => {
-                    this.products = res;
-                    // console.log(this.products[0].title);
-                });
-
-            },
-        });
-    </script>
     <script defer src="../../js/13/productText.js"></script>
+    <script src="./js/three.js"></script>
+    <script src="./js/GLTFLoader.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
