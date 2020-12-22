@@ -78,6 +78,7 @@ header.common {
             }
             span{
                 display: block;
+                cursor: pointer;
                 &:hover{
                 font-family: 'Noto Sans TC regular';
                 }

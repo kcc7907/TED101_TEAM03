@@ -59,13 +59,14 @@ div.sam_index {
                     a {
                         text-decoration: none;
                         z-index: 1;
-
+                        cursor: pointer;
                         h2 {
                             color: #fffaf4;
                             font-family: 'Noto Sans TC Light';
                             font-size: 78px;
                             margin-top: 10%;
                             z-index: 1;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -113,13 +114,14 @@ div.sam_index {
                 a {
                     text-decoration: none;
                     z-index: 1;
-
+                    cursor: pointer;
                     h2 {
                         color: #865454;
                         font-family: 'Noto Sans TC Light';
                         font-size: 78px;
                         margin-top: 10%;
                         z-index: 1;
+                        cursor: pointer;
                     }
                 }
             }
@@ -398,12 +400,4 @@ div.sam_index {
     .backendlogin {
         padding: 6px;
     }
-<<<<<<< HEAD
 }
-=======
-}
-
-.common .product{
-    font-family: 'Noto Sans TC regular', '微軟正黑體', sans-serif;
-}
->>>>>>> dev_13

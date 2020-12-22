@@ -37,7 +37,8 @@ let app3 = new Vue({
             case_name: '',
             case_date: '',
             case_type: '',
-            case_path: ''
+            case_path: '',
+            case_intro: '',
         },
         imgsrc: {
             box_one: '',
@@ -64,7 +65,7 @@ let app3 = new Vue({
             url: '../php/14/conn14.php',
             dataType: 'JSON',
             success: function (res) {
-                console.log(res.case);
+                // console.log(res.case);
                 self.rp = res.case;
             }
         })
@@ -88,7 +89,7 @@ let app4 = new Vue({
             url: '../php/14/conn14.php',
             dataType: 'JSON',
             success: function (res) {
-                console.log(res.order);
+                // console.log(res.order);
                 self.rp = res.order;
             }
         })

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../lib/reset.css">
     <link rel="stylesheet" href="../css/product_authority.css">
     <link rel="stylesheet" href="../css/backend_final.css">
+    <link rel="Shortcut Icon" href="../img/favicon.ico">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -32,7 +33,7 @@
                             <ul>
                                 <li class="item">會員管理<i class="fas fa-chevron-left"></i></li>
                                 <li id="kcc_authorityChange1">會員總覽</li>
-                                <li id="kcc_authorityChange2">新增會員</li>
+                                <!-- <li id="kcc_authorityChange2">新增會員</li> -->
                             </ul>
                         </li>
 
@@ -71,11 +72,11 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <ul>
                                 <li class="item">客服管理<i class="fas fa-chevron-left"></i></li>
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li>
                             <ul>
@@ -137,37 +138,37 @@
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form action="" method="">
                             <label for="product_number">商品編號</label>
-                            <input type="text" name="product_number" id="product_number" placeholder="安安"
+                            <input type="text" name="product_number" id="product_number" placeholder=""
                                 v-model="formData.product_num">
                             <br>
 
                             <label for="product_kind">商品種類</label>
-                            <input type="text" name="product_kind" id="product_kind" placeholder="安安"
+                            <input type="text" name="product_kind" id="product_kind" placeholder=""
                                 v-model="formData.product_kind">
                             <br>
 
                             <label for="product_name">商品名稱</label>
-                            <input type="text" name="product_name" id="product_name" placeholder="安安"
+                            <input type="text" name="product_name" id="product_name" placeholder=""
                                 v-model="formData.product_name">
                             <br>
 
                             <label for="product_price">商品價格</label>
-                            <input type="text" name="product_price" id="product_price" placeholder="安安"
+                            <input type="text" name="product_price" id="product_price" placeholder=""
                                 v-model="formData.product_price">
                             <br>
 
                             <label for="product_material">材質 / 庫存</label>
-                            <input type="text" name="product_material" id="product_material" placeholder="安安"
+                            <input type="text" name="product_material" id="product_material" placeholder=""
                                 v-model="formData.product_material">
                             <br>
 
                             <label for="product_update">上架日期</label>
-                            <input type="text" name="product_update" id="product_update" placeholder="安安"
+                            <input type="text" name="product_update" id="product_update" placeholder=""
                                 v-model="formData.product_update">
                             <br>
 
                             <label for="product_discount">優惠折扣</label>
-                            <input type="text" name="product_discount" id="product_discount" placeholder="安安"
+                            <input type="text" name="product_discount" id="product_discount" placeholder=""
                                 v-model="formData.product_discount">
 
                             <button id="product_submit" type="button" @click="send">上架</button>
@@ -218,7 +219,7 @@
                 </table>
 
                 <!-- 跳窗 -->
-                <div class="kcc_jump">
+                <!-- <div class="kcc_jump">
                     <div class="secondBack">
                         <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form>
@@ -262,7 +263,7 @@
                             <button id="product_submit" type="button" @click="send">上架</button>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </main>
 
             <main class="jane_class jane_case" id="app3">
@@ -282,6 +283,7 @@
                     <!-- 表格標頭 -->
                     <tr>
                         <th>案例編號</th>
+                        <th>案例區域</th>
                         <th>案例名稱</th>
                         <th>案例日期</th>
                         <th>案例型態</th>
@@ -292,6 +294,7 @@
                     <tr v-for="rp in rp">
                         <td>{{rp.CASE_ID}}</td>
                         <td>{{rp.CASE_INTRO}}</td>
+                        <td>{{rp.CASE_NAME}}</td>
                         <td>{{rp.CASE_DATE}}</td>
                         <td>{{rp.CASE_TYPE}}</td>
                         <td>{{rp.CASE_IMG}}</td>
@@ -301,31 +304,35 @@
                 <!-- 跳窗 -->
                 <div class="jane_jump">
                     <div class="secondBack">
-                        <img src="../img/icon/icons8-cancel-64.png" alt="" class="cancel-icon">
+                        <img src="../img/interiordesign/icon/Icon-cancel.svg" alt="" class="cancel-icon">
                         <form action="" method="">
                             <label for="case_number">案例編號</label>
-                            <input type="text" name="case_number" id="case_number" placeholder="安安"
-                                v-model="formData.case_num">
+                            <input type="text" name="case_number" id="case_number" v-model="formData.case_num">
+                            <br>
+
+                            <label for="case_name">案例區域</label>
+                            <input type="text" name="case_name" id="case_name" v-model="formData.case_intro">
                             <br>
 
                             <label for="case_name">案例名稱</label>
-                            <input type="text" name="case_name" id="case_name" placeholder="安安"
-                                v-model="formData.case_name">
+                            <input type="text" name="case_name" id="case_name" v-model="formData.case_name">
                             <br>
 
                             <label for="case_date">案例日期</label>
-                            <input type="text" name="case_date" id="case_date" placeholder="安安"
-                                v-model="formData.case_date">
+                            <input type="text" name="case_date" id="case_date" v-model="formData.case_date">
                             <br>
 
                             <label for="case_type">案例型態</label>
-                            <input type="text" name="case_type" id="case_type" placeholder="安安"
-                                v-model="formData.case_type">
+                            <select v-model="formData.case_type" name="case_type" id="">
+                                <option value="" selected disabled hidden>請選擇案例型態</option>
+                                <option value="居家住宅">居家住宅</option>
+                                <option value="商業空間">商業空間</option>
+                                <option value="辦公空間">辦公空間</option>
+                            </select>
                             <br>
 
                             <label for="case_path">圖片路徑</label>
-                            <input type="text" name="case_path" id="case_path" placeholder="安安"
-                                v-model="formData.case_path">
+                            <input type="text" name="case_path" id="case_path" v-model="formData.case_path">
                             <br>
 
                             <button id="case_submit" type="button" @click="send">上架</button>
@@ -351,7 +358,6 @@
                     <!-- 表格標頭 -->
                     <tr>
                         <th>訂單編號</th>
-                        <th>訂單數量</th>
                         <th>訂單狀態</th>
                         <th>訂單付款狀態</th>
                         <th>訂單日期</th>
@@ -361,7 +367,6 @@
 
                     <tr v-for="rp in rp">
                         <td>{{rp.ORD_ID}}</td>
-                        <td>{{rp.ORD_QUANTITY}}</td>
                         <td>{{rp.ORD_STATUS}}</td>
                         <td>{{rp.ORD_PAYMENT}}</td>
                         <td>{{rp.ORD_DATE}}</td>
