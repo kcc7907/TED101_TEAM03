@@ -46,11 +46,13 @@ div#sam_vue{
             }
         }
         div.productPic{
-            background-color: #865454;
+            // background-color: #806c4e;
+            background-color: #bda79e52;
             width:100%;
             height: 320px;
             margin-top:30px;
             position: relative;
+            // border:1px solid #865454;
             canvas{
                 outline:none;
             }
@@ -62,11 +64,13 @@ div#sam_vue{
                 position: absolute;
                 right:8%;
                 bottom:1%;
+                index:3;
             }
             img#three2{
                 position: absolute;
                 right:1%;
                 bottom:1%;
+                index:3;
             }
         }
         div.material{
@@ -118,7 +122,7 @@ div#sam_vue{
                         font-size: 8px;
                         width:40px;
                         height: 15px;
-                        background-color: #54383b;
+                        background-color: #865454;
                         color:rgb(233, 233, 233);
                         font-family:'Noto Sans TC Light';
                         z-index: 1;
