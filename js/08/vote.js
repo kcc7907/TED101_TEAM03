@@ -103,6 +103,7 @@ $(document).ready(function () {
                 $('.logMembox').slideToggle();
                 $_headerNav.hide();
             }else{
+                $('.jk_vote .backGround').css('display', 'none');
                 logBox();
                 memBox();
             }
