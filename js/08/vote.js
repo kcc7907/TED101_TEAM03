@@ -3,7 +3,6 @@ $(document).ready(function () {
     //登出
     $('header .logout').click(function () {
         delCookie("loging");
-        location.href = 'home2D.php';
     }); 
     //
 
