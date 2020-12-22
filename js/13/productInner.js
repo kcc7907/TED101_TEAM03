@@ -157,10 +157,10 @@ $(document).ready(function () {
     });
 
 
-    setInterval(leftmove, 3000);
+    setInterval(leftmove, 5000);
 });
 
-///////////////////////////////價錢///////////////
+///////////////////////////////價9錢///////////////
 let money = document.querySelectorAll('h1.money');
 let quantity = document.querySelectorAll('h1.quantity');
 let up = document.querySelectorAll('img.up');
