@@ -1,6 +1,11 @@
 <?php
     include("jk_link.php");
 
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }else{
+        echo "<script>location.href = 'home2D.php';</script>";
+    }
     
     //會員擁有訂單的訂單編號
     $sql_order = "SELECT * from `ORDER` where MEMBER_ID = ?";

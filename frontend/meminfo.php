@@ -1,6 +1,12 @@
 <?php        
     include("../php/08/jk_link.php");
 
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }else{
+        echo "<script>location.href = 'home2D.php';</script>";
+    }
+
         $sql = "SELECT * FROM member WHERE MEM_ID =?";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, "$user");

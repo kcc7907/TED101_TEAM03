@@ -1,5 +1,11 @@
 <?php
-    include("jk_link.php");    
+    include("jk_link.php");   
+    
+    if(isset($_COOKIE["loging"])){
+        $user = $_COOKIE["loging"];
+    }else{
+        echo "<script>location.href = 'home2D.php';</script>";
+    }
 
     $item = $_POST["removeItem"];
     
