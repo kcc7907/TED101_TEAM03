@@ -89,7 +89,7 @@
 
                     敘說著木頭與肌膚接觸的溫潤質感。</p>
             </div>
-            <div class="productPic">
+            <div class="productPic" id="threejs">
                 <img src="../../img/product/icon/rotateleft.svg" class="threed" id="three1">
                 <img src="../../img/product/icon/rotateright.svg" class="threed" id="three2">
             </div>
@@ -372,8 +372,50 @@
             <input type="button" class="detailFont" id="notsureGoHome" value="取消">
         </div>
     </div>
+        <!-- <script>
+                new Vue({
+                    el: '.productTitle',
+                    data: {
+                        products: [],
+                    },
+                    mounted() {
+                        $.getJSON('./productText.json').then(res => {
+                            this.products = res;
+                            // console.log(this.products[0].title);
+                        });
+                    },
+                });
+                new Vue({
+                    el: '.material',
+                    data: {
+                        products: [],
+                    },
+                    mounted() {
+                        $.getJSON('./productText.json').then(res => {
+                            this.products = res;
+                            // console.log(this.products[0].title);
+                        });
+                    },
+                });
+                new Vue({
+                    el: '.bottomBox',
+                    data: {
+                        products: [],
+                    },
+                    mounted() {
+                        $.getJSON('./productText.json').then(res => {
+                            this.products = res;
+                            // console.log(this.products[0].title);
+                        });
+                    },
+                });
+            </script> -->
     <script src="../../lib/header/header.js"></script>
     <script defer src="../../js/13/productText.js"></script>
+    <script src="./js/three.js"></script>
+    <script src="./js/GLTFLoader.js"></script>
+    <script src="./js/OrbitControls.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
