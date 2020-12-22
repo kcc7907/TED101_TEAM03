@@ -3,11 +3,11 @@ let camera;
 let renderer;
 let scene;
 let house;
-let src = ['./3d/20201211 山姆01.glb', './3d/20201211 山姆03.glb', './3d/20201211 山姆04.glb'];
+let src = ['./3d/table3d-1.glb', './3d/table3d-2.glb', './3d/table3d-3.glb', './3d/table3d-4.glb']; //改路徑
 var skin = '' || src[0];
 
 // function init() {
-container = document.querySelector("#threejs");
+container = document.querySelector("#threejs");  //改ID
 
 //Create scene
 scene = new THREE.Scene();
