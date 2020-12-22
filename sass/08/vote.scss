@@ -143,14 +143,23 @@ body{
 
                         >p{
                             margin: 20px;
-                            // line-height: 60px;
+                            line-height: 60px;
+
+                            @include r1440{
+                                line-height: 50px;
+                            }
 
                             @include r1200{
                                 margin: 20px 10px;
                             }
 
+                            @include r992{
+                                line-height: 40px;
+                            }
+
                             @include r576{
                                 margin: 10px;
+                                line-height: 30px;
                             }
                         }
                     }
