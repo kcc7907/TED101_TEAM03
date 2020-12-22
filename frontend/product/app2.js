@@ -12,7 +12,7 @@ container = document.querySelector("#threejs");  //改ID
 //Create scene
 scene = new THREE.Scene();
 
-const fov = 10;
+const fov = 13;
 const aspect = container.clientWidth / container.clientHeight;
 const near = 0.1;
 const far = 1000;
@@ -54,7 +54,7 @@ function reload() {
     loader.load(skin, function (gltf) {
         scene.add(gltf.scene);
         house = gltf.scene.children[0];
-        house.position.set(.5, 0, .8);
+        house.position.set(-2, -1.5, .8);
         animate();
     });
 }

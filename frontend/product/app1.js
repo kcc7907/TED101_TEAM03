@@ -12,7 +12,7 @@ container = document.querySelector("#threejs");  //改ID
 //Create scene
 scene = new THREE.Scene();
 
-const fov = 10;
+const fov = 16;
 const aspect = container.clientWidth / container.clientHeight;
 const near = 0.1;
 const far = 1000;
@@ -23,14 +23,14 @@ camera.position.set(10, 3, 0);
 // camera.position.set(10, 10, 10);
 camera.lookAt(scene.position);
 
-const ambient = new THREE.AmbientLight(0x404040, 3);
+const ambient = new THREE.AmbientLight(0x404040, 1);
 scene.add(ambient);
 
 // const light = new THREE.DirectionalLight(0xffffff, 2);
 // light.position.set(50, 50, 100);
 // scene.add(light);
 
-const light = new THREE.DirectionalLight(0xffffff, 3, 1000);
+const light = new THREE.DirectionalLight(0xffffff, 1.5, 1000);
 light.position.set(10, 5, -5);
 scene.add(light);
 
@@ -54,7 +54,7 @@ function reload() {
     loader.load(skin, function (gltf) {
         scene.add(gltf.scene);
         house = gltf.scene.children[0];
-        house.position.set(.5, 0, .8);
+        house.position.set(-1.5, -1, 1.5);
         animate();
     });
 }

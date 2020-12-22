@@ -23,14 +23,14 @@ camera.position.set(10, 3, 0);
 // camera.position.set(10, 10, 10);
 camera.lookAt(scene.position);
 
-const ambient = new THREE.AmbientLight(0x404040, 3);
+const ambient = new THREE.AmbientLight(0x404040, 2);
 scene.add(ambient);
 
 // const light = new THREE.DirectionalLight(0xffffff, 2);
 // light.position.set(50, 50, 100);
 // scene.add(light);
 
-const light = new THREE.DirectionalLight(0xffffff, 3, 1000);
+const light = new THREE.DirectionalLight(0xffffff, 2, 1000);
 light.position.set(10, 5, -5);
 scene.add(light);
 
