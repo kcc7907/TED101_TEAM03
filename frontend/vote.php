@@ -1,10 +1,6 @@
 <?php
 
-    include("../php/08/jk_link.php");
-
-    if(isset($_COOKIE["loging"])){
-        $user = $_COOKIE["loging"];
-    }
+    include("../php/08/jk_link.php");    
 
     //分頁判斷
     $page = isset($_POST["page"]) ? $_POST["page"] : 1;
