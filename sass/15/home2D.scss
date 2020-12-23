@@ -558,10 +558,13 @@ div.JHH {
                         top: 10px;
                         left: 10px;
 
+                        &:hover {
+                            cursor: default;
+                        }
                     }
 
                     &:hover {
-                        cursor: pointer;
+                        cursor: default;
                     }
                 }
             }
