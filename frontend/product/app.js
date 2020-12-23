@@ -3,11 +3,11 @@ let camera;
 let renderer;
 let scene;
 let house;
-let src = ['./3d/20201211 山姆01.glb', './3d/20201211 山姆03.glb', './3d/20201211 山姆04.glb'];
+let src = ['./3d/table3d-1.glb', './3d/table3d-2.glb', './3d/table3d-3.glb', './3d/table3d-4.glb']; //改路徑
 var skin = '' || src[0];
 
 // function init() {
-container = document.querySelector("#threejs");
+container = document.querySelector("#threejs");  //改ID
 
 //Create scene
 scene = new THREE.Scene();
@@ -23,14 +23,14 @@ camera.position.set(10, 3, 0);
 // camera.position.set(10, 10, 10);
 camera.lookAt(scene.position);
 
-const ambient = new THREE.AmbientLight(0x404040, 3);
+const ambient = new THREE.AmbientLight(0x404040, 2);
 scene.add(ambient);
 
 // const light = new THREE.DirectionalLight(0xffffff, 2);
 // light.position.set(50, 50, 100);
 // scene.add(light);
 
-const light = new THREE.DirectionalLight(0xffffff, 3, 1000);
+const light = new THREE.DirectionalLight(0xffffff, 2, 1000);
 light.position.set(10, 5, -5);
 scene.add(light);
 

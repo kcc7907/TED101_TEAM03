@@ -12,7 +12,7 @@
     $pid = $_POST['productId'];
 
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(1,$mid);
-    $statement->bindValue(2,$pid);
+    $statement->bindValue(1,$pid);
+    $statement->bindValue(2,$mid);
     $statement->execute();
 ?>
