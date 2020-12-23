@@ -3,7 +3,6 @@ $(document).ready(function () {
     //登出
     $('header .logout').click(function () {
         delCookie("loging");
-        location.href = 'home2D.php';
     }); 
     //
 
@@ -72,21 +71,43 @@ $(document).ready(function () {
 
     //點擊投票    
     $('.jk_vote').on('click', '.clickVote button', function () {
-        let voteId = $(this).closest('.clickVote').find('.content p:first-child span').text();
-        let voteNum = $(this).closest('.clickVote').find('.content p:nth-child(2) input').val();
-        $.ajax({
-            url: '../php/08/jk_clickVote.php',
-            type: 'POST',
-            data: {
-                voteId,
-                voteNum,
-            },
-            dataType: 'text',
-            success(res) {
-                $(`.jk_vote .img.${voteId}`).find('.get_num span').text(`${res}`);
-            },
-        });
-        $('.jk_vote .backGround').css('display', 'none');
+        if(getCookie('loging')){
+
+            let voteId = $(this).closest('.clickVote').find('.content p:first-child span').text();
+            let voteNum = $(this).closest('.clickVote').find('.content p:nth-child(2) input').val();
+            $.ajax({
+                url: '../php/08/jk_clickVote.php',
+                type: 'POST',
+                data: {
+                    voteId,
+                    voteNum,
+                },
+                dataType: 'text',
+                success(res) {
+                    $(`.jk_vote .img.${voteId}`).find('.get_num span').text(`${res}`);
+                },
+            });
+            $('.jk_vote .backGround').css('display', 'none');
+
+        }else{
+            
+            let cookieCheck = checkCookie('loging');
+
+            if(Boolean(cookieCheck)){
+                $('img.logMem').attr('src','../img/homepage/logInMemHome.png');
+            }else{
+                $('img.logMem').attr('src','../img/headerFooter/loginIcon.svg');
+            }
+
+            if(Boolean(cookieCheck)){
+                $('.logMembox').slideToggle();
+                $_headerNav.hide();
+            }else{
+                $('.jk_vote .backGround').css('display', 'none');
+                logBox();
+                memBox();
+            }
+        }
         
     });
 

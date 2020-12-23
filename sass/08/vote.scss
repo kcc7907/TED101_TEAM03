@@ -409,27 +409,28 @@ body{
                     
                         position: relative;
                     
-                        cursor: pointer;
+                        // cursor: pointer;
 
                         @include r768{
-                            width: 60px;
-                            height: 60px;
-
-                            position: absolute;
-                            right: 200px;
-                        }
-
-                        @include r576{
-                            width: 50px;
-                            height: 50px;
-
-                            right: 130px;
-                            font-size: 8px;
-                        }
-
-                        @include r360{
                             display: none;
+                            // width: 60px;
+                            // height: 60px;
+
+                            // position: absolute;
+                            // right: 200px;
                         }
+
+                        // @include r576{
+                        //     width: 50px;
+                        //     height: 50px;
+
+                        //     right: 130px;
+                        //     font-size: 8px;
+                        // }
+
+                        // @include r360{
+                        //     display: none;
+                        // }
 
                         &::after{
                             content: '';
@@ -668,24 +669,30 @@ body{
 
             z-index: 10;
 
+            @include r768{
+                display: none;              
+            }
+
             .bgc{
                 width: 60%;
-                padding: 15px;
+                padding: 20px;
                 border-radius: 5px;
                 background-color: #865454;
 
                 >.inner{
+                    width: 100%;
+                    min-height: 300px;
                     background-color: #FFFAF4;
+
+                    display: flex;
+                    flex-direction: column;
+
                 }
 
                 >.close{
                     width: 100%;
                     text-align: center;
-                    padding: 15px;
-
-                    @include r1200{
-                        padding: 15px 15px 0 0;
-                    }
+                    padding: 15px 0 5px 0;
 
                     i{
                         font-size: 30px;
@@ -698,10 +705,11 @@ body{
                             font-size: 20px;
                         }
                         
-                        &:hover{                    
+                        &:hover{
+                            cursor: pointer;
                             border-radius: 50%;
-                            background-color: #465D4C;
-                            color: #fff;
+                            background-color: #BDA79C;
+                            color: #FFFAF4;
                                                     
                         }
                     }

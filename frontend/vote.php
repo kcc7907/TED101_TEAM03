@@ -1,18 +1,6 @@
 <?php
 
-    //登入帳號
-    if(isset($_COOKIE["loging"])){
-        $user = $_COOKIE["loging"];
-    }
-
-    //MySQL相關資訊
-
-    $db_host = "10.2.0.162";
-    $db_user = "team03";
-    $db_pass = "ted101g3";
-    $db_select = "team03";
-    $dbconnect = "mysql:host=".$db_host.";dbname=".$db_select;
-    $pdo = new PDO($dbconnect, $db_user, $db_pass);
+    include("../php/08/jk_link.php");    
 
     //分頁判斷
     $page = isset($_POST["page"]) ? $_POST["page"] : 1;
@@ -26,7 +14,29 @@
     $statement = $pdo->prepare($sql);     
     $statement->execute();
     $data = $statement->fetchAll();
+
+    //即時戰況
+    // $sql_game = "SELECT WK_VOTES, WK_IMG from `work` w
+    // join 
+    // (select * from `member`
+    // join `contestant` on MEM_ID = CT_MEMBER_ID) m
+    // on m.CT_WORK_ID = w.WK_ID
+    // order by 1 desc
+    // limit 3";
+    // $statement = $pdo->prepare($sql_game);     
+    // $statement->execute();
+    // $dataGame = $statement->fetchAll();
+    // print_r($dataGame);
     
+    // echo '123';
+    // echo '<br>'.$sql_game;
+    // $sumVote = [];
+    // foreach($data_game as $j => $row_game){
+    //     echo $row_game["WK_VOTES"].'/';
+    //     array_push($sumVote, $row_game["WK_VOTES"]);                           
+    // };
+    // $voteNum = array_sum($sumVote);
+    // echo $voteNum;
 ?>
 
 
@@ -102,9 +112,6 @@
 
             <!-- 隱藏頁碼 -->
             <div class="vote_page">
-                <!-- <span class="-on">1</span> -->
-                <!-- <span>2</span> -->
-                <!-- <span>3</span> -->
             </div>
             
             <div class="main"> 
@@ -118,8 +125,6 @@
 
                     <div class="vote_page">
                         <span class="-on">1</span>
-                        <!-- <span>2</span>
-                        <span>3</span> -->
                     </div>
 
                     <div class="visitor">
@@ -147,16 +152,11 @@
                         </p>
                     </div>';
             
-                    }
-            
+                    }            
                 }
-                ?>
-                    
-                </main>
-
-                
+                ?>                    
+                </main>                
             </div>
-
         </div>
 
         <div class="backGround">
@@ -175,27 +175,25 @@
             </div>
         </div>
 
-        <div class="game">
+        <!-- <div class="game">
             <div class="bgc">
                 <div class="inner">
                     <div class="winner"></div>
                     <div class="items">
                         <div class="item">
                             <div class="work">
-                                <img src="" alt="">
+                                <img src="">
                             </div>
-                            <div class="voteNumber"></div>
+                            <div class="voteNumber" style=""></div>
                             <div class="date"></div>
-                        </div>
+                        </div>                    
                     </div>
                 </div>
-
                 <div class="close">
                     <i class="far fa-times-circle"></i>
-                </div>
-                
+                </div>                
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- footer -->
