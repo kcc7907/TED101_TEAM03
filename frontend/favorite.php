@@ -99,7 +99,7 @@
                         </li>
                         <li class="btn">
                             <a class="seeProduct" href="product/productInner-<?=$row["PRD_ID"]?>.html">
-                                <button class="add"><span>查看詳情</span><i class="fas fa-cart-arrow-down"></i></button>
+                                <button class="add"><span>查看詳情</span><i class="fas fa-search"></i></button>
                             </a>
                             <button class="remove" data-name="<?=$row["PRD_ID"]?>"><span>移除</span><i class="far fa-trash-alt"></i></button>
                         </li>

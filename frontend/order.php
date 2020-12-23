@@ -138,18 +138,24 @@
                                             $sumPrice = [];
                                             foreach($orderDetailData as $j => $row){
                                                 array_push($sumPrice, $row["PRD_PRICE"] * $row["ORDER_QUANTITY"]);                           
-                                            };
-                                            // if(isset($dis)){
-                                                echo array_sum($sumPrice) + $row["ORD_DICOUNT"].' 元';
-                                            // }else {
-                                            //     echo array_sum($sumPrice).' 元';
-                                            // }
+                                            };                                            
+                                                echo array_sum($sumPrice) + $row["ORD_DICOUNT"].' 元';                                            
                                         ?>
                                         
                                     </li>
 
                                     <li class="status">
-                                        <?=$orderDetailData[0]["ORD_STATUS"]?>
+                                        <?php
+                                        if(isset($row["ORD_ARR"])){
+                                            echo '已送達';
+                                        }else if(isset($row["ORD_TRANS"])){
+                                            echo '運送中';
+                                        }else if(isset($row["ORD_PAY"])){
+                                            echo '已付款';
+                                        }else{
+                                            echo '已訂購';
+                                        }
+                                        ?>
                                     </li>
                                 </ul>
                             </div>
@@ -261,12 +267,8 @@
                                             <li class="pro_dsicount">
                                                 <ol>
                                                     <li>
-                                                    <?php
-                                                    // if(isset($dis)){
-                                                        echo $row["ORD_DICOUNT"].'元';
-                                                    // }else {
-                                                    //     echo '-0 元';
-                                                    // }
+                                                    <?php                                                    
+                                                        echo $row["ORD_DICOUNT"].'元';                                                    
                                                     ?>
                                                     </li>
                                                 </ol>
@@ -277,13 +279,8 @@
                                         <div class="rwd_discount">
                                             折扣: 
                                             <span>
-                                                <?php
-                                                // if(isset($dis)){
-                                                    echo $row["ORD_DISCOUNT"];
-                                                //     unset($dis);
-                                                // }else {
-                                                //     echo '-0';
-                                                // }
+                                                <?php                                                
+                                                    echo $row["ORD_DICOUNT"];                                                
                                                 ?>
                                             </span> 元
                                         </div>

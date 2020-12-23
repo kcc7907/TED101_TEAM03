@@ -3,10 +3,11 @@ $(document).ready(function () {
     mainText();
 
     //登出
-    $('header .logout').click(function () {
+    $('body').on('click', '#sureGoHome', function () {
         delCookie("loging");
         location.href = 'home2D.php';
-    });    
+    }); 
+    //   
 });
 
 function mainText() {
