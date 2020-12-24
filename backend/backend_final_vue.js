@@ -14,17 +14,19 @@ let app = new Vue({
     },
     methods: {
         send() {
-            console.log(this.formData);
-            axios.post('../php/13/productInsert.php', this.formData).then(res => {
-                this.rp = res.data;
-            });
+            axios.post('../php/13/productInsert.php', this.formData).then(()=>{
+                this.getData();
+            })
             $('div.sam_jump').addClass('-opacity-zero');
+        },
+        getData(){
+            axios.post('../php/13/product.php').then(res => {
+                this.rp = res.data;
+            })
         }
     },
     mounted() {
-        axios.post('../php/13/product.php').then(res => {
-            this.rp = res.data;
-        })
+        this.getData();
     },
 });
 
@@ -49,26 +51,22 @@ let app3 = new Vue({
     },
     methods: {
         send() {
-            console.log(this.formData);
-            axios.post('../php/14/case.php', this.formData).then(res => {
-            });
+            axios.post('../php/14/case.php', this.formData).then(() => this.getData());
             $('div.jane_jump').addClass('-opacity-zero');
-        }
+        },
+        getData(){
+            const self = this;
+            $.ajax({
+                url: '../php/14/conn14.php',
+                dataType: 'JSON',
+                success: function (res) {
+                    self.rp = res.case;
+                }
+            })
+        },
     },
     mounted() {
-        const self = this;
-        // axios.post('../php/14/conn14.php').then(res => {
-        //     console.log(res);
-        //     this.rp = res.data;
-        // })
-        $.ajax({
-            url: '../php/14/conn14.php',
-            dataType: 'JSON',
-            success: function (res) {
-                // console.log(res.case);
-                self.rp = res.case;
-            }
-        })
+        this.getData();
     },
 });
 
@@ -81,15 +79,10 @@ let app4 = new Vue({
     },
     mounted() {
         const self = this;
-        // axios.post('../php/14/conn14.php').then(res => {
-        //     console.log(res);
-        //     this.rp = res.data;
-        // })
         $.ajax({
             url: '../php/14/conn14.php',
             dataType: 'JSON',
             success: function (res) {
-                // console.log(res.order);
                 self.rp = res.order;
             }
         })

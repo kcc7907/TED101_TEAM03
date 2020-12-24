@@ -182,7 +182,7 @@
                         <br>
 
                         <label for="CT_PERSONAL_ID">身分證號碼</label>
-                        <input type="text" name="CT_PERSONAL_ID" id="CT_PERSONAL_ID" :value="memid" @change="goChangeID">
+                        <p id="CT_PERSONAL_ID">{{memid}}</p>
                         <br>
 
                         <label for="CT_IMG_FRONT">身分證圖片</label>
@@ -291,6 +291,7 @@
                     let newstatus = $(e.target).val();
                     // console.log(newstatus);
                     this.$emit('new-status', theIndex, newstatus);
+
                 },
 
                 closeIcon(index) {
@@ -320,6 +321,7 @@
                 // photos: ['CT_IMG_FRONT', 'WK_DRAFT', 'WK_DRAW'],
             },
             methods: {
+
                 // 點擊審核出現彈窗
                 checkWork(i) {
                     $(`div.jh_jump`).eq(i).addClass('-on');
@@ -407,21 +409,47 @@
                             }, 500);
                         }
                     });
+
+                    if(this.work[index].WK_STATUS !== '待收件'){
+                        $('button#jh_authorityChange2').eq(index).attr('disabled','disabled').css({
+                            'backgroundColor': 'grey',
+                            'color': 'black',
+                        });
+                    }
                 }
 
-
+                // 審核判斷
             },
             mounted() {
                 const that = this;
                 $.ajax({
                     type: "POST",
                     url: "./contestWorkR.php",
-                    // data: "data",
                     dataType: "json",
                     success: function (res) {
                         let allWork = [];
                         $(res).each((index, value) => {
                             that.work.push(value);
+                        });
+                    }
+                });
+                // .then(res=>{
+                //     $(that.work).each(function(item, val){
+                //         if(val.WK_STATUS !== '待收件'){
+                //             $('button#jh_authorityChange2').eq(item).attr('disabled','disabled').css({
+                //                 'backgroundColor': 'grey',
+                //                 'color': 'black',
+                //             });
+                //         }
+                //     });
+                // });
+            },
+            updated() {
+                $(this.work).each(function(item, val){
+                    if(val.WK_STATUS !== '待收件'){
+                        $('button#jh_authorityChange2').eq(item).attr('disabled','disabled').css({
+                            'backgroundColor': 'grey',
+                            'color': 'black',
                         });
                     }
                 });
