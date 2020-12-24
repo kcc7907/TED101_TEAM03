@@ -5,7 +5,6 @@
     // $result = $pdo->query($sql);
     // $result->execute();
 
-
     // $rp = json_decode(file_get_contents('php://input'), true);
     // echo $rp['memberId'];
     $mid = $_POST['memberId'];
@@ -14,5 +13,19 @@
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1,$pid);
     $statement->bindValue(2,$mid);
+    $statement->execute();
+
+    $sql="SELECT `PRD_NAME` FROM `PRODUCT` WHERE `PRD_ID`= ?";
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1,$pid);
+    $statement->execute();
+    $prd_name = $statement->fetchColumn();
+
+    $date = date("Y/m/d H:i:s");
+    $sql = 'INSERT INTO `noti` (`NOTI_TEXT`, `MEMBER_ID`, `NOTI_DATE`) VALUES (?,?,?)';
+    $statement = $pdo->prepare($sql);
+    $statement->bindValue(1,'您已成功收藏'.$prd_name);
+    $statement->bindValue(2,$mid);
+    $statement->bindValue(3,$date);
     $statement->execute();
 ?>

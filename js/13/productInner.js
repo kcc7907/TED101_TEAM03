@@ -234,7 +234,8 @@ let box = document.querySelectorAll('div.shoppingBtn')
 let productId = box[0].getAttribute('data-id');
 // console.log(productId);
 
-function setLocal() {
+function setLocal(e) {
+    e.stopPropagation();
     let list = JSON.parse(localStorage.getItem("lists"));
     let apple = [];
     if (list) {
@@ -268,6 +269,22 @@ function setLocal() {
     }
     localStorage.setItem("lists", JSON.stringify(apple));
     alert('已加入購物車');
+
+    //購物車數量
+    let shoplist = JSON.parse(localStorage.getItem("lists"));
+    let shopIcon = document.querySelector('.shop');
+    let shopnum = 0;
+    shoplist.forEach(e => {
+        shopnum += parseInt(e.num);
+    });
+    if (shopnum === 0){
+        return false;
+    } else if (!shopIcon.classList.contains('shopnum')){
+        shopIcon.setAttribute('data-content', shopnum );
+        shopIcon.classList.add('shopnum');
+    }else{
+        shopIcon.setAttribute('data-content', shopnum);
+    }
 }
 box[0].addEventListener('click', setLocal);
 box[1].addEventListener('click', setLocal);
@@ -299,7 +316,6 @@ function loveItem(e) {
                 alert('Ajax request 發生錯誤');
             },
             success: function (res) {
-                // console.log(res);
                 alert('已完成收藏');
             },
             // dataType: "JSON",
@@ -307,6 +323,7 @@ function loveItem(e) {
     } else {
         alert('請登入喔~~~');
     }
+    // console.log(memberId);
     // console.log(memberObject);
 };
 
