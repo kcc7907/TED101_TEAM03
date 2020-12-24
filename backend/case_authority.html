@@ -119,13 +119,14 @@
                 <div class="jane_jump">
                     <div class="secondBack">
                         <img src="../img/interiordesign/icon/Icon-cancel.svg" alt="" class="cancel-icon">
+                        <button class="smallbutton"></button>
                         <form action="" method="">
                             <label for="case_number">案例編號</label>
                             <input type="text" name="case_number" id="case_number" v-model="formData.case_num">
                             <br>
 
                             <label for="case_name">案例區域</label>
-                            <input type="text" name="case_name" id="case_name" v-model="formData.case_intro">
+                            <input type="text" name="case_name" id="case_region" v-model="formData.case_intro">
                             <br>
 
                             <label for="case_name">案例名稱</label>
@@ -137,7 +138,7 @@
                             <br>
 
                             <label for="case_type">案例型態</label>
-                            <select v-model="formData.case_type" name="case_type" id="">
+                            <select v-model="formData.case_type" name="case_type" id="case_type">
                                 <option value="" selected disabled hidden>請選擇案例型態</option>
                                 <option value="居家住宅">居家住宅</option>
                                 <option value="商業空間">商業空間</option>
@@ -145,8 +146,8 @@
                             </select>
                             <br>
 
-                            <label for="case_path">圖片路徑</label>
-                            <input type="text" name="case_path" id="case_path" v-model="formData.case_path">
+                            <label for="case_path">圖片</label>
+                            <input type="file" name="case_path" id="case_path" v-model="formData.case_path">
                             <br>
 
                             <button id="case_submit" type="button" @click="send">上架</button>

@@ -105,15 +105,15 @@ $(document).ready(function () {
 
 
     //左下方按鈕
-    $('.smallginlin').click(function () {
-        $('input#product_number').val("Text_number001");
-        $('input#product_kind').val("桌組");
-        $('input#product_name').val("大家順利找到好工作");
-        $('input#product_price').val(12000);
-        $('input#product_material').val('楓木');
-        $('input#product_update').val('2020/12/29');
-        $('input#product_discount').val('無');
+    $('.smallbutton').click(function () {
+        $('input#case_number').val("22");
+        $('input#case_region').val("大安");
+        $('input#case_name').val("忠泰");
+        $('input#case_date').val("20200911");
+        // $('input#case_type').val('居家住宅');
         // console.log($('input#product_number'));
     });
+
+    
 
 });
