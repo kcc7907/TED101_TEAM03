@@ -21,7 +21,7 @@
     $statement->execute();
     $prd_name = $statement->fetchColumn();
 
-    $date = date("Y/m/d H:i:s");
+    $date = date("Y/m/d H:i");
     $sql = 'INSERT INTO `noti` (`NOTI_TEXT`, `MEMBER_ID`, `NOTI_DATE`) VALUES (?,?,?)';
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1,'您已成功收藏'.$prd_name);
