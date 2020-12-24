@@ -2,33 +2,7 @@ let delAll= document.querySelector('.delAll');
 let checkAll= document.querySelector('.checkAll');
 let title= document.querySelectorAll('.title');
 title[0].classList.add('-onColor');
-
-let list =
-[
-    {
-        prd_id : 'c001',
-        num : '3'
-    },
-    {
-        prd_id : 't001',
-        num : '2'
-    },
-    {
-        prd_id : 'b003',
-        num : '3'
-    },
-    {
-        prd_id : 'c003',
-        num : '1'
-    },
-    {
-        prd_id : 't005',
-        num : '1'
-    }
-];
-// document.cookie = 'loging=A111200001';
-// localStorage.clear();
-// localStorage.setItem("lists", JSON.stringify(list));
+window.addEventListener('storage',()=>location.reload());
 
 let right = new Vue({
     el:'#right',

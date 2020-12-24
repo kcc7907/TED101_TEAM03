@@ -49,4 +49,11 @@
 
         $orderNum = "A000".($order_total+1);
         echo $orderNum;
+
+        $sql = 'INSERT INTO `noti` (`NOTI_TEXT`, `MEMBER_ID`, `NOTI_DATE`) VALUES (?,?,?)';
+        $statement = $pdo->prepare($sql);
+        $statement->bindValue(1,'訂單已完成  訂單編號:'.$orderNum);
+        $statement->bindValue(2,$rp['memid']);
+        $statement->bindValue(3,$date);
+        $statement->execute();
 ?>
