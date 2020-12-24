@@ -73,9 +73,9 @@
         <div class="container">
             <div class="step">
                 <ol>
-                    <li class="contentFont">1.同意規範</li>
-                    <li class="contentFont">2.上傳資料</li>
-                    <li class="contentFont">3.投稿成功</li>
+                    <li class="step contentFont">1.同意規範</li>
+                    <li class="step contentFont">2.上傳資料</li>
+                    <li class="step contentFont">3.投稿成功</li>
                 </ol>
                 <form action="#" name="formStep1" class="formStep contentFont" id="formStep1">
                     <div class="rule">
@@ -121,7 +121,7 @@
                     <p class="contentFont">&frasl;&frasl;&emsp;作品資料&emsp;&frasl;&frasl;</p>
                     <div class="view">
                         <label class="contentFont" for="fType">作品種類：</label>
-                        <select class="contentFont" id="fType" name="fType" required="required" data-id="fType" v-model="selected">
+                        <select class="contentFont" id="fType" name="fType" required="required" data-id="fType" v-model="selectType">
                             <option disabled selected>請選擇作品種類</option>
                             <option v-for="type in workTypes" class="contentFont" :value="type">{{type}}</option>
                         </select>
@@ -195,7 +195,7 @@
                                         # 參賽者：<span class="contentFont"></span>
                                     </p>
                                     <p class="contentFont">
-                                        # 作品種類：<span class="contentFont">{{selected}}</span>
+                                        # 作品種類：<span class="contentFont">{{selectType}}</span>
                                     </p>
                                     <p class="contentFont">
                                         # 作品名稱：<span class="contentFont">{{fName}}</span>
