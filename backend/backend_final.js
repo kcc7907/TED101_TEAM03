@@ -35,15 +35,15 @@ $(document).ready(function () {
             $('div.sam_jump').removeClass('-on -opacity-zero');
         }, 1000);
     });
-    $('button.cancel').click(function (e) {
-        let firm1 = confirm('是否下架此商品');
-        if (firm1) {
-            this.innerText = '已下架';
-            this.closest('tr').style.background = 'rgba(120,120,120,.3)';
-        } else {
-            e.preventDefault();
-        }
-    });
+    // $('button.cancel').click(function (e) {
+    //     let firm1 = confirm('是否下架此商品');
+    //     if (firm1) {
+    //         this.innerText = '已下架';
+    //         this.closest('tr').style.background = 'rgba(120,120,120,.3)';
+    //     } else {
+    //         e.preventDefault();
+    //     }
+    // });
 
 
     /////////////////////////kcc start ////////////////////////////
