@@ -104,15 +104,7 @@ $(document).ready(function () {
     });
 
 
-    //左下方按鈕
-    $('.smallbutton').click(function () {
-        $('input#case_number').val("22");
-        $('input#case_region').val("大安");
-        $('input#case_name').val("忠泰");
-        $('input#case_date').val("20200911");
-        // $('input#case_type').val('居家住宅');
-        // console.log($('input#product_number'));
-    });
+
 
     
 
