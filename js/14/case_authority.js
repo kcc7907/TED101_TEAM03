@@ -103,4 +103,17 @@ $(document).ready(function () {
         }, 1000);
     });
 
+
+    //左下方按鈕
+    $('.smallginlin').click(function () {
+        $('input#product_number').val("Text_number001");
+        $('input#product_kind').val("桌組");
+        $('input#product_name').val("大家順利找到好工作");
+        $('input#product_price').val(12000);
+        $('input#product_material').val('楓木');
+        $('input#product_update').val('2020/12/29');
+        $('input#product_discount').val('無');
+        // console.log($('input#product_number'));
+    });
+
 });
