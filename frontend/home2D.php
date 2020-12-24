@@ -22,14 +22,14 @@
                 <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
             </div>
             <nav>
-                <dav class="nav1">
+                <div class="nav1">
                     <a href="product/product.html">救世傢俱</a>
                     <a href="./case.html">參考案例</a>
-                </dav>
-                <dav class="nav2">
+                </div>
+                <div class="nav2">
                     <a href="./qa.html">客戶服務</a>
                     <a href="./contest_main20.php">傢聚賞</a>
-                </dav>
+                </div>
             </nav>
             <div class="icon">
                 <span class="login">
@@ -56,14 +56,14 @@
                         <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
                     </div>
                     <nav>
-                        <dav class="nav1">
+                        <div class="nav1">
                             <a href="product/product.html">救世傢俱</a>
                             <a href="./case.html">參考案例</a>
-                        </dav>
-                        <dav class="nav2">
+                        </div>
+                        <div class="nav2">
                             <a href="./qa.html">客戶服務</a>
                             <a href="./contest_main20.php">傢聚賞</a>
-                        </dav>
+                        </div>
                     </nav>
                     <div class="icon">
                         <span class="login">
@@ -95,7 +95,7 @@
                         </div>
                         <div>
                             <span class="detailFont lineHeight">營業據點：</span>
-                            <p class="detailFont lineHeight">新北市三重區龍門路987號</p>
+                            <p class="detailFont lineHeight">台北市信義區忠孝東路五段68號</p>
                         </div>
                         <div class="tel">
                             <span class="detailFont lineHeight">聯絡電話：</span>
@@ -380,6 +380,7 @@
     <!-- 登入燈箱 -->
     <div id="login">
         <div class="login">
+            <span class="hideLog"></span>
             <h1 class="titleFont2">歡迎回來</h1>
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
@@ -409,11 +410,13 @@
                 <img class="closebtn" src="../img/homepage/Iconcancel.png">
             </div>
         </div>
+
     </div>
 
     <!-- 註冊燈箱 -->
     <div id="signUp">
         <div class="signUp">
+            <span class="hideSign"></span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009" data-llp-composed="true" id="signUp" class="lazy-line-painter">
                 <g id="Rectangle_457" data-name="Rectangle 457" fill="none" stroke="#865454" stroke-width="1">
                     <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />

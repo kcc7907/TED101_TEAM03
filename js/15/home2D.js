@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    // =================================== VUE ===================================
+    // 最新消息
     let appHomepage = new Vue({
         el:'#appHome',
         data: {
@@ -63,7 +65,7 @@ $(document).ready(function () {
             ],
         },
         mounted() {
-            console.log(this.news[0].title);
+            // console.log(this.news[0].title);
         },
     });
 
@@ -153,8 +155,32 @@ $(document).ready(function () {
         }
     
     });
+
+    // =================================== 隱藏按鈕 ===================================
+    // 登入
+    $('span.hideLog').click(()=>{
+        $('input#account').val('lee1229');
+        $('input#pwd').val('lee1229');
+    });
+
+    // 註冊
+    $('span.hideSign').click(()=>{
+        $('input#memNameJH').val('李婷婷');
+        $('input#memPhoneJH').val('0975339003');
+        $('input#memEmailJH').val('Lee@gmail.com');
+        $('option:nth-child(6)').attr('selected', true);
+        $('input#memAddressJH').val('中正路四段194巷9弄18號');
+        $('input#memAccountJH').val('lee1229');
+        $('input#memPwdJH').val('lee1229');
+        $('input#memCheckPJH').val('lee1229');
+    });
+
+
 });
 
+document.addEventListener('click', (e)=>{
+console.log(e.target);
+});
 
 
 

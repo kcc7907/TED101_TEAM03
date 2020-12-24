@@ -7,10 +7,8 @@ $(document).ready(function () {
     $('#JHC div.confirmDivC').hide();
 
 
-    
+    // ======== 確認登入與否 ========
     if(!checkCookie('loging')){
-        $('#login div.closebtn').hide();
-        $('#signUp div.closebtn').hide();
         logBox();
         memBox();
     }else{
@@ -20,12 +18,21 @@ $(document).ready(function () {
 
     $('#formStep1 button.nextBtn').click(goStep);
 
-    // $('登出').click(()=>{
-    //     $('#login div.closebtn').hide();
-    //     $('#signUp div.closebtn').hide();
-    //     logBox();
-    //     memBox();
-    // });
+    $('#sureGoHome').click(()=>{
+        $('#login div.closebtn').hide();
+        $('#signUp div.closebtn').hide();
+        $('#JHC #formStep2').hide();
+        $('#JHC #formStep3').hide();
+        $('#JHC form#preview').hide();
+        $('#JHC .lastP').hide();
+        $('#JHC div.confirmDivC').hide();
+        $('#JHC #formStep1').show();
+        $('#JHC #submitStep1').prop( "checked", false);
+        $('#JHC #submitStep1').val('0');
+        logBox();
+        memBox();
+        
+    });
 
     // 投稿 img 放大
     // $('.zoomOut').click(()=>{
@@ -139,7 +146,8 @@ function checkRequired(theNextBtn) {
     }else{
         // #form1判斷
         $(needWrite).each(function (index, value) {
-            if ($(value).val() == '' || $(value).val() == 0) {
+            // if ($(value).val() == '' || $(value).val() == 0) {
+            if (Boolean($(value).val()) == false) {
                 need = false;
             }else{
                 need = true;
@@ -164,11 +172,15 @@ function goStep() {
     $('#JHC label[for="submitStep1"]').click(()=>{
         if($('#JHC #submitStep1').prop( "checked", true)){
             $('#JHC #submitStep1').val('1');
+        }else{
+            $('#JHC #submitStep1').val('0');
         }
     });
 
     if($('#JHC #submitStep1').prop( "checked", true)){
         $('#JHC #submitStep1').val('1');
+    }else{
+        $('#JHC #submitStep1').val('0');
     }
 
 
