@@ -141,14 +141,15 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="draftName">{{pImgName[1]}}</span>
                                 <div>
-                                    <img :src="pImgUrl[1]" class="zoomOut">
-                                    <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
+                                    <img :src="pImgUrl[1]" class="zoomOut" @click="zoomOut" data-id="0">
+                                    <span class="detailFont" @click="zoomOut" data-id="0">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
-                                <!-- <div class="zoom">
+                                <div class="zoom" @click="noZoom" data-id="0">
+                                    <p>點擊任意位置結束。</p>
                                     <div>
                                         <img :src="pImgUrl[1]">
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                             <div>
                                 <label class="contentFont" for="draw">設計圖：</label>
@@ -158,14 +159,15 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="drawName">{{pImgName[2]}}</span>
                                 <div>
-                                    <img :src="pImgUrl[2]" class="zoomOut">
-                                    <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
+                                    <img :src="pImgUrl[2]" class="zoomOut" @click="zoomOut" data-id="1">
+                                    <span class="detailFont" @click="zoomOut" data-id="1">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
-                                <!-- <div class="zoom">
+                                <div class="zoom" @click="noZoom" data-id="1">
+                                    <p>點擊任意位置結束。</p>
                                     <div>
                                         <img :src="pImgUrl[2]">
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>

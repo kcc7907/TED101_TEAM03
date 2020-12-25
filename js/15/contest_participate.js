@@ -49,29 +49,6 @@ $(document).ready(function () {
         $('#JHC input#submitStep1').prop( "checked", false);
         $('#JHC input#submitStep1').val('0');
     });
-
-
-    // 投稿 img 放大
-    // $('.zoomOut').click(()=>{
-    //     // 1.隱藏取消鈕 
-    //     $('#notsureGoContest').hide();
-    //     // 2.改變文字
-    //     $('#JHC div.confirmDivC').find('p.contentFont').hide();
-    //     $('#JHC div.confirmDivC').append('img',':src="pImgUrl[2]"');
-    //     // 3.出現confirm視窗
-    //     $('div.confirmDivC').show().css({
-    //         'zIndex': '99',
-    //         'opacity': '1',
-    //     });
-    //     // 4.點擊確認鈕
-    //     $('#JHC #sureGoContest').click(function(){
-    //         $('div.confirmDivC').css({
-    //             'zIndex': '-99',
-    //             'opacity': '0',
-    //         }).hide();
-    //         $('#notsureGoContest').show();
-    //     });
-    // });
 });
 
 // ======== vue =========
@@ -85,7 +62,22 @@ let vueJH = new Vue({
         fConcept: '',
         selectType: '請選擇作品種類',
     },
+    mounted() {
+        $('.zoom').hide();
+    },
     methods: {
+        // 投稿 img 放大
+        zoomOut(e){
+            let index = $(e.target).attr('data-id');
+            $('.zoom').eq(index).show();
+        },
+
+        noZoom(e){
+            let index = $(e.target).attr('data-id');
+            $('.zoom').eq(index).hide();
+        },
+
+
         // ======== 隱藏按鈕 ========
         // 上傳資料 - 參賽資料
         fillPID(){
