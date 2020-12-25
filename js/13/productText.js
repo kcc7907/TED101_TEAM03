@@ -157,7 +157,7 @@ $(document).ready(function () {
     });
 
 
-    setInterval(leftmove, 3000);
+    setInterval(leftmove, 5000);
 });
 
 ///////////////////////////////價錢///////////////

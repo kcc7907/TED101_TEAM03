@@ -26,6 +26,24 @@ $(document).ready(function () {
             $('div.product').css({
                 marginLeft: '15px',
             });
+            $('.icon2Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon3Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon4Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon5Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon6Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon7Btn').css({
+                border: '1px solid #865454',
+            });
         } else {
             $(this).removeClass('onClick');
             $(this).css({
@@ -71,6 +89,24 @@ $(document).ready(function () {
             });
             $('div.product').css({
                 marginLeft: '15px',
+            });
+            $('.icon1Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon3Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon4Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon5Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon6Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon7Btn').css({
+                border: '1px solid #865454',
             });
         } else {
             $(this).removeClass('onClick');
@@ -118,6 +154,24 @@ $(document).ready(function () {
             $('div.product').css({
                 marginLeft: '15px',
             });
+            $('.icon1Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon2Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon4Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon5Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon6Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon7Btn').css({
+                border: '1px solid #865454',
+            });
         } else {
             $('.icon3Btn').removeClass('onClick');
             $(this).css({
@@ -164,6 +218,24 @@ $(document).ready(function () {
             $('div.product').css({
                 marginLeft: '15px',
             });
+            $('.icon1Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon2Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon3Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon5Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon6Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon7Btn').css({
+                border: '1px solid #865454',
+            });
         } else {
             $(this).removeClass('onClick');
             $(this).css({
@@ -209,6 +281,24 @@ $(document).ready(function () {
             });
             $('div.product').css({
                 marginLeft: '15px',
+            });
+            $('.icon1Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon2Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon3Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon4Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon6Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon7Btn').css({
+                border: '1px solid #865454',
             });
         } else {
             $(this).removeClass('onClick');
@@ -261,6 +351,24 @@ $(document).ready(function () {
             });
             $('div.product').css({
                 marginLeft: '15px',
+            });
+            $('.icon1Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon2Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon3Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon4Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon5Btn').css({
+                border: '1px solid #865454',
+            });
+            $('.icon6Btn').css({
+                border: '1px solid #865454',
             });
         } else {
             $(this).removeClass('onClick');
