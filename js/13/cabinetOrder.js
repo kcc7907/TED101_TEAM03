@@ -120,8 +120,20 @@ $(document).ready(function () {
     $('#useraddress').blur(function () {
         $(this).css("borderBottom", "1px solid #BDA79E");
     });
-    ///////////////////表單驗證 效果///////////////////////
+    ///////////////////小精靈///////////////////////
+    $('.smallginlin').click(function () {
+        $('#username').val('王雨蓁');
+        $('#useremail').val('kccccc@gmail.com');
+        $('#userphone').val('0912345678');
+        $('#useraddress').val('台北市大安區小安路94號3樓');
+    });
 
+    $('.smallginlin1').click(function () {
+        $('#username').val('李冠民');
+        $('#useremail').val('kccccc@gmail');
+        $('#userphone').val('091234567');
+        $('#useraddress').val('台北市大安區小安路94號3樓');
+    });
 
 
 
