@@ -1716,7 +1716,19 @@ div.JHH {
                             }
                         }
                     }
+
+                    // 內容區
+                    div#backNews {
+                        div.contentNews {
+                            div.innerNews {
+                                width: 75%;
+                                min-height: 50%;
+                            }
+                        }
+                    }
                 }
+
+                
             }
         }
     }
@@ -2055,6 +2067,18 @@ div.JHH {
                             }
                         }
 
+                    }
+
+
+                    // 內容區
+                    div#backNews {
+                        div.contentNews {
+                            div.innerNews {
+                                width: 100%;
+                                min-height: 30%;
+                                max-height: 55%;
+                            }
+                        }
                     }
 
                 }
