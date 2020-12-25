@@ -40,15 +40,12 @@
             $statement->bindValue(4,$case_type);
             $statement->bindValue(5,$case_name);
             $statement->execute();
-            
-
-
-        } else {
+        }
+         
+        else 
+        {
             echo "拷貝/移動上傳圖片失敗";
         }
-
-
-        
     }
 
 ?>

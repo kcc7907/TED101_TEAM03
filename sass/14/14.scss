@@ -1288,7 +1288,7 @@ div#JN{
     .tab_list_block{
         .tab_list{
             width: 100%;
-            display: flex;
+            display: contents;
             li{
                 display: block;
                 text-align: center;
@@ -1317,6 +1317,11 @@ div#JN{
     .exhibit_pic2{
         width: 300px;
     }
+
+    div.other_text{
+        line-height: 1.5;
+        
+    }
 }
 };
 @include rwdmF(360){
@@ -1325,7 +1330,7 @@ div#JN{
     .tab_list_block{
         .tab_list{
             width: 20%;
-            display: grid;
+            display: contents;
             li{
                 display: block;
                 text-align: center;
