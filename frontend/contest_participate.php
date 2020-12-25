@@ -74,8 +74,8 @@
             <div class="step">
                 <ol>
                     <li class="step contentFont">1.同意規範</li>
-                    <li class="step contentFont">2.上傳資料</li>
-                    <li class="step contentFont">3.投稿成功</li>
+                    <li class="step contentFont" @click="fillPID">2.上傳資料</li>
+                    <li class="step contentFont" @click="fillWork">3.投稿成功</li>
                 </ol>
                 <form action="#" name="formStep1" class="formStep contentFont" id="formStep1">
                     <div class="rule">

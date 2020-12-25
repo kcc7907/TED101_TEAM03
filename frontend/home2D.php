@@ -8,6 +8,7 @@
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
     <link rel="stylesheet" href="../lib/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
@@ -167,159 +168,159 @@
                 </div>
                 <div id="sliderBoardJH">
                     <div id="pdtJH">
-                        <div>
+                        <a href="product/product.html">
                             <img src="../img/product/sofa05/sofa05_03.jpg" alt="沙發">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/table08/table08_04.jpg" alt="桌組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bed01/bed01_01.jpg" alt="床組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/chair02/chair02_02.jpg" alt="椅子">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bookcase03/bookcase03_04.jpg" alt="書櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/entrance/entrance01.jpg" alt="訂製櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/wardrobe/wr10.jpeg" alt="優惠組合">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/sofa05/sofa05_03.jpg" alt="沙發">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/table08/table08_04.jpg" alt="桌組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bed01/bed01_01.jpg" alt="床組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/chair02/chair02_02.jpg" alt="椅子">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bookcase03/bookcase03_04.jpg" alt="書櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/entrance/entrance01.jpg" alt="訂製櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/wardrobe/wr10.jpeg" alt="優惠組合">
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <h3 class="titleFont3">救世產品</h3>
-                <span id="frtButton"></span>
-                <span id="bckButton"></span>
+                <!-- <span id="frtButton"></span>
+                <span id="bckButton"></span> -->
             </div>
             <div class="newsDiv">
-            <<template>
-                <div class="newsSection">
-                    <div>
-                        <a href="" class="titleFont2 lineHeight">{{news[0].title}}</a>
-                        <time class="titleFont2">{{news[0].time}}</time>
+                <template>
+                    <div class="newsSection">
                         <div>
-                            <img src="../img/news/news01.jpg" alt="news">
+                            <a href="javascript: void(0)" class="titleFont2 lineHeight" @click="goContent" data-id="0">{{news[0].title}}</a>
+                            <time class="titleFont2">{{news[0].time}}</time>
+                            <div>
+                                <img src="../img/news/news01.jpg" alt="news" class="newsImg" @click="goContent" data-id="0">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="1">{{news[1].title}}</a>
+                                <time class="detailFont">{{news[1].time}}</time>
+                                <div>
+                                    <img src="../img/news/news02.jpg" alt="news" class="newsImg" @click="goContent"  data-id="1">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="2">{{news[2].title}}</a>
+                                <time class="detailFont">{{news[2].time}}</time>
+                                <div>
+                                    <img src="../img/news/news03.jpg" alt="news" class="newsImg" @click="goContent"  data-id="2">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="3">{{news[3].title}}</a>
+                                <time class="detailFont">{{news[3].time}}</time>
+                                <div>
+                                    <img src="../img/news/news04.jpg" alt="news" class="newsImg" @click="goContent" data-id="3">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="4">{{news[4].title}}</a>
+                                <time class="detailFont">{{news[4].time}}</time>
+                                <div>
+                                    <img src="../img/news/news05.jpg" alt="news" class="newsImg" @click="goContent" data-id="4">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="5">{{news[5].title}}</a>
+                                <time class="detailFont">{{news[5].time}}</time>
+                                <div>
+                                    <img src="../img/news/news06.jpg" alt="news" class="newsImg" @click="goContent" data-id="5">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="6">{{news[6].title}}</a>
+                                <time class="detailFont">{{news[6].time}}</time>
+                                <div>
+                                    <img src="../img/news/news07.jpg" alt="news" class="newsImg" @click="goContent" data-id="6">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <div>
-                            <a href="" class="detailFont">{{news[1].title}}</a>
-                            <time class="detailFont">{{news[1].time}}</time>
-                            <div>
-                                <img src="../img/news/news02.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">{{news[2].title}}</a>
-                            <time class="detailFont">{{news[2].time}}</time>
-                            <div>
-                                <img src="../img/news/news03.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">{{news[3].title}}</a>
-                            <time class="detailFont">{{news[3].time}}</time>
-                            <div>
-                                <img src="../img/news/news04.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">{{news[4].title}}</a>
-                            <time class="detailFont">{{news[4].time}}</time>
-                            <div>
-                                <img src="../img/news/news05.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">{{news[5].title}}</a>
-                            <time class="detailFont">{{news[5].time}}</time>
-                            <div>
-                                <img src="../img/news/news06.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">{{news[6].title}}</a>
-                            <time class="detailFont">{{news[6].time}}</time>
-                            <div>
-                                <img src="../img/news/news07.jpg" alt="news">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </template>>
+                </template>
                 <div class="newsSection">
                     <div>
-                        <a href="" class="titleFont2 lineHeight">{{news[7].title}}</a>
+                        <a href="javascript: void(0)" class="titleFont2 lineHeight" @click="goContent" data-id="7">{{news[7].title}}</a>
                         <time class="titleFont2">{{news[7].time}}</time>
                         <div>
-                            <img src="../img/news/news01.jpg" alt="news">
+                            <img src="../img/news/news01.jpg" alt="news" class="newsImg" @click="goContent" data-id="7">
                         </div>
                     </div>
                     <div>
                         <div>
-                            <a href="" class="detailFont">{{news[8].title}}</a>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="8">{{news[8].title}}</a>
                             <time class="detailFont">{{news[8].time}}</time>
                             <div>
-                                <img src="../img/news/news02.jpg" alt="news">
+                                <img src="../img/news/news02.jpg" alt="news" class="newsImg" @click="goContent" data-id="8">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">{{news[9].title}}</a>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="9">{{news[9].title}}</a>
                             <time class="detailFont">{{news[9].time}}</time>
                             <div>
-                                <img src="../img/news/news03.jpg" alt="news">
+                                <img src="../img/news/news03.jpg" alt="news" class="newsImg" @click="goContent" data-id="9">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">{{news[10].title}}</a>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="10">{{news[10].title}}</a>
                             <time class="detailFont">{{news[10].time}}</time>
                             <div>
-                                <img src="../img/news/news04.jpg" alt="news">
+                                <img src="../img/news/news04.jpg" alt="news" class="newsImg" @click="goContent" data-id="10">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">{{news[11].title}}</a>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="11">{{news[11].title}}</a>
                             <time class="detailFont">{{news[11].time}}</time>
                             <div>
-                                <img src="../img/news/news05.jpg" alt="news">
+                                <img src="../img/news/news05.jpg" alt="news" class="newsImg" @click="goContent" data-id="11">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">{{news[12].title}}</a>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="12">{{news[12].title}}</a>
                             <time class="detailFont">{{news[12].time}}</time>
                             <div>
-                                <img src="../img/news/news06.jpg" alt="news">
+                                <img src="../img/news/news06.jpg" alt="news" class="newsImg" @click="goContent" data-id="12">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">{{news[13].title}}</a>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="13">{{news[13].title}}</a>
                             <time class="detailFont">{{news[13].time}}</time>
                             <div>
-                                <img src="../img/news/news07.jpg" alt="news">
+                                <img src="../img/news/news07.jpg" alt="news" class="newsImg" @click="goContent" data-id="13">
                             </div>
                         </div>
                     </div>
@@ -338,7 +339,38 @@
                         <span class="hugeP pageBtn">第一頁</span>
                     </div>
                 </div>
+                <!-- 內容 -->
+                <template v-for="(content, index) in news" @click.native="newsClose" :index="index">
+                    <div id="backNews">
+                        <div class="contentNews">
+                            <div class="innerNews">
+                                <div class="close" @click="newsClose" :data-id="index">
+                                    <i class="far fa-times-circle"></i>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="content">
+                                    <div class="text">
+                                        <time class="contentFont">
+                                            日期：<span class="contentFont">{{news[index].time}}</span>
+                                        </time>
+                                        <p class="contentFont lineHeight">
+                                            {{news[index].title}}</span>
+                                        </p>
+                                    </div>
+                                    <div class="img">
+                                        <img src="">
+                                    </div>
+                                </div>
+                                <!-- <div class="NewsBtn">
+                                    <p class="contentFont">投他一票</p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </template>
             </div>
+
         </div>
         <div id="bottomBox">
             <div>

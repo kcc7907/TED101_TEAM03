@@ -24,8 +24,8 @@ $(document).ready(function () {
 
     // ======== 點擊登出按鈕 ========
     $('#sureGoHome').click(()=>{
-        $('#login div.closebtn').hide();
-        $('#signUp div.closebtn').hide();
+        // $('#login div.closebtn').hide();
+        // $('#signUp div.closebtn').hide();
         $('#JHC #formStep2').hide();
         $('#JHC #formStep3').hide();
         $('#JHC form#preview').hide();
@@ -33,7 +33,12 @@ $(document).ready(function () {
         $('#JHC div.confirmDivC').hide();
         $('#JHC #formStep1').show();
         $('#JHC input#submitStep1').prop( "checked", false);
-        $('#JHC input#submitStep1').val('0');
+        vueJH.pImgUrl = ["", "", ""];
+        vueJH.pImgName =['請選擇上傳檔案','請選擇上傳檔案','請選擇上傳檔案'];
+        vueJH.fName = '',
+        vueJH.fConcept = '',
+        vueJH.selectType = '請選擇作品種類',
+        $('#JHC form input').val('');
         logBox();
         memBox();
     });
@@ -81,17 +86,21 @@ let vueJH = new Vue({
         selectType: '請選擇作品種類',
     },
     methods: {
-            // // ======== 隱藏按鈕 ========
-            // // 上傳資料 - 參賽資料
-            // $('.JHC li.step').eq(1).click(()=>{
-            //     $('input#pIdNum').val('J122938232');
-            // });
-            
-            // // 上傳資料 - 作品資料
-            // $('.JHC li.step').eq(2).click(()=>{
-            //     $('input#fName').val('123');
-            //     $('input#fConcept').val('123');
-            // });
+        // ======== 隱藏按鈕 ========
+        // 上傳資料 - 參賽資料
+        fillPID(){
+            $('input#pIdNum').val('J122938232');
+        },
+        
+        // 上傳資料 - 作品資料
+        fillWork(){
+            this.fName = '123';
+            this.fConcept= '123';
+            this.selectType= '椅子';
+            this.pImgUrl = ['','',''];
+        },
+
+
         file1(){
             let self1 = this;
             let file1 = document.getElementById('pId').files[0];
@@ -213,8 +222,8 @@ function goStep() {
             checkRequired(e.target);
         });
     }else{
-        $('#login div.closebtn').hide();
-        $('#signUp div.closebtn').hide();
+        // $('#login div.closebtn').hide();
+        // $('#signUp div.closebtn').hide();
         logBox();
         memBox();
     }

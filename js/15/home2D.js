@@ -59,13 +59,30 @@ $(document).ready(function () {
                     time:'04 / 23 / 2020'
                 },
                 {
-                    title:'你選對椅了嗎?無論使用餐桌或書桌工作，一定都要配備一張人因工學 的椅子，當低頭15度時，頸部須承受4.5～5公斤的力度。',
+                    title:'你選對椅了嗎？無論使用餐桌或書桌工作，一定都要配備一張人因工學 的椅子，當低頭15度時，頸部須承受4.5～5公斤的力度。',
                     time:'12 / 10 / 2020'
                 },
             ],
         },
         mounted() {
             // console.log(this.news[0].title);
+            $('div#backNews').hide();
+        },
+        methods: {
+            // =================================== 新聞內頁 ===================================
+            goContent(e){
+                let index = $(e.target).attr('data-id');
+                $('div#backNews').eq(index).show().css('zIndex', '99');
+                $('div#backNews').eq(index).find('div.innerNews').css('opacity', '1');
+                let changeImg = $('.newsImg').eq(index).attr('src');
+                $('div#backNews').eq(index).find('img').attr('src', changeImg);
+                // $('div#backNews').eq(index).find('div.close').attr('data-id', index);
+            },
+            newsClose(e){
+                let index = $(e.target).parent().attr('data-id');
+                $('div#backNews').eq(index).hide().css('zIndex', '-99');
+                $('div#backNews').eq(index).find('div.innerNews').css('opacity', '0');
+            },
         },
     });
 
@@ -178,9 +195,9 @@ $(document).ready(function () {
 
 });
 
-document.addEventListener('click', (e)=>{
-console.log(e.target);
-});
+// document.addEventListener('click', (e)=>{
+// console.log(e.target);
+// });
 
 
 

@@ -757,16 +757,17 @@ div.JHH {
                                 animation-play-state: paused;
                             }
 
-                            >div {
-                                display: inline-flex;
-                                align-items: center;
-                                justify-content: center;
+                            >a {
+                                display: block;
                                 width: 300px;
                                 height: 200px;
                                 position: relative;
                                 overflow: hidden;
                                 margin: 0 5px;
                                 transition: all .5s;
+                                display: inline-flex;
+                                align-items: center;
+                                justify-content: center;
 
                                 &::after {
                                     content: "";
@@ -1188,6 +1189,134 @@ div.JHH {
                         button.right {
                             transform: rotate(90deg);
                             order: 1;
+                        }
+                    }
+                }
+
+                // 內容區
+                div#backNews {
+                    z-index: -99;
+                    // z-index: 99;
+
+                    div.contentNews {
+                        display: flex;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, 0.7);
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        z-index: 10;
+
+
+
+                        div.innerNews {
+                            transition: all .5s;
+                            opacity: 0;
+                            // opacity: 1;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 0 auto;
+                            width: 60%;
+                            min-height: 50%;
+                            background-color: #F0EBE5;
+                            font-size: 24px;
+                            color: #465D4C;
+
+                            // &::after {
+                            //     content: "點擊任意位置關閉。";
+                            //     display: inline-block;
+                            //     padding: 15px 20px;
+                            //     font-size: 22px;
+                            //     color: white;
+                            //     background-color: #000;
+                            //     position: absolute;
+                            //     top: 10%;
+                            // }
+
+                            div.content {
+                                display: flex;
+
+                                .img {
+                                    width: 500px;
+                                    height: 500px;
+                                    position: relative;
+                                    margin: 50px;
+                                    padding: 20px;
+                                    text-align: center;
+                                    overflow: hidden;
+
+                                    img {
+                                        width: 100%;
+                                        max-width: 100%;
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                    }
+                                }
+
+                                >div.text {
+                                    width: 40%;
+                                    margin: 30px;
+
+                                    >p , time{
+                                        margin: 20px;
+                                        color: #465D4C;
+
+                                        >span {
+                                            color: #465D4C;
+
+                                        }
+                                    }
+                                }
+                            }
+
+                            .NewsBtn {
+                                border: none;
+                                padding: 30px 0 50px;
+
+                                p {
+                                    // outline: none;
+                                    text-align: center;
+                                    border: none;
+                                    border: 1px solid #465D4C;
+                                    background-color: rgba(0, 0, 0, 0);
+                                    border-radius: 0;
+                                    width: 180px;
+                                    height: 70px;
+                                    font-size: 24px;
+                                    line-height: 70px;
+                                    color: #465D4C;
+                                    cursor: pointer;
+
+                                    &:hover {
+                                        background-color: #465D4C;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+
+                            .close {
+                                align-self: flex-end;
+                                padding: 15px;
+                                cursor: pointer;
+
+                                i {
+                                    font-size: 30px;
+                                    font-family: "Font Awesome 5 Free";
+                                    font-weight: 400;
+                                    -moz-osx-font-smoothing: grayscale;
+                                    -webkit-font-smoothing: antialiased;
+                                    display: inline-block;
+                                    font-style: normal;
+                                    font-variant: normal;
+                                    text-rendering: auto;
+                                    line-height: 1;
+                                }
+
+                            }
                         }
                     }
                 }
