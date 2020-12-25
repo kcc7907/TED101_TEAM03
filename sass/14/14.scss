@@ -198,11 +198,8 @@
 }
 
 body{
-    // border: 1px solid hotpink;
     margin: 0;
     background-color: #FFFAF4;
-    // overflow-x: hidden;
-    // margin-top: 160px;
     border: none !important;
     color: #54383B;
 }
@@ -210,10 +207,8 @@ body{
 
 *{
     font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
-    // font-family: "微軟正黑體";
     border: none !important;
     // box-sizing: border-box;
-    // color: #54383b;
 }
 
 
@@ -384,11 +379,8 @@ div#JN{
         
             font: bold 150px Tahoma;
             text-align: center;
-            line-height: 400px; 
-        
-            /* display: inline-block; */
+            line-height: 400px;         
             float: left;
-            
         }
 
      
@@ -456,7 +448,7 @@ div#JN{
             &:hover  span{
                 opacity: 100%;
             }
-               span{
+                span{
                     display: inline-block;
                     // display: none;
                     opacity: 0;
@@ -836,6 +828,8 @@ div#JN{
         color: #fff;
     }
 
+   
+
 
     .deatil_contact{
         border: 1px solid rebeccapurple;
@@ -922,6 +916,7 @@ div#JN{
             height: 800px;
         }
     }
+
 
 
 @include rwdmF(1200){
