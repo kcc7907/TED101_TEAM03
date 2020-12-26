@@ -50,6 +50,7 @@
         $orderNum = "A000".($order_total+1);
         echo $orderNum;
 
+        //part4 insert member_news
         $sql = 'INSERT INTO `noti` (`NOTI_TEXT`, `MEMBER_ID`, `NOTI_DATE`) VALUES (?,?,?)';
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1,'訂單已完成  訂單編號:'.$orderNum);
