@@ -1,4 +1,4 @@
-console.log(123);
+// console.log(123);
 $(document).ready(function () {
     //jQuery獎項輪播圖
 
@@ -33,12 +33,12 @@ $(document).ready(function () {
         }
 
         image = $('#content img').height();
-        console.log(image);
+        // console.log(image);
         $('.other_text').height(image)
 
         $(window).scroll(function () {
             image = $('#content img').height();
-            console.log(image);
+            // console.log(image);
             $('.other_text').height(image)
         })
 

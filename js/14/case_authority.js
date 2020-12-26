@@ -102,5 +102,4 @@ $(document).ready(function () {
             $('div.jane_jump').removeClass('-on -opacity-zero');
         }, 1000);
     });
-
 });

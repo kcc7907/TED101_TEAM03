@@ -119,13 +119,14 @@
                 <div class="jane_jump">
                     <div class="secondBack">
                         <img src="../img/interiordesign/icon/Icon-cancel.svg" alt="" class="cancel-icon">
+                        <button class="smallbutton" @click="hideButton" style="position:absolute; top: 95%;"></button>
                         <form action="" method="">
                             <label for="case_number">案例編號</label>
                             <input type="text" name="case_number" id="case_number" v-model="formData.case_num">
                             <br>
 
-                            <label for="case_name">案例區域</label>
-                            <input type="text" name="case_name" id="case_name" v-model="formData.case_intro">
+                            <label for="case_region">案例區域</label>
+                            <input type="text" name="case_region" id="case_region" v-model="formData.case_region">
                             <br>
 
                             <label for="case_name">案例名稱</label>
@@ -137,7 +138,7 @@
                             <br>
 
                             <label for="case_type">案例型態</label>
-                            <select v-model="formData.case_type" name="case_type" id="">
+                            <select v-model="formData.case_type" name="case_type" id="case_type">
                                 <option value="" selected disabled hidden>請選擇案例型態</option>
                                 <option value="居家住宅">居家住宅</option>
                                 <option value="商業空間">商業空間</option>
@@ -145,8 +146,8 @@
                             </select>
                             <br>
 
-                            <label for="case_path">圖片路徑</label>
-                            <input type="text" name="case_path" id="case_path" v-model="formData.case_path">
+                            <label for="case_path">圖片</label>
+                            <input type="file" name="case_path" id="case_path" :value="formData.case_path">
                             <br>
 
                             <button id="case_submit" type="button" @click="send">上架</button>
@@ -163,11 +164,11 @@
                 rp: '',
                 formData: {
                     case_num: '',
+                    case_region: '',
                     case_name: '',
                     case_date: '',
                     case_type: '',
-                    case_path: '',
-                    case_intro: '',
+                    // case_path: '',
                 },
                 imgsrc: {
                     box_one: '',
@@ -178,11 +179,44 @@
             },
             methods: {
                 send() {
-                    console.log(this.formData);
-                    axios.post('../php/14/case.php', this.formData).then(res => {
+                    let img_data = new FormData();
+                    let that = this;
+                    if (Boolean($('input#case_path').prop('files')[0])) {
+                        let newImg = $('input#case_path').prop('files')[0]; // 圖片名稱
+                        img_data.append('case_num', that.formData.case_num);
+                        img_data.append('case_region', that.formData.case_region);
+                        img_data.append('case_name', that.formData.case_name);
+                        img_data.append('case_date', that.formData.case_date);
+                        img_data.append('case_type', that.formData.case_type);
+                        img_data.append('newImg', newImg);
+                        // console.log(that.formData);
+                        // console.log(img_data);
+                    }
+                    $.ajax({
+                        url: "../php/14/case.php",
+                        type: "POST",
+                        data: img_data,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (res) {
+                            $('div.jane_jump').addClass('-opacity-zero');
+                            // console.log(res);
+                            // this.rp = res.data;
+                        }
                     });
-                    $('div.jane_jump').addClass('-opacity-zero');
-                }
+                    // axios.post('../php/14/case.php', this.formData).then(res => {
+                    // });
+                },
+                hideButton() {
+                    //左下方按鈕
+                    this.formData.case_num = '22';
+                    this.formData.case_region = '中山';
+                    this.formData.case_name = '忠泰玉光';
+                    this.formData.case_date = '20200911';
+                    $('select#case_type option:nth-child(2)').attr('selected', true);
+                    this.formData.case_type = $('select#case_type').val();
+                },
             },
             mounted() {
                 const self = this;
