@@ -137,7 +137,9 @@ $(document).ready(function () {
                             $('div#login').css('z-index','-3').hide();
                             $('div.login').css({'opacity':'0','top':'-30vh',});
                             $('form input').val('');
-                            $('form select').val('0');
+                            $('form select option').attr('selected', flase);
+                            $('form select option:first-child').attr('selected', true);
+
                             $('img.logMem').attr('src','../img/homepage/logInMemHome.png');
                             setTimeout(()=>{
                                 $.ajax({
@@ -300,6 +302,8 @@ $(document).ready(function () {
     $('input').change(changeBGC);
     $('select').change(function(){
         $(this).css('border' , '1px solid #BDA79E');
+        $(this).find('option:first-child').attr('selected',false);
+
     });
 });
 
@@ -417,8 +421,10 @@ function closeLB(theB) {
             'border': 'none',
             'borderBottom': '1px solid #BDA79E',
         });
-        $(theB).parent('div').parent('div').find('form').find('select').val('0').css('border', '1px solid #BDA79E');
+        $(theB).parent('div').parent('div').find('form').find('select').css('border', '1px solid #BDA79E');
         $('#alivebox').removeClass('bcgColor');
+        $(theB).parent('div').parent('div').find('form').find('select option').attr('selected', false);
+        $(theB).parent('div').parent('div').find('form').find('select option:first-child').attr('selected', true);
 
         $('div.confirmDiv').css({
             'zIndex': '-99',
@@ -467,6 +473,8 @@ function memBox() {
             'borderBottom': '1px solid #BDA79E',
         });
         $('form select').css('border' , '1px solid #BDA79E');
+        $('form select option').attr('selected', false);
+        $('form select option:first-child').attr('selected', true);
     });
     
     // 點選closeBtn關閉表單

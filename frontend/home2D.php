@@ -8,6 +8,7 @@
     <link rel="Shortcut Icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/home2D.css">
     <link rel="stylesheet" href="../lib/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
     <script src="../js/15/lazy-line-painter-1.9.6.min.js"></script>
@@ -16,20 +17,20 @@
 </head>
 
 <body>
-    <div class="JHH">
+    <div class="JHH" id="appHome">
         <header class="common">
             <div class="logo">
                 <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
             </div>
             <nav>
-                <dav class="nav1">
+                <div class="nav1">
                     <a href="product/product.html">救世傢俱</a>
                     <a href="./case.html">參考案例</a>
-                </dav>
-                <dav class="nav2">
+                </div>
+                <div class="nav2">
                     <a href="./qa.html">客戶服務</a>
                     <a href="./contest_main20.php">傢聚賞</a>
-                </dav>
+                </div>
             </nav>
             <div class="icon">
                 <span class="login">
@@ -56,14 +57,14 @@
                         <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
                     </div>
                     <nav>
-                        <dav class="nav1">
+                        <div class="nav1">
                             <a href="product/product.html">救世傢俱</a>
                             <a href="./case.html">參考案例</a>
-                        </dav>
-                        <dav class="nav2">
+                        </div>
+                        <div class="nav2">
                             <a href="./qa.html">客戶服務</a>
                             <a href="./contest_main20.php">傢聚賞</a>
-                        </dav>
+                        </div>
                     </nav>
                     <div class="icon">
                         <span class="login">
@@ -95,7 +96,7 @@
                         </div>
                         <div>
                             <span class="detailFont lineHeight">營業據點：</span>
-                            <p class="detailFont lineHeight">新北市三重區龍門路987號</p>
+                            <p class="detailFont lineHeight">台北市信義區忠孝東路五段68號</p>
                         </div>
                         <div class="tel">
                             <span class="detailFont lineHeight">聯絡電話：</span>
@@ -105,16 +106,11 @@
                     <div>
                         <h2 class="contentFont lineHeight">最新消息</h2>
                         <ul>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
-                            <li class="detailFont lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。<time class="detailFont">- 01 / 29 / 2021 </time></li>
+                            <li class="detailFont lineHeight">{{news[0].title}}<time class="detailFont">- {{news[0].time}} </time></li>
+                            <li class="detailFont lineHeight">{{news[1].title}}<time class="detailFont">- {{news[1].time}} </time></li>
+                            <li class="detailFont lineHeight">{{news[2].title}}<time class="detailFont">- {{news[2].time}} </time></li>
+                            <li class="detailFont lineHeight">{{news[3].title}}<time class="detailFont">- {{news[3].time}} </time></li>
+                            <li class="detailFont lineHeight">{{news[4].title}}<time class="detailFont">- {{news[4].time}} </time></li>
                         </ul>
                     </div>
                 </div>
@@ -149,7 +145,7 @@
         </div>
         <div id="homeRight">
             <div class="into">
-                <a href="./home3D.html" class="titleFont3">歡迎來到救世宅</a>
+                <a href="javascript: void(0)" class="titleFont3">歡迎來到救世宅</a>
             </div>
             <div>
             </div>
@@ -172,157 +168,159 @@
                 </div>
                 <div id="sliderBoardJH">
                     <div id="pdtJH">
-                        <div>
+                        <a href="product/product.html">
                             <img src="../img/product/sofa05/sofa05_03.jpg" alt="沙發">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/table08/table08_04.jpg" alt="桌組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bed01/bed01_01.jpg" alt="床組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/chair02/chair02_02.jpg" alt="椅子">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bookcase03/bookcase03_04.jpg" alt="書櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/entrance/entrance01.jpg" alt="訂製櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/wardrobe/wr10.jpeg" alt="優惠組合">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/sofa05/sofa05_03.jpg" alt="沙發">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/table08/table08_04.jpg" alt="桌組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bed01/bed01_01.jpg" alt="床組">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/chair02/chair02_02.jpg" alt="椅子">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/bookcase03/bookcase03_04.jpg" alt="書櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/entrance/entrance01.jpg" alt="訂製櫃">
-                        </div>
-                        <div>
+                        </a>
+                        <a href="product/product.html">
                             <img src="../img/product/wardrobe/wr10.jpeg" alt="優惠組合">
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <h3 class="titleFont3">救世產品</h3>
-                <span id="frtButton"></span>
-                <span id="bckButton"></span>
+                <!-- <span id="frtButton"></span>
+                <span id="bckButton"></span> -->
             </div>
             <div class="newsDiv">
+                <template>
+                    <div class="newsSection">
+                        <div>
+                            <a href="javascript: void(0)" class="titleFont2 lineHeight" @click="goContent" data-id="0">{{news[0].title}}</a>
+                            <time class="titleFont2">{{news[0].time}}</time>
+                            <div>
+                                <img src="../img/news/news01.jpg" alt="news" class="newsImg" @click="goContent" data-id="0">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="1">{{news[1].title}}</a>
+                                <time class="detailFont">{{news[1].time}}</time>
+                                <div>
+                                    <img src="../img/news/news02.jpg" alt="news" class="newsImg" @click="goContent"  data-id="1">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="2">{{news[2].title}}</a>
+                                <time class="detailFont">{{news[2].time}}</time>
+                                <div>
+                                    <img src="../img/news/news03.jpg" alt="news" class="newsImg" @click="goContent"  data-id="2">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="3">{{news[3].title}}</a>
+                                <time class="detailFont">{{news[3].time}}</time>
+                                <div>
+                                    <img src="../img/news/news04.jpg" alt="news" class="newsImg" @click="goContent" data-id="3">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="4">{{news[4].title}}</a>
+                                <time class="detailFont">{{news[4].time}}</time>
+                                <div>
+                                    <img src="../img/news/news05.jpg" alt="news" class="newsImg" @click="goContent" data-id="4">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="5">{{news[5].title}}</a>
+                                <time class="detailFont">{{news[5].time}}</time>
+                                <div>
+                                    <img src="../img/news/news06.jpg" alt="news" class="newsImg" @click="goContent" data-id="5">
+                                </div>
+                            </div>
+                            <div>
+                                <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="6">{{news[6].title}}</a>
+                                <time class="detailFont">{{news[6].time}}</time>
+                                <div>
+                                    <img src="../img/news/news07.jpg" alt="news" class="newsImg" @click="goContent" data-id="6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
                 <div class="newsSection">
                     <div>
-                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                        <time class="titleFont2">01 / 29 / 2021</time>
+                        <a href="javascript: void(0)" class="titleFont2 lineHeight" @click="goContent" data-id="7">{{news[7].title}}</a>
+                        <time class="titleFont2">{{news[7].time}}</time>
                         <div>
-                            <img src="../img/news/news01.jpg" alt="news">
+                            <img src="../img/news/news01.jpg" alt="news" class="newsImg" @click="goContent" data-id="7">
                         </div>
                     </div>
                     <div>
                         <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="8">{{news[8].title}}</a>
+                            <time class="detailFont">{{news[8].time}}</time>
                             <div>
-                                <img src="../img/news/news02.jpg" alt="news">
+                                <img src="../img/news/news02.jpg" alt="news" class="newsImg" @click="goContent" data-id="8">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="9">{{news[9].title}}</a>
+                            <time class="detailFont">{{news[9].time}}</time>
                             <div>
-                                <img src="../img/news/news03.jpg" alt="news">
+                                <img src="../img/news/news03.jpg" alt="news" class="newsImg" @click="goContent" data-id="9">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="10">{{news[10].title}}</a>
+                            <time class="detailFont">{{news[10].time}}</time>
                             <div>
-                                <img src="../img/news/news04.jpg" alt="news">
+                                <img src="../img/news/news04.jpg" alt="news" class="newsImg" @click="goContent" data-id="10">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="11">{{news[11].title}}</a>
+                            <time class="detailFont">{{news[11].time}}</time>
                             <div>
-                                <img src="../img/news/news05.jpg" alt="news">
+                                <img src="../img/news/news05.jpg" alt="news" class="newsImg" @click="goContent" data-id="11">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="12">{{news[12].title}}</a>
+                            <time class="detailFont">{{news[12].time}}</time>
                             <div>
-                                <img src="../img/news/news06.jpg" alt="news">
+                                <img src="../img/news/news06.jpg" alt="news" class="newsImg" @click="goContent" data-id="12">
                             </div>
                         </div>
                         <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
+                            <a href="javascript: void(0)" class="detailFont" @click="goContent" data-id="13">{{news[13].title}}</a>
+                            <time class="detailFont">{{news[13].time}}</time>
                             <div>
-                                <img src="../img/news/news07.jpg" alt="news">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="newsSection">
-                    <div>
-                        <a href="" class="titleFont2 lineHeight">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                        <time class="titleFont2">01 / 29 / 2021</time>
-                        <div>
-                            <img src="../img/news/news01.jpg" alt="news">
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <div>
-                                <img src="../img/news/news02.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <div>
-                                <img src="../img/news/news03.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <div>
-                                <img src="../img/news/news04.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <div>
-                                <img src="../img/news/news05.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <div>
-                                <img src="../img/news/news06.jpg" alt="news">
-                            </div>
-                        </div>
-                        <div>
-                            <a href="" class="detailFont">Sam叔叔為英國皇室家族客製頂級沙發，女皇親自頒贈感謝狀，並表示好坐。</a>
-                            <time class="detailFont">01 / 29 / 2021</time>
-                            <div>
-                                <img src="../img/news/news07.jpg" alt="news">
+                                <img src="../img/news/news07.jpg" alt="news" class="newsImg" @click="goContent" data-id="13">
                             </div>
                         </div>
                     </div>
@@ -341,7 +339,38 @@
                         <span class="hugeP pageBtn">第一頁</span>
                     </div>
                 </div>
+                <!-- 內容 -->
+                <template v-for="(content, index) in news" @click.native="newsClose" :index="index">
+                    <div id="backNews">
+                        <div class="contentNews">
+                            <div class="innerNews">
+                                <div class="close" @click="newsClose" :data-id="index">
+                                    <i class="far fa-times-circle"></i>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="content">
+                                    <div class="text">
+                                        <time class="contentFont">
+                                            日期：<span class="contentFont">{{news[index].time}}</span>
+                                        </time>
+                                        <p class="contentFont lineHeight">
+                                            {{news[index].title}}</span>
+                                        </p>
+                                    </div>
+                                    <div class="img">
+                                        <img src="">
+                                    </div>
+                                </div>
+                                <!-- <div class="NewsBtn">
+                                    <p class="contentFont">投他一票</p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </template>
             </div>
+
         </div>
         <div id="bottomBox">
             <div>
@@ -383,6 +412,7 @@
     <!-- 登入燈箱 -->
     <div id="login">
         <div class="login">
+            <span class="hideLog"></span>
             <h1 class="titleFont2">歡迎回來</h1>
             <form action="LoginR.php" class="login" name="login" method="POST">
                 <div>
@@ -412,11 +442,13 @@
                 <img class="closebtn" src="../img/homepage/Iconcancel.png">
             </div>
         </div>
+
     </div>
 
     <!-- 註冊燈箱 -->
     <div id="signUp">
         <div class="signUp">
+            <span class="hideSign"></span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009" data-llp-composed="true" id="signUp" class="lazy-line-painter">
                 <g id="Rectangle_457" data-name="Rectangle 457" fill="none" stroke="#865454" stroke-width="1">
                     <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0" style="" />

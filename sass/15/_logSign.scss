@@ -44,6 +44,17 @@ div#login {
         opacity: 0;
         transition: all 1s;
 
+        >span{ // 隱藏按鈕
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            // background-color: black;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
 
         &::after {
             content: "";
@@ -208,6 +219,8 @@ div#signUp {
     justify-content: center;
     align-items: center;
 
+
+
     div.signUp {
         width: 800px;
         height: 830px;
@@ -220,6 +233,19 @@ div#signUp {
         top: -30vh;
         opacity: 0;
         transition: all 1s;
+
+        >span{ // 隱藏按鈕
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            // background-color: black;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+        }
 
         >h1 {
             margin: 5% 0; // ******** 12/14新增

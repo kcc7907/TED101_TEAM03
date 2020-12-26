@@ -73,14 +73,22 @@
         <div class="container">
             <div class="step">
                 <ol>
-                    <li class="contentFont">1.同意規範</li>
-                    <li class="contentFont">2.上傳資料</li>
-                    <li class="contentFont">3.投稿成功</li>
+                    <li class="step contentFont">1.同意規範</li>
+                    <li class="step contentFont" @click="fillPID">2.上傳資料</li>
+                    <li class="step contentFont" @click="fillWork">3.投稿成功</li>
                 </ol>
                 <form action="#" name="formStep1" class="formStep contentFont" id="formStep1">
                     <div class="rule">
                         <p class="contentFont">
-                            請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定請配合我們的規定
+                            一、 凡參與競賽，即視為同意本同意書之規定，活動中若有爭議，主辦單位和執行單位保有活動最終解釋權。本同意書如有未盡事宜，除依相關法律規定辦理外，主辦單位保留修改之權利，主辦單位及執行單位並得另行補充及隨時公布於活動網頁。<br>
+                            二、 所有參賽作品除本競賽提供之素材外皆須為本人作品，且為未曾參加其他比賽得獎之作品，如有違反，取消參賽資格。<br>
+                            三、 所有參賽作品嚴禁抄襲、盜用與仿冒，並不得引用有版權肖像權之圖片、文章或參賽作品，若有涉及侵害著作權、專利權或其他權利之情事，參賽者應自負一切法律責任。<br>
+                            四、 參賽作品若引用他人商標、著作、影音時，參賽者應事先取得著作權人之同意授權且付清相關費用，並於參賽作品註明出處。參賽作品引用之任何商標、著作、影音等所衍生之智慧財產權糾紛，皆由參賽者自行承擔法律責任，若因此致主辦單位或其他第三人受有損害，並應予賠償。<br>
+                            五、 參賽作品若涉及或影射腥、羶、色情、暴力或影響社會善良風俗等內容，或惡意造成主辦單位或其他任何第三人包含但不限於形象、聲譽等有價或無價之損失，主辦單位得不另行通知參賽者針對該作品進行下架並取消參賽資格，並保留法律追訴權，若造成主辦單位或其他任何第三人受有損害者，參賽者應自負民事及刑事上之責任。<br>
+                            六、 完成報名即視為授權主辦單位使用參賽者公開於官方網站上的文字、個人資料等，且視為本活動資料均歸主辦單位所有，如有違反，主辦單位得取消其參賽及得獎資格。<br>
+                            七、 得獎參賽作品之著作權，參賽者同意專屬授權主辦單位無償永久使用。<br>
+                            八、 主辦單位為推廣本活動之後續宣傳等事宜，得將參賽作品及說明文字等各項資料，以任何形式公開展示、利用或散布，運用於相關媒體如電視、報章雜誌、網際網路、展覽等公開播送、傳輸及散布。<br>
+                            九、 立書人同意遵守「傢聚賞」參賽同意書及本活動其他相關規定。
                         </p>
                     </div>
                     <input type="radio" id="submitStep1" name="submitStep1" required="required" value="0" data-id="submitStep1">
@@ -113,7 +121,7 @@
                     <p class="contentFont">&frasl;&frasl;&emsp;作品資料&emsp;&frasl;&frasl;</p>
                     <div class="view">
                         <label class="contentFont" for="fType">作品種類：</label>
-                        <select class="contentFont" id="fType" name="fType" required="required" data-id="fType" v-model="selected">
+                        <select class="contentFont" id="fType" name="fType" required="required" data-id="fType" v-model="selectType">
                             <option disabled selected>請選擇作品種類</option>
                             <option v-for="type in workTypes" class="contentFont" :value="type">{{type}}</option>
                         </select>
@@ -133,14 +141,15 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="draftName">{{pImgName[1]}}</span>
                                 <div>
-                                    <img :src="pImgUrl[1]" class="zoomOut">
-                                    <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
+                                    <img :src="pImgUrl[1]" class="zoomOut" @click="zoomOut" data-id="0">
+                                    <span class="detailFont" @click="zoomOut" data-id="0">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
-                                <!-- <div class="zoom">
+                                <div class="zoom" @click="noZoom" data-id="0">
+                                    <p>點擊任意位置結束。</p>
                                     <div>
                                         <img :src="pImgUrl[1]">
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                             <div>
                                 <label class="contentFont" for="draw">設計圖：</label>
@@ -150,14 +159,15 @@
                                 <span class="file contentFont">檔案名稱：</span>
                                 <span class="file contentFont" id="drawName">{{pImgName[2]}}</span>
                                 <div>
-                                    <img :src="pImgUrl[2]" class="zoomOut">
-                                    <span class="detailFont">圖片預覽 ( 點擊放大圖片 )</span>
+                                    <img :src="pImgUrl[2]" class="zoomOut" @click="zoomOut" data-id="1">
+                                    <span class="detailFont" @click="zoomOut" data-id="1">圖片預覽 ( 點擊放大圖片 )</span>
                                 </div>
-                                <!-- <div class="zoom">
+                                <div class="zoom" @click="noZoom" data-id="1">
+                                    <p>點擊任意位置結束。</p>
                                     <div>
                                         <img :src="pImgUrl[2]">
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -187,7 +197,7 @@
                                         # 參賽者：<span class="contentFont"></span>
                                     </p>
                                     <p class="contentFont">
-                                        # 作品種類：<span class="contentFont">{{selected}}</span>
+                                        # 作品種類：<span class="contentFont">{{selectType}}</span>
                                     </p>
                                     <p class="contentFont">
                                         # 作品名稱：<span class="contentFont">{{fName}}</span>

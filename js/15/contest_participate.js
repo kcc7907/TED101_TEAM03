@@ -5,49 +5,50 @@ $(document).ready(function () {
     $('#JHC form#preview').hide();
     $('#JHC .lastP').hide();
     $('#JHC div.confirmDivC').hide();
+    $('#JHC input#submitStep1').prop( "checked", false);
+    $('#JHC input#submitStep1').val('0');
 
 
-    
+
+    // ======== 確認登入與否 ========
     if(!checkCookie('loging')){
-        $('#login div.closebtn').hide();
-        $('#signUp div.closebtn').hide();
         logBox();
         memBox();
     }else{
         goStep();
     }
     
-
+    // ======== 點擊第一個下一步 ========
     $('#formStep1 button.nextBtn').click(goStep);
+    
 
-    // $('登出').click(()=>{
-    //     $('#login div.closebtn').hide();
-    //     $('#signUp div.closebtn').hide();
-    //     logBox();
-    //     memBox();
-    // });
+    // ======== 點擊登出按鈕 ========
+    $('#sureGoHome').click(()=>{
+        // $('#login div.closebtn').hide();
+        // $('#signUp div.closebtn').hide();
+        $('#JHC #formStep2').hide();
+        $('#JHC #formStep3').hide();
+        $('#JHC form#preview').hide();
+        $('#JHC .lastP').hide();
+        $('#JHC div.confirmDivC').hide();
+        $('#JHC #formStep1').show();
+        $('#JHC input#submitStep1').prop( "checked", false);
+        vueJH.pImgUrl = ["", "", ""];
+        vueJH.pImgName =['請選擇上傳檔案','請選擇上傳檔案','請選擇上傳檔案'];
+        vueJH.fName = '',
+        vueJH.fConcept = '',
+        vueJH.selectType = '請選擇作品種類',
+        $('#JHC form input').val('');
+        logBox();
+        memBox();
+    });
 
-    // 投稿 img 放大
-    // $('.zoomOut').click(()=>{
-    //     // 1.隱藏取消鈕 
-    //     $('#notsureGoContest').hide();
-    //     // 2.改變文字
-    //     $('#JHC div.confirmDivC').find('p.contentFont').hide();
-    //     $('#JHC div.confirmDivC').append('img',':src="pImgUrl[2]"');
-    //     // 3.出現confirm視窗
-    //     $('div.confirmDivC').show().css({
-    //         'zIndex': '99',
-    //         'opacity': '1',
-    //     });
-    //     // 4.點擊確認鈕
-    //     $('#JHC #sureGoContest').click(function(){
-    //         $('div.confirmDivC').css({
-    //             'zIndex': '-99',
-    //             'opacity': '0',
-    //         }).hide();
-    //         $('#notsureGoContest').show();
-    //     });
-    // });
+
+    // ======== 點擊登入 ========
+    $('.login').click(()=>{
+        $('#JHC input#submitStep1').prop( "checked", false);
+        $('#JHC input#submitStep1').val('0');
+    });
 });
 
 // ======== vue =========
@@ -59,9 +60,39 @@ let vueJH = new Vue({
         workTypes:['沙發', '桌子', '床', '椅子', '書櫃'],
         fName: '',
         fConcept: '',
-        selected: '',
+        selectType: '請選擇作品種類',
+    },
+    mounted() {
+        $('.zoom').hide();
     },
     methods: {
+        // 投稿 img 放大
+        zoomOut(e){
+            let index = $(e.target).attr('data-id');
+            $('.zoom').eq(index).show();
+        },
+
+        noZoom(e){
+            let index = $(e.target).attr('data-id');
+            $('.zoom').eq(index).hide();
+        },
+
+
+        // ======== 隱藏按鈕 ========
+        // 上傳資料 - 參賽資料
+        fillPID(){
+            $('input#pIdNum').val('J122938232');
+        },
+        
+        // 上傳資料 - 作品資料
+        fillWork(){
+            this.fName = '123';
+            this.fConcept= '123';
+            this.selectType= '椅子';
+            this.pImgUrl = ['','',''];
+        },
+
+
         file1(){
             let self1 = this;
             let file1 = document.getElementById('pId').files[0];
@@ -139,7 +170,8 @@ function checkRequired(theNextBtn) {
     }else{
         // #form1判斷
         $(needWrite).each(function (index, value) {
-            if ($(value).val() == '' || $(value).val() == 0) {
+            // if ($(value).val() == '' || $(value).val() == 0) {
+            if (Boolean($(value).val()) == false) {
                 need = false;
             }else{
                 need = true;
@@ -162,13 +194,17 @@ function checkRequired(theNextBtn) {
 function goStep() {
     // **************** 同意鈕 
     $('#JHC label[for="submitStep1"]').click(()=>{
-        if($('#JHC #submitStep1').prop( "checked", true)){
-            $('#JHC #submitStep1').val('1');
+        if($('#JHC input #submitStep1').prop( "checked", true)){
+            $('#JHC input#submitStep1').val('1');
+        }else{
+            $('#JHC input#submitStep1').val('0');
         }
     });
 
-    if($('#JHC #submitStep1').prop( "checked", true)){
-        $('#JHC #submitStep1').val('1');
+    if($('#JHC input#submitStep1').prop( "checked", true)){
+        $('#JHC input#submitStep1').val('1');
+    }else{
+        $('#JHC input#submitStep1').val('0');
     }
 
 
@@ -178,8 +214,8 @@ function goStep() {
             checkRequired(e.target);
         });
     }else{
-        $('#login div.closebtn').hide();
-        $('#signUp div.closebtn').hide();
+        // $('#login div.closebtn').hide();
+        // $('#signUp div.closebtn').hide();
         logBox();
         memBox();
     }
