@@ -35,6 +35,16 @@ $(document).ready(function () {
             $('div.sam_jump').removeClass('-on -opacity-zero');
         }, 1000);
     });
+    $('.smallginlin').click(function () {
+        $('input#product_number').val("Text_number001");
+        $('input#product_kind').val("桌組");
+        $('input#product_name').val("大家順利找到好工作");
+        $('input#product_price').val(12000);
+        $('input#product_material').val('楓木');
+        $('input#product_update').val('2020/12/29');
+        $('input#product_discount').val('無');
+        // console.log($('input#product_number'));
+    });
     // $('button.cancel').click(function (e) {
     //     let firm1 = confirm('是否下架此商品');
     //     if (firm1) {

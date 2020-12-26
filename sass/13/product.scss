@@ -185,6 +185,13 @@ div.sam{
             }
         }
     }
+    @media (max-width:472px){
+        div.selectBar{
+            button.iconButton{
+                margin:10px 5px;
+            }
+        }
+    }
     @media (max-width:360px){
         div.banner{
             h2.bannerWord01{

@@ -226,11 +226,32 @@ div.sam_co{
                         margin-bottom:8%;
                         transition:background-color,.5s;
                         cursor:pointer;
+                        outline:none;
                         z-index: 1;
                         &:hover{
                             color:#fff;
                             background-color: #BDA79e;
                         }
+                    }
+                    span.smallginlin{
+                        width: 20px;
+                        height: 20px;
+                        outline:none;
+                        cursor:pointer;
+                        background-color: #BDA79e;
+                        position: absolute;
+                        left:2%;
+                        bottom:10%;
+                    }
+                    span.smallginlin1{
+                        width: 20px;
+                        height: 20px;
+                        outline:none;
+                        cursor:pointer;
+                        background-color: #775446;
+                        position: absolute;
+                        left:2%;
+                        bottom:5%;
                     }
                 }
             }

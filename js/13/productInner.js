@@ -144,12 +144,12 @@ $(document).ready(function () {
 
     sliderBox.addEventListener('transitionend', () => {
         //console.log(slider[counter]);
-        if (slider[counter].id === 'lastClone') {
+        if (slider[counter].id == 'lastClone') {
             sliderBox.style.transition = 'none';
             counter = slider.length - 3;
             sliderBox.style.transform = 'translateX(' + (-size * counter) + 'px)';
         };
-        if (slider[counter].id === 'firstClone') {
+        if (slider[counter].id == 'firstClone') {
             sliderBox.style.transition = 'none';
             counter = slider.length - counter;
             sliderBox.style.transform = 'translateX(' + (-size * counter) + 'px)';
@@ -277,12 +277,12 @@ function setLocal(e) {
     shoplist.forEach(e => {
         shopnum += parseInt(e.num);
     });
-    if (shopnum === 0){
+    if (shopnum === 0) {
         return false;
-    } else if (!shopIcon.classList.contains('shopnum')){
-        shopIcon.setAttribute('data-content', shopnum );
+    } else if (!shopIcon.classList.contains('shopnum')) {
+        shopIcon.setAttribute('data-content', shopnum);
         shopIcon.classList.add('shopnum');
-    }else{
+    } else {
         shopIcon.setAttribute('data-content', shopnum);
     }
 }
