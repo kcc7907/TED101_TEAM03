@@ -106,12 +106,12 @@ $(document).ready(function () {
         $('main').css('display', 'none');
         $('main.jh_class').css('display', 'block');
     });
-    $('img.cancel-icon').click(function () {
-        $('div.jh_jump').addClass('-opacity-zero');
-        setTimeout(function () {
-            $('div.jh_jump').removeClass('-on -opacity-zero');
-        }, 1000);
-    });
+    // $('img.cancel-icon').click(function () {
+    //     $('div.jh_jump').addClass('-opacity-zero');
+    //     setTimeout(function () {
+    //         $('div.jh_jump').removeClass('-on -opacity-zero');
+    //     }, 1000);
+    // });
 
 
 });

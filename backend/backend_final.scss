@@ -463,14 +463,15 @@ body {
 
             //////////////////////////////case//////////////////////////////////
 
-            >main.jane_class {
+            >main.jane_class{
                 display: none;
                 font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
                 width: 79.1%;
                 margin: 0 auto;
                 font-size: 24px;
+                margin-bottom: 5%;
 
-                >.top {
+                >.top{
                     display: flex;
                     justify-content: space-between;
 
@@ -479,148 +480,134 @@ body {
                     padding: 15px 0;
                 }
 
-                >table.jane_authorityChange {
+                >table.jane_authorityChange{
                     margin: 60px auto 0;
                     border-top: 1px solid #707070;
                     border-right: 1px solid #707070;
                     border-left: 1px solid #707070;
                     flex-wrap: nowrap;
 
-                    tr {
+                    tr{
                         border-bottom: 1px solid #707070;
 
-                        >th {
+                        >th{
                             background-color: #CAC3BB;
                             font-weight: bold;
                         }
 
-                        >td {
+                        >td{
 
-                            >button.cancel {
-                                width: 70px;
+                            >button.cancel{                                
+                                width:70px;
                                 height: 25px;
-                                border: 2px solid #707070;
-                                background: none;
-                                cursor: pointer;
-                                color: #707070;
-                                outline: none;
-                                transition: all .5s;
-                                box-shadow: 1px 1px 1px #474747;
-
-                                &:hover {
+                                border:2px solid #707070;
+                                background:none;
+                                cursor:pointer;
+                                color:#707070;
+                                outline:none;
+                                transition:all .5s;
+                                box-shadow:1px 1px 1px #474747;
+                                &:hover{
                                     background-color: #865454;
-                                    color: rgb(231, 231, 231);
+                                    color:rgb(231, 231, 231);
                                 }
                             }
                         }
 
-                        >th,
-                        >td {
+                        >th, >td{
                             padding: 15px;
                             text-align: center;
                             width: 12%;
                         }
-
-                        >th+th,
-                        >td+td {
+                        >th + th, >td + td{
                             border-left: 1px solid #707070;
                         }
                     }
                 }
-
-                div.jane_jump {
-                    // border: 1px solid red;
+                div.jane_jump{
+                    border:1px solid red;
                     position: fixed;
-                    width: 100%;
+                    width:100%;
                     height: 100vh;
-                    background-color: rgba(97, 97, 97, .8);
-                    top: 0;
-                    left: 0;
+                    background-color: rgba(97,97,97,.8);
+                    top:0;
+                    left:0;
                     opacity: 0;
                     z-index: -1;
                     transition: opacity 1s;
-
-                    div.secondBack {
-                        width: 60%;
-                        margin: 0 auto;
-                        border: 1px solid rgb(155, 155, 155);
+                    div.secondBack{
+                        width:60%;
+                        margin:0 auto;
+                        border:1px solid rgb(155, 155, 155);
                         background-color: #fffaf4;
                         margin-top: 4.5%;
                         position: relative;
-
-                        img.cancel-icon {
+                        img.cancel-icon{
                             position: absolute;
                             width: 40px;
                             height: 40px;
-                            top: 1%;
-                            right: 1%;
-                            cursor: pointer;
+                            top:1%;
+                            right:1%;
+                            cursor:pointer;
                         }
-
-                        form {
-                            border: 1px solid #865454;
-                            width: 50%;
-                            margin: 60px auto 60px;
+                        form{
+                            border:1px solid #865454;
+                            width:50%;
+                            margin:60px auto 60px;
                             position: relative;
-                            z-index: 2;
-
-                            &:after {
-                                content: '';
-                                display: block;
-                                width: 100%;
+                            z-index:2;
+                            &:after{
+                                content:'';
+                                display:block;
+                                width:100%;
                                 height: 100%;
-                                background-color: rgba(189, 167, 156, 0.1);
+                                background-color: rgba(189,167,156,0.1);
                                 position: absolute;
-                                top: 1%;
-                                right: -1%;
-                                z-index: -1;
+                                top:1%;
+                                right:-1%;
+                                z-index:-1;
                             }
                         }
-
-                        label {
-                            display: inline-block;
-                            margin: 2% 20px 0px 2%;
+                        label{
+                            display:inline-block;
+                            margin:2% 20px 0px 2%;
                         }
-
-                        input {
-                            display: inline-block;
-                            background: none;
-                            border: none;
-                            outline: none;
-                            border-bottom: 1px solid #865454;
-                            margin-bottom: 6%;
+                        input{
+                            display:inline-block;
+                            background:none;
+                            border:none;
+                            outline:none;
+                            border-bottom:1px solid #865454;
+                            margin-bottom:6%;
                         }
-
-                        button#case_submit {
-                            display: block;
-                            margin: 30px auto;
-                            width: 150px;
+                        button#case_submit{
+                            display:block;
+                            margin:30px auto;
+                            width:150px;
                             height: 50px;
-                            border: 2px solid #BDA79E;
-                            color: #865454;
-                            outline: none;
-                            cursor: pointer;
-                            background: none;
-                            font-size: 24px;
-                            transition: all .5s;
-
-                            &:hover {
+                            border:2px solid #BDA79E;
+                            color:#865454;
+                            outline:none;
+                            cursor:pointer;
+                            background:none;
+                            font-size:24px;
+                            transition:all .5s;
+                            &:hover{
                                 background-color: #BDA79E;
-                                color: #f8f8f8;
+                                color:#f8f8f8;
                             }
                         }
                     }
                 }
-
-                div.jane_jump.-on {
+                div.jane_jump.-on{
                     opacity: 1;
                     z-index: 2;
                 }
-
-                div.jane_jump.-opacity-zero {
+                div.jane_jump.-opacity-zero{
                     opacity: 0;
                 }
             }
+
 
             //////////////////////////////jh//////////////////////////////////
 

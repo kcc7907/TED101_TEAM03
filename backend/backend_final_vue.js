@@ -18,6 +18,9 @@ let app = new Vue({
                 this.getData();
             })
             $('div.sam_jump').addClass('-opacity-zero');
+            setTimeout(function () {
+                $('div.sam_jump').removeClass('-on -opacity-zero');
+            }, 1000);
         },
         getData(){
             axios.post('../php/13/product.php').then(res => {
@@ -36,23 +39,57 @@ let app3 = new Vue({
         rp: '',
         formData: {
             case_num: '',
+            case_region: '',
             case_name: '',
             case_date: '',
             case_type: '',
-            case_path: '',
-            case_intro: '',
         },
         imgsrc: {
             box_one: '',
             box_two: '',
             box_three: ''
         }
-
     },
     methods: {
         send() {
-            axios.post('../php/14/case.php', this.formData).then(() => this.getData());
-            $('div.jane_jump').addClass('-opacity-zero');
+            let img_data = new FormData();
+            let that = this;
+            if (Boolean($('input#case_path').prop('files')[0])) {
+                let newImg = $('input#case_path').prop('files')[0]; // 圖片名稱
+                img_data.append('case_num', that.formData.case_num);
+                img_data.append('case_region', that.formData.case_region);
+                img_data.append('case_name', that.formData.case_name);
+                img_data.append('case_date', that.formData.case_date);
+                img_data.append('case_type', that.formData.case_type);
+                img_data.append('newImg', newImg);
+            }
+            $.ajax({
+                url: "../php/14/case.php",
+                type: "POST",
+                data: img_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (res) {
+                    that.getData();
+                }
+            }).then(res=>{
+                $('div.jane_jump').addClass('-opacity-zero');
+                setTimeout(function () {
+                    $('div.jane_jump').removeClass('-on -opacity-zero');
+                }, 1000);
+            })
+            ;
+
+        },
+        hideButton() {
+            //左下方按鈕
+            this.formData.case_num = '22';
+            this.formData.case_region = '中山';
+            this.formData.case_name = '忠泰玉光';
+            this.formData.case_date = '20200911';
+            $('select#case_type option:nth-child(2)').attr('selected', true);
+            this.formData.case_type = $('select#case_type').val();
         },
         getData(){
             const self = this;
@@ -63,7 +100,7 @@ let app3 = new Vue({
                     self.rp = res.case;
                 }
             })
-        },
+        }
     },
     mounted() {
         this.getData();
@@ -101,75 +138,75 @@ Vue.component('checkComponent', {
     template: `
             <div class="jh_jump" :data-id=i>
                 <div class="secondBack">
-        <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon" @click="closeIcon(i)">
+                    <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon" @click="closeIcon(i)">
                     <form action="" method="">
-            <label for="WK_SESSION">比賽屆數</label>
-            <p id="WK_SESSION">第{{ session }}屆</p>
-            <br>
+                        <label for="WK_SESSION">比賽屆數</label>
+                        <p id="WK_SESSION">第{{session}}屆</p>
+                        <br>
 
-                <label for="MEM_ID">會員帳號</label>
-                <p id="MEM_ID">{{ account }}</p>
-                <br>
+                        <label for="MEM_ID">會員帳號</label>
+                        <p id="MEM_ID">{{account}}</p>
+                        <br>
 
-                    <label for="MEM_NAME">會員姓名</label>
-                    <p id="MEM_NAME">{{ name }}</p>
-                    <br>
+                        <label for="MEM_NAME">會員姓名</label>
+                        <p id="MEM_NAME">{{name}}</p>
+                        <br>
 
                         <label for="CT_PERSONAL_ID">身分證號碼</label>
-                        <input type="text" name="CT_PERSONAL_ID" id="CT_PERSONAL_ID" :value="memid" @change="goChangeID">
+                        <p id="CT_PERSONAL_ID">{{memid}}</p>
                         <br>
 
-                            <label for="CT_IMG_FRONT">身分證圖片</label>
-                            <label for="newPID" name="file">修改</label>
-                            <div class="uploadImg">
-                                <img :src="frontimg" id="CT_IMG_FRONT" class="file">
+                        <label for="CT_IMG_FRONT">身分證圖片</label>
+                        <label for="newPID" name="file">修改</label>
+                        <div class="uploadImg">
+                            <img :src="frontimg" id="CT_IMG_FRONT" class="file">
                         </div>
-                            <input type="file" name="newPID" id="newPID" @change="goChange1">
+                        <input type="file" name="newPID" id="newPID" @change="goChange1">
                         <br>
 
-                                <label for="WK_ID">作品編號</label>
-                                <p id="WK_ID">{{ worknum }}</p>
-                                <br>
+                        <label for="WK_ID">作品編號</label>
+                        <p id="WK_ID">{{worknum}}</p>
+                        <br>
 
-                                    <label for="WK_NAME">作品名稱</label>
-                                    <p id="WK_NAME">{{ workname }}</p>
-                                    <br>
+                        <label for="WK_NAME">作品名稱</label>
+                        <p id="WK_NAME">{{workname}}</p>
+                        <br>
 
-                                        <label for="WK_CONCEPT">作品理念</label>
-                                        <p id="WK_CONCEPT">{{ concept }}</p>
-                                        <br>
+                        <label for="WK_CONCEPT">作品理念</label>
+                        <p id="WK_CONCEPT">{{concept}}</p>
+                        <br>
 
-                                            <label for="WK_DRAFT">作品草稿</label>
-                                            <label for="newDraft" name="file">修改</label>
-                                            <div class="uploadImg">
-                                                <img :src="draft" id="WK_DRAFT" class="file">
+                        <label for="WK_DRAFT">作品草稿</label>
+                        <label for="newDraft" name="file">修改</label>
+                        <div class="uploadImg">
+                            <img :src="draft" id="WK_DRAFT" class="file">
                         </div>
-                                            <input type="file" name="newDraft" id="newDraft"  @change="goChange2">
+                        <input type="file" name="newDraft" id="newDraft"  @change="goChange2">
                         <br>
-
-                                                <label for="WK_DRAW">作品完稿</label>
-                                                <label for="newDraw" name="file">修改</label>
-                                                <div class="uploadImg">
-                                                    <img :src="draw" id="WK_DRAW" class="file">
+                        
+                        <label for="WK_DRAW">作品完稿</label>
+                        <label for="newDraw" name="file">修改</label>
+                        <div class="uploadImg">
+                            <img :src="draw" id="WK_DRAW" class="file">
                         </div>
-                                                <input type="file" name="newDraw" id="newDraw"  @change="goChange3">
+                        <input type="file" name="newDraw" id="newDraw"  @change="goChange3">
                         <br>
 
-                                                    <label for="WK_VOTES">投票數</label>
-                                                    <p id="WK_VOTES">{{ vote }}</p>
-                                                    <br>
+                        <label for="WK_VOTES">投票數</label>
+                        <p id="WK_VOTES">{{vote}}</p>
+                        <br>
 
-                                                        <label for="WK_STATUS" class="theStatus">作品狀態</label>
-                                                        <select name="newStatus" id="newStatus" class="theStatus" @change="goChangeStatus">
+                        <label for="WK_STATUS" class="theStatus">作品狀態</label>
+                        <select name="newStatus" id="newStatus" class="theStatus" @change="goChangeStatus">
                             <option value="0" selected disabled>審核狀態</option>
-                                                        <option v-for="status in workStatus" : {{ status }}</option>
+                            <option v-for="status in workStatus" :value="status">{{status}}</option>
                         </select>
-                                                <br>
+                        <br>
 
-                                                    <label for="WK_DATE">投稿日期</label>
-                                                    <p id="WK_DATE">{{ date }}</p>
-                                                    <br>
-                                                        <button id="work_submit" type="button" @click="updateBtn">保存</button>
+                        <label for="WK_DATE">投稿日期</label>
+                        <p id="WK_DATE">{{date}}</p>
+                        <br>
+                        <button id="work_submit" type="button" @click="updateBtn">保存</button>
                     </form>
                 </div>
             </div>
@@ -225,6 +262,7 @@ Vue.component('checkComponent', {
             let newstatus = $(e.target).val();
             // console.log(newstatus);
             this.$emit('new-status', theIndex, newstatus);
+
         },
 
         closeIcon(index) {
@@ -254,6 +292,7 @@ let JHApp = new Vue({
         // photos: ['CT_IMG_FRONT', 'WK_DRAFT', 'WK_DRAW'],
     },
     methods: {
+
         // 點擊審核出現彈窗
         checkWork(i) {
             $(`div.jh_jump`).eq(i).addClass('-on');
@@ -341,21 +380,47 @@ let JHApp = new Vue({
                     }, 500);
                 }
             });
+
+            if (this.work[index].WK_STATUS !== '待收件') {
+                $('button#jh_authorityChange2').eq(index).attr('disabled', 'disabled').css({
+                    'backgroundColor': 'grey',
+                    'color': 'black',
+                });
+            }
         }
 
-
+        // 審核判斷
     },
     mounted() {
         const that = this;
         $.ajax({
             type: "POST",
             url: "./contestWorkR.php",
-            // data: "data",
             dataType: "json",
             success: function (res) {
                 let allWork = [];
                 $(res).each((index, value) => {
                     that.work.push(value);
+                });
+            }
+        });
+        // .then(res=>{
+        //     $(that.work).each(function(item, val){
+        //         if(val.WK_STATUS !== '待收件'){
+        //             $('button#jh_authorityChange2').eq(item).attr('disabled','disabled').css({
+        //                 'backgroundColor': 'grey',
+        //                 'color': 'black',
+        //             });
+        //         }
+        //     });
+        // });
+    },
+    updated() {
+        $(this.work).each(function (item, val) {
+            if (val.WK_STATUS !== '待收件') {
+                $('button#jh_authorityChange2').eq(item).attr('disabled', 'disabled').css({
+                    'backgroundColor': 'grey',
+                    'color': 'black',
                 });
             }
         });

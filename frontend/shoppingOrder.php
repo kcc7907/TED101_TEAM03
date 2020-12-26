@@ -58,7 +58,8 @@
                     <div class="lives df">
                         <p class="innerT lh">住址</p>
                         <input type="text" ref="raddr" class="live_input" v-model="memLives" disabled @blur="blur"
-                            @keyup.13="blur"><button class="modified" @click="focus">修改</button>
+                            @keyup.13="blur">
+                            <!-- <button class="modified" @click="focus">修改</button> -->
                     </div>
                 </div>
                 <h2 class="payment">付款方式</h2>
