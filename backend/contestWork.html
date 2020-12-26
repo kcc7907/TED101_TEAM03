@@ -405,7 +405,7 @@
                         }
                     });
 
-                    if(this.work[index].WK_STATUS !== '待收件'){
+                    if(this.work[index].WK_STATUS == '投稿成功' || this.work[index].WK_STATUS == '投稿失敗'){
                         $('button#jh_authorityChange2').eq(index).attr('disabled','disabled').css({
                             'backgroundColor': 'grey',
                             'color': 'black',
@@ -441,7 +441,7 @@
             },
             updated() {
                 $(this.work).each(function(item, val){
-                    if(val.WK_STATUS !== '待收件'){
+                    if(val.WK_STATUS == '投稿成功' || val.WK_STATUS == '投稿失敗'){
                         $('button#jh_authorityChange2').eq(item).attr('disabled','disabled').css({
                             'backgroundColor': 'grey',
                             'color': 'black',
