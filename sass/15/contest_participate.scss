@@ -31,7 +31,7 @@ div.JHC {
             background-color: #000 !important;
             position: absolute !important;
             top: 10% !important;
-            left: calc((100% - 560px) / 2) !important;
+            left: calc((100% - 500px) / 2) !important;
         }
         div{
             width: 500px !important;
@@ -451,7 +451,7 @@ div.JHC {
 
                         >div.text {
                             margin: 15px;
-
+                            max-width: 53%;
                             >p {
                                 margin: 20px;
                                 color: #465D4C;
@@ -739,7 +739,7 @@ div.JHC {
                             }
 
                             >div.text {
-                                margin: 10px;
+                                margin: 10px auto;
 
                                 >p {
                                     >span {}
@@ -808,7 +808,7 @@ div.JHC {
                             flex-direction: column;
 
                             .img {
-                                margin: 10px;
+                                margin: 10px auto;
                                 padding: 10px;
                             }
 
@@ -876,7 +876,10 @@ div.JHC {
                         width: 100%;
                         justify-content: center;
 
-                        &::after {}
+                        &::after {
+                            background-color: rgba(0,0,0,.3);
+                            top: 5%;
+                        }
 
                         div.content {
                             .img {}
@@ -914,6 +917,14 @@ div.JHC {
 
 @include rwdmF(576) {
     div.JHC {
+        .zoom{
+            p{
+                left: calc((100% - 90%) / 2) !important;
+            }
+            div{
+                width: 90% !important;
+            }
+        }
         .container div.step {
             min-width: 360px;
 
@@ -948,10 +959,10 @@ div.JHC {
                     >div {
                         div {
                             width: 100%;
-
+                        
                             div {
                                 width: 100%;
-                                height: 300px;
+                                height: 400px;
 
                             }
                         }
@@ -973,12 +984,12 @@ div.JHC {
 
                         div.content {
                             .img {
-                                margin: 0;
+                                margin: 0 auto;
                                 padding: 0;
                             }
 
                             >div.text {
-                                margin: 5px;
+                                margin: 5px auto;
 
                                 >p {
                                     >span {}
@@ -987,9 +998,9 @@ div.JHC {
                         }
 
                         .preViewBtn {
+                            padding: 0;
                             p {
                                 margin: 10px;
-
                                 &:hover {}
                             }
                         }
@@ -1041,6 +1052,20 @@ div.JHC {
                         div {
                             div {
                                 height: 250px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            form#preview {
+                div.backGround {
+                    div.clickVote {
+                        .preViewBtn {
+                            padding: 0 !important;
+                            p {
+
+                                &:hover {}
                             }
                         }
                     }
