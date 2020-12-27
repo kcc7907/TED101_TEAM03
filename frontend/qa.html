@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../lib/reset.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js'></script>
 
     <script src='../lib/js/jquery.js'></script>
     <script src="../lib/js/vue.js"></script>
@@ -377,8 +378,8 @@
                                 <button type="button" class="push">上傳圖片<img src="../img/19/file-image-regular.svg" alt=""></button>
                             </div> -->
         
-                            <div class="button">
-                                <button type="button" class="push">送出</button>
+                            <div class="button" >
+                                <button type="button" class="push" v-on:click="send">送出</button>
                             </div>
                         </div>
                     </div>
@@ -552,8 +553,13 @@
                     kiaquestion:'',
                 },
             },
-            mounted(){
-                console.log(123);
+            methods: {
+                send() {
+                    // console.log(123);
+                    axios.post('../php/19/kiainput.php', this.formData).then((res)=>{
+                        console.log(res.data);
+                    })
+                }
             },
         });
     </script>
