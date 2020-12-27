@@ -349,12 +349,12 @@
                         <div class="paper2">
                             <p class="item">姓名</p>
                             <label>
-                                <input class="reply" type="text" placeholder="請在此輸入姓名" size="40" v-model="kianame">  
+                                <input class="reply" type="text" placeholder="請在此輸入姓名" size="40" v-model="formData.kianame">  
                             </label>
         
                             <p class="item">手機號碼</p>
                             <label>
-                                <input class="reply" type="text" placeholder="請在此輸入手機號碼" size="40" v-model="kiaphone">    
+                                <input class="reply" type="text" placeholder="請在此輸入手機號碼" size="40" v-model="formData.kiaphone">    
                             </label>
         
                             <p class="item">EMAIL</p>
@@ -364,7 +364,7 @@
         
                             <p class="item">您的疑問</p>
                             <div class="question">
-                                <textarea rows="3" cols="40" class="txt" placeholder="" v-model="kiaquestion"></textarea>
+                                <textarea rows="3" cols="40" class="txt" placeholder="" v-model="formData.kiaquestion"></textarea>
                             </div>
         
                             <!-- <div class="load">
