@@ -92,3 +92,10 @@ exports.tophp = cb => {
         })).pipe(dest('dist/'));
     cb()
 }
+
+exports.imgem = cb => {
+    src('./img/**')
+        .pipe(imagemin())
+        .pipe(dest('dest/images'));
+    cb()
+}
