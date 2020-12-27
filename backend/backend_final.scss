@@ -612,7 +612,7 @@ body {
             //////////////////////////////jh//////////////////////////////////
 
             >main.jh_class {
-                // display: none;
+                display: none;
                 font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
                 width: 79.1%;
                 margin: 0 auto;
@@ -863,7 +863,74 @@ body {
                 }
             }
 
+            //////////////////////////////km qa//////////////////////////////////
 
+            >main.km_class {
+                display: none;
+                font-family: 'Noto Sans TC Light', '微軟正黑體', sans-serif;
+                width: 79.1%;
+                margin: 0 auto;
+                font-size: 24px;
+
+                >.top {
+                    display: flex;
+                    justify-content: space-between;
+
+                    border-bottom: 1px solid #707070;
+                    margin-top: 26px;
+                    padding: 15px 0;
+                }
+
+                >table.sam_authorityChange {
+                    margin: 60px auto 0;
+                    border-top: 1px solid #707070;
+                    border-right: 1px solid #707070;
+                    border-left: 1px solid #707070;
+
+                    tr {
+                        border-bottom: 1px solid #707070;
+
+                        >th {
+                            background-color: #CAC3BB;
+                            font-weight: bold;
+                        }
+
+                        >td {
+
+                            >button.cancel {
+                                width: 70px;
+                                height: 25px;
+                                border: 2px solid #707070;
+                                background: none;
+                                cursor: pointer;
+                                color: #707070;
+                                outline: none;
+                                transition: all .5s;
+                                box-shadow: 1px 1px 1px #474747;
+
+                                &:hover {
+                                    background-color: #865454;
+                                    color: rgb(231, 231, 231);
+                                }
+                            }
+                        }
+
+                        >th,
+                        >td {
+                            padding: 15px;
+                            text-align: center;
+                        }
+
+                        >th+th,
+                        >td+td {
+                            border-left: 1px solid #707070;
+                        }
+
+
+                    }
+                }
+
+            }
         }
     }
 }

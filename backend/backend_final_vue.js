@@ -426,3 +426,27 @@ let JHApp = new Vue({
         });
     },
 });
+
+let app5 = new Vue({
+    el: '#app5',
+    data: {
+        rp: '',
+        formData: {
+            product_num: '',
+            product_kind: '',
+            product_name: '',
+            product_price: '',
+            product_material: '',
+        }
+    },
+    methods: {
+        getData() {
+            axios.post('../php/13/product.php').then(res => {
+                this.rp = res.data;
+            })
+        }
+    },
+    mounted() {
+        this.getData();
+    },
+});

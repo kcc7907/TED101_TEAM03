@@ -31,12 +31,12 @@ let done = new Vue({
         this.total = total;
         switch (payment) {
             case '信用卡':
-                this.content = text.wait;
+                this.content = text.done;
                 this.pay = '完成付款';
                 this.payment = payment;
                 break;
             case '匯款':
-                this.content = text.done;
+                this.content = text.wait;
                 this.pay = '等待付款';
                 this.payment = payment;
                 break;

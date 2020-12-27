@@ -72,11 +72,12 @@
                             </ul>
                         </li>
 
-                        <!-- <li>
+                        <li>
                             <ul>
                                 <li class="item">客服管理<i class="fas fa-chevron-left"></i></li>
+                                <li id="km_authorityChange1">提問總覽</li>
                             </ul>
-                        </li> -->
+                        </li>
 
                         <li>
                             <ul>
@@ -275,10 +276,10 @@
                         管理者: <span>Root</span>
                     </div>
                 </div>
-            
+
                 <!-- 表格資訊 -->
                 <table class="jane_authorityChange">
-            
+
                     <!-- 表格標頭 -->
                     <tr>
                         <th>案例編號</th>
@@ -288,7 +289,7 @@
                         <th>案例型態</th>
                         <!-- <th>圖片路徑</th> -->
                     </tr>
-            
+
                     <!-- 表格內容 -->
                     <tr v-for="rp in rp">
                         <td>{{rp.CASE_ID}}</td>
@@ -299,7 +300,7 @@
                         <!-- <td>{{rp.CASE_IMG}}</td> -->
                     </tr>
                 </table>
-            
+
                 <!-- 跳窗 -->
                 <div class="jane_jump">
                     <div class="secondBack">
@@ -309,19 +310,19 @@
                             <label for="case_number">案例編號</label>
                             <input type="text" name="case_number" id="case_number" v-model="formData.case_num">
                             <br>
-            
+
                             <label for="case_region">案例區域</label>
                             <input type="text" name="case_region" id="case_region" v-model="formData.case_region">
                             <br>
-            
+
                             <label for="case_name">案例名稱</label>
                             <input type="text" name="case_name" id="case_name" v-model="formData.case_name">
                             <br>
-            
+
                             <label for="case_date">案例日期</label>
                             <input type="text" name="case_date" id="case_date" v-model="formData.case_date">
                             <br>
-            
+
                             <label for="case_type">案例型態</label>
                             <select v-model="formData.case_type" name="case_type" id="case_type">
                                 <option value="" selected disabled hidden>請選擇案例型態</option>
@@ -330,11 +331,11 @@
                                 <option value="辦公空間">辦公空間</option>
                             </select>
                             <br>
-            
+
                             <label for="case_path">圖片</label>
                             <input type="file" name="case_path" id="case_path" :value="formData.case_path">
                             <br>
-            
+
                             <button id="case_submit" type="button" @click="send">上架</button>
                         </form>
                     </div>
@@ -386,10 +387,10 @@
                         管理者: <span>Root</span>
                     </div>
                 </div>
-            
+
                 <!-- 表格資訊 -->
                 <table class="jh_authorityChange">
-            
+
                     <!-- 表格標頭 -->
                     <tr>
                         <th>比賽屆數</th>
@@ -407,7 +408,7 @@
                         <th>投稿日期</th>
                         <th>作品審核</th>
                     </tr>
-            
+
                     <!-- 表格內容 -->
                     <tr v-for="(wk,index) in work">
                         <td>第{{wk.WK_SESSION}}屆</td>
@@ -426,15 +427,49 @@
                         <td><button id="jh_authorityChange2" @click="checkWork(index)">審核</button></td>
                     </tr>
                 </table>
-            
+
                 <!-- 跳窗 -->
-                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID" :name="wk.MEM_NAME"
-                    :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT" :vote="wk.WK_VOTES" :status="wk.WK_STATUS"
-                    :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT" :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW"
-                    :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID" @new-draft="changeDraft" @new-draw="changeDraw"
-                    @update-btn="updateInfo" @new-idnum="changeIDnum" @new-status="changeStatus"></check-component>
+                <check-component v-for="(wk , index) in work" :session="wk.WK_SESSION" :account="wk.MEM_ID"
+                    :name="wk.MEM_NAME" :workNum="wk.WK_ID" :workName="wk.WK_NAME" :concept="wk.WK_CONCEPT"
+                    :vote="wk.WK_VOTES" :status="wk.WK_STATUS" :date="wk.WK_DATE" :frontimg="wk.CT_IMG_FRONT"
+                    :draft="wk.WK_DRAFT" :draw="wk.WK_DRAW" :memid="wk.CT_PERSONAL_ID" :i="index" @new-pid="changePID"
+                    @new-draft="changeDraft" @new-draw="changeDraw" @update-btn="updateInfo" @new-idnum="changeIDnum"
+                    @new-status="changeStatus"></check-component>
             </main>
 
+            <main class="km_class" id="app5">
+                <!-- 頂部資訊 -->
+                <div class="top">
+                    <div class="path">
+                        客服管理 / 客服總覽
+                    </div>
+                    <div>
+                        管理者: <span>Root</span>
+                    </div>
+                </div>
+
+                <!-- 表格資訊 -->
+                <table class="sam_authorityChange">
+
+                    <!-- 表格標頭 -->
+                    <tr>
+                        <th>Q&A編號</th>
+                        <th>發問人</th>
+                        <th>手機</th>
+                        <th>提問問題</th>
+                        <th>建立時間</th>
+                    </tr>
+
+                    <!-- 表格內容 -->
+                    <tr v-for="rp in rp">
+                        <td>{{rp.PRD_ID}}</td>
+                        <td>{{rp.PRD_SPECIES}}</td>
+                        <td>{{rp.PRD_NAME}}</td>
+                        <td>{{rp.PRD_PRICE}}</td>
+                        <td>{{rp.PRD_MATERIAL}}</td>
+                    </tr>
+                </table>
+            </main>
         </div>
     </div>
 
