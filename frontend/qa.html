@@ -338,7 +338,7 @@
             </div>
 
 
-            <div class="eee">
+            <div class="eee" id="app">
                 <div class="title2 fifth">
                     <div class="about"><p>問題表單</p></div>
                     <div class="icon"><img src="../img/19/comment-alt-regular2.svg" alt=""></div>
@@ -349,12 +349,12 @@
                         <div class="paper2">
                             <p class="item">姓名</p>
                             <label>
-                                <input class="reply" type="text" placeholder="請在此輸入姓名" size="40"> 
+                                <input class="reply" type="text" placeholder="請在此輸入姓名" size="40" v-model="kianame">  
                             </label>
         
                             <p class="item">手機號碼</p>
                             <label>
-                                <input class="reply" type="text" placeholder="請在此輸入手機號碼" size="40">    
+                                <input class="reply" type="text" placeholder="請在此輸入手機號碼" size="40" v-model="kiaphone">    
                             </label>
         
                             <p class="item">EMAIL</p>
@@ -364,18 +364,18 @@
         
                             <p class="item">您的疑問</p>
                             <div class="question">
-                                <textarea rows="3" cols="40" class="txt" placeholder=""></textarea>
+                                <textarea rows="3" cols="40" class="txt" placeholder="" v-model="kiaquestion"></textarea>
                             </div>
         
-                            <div class="load">
+                            <!-- <div class="load">
 
                                 <label for="file-upload" class="custom-file-upload">
                                     <i class="fa fa-cloud-upload"></i>上傳圖片
                                 </label>
-                                <input id="file-upload" type="file"/>
+                                 <input id="file-upload" type="file"/>
 
-                                <!-- <button type="button" class="push">上傳圖片<img src="../img/19/file-image-regular.svg" alt=""></button> -->
-                            </div>
+                                <button type="button" class="push">上傳圖片<img src="../img/19/file-image-regular.svg" alt=""></button>
+                            </div> -->
         
                             <div class="button">
                                 <button type="button" class="push">送出</button>
@@ -542,5 +542,20 @@
     </div>
 
     <script src='../js/19/19.js'></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                formData:{
+                    kianame:'',
+                    kiaphone:'',
+                    kiaquestion:'',
+                },
+            },
+            mounted(){
+                console.log(123);
+            },
+        });
+    </script>
   </body>
 </html>
