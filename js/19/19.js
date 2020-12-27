@@ -515,3 +515,15 @@ fifth.addEventListener("click",function(){
     }
 });
 }
+
+
+var inputFile = document.getElementById('file-upload');
+inputFile.addEventListener('change', function(event) {
+  var fileData = event.target.files[0]; // 檔案資訊
+});
+
+var fileData = e.target.files[0]; // 檔案資訊
+var fileName = fileData.name; // 檔案名稱
+var fileType = fileData.type; // 檔案類型
+var fileSize = Math.floor(fileData.size * 0.001); // 檔案大小轉成kb
+var fileTime = fileData.lastModifiedDate;
