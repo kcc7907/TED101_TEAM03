@@ -118,6 +118,8 @@ $cf :#CAC3BB;
     .wrap{
         display: flex;
         flex-direction: column-reverse;
+        justify-content: center;
+        height: calc(100vh - 120px);
         .left{
             position: relative;
         }
