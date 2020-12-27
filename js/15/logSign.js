@@ -137,9 +137,8 @@ $(document).ready(function () {
                             $('div#login').css('z-index','-3').hide();
                             $('div.login').css({'opacity':'0','top':'-30vh',});
                             $('form input').val('');
-                            $('form select option').attr('selected', flase);
+                            $('form select option').attr('selected', false);
                             $('form select option:first-child').attr('selected', true);
-
                             $('img.logMem').attr('src','../img/homepage/logInMemHome.png');
                             setTimeout(()=>{
                                 $.ajax({
