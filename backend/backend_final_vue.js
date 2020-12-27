@@ -441,7 +441,7 @@ let app5 = new Vue({
     },
     methods: {
         getData() {
-            axios.post('../php/13/product.php').then(res => {
+            axios.post('../php/19/qainfo.php').then(res => {
                 this.rp = res.data;
             })
         }
