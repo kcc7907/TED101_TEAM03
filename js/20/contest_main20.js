@@ -1,6 +1,5 @@
 let content =document.querySelector('.content');
 let right =document.querySelector('.right');
-let left =document.querySelector('.left');
 let slider =document.querySelector('.slider');
 let bgbox =document.querySelector('.bgbox');
 
@@ -10,7 +9,6 @@ content.addEventListener('click',()=>{
     content.classList.add('-none');
     bgbox.style.height = '100%';
     bgbox.style.top  = '0px';
-    left.style.height  = 'auto';
     right.classList.add('-block');
     }
 });
