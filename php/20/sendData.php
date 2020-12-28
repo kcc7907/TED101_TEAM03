@@ -4,7 +4,7 @@
         $rp = json_decode(file_get_contents('php://input'), true);
 
         //part1 insert delivery
-        $insert_delivery="INSERT INTO `delivery` ( `DEL_RECEIVER`, `DEL_CITY`, `DEL_ADDRESS`) VALUES (?,?,?)";
+        $insert_delivery="INSERT INTO `DELIVERY` ( `DEL_RECEIVER`, `DEL_CITY`, `DEL_ADDRESS`) VALUES (?,?,?)";
         $statement = $pdo->prepare($insert_delivery);
         $statement->bindValue(1,$rp['fname']);
         $statement->bindValue(2,$rp['fcity']);
@@ -38,7 +38,7 @@
         $statement->execute();
 
         //part3 insert order_detail
-        $insert_detail="INSERT INTO `order_detail` ( `ORDER_ID`, `PRODUCT_ID`, `ORDER_QUANTITY`) VALUES ( ?,?,?)";
+        $insert_detail="INSERT INTO `ORDER_DETAIL` ( `ORDER_ID`, `PRODUCT_ID`, `ORDER_QUANTITY`) VALUES ( ?,?,?)";
         foreach($rp['products'] as $index => $row){
             $statement = $pdo->prepare($insert_detail);
             $statement->bindValue(1,"A000".($order_total+1));

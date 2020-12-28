@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `team03`
 --
-CREATE DATABASE IF NOT EXISTS `team03` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `team03`;
+-- CREATE DATABASE IF NOT EXISTS `team03` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+-- USE `team03`;
 
 -- --------------------------------------------------------
 

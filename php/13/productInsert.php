@@ -1,7 +1,7 @@
 <?php
     include("../connect.php");
 
-    $sql = "INSERT INTO PRODUCT (`PRD_ID`, `PRD_SPECIES`, `PRD_NAME`, `PRD_PRICE`, `PRD_MATERIAL`, `PRD_DATE`, `DISCOUNT_ID`) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO `PRODUCT` (`PRD_ID`, `PRD_SPECIES`, `PRD_NAME`, `PRD_PRICE`, `PRD_MATERIAL`, `PRD_DATE`, `DISCOUNT_ID`) VALUES (?,?,?,?,?,?,?)";
 
     // [product_num] => 1
     // [product_kind] => 2

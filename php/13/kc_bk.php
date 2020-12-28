@@ -1,6 +1,6 @@
 <?php
     include("../connect.php");
-    $sql="SELECT * FROM `manager` WHERE `MGR_ACCOUNT` = ?";
+    $sql="SELECT * FROM `MANAGER` WHERE `MGR_ACCOUNT` = ?";
     $rp = json_decode(file_get_contents('php://input'), true);
     $pwd = $rp['pwd'];
     $statement = $pdo->prepare($sql);
