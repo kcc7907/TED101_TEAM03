@@ -1290,7 +1290,7 @@ div#JN{
             width: 100%;
             display: contents;
             li{
-                display: block;
+                // display: block;
                 text-align: center;
                 a{
                     padding: 5px 30px;
@@ -1302,7 +1302,19 @@ div#JN{
     .contact_detail{
         width: 400px;
         height: 300px;
-        
+    }
+
+    #contentButton li{
+        width: 10px;
+        height: 10px;
+    }
+
+    #sliderBoard{
+        height: 280px;
+    }
+
+    .second{
+        margin: 50px 50px;
     }
 
     .more_detail{

@@ -194,7 +194,7 @@
                                         # 得票數：<span class="contentFont">0票</span>
                                     </p>
                                     <p class="contentFont">
-                                        # 參賽者：<span class="contentFont"></span>
+                                        # 參賽者：<span class="contentFont">李婷婷</span>
                                     </p>
                                     <p class="contentFont">
                                         # 作品種類：<span class="contentFont">{{selectType}}</span>

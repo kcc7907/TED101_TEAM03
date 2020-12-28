@@ -1,5 +1,6 @@
 <?php
     include("../connect.php");
+    date_default_timezone_set("Asia/Taipei");
 
     $sql = 'INSERT INTO `FAVORITE` (`PRODUCT_ID`, `MEMBER_ID`) VALUES (?,?)';
     // $result = $pdo->query($sql);

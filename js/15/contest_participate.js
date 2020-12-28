@@ -86,10 +86,10 @@ let vueJH = new Vue({
         
         // 上傳資料 - 作品資料
         fillWork(){
-            this.fName = '123';
-            this.fConcept= '123';
-            this.selectType= '椅子';
-            this.pImgUrl = ['','',''];
+            this.fName = '凹凸有致';
+            this.fConcept= '「從細微處 感受生活」，思想頓悟時節傳統思維汲取靈感進發一個眼色，即心領神會導致一個完美的合作。';
+            this.selectType= '桌子';
+            // this.pImgUrl = ['','',''];
         },
 
 

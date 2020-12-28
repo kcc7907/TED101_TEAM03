@@ -113,5 +113,9 @@ $(document).ready(function () {
     //     }, 1000);
     // });
 
-
+    /////////////////////////km start ////////////////////////////
+    $('#km_authorityChange1').click(function () {
+        $('main').css('display', 'none');
+        $('main.km_class').css('display', 'block');
+    });
 });
