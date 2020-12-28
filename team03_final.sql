@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2020-12-23 09:21:52
+-- 產生時間： 2020-12-28 06:15:56
 -- 伺服器版本： 8.0.21
 -- PHP 版本： 7.4.11
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `team03`
 --
+CREATE DATABASE IF NOT EXISTS `team03` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `team03`;
 
 -- --------------------------------------------------------
 
@@ -41,23 +43,27 @@ CREATE TABLE `CASE` (
 --
 
 INSERT INTO `CASE` (`CASE_ID`, `CASE_IMG`, `CASE_INTRO`, `CASE_DATE`, `CASE_TYPE`, `CASE_NAME`) VALUES
-(1, '../img/interiordesign/home/example/chang/C1569228178231.jpg', '信義', '2020-12-13 18:47:29', '居家住宅', '徐公館'),
-(2, '../img/interiordesign/home/example/chu bai/C1569288447471.jpg', '北投', '2020-12-12 09:10:18', '居家住宅', '李公館'),
+(1, '../img/interiordesign/home/example/chang/C1569288448525.jpg', '信義', '2020-12-13 18:47:29', '居家住宅', '徐公館'),
+(2, '../img/interiordesign/home/example/chu bai/C1569288448566.jpg', '北投', '2020-12-12 09:10:18', '居家住宅', '李公館'),
 (3, '../img/interiordesign/home/example/dan chang/C1569228045371.jpg', '南港', '2020-12-12 09:11:01', '居家住宅', '王公館'),
-(4, '../img/interiordesign/home/example/fu/C1569288783975.jpg', '松山', '2020-12-12 09:09:20', '居家住宅', '林公館'),
+(4, '../img/interiordesign/home/example/fu/C1569288448905.jpg', '松山', '2020-12-12 09:09:20', '居家住宅', '林公館'),
 (5, '../img/interiordesign/home/example/lin/C1582619597131.jpg', '文山', '2020-12-12 09:09:23', '居家住宅', '何公館'),
 (6, '../img/interiordesign/home/example/yo/C1569288522107.jpg', '內湖', '2020-12-12 09:09:25', '居家住宅', '黃公館'),
 (7, '../img/interiordesign/home/example/kuo/C1594346104631.jpg', '中正', '2020-12-12 09:09:26', '居家住宅', '紀公館'),
 (8, '../img/interiordesign/home/example/rezo/1493275936.jpg', '大安', '2020-12-12 09:09:27', '居家住宅', '侯公館'),
 (9, '../img/interiordesign/home/example/yang/C1569225124301.jpg', '中山', '2020-12-12 09:09:29', '居家住宅', '鄭公館'),
-(10, '../img/interiordesign/commercial/example/jpg/commercial-13.jpg', '台北', '2020-12-12 09:09:32', '商業空間', 'Brun不然'),
-(11, '../img/interiordesign/commercial/example/jpg/commercial-9.jpg', '首爾', '2020-12-12 09:37:03', '商業空間', 'Sanet lind'),
-(12, '../img/interiordesign/commercial/example/jpg/commercial-1.jpg', '紐約', '2020-12-12 09:37:19', '商業空間', 'Nsoe Sden'),
+(10, '../img/interiordesign/commercial/style/2820051-637309422263006530-16x9.jpg', '台北', '2020-12-12 09:09:32', '商業空間', 'Brun不然'),
+(11, '../img/interiordesign/commercial/style/page__zh_tw_15905651050.jpeg', '首爾', '2020-12-12 09:37:03', '商業空間', 'Sanet lind'),
+(12, '../img/interiordesign/commercial/style/zip-1.jpg', '紐約', '2020-12-12 09:37:19', '商業空間', 'Nsoe Sden'),
 (13, '../img/interiordesign/commercial/example/jpg/commercial-7.jpg', '曼谷', '2020-12-12 09:37:22', '商業空間', 'Ihoeb Wgd'),
 (14, '../img/interiordesign/commercial/example/jpg/commercial-15.jpg', '東京', '2020-12-12 09:37:25', '商業空間', 'Owf Sbwr Knn'),
-(15, '../img/interiordesign/commercial/example/jpg/commercial-5.jpg', '澳門', '2020-12-12 09:37:28', '商業空間', 'Jofe Qfen'),
+(15, '../img/interiordesign/commercial/example/coffee/_SKA6420_resize.jpg', '澳門', '2020-12-12 09:37:28', '商業空間', 'Jofe Qfen'),
 (16, '../img/interiordesign/commercial/example/jpg/commercial-19.jpg', '南京復興', '2020-12-12 09:37:29', '辦公空間', 'TIBAME'),
-(17, '../img/interiordesign/commercial/example/jpg/commercial-20.jpg', '忠孝復興', '2020-12-12 09:37:31', '辦公空間', '法華香水');
+(17, '../img/interiordesign/office/style/Prj009_Img006.jpg', '忠孝復興', '2020-12-12 09:37:31', '辦公空間', '法華香水'),
+(18, '../img/interiordesign/office/example/behance/fa8056522fa28a82f91ccb16cdb5e4eb.jpg', '台北101', '2020-12-12 09:37:31', '辦公空間', 'Google總部'),
+(19, '../img/interiordesign/office/example/behance/d8b0d169439757.5b81d0263ab59.jpg', '洲子街', '2020-12-12 09:37:31', '辦公空間', '仁寶科技'),
+(20, '../img/interiordesign/office/example/behances/9cc38438346329.575ebb45a5ed3.jpg', '矽谷', '2020-12-12 09:37:31', '辦公空間', '雅典娜律師事務所'),
+(21, '../img/interiordesign/office/style/Romy-Tesei-getty-images.jpg', '紐約', '2020-12-12 09:37:31', '辦公空間', '美國運通');
 
 -- --------------------------------------------------------
 
@@ -68,7 +74,7 @@ INSERT INTO `CASE` (`CASE_ID`, `CASE_IMG`, `CASE_INTRO`, `CASE_DATE`, `CASE_TYPE
 CREATE TABLE `CONTACT_FORM` (
   `CTA_ID` int NOT NULL,
   `CTA_NAME` varchar(45) NOT NULL,
-  `CTA_PHONE` int NOT NULL,
+  `CTA_PHONE` varchar(45) NOT NULL,
   `CTA_QUESTION` varchar(45) NOT NULL,
   `CTA_FILE` varchar(45) DEFAULT NULL,
   `CTA_DATE` varchar(45) NOT NULL
@@ -79,16 +85,16 @@ CREATE TABLE `CONTACT_FORM` (
 --
 
 INSERT INTO `CONTACT_FORM` (`CTA_ID`, `CTA_NAME`, `CTA_PHONE`, `CTA_QUESTION`, `CTA_FILE`, `CTA_DATE`) VALUES
-(1, '何雨琪', 10101, '昨天剛收到的沙發顏色與網頁上有些落差，請問可以更換嗎?', '2020.0930.jpg', '2020/10/02'),
-(2, '鄭冠羣', 10122, '請問退款費用何時可以收到?', '925退款通知.pdf', '2020/10/04'),
-(3, '李國鈔', 10106, '我一次訂購了多筆訂單，是否可以合併於一筆轉帳呢?', NULL, '2020/10/04'),
-(4, '邱凱旼', 10124, '消費多少金額可以享有免運費?', NULL, '2020/10/05'),
-(5, '王聖雯', 10112, '我的商品收到時有破損，請問可以退貨換新的嗎?', '11523539574.jpg', '2020/10/05'),
-(6, '黃亭甄', 10107, '優惠組合商品可以進行更換嗎?', NULL, '2020/10/05'),
-(7, '徐彥亭', 10103, '我想確認20200922這筆訂單是否有收到付款?', '231136.jpg', '2020/10/07'),
-(8, '周廷瀚', 10105, '客服人員的態度不佳，請加強訓練服務禮儀', '', '2020/10/07'),
-(9, '郭子宣', 10111, '請問去年聖誕優惠的時光桌椅，請問今年還有生產嗎?', '聖誕桌椅1224.jpg', '2020/10/09'),
-(10, '黃家瑋', 10120, '今年比賽請問有得獎獎金嗎?', NULL, '2020/10/09');
+(1, '何雨琪', '0901144876', '昨天剛收到的沙發顏色與網頁上有些落差，請問可以更換嗎?', '2020.0930.jpg', '2020/10/02'),
+(2, '鄭冠羣', '0915598395', '請問退款費用何時可以收到?', '925退款通知.pdf', '2020/10/04'),
+(3, '李國鈔', '0957999290', '我一次訂購了多筆訂單，是否可以合併於一筆轉帳呢?', NULL, '2020/10/04'),
+(4, '邱凱旼', '0957349222', '消費多少金額可以享有免運費?', NULL, '2020/10/05'),
+(5, '王聖雯', '0958431577', '我的商品收到時有破損，請問可以退貨換新的嗎?', '11523539574.jpg', '2020/10/05'),
+(6, '黃亭甄', '0988577433', '優惠組合商品可以進行更換嗎?', NULL, '2020/10/05'),
+(7, '徐彥亭', '0956555398', '我想確認20200922這筆訂單是否有收到付款?', '231136.jpg', '2020/10/07'),
+(8, '周廷瀚', '0987431222', '客服人員的態度不佳，請加強訓練服務禮儀', '', '2020/10/07'),
+(9, '郭子宣', '0957333291', '請問去年聖誕優惠的時光桌椅，請問今年還有生產嗎?', '聖誕桌椅1224.jpg', '2020/10/09'),
+(10, '黃家瑋', '0958477324', '今年比賽請問有得獎獎金嗎?', NULL, '2020/10/09');
 
 -- --------------------------------------------------------
 
@@ -116,6 +122,7 @@ INSERT INTO `CONTESTANT` (`CT_WORK_ID`, `CT_PERSONAL_ID`, `CT_IMG_FRONT`, `CT_ME
 ('C118323', 'H111944444', '../img/contestWorkImg/pId/huang999118323身分證正面.png', 'huang999'),
 ('C121185', 'L123445553', '../img/contestWorkImg/pId/linlin121185身分證正面.png', 'linlin'),
 ('C212210', 'E222388722', '../img/contestWorkImg/pId/wenwen212210身分證正面.png', 'wenwen'),
+('C615434', 'J122938232', '../img/contestWorkImg/pId/lee1229615434身分證正面.png', 'lee1229'),
 ('D120563', 'A111134532', '../img/contestWorkImg/pId/chunggg120563身分證正面.png', 'chunggg'),
 ('D121045', 'D122345343', '../img/contestWorkImg/pId/dd12345121045身分證正面.png', 'dd12345'),
 ('D205551', 'H121034450', '../img/contestWorkImg/pId/TingHang20201220205551身分證正面01.png', 'TingHang'),
@@ -290,10 +297,12 @@ INSERT INTO `MEMBER` (`MEM_ID`, `MEM_PWD`, `MEM_NAME`, `MEM_PHONE`, `MEM_EMAIL`,
 ('leelee', '111111', '李國超', '0923456789', 'hh@gmail.com', '高雄市', '鹽埕區中正四路274號', '2020-12-22 13:49:30', 1),
 ('linlin', 'linlin', '林煥強', '0922234567', 'lin@gmail.com', '桃園市', '蘆竹區長安路二段236號', '2020-12-21 21:16:22', 0),
 ('QQ998877', 'QQ12345', '郭子瑄', '0933456788', 'qq860909@gmail.com', '台東縣', '關山鎮隆盛路1號', '2020-12-21 21:20:43', 0),
+('qqqqqq', 'qqqqqq', '高哈哈', '0912345678', 'jk@gmail.com', '台北市', '新莊區', '2020-12-24 16:29:54', 1),
 ('TingHang', 'ting9107', '周霆漢', '0988476583', 'hang@gmail.com', '台北市', '大安區敦化南路1段228號2樓', '2020-12-20 20:44:25', 0),
 ('tingting', 'tingting', '徐嬿婷', '0922391876', 'ting@gmail.com', '台北市', '中正區北平西路3號', '2020-12-21 21:06:46', 0),
 ('wangwang', 'wangwang', '王聖文', '0923488591', 'wang@gmail.com', '新竹縣', '竹北市生醫路二段18號1F', '2020-12-21 15:22:08', 0),
-('wenwen', 'wenwen', '侯文婷', '0988765493', 'wen@gmail.com', '台北市', '松山區八德路四段520號', '2020-12-22 12:17:34', 0);
+('wenwen', 'wenwen', '侯文婷', '0988765493', 'wen@gmail.com', '台北市', '松山區八德路四段520號', '2020-12-22 12:17:34', 0),
+('yunyun', 'yunyun', '蔣宗耘', '0977398291', 'yun@gmail.com', '台南市', '市民大道五段87號', '2020-12-28 11:49:19', 0);
 
 -- --------------------------------------------------------
 
@@ -358,12 +367,7 @@ INSERT INTO `ORDER` (`ORD_ID`, `ORD_STATUS`, `ORD_PAYMENT`, `ORD_DATE`, `MEMBER_
 ('A00007', '運送中', '已付款', '2020/11/14', 'A111200007', 7, NULL, NULL, NULL, NULL, 0),
 ('A00008', '已送達', '未付款', '2020/11/14', 'A111200008', 8, NULL, NULL, NULL, NULL, 0),
 ('A00009', '已訂購', '已付款', '2020/11/14', 'A111200009', 9, NULL, NULL, NULL, NULL, 0),
-('A00010', '裝貨中', '未付款', '2020/11/14', 'A111200010', 10, NULL, NULL, NULL, NULL, 0),
-('A00011', '已訂購', '未付款', '2020/12/22', 'leelee', 11, '2020/12/22 13:05', NULL, NULL, NULL, 0),
-('A00012', '已訂購', '未付款', '2020/12/22', 'leelee', 12, '2020/12/22 13:51', NULL, NULL, NULL, 0),
-('A00013', '已訂購', '已付款', '2020/12/22', 'AAAAAA', 13, '2020/12/22 15:11', '2020/12/22 15:11', NULL, NULL, -500),
-('A00014', '已訂購', '未付款', '2020/12/22', 'AAAAAA', 14, '2020/12/22 15:15', NULL, NULL, NULL, 0),
-('A00015', '已訂購', '未付款', '2020/12/22', 'AAAAAA', 15, '2020/12/22 18:53', NULL, NULL, NULL, 0);
+('A00010', '裝貨中', '未付款', '2020/11/14', 'A111200010', 10, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -441,7 +445,10 @@ INSERT INTO `PRODUCT` (`PRD_ID`, `PRD_SPECIES`, `PRD_NAME`, `PRD_PRICE`, `PRD_MA
 ('t005', '桌組', '日常', '15700', NULL, '2020/12/03', 'B'),
 ('t006', '桌組', '浮葉', '8500', NULL, '2020/12/03', 'A'),
 ('t007', '桌組', '澄澄', '4700', NULL, '2020/12/03', NULL),
-('t008', '桌組', '木桌', '13700', NULL, '2020/12/03', NULL);
+('t008', '桌組', '木桌', '13700', NULL, '2020/12/03', NULL),
+('哈哈啊哈77777', '', '76', '76', '5', '476', '47'),
+('安安安安安安', '2312321', '65765', '5765', '65', '765', '5'),
+('我午我我我', '我午我我我午我喔', '我午我我我我', '五我我我午我我', '五我我我午我我', '我午我我我我我午我', '21231545');
 
 -- --------------------------------------------------------
 
@@ -533,7 +540,7 @@ CREATE TABLE `VISITS` (
 --
 
 INSERT INTO `VISITS` (`VISITS_ID`, `NUMBER`) VALUES
-(1, 35842);
+(1, 35924);
 
 -- --------------------------------------------------------
 
@@ -577,18 +584,18 @@ CREATE TABLE `WORK` (
 --
 
 INSERT INTO `WORK` (`WK_ID`, `WK_SESSION`, `WK_SPECIES`, `WK_NAME`, `WK_CONCEPT`, `WK_DRAFT`, `WK_DRAW`, `WK_VOTES`, `WK_STATUS`, `WK_DATE`) VALUES
-('B121140', 2, '書櫃', '頁岩', '將一本本人類精華藏在書櫃中，就如同頁岩層層疊疊，埋藏千年洗滌的寶藏。', '../img/contestWorkImg/draft/tingting121140層疊.jpg', '../img/contestWorkImg/draw/tingting121140層疊.jpg', 223, '待收件', '2020-12-21 21:14:09'),
-('B121232', 2, '床', '床邊故事', '每一天，在這裡開始，也在這裡結束。北歐純淨簡約的舒適氛圍，揉合清新自然不浮華的風格，軟裝抱枕，勾勒出純粹而美好的生活風格。以沈穩色調做為主軸，彷彿此案女主人的性格，在職場上是個獨立自主的女性，相處起來卻細膩溫暖。', '../img/contestWorkImg/draft/QQ998877121232床邊故事.jpg', '../img/contestWorkImg/draw/QQ998877121232床邊故事.jpg', 88, '待收件', '2020-12-21 21:23:24'),
-('B121362', 2, '書櫃', '情緒化書櫃', '這世界上能找出什麼東西比女朋友的心情還更變化莫測，我們要用雙手創造真正符合生活的好朋友，\n給你前所未有的生活細節和貼心體驗！', '../img/contestWorkImg/draft/ch222222121362情緒化書櫃.jpg', '../img/contestWorkImg/draw/ch222222121362情緒化書櫃.jpg', 112, '待收件', '2020-12-21 21:36:29'),
-('B152853', 2, '書櫃', '角落一宇', '宇宙的混沌黑，是廣闊而寧靜，同時乘載所有行星的重量。「角落一宇」是被裝飾成書櫃的小宇宙，在你、我書房中，自成一系。', '../img/contestWorkImg/draft/wangwang20201221212849角落一宇.jpeg', '../img/contestWorkImg/draw/wangwang20201221212849角落一宇.jpeg', 252, '待收件', '2020-12-20 17:13:41'),
-('B171341', 2, '書櫃', '迷宮', '超大迷宮，不多解釋。', '../img/contestWorkImg/draft/wangwang20201221152853迷宮.jpg', '../img/contestWorkImg/draw/wangwang20201221152853迷宮.jpg', 22, '待收件', '2020-12-21 15:28:53'),
-('C118323', 2, '椅子', '幾何支點', '幾何是數學與物理的終極基礎，1976年解開卡拉比猜想，由此建立的幾何空間名為「卡拉比–丘流形」，此件作品正是向幾何致敬。', '../img/contestWorkImg/draft/huang999118323幾何支點.jpg', '../img/contestWorkImg/draw/huang999118323幾何支點.jpg', 51, '待收件', '2020-12-21 18:32:33'),
-('C121185', 2, '椅子', '安心鏤空', '椅子是家具設計史中不可忽視的要角，我們坐在椅子上的時間，甚至比每天入睡時所躺臥的床還長，利用幾何圖形的基礎概念搭配上精巧的計算與無窮的創意，拼湊出你想要的黃金比例，俐落幾何線條造型，展演極簡美學，兼具實用性。', '../img/contestWorkImg/draft/linlin121185安心鏤空.jpg', '../img/contestWorkImg/draw/linlin121185安心鏤空.jpg', 662, '待收件', '2020-12-21 21:18:50'),
-('C212210', 2, '椅子', '好坐的椅子', '就是要坐得舒服。', '../img/contestWorkImg/draft/wenwen212210好坐的椅子.jpg', '../img/contestWorkImg/draw/wenwen212210好坐的椅子.jpg', 22, '待收件', '2020-12-22 12:21:06'),
-('D120563', 2, '桌子', '兩腳書櫥的逃亡', '聽著兩腳書櫥的逃亡，想著書櫥要逃亡的理由，輾轉難眠幾天，突然不在意逃亡的理由，而是在意逃亡的景象。或許她是穿著高跟鞋在跑。', '../img/contestWorkImg/draft/chunggg120563兩腳書櫥的逃亡.jpg', '../img/contestWorkImg/draw/chunggg120563兩腳書櫥的逃亡.jpg', 156, '待收件', '2020-12-21 20:56:34'),
-('D121045', 2, '桌子', '走在時尚尖端', '桌子也可以很Fashion的向前。', '../img/contestWorkImg/draft/dd12345121045走在時尚尖端.webp', '../img/contestWorkImg/draw/dd12345121045走在時尚尖端.webp', 23, '待收件', '2020-12-21 21:04:53'),
-('D205551', 2, '桌子', '圓', '為什麼要圓？因為圓角不怕撞到，你說，哪一個小孩不在家奔跑？圓型就是為家庭著想的設計。剔除掉了稜角，也同時縮小體積，放在任何地方都適合不過。', '../img/contestWorkImg/draw/TingHang20201220205551簡約.jpg', '../img/contestWorkImg/draw/TingHang20201220205551簡約.jpg', 68, '待收件', '2020-12-20 20:55:51'),
-('S115135', 2, '沙發', '陽光棕梠', '生長在熱帶的棕梠，有陽光的氣息，生處在亞熱帶的台灣，少了四季如春，就用陽光棕梠沙發來填補吧。', '../img/contestWorkImg/draft/leelee20201221151358棕梠.jpg', '../img/contestWorkImg/draw/leelee20201221151358棕梠.jpg', 56, '待收件', '2020-12-21 15:13:58');
+('B121140', 2, '書櫃', '頁岩', '將一本本人類精華藏在書櫃中，就如同頁岩層層疊疊，埋藏千年洗滌的寶藏。', '../img/contestWorkImg/draft/tingting121140層疊.jpg', '../img/contestWorkImg/draw/tingting121140層疊.jpg', 223, '投稿成功', '2020-12-21 21:14:09'),
+('B121232', 2, '床', '床邊故事', '以沈穩色調做為主軸，彷彿此案女主人的性格，在職場上是個獨立自主的女性，相處起來卻細膩溫暖。', '../img/contestWorkImg/draft/QQ998877121232床邊故事.jpg', '../img/contestWorkImg/draw/QQ998877121232床邊故事.jpg', 88, '投稿成功', '2020-12-21 21:23:24'),
+('B121362', 2, '書櫃', '情緒化書櫃', '這世界上能找出什麼東西比女朋友的心情還更變化莫測，我們要用雙手創造真正符合生活的好朋友，\n給你前所未有的生活細節和貼心體驗！', '../img/contestWorkImg/draft/ch222222121362情緒化書櫃.jpg', '../img/contestWorkImg/draw/ch222222121362情緒化書櫃.jpg', 113, '投稿成功', '2020-12-21 21:36:29'),
+('B152853', 2, '書櫃', '角落一宇', '宇宙的混沌黑，是廣闊而寧靜，同時乘載所有行星的重量。「角落一宇」是被裝飾成書櫃的小宇宙，在你、我書房中，自成一系。', '../img/contestWorkImg/draft/wangwang20201221212849角落一宇.jpeg', '../img/contestWorkImg/draw/wangwang20201221212849角落一宇.jpeg', 252, '投稿成功', '2020-12-20 17:13:41'),
+('B171341', 2, '書櫃', '迷宮', '北歐純淨簡約的舒適氛圍，揉合清新自然不浮華的風格，勾勒出純粹而美好的生活風格。', '../img/contestWorkImg/draft/wangwang20201221152853迷宮.jpg', '../img/contestWorkImg/draw/wangwang20201221152853迷宮.jpg', 22, '投稿成功', '2020-12-21 15:28:53'),
+('C118323', 2, '椅子', '幾何支點', '1976年解開卡拉比猜想，由此建立的幾何空間名為「卡拉比–丘流形」，此件作品正是向幾何致敬。', '../img/contestWorkImg/draft/huang999118323幾何支點.jpg', '../img/contestWorkImg/draw/huang999118323幾何支點.jpg', 51, '投稿成功', '2020-12-21 18:32:33'),
+('C121185', 2, '椅子', '安心鏤空', '利用幾何圖形的基礎概念搭配上精巧的計算與無窮的創意，拼湊出你想要的黃金比例，展演極簡美學，兼具實用性。', '../img/contestWorkImg/pId/linlin121185身分證正面.png', '../img/contestWorkImg/draw/linlin121185安心鏤空.jpg', 662, '投稿成功', '2020-12-21 21:18:50'),
+('C212210', 2, '椅子', '好坐的椅子', '椅子是傢俱設計史中不可忽視的要角，坐在椅子的時間比躺臥還長，此時正需要好坐的椅子。', '../img/contestWorkImg/pId/wenwen212210身分證正面.png', '../img/contestWorkImg/draw/wenwen212210好坐的椅子.jpg', 22, '投稿成功', '2020-12-22 12:21:06'),
+('D120563', 2, '桌子', '兩腳書櫥的逃亡', '聽著兩腳書櫥的逃亡，突然不在意逃亡的理由，而是在意逃亡的景象。或許她是穿著高跟鞋在跑。', '../img/contestWorkImg/pId/chunggg120563身分證正面.png', '../img/contestWorkImg/draw/chunggg120563兩腳書櫥的逃亡.jpg', 156, '投稿成功', '2020-12-21 20:56:34'),
+('D121045', 2, '桌子', '走在時尚尖端', '桌子也可以很Fashion的向前。', '../img/contestWorkImg/pId/dd12345121045身分證正面.png', '../img/contestWorkImg/draw/dd12345121045走在時尚尖端.webp', 23, '投稿成功', '2020-12-21 21:04:53'),
+('D205551', 2, '桌子', '圓', '圓型就是為家庭著想的設計。剔除掉了稜角，也同時縮小體積，放在任何地方都適合不過。', '../img/contestWorkImg/pId/TingHang20201220205551身分證正面01.png', '../img/contestWorkImg/draw/TingHang20201220205551簡約.jpg', 69, '投稿成功', '2020-12-20 20:55:51'),
+('S115135', 2, '沙發', '陽光棕梠', '生長在熱帶的棕梠，有陽光的氣息，生處在亞熱帶的台灣，少了四季如春，就用陽光棕梠沙發來填補吧。', '../img/contestWorkImg/pId/leelee20201221151358身分證正面01.png', '../img/contestWorkImg/draw/leelee20201221151358棕梠.jpg', 56, '投稿成功', '2020-12-21 15:13:58');
 
 --
 -- 已傾印資料表的索引
@@ -715,22 +722,34 @@ ALTER TABLE `CASE`
   MODIFY `CASE_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `CONTACT_FORM`
+--
+ALTER TABLE `CONTACT_FORM`
+  MODIFY `CTA_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `DELIVERY`
 --
 ALTER TABLE `DELIVERY`
-  MODIFY `DEL_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `DEL_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `FAVORITE`
 --
 ALTER TABLE `FAVORITE`
-  MODIFY `FAV_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `FAV_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `noti`
+--
+ALTER TABLE `noti`
+  MODIFY `NOTI_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ORDER_DETAIL`
 --
 ALTER TABLE `ORDER_DETAIL`
-  MODIFY `ORD_DE_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ORD_DE_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
