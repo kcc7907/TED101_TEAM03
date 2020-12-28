@@ -7,6 +7,7 @@ function getFilePath()
     //Web根目錄真實路徑
     $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
     return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
+    // return $ServerRoot . "../img/contestWorkImg/";
 }
 
 //先判斷圖片是否上傳成功?
