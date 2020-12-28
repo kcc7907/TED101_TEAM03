@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2020-12-28 06:15:56
+-- 產生時間： 2020-12-28 10:08:00
 -- 伺服器版本： 8.0.21
 -- PHP 版本： 7.4.11
 
@@ -114,19 +114,18 @@ CREATE TABLE `CONTESTANT` (
 --
 
 INSERT INTO `CONTESTANT` (`CT_WORK_ID`, `CT_PERSONAL_ID`, `CT_IMG_FRONT`, `CT_MEMBER_ID`) VALUES
-('B121140', 'T222345322', '../img/contestWorkImg/pId/tingting121140身分證正面.png', 'tingting'),
-('B121232', 'O233456780', '../img/contestWorkImg/pId/QQ998877121232身分證正面.png', 'QQ998877'),
-('B121362', 'H122233445', '../img/contestWorkImg/pId/ch222222121362身分證正面.png', 'ch222222'),
-('B152853', 'W122384475', '../img/contestWorkImg/pId/wangwang20201221152853身分證正面01.png', 'wangwang'),
-('B171341', 'J111111111', '../img/contestWorkImg/pId/ho77777720201220171341身分證正面01.png', 'ho777777'),
-('C118323', 'H111944444', '../img/contestWorkImg/pId/huang999118323身分證正面.png', 'huang999'),
-('C121185', 'L123445553', '../img/contestWorkImg/pId/linlin121185身分證正面.png', 'linlin'),
-('C212210', 'E222388722', '../img/contestWorkImg/pId/wenwen212210身分證正面.png', 'wenwen'),
-('C615434', 'J122938232', '../img/contestWorkImg/pId/lee1229615434身分證正面.png', 'lee1229'),
-('D120563', 'A111134532', '../img/contestWorkImg/pId/chunggg120563身分證正面.png', 'chunggg'),
-('D121045', 'D122345343', '../img/contestWorkImg/pId/dd12345121045身分證正面.png', 'dd12345'),
-('D205551', 'H121034450', '../img/contestWorkImg/pId/TingHang20201220205551身分證正面01.png', 'TingHang'),
-('S115135', 'L122677532', '../img/contestWorkImg/pId/leelee20201221151358身分證正面01.png', 'leelee');
+('B121140', 'T222345322', '../img/contestWorkImg/pId/tingting121140.png', 'tingting'),
+('B121232', 'O233456780', '../img/contestWorkImg/pId/QQ998877121232.png', 'QQ998877'),
+('B121362', 'H122233445', '../img/contestWorkImg/pId/ch222222121362.png', 'ch222222'),
+('B152853', 'W122384475', '../img/contestWorkImg/pId/wangwang20201221152853.png', 'wangwang'),
+('B171341', 'J111111111', '../img/contestWorkImg/pId/ho77777720201220171341.png', 'ho777777'),
+('C118323', 'H111944444', '../img/contestWorkImg/pId/huang999118323.png', 'huang999'),
+('C121185', 'L123445553', '../img/contestWorkImg/pId/linlin121185.png', 'linlin'),
+('C212210', 'E222388722', '../img/contestWorkImg/pId/wenwen212210.png', 'wenwen'),
+('D120563', 'A111134532', '../img/contestWorkImg/pId/chunggg120563.png', 'chunggg'),
+('D121045', 'D122345343', '../img/contestWorkImg/pId/dd12345121045.png', 'dd12345'),
+('D205551', 'H121034450', '../img/contestWorkImg/pId/TingHang20201220205551.png', 'TingHang'),
+('S115135', 'L122677532', '../img/contestWorkImg/pId/leelee20201221151358.png', 'leelee');
 
 -- --------------------------------------------------------
 
@@ -294,10 +293,10 @@ INSERT INTO `MEMBER` (`MEM_ID`, `MEM_PWD`, `MEM_NAME`, `MEM_PHONE`, `MEM_EMAIL`,
 ('dd12345', 'dd12345', '洪宏祥', '0922356789', 'diving@gmail.com', '台南市', '東區北門路二段4號', '2020-12-21 20:59:47', 0),
 ('ho777777', 'ho777777', '何宇奇', '0934567842', 'ho77@gmail.com', '台北市', '信義區西村里8鄰信義路五段7號', '2020-12-20 13:39:36', 0),
 ('huang999', '#77777', '黃廷甄', '0933345633', 'huang@gmail.com', '台中市', '西區台灣大道二段459號', '2020-12-21 17:50:10', 0),
-('leelee', '111111', '李國超', '0923456789', 'hh@gmail.com', '高雄市', '鹽埕區中正四路274號', '2020-12-22 13:49:30', 1),
-('linlin', 'linlin', '林煥強', '0922234567', 'lin@gmail.com', '桃園市', '蘆竹區長安路二段236號', '2020-12-21 21:16:22', 0),
+('leelee', '111111', '李志明', '092345678', 'hh@gmail.com', '高雄市', '鹽埕區中正四路274號', '2020-12-28 14:36:33', 1),
+('linlin', 'linlin', '林煥強', '0922234567', 'lin@gmail.com', '桃園市', '蘆竹區長安路二段236號', '2020-12-28 15:30:49', 0),
 ('QQ998877', 'QQ12345', '郭子瑄', '0933456788', 'qq860909@gmail.com', '台東縣', '關山鎮隆盛路1號', '2020-12-21 21:20:43', 0),
-('qqqqqq', 'qqqqqq', '高哈哈', '0912345678', 'jk@gmail.com', '台北市', '新莊區', '2020-12-24 16:29:54', 1),
+('qqqqqq', 'qqqqqq', '高龍鴻', '0912345678', 'jk@gmail.com', '台北市', '新莊區', '2020-12-24 16:29:54', 1),
 ('TingHang', 'ting9107', '周霆漢', '0988476583', 'hang@gmail.com', '台北市', '大安區敦化南路1段228號2樓', '2020-12-20 20:44:25', 0),
 ('tingting', 'tingting', '徐嬿婷', '0922391876', 'ting@gmail.com', '台北市', '中正區北平西路3號', '2020-12-21 21:06:46', 0),
 ('wangwang', 'wangwang', '王聖文', '0923488591', 'wang@gmail.com', '新竹縣', '竹北市生醫路二段18號1F', '2020-12-21 15:22:08', 0),
@@ -445,10 +444,7 @@ INSERT INTO `PRODUCT` (`PRD_ID`, `PRD_SPECIES`, `PRD_NAME`, `PRD_PRICE`, `PRD_MA
 ('t005', '桌組', '日常', '15700', NULL, '2020/12/03', 'B'),
 ('t006', '桌組', '浮葉', '8500', NULL, '2020/12/03', 'A'),
 ('t007', '桌組', '澄澄', '4700', NULL, '2020/12/03', NULL),
-('t008', '桌組', '木桌', '13700', NULL, '2020/12/03', NULL),
-('哈哈啊哈77777', '', '76', '76', '5', '476', '47'),
-('安安安安安安', '2312321', '65765', '5765', '65', '765', '5'),
-('我午我我我', '我午我我我午我喔', '我午我我我我', '五我我我午我我', '五我我我午我我', '我午我我我我我午我', '21231545');
+('t008', '桌組', '木桌', '13700', NULL, '2020/12/03', NULL);
 
 -- --------------------------------------------------------
 
@@ -490,9 +486,9 @@ INSERT INTO `PRODUCT_IMG` (`PIMG_ID`, `PIMG_URL`, `PRD_ID`) VALUES
 (21, '../img/product/table07/table07_01.jpg', 't007'),
 (22, '../img/product/sofa04/sofa04_01.jpg', 's004'),
 (23, '../img/product/sofa05/sofa05_01.jpg', 's005'),
-(24, '../img/product/bookcase02/bookcase02_01.jpg', 'bk002'),
-(25, '../img/product/bookcase03/bookcase03_01.jpg', 'bk003'),
-(26, '../img/product/bookcase04/bookcase04_01.jpg', 'bk004'),
+(24, '../img/product/bookcase02/bookcase02_01.JPG', 'bk002'),
+(25, '../img/product/bookcase03/bookcase0301.jpg', 'bk003'),
+(26, '../img/product/bookcase04/bookcase0401.jpg', 'bk004'),
 (27, '../img/product/table08/table08_01.jpg', 't008');
 
 -- --------------------------------------------------------
@@ -540,7 +536,7 @@ CREATE TABLE `VISITS` (
 --
 
 INSERT INTO `VISITS` (`VISITS_ID`, `NUMBER`) VALUES
-(1, 35924);
+(1, 35936);
 
 -- --------------------------------------------------------
 
@@ -584,18 +580,18 @@ CREATE TABLE `WORK` (
 --
 
 INSERT INTO `WORK` (`WK_ID`, `WK_SESSION`, `WK_SPECIES`, `WK_NAME`, `WK_CONCEPT`, `WK_DRAFT`, `WK_DRAW`, `WK_VOTES`, `WK_STATUS`, `WK_DATE`) VALUES
-('B121140', 2, '書櫃', '頁岩', '將一本本人類精華藏在書櫃中，就如同頁岩層層疊疊，埋藏千年洗滌的寶藏。', '../img/contestWorkImg/draft/tingting121140層疊.jpg', '../img/contestWorkImg/draw/tingting121140層疊.jpg', 223, '投稿成功', '2020-12-21 21:14:09'),
-('B121232', 2, '床', '床邊故事', '以沈穩色調做為主軸，彷彿此案女主人的性格，在職場上是個獨立自主的女性，相處起來卻細膩溫暖。', '../img/contestWorkImg/draft/QQ998877121232床邊故事.jpg', '../img/contestWorkImg/draw/QQ998877121232床邊故事.jpg', 88, '投稿成功', '2020-12-21 21:23:24'),
-('B121362', 2, '書櫃', '情緒化書櫃', '這世界上能找出什麼東西比女朋友的心情還更變化莫測，我們要用雙手創造真正符合生活的好朋友，\n給你前所未有的生活細節和貼心體驗！', '../img/contestWorkImg/draft/ch222222121362情緒化書櫃.jpg', '../img/contestWorkImg/draw/ch222222121362情緒化書櫃.jpg', 113, '投稿成功', '2020-12-21 21:36:29'),
-('B152853', 2, '書櫃', '角落一宇', '宇宙的混沌黑，是廣闊而寧靜，同時乘載所有行星的重量。「角落一宇」是被裝飾成書櫃的小宇宙，在你、我書房中，自成一系。', '../img/contestWorkImg/draft/wangwang20201221212849角落一宇.jpeg', '../img/contestWorkImg/draw/wangwang20201221212849角落一宇.jpeg', 252, '投稿成功', '2020-12-20 17:13:41'),
-('B171341', 2, '書櫃', '迷宮', '北歐純淨簡約的舒適氛圍，揉合清新自然不浮華的風格，勾勒出純粹而美好的生活風格。', '../img/contestWorkImg/draft/wangwang20201221152853迷宮.jpg', '../img/contestWorkImg/draw/wangwang20201221152853迷宮.jpg', 22, '投稿成功', '2020-12-21 15:28:53'),
-('C118323', 2, '椅子', '幾何支點', '1976年解開卡拉比猜想，由此建立的幾何空間名為「卡拉比–丘流形」，此件作品正是向幾何致敬。', '../img/contestWorkImg/draft/huang999118323幾何支點.jpg', '../img/contestWorkImg/draw/huang999118323幾何支點.jpg', 51, '投稿成功', '2020-12-21 18:32:33'),
-('C121185', 2, '椅子', '安心鏤空', '利用幾何圖形的基礎概念搭配上精巧的計算與無窮的創意，拼湊出你想要的黃金比例，展演極簡美學，兼具實用性。', '../img/contestWorkImg/pId/linlin121185身分證正面.png', '../img/contestWorkImg/draw/linlin121185安心鏤空.jpg', 662, '投稿成功', '2020-12-21 21:18:50'),
-('C212210', 2, '椅子', '好坐的椅子', '椅子是傢俱設計史中不可忽視的要角，坐在椅子的時間比躺臥還長，此時正需要好坐的椅子。', '../img/contestWorkImg/pId/wenwen212210身分證正面.png', '../img/contestWorkImg/draw/wenwen212210好坐的椅子.jpg', 22, '投稿成功', '2020-12-22 12:21:06'),
-('D120563', 2, '桌子', '兩腳書櫥的逃亡', '聽著兩腳書櫥的逃亡，突然不在意逃亡的理由，而是在意逃亡的景象。或許她是穿著高跟鞋在跑。', '../img/contestWorkImg/pId/chunggg120563身分證正面.png', '../img/contestWorkImg/draw/chunggg120563兩腳書櫥的逃亡.jpg', 156, '投稿成功', '2020-12-21 20:56:34'),
-('D121045', 2, '桌子', '走在時尚尖端', '桌子也可以很Fashion的向前。', '../img/contestWorkImg/pId/dd12345121045身分證正面.png', '../img/contestWorkImg/draw/dd12345121045走在時尚尖端.webp', 23, '投稿成功', '2020-12-21 21:04:53'),
-('D205551', 2, '桌子', '圓', '圓型就是為家庭著想的設計。剔除掉了稜角，也同時縮小體積，放在任何地方都適合不過。', '../img/contestWorkImg/pId/TingHang20201220205551身分證正面01.png', '../img/contestWorkImg/draw/TingHang20201220205551簡約.jpg', 69, '投稿成功', '2020-12-20 20:55:51'),
-('S115135', 2, '沙發', '陽光棕梠', '生長在熱帶的棕梠，有陽光的氣息，生處在亞熱帶的台灣，少了四季如春，就用陽光棕梠沙發來填補吧。', '../img/contestWorkImg/pId/leelee20201221151358身分證正面01.png', '../img/contestWorkImg/draw/leelee20201221151358棕梠.jpg', 56, '投稿成功', '2020-12-21 15:13:58');
+('B121140', 2, '書櫃', '頁岩', '將一本本人類精華藏在書櫃中，就如同頁岩層層疊疊，埋藏千年洗滌的寶藏。', '../img/contestWorkImg/draw/tingting121140.jpg', '../img/contestWorkImg/draw/tingting121140.jpg', 224, '投稿成功', '2020-12-21 21:14:09'),
+('B121232', 2, '床', '床邊故事', '以沈穩色調做為主軸，彷彿此案女主人的性格，在職場上是個獨立自主的女性，相處起來卻細膩溫暖。', '../img/contestWorkImg/draw/QQ998877121232.jpg', '../img/contestWorkImg/draw/QQ998877121232.jpg', 88, '投稿成功', '2020-12-21 21:23:24'),
+('B121362', 2, '書櫃', '情緒化書櫃', '這世界上能找出什麼東西比女朋友的心情還更變化莫測，我們要用雙手創造真正符合生活的好朋友，\n給你前所未有的生活細節和貼心體驗！', '../img/contestWorkImg/draw/ch222222121362.jpg', '../img/contestWorkImg/draw/ch222222121362.jpg', 113, '投稿成功', '2020-12-21 21:36:29'),
+('B152853', 2, '書櫃', '角落一宇', '宇宙的混沌黑，是廣闊而寧靜，同時乘載所有行星的重量。「角落一宇」是被裝飾成書櫃的小宇宙，在你、我書房中，自成一系。', '../img/contestWorkImg/draw/wangwang20201221212849.jpeg', '../img/contestWorkImg/draw/wangwang20201221212849.jpeg', 252, '投稿成功', '2020-12-20 17:13:41'),
+('B171341', 2, '書櫃', '迷宮', '北歐純淨簡約的舒適氛圍，揉合清新自然不浮華的風格，勾勒出純粹而美好的生活風格。', '../img/contestWorkImg/draw/wangwang20201221152853.jpg', '../img/contestWorkImg/draw/wangwang20201221152853.jpg', 22, '投稿成功', '2020-12-21 15:28:53'),
+('C118323', 2, '椅子', '幾何支點', '1976年解開卡拉比猜想，由此建立的幾何空間名為「卡拉比–丘流形」，此件作品正是向幾何致敬。', '../img/contestWorkImg/draw/huang999118323.jpg', '../img/contestWorkImg/draw/huang999118323.jpg', 51, '投稿成功', '2020-12-21 18:32:33'),
+('C121185', 2, '椅子', '安心鏤空', '利用幾何圖形的基礎概念搭配上精巧的計算與無窮的創意，拼湊出你想要的黃金比例，展演極簡美學，兼具實用性。', '../img/contestWorkImg/draw/linlin121185.jpg', '../img/contestWorkImg/draw/linlin121185.jpg', 662, '投稿成功', '2020-12-21 21:18:50'),
+('C212210', 2, '椅子', '好坐的椅子', '椅子是傢俱設計史中不可忽視的要角，坐在椅子的時間比躺臥還長，此時正需要好坐的椅子。', '../img/contestWorkImg/draw/wenwen212210.jpg', '../img/contestWorkImg/draw/wenwen212210.jpg', 22, '投稿成功', '2020-12-22 12:21:06'),
+('D120563', 2, '桌子', '兩腳書櫥的逃亡', '聽著兩腳書櫥的逃亡，突然不在意逃亡的理由，而是在意逃亡的景象。或許她是穿著高跟鞋在跑。', '../img/contestWorkImg/draw/chunggg120563.jpg', '../img/contestWorkImg/draw/chunggg120563.jpg', 156, '投稿成功', '2020-12-21 20:56:34'),
+('D121045', 2, '桌子', '走在時尚尖端', '桌子也可以很Fashion的向前。', '../img/contestWorkImg/draw/dd12345121045.webp', '../img/contestWorkImg/draw/dd12345121045.webp', 23, '投稿成功', '2020-12-21 21:04:53'),
+('D205551', 2, '桌子', '圓', '圓型就是為家庭著想的設計。剔除掉了稜角，也同時縮小體積，放在任何地方都適合不過。', '../img/contestWorkImg/draw/TingHang20201220205551.jpg', '../img/contestWorkImg/draw/TingHang20201220205551.jpg', 69, '投稿成功', '2020-12-20 20:55:51'),
+('S115135', 2, '沙發', '陽光棕梠', '生長在熱帶的棕梠，有陽光的氣息，生處在亞熱帶的台灣，少了四季如春，就用陽光棕梠沙發來填補吧。', '../img/contestWorkImg/draw/leelee20201221151358.jpg', '../img/contestWorkImg/draw/leelee20201221151358.jpg', 56, '投稿成功', '2020-12-21 15:13:58');
 
 --
 -- 已傾印資料表的索引
@@ -719,7 +715,7 @@ ALTER TABLE `WORK`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `CASE`
 --
 ALTER TABLE `CASE`
-  MODIFY `CASE_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `CASE_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `CONTACT_FORM`
@@ -737,7 +733,7 @@ ALTER TABLE `DELIVERY`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `FAVORITE`
 --
 ALTER TABLE `FAVORITE`
-  MODIFY `FAV_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `FAV_ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `noti`
