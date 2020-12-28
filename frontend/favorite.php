@@ -8,8 +8,8 @@
     }
 
     $sql = "SELECT m.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE 
-    from favorite f 
-    join(select p.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE from product p join product_img i on i.PRD_ID = p.PRD_ID)m 
+    from FAVORITE f 
+    join(select p.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE from PRODUCT p join PRODUCT_IMG i on i.PRD_ID = p.PRD_ID)m 
     on m.PRD_ID = f.PRODUCT_ID 
     where MEMBER_ID = ? 
     group by m.PRD_ID, PIMG_URL, PRD_NAME, PRD_MATERIAL, PRD_PRICE";

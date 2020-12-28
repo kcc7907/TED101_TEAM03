@@ -11,10 +11,10 @@
     $work = $_POST["work"];
 
     //作品詳細資訊
-    $sql = "SELECT * from `work` w
+    $sql = "SELECT * from `WORK` w
     join 
-    (select * from `member`
-    join `contestant` on MEM_ID = CT_MEMBER_ID) m
+    (select * from `MEMBER`
+    join `CONTESTANT` on MEM_ID = CT_MEMBER_ID) m
     on m.CT_WORK_ID = w.WK_ID
     where WK_ID = ?";
     $statement = $pdo->prepare($sql);
@@ -24,7 +24,7 @@
     //
 
     //投票判斷
-    $sql_voted = "SELECT MEM_VOTED from `member` where MEM_ID = ?";
+    $sql_voted = "SELECT MEM_VOTED from `MEMBER` where MEM_ID = ?";
     $statement_voted = $pdo->prepare($sql_voted);
     $statement_voted->bindValue(1, "$user");    
     $statement_voted->execute();

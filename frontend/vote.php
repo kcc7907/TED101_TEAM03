@@ -6,37 +6,16 @@
     $page = isset($_POST["page"]) ? $_POST["page"] : 1;
 
     //作品資料
-    $sql = "SELECT * from `work` w
+    $sql = "SELECT * from `WORK` w
     join 
-    (select * from `member`
-    join `contestant` on MEM_ID = CT_MEMBER_ID) m
+    (select * from `MEMBER`
+    join `CONTESTANT` on MEM_ID = CT_MEMBER_ID) m
     on m.CT_WORK_ID = w.WK_ID";
     $statement = $pdo->prepare($sql);     
     $statement->execute();
     $data = $statement->fetchAll();
 
-    //即時戰況
-    // $sql_game = "SELECT WK_VOTES, WK_IMG from `work` w
-    // join 
-    // (select * from `member`
-    // join `contestant` on MEM_ID = CT_MEMBER_ID) m
-    // on m.CT_WORK_ID = w.WK_ID
-    // order by 1 desc
-    // limit 3";
-    // $statement = $pdo->prepare($sql_game);     
-    // $statement->execute();
-    // $dataGame = $statement->fetchAll();
-    // print_r($dataGame);
     
-    // echo '123';
-    // echo '<br>'.$sql_game;
-    // $sumVote = [];
-    // foreach($data_game as $j => $row_game){
-    //     echo $row_game["WK_VOTES"].'/';
-    //     array_push($sumVote, $row_game["WK_VOTES"]);                           
-    // };
-    // $voteNum = array_sum($sumVote);
-    // echo $voteNum;
 ?>
 
 
@@ -174,26 +153,6 @@
                 
             </div>
         </div>
-
-        <!-- <div class="game">
-            <div class="bgc">
-                <div class="inner">
-                    <div class="winner"></div>
-                    <div class="items">
-                        <div class="item">
-                            <div class="work">
-                                <img src="">
-                            </div>
-                            <div class="voteNumber" style=""></div>
-                            <div class="date"></div>
-                        </div>                    
-                    </div>
-                </div>
-                <div class="close">
-                    <i class="far fa-times-circle"></i>
-                </div>                
-            </div>
-        </div> -->
     </div>
 
     <!-- footer -->
