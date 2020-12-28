@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/shoppingCart.css">
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/vue.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.js'></script>
+    <script src='../lib/js/axios.js'></script>
     <script defer src="../js/20/shopCommon.js"></script>
     <script defer src="../js/20/shoppingOrder.js"></script>
     <script defer src="../lib/header/header.js"></script>
