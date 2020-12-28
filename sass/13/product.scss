@@ -192,6 +192,17 @@ div.sam{
             }
         }
     }
+    @media (max-width:414px){
+        div.banner{
+            h2.bannerWord01{
+                left:25%;
+                top:30%;
+            }
+            h2.bannerWord02{
+                bottom:25%;
+            }
+        }
+    }
     @media (max-width:360px){
         div.banner{
             h2.bannerWord01{
@@ -350,7 +361,7 @@ div.sam{
                 margin-left:5px;
                 margin-right:5px;
                 span.discount{
-                    font-size:1
+                    font-size:12px;
                 }
             }
         }

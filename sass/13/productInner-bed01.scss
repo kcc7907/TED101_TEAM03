@@ -1106,6 +1106,34 @@ div.section2{
         }
     }
 }
+@media (max-width:414px){
+    div.section2{
+        div.bottomBox{
+            div.taiwanBox{
+                img.taiwan{
+                    height:240px;
+                }
+            }
+            div.truckBox{
+                div.truck{
+                    div.word{
+                        span.color{
+                            margin-right:5px;
+                        }
+                        h2{
+                            margin-right:5px;
+                        }
+                    }
+                    div.icon{
+                        img{
+                            margin-right:8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media (max-width:360px){
     div.section2{
         div.bottomBox{
