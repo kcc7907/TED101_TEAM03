@@ -7,7 +7,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
 const imagemin = require('gulp-imagemin');
-const uglify = require('gulp-uglify');
+// const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 const clean = require('gulp-clean');
 const ftp = require('vinyl-ftp');
 
@@ -43,13 +44,12 @@ exports.default = function browser() {
 }
 
 //壓縮js
-exports.minJs = cb => {
-    src('js/**/*.js')
+exports.minjs = cb => {
+    src('js/**')
         .pipe(uglify())
-        .pipe(rename({
-            extname: '.min.js'
-        })).pipe(dest('dist/'));
-    cb()
+        // .pipe(rename({extname: 'min.js'}))
+        .pipe(dest('dist'));
+    cb();
 }
 
 // 刪除'/CSS','dist/'
@@ -92,3 +92,20 @@ exports.tophp = cb => {
         })).pipe(dest('dist/'));
     cb()
 }
+
+exports.imgmin = cb => {
+    src('./img/**')
+    .pipe(imagemin())
+    .pipe(dest('images'));
+    cb()
+}
+
+function ugjs(cb) {
+    src('./js/20/**.js')
+    .pipe(uglify())
+    .pipe(rename({extname: '.min.js'}))
+    .pipe(dest('dist/20'));
+    cb()
+}
+
+exports.ug = ugjs
