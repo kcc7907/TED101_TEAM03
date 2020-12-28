@@ -7,7 +7,7 @@
         echo "<script>location.href = 'home2D.php';</script>";
     }
 
-        $sql = "SELECT * FROM member WHERE MEM_ID =?";
+        $sql = "SELECT * FROM MEMBER WHERE MEM_ID =?";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, "$user");
         $statement->execute();

@@ -4,10 +4,10 @@
 
     $page = isset($_POST["page"]) ? $_POST["page"] : 1;
 
-    $sql = "SELECT * from `work` w
+    $sql = "SELECT * from `WORK` w
     join 
-    (select * from `member`
-    join `contestant` on MEM_ID = CT_MEMBER_ID) m
+    (select * from `MEMBER`
+    join `CONTESTANT` on MEM_ID = CT_MEMBER_ID) m
     on m.CT_WORK_ID = w.WK_ID";
     $statement = $pdo->prepare($sql);     
     $statement->execute();
