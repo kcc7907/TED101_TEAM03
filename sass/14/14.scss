@@ -200,22 +200,19 @@
 body{
     margin: 0;
     background-color: #FFFAF4;
-    border: none !important;
+    // border: none !important;
     color: #54383B;
 }
 
-
-*{
-    font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
-    border: none !important;
-    // box-sizing: border-box;
-}
-
-
 //巢狀寫法
 div#JN{
+    *{
+        font-family: 'Noto Sans TC light', '微軟正黑體', sans-serif;
+        // border: none !important;
+        // box-sizing: border-box;
+    }
     > div{
-        border: 1px solid red;
+        // border: 1px solid red;
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
@@ -245,14 +242,14 @@ div#JN{
         }
 
         .introduce_detail{
-            border: 1px solid darkgoldenrod;   
+            // border: 1px solid darkgoldenrod;   
             display: inline-flex;
             margin-top: 5%;
             width: 100%;
             }
 
         .intro_detail{
-            border: 1px solid blue;
+            // border: 1px solid blue;
             width: 50%;
             margin: 5%;
             margin-top: 5%;
@@ -261,12 +258,12 @@ div#JN{
         }
 
         .pic_intro{
-            border: 1px solid orangered;
+            // border: 1px solid orangered;
             
         }
 
         .designer{
-            border: 1px solid purple;
+            // border: 1px solid purple;
             width: auto;
             position: relative;
             color: #54383B;
@@ -282,7 +279,7 @@ div#JN{
         }
     
         .first{
-            border: 1px solid palevioletred;
+            // border: 1px solid palevioletred;
             width: auto;
             background-color: rgba(189, 167, 156, 0.1);
             // z-index: 1;
@@ -292,7 +289,7 @@ div#JN{
             &:after{
                 content: '';
                 display: inline-block;
-                border: 1px solid #bda79e;
+                // border: 1px solid #bda79e;
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -303,13 +300,13 @@ div#JN{
         }
 
         .designer_say{
-            border: 1px solid navy;
+            // border: 1px solid navy;
             display: inline-flex;
             // margin-top: 15%;
         }
 
         .second{
-            border: 1px solid palevioletred;
+            // border: 1px solid palevioletred;
             width: auto;
             background-color: rgba(189, 167, 156, 0.1);
             // z-index: 1;
@@ -320,7 +317,7 @@ div#JN{
             &:after{
                 content: '';
                 display: inline-block;
-                border: 1px solid #bda79e;
+                // border: 1px solid #bda79e;
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -331,28 +328,28 @@ div#JN{
         }
 
         .series{
-            border: 1px solid gray;
+            // border: 1px solid gray;
         }
 
         .title{
-            border: 1px solid purple;
+            // border: 1px solid purple;
             display: inline-flex;
             text-align: center;
             width: 50%;
         }
 
         .stylelist{
-            border: 1px solid blue;    
+            // border: 1px solid blue;    
             padding: 10px;    
         }
 
         .style{
-            border: 1px solid blue;
+            // border: 1px solid blue;
             padding: 10px;
         }
 
         .pic{
-            border: 1px solid cadetblue;
+            // border: 1px solid cadetblue;
             text-align: center;
             width: 300px;
             height: 60px;
@@ -362,7 +359,7 @@ div#JN{
 
         //介紹輪播圖
         #intro_sliderBoard{			/*div*/
-            border: 3px solid firebrick;
+            // border: 3px solid firebrick;
             width: 300px;
             margin: 50px auto;
             overflow: hidden;
@@ -399,7 +396,7 @@ div#JN{
                     max-width: 1200px;
                     width: 100%;
                     .tab_list{
-                        border: 1px solid rebeccapurple;
+                        // border: 1px solid rebeccapurple;
                         width: 80%;
                         font-size: 0;
                         // margin: 0px 20px;
@@ -442,7 +439,7 @@ div#JN{
         .jpgbox{
             width: 33.1%; 
             height: 240px; 
-            border: 1px solid red; 
+            // border: 1px solid red; 
             position: relative;
             overflow: hidden;
             &:hover  span{
@@ -481,7 +478,7 @@ div#JN{
         }
 
         img.homepic, img.commercial_pic, img.office_pic{
-            border: 1px solid green;
+            // border: 1px solid green;
             // height: 300px;
             // max-width: 100%; 
             max-height: 100%;
@@ -493,7 +490,7 @@ div#JN{
         }
 
         .stylebox_right{
-            border: 1px solid pink;
+            // border: 1px solid pink;
             max-width: 1200px;
             width: 100%;
             margin-bottom: 20%;
@@ -543,14 +540,14 @@ div#JN{
         
         //獎項輪播圖
         .image{
-            border: 1px solid #ccc;
+            // border: 1px solid #ccc;
             width: 35%;
             // height: 450px;
             position: absolute;
             margin-bottom: 0px;            
         }
         #sliderBoard{  /*div*/
-            border: 1px solid #ccc;
+            // border: 1px solid #ccc;
             width: 90%;
             height: 550px;
             margin: 50px auto;
@@ -590,14 +587,14 @@ div#JN{
         }
         
         div.award_list{
-            border: 3px solid brown;
+            // border: 3px solid brown;
             width: 600px;
             height: 450px;
             background-color: #fff;
         }
         
         div.other_text{
-            border: 5px solid rebeccapurple;
+            // border: 5px solid rebeccapurple;
             position: relative;
             right: 0px;
             height: 550px;
@@ -612,7 +609,7 @@ div#JN{
         }
 
         .intro_sliderBoard{
-            border: 3px solid darkblue;    
+            // border: 3px solid darkblue;    
         }
 
         .intro_image{
@@ -638,7 +635,7 @@ div#JN{
         }
     }
     .select_click{
-        border: 1px solid rebeccapurple;
+        // border: 1px solid rebeccapurple;
         display: inline-flex;
         max-width: 1200px;
         width: 100%;
@@ -663,7 +660,7 @@ div#JN{
     }
     .click{
         // width: 100%;
-        border: 1px solid green;
+        // border: 1px solid green;
         margin-top: 2.5%;
         padding: 5px 20px;
         font-size: 32px;
@@ -672,7 +669,7 @@ div#JN{
     }
 
     .show_pic{
-        border: 1px solid darkblue;  
+        // border: 1px solid darkblue;  
         display: flex;
         align-items: center;
         justify-content:  center;
@@ -689,14 +686,14 @@ div#JN{
 
 
     .designer_intro{
-        border: 1px solid indianred;
+        // border: 1px solid indianred;
         text-align: center;
         margin-top: 35%;
         margin-left: -10%;
     }
 
    .block_color{
-    border: 1px solid palevioletred;
+    // border: 1px solid palevioletred;
     width: 100%;
     background-color: rgba(189, 167, 156, 0.1);
     // z-index: 1;
@@ -717,12 +714,12 @@ div#JN{
     }
 
    .d_pic{
-       border: 1px solid darkblue;
+    //    border: 1px solid darkblue;
        margin-top: 6%;
     }
 
     .pics{
-        border: 1px solid brown;
+        // border: 1px solid brown;
         display: flex;
         width: 300px;
         height: 90px;
@@ -731,7 +728,7 @@ div#JN{
         margin: auto;
         font-size: 32px;
         
-        border: 1px solid palevioletred;
+        // border: 1px solid palevioletred;
         // width: 100%;
         background-color: rgba(189, 167, 156, 0.1);
         // z-index: 1;
@@ -741,7 +738,7 @@ div#JN{
         &:after{
             content: '';
             display: inline-block;
-            border: 1px solid #bda79e;
+            // border: 1px solid #bda79e;
             width: 100%;
             height: 100%;
             position: absolute;
@@ -752,7 +749,7 @@ div#JN{
     }
 
     .d_pic_flex{
-        border: 6px solid yellow;
+        // border: 6px solid yellow;
         // display: inline-flex;
         width: 100%;
         margin-top: 5%;
@@ -763,7 +760,7 @@ div#JN{
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
-        border: 1px solid rebeccapurple;
+        // border: 1px solid rebeccapurple;
         width: 100%;
     }
 
@@ -789,12 +786,12 @@ div#JN{
     }
 
     .more_detail{
-        border: 1px solid darkblue;
+        // border: 1px solid darkblue;
         margin-top: 15%;
         position: relative;
         margin-bottom: 20%;
         .contact{
-            border: 1px solid red;
+            // border: 1px solid red;
             position: absolute;
             display: inline-block;
             opacity: 1;
@@ -805,7 +802,7 @@ div#JN{
             line-height: 2.5;
             font-size: 30px;
             .titleFont3{
-                border: 1px solid greenyellow;
+                // border: 1px solid greenyellow;
                 // width: 1000px;
             }
             
@@ -832,7 +829,7 @@ div#JN{
 
 
     .deatil_contact{
-        border: 1px solid rebeccapurple;
+        // border: 1px solid rebeccapurple;
         max-width: 100%;
         margin-top: 5%;
         display: flex;
@@ -844,7 +841,7 @@ div#JN{
     }
 
     .inter_one_pack{
-        border: 2px solid steelblue;
+        // border: 2px solid steelblue;
         display: flex;
     }
 
@@ -864,7 +861,7 @@ div#JN{
             width: 70%;
             // min-height: 878px;
             // margin: 0 auto;
-            border: 1px solid #9b9b9b;
+            // border: 1px solid #9b9b9b;
             background-color: #fffaf4;
             // margin-top: 2%;
             position: relative;
@@ -979,7 +976,7 @@ div#JN{
                 }
             }
         .select_click{
-            border: 1px solid rebeccapurple;
+            // border: 1px solid rebeccapurple;
             display: flex;
             max-width: 1200px;
             width: 90%;
@@ -1005,7 +1002,7 @@ div#JN{
 @include rwdmF(992){ 
     div#JN{
         > div{
-            border: 1px solid blue;
+            // border: 1px solid blue;
             max-width: 900px;
             width: 100%;
             margin: 0 auto;
@@ -1018,14 +1015,14 @@ div#JN{
             //     justify-content: center;
             // }
             .introduce_detail{
-                border: 1px solid darkgoldenrod;   
+                // border: 1px solid darkgoldenrod;   
                 display: grid;
                 margin-top: 5%;
                 justify-items: center;
                 }
     
             .intro_detail{
-                border: 1px solid blue;
+                // border: 1px solid blue;
                 width: 80%;
                 margin-left: 5%;
                 margin-top: 100px;
@@ -1035,12 +1032,12 @@ div#JN{
             }
     
             .pic_intro{
-                border: 1px solid orangered;
+                // border: 1px solid orangered;
                 order: 1;
             }
 
             .designer_say{
-                border: 1px solid navy;
+                // border: 1px solid navy;
                 display: grid;
                 margin-top: 15%;
                 justify-items: center;
@@ -1089,7 +1086,7 @@ div#JN{
             }
 
             .inter_one_pack{
-                border: 2px solid steelblue;
+                // border: 2px solid steelblue;
                 display: block;
             }
 
@@ -1109,7 +1106,7 @@ div#JN{
             }
 
             .small{
-                border: 1px solid rebeccapurple;
+                // border: 1px solid rebeccapurple;
                 height: auto;
                 width: 20%;
                 margin: auto;
@@ -1123,7 +1120,7 @@ div#JN{
             .jpgbox{
                 width: 49%; 
                 height: 240px; 
-                border: 1px solid red; 
+                // border: 1px solid red; 
                 position: relative;
                 overflow: hidden;
                 &:hover  span{
@@ -1153,7 +1150,7 @@ div#JN{
                     background-image: url("../img/interiordesign/excellent/award/forest/02.jpg");
                     width: 100%;
                     height: 350px;
-                    border: 1px solid red;
+                    // border: 1px solid red;
                 }                
             }
             }
@@ -1201,7 +1198,7 @@ div#JN{
         .jpgbox{
             width: 50%; 
             height: 240px; 
-            border: 1px solid red; 
+            // border: 1px solid red; 
             position: relative;
             overflow: hidden;
             margin: auto;
@@ -1227,7 +1224,7 @@ div#JN{
             }
         }
         .stylebox_right{
-            border: 1px solid pink;
+            // border: 1px solid pink;
             max-width: 1200px;
             width: 100%;
             margin-bottom: 20%;
@@ -1278,7 +1275,7 @@ div#JN{
             .jpgbox{
                 width: 80%; 
                 height: 240px; 
-                border: 1px solid red; 
+                // border: 1px solid red; 
                 position: relative;
                 overflow: hidden;
                 &:hover > span{
