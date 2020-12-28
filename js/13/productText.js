@@ -261,6 +261,22 @@ function setLocal() {
     }
     localStorage.setItem("lists", JSON.stringify(apple));
     alert('已加入購物車');
+
+    //購物車數量
+    let shoplist = JSON.parse(localStorage.getItem("lists"));
+    let shopIcon = document.querySelector('.shop');
+    let shopnum = 0;
+    shoplist.forEach(e => {
+        shopnum += parseInt(e.num);
+    });
+    if (shopnum === 0) {
+        return false;
+    } else if (!shopIcon.classList.contains('shopnum')) {
+        shopIcon.setAttribute('data-content', shopnum);
+        shopIcon.classList.add('shopnum');
+    } else {
+        shopIcon.setAttribute('data-content', shopnum);
+    }
 }
 box[0].addEventListener('click', setLocal);
 

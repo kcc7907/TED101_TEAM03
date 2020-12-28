@@ -119,6 +119,22 @@ let all = new Vue({
             });
             localStorage.removeItem("lists");
             localStorage.setItem("lists", JSON.stringify(lists));
+
+            //購物車數量
+            let shoplist = JSON.parse(localStorage.getItem("lists"));
+            let shopIcon = document.querySelector('.shop');
+            let shopnum = 0;
+            shoplist.forEach(e => {
+                shopnum += parseInt(e.num);
+            });
+            if (shopnum === 0) {
+                return false;
+            } else if (!shopIcon.classList.contains('shopnum')) {
+                shopIcon.setAttribute('data-content', shopnum);
+                shopIcon.classList.add('shopnum');
+            } else {
+                shopIcon.setAttribute('data-content', shopnum);
+            }
         },
         checkAll(e){
             e.target.checked==true?left.check=true:left.check=false;
@@ -312,6 +328,22 @@ Vue.component('myList', {
                 this.$el.parentNode.removeChild(this.$el);
                 right.total = right.total- (this.prdPrice * this.num);
                 right.proTotal-=this.num;
+
+                //購物車數量
+                let shoplist = JSON.parse(localStorage.getItem("lists"));
+                let shopIcon = document.querySelector('.shop');
+                let shopnum = 0;
+                shoplist.forEach(e => {
+                    shopnum += parseInt(e.num);
+                });
+                if (shopnum === 0) {
+                    return false;
+                } else if (!shopIcon.classList.contains('shopnum')) {
+                    shopIcon.setAttribute('data-content', shopnum);
+                    shopIcon.classList.add('shopnum');
+                } else {
+                    shopIcon.setAttribute('data-content', shopnum);
+                }
             })
         },
     },
