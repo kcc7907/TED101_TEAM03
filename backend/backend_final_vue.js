@@ -14,7 +14,7 @@ let app = new Vue({
     },
     methods: {
         send() {
-            axios.post('../php/13/productInsert.php', this.formData).then(()=>{
+            axios.post('../php/13/productInsert.php', this.formData).then(() => {
                 this.getData();
             })
             $('div.sam_jump').addClass('-opacity-zero');
@@ -22,11 +22,11 @@ let app = new Vue({
                 $('div.sam_jump').removeClass('-on -opacity-zero');
             }, 1000);
         },
-        getData(){
+        getData() {
             axios.post('../php/13/product.php').then(res => {
                 this.rp = res.data;
             })
-        }
+        },
     },
     mounted() {
         this.getData();
@@ -73,13 +73,13 @@ let app3 = new Vue({
                 success: function (res) {
                     that.getData();
                 }
-            }).then(res=>{
+            }).then(res => {
                 $('div.jane_jump').addClass('-opacity-zero');
                 setTimeout(function () {
                     $('div.jane_jump').removeClass('-on -opacity-zero');
                 }, 1000);
             })
-            ;
+                ;
 
         },
         hideButton() {
@@ -91,7 +91,7 @@ let app3 = new Vue({
             $('select#case_type option:nth-child(2)').attr('selected', true);
             this.formData.case_type = $('select#case_type').val();
         },
-        getData(){
+        getData() {
             const self = this;
             $.ajax({
                 url: '../php/14/conn14.php',
