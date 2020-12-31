@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23.51" height="26.011" viewBox="0 0 23.51 26.011">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #465d4c;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="Icon_feather-trash-2" data-name="Icon feather-trash-2" transform="translate(0.5 0.5)">
+    <path id="路径_1" data-name="路径 1" class="cls-1" d="M4.5,9H27.01" transform="translate(-4.5 -3.998)"/>
+    <path id="路径_2" data-name="路径 2" class="cls-1" d="M25.008,8V25.51a2.5,2.5,0,0,1-2.5,2.5H10a2.5,2.5,0,0,1-2.5-2.5V8m3.752,0V5.5a2.5,2.5,0,0,1,2.5-2.5h5a2.5,2.5,0,0,1,2.5,2.5V8" transform="translate(-4.999 -3)"/>
+    <path id="路径_3" data-name="路径 3" class="cls-1" d="M15,16.5V24" transform="translate(-6.246 -5.245)"/>
+    <path id="路径_4" data-name="路径 4" class="cls-1" d="M21,16.5V24" transform="translate(-7.244 -5.245)"/>
+  </g>
+</svg>
