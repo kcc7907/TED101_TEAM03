@@ -10,30 +10,34 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../lib/reset.css">
 
-
+    <script src='../lib/js/jquery.js'></script>
+    <script src="../lib/js/vue.js"></script>
+    <link rel="stylesheet" href="../css/logSign.css">
+    <script src="../lib/login/lazy-line-painter-1.9.6.min.js"></script>
+    <script defer src="../lib/login/logSign.js"></script>
   </head>
   <body class="bodykm">
       
     <header class="common">
         <div class="logo">
-            <a href="./home2D.html"><img src="../img/headerFooter/logo.svg"></a>
+            <a href="./home2D.php"><img src="../img/headerFooter/logo.svg"></a>
         </div>
         <nav>
             <div class="nav1">
-                <a href="./product.html">救世傢俱</a>
-                <a href="./case.html">參考案例</a>
+                <a class="product" href="product/product.html">救世傢俱</a>
+                <a class="case" href="./case.html">參考案例</a>
             </div>
             <div class="nav2">
-                <a href="./qa.html">客戶服務</a>
-                <a href="./contest_participate.html">傢聚賞</a>
+                <a class="qa" href="./qa.html">客戶服務</a>
+                <a class="contest" href="./contest_main20.php">傢聚賞</a>
             </div>
         </nav>
         <div class="icon">
-            <a class="login">
+            <a class="login ">
                 <img src="../img/headerFooter/loginIcon.svg" class="logMem" alt="">
             </a>
-            <a class="shop" href="shoppingCart.html">
-                <img src="../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.html'">
+            <a class="shop " href="shoppingCart.php">
+                <img src="../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.php'">
             </a>
             <a class="ham">
                 <span></span>
@@ -69,7 +73,7 @@
                                 其他疑問
                             </li>
                             <li class="select5">
-                                疑問表單
+                                問題表單
                             </li>         
                         </ul>
                     </nav>
@@ -83,7 +87,7 @@
                 </div>
                 
                 <div class="part1">
-                    <div class="name11"><p class="title3 title11">＋&ensp;產品及服務</p></div>
+                    <div class="name11"><p class="title3 title11">＋&ensp;關於商品</p></div>
 
                     <div class="line"></div>
 
@@ -92,7 +96,7 @@
                             <p class="title4 title111">＋&ensp;我在救世宅可以買到那些商品?</p>
                         </div>
                         <div class="part111">
-                            <p class="title5">在救世宅你可以找到各式各樣的客製家具，例如臥室的床、衣櫃、還有居家佈置的地毯、書桌等家具品。</p>
+                            <p class="title5">在救世宅你可以找到各式各樣的客製家具，例如臥室的床、衣櫃、還有居家佈置的地毯、書桌等家具品。以及可以購買各屆比賽冠軍作品。</p>
                         </div>
 
                         <div class="line2"></div>
@@ -101,7 +105,7 @@
                             <p class="title4 title112">＋&ensp;如何知道我想購買的商品有沒有貨?</p>
                         </div>
                         <div class="part112"> 
-                            <p class="title5">AAAAAAAAAAAAA</p>
+                            <p class="title5">只要我們架上的商品還在，就代表我們可以提供給您最好的商品，請您放心選購。</p>
                         </div>
 
                         <div class="line2"></div>
@@ -110,74 +114,64 @@
                             <p class="title4 title113">＋&ensp;產品品質如何?有沒有品質保證?</p>
                         </div>
                         <div class="part113"> 
-                            <p class="title5">BBBBBBBBBBBB</p>
+                            <p class="title5">我們所有的產品都符合嚴格的國際品質標準和規範，並提供您更多好設計及好品質的商品。因為我們對品質的信心，所以我們針對多項商品提供數年不等的保固服務。</p>
                         </div>
 
-                        <div class="line2"></div>                
+                        <div class="line2"></div>
                     </div>
 
-                    <div class="name12"><p class="title3 title12">＋&ensp;如何建立我的購物清單?</p></div>
+                    <div class="name12"><p class="title3 title12">＋&ensp;商品購買後問題</p></div>
                     
                     <div class="line"></div>
 
                     <div class="part12">
+                        
                         <div class="name121">                    
-                            <p class="title4 title121">＋&ensp;CCCCCC</p>
+                            <p class="title4 title121">＋&ensp;購買傢俱後可以提供組裝服務嗎?</p>
                         </div>
                         <div class="part121"> 
-                            <p class="title5">DDDDDD</p>
+                            <p class="title5">如果有需求我們都會安排專人為您組裝，讓您沒有後顧之憂。</p>
                         </div>
     
                         <div class="line2"></div>
     
                         <div class="name122">
-                            <p class="title4 title122">＋&ensp;EEEEEE</p>
+                            <p class="title4 title122">＋&ensp;買到的商品如果有瑕疵怎麼辦?</p>
                         </div>
                         <div class="part122"> 
-                            <p class="title5">FFFFFF</p>
+                            <p class="title5">購買或送達後，我們現場會請您確認一次商品是否正確或損毀，如果有問題我們承諾再給您一個商品。</p>
                         </div>
     
                         <div class="line2"></div>
     
                         <div class="name123">
-                            <p class="title4 title123">＋&ensp;GGGGGG</p>
+                            <p class="title4 title123">＋&ensp;是否提供運送服務?</p>
                         </div>
                         <div class="part123"> 
-                            <p class="title5">HHHHHH</p>
+                            <p class="title5">沒問題，只要在台灣本島內我們都可以為您送達。</p>
+                        </div>
+                        <div class="line2"></div>
+
+                        <div class="name124">
+                            <p class="title4 title124">＋&ensp;已購買的商品是否能退貨?</p>
+                        </div>
+                        <div class="part124"> 
+                            <p class="title5">非常抱歉，我們商品都是為您所客製，因此下完訂單付完款後，將不接受退貨或退款服務。</p>
                         </div>
                         <div class="line2"></div>
                     </div>
 
+                    <!-- <div class="line"></div> -->
 
-                    <div class="name13"><p class="title3 title13">＋&ensp;已購買的商品是否能退貨?</p></div>
+                    <div class="name13"><p class="title3 title13">＋&ensp;我們商品跟其他傢俱哪裡不同?</p></div>
 
                     <div class="part13">
-                        <div class="name131"> 
-                            <div class="line"></div>                   
-                            <p class="title4 title131">＋&ensp;IIIIII</p>
-                        </div>
-                        <div class="part131"> 
-                            <p class="title5">JJJJJJ</p>
+                        <div class="name131">              
+                            <p class="title6 title131">我們的商品都是為您所客製，可以讓您選擇您覺得最好的材質與顏色，滿足您DIY家裡的想法。同時提供其他優秀得獎作品，讓您有更多的選擇。</p>
                         </div>
     
-                        <div class="line2"></div>
-    
-                        <div class="name132">
-                            <p class="title4 title132">＋&ensp;KKKKKK</p>
-                        </div>
-                        <div class="part132"> 
-                            <p class="title5">LLLLLL</p>
-                        </div>
-    
-                        <div class="line2"></div>
-    
-                        <div class="name133">
-                            <p class="title4 title133">＋&ensp;MMMMMM</p>
-                        </div>
-                        <div class="part133"> 
-                            <p class="title5">NNNNNN</p>
-                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -189,7 +183,18 @@
                 </div>
 
                 <div class="part2">
+
+
                     <div class="name21"><p class="title3 title21">＋&ensp;救世宅是否可使用振興三倍卷?</p></div>
+
+                    <div class="part21">
+                        <div class="name211">                    
+                            <p class="title6 title211">很抱歉，由於我們目前只接受線上購買，因此暫不開放使用三倍卷使用。</p>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+
+                    <!-- <div class="name21"><p class="title3 title21">＋&ensp;救世宅是否可使用振興三倍卷?</p></div>
 
                     <div class="line"></div>
 
@@ -211,14 +216,22 @@
                         </div>
     
                         <div class="line2"></div>
-                    </div>
+                    </div> -->
+
 
 
                     <div class="name22"><p class="title3 title22">＋&ensp;線上購物付款方式?</p></div>
 
+                    <div class="part22">
+                        <div class="name221">                    
+                            <p class="title6 title221">你可以選擇信用卡一次付清(Visa、Master、JCB)或是分期付款。(1) 單筆滿 $30,000，12 期 0 利率限使用花旗銀行、國泰世華信用卡。
+                                (2) 單筆滿 $20,000，6 期 0 利率合作銀行：國泰世華、中國信託、花旗銀行、台北富邦、台新、匯豐及玉山銀行。</p>
+                        </div>
+                    </div>
+
                     <div class="line"></div>
 
-                    <div class="part22">
+                    <!-- <div class="part22">
                         <div class="name221">                    
                             <p class="title4 title221">＋&ensp;SSSSSS</p>
                         </div>
@@ -236,10 +249,10 @@
                         </div>
     
                         <div class="line2"></div>
-                    </div>
+                    </div> -->
 
 
-                    <div class="name23"><p class="title3 title22">＋&ensp;線上購物發票問題?</p></div>
+                    <div class="name23"><p class="title3 title23">＋&ensp;線上購物發票問題?</p></div>
 
                     <div class="part23">
                         <div class="line"></div>
@@ -247,7 +260,10 @@
                             <p class="title4 title231">＋&ensp;線上購物提供那些發票選擇?</p>
                         </div>
                         <div class="part231"> 
-                            <p class="title5">WWWWWW</p>
+                            <p class="title5">線上購物使用電子發票，目前提供的類型有：
+                                (1) 個人紙本電子發票，將配送至你指定的發票地址。
+                                (2) 個人紙本電子發票，發票存入自然人憑證載具。
+                                (3) 個人紙本電子發票，發票存入手機載具。
                         </div>
     
                         <div class="line2"></div>
@@ -260,7 +276,6 @@
                         </div>
     
                     </div>
-
 
                     
                 </div>
@@ -289,7 +304,7 @@
 
                     <div class="part32">
                         <div class="name321">                    
-                            <p class="title6 title321">XXXXXX</p>
+                            <p class="title6 title321">請盡快更改您的密碼，並檢查是否有任何更改異動，若有任何問題請聯絡我們。</p>
                         </div>
                     </div>
                 </div>
@@ -306,7 +321,7 @@
 
                     <div class="part41">
                         <div class="name411">                    
-                            <p class="title6 title411">秘密。</p>
+                            <p class="title6 title411">您好，我們暫時只能用表單聯絡哦。</p>
                         </div>
                     </div>
 
@@ -316,7 +331,7 @@
 
                     <div class="part42">
                         <div class="name421">                    
-                            <p class="title6 title421">YYYYYY</p>
+                            <p class="title6 title421">請利用表單上傳報名資料，更多詳情請到該網頁須知詳讀。</p>
                         </div>
                     </div>
                 </div>
@@ -325,7 +340,7 @@
 
             <div class="eee">
                 <div class="title2 fifth">
-                    <div class="about"><p>疑問表單</p></div>
+                    <div class="about"><p>問題表單</p></div>
                     <div class="icon"><img src="../img/19/comment-alt-regular2.svg" alt=""></div>
                 </div>
                 
@@ -334,17 +349,17 @@
                         <div class="paper2">
                             <p class="item">姓名</p>
                             <label>
-                                <input class="reply" type="text" placeholder="" size="40">    
+                                <input class="reply" type="text" placeholder="請在此輸入姓名" size="40"> 
                             </label>
         
                             <p class="item">手機號碼</p>
                             <label>
-                                <input class="reply" type="text" placeholder="" size="40">    
+                                <input class="reply" type="text" placeholder="請在此輸入手機號碼" size="40">    
                             </label>
         
                             <p class="item">EMAIL</p>
                             <label>
-                                <input class="reply" type="text" placeholder="" size="40">    
+                                <input class="reply" type="text" placeholder="請在此輸入您的email" size="40">    
                             </label>
         
                             <p class="item">您的疑問</p>
@@ -353,7 +368,15 @@
                             </div>
         
                             <div class="load">
-                                <button type="button" class="push">上傳圖片<img src="../img/19/file-image-regular.svg" alt=""></button>
+
+                                <input id="file-upload" type="file" accept="image/*">
+
+                                <label for="file-upload" class="custom-file-upload">
+                                    <i class="fa fa-cloud-upload"></i>上傳圖片
+                                </label>
+                                <input id="file-upload" type="file"/>
+
+                                <!-- <button type="button" class="push">上傳圖片<img src="../img/19/file-image-regular.svg" alt=""></button> -->
                             </div>
         
                             <div class="button">
@@ -395,7 +418,131 @@
         </section>
     </footer>
 
-    <script src='../js/jquery.js'></script>
+    <!-- 登入燈箱 -->
+    <div id="login">
+        <div class="login">
+            <h1 class="titleFont2">歡迎回來</h1>
+            <form action="LoginR.php" class="login" name="login" method="POST">
+                <div>
+                    <label for="account" class="titleFont3">帳號</label>
+                    <input type="text" id="account" name="account" class="titleFont3" minlength="8" maxlength="12"
+                        required="required" autocomplete="off">
+                    <label for="pwd" class="titleFont3">密碼</label>
+                    <input type="password" class="titleFont3" id="pwd" name="pwd" minlength="8" maxlength="12"
+                        required="required" autocomplete="off">
+                    <input type="checkbox" id="alive" name="alive" class="alive detailFont">
+                    <label for="alive" class="alive" id="alivebox"></label>
+                    <label for="alive" class="alive detailFont">保持登入</label>
+                </div>
+                <div>
+                    <p class="detailFont"><a>忘記密碼</a></p>
+                    <button type="button" class="login titleFont2">登入</button>
+                    <p class="detailFont"><a href="javascript: void(0)" class="signLink">註冊新會員</a></p>
+                </div>
+            </form>
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true"
+                id="logIn" class="lazy-line-painter">
+                <path id="Path_17" data-name="Path 17"
+                    d="M4.5,244.5,304.5,3l300,241.5V624c0,38.108-29.848,69-66.667,69H71.167C34.348,693,4.5,662.108,4.5,624Z"
+                    transform="translate(-3 -1.5)" fill="none" data-llp-id="logIn-0" data-llp-duration="5000"
+                    data-llp-delay="0" fill-opacity="0" style="" />
+                <path id="Path_18" data-name="Path 18" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)"
+                    fill="none" data-llp-id="logIn-1" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0"
+                    style="" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 603 693" data-llp-composed="true"
+                id="logInDoor" class="lazy-line-painter">
+                <path id="Path_19" data-name="Path 19" d="M13.5,162.7V18h86.819V162.7" transform="translate(244 518.801)"
+                    fill="none" data-llp-id="logIn-2" data-llp-duration="5000" data-llp-delay="0" fill-opacity="0"
+                    style="" />
+            </svg>
+    
+            <div class="closebtn">
+                <span class="closebtn">&times;</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 註冊燈箱 -->
+    <div id="signUp">
+        <div class="signUp">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 953 1009" data-llp-composed="true" id="signUp"
+                class="lazy-line-painter">
+                <g id="Rectangle_457" data-name="Rectangle 457" fill="none" stroke="#865454" stroke-width="1">
+                    <rect width="953" height="1009" data-llp-id="signUp-0" data-llp-duration="5000" data-llp-delay="0"
+                        fill-opacity="0" style="" />
+                </g>
+            </svg>
+            <h1 class="titleFont1">加入會員享受輕鬆購物</h1>
+            <form action="SignR.php" class="signUp" name="signUp">
+                <div>
+                    <div>
+                        <label for="memName" class="titleFont3">姓名</label>
+                        <input type="text" name="memName" class="titleFont3" id="memNameJH" required="required"
+                            autocomplete="off" placeholder="請輸入姓名">
+                    </div>
+                    <div>
+                        <label for="Phone" class="titleFont3">手機</label>
+                        <input type="text" name="memPhone" class="titleFont3" id="memPhoneJH" maxlength="10"
+                            required="required" autocomplete="off" placeholder="請輸入手機號碼">
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="titleFont3">信箱</label>
+                    <input type="email" name="memEmail" class="titleFont3" id="memEmailJH" required="required"
+                        autocomplete="off" placeholder="請輸入信箱">
+                </div>
+                <div id="addressOption">
+                    <label for="address" class="titleFont3">地址</label>
+                    <select name="memCity" id="memCityJH" class="detailFont" required="required">
+                        <option name="memCity" selected disabled value="0">請選擇縣市</option>
+                        <option v-for="city in citys" class="detailFont" name="memCity" :value="city">{{city}}</option>
+                    </select>
+                    <input type="text" name="memAddress" class="titleFont3" id="memAddressJH" required="required"
+                        autocomplete="off" placeholder="請輸入地址">
+                </div>
+                <div>
+                    <label for="account" class="titleFont3">帳號</label>
+                    <input type="text" name="memAccount" class="titleFont3" id="memAccountJH" minlength="6" maxlength="12"
+                        required="required" autocomplete="off" placeholder="請輸入英文或數字(6-12字元)">
+                </div>
+                <div>
+                    <label for="pwd" class="titleFont3">密碼</label>
+                    <input type="password" name="memPwd" class="titleFont3" id="memPwdJH" minlength="6" maxlength="12"
+                        required="required" autocomplete="off" placeholder="請輸入密碼(6-12字元)">
+                </div>
+                <div>
+                    <label for="checkP" class="titleFont3">密碼確認</label>
+                    <input type="password" name="memCheckP" class="titleFont3" id="memCheckPJH" required="required"
+                        autocomplete="off" placeholder="請重複輸入密碼">
+                </div>
+                <div>
+                    <!-- <button type="button" class="titleFont3 signup">註冊</button> -->
+                    <button type="button" class="titleFont3 signup">註冊</button>
+                </div>
+                <div>
+                    <span class="detailFont">註冊表示同意<a class="detailFont">商店服務條款</a>與<a
+                            class="detailFont">會員責任規範及個資聲明</a>。</span>
+                </div>
+                <div>
+                    <a href="javascript: void(0)" class="detailFont logLink">回登入頁面</a>
+                </div>
+            </form>
+            <div class="closebtn">
+                <span>&times;</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 彈窗確認 -->
+    <div class="confirmDiv ">
+        <div>
+            <p class="contentFont lineHeight"></p>
+            <input type="button" class="detailFont" id="sureGoHome" value="確認">
+            <input type="button" class="detailFont" id="notsureGoHome" value="取消">
+        </div>
+    </div>
+
     <script src='../js/19/19.js'></script>
   </body>
 </html>
