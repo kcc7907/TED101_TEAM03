@@ -1,7 +1,7 @@
 <?php
     include("../connect.php");
     date_default_timezone_set("Asia/Taipei");
-    $sql = "INSERT INTO CONTACT_FORM (CTA_NAME, CTA_PHONE, CTA_QUESTION, CTA_DATE) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO `CONTACT_FORM` (CTA_NAME, CTA_PHONE, CTA_QUESTION, CTA_DATE) VALUES (?, ?, ?, ?)";
     // [kianame] => vzvz
     // [kiaphone] => gGAWs
     // [kiaquestion] => fGZV

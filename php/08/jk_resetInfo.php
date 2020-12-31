@@ -9,7 +9,7 @@
     }
         
     //資料庫資料
-    $sql = "SELECT * FROM member WHERE MEM_ID =?";
+    $sql = "SELECT * FROM MEMBER WHERE MEM_ID =?";
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, "$user");
     $statement->execute();
@@ -26,7 +26,7 @@
     // 一般資料
     if(isset($_POST['name'])){      //名字
         $name = $_POST['name'];
-        $sql = "UPDATE member SET MEM_NAME = ?, MEM_DATE = now() WHERE MEM_ID =?";
+        $sql = "UPDATE MEMBER SET MEM_NAME = ?, MEM_DATE = now() WHERE MEM_ID =?";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, "$name");
         $statement->bindValue(2, "$user");
@@ -34,7 +34,7 @@
     }
     if(isset($_POST['phone'])){     //電話        
         $phone = $_POST['phone'];
-        $sql = "UPDATE member SET MEM_PHONE = ?, MEM_DATE = now() WHERE MEM_ID =?";
+        $sql = "UPDATE MEMBER SET MEM_PHONE = ?, MEM_DATE = now() WHERE MEM_ID =?";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, "$phone");
         $statement->bindValue(2, "$user");
@@ -42,7 +42,7 @@
     }
     if(isset($_POST['email'])){     //信箱
         $email = $_POST['email'];
-        $sql = "UPDATE member SET MEM_EMAIL = ?, MEM_DATE = now() WHERE MEM_ID =?";
+        $sql = "UPDATE MEMBER SET MEM_EMAIL = ?, MEM_DATE = now() WHERE MEM_ID =?";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, "$email");
         $statement->bindValue(2, "$user");
@@ -51,7 +51,7 @@
     if(isset($_POST['address'])){   //地址
         $address = $_POST['address'];
         $city = $_POST['city'];
-        $sql = "UPDATE member SET MEM_ADDRESS = ?, MEM_CITY = ?, MEM_DATE = now() WHERE MEM_ID =?";
+        $sql = "UPDATE MEMBER SET MEM_ADDRESS = ?, MEM_CITY = ?, MEM_DATE = now() WHERE MEM_ID =?";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, "$address");
         $statement->bindValue(2, "$city");
@@ -67,7 +67,7 @@
         if($pwd == $oldPassword){
 
             $newPassword = $_POST['newPassword'];
-            $sql = "UPDATE member SET MEM_PWD = ?, MEM_DATE = now() WHERE MEM_ID =?";
+            $sql = "UPDATE MEMBER SET MEM_PWD = ?, MEM_DATE = now() WHERE MEM_ID =?";
             $statement = $pdo->prepare($sql);
             $statement->bindValue(1, "$newPassword");
             $statement->bindValue(2, "$user");

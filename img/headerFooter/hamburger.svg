@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: none;
-        stroke: #54383b;
-        stroke-width: 2px;
-      }
-    </style>
-  </defs>
-  <g id="Group_78" data-name="Group 78" transform="translate(-311.5 -38.5)">
-    <line id="Line_248" data-name="Line 248" class="cls-1" x2="17" transform="translate(311.5 39.5)"/>
-    <line id="Line_249" data-name="Line 249" class="cls-1" x2="17" transform="translate(311.5 54.5)"/>
-    <line id="Line_250" data-name="Line 250" class="cls-1" x2="17" transform="translate(311.5 47.5)"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"><defs><style>.cls-1{fill:none;stroke:#54383b;stroke-width:2px}</style></defs><g id="Group_78" data-name="Group 78" transform="translate(-311.5 -38.5)"><path id="Line_248" data-name="Line 248" class="cls-1" transform="translate(311.5 39.5)" d="M0 0h17"/><path id="Line_249" data-name="Line 249" class="cls-1" transform="translate(311.5 54.5)" d="M0 0h17"/><path id="Line_250" data-name="Line 250" class="cls-1" transform="translate(311.5 47.5)" d="M0 0h17"/></g></svg>

@@ -6,7 +6,8 @@
     {
         //Web根目錄真實路徑
         $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
-        return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
+        // return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
+        return $ServerRoot . "../img/contestWorkImg/";
     }
     $now = date_create('now', new DateTimeZone('Asia/Taipei'));
     $date = date_format($now, 'YmdHis');
@@ -29,7 +30,7 @@
         }
 
         if ($checkN == 1) {
-            $sql = "UPDATE `team03`.`CONTESTANT` SET `CT_PERSONAL_ID` = ?, `CT_IMG_FRONT` = ? WHERE (`CT_WORK_ID` = ?) and (`CT_MEMBER_ID` = ?);";
+            $sql = "UPDATE `CONTESTANT` SET `CT_PERSONAL_ID` = ?, `CT_IMG_FRONT` = ? WHERE (`CT_WORK_ID` = ?) and (`CT_MEMBER_ID` = ?);";
             $statement = $pdo->prepare($sql);
             $statement->bindValue(1, $newPIdNum);
             $statement->bindValue(2, $new_usePath1);
@@ -63,7 +64,7 @@
         }
 
         if ($checkN == 1) {
-            $sql = "UPDATE `team03`.`WORK` SET `WK_DRAFT` = ? WHERE (`WK_ID` = ?);";
+            $sql = "UPDATE `WORK` SET `WK_DRAFT` = ? WHERE (`WK_ID` = ?);";
             $statement = $pdo->prepare($sql);
             $statement->bindValue(1, $new_usePath3 );
             $statement->bindValue(2, $WK_ID);
@@ -73,7 +74,7 @@
         }
     }else if(isset($_POST['newFile4'])){
         $newFile2 = $_POST['newFile2'];
-        $sql = "UPDATE `team03`.`WORK` SET `WK_DRAFT` = ? WHERE (`WK_ID` = ?);";
+        $sql = "UPDATE `WORK` SET `WK_DRAFT` = ? WHERE (`WK_ID` = ?);";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, $newFile2);
         $statement->bindValue(2, $WK_ID);
@@ -92,7 +93,7 @@
         }
 
         if ($checkN == 1) {
-            $sql = "UPDATE `team03`.`WORK` SET `WK_DRAW` = ? WHERE (`WK_ID` = ?);";
+            $sql = "UPDATE `WORK` SET `WK_DRAW` = ? WHERE (`WK_ID` = ?);";
             $statement = $pdo->prepare($sql);
             $statement->bindValue(1, $new_usePath5);
             $statement->bindValue(2, $WK_ID);
@@ -102,14 +103,14 @@
         }
     }else if(isset($_POST['newFile6'])){
         $newFile6 = $_POST['newFile6'];
-        $sql = "UPDATE `team03`.`WORK` SET `WK_DRAW` = ? WHERE (`WK_ID` = ?);";
+        $sql = "UPDATE `WORK` SET `WK_DRAW` = ? WHERE (`WK_ID` = ?);";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, $newFile6);
         $statement->bindValue(2, $WK_ID);
         $statement->execute();
     }
 
-    $sql = "UPDATE `team03`.`WORK` SET `WK_STATUS` = ? WHERE (`WK_ID` = ?);";
+    $sql = "UPDATE `WORK` SET `WK_STATUS` = ? WHERE (`WK_ID` = ?);";
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, $newStatus);
     $statement->bindValue(2, $WK_ID);

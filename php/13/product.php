@@ -1,7 +1,7 @@
 <?php
     include("../connect.php");
 
-    $sql = 'SELECT * FROM team03.PRODUCT;';
+    $sql = 'SELECT * FROM `PRODUCT`;';
     $result = $pdo->query($sql);
     $result->execute();
     $data = $result->fetchAll(PDO::FETCH_ASSOC);

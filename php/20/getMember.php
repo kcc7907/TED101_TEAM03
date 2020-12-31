@@ -2,7 +2,7 @@
     include("../connect.php");
     $rp = json_decode(file_get_contents('php://input'), true);
     foreach($rp as $index => $row);
-    $sql = "SELECT * FROM team03.MEMBER WHERE `MEM_ID` =";
+    $sql = "SELECT * FROM MEMBER WHERE `MEM_ID` =";
     $sql = $sql.'"'.$row.'"';
     $result = $pdo->query($sql);
     $result->execute();

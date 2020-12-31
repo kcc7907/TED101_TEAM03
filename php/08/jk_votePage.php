@@ -2,7 +2,7 @@
 
     include("jk_link.php");
 
-    $sql = "SELECT WK_ID from `work`";
+    $sql = "SELECT WK_ID from `WORK`";
     $statement = $pdo->prepare($sql);     
     $statement->execute();
     $data = $statement->fetchAll();

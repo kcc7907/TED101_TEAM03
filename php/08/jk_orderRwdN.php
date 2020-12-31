@@ -25,7 +25,7 @@
 <?php
     //依訂單編號取明細資料
     foreach($order_ids as $i => $item){
-        $sql_orderDetail = "SELECT * from `ORDER` o join (select * from `ORDER_DETAIL` od join product p on od.PRODUCT_ID = p.PRD_ID) op on op.ORDER_ID = o.ORD_ID where ORDER_ID = ?";
+        $sql_orderDetail = "SELECT * from `ORDER` o join (select * from `ORDER_DETAIL` od join PRODUCT p on od.PRODUCT_ID = p.PRD_ID) op on op.ORDER_ID = o.ORD_ID where ORDER_ID = ?";
         $statement = $pdo->prepare($sql_orderDetail);
         $statement->bindValue(1, "$item");
         $statement->execute();
