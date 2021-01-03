@@ -27,10 +27,44 @@ let app = new Vue({
                 this.rp = res.data;
             })
         },
+        del(id) {
+            let x = confirm('確認是否刪除?');
+            if (x) {
+                axios.post('../php/13/delProduct.php', { id: this.rp[id].PRD_ID }).then(res => {
+                    // Vue.delete(this.rp, id);
+                    this.rp.splice(id, 1);
+                })
+            } else {
+                return false
+            }
+        }
     },
     mounted() {
         this.getData();
     },
+});
+
+let app2 = new Vue({
+    el: "#app2",
+    data: {
+        rp: "",
+    },
+    methods: {
+        del(id) {
+            let x = confirm('確認是否刪除?');
+            if (x) {
+                axios.post('../php/20/delMember.php', {id : this.rp[id].MEM_ID}).then(res => {
+                    // Vue.delete(this.rp, id);
+                    this.rp.splice(id, 1);
+                })
+            } else {
+                return false
+            }
+        }
+    },
+    mounted() {
+        axios.post("../php/13/kc_getMember.php").then(m => { this.rp = m.data })
+    }
 });
 
 let app3 = new Vue({
@@ -100,6 +134,17 @@ let app3 = new Vue({
                     self.rp = res.case;
                 }
             })
+        },
+        del(id){
+            let x = confirm('確認是否刪除?');
+            if(x){
+                axios.post('../php/14/del14.php', this.rp[id].CASE_ID).then(res => {
+                    // Vue.delete(this.rp, id);
+                    this.rp.splice(id, 1);
+                })
+            }else{
+                return false
+            }
         }
     },
     mounted() {
@@ -113,6 +158,17 @@ let app4 = new Vue({
         rp: '',
     },
     methods: {
+        del(id) {
+            let x = confirm('確認是否刪除?');
+            if (x) {
+                axios.post('../php/14/delorder.php', { id: this.rp[id].ORD_ID }).then(res => {
+                    // Vue.delete(this.rp, id);
+                    this.rp.splice(id, 1);
+                })
+            } else {
+                return false
+            }
+        }
     },
     mounted() {
         const self = this;
@@ -444,6 +500,17 @@ let app5 = new Vue({
             axios.post('../php/19/qainfo.php').then(res => {
                 this.rp = res.data;
             })
+        },
+        del(id) {
+            let x = confirm('確認是否刪除?');
+            if (x) {
+                axios.post('../php/19/delqa.php', { id: this.rp[id].CTA_ID }).then(res => {
+                    // Vue.delete(this.rp, id);
+                    this.rp.splice(id, 1);
+                })
+            } else {
+                return false
+            }
         }
     },
     mounted() {

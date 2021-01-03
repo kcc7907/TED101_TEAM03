@@ -5,9 +5,11 @@ include("../php/connect.php");
 function getFilePath()
 {
     //Web根目錄真實路徑
-    $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
-    return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
-    // return $ServerRoot . "../img/contestWorkImg/";
+    // $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
+    // $ServerRoot = $_SERVER["SERVER_NAME"];
+    // return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
+    // return $ServerRoot . "/demo-projects/ted101/G3/img/contestWorkImg/";
+    return "../img/contestWorkImg/";
 }
 
 //先判斷圖片是否上傳成功?

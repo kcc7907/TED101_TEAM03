@@ -1,6 +1,6 @@
 <?php
-    $db_host = "10.2.0.162";
-    // $db_host = "localhost";
+    // $db_host = "10.2.0.162";
+    $db_host = "localhost";
     $db_user = "team03";
     $db_pass = "ted101g3";
     $db_select = "team03";

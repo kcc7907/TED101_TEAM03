@@ -7,7 +7,7 @@
         echo "<script>location.href = 'home2D.php';</script>";
     }
 
-    $sql = "SELECT * from NOTI where MEMBER_ID = ? order by NOTI_ID desc;";     //缺少建立時間
+    $sql = "SELECT * from `noti` where MEMBER_ID = ? order by NOTI_ID desc;";     //缺少建立時間
     $statement = $pdo->prepare($sql);
     $statement->bindValue(1, "$user");
     $statement->execute();

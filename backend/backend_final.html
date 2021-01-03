@@ -17,7 +17,7 @@
     <script src="../lib/js/jquery.js"></script>
     <script src='../lib/js/axios.js'></script>
     <script defer src="backend_final.js"></script>
-    <script defer src="../js/13/13.js"></script>
+    <!-- <script defer src="../js/13/13.js"></script> -->
     <script defer src="backend_final_vue.js"></script>
 
 </head>
@@ -117,10 +117,11 @@
                         <th>材質/庫存</th>
                         <th>上架日期</th>
                         <th>優惠折扣</th>
+                        <th></th>
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr v-for="rp in rp">
+                    <tr v-for="(rp,index) in rp">
                         <td>{{rp.PRD_ID}}</td>
                         <td>{{rp.PRD_SPECIES}}</td>
                         <td>{{rp.PRD_NAME}}</td>
@@ -128,6 +129,8 @@
                         <td>{{rp.PRD_MATERIAL}}</td>
                         <td>{{rp.PRD_DATE}}</td>
                         <td>{{rp.DISCOUNT_ID}}</td>
+                        <td><button class="dell" @click="del(index)"
+                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
                     </tr>
                 </table>
 
@@ -201,7 +204,7 @@
                         <th>居住城市</th>
                         <th>地址</th>
                         <th>建立日期</th>
-                        <!-- <th></th> -->
+                        <th></th>
                     </tr>
 
                     <!-- 表格內容 -->
@@ -214,56 +217,10 @@
                         <td>{{item.MEM_CITY}}</td>
                         <td>{{item.MEM_ADDRESS}}</td>
                         <td>{{item.MEM_DATE}}</td>
-                        <!-- <td><button class="cancel">刪除</button></td> -->
+                        <td><button class="dell" @click="del(index)" style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
                     </tr>
                 </table>
 
-                <!-- 跳窗 -->
-                <!-- <div class="kcc_jump">
-                    <div class="secondBack">
-                        <img src="../img/product/icon/Icon-cancel.svg" alt="" class="cancel-icon">
-                        <form>
-                            <label for="mem_num">會員編號</label>
-                            <input type="text" name="mem_num" id="mem_num" placeholder="安安" v-model="formData.mem_num">
-                            <br>
-
-                            <label for="mem_pwd">會員密碼</label>
-                            <input type="text" name="mem_pwd" id="mem_pwd" placeholder="安安" v-model="formData.mem_pwd">
-                            <br>
-
-                            <label for="mem_name">會員名稱</label>
-                            <input type="text" name="mem_name" id="mem_name" placeholder="安安"
-                                v-model="formData.mem_name">
-                            <br>
-
-                            <label for="mem_phone">會員電話</label>
-                            <input type="text" name="mem_phone" id="mem_phone" placeholder="安安"
-                                v-model="formData.mem_phone">
-                            <br>
-
-                            <label for="mem_email">會員伊媚兒</label>
-                            <input type="text" name="mem_email" id="mem_email" placeholder="安安"
-                                v-model="formData.mem_email">
-                            <br>
-
-                            <label for="mem_city">居住城市</label>
-                            <input type="text" name="mem_city" id="mem_city" placeholder="安安"
-                                v-model="formData.mem_city">
-                            <br>
-
-                            <label for="mem_addr">地址</label>
-                            <input type="text" name="mem_addr" id="mem_addr" placeholder="安安"
-                                v-model="formData.mem_addr">
-                            <br>
-
-                            <label for="mem_date">建立日期</label>
-                            <input type="text" name="mem_date" id="mem_date" placeholder="安安"
-                                v-model="formData.mem_date">
-
-                            <button id="product_submit" type="button" @click="send">上架</button>
-                        </form>
-                    </div>
-                </div> -->
             </main>
 
             <main class="jane_class jane_case" id="app3">
@@ -287,16 +244,18 @@
                         <th>案例名稱</th>
                         <th>案例日期</th>
                         <th>案例型態</th>
+                        <th></th>
                         <!-- <th>圖片路徑</th> -->
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr v-for="rp in rp">
+                    <tr v-for="(rp,index) in rp">
                         <td>{{rp.CASE_ID}}</td>
                         <td>{{rp.CASE_INTRO}}</td>
                         <td>{{rp.CASE_NAME}}</td>
                         <td>{{rp.CASE_DATE}}</td>
                         <td>{{rp.CASE_TYPE}}</td>
+                        <td><button @click="del(index)" style="background-color: rgb(255, 250, 244); outline:none;">刪除</button></td>
                         <!-- <td>{{rp.CASE_IMG}}</td> -->
                     </tr>
                 </table>
@@ -305,7 +264,7 @@
                 <div class="jane_jump">
                     <div class="secondBack">
                         <img src="../img/interiordesign/icon/Icon-cancel.svg" alt="" class="cancel-icon">
-                        <button class="smallbutton" @click="hideButton" style="position:absolute; top: 95%;"></button>
+                        <button class="smallbutton" @click="hideButton" style="position: absolute; top: 50%; height: 50%; width: 20%; background-color: rgb(255, 250, 244); outline: rgb(255, 250, 244); border: none;"></button>
                         <form action="" method="">
                             <label for="case_number">案例編號</label>
                             <input type="text" name="case_number" id="case_number" v-model="formData.case_num">
@@ -364,15 +323,18 @@
                         <th>訂單日期</th>
                         <th>會員編號</th>
                         <th>訂單編號</th>
+                        <th></th>
                     </tr>
 
-                    <tr v-for="rp in rp">
+                    <tr v-for="(rp,index) in rp">
                         <td>{{rp.ORD_ID}}</td>
                         <td>{{rp.ORD_STATUS}}</td>
                         <td>{{rp.ORD_PAYMENT}}</td>
                         <td>{{rp.ORD_DATE}}</td>
                         <td>{{rp.MEMBER_ID}}</td>
                         <td>{{rp.DELIVERY_ID}}</td>
+                        <td><button class="dell" @click="del(index)"
+                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
                     </tr>
                 </table>
             </main>
@@ -458,15 +420,18 @@
                         <th>手機</th>
                         <th>提問問題</th>
                         <th>建立時間</th>
+                        <th></th>
                     </tr>
 
                     <!-- 表格內容 -->
-                    <tr v-for="rp in rp">
+                    <tr v-for="(rp,index) in rp">
                         <td>{{rp.CTA_ID}}</td>
                         <td>{{rp.CTA_NAME}}</td>
                         <td>{{rp.CTA_PHONE}}</td>
                         <td>{{rp.CTA_QUESTION}}</td>
                         <td>{{rp.CTA_DATE}}</td>
+                        <td><button class="dell" @click="del(index)"
+                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
                     </tr>
                 </table>
             </main>

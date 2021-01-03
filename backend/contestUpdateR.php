@@ -5,9 +5,10 @@
     function getFilePath()
     {
         //Web根目錄真實路徑
-        $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
+        // $ServerRoot = $_SERVER["DOCUMENT_ROOT"];
         // return $ServerRoot . "/TED101_TEAM03/img/contestWorkImg/";
-        return $ServerRoot . "../img/contestWorkImg/";
+        // return $ServerRoot . "../img/contestWorkImg/";
+        return "../img/contestWorkImg/";
     }
     $now = date_create('now', new DateTimeZone('Asia/Taipei'));
     $date = date_format($now, 'YmdHis');
@@ -43,7 +44,7 @@
         }
     }else if(isset($_POST['newFile2'])){
         $newFile2 = $_POST['newFile2'];
-        $sql = "UPDATE `team03`.`CONTESTANT` SET `CT_PERSONAL_ID` = ?, `CT_IMG_FRONT` = ? WHERE (`CT_WORK_ID` = ?) and (`CT_MEMBER_ID` = ?);";
+        $sql = "UPDATE `CONTESTANT` SET `CT_PERSONAL_ID` = ?, `CT_IMG_FRONT` = ? WHERE (`CT_WORK_ID` = ?) and (`CT_MEMBER_ID` = ?);";
         $statement = $pdo->prepare($sql);
         $statement->bindValue(1, $newPIdNum);
         $statement->bindValue(2, $newFile2);

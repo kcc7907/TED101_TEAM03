@@ -219,7 +219,7 @@
                 </form>
                 <form class="lastP">
                     <p class="contentFont">恭喜您完成此次投稿!</p>
-                    <a href="./product.html">
+                    <a href="./product/product.html">
                         <h2 class="titleFont2">前往參觀其他作品</h2>
                         <h2 class="titleFont2">再次投稿</h2>
                     </a>

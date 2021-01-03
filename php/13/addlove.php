@@ -29,4 +29,6 @@
     $statement->bindValue(2,$mid);
     $statement->bindValue(3,$date);
     $statement->execute();
+    print_r($statement->errorInfo());
+
 ?>
