@@ -7,7 +7,7 @@
     <title>商品管理</title>
 
     <link rel="stylesheet" href="../lib/reset.css">
-    <link rel="stylesheet" href="../css/product_authority.css">
+    <!-- <link rel="stylesheet" href="../css/product_authority.css"> -->
     <link rel="stylesheet" href="../css/backend_final.css">
     <link rel="Shortcut Icon" href="../img/favicon.ico">
 
@@ -89,7 +89,7 @@
 
                     </ul>
                 </div>
-                <!-- <div class="arrow"><i class="far fa-arrow-alt-circle-left"></i></div> -->
+                <div class="arrow"><i class="far fa-arrow-alt-circle-left"></i></div>
             </div>
 
             <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
@@ -101,7 +101,7 @@
                         商品管理 / 商品總覽
                     </div>
                     <div>
-                        管理者: <span>Root</span>
+                        管理者: <span>{{user}}</span>
                     </div>
                 </div>
 
@@ -206,7 +206,7 @@
 
                     <!-- 表格內容 -->
                     <tr v-for="(item, index) in rp" :key="index">
-                        <td>{{item.MEM_ID}}</td>MEM_ADDRESS
+                        <td>{{item.MEM_ID}}</td>
                         <td>{{item.MEM_PWD}}</td>
                         <td>{{item.MEM_NAME}}</td>
                         <td>{{item.MEM_PHONE}}</td>
@@ -470,6 +470,14 @@
                     </tr>
                 </table>
             </main>
+
+            <div class="popup" v-show="show">
+                <h2>{{text}}</h2>
+                <div class="btnbox">
+                    <p class="return" @click="close">返回</p>
+                    <p class="checkok" @click="popSwitch">確認</p>
+                </div>
+            </div>
         </div>
     </div>
 

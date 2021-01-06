@@ -183,37 +183,39 @@ let left = new Vue({
             }
         });
         //discount
-        axios.post('../php/20/getDiscount.php').then(res => {
+        axios.post('../php/20/getDiscount.php')
+        .then(res => {
             this.discount_list = res.data;
             this.discount_list.forEach((a,b) => {
                 this.discount_specie.push(a.DIS_ID);
                 this.discount_inner.push(a.DIS_PRODUCT_ID1);
                 this.discount_inner.push(a.DIS_PRODUCT_ID2);
             });
-            let sp1,sp2;
-            this.discount_inner.forEach((a,b) => {
-                let getc = this.rp.filter((q,w)=>{
+        }).then(res => {
+            let sp1, sp2;
+            this.discount_inner.forEach((a, b) => {
+                let getc = this.rp.filter((q, w) => {
                     return q.PRD_NAME == a;
                 })
-                if(getc.length){
-                    if(!sp1){
-                        sp1=getc[0].DISCOUNT_ID;
-                    }else if(sp1 === getc[0].DISCOUNT_ID){
-                        sp1+=getc[0].DISCOUNT_ID;
-                    }else if(!sp2){
+                if (getc.length) {
+                    if (!sp1) {
+                        sp1 = getc[0].DISCOUNT_ID;
+                    } else if (sp1 === getc[0].DISCOUNT_ID) {
+                        sp1 += getc[0].DISCOUNT_ID;
+                    } else if (!sp2) {
                         sp2 = getc[0].DISCOUNT_ID;
-                    }else{ sp2 += getc[0].DISCOUNT_ID; }
+                    } else { sp2 += getc[0].DISCOUNT_ID; }
                 }
             });
-            if(sp1){
-            if(sp1.length>1)this.disA=true;
-            this.disArrA=sp1;
+            if (sp1) {
+                if (sp1.length > 1) this.disA = true;
+                this.disArrA = sp1;
             }
-            if(sp2){
-            if(sp2.length>1)this.disB=true;
-            this.disArrB=sp2;
+            if (sp2) {
+                if (sp2.length > 1) this.disB = true;
+                this.disArrB = sp2;
             }
-        });
+        })
     },
     watch: {
         disA(){

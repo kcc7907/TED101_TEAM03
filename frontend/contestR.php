@@ -114,3 +114,4 @@ if ($_FILES["file1"]["error"] > 0 || $_FILES["file2"]["error"] > 0 || $_FILES["f
         echo  $workID .  $type . $name . $usePath2 . $usePath3 . $pIdNum  . $usePath1 . $data[0]['MEM_ID'];
     }
 }
+?>

@@ -62,7 +62,6 @@
             },
             methods: {
                 toggle(){
-                    console.log(123);
                     if(this.turn === false){
                         this.turn = ture;
                     }else{
@@ -71,13 +70,12 @@
                 },
                 bkloging(){
                     axios.post('php/13/kc_bk.php', this.all).then(res => {
-                        // this.rp = res.data;
-                        console.log(res.data);
                         if(res.data==='empty'){
                             alert('查無此帳號');
                         }else if(res.data === 'no'){
                             alert('密碼錯誤');
                         } else if (res.data === 'ok'){
+                            document.cookie = `bklogin=${this.all.user};path=/`;
                             location.href = "backend/backend_final.html";
                         }
                     });

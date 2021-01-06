@@ -41,7 +41,7 @@
                     </span>
                 </span>
                 <a class="shop" href="shoppingCart.php">
-                    <img src="../img/headerFooter/shoppingCart.svg" alt="">
+                    <img src="../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.php'">
                 </a>
                 <a class="ham">
                     <span></span>
@@ -75,7 +75,7 @@
                             </span>
                         </span>
                         <a class="shop" href="shoppingCart.php">
-                            <img src="../img/headerFooter/shoppingCart.svg" alt="">
+                            <img src="../img/headerFooter/shoppingCart.svg" alt="" onclick="location.href='shoppingCart.php'">
                         </a>
                         <a class="ham">
                             <span></span>
@@ -423,6 +423,7 @@
                     <input type="checkbox" id="alive" name="alive" class="alive detailFont">
                     <label for="alive" class="alive" id="alivebox"></label>
                     <label for="alive" class="alive detailFont">保持登入</label>
+                    <p class="detailFont guestlogin">訪客用帳號</p>
                 </div>
                 <div>
                     <p class="detailFont"><a>忘記密碼</a></p>
