@@ -19,7 +19,7 @@ const far = 1000;
 
 //Camera setup
 camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.set(10, 3, 0);
+camera.position.set(8, 5, 0);
 // camera.position.set(10, 10, 10);
 camera.lookAt(scene.position);
 
@@ -54,7 +54,7 @@ function reload() {
     loader.load(skin, function (gltf) {
         scene.add(gltf.scene);
         house = gltf.scene.children[0];
-        house.position.set(-2, -1, 0.2);
+        house.position.set(.9, 0, 0.3);
         animate();
     });
 }

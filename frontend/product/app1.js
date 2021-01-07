@@ -26,10 +26,6 @@ camera.lookAt(scene.position);
 const ambient = new THREE.AmbientLight(0x404040, 1);
 scene.add(ambient);
 
-// const light = new THREE.DirectionalLight(0xffffff, 2);
-// light.position.set(50, 50, 100);
-// scene.add(light);
-
 const light = new THREE.DirectionalLight(0xffffff, 1.5, 1000);
 light.position.set(10, 5, -5);
 scene.add(light);
@@ -62,11 +58,9 @@ function reload() {
 
 function animate() {
     requestAnimationFrame(animate);
-    // house.rotation.z += 0.005;
     renderer.render(scene, camera);
 }
 reload();
-// init();
 
 function onWindowResize() {
     camera.aspect = container.clientWidth / container.clientHeight;

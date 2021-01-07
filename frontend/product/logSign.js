@@ -534,3 +534,9 @@ function confirmLogSign(text) {
         $('#notsureGoHome').attr('value', '取消');
     });
 }
+$(document).ready(function () {
+    $('.guestlogin').on('click', () => {
+        $('#account').val('guest');
+        $('#pwd').val('forguest');
+    });
+});

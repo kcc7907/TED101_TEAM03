@@ -48,6 +48,7 @@
             <button class="bk" @click="toggle">返回</button>
             <button class="login" @click="bkloging">登入</button>
         </div>
+        <p style="position: absolute; right: 5px;top: 5px; font-size: 8px; color: #787878ce; cursor: pointer; text-decoration: underline;" @click="guestInput">訪客用帳號</p>
     </div>
 
     <script>
@@ -62,7 +63,6 @@
             },
             methods: {
                 toggle(){
-                    console.log(123);
                     if(this.turn === false){
                         this.turn = ture;
                     }else{
@@ -71,16 +71,19 @@
                 },
                 bkloging(){
                     axios.post('php/13/kc_bk.php', this.all).then(res => {
-                        // this.rp = res.data;
-                        console.log(res.data);
                         if(res.data==='empty'){
                             alert('查無此帳號');
                         }else if(res.data === 'no'){
                             alert('密碼錯誤');
                         } else if (res.data === 'ok'){
+                            document.cookie = `bklogin=${this.all.user};path=/`;
                             location.href = "backend/backend_final.html";
                         }
                     });
+                },
+                guestInput(){
+                    this.all.user = 'guest';
+                    this.all.pwd = 'forguest';
                 }
             },
         });

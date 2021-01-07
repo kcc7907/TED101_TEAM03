@@ -12,23 +12,18 @@ container = document.querySelector("#threejs");  //改ID
 //Create scene
 scene = new THREE.Scene();
 
-const fov = 13;
+const fov = 15;
 const aspect = container.clientWidth / container.clientHeight;
 const near = 0.1;
 const far = 1000;
 
 //Camera setup
 camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-camera.position.set(10, 3, 0);
-// camera.position.set(10, 10, 10);
+camera.position.set(9.5, 5, 0);
 camera.lookAt(scene.position);
 
 const ambient = new THREE.AmbientLight(0x404040, 2);
 scene.add(ambient);
-
-// const light = new THREE.DirectionalLight(0xffffff, 2);
-// light.position.set(50, 50, 100);
-// scene.add(light);
 
 const light = new THREE.DirectionalLight(0xffffff, 2, 1000);
 light.position.set(10, 5, -5);
@@ -54,19 +49,16 @@ function reload() {
     loader.load(skin, function (gltf) {
         scene.add(gltf.scene);
         house = gltf.scene.children[0];
-        house.position.set(-2, -1.5, .8);
+        house.position.set(1.2, 0, .8);
         animate();
     });
 }
-// }
 
 function animate() {
     requestAnimationFrame(animate);
-    // house.rotation.z += 0.005;
     renderer.render(scene, camera);
 }
 reload();
-// init();
 
 function onWindowResize() {
     camera.aspect = container.clientWidth / container.clientHeight;
@@ -77,11 +69,7 @@ function onWindowResize() {
 
 window.addEventListener("resize", onWindowResize);
 
-
-// document.addEventListener('click', e => console.log(e.target))
-
 let wood = document.querySelectorAll('.wood');
-
 wood.forEach((x, a) => {
     x.addEventListener('click', () => {
         skin = src[a];

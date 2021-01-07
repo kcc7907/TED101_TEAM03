@@ -7,7 +7,7 @@
     <title>商品管理</title>
 
     <link rel="stylesheet" href="../lib/reset.css">
-    <link rel="stylesheet" href="../css/product_authority.css">
+    <!-- <link rel="stylesheet" href="../css/product_authority.css"> -->
     <link rel="stylesheet" href="../css/backend_final.css">
     <link rel="Shortcut Icon" href="../img/favicon.ico">
 
@@ -89,7 +89,7 @@
 
                     </ul>
                 </div>
-                <!-- <div class="arrow"><i class="far fa-arrow-alt-circle-left"></i></div> -->
+                <div class="arrow"><i class="far fa-arrow-alt-circle-left" @click="checkguset"></i></div>
             </div>
 
             <!-- //////////////////從這下面開始改，MAIN的CLASS記得改自己名稱/////////////// -->
@@ -101,7 +101,7 @@
                         商品管理 / 商品總覽
                     </div>
                     <div>
-                        管理者: <span>Root</span>
+                        管理者: <span>{{user}}</span>
                     </div>
                 </div>
 
@@ -130,7 +130,8 @@
                         <td>{{rp.PRD_DATE}}</td>
                         <td>{{rp.DISCOUNT_ID}}</td>
                         <td><button class="dell" @click="del(index)"
-                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
+                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button>
+                        </td>
                     </tr>
                 </table>
 
@@ -187,7 +188,7 @@
                         會員管理 / 會員總覽
                     </div>
                     <div>
-                        管理者: <span>Root</span>
+                        管理者: <span>{{user}}</span>
                     </div>
                 </div>
 
@@ -209,7 +210,7 @@
 
                     <!-- 表格內容 -->
                     <tr v-for="(item, index) in rp" :key="index">
-                        <td>{{item.MEM_ID}}</td>MEM_ADDRESS
+                        <td>{{item.MEM_ID}}</td>
                         <td>{{item.MEM_PWD}}</td>
                         <td>{{item.MEM_NAME}}</td>
                         <td>{{item.MEM_PHONE}}</td>
@@ -217,7 +218,9 @@
                         <td>{{item.MEM_CITY}}</td>
                         <td>{{item.MEM_ADDRESS}}</td>
                         <td>{{item.MEM_DATE}}</td>
-                        <td><button class="dell" @click="del(index)" style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
+                        <td><button class="dell" @click="del(index)"
+                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button>
+                        </td>
                     </tr>
                 </table>
 
@@ -230,7 +233,7 @@
                         案例管理 / 案例總覽
                     </div>
                     <div>
-                        管理者: <span>Root</span>
+                        管理者: <span>{{user}}</span>
                     </div>
                 </div>
 
@@ -255,7 +258,8 @@
                         <td>{{rp.CASE_NAME}}</td>
                         <td>{{rp.CASE_DATE}}</td>
                         <td>{{rp.CASE_TYPE}}</td>
-                        <td><button @click="del(index)" style="background-color: rgb(255, 250, 244); outline:none;">刪除</button></td>
+                        <td><button @click="del(index)"
+                                style="background-color: rgb(255, 250, 244); outline:none;">刪除</button></td>
                         <!-- <td>{{rp.CASE_IMG}}</td> -->
                     </tr>
                 </table>
@@ -264,7 +268,8 @@
                 <div class="jane_jump">
                     <div class="secondBack">
                         <img src="../img/interiordesign/icon/Icon-cancel.svg" alt="" class="cancel-icon">
-                        <button class="smallbutton" @click="hideButton" style="position: absolute; top: 50%; height: 50%; width: 20%; background-color: rgb(255, 250, 244); outline: rgb(255, 250, 244); border: none;"></button>
+                        <button class="smallbutton" @click="hideButton"
+                            style="position: absolute; top: 50%; height: 50%; width: 20%; background-color: rgb(255, 250, 244); outline: rgb(255, 250, 244); border: none;"></button>
                         <form action="" method="">
                             <label for="case_number">案例編號</label>
                             <input type="text" name="case_number" id="case_number" v-model="formData.case_num">
@@ -308,7 +313,7 @@
                         訂單管理 / 訂單總覽
                     </div>
                     <div>
-                        管理者: <span>Root</span>
+                        管理者: <span>{{user}}</span>
                     </div>
                 </div>
 
@@ -334,7 +339,8 @@
                         <td>{{rp.MEMBER_ID}}</td>
                         <td>{{rp.DELIVERY_ID}}</td>
                         <td><button class="dell" @click="del(index)"
-                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
+                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button>
+                        </td>
                     </tr>
                 </table>
             </main>
@@ -346,7 +352,7 @@
                         比賽管理 / 作品總覽
                     </div>
                     <div>
-                        管理者: <span>Root</span>
+                        管理者: <span>{{user}}</span>
                     </div>
                 </div>
 
@@ -406,7 +412,7 @@
                         客服管理 / 客服總覽
                     </div>
                     <div>
-                        管理者: <span>Root</span>
+                        管理者: <span>{{user}}</span>
                     </div>
                 </div>
 
@@ -431,10 +437,19 @@
                         <td>{{rp.CTA_QUESTION}}</td>
                         <td>{{rp.CTA_DATE}}</td>
                         <td><button class="dell" @click="del(index)"
-                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button></td>
+                                style="background-color: rgb(255, 250, 244); outline:none; white-space: nowrap;">刪除</button>
+                        </td>
                     </tr>
                 </table>
             </main>
+
+            <div class="popup" v-show="show">
+                <h2>{{text}}</h2>
+                <div class="btnbox">
+                    <p class="return" @click="close">返回</p>
+                    <p class="checkok" @click="popSwitch">確認</p>
+                </div>
+            </div>
         </div>
     </div>
 

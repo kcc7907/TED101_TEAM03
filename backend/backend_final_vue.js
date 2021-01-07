@@ -10,7 +10,8 @@ let app = new Vue({
             product_material: '',
             product_update: '',
             product_discount: ''
-        }
+        },
+        user:''
     },
     methods: {
         send() {
@@ -28,6 +29,10 @@ let app = new Vue({
             })
         },
         del(id) {
+            if (this.user === 'guest') {
+                popup.guest();
+                return false;
+            }
             let x = confirm('確認是否刪除?');
             if (x) {
                 axios.post('../php/13/delProduct.php', { id: this.rp[id].PRD_ID }).then(res => {
@@ -48,9 +53,14 @@ let app2 = new Vue({
     el: "#app2",
     data: {
         rp: "",
+        user: ''
     },
     methods: {
         del(id) {
+            if(this.user === 'guest'){
+                popup.guest();
+                return false;
+            }
             let x = confirm('確認是否刪除?');
             if (x) {
                 axios.post('../php/20/delMember.php', {id : this.rp[id].MEM_ID}).then(res => {
@@ -82,7 +92,8 @@ let app3 = new Vue({
             box_one: '',
             box_two: '',
             box_three: ''
-        }
+        },
+        user: ''
     },
     methods: {
         send() {
@@ -136,6 +147,10 @@ let app3 = new Vue({
             })
         },
         del(id){
+            if (this.user === 'guest') {
+                popup.guest();
+                return false;
+            }
             let x = confirm('確認是否刪除?');
             if(x){
                 axios.post('../php/14/del14.php', this.rp[id].CASE_ID).then(res => {
@@ -156,9 +171,14 @@ let app4 = new Vue({
     el: '#app4',
     data: {
         rp: '',
+        user: ''
     },
     methods: {
         del(id) {
+            if (this.user === 'guest') {
+                popup.guest();
+                return false;
+            }
             let x = confirm('確認是否刪除?');
             if (x) {
                 axios.post('../php/14/delorder.php', { id: this.rp[id].ORD_ID }).then(res => {
@@ -345,12 +365,17 @@ let JHApp = new Vue({
         work: [],
         newPID: "",
         temIndex: 0,
+        user: ''
         // photos: ['CT_IMG_FRONT', 'WK_DRAFT', 'WK_DRAW'],
     },
     methods: {
 
         // 點擊審核出現彈窗
         checkWork(i) {
+            if (this.user === 'guest') {
+                popup.guest();
+                return false;
+            }
             $(`div.jh_jump`).eq(i).addClass('-on');
         },
 
@@ -384,6 +409,10 @@ let JHApp = new Vue({
 
         // 保存
         updateInfo(index, newpid, newdraft, newdraw) {
+            if (this.user === 'guest') {
+                popup.guest();
+                return false;
+            }
             let form_data = new FormData();
             let newPIdNum = this.work[index].CT_PERSONAL_ID; // 身分證號碼
             let newStatus = this.work[index].WK_STATUS; // 狀態
@@ -493,7 +522,8 @@ let app5 = new Vue({
             product_name: '',
             product_price: '',
             product_material: '',
-        }
+        },
+        user: ''
     },
     methods: {
         getData() {
@@ -502,6 +532,10 @@ let app5 = new Vue({
             })
         },
         del(id) {
+            if (this.user === 'guest') {
+                popup.guest();
+                return false;
+            }
             let x = confirm('確認是否刪除?');
             if (x) {
                 axios.post('../php/19/delqa.php', { id: this.rp[id].CTA_ID }).then(res => {
@@ -517,3 +551,75 @@ let app5 = new Vue({
         this.getData();
     },
 });
+
+let popup = new Vue({
+    el: '.popup',
+    data: {
+        text: '',
+        show: false,
+        pop: '',
+        manager: ''
+    },
+    methods: {
+        close() {
+            this.show = false
+        },
+        popSwitch() {
+            switch (this.pop) {
+                case 'bkIndex':
+                    setCookie('bklogin', popup.manager, -1);
+                    location.href = '../index.html';
+                    break;
+                case 'block':
+                    popup.show = false;
+                    break;
+            }
+        },
+        guest() {
+            popup.pop = 'block';
+            popup.text = '訪客無權限使用';
+            popup.show = true;
+        }
+    },
+    created() {
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        this.manager = getCookie('bklogin');
+        app.user = this.manager;
+        app2.user = this.manager;
+        app3.user = this.manager;
+        app4.user = this.manager;
+        app5.user = this.manager;
+        JHApp.user = this.manager;
+    },
+});
+
+let arrow = new Vue({
+    el:'.arrow',
+    methods: {
+        checkguset(){
+            popup.pop = 'bkIndex';
+            popup.text = '是否確認返回導引頁?';
+            popup.show = true;
+        }
+    },
+});
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}

@@ -50,3 +50,4 @@
         echo "<br/>";
         echo "<script>logBox();</script>";
     }
+?>
