@@ -1,8 +1,7 @@
 <h1 align="center">:house: 救世宅 :house: </h1>
 
-### demo :
+### Demo :
 https://tibamef2e.com/demo-projects/ted101/G3/
-
 &emsp;
 ## 每日編輯檔案5步驟
 ```
