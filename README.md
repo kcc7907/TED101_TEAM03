@@ -3,6 +3,29 @@
 ### Demo :
 https://tibamef2e.com/demo-projects/ted101/G3/
 &emsp;
+<h3 >使用技術 : </h3>
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="middle">
+        :one: Vue 2
+      </td>
+      <td align="center" valign="middle">
+       :two: jQuery
+      </td>
+      <td align="center" valign="middle">
+       :three: Three.js
+      </td>
+      <td align="center" valign="middle">
+        :four: PHP 7
+      </td>
+      <td align="center" valign="middle">
+        :five: Mysql
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## 每日編輯檔案5步驟
 ```
 1.  branchCheck : 'dev_自己'  ->    確認分支
