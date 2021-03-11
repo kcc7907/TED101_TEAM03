@@ -26,6 +26,10 @@ https://tibamef2e.com/demo-projects/ted101/G3/
   </tbody>
 </table>
 
+### 簡述 :
+
+為緯育TibaMe TED101 第三組，由六人一起共同開發的團體作品，於 2020/12 完成。
+
 ## 每日編輯檔案5步驟
 ```
 1.  branchCheck : 'dev_自己'  ->    確認分支
